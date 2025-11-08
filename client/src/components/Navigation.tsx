@@ -37,9 +37,11 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Start Your Journey
-            </Button>
+            <Link href="/onboarding">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                Start Your Journey
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -66,9 +68,11 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-                Start Your Journey
-              </Button>
+              <Link href="/onboarding">
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+                  Start Your Journey
+                </Button>
+              </Link>
             </div>
           </div>
         )}
