@@ -456,3 +456,194 @@ export async function markAllNotificationsAsRead(userId: number) {
     .set({ isRead: true })
     .where(eq(notifications.userId, userId));
 }
+
+// ============================================
+// USER PROFILE & STATS
+// ============================================
+
+export async function getUserProfile(userId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const user = await db.select().from(users).where(eq(users.id, userId)).limit(1);
+  return user[0] || null;
+}
+
+export async function getUserStats(userId: number) {
+  const user = await getUserProfile(userId);
+  if (!user) return null;
+
+  const db = await getDb();
+  if (!db) return null;
+
+  // Get completed courses count
+  const completedEnrollments = await db
+    .select()
+    .from(enrollments)
+    .where(eq(enrollments.userId, userId));
+  
+  const coursesCompleted = completedEnrollments.filter(e => e.progress === 100).length;
+
+  // Get total modules completed
+  const completedProgress = await db
+    .select()
+    .from(userProgress)
+    .where(eq(userProgress.userId, userId));
+  
+  const modulesCompleted = completedProgress.filter(p => p.completed).length;
+
+  // Calculate total learning hours (estimate: 1 hour per module)
+  const totalHours = modulesCompleted;
+
+  // Get current streak
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  let currentStreak = user.currentStreak || 0;
+  const lastActive = user.lastActivityDate ? new Date(user.lastActivityDate) : null;
+  
+  if (lastActive) {
+    lastActive.setHours(0, 0, 0, 0);
+    const daysDiff = Math.floor((today.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24));
+    
+    // If last active was yesterday, streak continues
+    // If last active was today, use current streak
+    // Otherwise, streak is broken
+    if (daysDiff > 1) {
+      currentStreak = 0;
+    }
+  }
+
+  // Get achievements count
+  const userAchievements = await db
+    .select()
+    .from(achievements)
+    .where(eq(achievements.userId, userId));
+
+  return {
+    totalXP: user.totalXP || 0,
+    level: Math.floor((user.totalXP || 0) / 1000) + 1, // 1000 XP per level
+    currentStreak: currentStreak,
+    longestStreak: user.longestStreak || 0,
+    coursesCompleted,
+    modulesCompleted,
+    totalHours,
+    achievementsCount: userAchievements.length,
+  };
+}
+
+export async function updateUserProfile(
+  userId: number,
+  updates: {
+    name?: string;
+    bio?: string;
+    avatar?: string;
+  }
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db
+    .update(users)
+    .set({
+      ...updates,
+      updatedAt: new Date(),
+    })
+    .where(eq(users.id, userId));
+
+  return getUserProfile(userId);
+}
+
+export async function getUserActivityHistory(userId: number, limit: number = 10) {
+  const db = await getDb();
+  if (!db) return [];
+
+  // Get recent completed modules
+  const recentProgress = await db
+    .select()
+    .from(userProgress)
+    .where(eq(userProgress.userId, userId));
+
+  const completed = recentProgress
+    .filter(p => p.completed && p.completedAt)
+    .sort((a, b) => {
+      const dateA = a.completedAt ? new Date(a.completedAt).getTime() : 0;
+      const dateB = b.completedAt ? new Date(b.completedAt).getTime() : 0;
+      return dateB - dateA;
+    })
+    .slice(0, limit);
+
+  // Fetch module and course details
+  const activities = await Promise.all(
+    completed.map(async (progress) => {
+      const module = await getModuleById(progress.moduleId);
+      const course = await getCourseById(progress.courseId);
+      
+      return {
+        type: "module_completed" as const,
+        id: progress.id,
+        title: module?.title || "Unknown Module",
+        courseTitle: course?.title || "Unknown Course",
+        completedAt: progress.completedAt,
+        xpEarned: progress.xpEarned || 0,
+      };
+    })
+  );
+
+  return activities;
+}
+
+export async function updateUserStreak(userId: number) {
+  const db = await getDb();
+  if (!db) return;
+
+  const user = await getUserProfile(userId);
+  if (!user) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const lastActive = user.lastActivityDate ? new Date(user.lastActivityDate) : null;
+  
+  if (lastActive) {
+    lastActive.setHours(0, 0, 0, 0);
+    const daysDiff = Math.floor((today.getTime() - lastActive.getTime()) / (1000 * 60 * 60 * 24));
+    
+    if (daysDiff === 0) {
+      // Already active today, no change
+      return;
+    } else if (daysDiff === 1) {
+      // Active yesterday, increment streak
+      const newStreak = (user.currentStreak || 0) + 1;
+      const longestStreak = Math.max(newStreak, user.longestStreak || 0);
+      
+      await db
+        .update(users)
+        .set({
+          currentStreak: newStreak,
+          longestStreak: longestStreak,
+          lastActivityDate: today,
+        })
+        .where(eq(users.id, userId));
+    } else {
+      // Streak broken, reset to 1
+      await db
+        .update(users)
+        .set({
+          currentStreak: 1,
+          lastActivityDate: today,
+        })
+        .where(eq(users.id, userId));
+    }
+  } else {
+    // First activity
+    await db
+      .update(users)
+      .set({
+        currentStreak: 1,
+        longestStreak: 1,
+        lastActivityDate: today,
+      })
+      .where(eq(users.id, userId));
+  }
+}

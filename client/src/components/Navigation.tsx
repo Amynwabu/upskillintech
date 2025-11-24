@@ -43,7 +43,7 @@ export default function Navigation() {
             ))}
             {isAuthenticated ? (
               <>
-                <Link href="/dashboard">
+                <Link href="/profile">
                   <Button variant="ghost" className="flex items-center gap-2">
                     <Avatar className="w-8 h-8">
                       <AvatarFallback className="bg-primary/20 text-primary text-sm">

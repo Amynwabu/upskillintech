@@ -207,6 +207,42 @@ export const appRouter = router({
       return achievements;
     }),
   }),
+
+  // User Profile
+  user: router({
+    getProfile: protectedProcedure.query(async ({ ctx }) => {
+      const profile = await db.getUserProfile(ctx.user.id);
+      return profile;
+    }),
+
+    getStats: protectedProcedure.query(async ({ ctx }) => {
+      const stats = await db.getUserStats(ctx.user.id);
+      return stats;
+    }),
+
+    updateProfile: protectedProcedure
+      .input(
+        z.object({
+          name: z.string().optional(),
+          bio: z.string().optional(),
+          avatar: z.string().optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const updatedProfile = await db.updateUserProfile(ctx.user.id, input);
+        return updatedProfile;
+      }),
+
+    getActivityHistory: protectedProcedure
+      .input(z.object({ limit: z.number().optional() }).optional())
+      .query(async ({ ctx, input }) => {
+        const activities = await db.getUserActivityHistory(
+          ctx.user.id,
+          input?.limit || 10
+        );
+        return activities;
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

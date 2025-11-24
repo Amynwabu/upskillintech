@@ -226,3 +226,23 @@
 - [ ] Build course detail page with curriculum display
 - [ ] Create learning module player page
 - [ ] Implement XP notifications and achievement popups
+
+
+## User Profile & Progress Dashboard
+
+### Backend API
+- [x] user.getProfile - Get user profile with XP and level
+- [x] user.getStats - Get learning statistics (courses completed, hours learned, streak)
+- [x] user.updateProfile - Update user profile information
+- [x] user.getActivityHistory - Get recent learning activity
+
+### Frontend Profile Page
+- [x] Build profile header with avatar, name, and XP level
+- [x] Create XP progress bar with level system
+- [x] Display achievement badges grid
+- [x] Build learning streak calendar with daily tracking
+- [x] Create completed courses section with certificates
+- [x] Add learning statistics cards (hours, modules, courses)
+- [x] Implement tabbed interface (Overview, Achievements, Courses, Activity)
+- [x] Add recent activity feed with module completions
+- [x] Link profile from navigation
