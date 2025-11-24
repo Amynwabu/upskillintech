@@ -22,6 +22,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { Download, FileText } from "lucide-react";
 
 export default function Profile() {
   const { user } = useAuth();
@@ -32,6 +33,7 @@ export default function Profile() {
   const { data: achievements } = trpc.achievements.list.useQuery();
   const { data: enrollments } = trpc.courses.getMyEnrollments.useQuery();
   const { data: activityHistory } = trpc.user.getActivityHistory.useQuery({ limit: 10 });
+  const { data: certificates } = trpc.certificates.getMyCertificates.useQuery();
 
   const completedCourses = enrollments?.filter(e => e.progress === 100) || [];
   const inProgressCourses = enrollments?.filter(e => e.progress > 0 && e.progress < 100) || [];
@@ -176,10 +178,11 @@ export default function Profile() {
 
           {/* Tabs */}
           <Tabs value={activeTab} onValueChange={setActiveTab}>
-            <TabsList className="grid w-full grid-cols-4">
+            <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="achievements">Achievements</TabsTrigger>
               <TabsTrigger value="courses">Courses</TabsTrigger>
+              <TabsTrigger value="certificates">Certificates</TabsTrigger>
               <TabsTrigger value="activity">Activity</TabsTrigger>
             </TabsList>
 
@@ -392,6 +395,79 @@ export default function Profile() {
                   </CardContent>
                 </Card>
               )}
+            </TabsContent>
+
+            {/* Certificates Tab */}
+            <TabsContent value="certificates">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="text-primary" />
+                    My Certificates
+                  </CardTitle>
+                  <CardDescription>
+                    Certificates earned from completed courses
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {certificates && certificates.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {certificates.map((cert) => (
+                        <Card key={cert.id} className="border-2 border-primary/20 hover:border-primary/40 transition-colors">
+                          <CardContent className="p-6">
+                            <div className="flex items-start gap-4">
+                              <div className="p-3 rounded-lg bg-primary/10">
+                                <FileText className="text-primary" size={32} />
+                              </div>
+                              <div className="flex-1">
+                                <h4 className="font-bold text-lg mb-1">{cert.courseName}</h4>
+                                <p className="text-sm text-muted-foreground mb-2">
+                                  Completed on {new Date(cert.completionDate).toLocaleDateString('en-US', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                  })}
+                                </p>
+                                <div className="flex items-center gap-2 mb-3">
+                                  <Badge variant="secondary" className="text-xs">
+                                    ID: {cert.certificateId}
+                                  </Badge>
+                                </div>
+                                {cert.instructorName && (
+                                  <p className="text-xs text-muted-foreground mb-3">
+                                    Instructor: {cert.instructorName}
+                                  </p>
+                                )}
+                                <a
+                                  href={cert.pdfUrl || '#'}
+                                  download={`${cert.certificateId}.pdf`}
+                                  className="inline-block"
+                                >
+                                  <Button size="sm" className="w-full">
+                                    <Download size={16} className="mr-2" />
+                                    Download Certificate
+                                  </Button>
+                                </a>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center py-12">
+                      <Award size={48} className="mx-auto text-muted-foreground mb-4" />
+                      <h3 className="text-lg font-semibold mb-2">No certificates yet</h3>
+                      <p className="text-muted-foreground mb-4">
+                        Complete a course to earn your first certificate!
+                      </p>
+                      <Link href="/learn">
+                        <Button>Browse Courses</Button>
+                      </Link>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
             </TabsContent>
 
             {/* Activity Tab */}

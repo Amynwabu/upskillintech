@@ -147,7 +147,7 @@ export const appRouter = router({
             ctx.user.id,
             "achievement",
             "Course Completed!",
-            `Congratulations! You've completed ${course?.title}`,
+            `Congratulations! You have completed ${course?.title}`,
             `/learning/${input.courseId}`
           );
         }
@@ -283,6 +283,124 @@ export const appRouter = router({
           input?.limit || 10
         );
         return activities;
+      }),
+  }),
+
+  certificates: router({
+    generate: protectedProcedure
+      .input(z.object({ courseId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        // Check if user completed the course
+        const enrollment = await db.getEnrollment(ctx.user.id, input.courseId);
+        if (!enrollment || enrollment.progress !== 100) {
+          throw new TRPCError({
+            code: "BAD_REQUEST",
+            message: "You must complete all modules before generating a certificate",
+          });
+        }
+
+        // Check if certificate already exists
+        const existing = await db.checkCertificateExists(ctx.user.id, input.courseId);
+        if (existing) {
+          return existing;
+        }
+
+        // Get course and instructor details
+        const course = await db.getCourseById(input.courseId);
+        if (!course) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "Course not found",
+          });
+        }
+
+        const instructor = course.instructorId
+          ? await db.getInstructorById(course.instructorId)
+          : null;
+
+        const user = await db.getUserProfile(ctx.user.id);
+        if (!user) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "User not found",
+          });
+        }
+
+        // Generate certificate
+        const { generateCertificateId, generateCertificatePDF } = await import("./certificateGenerator");
+        const certificateId = generateCertificateId(ctx.user.id, input.courseId);
+        
+        const pdfBuffer = await generateCertificatePDF({
+          certificateId,
+          studentName: user.name || "Student",
+          courseName: course.title,
+          instructorName: instructor?.name,
+          completionDate: enrollment.completedAt || new Date(),
+        });
+
+        // Save PDF to storage (for now, we'll store as base64 data URL)
+        const pdfBase64 = pdfBuffer.toString("base64");
+        const pdfDataUrl = `data:application/pdf;base64,${pdfBase64}`;
+
+        // Create certificate record
+        const certificateData = {
+          userId: ctx.user.id,
+          courseId: input.courseId,
+          certificateId,
+          studentName: user.name || "Student",
+          courseName: course.title,
+          instructorName: instructor?.name || null,
+          completionDate: enrollment.completedAt || new Date(),
+          pdfUrl: pdfDataUrl,
+        };
+
+        await db.createCertificate(certificateData);
+
+        // Create notification
+        await db.createNotification(
+          ctx.user.id,
+          "achievement",
+          "Certificate Earned!",
+          `Your certificate for ${course.title} is ready to download`,
+          `/profile`
+        );
+
+        const certificate = await db.checkCertificateExists(ctx.user.id, input.courseId);
+        return certificate;
+      }),
+
+    getMyCertificates: protectedProcedure.query(async ({ ctx }) => {
+      const certificates = await db.getUserCertificates(ctx.user.id);
+      return certificates;
+    }),
+
+    getById: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const certificate = await db.getCertificateById(input.id);
+        if (!certificate || certificate.userId !== ctx.user.id) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "Certificate not found",
+          });
+        }
+        return certificate;
+      }),
+
+    download: protectedProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const certificate = await db.getCertificateById(input.id);
+        if (!certificate || certificate.userId !== ctx.user.id) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "Certificate not found",
+          });
+        }
+        return {
+          pdfUrl: certificate.pdfUrl,
+          filename: `${certificate.certificateId}.pdf`,
+        };
       }),
   }),
 });

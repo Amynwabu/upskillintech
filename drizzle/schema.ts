@@ -375,3 +375,22 @@ export const consultations = mysqlTable("consultations", {
 
 export type Consultation = typeof consultations.$inferSelect;
 export type InsertConsultation = typeof consultations.$inferInsert;
+
+/**
+ * Certificates
+ */
+export const certificates = mysqlTable("certificates", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  courseId: int("courseId").notNull(),
+  certificateId: varchar("certificateId", { length: 100 }).notNull().unique(),
+  studentName: varchar("studentName", { length: 255 }).notNull(),
+  courseName: varchar("courseName", { length: 255 }).notNull(),
+  instructorName: varchar("instructorName", { length: 255 }),
+  completionDate: timestamp("completionDate").notNull(),
+  pdfUrl: text("pdfUrl"),
+  issuedAt: timestamp("issuedAt").defaultNow().notNull(),
+});
+
+export type Certificate = typeof certificates.$inferSelect;
+export type InsertCertificate = typeof certificates.$inferInsert;

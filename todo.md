@@ -322,3 +322,49 @@
 - [ ] Add tRPC procedures for saving/loading notes
 - [ ] Ensure completeModule procedure awards XP correctly
 - [ ] Test achievement triggers (3 modules, course completion)
+
+
+## Certificate Generation System
+
+### Database Schema
+- [x] Create certificates table with userId, courseId, certificateId, issueDate, pdfUrl
+- [x] Add unique certificateId, studentName, courseName, instructorName fields
+- [x] Run database migration
+
+### Backend Certificate Generation
+- [x] Install PDF generation library (pdfkit)
+- [x] Create certificate template with UpskillinTech branding
+- [x] Add course name, student name, completion date, instructor signature
+- [x] Include certificate ID and verification URL
+- [x] Use green/teal/cyan/yellow gradient color scheme
+- [x] Professional A4 landscape layout with borders and decorative elements
+- [ ] Generate PDF and save to storage (S3 or local)
+- [ ] Store certificate metadata in database
+
+### tRPC API Procedures
+- [x] certificates.generate - Generate certificate for completed course
+- [x] certificates.getMyCertificates - Get all user certificates
+- [x] certificates.getById - Get specific certificate details
+- [x] certificates.download - Generate download URL for certificate PDF
+- [x] Auto-generate certificate when course is 100% complete
+- [x] Create notification when certificate is earned
+- [x] Store PDF as base64 data URL in database
+
+### Frontend Integration
+- [x] Add certificate tab to Profile page showing earned certificates
+- [x] Display certificate cards with course name, completion date, and ID
+- [x] Add download button for each certificate with PDF data URL
+- [x] Show instructor name on certificate cards
+- [x] Integrate with tRPC certificates.getMyCertificates query
+- [x] Empty state with call-to-action to browse courses
+- [ ] Show "Certificate Available" badge on completed courses in Learn page
+- [ ] Add certificate generation trigger on course completion
+
+### Certificate Design
+- [ ] Professional layout with UpskillinTech branding
+- [ ] Green/teal/cyan gradient color scheme
+- [ ] Course title and completion date
+- [ ] Student name prominently displayed
+- [ ] Instructor name and signature
+- [ ] Unique certificate ID
+- [ ] QR code or verification URL (optional)

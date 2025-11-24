@@ -10,7 +10,9 @@ import {
   enrollments, 
   userProgress, 
   achievements, 
-  notifications 
+  notifications,
+  certificates,
+  InsertCertificate
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -756,4 +758,68 @@ export async function getCourseWithDetails(courseId: number) {
     instructor,
     reviews,
   };
+}
+
+// ============================================
+// CERTIFICATES
+// ============================================
+
+export async function createCertificate(data: InsertCertificate) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const [result] = await db.insert(certificates).values(data).$returningId();
+  return result;
+}
+
+export async function getUserCertificates(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const userCertificates = await db
+    .select()
+    .from(certificates)
+    .where(eq(certificates.userId, userId));
+
+  return userCertificates.sort((a, b) => b.issuedAt.getTime() - a.issuedAt.getTime());
+}
+
+export async function getCertificateById(id: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db
+    .select()
+    .from(certificates)
+    .where(eq(certificates.id, id))
+    .limit(1);
+
+  return result[0] || null;
+}
+
+export async function getCertificateByCertificateId(certificateId: string) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db
+    .select()
+    .from(certificates)
+    .where(eq(certificates.certificateId, certificateId))
+    .limit(1);
+
+  return result[0] || null;
+}
+
+export async function checkCertificateExists(userId: number, courseId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db
+    .select()
+    .from(certificates)
+    .where(eq(certificates.userId, userId))
+    .where(eq(certificates.courseId, courseId))
+    .limit(1);
+
+  return result[0] || null;
 }
