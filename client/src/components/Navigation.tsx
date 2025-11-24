@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useAuth } from "@/_core/hooks/useAuth";
+import { getLoginUrl } from "@/const";
+import { Menu, X, LogOut, User } from "lucide-react";
 import { APP_TITLE } from "@/const";
 
 export default function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
 
   const navLinks = [
     { href: "#learn", label: "Learn" },
@@ -37,11 +41,36 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
-            <Link href="/onboarding">
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Start Your Journey
-              </Button>
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link href="/dashboard">
+                  <Button variant="ghost" className="flex items-center gap-2">
+                    <Avatar className="w-8 h-8">
+                      <AvatarFallback className="bg-primary/20 text-primary text-sm">
+                        {user?.name?.charAt(0) || "U"}
+                      </AvatarFallback>
+                    </Avatar>
+                    <span className="hidden md:inline">{user?.name || "Profile"}</span>
+                  </Button>
+                </Link>
+                <Button variant="ghost" size="icon" onClick={() => logout()} title="Logout">
+                  <LogOut size={18} />
+                </Button>
+              </>
+            ) : (
+              <>
+                <a href={getLoginUrl()}>
+                  <Button variant="outline">
+                    Login
+                  </Button>
+                </a>
+                <Link href="/onboarding">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    Start Your Journey
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,11 +97,33 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
-              <Link href="/onboarding">
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-                  Start Your Journey
-                </Button>
-              </Link>
+              {isAuthenticated ? (
+                <>
+                  <Link href="/dashboard">
+                    <Button variant="outline" className="w-full justify-start gap-2">
+                      <User size={18} />
+                      {user?.name || "Profile"}
+                    </Button>
+                  </Link>
+                  <Button variant="outline" className="w-full justify-start gap-2" onClick={() => logout()}>
+                    <LogOut size={18} />
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <a href={getLoginUrl()} className="w-full">
+                    <Button variant="outline" className="w-full">
+                      Login
+                    </Button>
+                  </a>
+                  <Link href="/onboarding">
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
+                      Start Your Journey
+                    </Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         )}
