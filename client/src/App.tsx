@@ -12,6 +12,7 @@ import Templates from "./pages/Templates";
 import Community from "./pages/Community";
 import Learn from "./pages/Learn";
 import Profile from "./pages/Profile";
+import CourseDetail from "./pages/CourseDetail";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -19,6 +20,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/learn"} component={Learn} />
+      <Route path={"/course/:id"} component={CourseDetail} />
       <Route path={"/profile"} component={Profile} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />

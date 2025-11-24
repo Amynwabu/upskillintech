@@ -246,3 +246,30 @@
 - [x] Implement tabbed interface (Overview, Achievements, Courses, Activity)
 - [x] Add recent activity feed with module completions
 - [x] Link profile from navigation
+
+
+## Course Detail Page
+
+### Database Schema
+- [x] Add instructors table with bio and credentials
+- [x] Add course_reviews table with ratings and comments
+- [x] Update courses table with instructor relationship
+
+### Backend API
+- [x] courses.getWithDetails - Get course with modules, instructor, and reviews
+- [x] courses.getReviews - Get course reviews with pagination
+- [x] courses.addReview - Add user review and rating
+- [ ] courses.enrollWithPayment - Handle Stripe checkout for premium courses
+
+### Frontend Course Detail Page
+- [x] Build course header with title, category, rating, and enrollment count
+- [x] Display course overview with description and learning outcomes
+- [x] Create curriculum section with expandable module list
+- [x] Add instructor bio card with credentials and experience
+- [x] Build reviews section with star ratings and comments
+- [x] Implement enrollment button (free vs paid)
+- [x] Show enrollment status for logged-in users
+- [x] Add route /course/:id to App.tsx
+- [x] Link course cards from Learn page to detail page
+- [x] Seed instructor data to database
+- [ ] Add Stripe checkout integration for premium courses

@@ -35,6 +35,27 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
 /**
+ * Instructors table
+ */
+export const instructors = mysqlTable("instructors", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  name: varchar("name", { length: 255 }).notNull(),
+  bio: text("bio"),
+  expertise: text("expertise"),
+  credentials: text("credentials"),
+  avatar: text("avatar"),
+  rating: int("rating").default(0),
+  totalStudents: int("totalStudents").default(0).notNull(),
+  totalCourses: int("totalCourses").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Instructor = typeof instructors.$inferSelect;
+export type InsertInstructor = typeof instructors.$inferInsert;
+
+/**
  * Courses table
  */
 export const courses = mysqlTable("courses", {
@@ -58,6 +79,24 @@ export const courses = mysqlTable("courses", {
 
 export type Course = typeof courses.$inferSelect;
 export type InsertCourse = typeof courses.$inferInsert;
+
+/**
+ * Course reviews
+ */
+export const courseReviews = mysqlTable("course_reviews", {
+  id: int("id").autoincrement().primaryKey(),
+  courseId: int("courseId").notNull(),
+  userId: int("userId").notNull(),
+  rating: int("rating").notNull(),
+  comment: text("comment"),
+  isVerifiedPurchase: boolean("isVerifiedPurchase").default(false).notNull(),
+  helpfulCount: int("helpfulCount").default(0).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type CourseReview = typeof courseReviews.$inferSelect;
+export type InsertCourseReview = typeof courseReviews.$inferInsert;
 
 /**
  * Course modules

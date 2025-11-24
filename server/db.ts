@@ -3,8 +3,10 @@ import { drizzle } from "drizzle-orm/mysql2";
 import { 
   InsertUser, 
   users, 
+  instructors,
   courses, 
   courseModules, 
+  courseReviews,
   enrollments, 
   userProgress, 
   achievements, 
@@ -646,4 +648,112 @@ export async function updateUserStreak(userId: number) {
       })
       .where(eq(users.id, userId));
   }
+}
+
+// ============================================
+// INSTRUCTORS
+// ============================================
+
+export async function getInstructorById(instructorId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db.select().from(instructors).where(eq(instructors.id, instructorId)).limit(1);
+  return result[0] || null;
+}
+
+// ============================================
+// COURSE REVIEWS
+// ============================================
+
+export async function getCourseReviews(courseId: number, limit: number = 10, offset: number = 0) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const reviews = await db
+    .select()
+    .from(courseReviews)
+    .where(eq(courseReviews.courseId, courseId));
+
+  // Sort by creation date descending
+  const sorted = reviews.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+  
+  // Apply pagination
+  return sorted.slice(offset, offset + limit);
+}
+
+export async function addCourseReview(
+  courseId: number,
+  userId: number,
+  rating: number,
+  comment: string
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Check if user already reviewed this course
+  const existing = await db
+    .select()
+    .from(courseReviews)
+    .where(eq(courseReviews.courseId, courseId))
+    .where(eq(courseReviews.userId, userId))
+    .limit(1);
+
+  if (existing.length > 0) {
+    throw new Error("You have already reviewed this course");
+  }
+
+  // Check if user is enrolled (verified purchase)
+  const enrollment = await getEnrollment(userId, courseId);
+  const isVerified = enrollment !== null;
+
+  // Add review
+  await db.insert(courseReviews).values({
+    courseId,
+    userId,
+    rating,
+    comment,
+    isVerifiedPurchase: isVerified,
+  });
+
+  // Update course average rating
+  const allReviews = await getCourseReviews(courseId, 1000);
+  if (allReviews.length > 0) {
+    const avgRating = Math.round(
+      allReviews.reduce((sum, r) => sum + r.rating, 0) / allReviews.length
+    );
+    
+    await db
+      .update(courses)
+      .set({ rating: avgRating })
+      .where(eq(courses.id, courseId));
+  }
+
+  const newReview = await db
+    .select()
+    .from(courseReviews)
+    .where(eq(courseReviews.courseId, courseId))
+    .where(eq(courseReviews.userId, userId))
+    .limit(1);
+
+  return newReview[0];
+}
+
+export async function getCourseWithDetails(courseId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const course = await getCourseById(courseId);
+  if (!course) return null;
+
+  const modules = await getCourseModules(courseId);
+  const instructor = await getInstructorById(course.instructorId);
+  const reviews = await getCourseReviews(courseId, 5);
+
+  return {
+    ...course,
+    modules,
+    instructor,
+    reviews,
+  };
 }

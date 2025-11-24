@@ -173,6 +173,48 @@ export const appRouter = router({
         
         return { module, progress };
       }),
+
+    getWithDetails: publicProcedure
+      .input(z.object({ id: z.number() }))
+      .query(async ({ input }) => {
+        const courseDetails = await db.getCourseWithDetails(input.id);
+        return courseDetails;
+      }),
+
+    getReviews: publicProcedure
+      .input(
+        z.object({
+          courseId: z.number(),
+          limit: z.number().optional(),
+          offset: z.number().optional(),
+        })
+      )
+      .query(async ({ input }) => {
+        const reviews = await db.getCourseReviews(
+          input.courseId,
+          input.limit || 10,
+          input.offset || 0
+        );
+        return reviews;
+      }),
+
+    addReview: protectedProcedure
+      .input(
+        z.object({
+          courseId: z.number(),
+          rating: z.number().min(1).max(5),
+          comment: z.string(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const review = await db.addCourseReview(
+          input.courseId,
+          ctx.user.id,
+          input.rating,
+          input.comment
+        );
+        return review;
+      }),
   }),
 
   // Notifications
