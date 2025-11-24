@@ -12,7 +12,7 @@ export default function Navigation() {
   const { user, isAuthenticated, logout } = useAuth();
 
   const navLinks = [
-    { href: "#learn", label: "Learn" },
+    { href: "/learn", label: "Learn" },
     { href: "#apply", label: "Apply" },
     { href: "#consult", label: "Consult" },
     { href: "#community", label: "Community" },
@@ -76,15 +76,15 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
+        {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -92,7 +92,7 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </a>

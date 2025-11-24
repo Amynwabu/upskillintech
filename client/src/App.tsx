@@ -10,15 +10,17 @@ import Dashboard from "./pages/Dashboard";
 import LearningPath from "./pages/LearningPath";
 import Templates from "./pages/Templates";
 import Community from "./pages/Community";
+import Learn from "./pages/Learn";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/learn"} component={Learn} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/learning"} component={LearningPath} />
+      <Route path={"/learning/:id"} component={LearningPath} />
       <Route path={"/templates"} component={Templates} />
       <Route path={"/community-page"} component={Community} />
       <Route path={"/404"} component={NotFound} />

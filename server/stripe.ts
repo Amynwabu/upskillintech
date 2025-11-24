@@ -1,13 +1,18 @@
 import Stripe from "stripe";
 import { ENV } from "./_core/env";
 
-if (!ENV.stripeSecretKey) {
-  throw new Error("STRIPE_SECRET_KEY is not configured");
-}
+export const stripe = ENV.stripeSecretKey
+  ? new Stripe(ENV.stripeSecretKey, {
+      apiVersion: "2024-12-18.acacia",
+    })
+  : null;
 
-export const stripe = new Stripe(ENV.stripeSecretKey, {
-  apiVersion: "2024-12-18.acacia",
-});
+function ensureStripe() {
+  if (!stripe) {
+    throw new Error("Stripe is not configured. Please add STRIPE_SECRET_KEY in Settings → Payment.");
+  }
+  return stripe;
+}
 
 /**
  * Create a checkout session for purchasing products
@@ -21,7 +26,8 @@ export async function createCheckoutSession(params: {
   cancelUrl: string;
   metadata?: Record<string, string>;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const stripeClient = ensureStripe();
+  const session = await stripeClient.checkout.sessions.create({
     mode: "payment",
     line_items: params.items.map((item) => ({
       price: item.priceId,
@@ -55,7 +61,8 @@ export async function createSubscriptionSession(params: {
   cancelUrl: string;
   metadata?: Record<string, string>;
 }) {
-  const session = await stripe.checkout.sessions.create({
+  const stripeClient = ensureStripe();
+  const session = await stripeClient.checkout.sessions.create({
     mode: "subscription",
     line_items: [
       {
@@ -83,7 +90,8 @@ export async function createSubscriptionSession(params: {
  * Retrieve a customer's payment history
  */
 export async function getCustomerPayments(customerId: string) {
-  const paymentIntents = await stripe.paymentIntents.list({
+  const stripeClient = ensureStripe();
+  const paymentIntents = await stripeClient.paymentIntents.list({
     customer: customerId,
     limit: 100,
   });
@@ -95,11 +103,13 @@ export async function getCustomerPayments(customerId: string) {
  * Get product and price information
  */
 export async function getProductInfo(productId: string) {
-  const product = await stripe.products.retrieve(productId);
+  const stripeClient = ensureStripe();
+  const product = await stripeClient.products.retrieve(productId);
   return product;
 }
 
 export async function getPriceInfo(priceId: string) {
-  const price = await stripe.prices.retrieve(priceId);
+  const stripeClient = ensureStripe();
+  const price = await stripeClient.prices.retrieve(priceId);
   return price;
 }

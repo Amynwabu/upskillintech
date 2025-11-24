@@ -194,3 +194,35 @@
 - [ ] Add product reviews and ratings
 - [ ] Implement digital product delivery
 - [ ] Create seller dashboard for creators
+
+
+## Course System API Development
+
+### Backend Database Helpers
+- [x] Create course listing and filtering functions
+- [x] Create enrollment management functions
+- [x] Create progress tracking functions
+- [x] Create XP calculation and update functions
+- [x] Create achievement checking and awarding functions
+
+### tRPC API Procedures
+- [x] courses.list - Get all published courses with filters
+- [x] courses.getById - Get single course with modules
+- [x] courses.enroll - Enroll user in course
+- [x] courses.getMyEnrollments - Get user's enrolled courses
+- [x] courses.getProgress - Get user progress for a course
+- [x] courses.completeModule - Mark module as complete and award XP
+- [x] courses.getModuleContent - Get module content for enrolled users
+- [x] notifications.list - Get user notifications
+- [x] notifications.markAsRead - Mark notification as read
+- [x] notifications.markAllAsRead - Mark all notifications as read
+- [x] achievements.list - Get user achievements
+
+### Frontend Course Pages
+- [x] Build course catalog page with category filters
+- [x] Create course card components with enrollment status
+- [x] Implement enrollment button with authentication check
+- [x] Add progress bar and completion tracking UI
+- [ ] Build course detail page with curriculum display
+- [ ] Create learning module player page
+- [ ] Implement XP notifications and achievement popups

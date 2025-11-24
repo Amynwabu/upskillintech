@@ -13,6 +13,11 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     return res.status(400).send("No signature");
   }
 
+  if (!stripe) {
+    console.error("[Stripe Webhook] Stripe not configured");
+    return res.status(400).send("Stripe not configured");
+  }
+
   let event: Stripe.Event;
 
   try {
