@@ -7,7 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
-import LearningPath from "./pages/LearningPath";
+import LearningPlayer from "./pages/LearningPlayer";
 import Templates from "./pages/Templates";
 import Community from "./pages/Community";
 import Learn from "./pages/Learn";
@@ -24,7 +24,7 @@ function Router() {
       <Route path={"/profile"} component={Profile} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/learning/:id"} component={LearningPath} />
+      <Route path={"/learning/:courseId"} component={LearningPlayer} />
       <Route path={"/templates"} component={Templates} />
       <Route path={"/community-page"} component={Community} />
       <Route path={"/404"} component={NotFound} />

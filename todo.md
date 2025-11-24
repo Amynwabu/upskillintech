@@ -273,3 +273,52 @@
 - [x] Link course cards from Learn page to detail page
 - [x] Seed instructor data to database
 - [ ] Add Stripe checkout integration for premium courses
+
+
+## Learning Module Player
+
+### Page Structure
+- [x] Create LearningPlayer page at /learning/:courseId
+- [x] Build sidebar with module navigation and progress indicators
+- [x] Add video player area with controls
+- [x] Create tabbed content area (Overview, Resources, Notes, Quiz)
+- [x] Implement responsive layout for mobile and desktop
+
+### Video Player
+- [x] Integrate video player placeholder (ready for YouTube embed or HTML5 video)
+- [x] Add playback controls and progress tracking
+- [x] Show current module title and description
+- [x] Add next/previous module navigation buttons
+
+### Interactive Quiz System
+- [x] Create quiz UI with multiple choice questions
+- [x] Implement instant feedback (correct/incorrect indicators)
+- [x] Add explanation text for each answer
+- [x] Calculate and display quiz score
+- [x] Require quiz completion (70% pass rate) before marking module complete
+
+### Note-Taking
+- [x] Add note-taking textarea with UI
+- [ ] Store notes in database per module
+- [ ] Display saved notes when returning to module
+- [ ] Add timestamp to notes
+
+### Module Completion
+- [x] Add "Mark as Complete" button
+- [x] Disable button until video watched and quiz passed
+- [x] Award XP on completion (50 XP per module)
+- [x] Update progress in database
+- [x] Show completion checkmark in sidebar
+- [x] Trigger achievement notifications for milestones
+
+### Progress Tracking
+- [x] Display course progress percentage
+- [x] Show completed vs total modules count
+- [x] Update XP display in real-time via toast notifications
+- [x] Show achievement unlock animations
+
+### Backend Support
+- [ ] Create module notes table in schema
+- [ ] Add tRPC procedures for saving/loading notes
+- [ ] Ensure completeModule procedure awards XP correctly
+- [ ] Test achievement triggers (3 modules, course completion)
