@@ -13,6 +13,8 @@ import Community from "./pages/Community";
 import Learn from "./pages/Learn";
 import Profile from "./pages/Profile";
 import CourseDetail from "./pages/CourseDetail";
+import Apply from "./pages/Apply";
+import Consult from "./pages/Consult";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -20,13 +22,15 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/learn"} component={Learn} />
+      <Route path={"/apply"} component={Apply} />
+      <Route path={"/consult"} component={Consult} />
       <Route path={"/course/:id"} component={CourseDetail} />
       <Route path={"/profile"} component={Profile} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/learning/:courseId"} component={LearningPlayer} />
       <Route path={"/templates"} component={Templates} />
-      <Route path={"/community-page"} component={Community} />
+      <Route path={"/community"} component={Community} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

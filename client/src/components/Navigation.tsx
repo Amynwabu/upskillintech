@@ -13,9 +13,9 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/learn", label: "Learn" },
-    { href: "#apply", label: "Apply" },
-    { href: "#consult", label: "Consult" },
-    { href: "#community", label: "Community" },
+    { href: "/apply", label: "Apply" },
+    { href: "/consult", label: "Consult" },
+    { href: "/community", label: "Community" },
     { href: "#marketplace", label: "Marketplace" },
   ];
 
@@ -33,13 +33,21 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-              >
-                {link.label}
-              </a>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.href} href={link.href}>
+                  <span className="text-foreground/80 hover:text-foreground transition-colors font-medium cursor-pointer">
+                    {link.label}
+                  </span>
+                </Link>
+              )
             ))}
             {isAuthenticated ? (
               <>
@@ -88,14 +96,25 @@ export default function Navigation() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link key={link.href} href={link.href}>
+                    <span
+                      className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 block cursor-pointer"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {link.label}
+                    </span>
+                  </Link>
+                )
               ))}
               {isAuthenticated ? (
                 <>

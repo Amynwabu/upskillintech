@@ -147,7 +147,7 @@ export const appRouter = router({
             ctx.user.id,
             "achievement",
             "Course Completed!",
-            `Congratulations! You have completed ${course?.title}`,
+            `Congratulations! You have completed ${course?.title || 'the course'}`,
             `/learning/${input.courseId}`
           );
         }

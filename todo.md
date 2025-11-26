@@ -368,3 +368,69 @@
 - [ ] Instructor name and signature
 - [ ] Unique certificate ID
 - [ ] QR code or verification URL (optional)
+
+
+## Apply, Consult, Community Pages Development
+
+### Database Schema Extensions
+- [x] Templates table already exists with all needed fields
+- [x] Template_deployments table already exists
+- [x] Consultations table already exists
+- [x] Community_posts table already exists with attachments
+- [x] Post_likes table already exists
+- [x] Community_comments table already exists
+- [x] Live_events and event_rsvps tables already exist
+
+### Apply Page (Templates)
+- [x] Build template catalog with category filters
+- [x] Add template detail modal with preview
+- [x] Implement template deployment wizard
+- [x] Add template rating and reviews display
+- [x] Show "How It Works" section
+- [x] Add search functionality
+- [x] Create responsive grid layout
+- [x] Add route /apply to App.tsx
+- [x] Update Navigation to link to /apply
+- [ ] Connect to tRPC for real template data
+- [ ] Create deployment tracking dashboard
+- [ ] Show user's deployed templates
+
+### Consult Page
+- [x] Build consultation services overview with 3 service types
+- [x] Create booking modal with consultation request form
+- [x] Add consultation type selection (SME, School, Ministry)
+- [x] Display consultation process (4 steps)
+- [x] Add success stories section
+- [x] Implement CTA sections
+- [x] Add route /consult to App.tsx
+- [ ] Create booking calendar with available slots
+- [ ] Create consultation history for users
+- [ ] Add consultation status tracking
+- [ ] Implement email notifications for bookings
+- [ ] Connect to tRPC for real booking data
+
+### Community Page
+- [x] Build community feed with posts display
+- [x] Create group filtering (Business, Faith, Education, Creators)
+- [x] Build live events section with countdown
+- [x] Add leaderboard for top contributors
+- [x] Display post stats (likes, comments)
+- [x] Add route /community to App.tsx
+- [ ] Implement post creation form
+- [ ] Implement post interactions (like, comment, share)
+- [ ] Add file/image upload for posts
+- [ ] Implement real-time updates for new posts
+- [ ] Connect to tRPC for real community data
+
+### Backend tRPC Procedures
+- [ ] templates.list - Get all templates with filters
+- [ ] templates.deploy - Deploy template for user
+- [ ] templates.getMyDeployments - Get user's deployed templates
+- [ ] consultations.getAvailableSlots - Get available booking slots
+- [ ] consultations.book - Book consultation appointment
+- [ ] consultations.getMyConsultations - Get user's consultations
+- [ ] community.createPost - Create new community post
+- [ ] community.getPosts - Get community feed with pagination
+- [ ] community.likePost - Like/unlike a post
+- [ ] community.addComment - Add comment to post
+- [ ] community.getLeaderboard - Get top contributors
