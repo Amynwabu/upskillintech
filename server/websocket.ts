@@ -9,6 +9,15 @@ interface AuthenticatedSocket extends Socket {
   userEmail?: string;
 }
 
+let ioInstance: SocketIOServer | null = null;
+
+export function getIO(): SocketIOServer {
+  if (!ioInstance) {
+    throw new Error("Socket.IO not initialized. Call setupWebSocket first.");
+  }
+  return ioInstance;
+}
+
 export function setupWebSocket(httpServer: HTTPServer) {
   const io = new SocketIOServer(httpServer, {
     cors: {
@@ -16,6 +25,8 @@ export function setupWebSocket(httpServer: HTTPServer) {
       methods: ["GET", "POST"],
     },
   });
+  
+  ioInstance = io;
 
   // Authentication middleware
   io.use(async (socket: any, next) => {
@@ -111,7 +122,6 @@ export function setupWebSocket(httpServer: HTTPServer) {
 
 // Helper function to send notification to specific user
 export function sendNotificationToUser(
-  io: SocketIOServer,
   userId: number,
   notification: {
     type: string;
@@ -120,6 +130,7 @@ export function sendNotificationToUser(
     link?: string;
   }
 ) {
+  const io = getIO();
   io.to(`user:${userId}`).emit("notification:new", {
     ...notification,
     timestamp: new Date().toISOString(),
@@ -128,10 +139,10 @@ export function sendNotificationToUser(
 
 // Helper function to broadcast community update
 export function broadcastCommunityUpdate(
-  io: SocketIOServer,
   event: string,
   data: any
 ) {
+  const io = getIO();
   io.emit(event, {
     ...data,
     timestamp: new Date().toISOString(),

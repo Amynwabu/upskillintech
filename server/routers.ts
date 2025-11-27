@@ -403,6 +403,120 @@ export const appRouter = router({
         };
       }),
   }),
+
+  // Community features
+  community: router({
+    getPosts: publicProcedure
+      .input(
+        z
+          .object({
+            category: z.enum(["all", "business", "faith", "education", "creators"]).optional(),
+            limit: z.number().min(1).max(100).default(20),
+            offset: z.number().min(0).default(0),
+          })
+          .optional()
+      )
+      .query(async ({ input }) => {
+        const category = input?.category === "all" ? undefined : input?.category;
+        const posts = await db.getCommunityPosts({
+          category,
+          limit: input?.limit || 20,
+          offset: input?.offset || 0,
+        });
+        return posts;
+      }),
+
+    createPost: protectedProcedure
+      .input(
+        z.object({
+          content: z.string().min(1).max(5000),
+          category: z.enum(["business", "faith", "education", "creators"]),
+          attachments: z.array(z.string()).optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const user = await db.getUserProfile(ctx.user.id);
+        if (!user) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "User not found",
+          });
+        }
+
+        const post = await db.createCommunityPost({
+          userId: ctx.user.id,
+          content: input.content,
+          category: input.category,
+          attachments: input.attachments,
+        });
+
+        // Broadcast new post via WebSocket
+        const { broadcastCommunityUpdate } = await import("./websocket");
+        broadcastCommunityUpdate("new_post", {
+          ...post,
+          authorName: user.name,
+        });
+
+        return post;
+      }),
+
+    likePost: protectedProcedure
+      .input(z.object({ postId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const hasLiked = await db.hasUserLikedPost(ctx.user.id, input.postId);
+        const result = await db.likeCommunityPost(ctx.user.id, input.postId);
+
+        // Broadcast like update via WebSocket
+        const { broadcastCommunityUpdate } = await import("./websocket");
+        broadcastCommunityUpdate("post_liked", {
+          postId: input.postId,
+          liked: !hasLiked,
+          likeCount: result.likeCount,
+        });
+
+        return result;
+      }),
+
+    addComment: protectedProcedure
+      .input(
+        z.object({
+          postId: z.number(),
+          content: z.string().min(1).max(1000),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const user = await db.getUserProfile(ctx.user.id);
+        if (!user) {
+          throw new TRPCError({
+            code: "NOT_FOUND",
+            message: "User not found",
+          });
+        }
+
+        const comment = await db.addCommunityComment({
+          postId: input.postId,
+          userId: ctx.user.id,
+          content: input.content,
+        });
+
+        // Broadcast new comment via WebSocket
+        const { broadcastCommunityUpdate } = await import("./websocket");
+        broadcastCommunityUpdate("new_comment", {
+          ...comment,
+          authorName: user.name,
+          postId: input.postId,
+        });
+
+        return comment;
+      }),
+
+    getComments: publicProcedure
+      .input(z.object({ postId: z.number() }))
+      .query(async ({ input }) => {
+        const comments = await db.getCommunityComments(input.postId);
+        return comments;
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

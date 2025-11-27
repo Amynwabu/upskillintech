@@ -538,3 +538,28 @@
 - [x] Add user name fetching for posts and comments
 - [ ] Create community tRPC procedures
 - [ ] Integrate WebSocket broadcasting in procedures
+
+
+## Community Backend Integration
+
+### tRPC Procedures
+- [x] community.getPosts - Get community posts with pagination
+- [x] community.createPost - Create new post with content and category
+- [x] community.likePost - Like/unlike post with toggle
+- [x] community.addComment - Add comment to post
+- [x] community.getComments - Get comments for a post
+
+### WebSocket Broadcasting
+- [x] Broadcast new post creation to all connected clients
+- [x] Broadcast like updates in real-time
+- [x] Broadcast new comments to post viewers
+- [x] Update feed instantly without page refresh
+- [x] Export singleton IO instance for tRPC access
+- [x] Integrate broadcasting in tRPC procedures
+
+### Frontend Integration
+- [ ] Add post creation form to Community page
+- [ ] Implement like button with optimistic updates
+- [ ] Add comment section with real-time updates
+- [ ] Show toast notifications for new posts
+- [ ] Update post counts and stats in real-time
