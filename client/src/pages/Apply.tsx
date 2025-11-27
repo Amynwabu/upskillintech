@@ -138,34 +138,42 @@ export default function Apply() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 py-16">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <Badge className="mb-4" variant="secondary">
-                <Zap className="mr-1" size={14} />
-                Ready-to-Use AI Tools
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Apply AI to Your Work
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Choose from our library of automation templates, customize them to your needs,
-                and deploy in minutes. No coding required.
-              </p>
-              
-              {/* Search Bar */}
-              <div className="flex gap-2 max-w-2xl mx-auto">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
-                  <Input
-                    placeholder="Search templates..."
-                    className="pl-10"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <Badge className="mb-4" variant="secondary">
+                  <Zap className="mr-1" size={14} />
+                  Ready-to-Use AI Tools
+                </Badge>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  Apply AI to Your Work
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Choose from our library of automation templates, customize them to your needs,
+                  and deploy in minutes. No coding required.
+                </p>
+                {/* Search Bar */}
+                <div className="flex gap-2">
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
+                    <Input
+                      placeholder="Search templates..."
+                      className="pl-10"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                  </div>
+                  <Button variant="outline">
+                    <Filter size={20} className="mr-2" />
+                    Filters
+                  </Button>
                 </div>
-                <Button variant="outline">
-                  <Filter size={20} className="mr-2" />
-                  Filters
-                </Button>
+              </div>
+              <div className="relative">
+                <img
+                  src="/ai-collaboration.jpg"
+                  alt="Professionals collaborating with AI technology"
+                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>

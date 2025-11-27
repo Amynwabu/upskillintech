@@ -166,26 +166,35 @@ export default function Consult() {
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 py-16">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <Badge className="mb-4" variant="secondary">
-                <Sparkles className="mr-1" size={14} />
-                Expert AI Consultation
-              </Badge>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Transform Your Organization with AI
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Partner with our AI experts to design and implement custom strategies
-                tailored to your business, school, or ministry.
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button size="lg" onClick={() => setShowBookingModal(true)}>
-                  <Calendar className="mr-2" size={20} />
-                  Book Free Discovery Call
-                </Button>
-                <Button size="lg" variant="outline">
-                  View Case Studies
-                </Button>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <Badge className="mb-4" variant="secondary">
+                  <Sparkles className="mr-1" size={14} />
+                  Expert AI Consultation
+                </Badge>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  Transform Your Organization with AI
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Partner with our AI experts to design and implement custom strategies
+                  tailored to your business, school, or ministry.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button size="lg" onClick={() => setShowBookingModal(true)}>
+                    <Calendar className="mr-2" size={20} />
+                    Book Free Discovery Call
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    View Case Studies
+                  </Button>
+                </div>
+              </div>
+              <div className="relative">
+                <img
+                  src="/mentoring-session.jpg"
+                  alt="Professional AI consultation and mentoring session"
+                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
@@ -289,13 +298,22 @@ export default function Consult() {
         </section>
 
         {/* Success Stories */}
-        <section className="py-16">
+        <section className="py-16 bg-muted/30">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Real results from organizations we've helped transform
-              </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+              <div>
+                <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
+                <p className="text-muted-foreground text-lg">
+                  Real results from organizations we've helped transform with AI integration and custom strategies.
+                </p>
+              </div>
+              <div className="relative">
+                <img
+                  src="/business-meeting.jpg"
+                  alt="Successful business team meeting"
+                  className="rounded-lg shadow-lg w-full h-auto object-cover"
+                />
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

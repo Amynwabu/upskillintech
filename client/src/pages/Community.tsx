@@ -98,22 +98,38 @@ export default function Community() {
       <main className="flex-1 pt-16">
         <div className="container py-8">
           {/* Header */}
-          <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Community Hub
-            </h1>
-            <p className="text-muted-foreground">
-              Connect, learn, and grow with AI enthusiasts worldwide
-            </p>
+          <div className="mb-8 grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                Community Hub
+              </h1>
+              <p className="text-muted-foreground text-lg">
+                Connect, learn, and grow with AI enthusiasts worldwide. Share your success stories, ask questions, and collaborate with professionals across business, education, faith, and creative sectors.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="/community-engagement.jpg"
+                alt="Community members engaging and networking"
+                className="rounded-lg shadow-lg w-full h-auto object-cover"
+              />
+            </div>
           </div>
 
           {/* Live Events Banner */}
           <div className="mb-8">
             <Card className="border-2 border-primary bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
               <CardHeader>
-                <div className="flex items-center gap-2">
-                  <Video className="text-primary" size={24} />
-                  <CardTitle>Upcoming Live Events</CardTitle>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Video className="text-primary" size={24} />
+                    <CardTitle>Upcoming Live Events</CardTitle>
+                  </div>
+                  <img
+                    src="/networking-event.jpg"
+                    alt="Live networking event"
+                    className="hidden md:block w-24 h-16 rounded-md object-cover"
+                  />
                 </div>
               </CardHeader>
               <CardContent>

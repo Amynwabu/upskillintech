@@ -448,10 +448,15 @@
 - [x] Copy images to public directory (8 professional images added)
 
 ### Add Images to Pages
-- [ ] Add hero images to Apply page
-- [ ] Add consultation images to Consult page
-- [ ] Add community engagement images to Community page
-- [ ] Add course learning images to Learn page
+- [x] Add hero images to Apply page (automation templates showcase)
+- [x] Add AI collaboration image to Apply hero section
+- [x] Add consultation and mentoring images to Consult page hero
+- [x] Add success story images to Consult page
+- [x] Add community engagement images to Community page header
+- [x] Add live event images to Community page
+- [x] Add course learning images to Learn page
+- [x] Add training diverse team and group discussion images
+- [x] Optimize image layouts and aspect ratios
 - [ ] Update homepage with diverse professional images
 
 ## Real-Time WebSocket Features

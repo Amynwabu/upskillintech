@@ -50,27 +50,41 @@ export default function Learn() {
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
           <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Learn AI, Transform Your Future
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Master AI skills with structured courses, hands-on projects, and expert guidance. 
-                From AI literacy to business automation, we've got you covered.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <BookOpen className="text-primary" size={20} />
-                  <span className="font-semibold">{courses?.length || 0} Courses</span>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                  Learn AI, Transform Your Future
+                </h1>
+                <p className="text-xl text-muted-foreground mb-8">
+                  Master AI skills with structured courses, hands-on projects, and expert guidance. 
+                  From AI literacy to business automation, we've got you covered.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <BookOpen className="text-primary" size={20} />
+                    <span className="font-semibold">{courses?.length || 0} Courses</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Users className="text-secondary" size={20} />
+                    <span className="font-semibold">10,000+ Learners</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
+                    <Award className="text-accent" size={20} />
+                    <span className="font-semibold">Certificates</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <Users className="text-secondary" size={20} />
-                  <span className="font-semibold">10,000+ Learners</span>
-                </div>
-                <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <Award className="text-accent" size={20} />
-                  <span className="font-semibold">Certificates</span>
-                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <img
+                  src="/training-diverse-team.jpg"
+                  alt="Diverse team learning AI together"
+                  className="rounded-lg shadow-lg w-full h-48 object-cover"
+                />
+                <img
+                  src="/group-discussion.jpg"
+                  alt="Group discussion and collaborative learning"
+                  className="rounded-lg shadow-lg w-full h-48 object-cover mt-8"
+                />
               </div>
             </div>
           </div>
