@@ -494,3 +494,42 @@
 - [ ] community:postLiked - Update like count in real-time
 - [ ] community:newComment - Add comment to post instantly
 - [ ] user:online - Track online user status
+
+
+## WebSocket Client Implementation
+
+### Client-Side WebSocket
+- [x] Create WebSocket context provider
+- [x] Implement useWebSocket hook for connection management
+- [x] Add automatic reconnection logic (5 attempts, 1s delay)
+- [x] Handle authentication token in WebSocket handshake from cookies
+- [x] Create event listeners for server events (emit, on, off methods)
+- [x] Add WebSocketProvider to App.tsx
+- [x] Install js-cookie package for cookie handling
+
+### Real-Time Notifications
+- [x] Add notification badge to Navigation component
+- [x] Implement unread notification counter with useNotifications hook
+- [x] Add real-time notification toast alerts using sonner
+- [x] Handle notification:new events from server
+- [x] Create useNotifications hook with tRPC integration
+- [ ] Create notification dropdown menu
+
+### Live Community Feed
+- [ ] Update Community page to use WebSocket events
+- [ ] Implement instant new post display
+- [ ] Add real-time like counter updates
+- [ ] Create real-time comment additions
+- [ ] Add typing indicators for comments
+- [ ] Handle community:postCreated events
+- [ ] Handle community:postLiked events
+- [ ] Handle community:commentAdded events
+
+### Backend Community API
+- [x] Create community database helper functions (getCommunityPosts, createCommunityPost, likeCommunityPost, addCommunityComment, getCommunityComments, hasUserLikedPost)
+- [x] Add community imports to db.ts (communityPosts, communityComments, postLikes)
+- [x] Implement like/unlike toggle logic
+- [x] Implement comment count increment
+- [x] Add user name fetching for posts and comments
+- [ ] Create community tRPC procedures
+- [ ] Integrate WebSocket broadcasting in procedures

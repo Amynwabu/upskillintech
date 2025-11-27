@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, and, desc, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { 
   InsertUser, 
@@ -12,7 +12,10 @@ import {
   achievements, 
   notifications,
   certificates,
-  InsertCertificate
+  InsertCertificate,
+  communityPosts,
+  communityComments,
+  postLikes
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -822,4 +825,160 @@ export async function checkCertificateExists(userId: number, courseId: number) {
     .limit(1);
 
   return result[0] || null;
+}
+
+// ============================================
+// COMMUNITY FUNCTIONS
+// ============================================
+
+export async function getCommunityPosts(filters?: { category?: string; limit?: number }) {
+  const db = await getDb();
+  if (!db) return [];
+
+  let query = db
+    .select()
+    .from(communityPosts);
+
+  const results = await query;
+  
+  // Apply filters in memory and sort
+  let filtered = results;
+  if (filters?.category) {
+    filtered = filtered.filter(p => p.category === filters.category);
+  }
+
+  // Sort by pinned first, then by creation date
+  filtered.sort((a, b) => {
+    if (a.isPinned && !b.isPinned) return -1;
+    if (!a.isPinned && b.isPinned) return 1;
+    return b.createdAt.getTime() - a.createdAt.getTime();
+  });
+
+  if (filters?.limit) {
+    filtered = filtered.slice(0, filters.limit);
+  }
+
+  // Fetch user names for each post
+  const postsWithUsers = await Promise.all(
+    filtered.map(async (post) => {
+      const user = await getUserProfile(post.userId);
+      return {
+        ...post,
+        userName: user?.name || "Anonymous",
+      };
+    })
+  );
+
+  return postsWithUsers;
+}
+
+export async function createCommunityPost(data: {
+  userId: number;
+  category: string;
+  content: string;
+  attachments?: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const [post] = await db.insert(communityPosts).values(data).returning();
+  return post;
+}
+
+export async function likeCommunityPost(postId: number, userId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Check if already liked
+  const existing = await db
+    .select()
+    .from(postLikes)
+    .where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)))
+    .limit(1);
+
+  if (existing.length > 0) {
+    // Unlike
+    await db.delete(postLikes).where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)));
+    
+    const post = await db.select().from(communityPosts).where(eq(communityPosts.id, postId)).limit(1);
+    if (post.length > 0) {
+      await db
+        .update(communityPosts)
+        .set({ likesCount: Math.max(0, (post[0].likesCount || 0) - 1) })
+        .where(eq(communityPosts.id, postId));
+    }
+    
+    return { liked: false };
+  } else {
+    // Like
+    await db.insert(postLikes).values({ postId, userId });
+    
+    const post = await db.select().from(communityPosts).where(eq(communityPosts.id, postId)).limit(1);
+    if (post.length > 0) {
+      await db
+        .update(communityPosts)
+        .set({ likesCount: (post[0].likesCount || 0) + 1 })
+        .where(eq(communityPosts.id, postId));
+    }
+    
+    return { liked: true };
+  }
+}
+
+export async function addCommunityComment(data: {
+  postId: number;
+  userId: number;
+  content: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const [comment] = await db.insert(communityComments).values(data).returning();
+  
+  // Increment comments count
+  const post = await db.select().from(communityPosts).where(eq(communityPosts.id, data.postId)).limit(1);
+  if (post.length > 0) {
+    await db
+      .update(communityPosts)
+      .set({ commentsCount: (post[0].commentsCount || 0) + 1 })
+      .where(eq(communityPosts.id, data.postId));
+  }
+
+  return comment;
+}
+
+export async function getCommunityComments(postId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const comments = await db
+    .select()
+    .from(communityComments)
+    .where(eq(communityComments.postId, postId));
+
+  // Fetch user names for each comment
+  const commentsWithUsers = await Promise.all(
+    comments.map(async (comment) => {
+      const user = await getUserProfile(comment.userId);
+      return {
+        ...comment,
+        userName: user?.name || "Anonymous",
+      };
+    })
+  );
+
+  return commentsWithUsers.sort((a, b) => a.createdAt.getTime() - b.createdAt.getTime());
+}
+
+export async function hasUserLikedPost(postId: number, userId: number) {
+  const db = await getDb();
+  if (!db) return false;
+
+  const result = await db
+    .select()
+    .from(postLikes)
+    .where(and(eq(postLikes.postId, postId), eq(postLikes.userId, userId)))
+    .limit(1);
+    
+  return result.length > 0;
 }

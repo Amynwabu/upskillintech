@@ -4,12 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
-import { Menu, X, LogOut, User } from "lucide-react";
+import { Menu, X, LogOut, User, Bell } from "lucide-react";
+import { useNotifications } from "@/hooks/useNotifications";
+import { Badge } from "@/components/ui/badge";
 import { APP_TITLE } from "@/const";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
+  const { unreadCount } = useNotifications();
 
   const navLinks = [
     { href: "/learn", label: "Learn" },
@@ -51,6 +54,17 @@ export default function Navigation() {
             ))}
             {isAuthenticated ? (
               <>
+                <Button variant="ghost" size="icon" className="relative" title="Notifications">
+                  <Bell size={18} />
+                  {unreadCount > 0 && (
+                    <Badge 
+                      variant="destructive" 
+                      className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                    >
+                      {unreadCount > 9 ? "9+" : unreadCount}
+                    </Badge>
+                  )}
+                </Button>
                 <Link href="/profile">
                   <Button variant="ghost" className="flex items-center gap-2">
                     <Avatar className="w-8 h-8">
