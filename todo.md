@@ -434,3 +434,63 @@
 - [ ] community.likePost - Like/unlike a post
 - [ ] community.addComment - Add comment to post
 - [ ] community.getLeaderboard - Get top contributors
+
+
+## Image Assets for Pages
+
+### Image Search & Download
+- [x] Search for professional adult training images
+- [x] Search for business meeting and collaboration images
+- [x] Search for diverse professionals learning technology
+- [x] Search for consultation and mentoring images
+- [x] Search for community engagement and networking images
+- [x] Download and optimize all images
+- [x] Copy images to public directory (8 professional images added)
+
+### Add Images to Pages
+- [ ] Add hero images to Apply page
+- [ ] Add consultation images to Consult page
+- [ ] Add community engagement images to Community page
+- [ ] Add course learning images to Learn page
+- [ ] Update homepage with diverse professional images
+
+## Real-Time WebSocket Features
+
+### WebSocket Infrastructure
+- [x] Install socket.io server and client packages
+- [x] Set up WebSocket server in Express app
+- [x] Create WebSocket connection manager in server/websocket.ts
+- [x] Implement authentication for WebSocket connections using SDK
+- [x] Add connection/disconnection event handlers
+- [x] Integrate WebSocket server into server/_core/index.ts
+- [x] Add helper functions for sending notifications and broadcasting updates
+
+### Notification System
+- [ ] Create notification badge component for navigation
+- [ ] Implement unread notification counter
+- [ ] Add notification dropdown panel
+- [ ] Create notification item component
+- [ ] Add mark as read functionality
+- [ ] Implement real-time notification delivery via WebSocket
+
+### Community Real-Time Updates
+- [ ] Emit new post events to connected clients
+- [ ] Implement live post updates in community feed
+- [ ] Add real-time like counter updates
+- [ ] Implement live comment additions
+- [ ] Add typing indicators for comments
+- [ ] Show online user presence indicators
+
+### Live Notification Toasts
+- [ ] Create toast notification for new achievements
+- [ ] Add toast for course completion
+- [ ] Implement toast for new community mentions
+- [ ] Add toast for live event reminders
+- [ ] Create toast for consultation booking confirmations
+
+### Backend WebSocket Events
+- [ ] notification:new - Send new notification to user
+- [ ] community:newPost - Broadcast new post to feed
+- [ ] community:postLiked - Update like count in real-time
+- [ ] community:newComment - Add comment to post instantly
+- [ ] user:online - Track online user status

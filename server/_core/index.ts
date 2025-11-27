@@ -8,6 +8,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { handleStripeWebhook } from "../webhooks/stripe";
+import { setupWebSocket } from "../websocket";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -31,6 +32,15 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+  
+  // Setup WebSocket server
+  const io = setupWebSocket(server);
+  
+  // Make io available in request context for tRPC procedures
+  app.use((req: any, res, next) => {
+    req.io = io;
+    next();
+  });
   
   // Stripe webhook MUST come before express.json() for signature verification
   app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), handleStripeWebhook);
