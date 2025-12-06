@@ -563,3 +563,63 @@
 - [ ] Add comment section with real-time updates
 - [ ] Show toast notifications for new posts
 - [ ] Update post counts and stats in real-time
+
+
+## Homepage Redesign
+
+### Image Updates
+- [ ] Remove children's classroom image from homepage
+- [x] Search for realistic AI-tech training images (adults in professional settings)
+- [x] Search for modern tech workspace and AI learning scenes
+- [x] Download and optimize new hero images (4 professional AI training images added)
+
+### Layout Redesign
+- [ ] Redesign hero section with modern layout
+- [ ] Update color scheme and visual hierarchy
+- [ ] Add engaging CTAs and value propositions
+- [ ] Improve feature cards presentation
+- [ ] Add testimonials or social proof section
+- [ ] Optimize for professional, enterprise appeal
+
+
+## Homepage Redesign - TheConstruct.ai Inspired
+
+### Visual Design
+- [x] Replace children's classroom image with professional AI training images
+- [x] Implement dark gradient hero section (slate-900/800)
+- [x] Add large italic headlines "Where Your AI Journey Happens"
+- [x] Use green/teal/cyan gradient color scheme for CTAs and accents
+- [x] Add wave SVG divider between hero and content sections
+- [x] Implement pattern background texture (subtle dots)
+- [x] Add professional workshop and team collaboration images
+
+### Layout Structure
+- [x] Redesign hero section with 2-column layout (text + image)
+- [x] Add social proof section with partner logos
+- [x] Create 3-column feature section (Learn, Grow, Opportunities)
+- [x] Add stats section with gradient numbers (10+, 1000+, 50+, 95%)
+- [x] Build featured courses preview with image cards
+- [x] Add testimonials section with 2 cards
+- [x] Create final CTA section with dark gradient background
+
+### Interactive Elements
+- [x] Add gradient buttons with hover effects
+- [x] Implement card hover effects with border color changes
+- [x] Add image hover scale animations
+- [x] Create link buttons with arrow icons
+- [x] Add shadow effects on gradient buttons
+
+### Content Updates
+- [x] Update hero tagline to "Learn, Grow, and Transform with AI"
+- [x] Add "Get started for FREE" CTA button
+- [x] Update feature descriptions with detailed benefits
+- [x] Add course category badges (BUSINESS, EDUCATION)
+- [x] Update testimonial quotes and author details
+- [x] Add final CTA "Are you ready to make a difference in the world?"
+
+### Responsive Design
+- [ ] Test mobile layout for hero section
+- [ ] Test tablet layout for 3-column features (should stack to 1 column)
+- [ ] Test mobile navigation and buttons
+- [ ] Verify image scaling on different screen sizes
+- [ ] Test wave divider responsiveness
