@@ -19,22 +19,22 @@ export default function Home() {
           {/* Animated background pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
           
-          <div className="container relative py-24 md:py-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8 z-10">
-                <div className="space-y-4">
-                  <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                    <span className="block text-white/90 italic text-3xl md:text-4xl font-light mb-2">
+          <div className="container relative py-16 md:py-24 lg:py-32">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div className="space-y-6 md:space-y-8 z-10">
+                <div className="space-y-3 md:space-y-4">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                    <span className="block text-white/90 italic text-2xl sm:text-3xl md:text-4xl font-light mb-1 md:mb-2">
                       Where Your
                     </span>
                     <span className="block bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
                       AI Journey
                     </span>
-                    <span className="block text-white italic text-3xl md:text-4xl font-light mt-2">
+                    <span className="block text-white italic text-2xl sm:text-3xl md:text-4xl font-light mt-1 md:mt-2">
                       Happens
                     </span>
                   </h1>
-                  <p className="text-xl md:text-2xl text-white/80 max-w-lg">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-lg">
                     Learn, Grow, and Transform with AI
                   </p>
                 </div>
@@ -59,7 +59,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="relative lg:block hidden">
+              <div className="relative hidden lg:block">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20 border-2 border-green-500/20">
                   <img 
                     src="/images/hero-ai-training.jpg" 
@@ -100,13 +100,13 @@ export default function Home() {
         </section>
 
         {/* Three Column Features */}
-        <section className="py-20 bg-card/50">
+        <section className="py-12 md:py-16 lg:py-20 bg-card/50">
           <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
               {/* Learn */}
               <div className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center border border-green-500/30">
-                  <BookOpen className="text-green-500" size={32} />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center border border-green-500/30">
+                  <BookOpen className="text-green-500" size={28} />
                 </div>
                 <h3 className="text-2xl font-bold">Learn</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -135,8 +135,8 @@ export default function Home() {
 
               {/* Grow */}
               <div className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
-                  <TrendingUp className="text-teal-500" size={32} />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
+                  <TrendingUp className="text-teal-500" size={28} />
                 </div>
                 <h3 className="text-2xl font-bold">Grow</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -171,8 +171,8 @@ export default function Home() {
 
               {/* Opportunities */}
               <div className="space-y-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-yellow-500/20 flex items-center justify-center border border-cyan-500/30">
-                  <Sparkles className="text-cyan-500" size={32} />
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-yellow-500/20 flex items-center justify-center border border-cyan-500/30">
+                  <Sparkles className="text-cyan-500" size={28} />
                 </div>
                 <h3 className="text-2xl font-bold">Opportunities</h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -199,43 +199,43 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-background">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="text-center space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">10+</div>
-                <div className="text-sm text-muted-foreground">Flagship Courses</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center space-y-1 md:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">10+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Flagship Courses</div>
               </div>
-              <div className="text-center space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">1,000+</div>
-                <div className="text-sm text-muted-foreground">Students Trained</div>
+              <div className="text-center space-y-1 md:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">1,000+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Students Trained</div>
               </div>
-              <div className="text-center space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-yellow-500 bg-clip-text text-transparent">50+</div>
-                <div className="text-sm text-muted-foreground">Business Partners</div>
+              <div className="text-center space-y-1 md:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-yellow-500 bg-clip-text text-transparent">50+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Business Partners</div>
               </div>
-              <div className="text-center space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 to-green-500 bg-clip-text text-transparent">95%</div>
-                <div className="text-sm text-muted-foreground">Success Rate</div>
+              <div className="text-center space-y-1 md:space-y-2">
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 to-green-500 bg-clip-text text-transparent">95%</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Featured Courses Preview */}
-        <section className="py-20 bg-card/30">
+        <section className="py-12 md:py-16 lg:py-20 bg-card/30">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Learning Journey</h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">Start Your Learning Journey</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
                 Choose from our comprehensive AI courses designed for professionals, businesses, and organizations
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
               {/* Course category cards */}
               <Card className="border-2 hover:border-green-500/50 transition-all hover:shadow-lg group overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src="/images/ai-workshop.jpg" 
                     alt="AI for Business" 
@@ -267,7 +267,7 @@ export default function Home() {
               </Card>
 
               <Card className="border-2 hover:border-teal-500/50 transition-all hover:shadow-lg group overflow-hidden">
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src="/images/team-collaboration.jpg" 
                     alt="AI for Education" 
@@ -299,9 +299,9 @@ export default function Home() {
               </Card>
             </div>
 
-            <div className="text-center">
+            <div className="text-center px-4">
               <Link href="/learn">
-                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white">
+                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white w-full sm:w-auto">
                   View All Courses
                   <ArrowRight className="ml-2" size={20} />
                 </Button>
@@ -311,26 +311,26 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-background">
+        <section className="py-12 md:py-16 lg:py-20 bg-background">
           <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Testimonials</h2>
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4">Testimonials</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
               <Card className="border-2">
                 <CardContent className="pt-6">
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground italic">
+                  <div className="space-y-3 md:space-y-4">
+                    <p className="text-sm sm:text-base text-muted-foreground italic">
                       "An amazing AI learning platform, and so easy to use by people at all levels and anywhere in the world."
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white font-bold">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white font-bold text-sm sm:text-base">
                         SM
                       </div>
                       <div>
-                        <div className="font-semibold">Sarah Mitchell</div>
-                        <div className="text-sm text-muted-foreground">Business Transformation Lead</div>
+                        <div className="font-semibold text-sm sm:text-base">Sarah Mitchell</div>
+                        <div className="text-xs sm:text-sm text-muted-foreground">Business Transformation Lead</div>
                       </div>
                     </div>
                   </div>
@@ -339,17 +339,17 @@ export default function Home() {
 
               <Card className="border-2">
                 <CardContent className="pt-6">
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground italic">
+                  <div className="space-y-3 md:space-y-4">
+                    <p className="text-sm sm:text-base text-muted-foreground italic">
                       "Everything you need to start learning AI is here, and there are many interesting courses that aren't found on the internet!"
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-white font-bold text-sm sm:text-base">
                         JC
                       </div>
                       <div>
-                        <div className="font-semibold">James Chen</div>
-                        <div className="text-sm text-muted-foreground">AI Development Manager</div>
+                        <div className="font-semibold text-sm sm:text-base">James Chen</div>
+                        <div className="text-xs sm:text-sm text-muted-foreground">AI Development Manager</div>
                       </div>
                     </div>
                   </div>
@@ -360,25 +360,25 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
           
-          <div className="container text-center relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <div className="container text-center relative z-10 px-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
               Are you ready to make a difference in the world?
             </h2>
-            <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto">
               The future of AI depends on you. Are you ready to get started?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/learn">
-                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white shadow-lg shadow-green-500/30">
+                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white shadow-lg shadow-green-500/30 w-full sm:w-auto">
                   Start Learning Today
                   <Sparkles className="ml-2" size={20} />
                 </Button>
               </Link>
               <Link href="/consult">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto">
                   Book a Consultation
                 </Button>
               </Link>
