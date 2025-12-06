@@ -5,9 +5,19 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { ArrowRight, BookOpen, Zap, Users, Target, Sparkles, Award, TrendingUp, CheckCircle2 } from "lucide-react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 export default function Home() {
   const { user, isAuthenticated } = useAuth();
+  
+  // Animation hooks for each section
+  const heroSection = useIntersectionObserver({ threshold: 0.1 });
+  const socialProofSection = useIntersectionObserver({ threshold: 0.2 });
+  const featuresSection = useIntersectionObserver({ threshold: 0.1 });
+  const statsSection = useIntersectionObserver({ threshold: 0.2 });
+  const coursesSection = useIntersectionObserver({ threshold: 0.1 });
+  const testimonialsSection = useIntersectionObserver({ threshold: 0.1 });
+  const ctaSection = useIntersectionObserver({ threshold: 0.2 });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -15,7 +25,12 @@ export default function Home() {
       
       <main className="flex-1 pt-16">
         {/* Hero Section - TheConstruct.ai inspired */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <section 
+          ref={heroSection.elementRef as React.RefObject<HTMLElement>}
+          className={`relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white transition-opacity duration-700 ${
+            heroSection.isVisible ? 'animate-fade-in' : 'opacity-0-initial'
+          }`}
+        >
           {/* Animated background pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
           
@@ -81,7 +96,12 @@ export default function Home() {
         </section>
 
         {/* Social Proof Section */}
-        <section className="py-12 bg-background">
+        <section 
+          ref={socialProofSection.elementRef as React.RefObject<HTMLElement>}
+          className={`py-12 bg-background transition-all duration-700 ${
+            socialProofSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+          }`}
+        >
           <div className="container">
             <div className="text-center mb-8">
               <p className="text-lg text-muted-foreground">
@@ -100,11 +120,16 @@ export default function Home() {
         </section>
 
         {/* Three Column Features */}
-        <section className="py-12 md:py-16 lg:py-20 bg-card/50">
+        <section 
+          ref={featuresSection.elementRef as React.RefObject<HTMLElement>}
+          className="py-12 md:py-16 lg:py-20 bg-card/50"
+        >
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
               {/* Learn */}
-              <div className="space-y-4">
+              <div className={`space-y-4 transition-all duration-700 ${
+                featuresSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+              }`}>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center border border-green-500/30">
                   <BookOpen className="text-green-500" size={28} />
                 </div>
@@ -134,7 +159,9 @@ export default function Home() {
               </div>
 
               {/* Grow */}
-              <div className="space-y-4">
+              <div className={`space-y-4 transition-all duration-700 ${
+                featuresSection.isVisible ? 'animate-fade-in-delay-1' : 'opacity-0-initial'
+              }`}>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
                   <TrendingUp className="text-teal-500" size={28} />
                 </div>
@@ -170,7 +197,9 @@ export default function Home() {
               </div>
 
               {/* Opportunities */}
-              <div className="space-y-4">
+              <div className={`space-y-4 transition-all duration-700 ${
+                featuresSection.isVisible ? 'animate-fade-in-delay-2' : 'opacity-0-initial'
+              }`}>
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-yellow-500/20 flex items-center justify-center border border-cyan-500/30">
                   <Sparkles className="text-cyan-500" size={28} />
                 </div>
@@ -199,7 +228,12 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-16 bg-background">
+        <section 
+          ref={statsSection.elementRef as React.RefObject<HTMLElement>}
+          className={`py-12 md:py-16 bg-background transition-all duration-700 ${
+            statsSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+          }`}
+        >
           <div className="container">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <div className="text-center space-y-1 md:space-y-2">
@@ -223,7 +257,10 @@ export default function Home() {
         </section>
 
         {/* Featured Courses Preview */}
-        <section className="py-12 md:py-16 lg:py-20 bg-card/30">
+        <section 
+          ref={coursesSection.elementRef as React.RefObject<HTMLElement>}
+          className="py-12 md:py-16 lg:py-20 bg-card/30"
+        >
           <div className="container">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">Start Your Learning Journey</h2>
@@ -234,7 +271,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
               {/* Course category cards */}
-              <Card className="border-2 hover:border-green-500/50 transition-all hover:shadow-lg group overflow-hidden">
+              <Card className={`border-2 hover:border-green-500/50 transition-all hover:shadow-lg group overflow-hidden ${
+                coursesSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+              }`}>
                 <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src="/images/ai-workshop.jpg" 
@@ -266,7 +305,9 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 hover:border-teal-500/50 transition-all hover:shadow-lg group overflow-hidden">
+              <Card className={`border-2 hover:border-teal-500/50 transition-all hover:shadow-lg group overflow-hidden ${
+                coursesSection.isVisible ? 'animate-fade-in-delay-1' : 'opacity-0-initial'
+              }`}>
                 <div className="relative h-40 sm:h-48 overflow-hidden">
                   <img 
                     src="/images/team-collaboration.jpg" 
@@ -311,7 +352,12 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-12 md:py-16 lg:py-20 bg-background">
+        <section 
+          ref={testimonialsSection.elementRef as React.RefObject<HTMLElement>}
+          className={`py-12 md:py-16 lg:py-20 bg-background transition-all duration-700 ${
+            testimonialsSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+          }`}
+        >
           <div className="container">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 px-4">Testimonials</h2>
@@ -360,7 +406,12 @@ export default function Home() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <section 
+          ref={ctaSection.elementRef as React.RefObject<HTMLElement>}
+          className={`py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden transition-all duration-700 ${
+            ctaSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+          }`}
+        >
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
           
           <div className="container text-center relative z-10 px-4">

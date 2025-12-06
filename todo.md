@@ -668,3 +668,19 @@
 - [x] Test all interactive elements with touch (full-width buttons on mobile)
 - [x] Verify spacing and padding consistency (progressive spacing system)
 - [ ] Test on various screen sizes (320px, 375px, 768px, 1024px) - needs manual device testing
+
+
+## Scroll-Triggered Animations
+
+### Animation Implementation
+- [x] Create useIntersectionObserver custom hook
+- [x] Add fade-in animation to hero section
+- [x] Add fade-in animation to social proof section
+- [x] Add staggered fade-in for three-column features (0.1s, 0.2s delays)
+- [x] Add fade-in animation to stats section
+- [x] Add staggered fade-in for course cards (0.1s delay)
+- [x] Add fade-in animation to testimonials section
+- [x] Add fade-in animation to final CTA section
+- [x] Test animation performance on desktop (smooth, no lag)
+- [x] Ensure animations respect prefers-reduced-motion (auto-disabled)
+- [x] Verify animations trigger at appropriate scroll positions (10-20% threshold)
