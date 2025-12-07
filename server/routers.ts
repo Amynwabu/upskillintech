@@ -517,6 +517,44 @@ export const appRouter = router({
         return comments;
       }),
   }),
+
+  // Newsletter management
+  newsletter: router({
+    subscribe: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email("Please enter a valid email address"),
+        })
+      )
+      .mutation(async ({ input }) => {
+        const result = await db.subscribeToNewsletter(input.email);
+        return result;
+      }),
+
+    unsubscribe: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        await db.unsubscribeFromNewsletter(input.email);
+        return { success: true, message: "Successfully unsubscribed from newsletter" };
+      }),
+
+    getSubscribers: protectedProcedure
+      .input(
+        z
+          .object({
+            status: z.enum(["active", "unsubscribed"]).optional(),
+          })
+          .optional()
+      )
+      .query(async ({ input }) => {
+        const subscribers = await db.getNewsletterSubscribers(input?.status);
+        return subscribers;
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

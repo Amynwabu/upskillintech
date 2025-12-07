@@ -15,7 +15,9 @@ import {
   InsertCertificate,
   communityPosts,
   communityComments,
-  postLikes
+  postLikes,
+  newsletterSubscribers,
+  InsertNewsletterSubscriber
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -981,4 +983,84 @@ export async function hasUserLikedPost(postId: number, userId: number) {
     .limit(1);
     
   return result.length > 0;
+}
+
+
+// ============================================
+// NEWSLETTER MANAGEMENT
+// ============================================
+
+export async function subscribeToNewsletter(email: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  try {
+    // Check if email already exists
+    const existing = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email))
+      .limit(1);
+
+    if (existing.length > 0) {
+      const subscriber = existing[0];
+      
+      // If previously unsubscribed, reactivate
+      if (subscriber.status === "unsubscribed") {
+        await db
+          .update(newsletterSubscribers)
+          .set({
+            status: "active",
+            subscribedAt: new Date(),
+            unsubscribedAt: null,
+          })
+          .where(eq(newsletterSubscribers.id, subscriber.id));
+        
+        return { success: true, message: "Successfully resubscribed to newsletter!" };
+      }
+      
+      // Already subscribed
+      return { success: true, message: "You're already subscribed to our newsletter!" };
+    }
+
+    // Create new subscription
+    await db.insert(newsletterSubscribers).values({
+      email,
+      status: "active",
+    });
+
+    return { success: true, message: "Successfully subscribed to newsletter!" };
+  } catch (error) {
+    console.error("[Newsletter] Subscription error:", error);
+    throw new Error("Failed to subscribe to newsletter");
+  }
+}
+
+export async function unsubscribeFromNewsletter(email: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const result = await db
+    .update(newsletterSubscribers)
+    .set({
+      status: "unsubscribed",
+      unsubscribedAt: new Date(),
+    })
+    .where(eq(newsletterSubscribers.email, email));
+
+  return result;
+}
+
+export async function getNewsletterSubscribers(status?: "active" | "unsubscribed") {
+  const db = await getDb();
+  if (!db) return [];
+
+  if (status) {
+    return await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.status, status));
+  }
+
+  return await db.select().from(newsletterSubscribers);
 }

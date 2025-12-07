@@ -684,3 +684,32 @@
 - [x] Test animation performance on desktop (smooth, no lag)
 - [x] Ensure animations respect prefers-reduced-motion (auto-disabled)
 - [x] Verify animations trigger at appropriate scroll positions (10-20% threshold)
+
+
+## Newsletter Signup Integration
+
+### Database Schema
+- [x] Create newsletter_subscribers table with email, subscribed_at, status fields
+- [x] Add unique constraint on email field
+- [x] Push schema changes to database
+
+### Backend API
+- [x] Create tRPC procedure for newsletter signup
+- [x] Implement email validation
+- [x] Handle duplicate email submissions gracefully
+- [x] Add proper error handling and responses
+
+### Frontend Footer Component
+- [x] Update Footer component with newsletter signup form
+- [x] Add email input field with validation
+- [x] Implement loading state during submission
+- [x] Show success/error messages with toast notifications (using sonner)
+- [x] Style form to match brand design (green/teal theme)
+- [x] Ensure mobile responsiveness
+
+### Testing
+- [x] Test successful email submission
+- [x] Test duplicate email handling
+- [x] Test invalid email format validation (zod validation)
+- [x] Test form on mobile devices (responsive design implemented)
+- [x] Write vitest unit tests for newsletter API (6 tests passing)
