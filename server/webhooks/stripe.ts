@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import { stripe } from "../stripe";
 import { ENV } from "../_core/env";
 import { getDb } from "../db";
-import { orders } from "../../drizzle/schema";
+// import { orders } from "../../drizzle/schema"; // DEPRECATED - Marketplace removed
 
 export async function handleStripeWebhook(req: Request, res: Response) {
   const sig = req.headers["stripe-signature"];
@@ -85,22 +85,13 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
     return;
   }
 
-  try {
-    // Create order record
-    await db.insert(orders).values({
-      userId: parseInt(userId),
-      stripeSessionId: session.id,
-      stripePaymentIntentId: session.payment_intent as string,
-      totalAmount: session.amount_total || 0,
-      status: "completed",
-      items: JSON.stringify(session.line_items),
-      completedAt: new Date(),
-    });
-
-    console.log(`[Stripe] Order created for user ${userId}, session ${session.id}`);
-  } catch (error) {
-    console.error("[Stripe] Error creating order:", error);
-  }
+  // DEPRECATED - Marketplace removed, orders table no longer exists
+  // If you need payment processing for courses or other features,
+  // implement course-specific payment handling here
+  console.log(`[Stripe] Checkout completed for user ${userId}, session ${session.id}`);
+  console.log(`[Stripe] Payment amount: ${session.amount_total}`);
+  
+  // TODO: Implement course enrollment or other payment-related logic here
 }
 
 async function handlePaymentFailed(paymentIntent: Stripe.PaymentIntent) {

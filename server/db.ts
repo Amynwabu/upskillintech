@@ -1087,3 +1087,231 @@ export async function getNewsletterSubscribers(status?: "active" | "unsubscribed
 
   return await db.select().from(newsletterSubscribers);
 }
+
+
+// ==================== Blog Functions ====================
+
+/**
+ * Get all blog categories
+ */
+export async function getBlogCategories() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const { blogCategories } = await import("../drizzle/schema");
+  return db.select().from(blogCategories).orderBy(blogCategories.name);
+}
+
+/**
+ * Get all published blog posts with pagination and filtering
+ */
+export async function getBlogPosts(options: {
+  page?: number;
+  limit?: number;
+  categoryId?: number;
+  tag?: string;
+  searchQuery?: string;
+}) {
+  const db = await getDb();
+  if (!db) return { posts: [], total: 0 };
+  
+  const { blogPosts, blogCategories, users } = await import("../drizzle/schema");
+  const { eq, and, like, or, desc, sql } = await import("drizzle-orm");
+  
+  const page = options.page || 1;
+  const limit = options.limit || 10;
+  const offset = (page - 1) * limit;
+  
+  // Build where conditions
+  const conditions = [eq(blogPosts.isPublished, true)];
+  
+  if (options.categoryId) {
+    conditions.push(eq(blogPosts.categoryId, options.categoryId));
+  }
+  
+  if (options.tag) {
+    conditions.push(like(blogPosts.tags, `%${options.tag}%`));
+  }
+  
+  if (options.searchQuery) {
+    conditions.push(
+      or(
+        like(blogPosts.title, `%${options.searchQuery}%`),
+        like(blogPosts.excerpt, `%${options.searchQuery}%`)
+      )!
+    );
+  }
+  
+  const whereClause = conditions.length > 1 ? and(...conditions) : conditions[0];
+  
+  // Get total count
+  const [countResult] = await db
+    .select({ count: sql<number>`count(*)` })
+    .from(blogPosts)
+    .where(whereClause);
+  
+  const total = Number(countResult?.count || 0);
+  
+  // Get posts with author and category info
+  const posts = await db
+    .select({
+      id: blogPosts.id,
+      title: blogPosts.title,
+      slug: blogPosts.slug,
+      excerpt: blogPosts.excerpt,
+      coverImage: blogPosts.coverImage,
+      authorId: blogPosts.authorId,
+      authorName: users.name,
+      authorAvatar: users.avatar,
+      categoryId: blogPosts.categoryId,
+      categoryName: blogCategories.name,
+      categorySlug: blogCategories.slug,
+      tags: blogPosts.tags,
+      publishedAt: blogPosts.publishedAt,
+      views: blogPosts.views,
+      readTime: blogPosts.readTime,
+    })
+    .from(blogPosts)
+    .leftJoin(users, eq(blogPosts.authorId, users.id))
+    .leftJoin(blogCategories, eq(blogPosts.categoryId, blogCategories.id))
+    .where(whereClause)
+    .orderBy(desc(blogPosts.publishedAt))
+    .limit(limit)
+    .offset(offset);
+  
+  return { posts, total, page, limit };
+}
+
+/**
+ * Get a single blog post by slug
+ */
+export async function getBlogPostBySlug(slug: string) {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const { blogPosts, blogCategories, users } = await import("../drizzle/schema");
+  const { eq } = await import("drizzle-orm");
+  
+  const [post] = await db
+    .select({
+      id: blogPosts.id,
+      title: blogPosts.title,
+      slug: blogPosts.slug,
+      excerpt: blogPosts.excerpt,
+      content: blogPosts.content,
+      coverImage: blogPosts.coverImage,
+      authorId: blogPosts.authorId,
+      authorName: users.name,
+      authorAvatar: users.avatar,
+      authorBio: users.bio,
+      categoryId: blogPosts.categoryId,
+      categoryName: blogCategories.name,
+      categorySlug: blogCategories.slug,
+      tags: blogPosts.tags,
+      publishedAt: blogPosts.publishedAt,
+      views: blogPosts.views,
+      readTime: blogPosts.readTime,
+      createdAt: blogPosts.createdAt,
+      updatedAt: blogPosts.updatedAt,
+    })
+    .from(blogPosts)
+    .leftJoin(users, eq(blogPosts.authorId, users.id))
+    .leftJoin(blogCategories, eq(blogPosts.categoryId, blogCategories.id))
+    .where(eq(blogPosts.slug, slug));
+  
+  return post || null;
+}
+
+/**
+ * Increment view count for a blog post
+ */
+export async function incrementBlogPostViews(postId: number) {
+  const db = await getDb();
+  if (!db) return;
+  
+  const { blogPosts } = await import("../drizzle/schema");
+  const { eq, sql } = await import("drizzle-orm");
+  
+  await db
+    .update(blogPosts)
+    .set({ views: sql`${blogPosts.views} + 1` })
+    .where(eq(blogPosts.id, postId));
+}
+
+/**
+ * Get comments for a blog post
+ */
+export async function getBlogComments(postId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const { blogComments, users } = await import("../drizzle/schema");
+  const { eq, desc } = await import("drizzle-orm");
+  
+  return db
+    .select({
+      id: blogComments.id,
+      postId: blogComments.postId,
+      userId: blogComments.userId,
+      userName: users.name,
+      userAvatar: users.avatar,
+      content: blogComments.content,
+      createdAt: blogComments.createdAt,
+    })
+    .from(blogComments)
+    .leftJoin(users, eq(blogComments.userId, users.id))
+    .where(eq(blogComments.postId, postId))
+    .orderBy(desc(blogComments.createdAt));
+}
+
+/**
+ * Add a comment to a blog post
+ */
+export async function addBlogComment(postId: number, userId: number, content: string) {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const { blogComments } = await import("../drizzle/schema");
+  
+  const [result] = await db.insert(blogComments).values({
+    postId,
+    userId,
+    content,
+  });
+  
+  return result.insertId;
+}
+
+/**
+ * Get related blog posts (same category, excluding current post)
+ */
+export async function getRelatedBlogPosts(postId: number, categoryId: number, limit: number = 3) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const { blogPosts, users } = await import("../drizzle/schema");
+  const { eq, and, ne, desc } = await import("drizzle-orm");
+  
+  return db
+    .select({
+      id: blogPosts.id,
+      title: blogPosts.title,
+      slug: blogPosts.slug,
+      excerpt: blogPosts.excerpt,
+      coverImage: blogPosts.coverImage,
+      authorName: users.name,
+      publishedAt: blogPosts.publishedAt,
+      readTime: blogPosts.readTime,
+    })
+    .from(blogPosts)
+    .leftJoin(users, eq(blogPosts.authorId, users.id))
+    .where(
+      and(
+        eq(blogPosts.categoryId, categoryId),
+        ne(blogPosts.id, postId),
+        eq(blogPosts.isPublished, true)
+      )
+    )
+    .orderBy(desc(blogPosts.publishedAt))
+    .limit(limit);
+}

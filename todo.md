@@ -744,3 +744,63 @@
 - [ ] Verify email delivery to test address (requires user to add valid SendGrid API key)
 - [x] Test error handling when SendGrid fails (logs warning, doesn't break subscription)
 - [x] Ensure subscription still works if email fails (all 6 newsletter tests passing)
+
+
+
+## Replace Marketplace with Blog Page
+
+### Remove Marketplace
+- [ ] Remove Marketplace link from Navigation component
+- [ ] Remove Marketplace link from Footer component
+- [ ] Remove /marketplace route from App.tsx
+- [ ] Delete client/src/pages/Marketplace.tsx file
+- [ ] Remove marketplace-related database tables (products, orders)
+- [ ] Remove marketplace-related tRPC procedures
+
+### Blog Database Schema
+- [x] Create blogPosts table (id, title, slug, excerpt, content, coverImage, author, category, tags, publishedAt, views, readTime)
+- [x] Create blogCategories table (id, name, slug, description)
+- [x] Create blogComments table (id, postId, userId, content, createdAt)
+- [x] Add database helper functions for blog operations (getBlogCategories, getBlogPosts, getBlogPostBySlug, incrementBlogPostViews, getBlogComments, addBlogComment, getRelatedBlogPosts)
+- [x] Run pnpm db:push to apply schema changes
+
+### Blog tRPC Procedures
+- [x] Create blog.getPosts procedure (with pagination, filtering by category/tag)
+- [x] Create blog.getPostBySlug procedure (with view count increment)
+- [x] Create blog.getCategories procedure
+- [x] Create blog.addComment procedure (protected)
+- [x] Create blog.getComments procedure
+- [x] Create blog.getRelatedPosts procedure
+
+### Blog Page Design (Futuristic Style)
+- [x] Create client/src/pages/Blog.tsx with futuristic design
+- [x] Hero section with animated gradient background and gradient orbs
+- [x] Blog grid with holographic card effects and hover animations
+- [x] Category filter chips with neon glow effects
+- [x] Search functionality with futuristic input design
+- [x] Pagination with animated transitions
+- [x] Responsive design for mobile/tablet
+
+### Blog Post Detail Page
+- [x] Create client/src/pages/BlogPost.tsx
+- [x] Full-width cover image with gradient overlay
+- [x] Article content rendering with typography
+- [x] Author bio section with gradient avatar
+- [x] Related posts section with 3 post cards
+- [x] Comments section with real-time updates via tRPC
+- [x] Comment form for authenticated users
+- [x] Tags display
+
+### Navigation Updates
+- [x] Add Blog link to Navigation component (replace Marketplace)
+- [x] Add Blog link to Footer component (replace Marketplace)
+- [x] Add /blog and /blog/:slug routes to App.tsx
+- [ ] Update homepage to feature latest blog posts (optional)
+
+### Testing
+- [x] Seed database with 5 sample blog posts and 4 categories
+- [x] Test blog listing page with filters in browser (working - futuristic design with gradient hero, category filters, blog cards)
+- [x] Test blog post detail page in browser (working - cover image, content, tags, related posts, comments section)
+- [ ] Test comment functionality (requires user to post comment)
+- [ ] Test responsive design on mobile
+- [x] Commented out Marketplace-related code (products/orders tables, stripe webhook)

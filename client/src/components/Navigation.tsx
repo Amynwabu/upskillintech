@@ -19,7 +19,7 @@ export default function Navigation() {
     { href: "/apply", label: "Apply" },
     { href: "/consult", label: "Consult" },
     { href: "/community", label: "Community" },
-    { href: "#marketplace", label: "Marketplace" },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (

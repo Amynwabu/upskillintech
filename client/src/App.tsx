@@ -16,6 +16,8 @@ import Profile from "./pages/Profile";
 import CourseDetail from "./pages/CourseDetail";
 import Apply from "./pages/Apply";
 import Consult from "./pages/Consult";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -32,6 +34,8 @@ function Router() {
       <Route path={"/learning/:courseId"} component={LearningPlayer} />
       <Route path={"/templates"} component={Templates} />
       <Route path={"/community"} component={Community} />
+      <Route path={"/blog"} component={Blog} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

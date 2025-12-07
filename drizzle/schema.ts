@@ -211,9 +211,62 @@ export type TemplateDeployment = typeof templateDeployments.$inferSelect;
 export type InsertTemplateDeployment = typeof templateDeployments.$inferInsert;
 
 /**
- * Marketplace products
+ * Blog categories
  */
-export const products = mysqlTable("products", {
+export const blogCategories = mysqlTable("blog_categories", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 100 }).notNull(),
+  slug: varchar("slug", { length: 100 }).notNull().unique(),
+  description: text("description"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BlogCategory = typeof blogCategories.$inferSelect;
+export type InsertBlogCategory = typeof blogCategories.$inferInsert;
+
+/**
+ * Blog posts
+ */
+export const blogPosts = mysqlTable("blog_posts", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
+  excerpt: text("excerpt"),
+  content: text("content").notNull(),
+  coverImage: text("coverImage"),
+  authorId: int("authorId").notNull(),
+  categoryId: int("categoryId").notNull(),
+  tags: text("tags"),
+  publishedAt: timestamp("publishedAt"),
+  views: int("views").default(0).notNull(),
+  readTime: int("readTime").default(5).notNull(),
+  isPublished: boolean("isPublished").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogPost = typeof blogPosts.$inferSelect;
+export type InsertBlogPost = typeof blogPosts.$inferInsert;
+
+/**
+ * Blog comments
+ */
+export const blogComments = mysqlTable("blog_comments", {
+  id: int("id").autoincrement().primaryKey(),
+  postId: int("postId").notNull(),
+  userId: int("userId").notNull(),
+  content: text("content").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogComment = typeof blogComments.$inferSelect;
+export type InsertBlogComment = typeof blogComments.$inferInsert;
+
+/**
+ * Marketplace products (DEPRECATED - Replaced by Blog)
+ */
+/* export const products = mysqlTable("products", {
   id: int("id").autoincrement().primaryKey(),
   title: varchar("title", { length: 255 }).notNull(),
   description: text("description"),
@@ -233,12 +286,12 @@ export const products = mysqlTable("products", {
 });
 
 export type Product = typeof products.$inferSelect;
-export type InsertProduct = typeof products.$inferInsert;
+export type InsertProduct = typeof products.$inferInsert; */
 
 /**
- * Orders
+ * Orders (DEPRECATED - Replaced by Blog)
  */
-export const orders = mysqlTable("orders", {
+/* export const orders = mysqlTable("orders", {
   id: int("id").autoincrement().primaryKey(),
   userId: int("userId").notNull(),
   stripeSessionId: varchar("stripeSessionId", { length: 255 }),
@@ -251,7 +304,7 @@ export const orders = mysqlTable("orders", {
 });
 
 export type Order = typeof orders.$inferSelect;
-export type InsertOrder = typeof orders.$inferInsert;
+export type InsertOrder = typeof orders.$inferInsert; */
 
 /**
  * Notifications

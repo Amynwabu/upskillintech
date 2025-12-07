@@ -555,6 +555,71 @@ export const appRouter = router({
         return subscribers;
       }),
   }),
+
+  // Blog management
+  blog: router({
+    getCategories: publicProcedure.query(async () => {
+      return db.getBlogCategories();
+    }),
+
+    getPosts: publicProcedure
+      .input(
+        z.object({
+          page: z.number().min(1).default(1),
+          limit: z.number().min(1).max(50).default(10),
+          categoryId: z.number().optional(),
+          tag: z.string().optional(),
+          searchQuery: z.string().optional(),
+        })
+      )
+      .query(async ({ input }) => {
+        return db.getBlogPosts(input);
+      }),
+
+    getPostBySlug: publicProcedure
+      .input(z.object({ slug: z.string() }))
+      .query(async ({ input }) => {
+        const post = await db.getBlogPostBySlug(input.slug);
+        if (!post) {
+          throw new Error("Blog post not found");
+        }
+        
+        // Increment view count
+        await db.incrementBlogPostViews(post.id);
+        
+        return post;
+      }),
+
+    getComments: publicProcedure
+      .input(z.object({ postId: z.number() }))
+      .query(async ({ input }) => {
+        return db.getBlogComments(input.postId);
+      }),
+
+    addComment: protectedProcedure
+      .input(
+        z.object({
+          postId: z.number(),
+          content: z.string().min(1).max(1000),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const commentId = await db.addBlogComment(input.postId, ctx.user.id, input.content);
+        return { commentId };
+      }),
+
+    getRelatedPosts: publicProcedure
+      .input(
+        z.object({
+          postId: z.number(),
+          categoryId: z.number(),
+          limit: z.number().min(1).max(10).default(3),
+        })
+      )
+      .query(async ({ input }) => {
+        return db.getRelatedBlogPosts(input.postId, input.categoryId, input.limit);
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
