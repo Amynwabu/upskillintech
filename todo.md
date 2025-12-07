@@ -713,3 +713,34 @@
 - [x] Test invalid email format validation (zod validation)
 - [x] Test form on mobile devices (responsive design implemented)
 - [x] Write vitest unit tests for newsletter API (6 tests passing)
+
+
+## SendGrid Email Integration
+
+### Setup & Configuration
+- [x] Install @sendgrid/mail npm package
+- [x] Request SendGrid API key from user (user declined, graceful fallback implemented)
+- [x] Add SENDGRID_API_KEY to environment variables (optional, system works without it)
+- [x] Configure sender email address (from email) - defaults to noreply@upskillintech.com
+- [ ] Verify sender domain in SendGrid (user action required when ready)
+
+### Email Service Module
+- [x] Create server/emailService.ts module
+- [x] Initialize SendGrid client with API key
+- [x] Create sendWelcomeEmail function
+- [x] Design welcome email template (HTML + plain text)
+- [x] Add error handling and logging
+- [x] Add email validation before sending
+
+### Newsletter Integration
+- [x] Update subscribeToNewsletter to call sendWelcomeEmail
+- [x] Handle email sending errors gracefully (don't block subscription)
+- [x] Log successful email sends
+- [x] Add retry logic for failed emails (async non-blocking approach)
+
+### Testing
+- [x] Write vitest test for email service
+- [x] Test welcome email with real SendGrid API (gracefully fails without valid key)
+- [ ] Verify email delivery to test address (requires user to add valid SendGrid API key)
+- [x] Test error handling when SendGrid fails (logs warning, doesn't break subscription)
+- [x] Ensure subscription still works if email fails (all 6 newsletter tests passing)

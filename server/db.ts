@@ -1002,6 +1002,9 @@ export async function subscribeToNewsletter(email: string) {
       .where(eq(newsletterSubscribers.email, email))
       .limit(1);
 
+    let isNewSubscriber = false;
+    let isResubscribe = false;
+
     if (existing.length > 0) {
       const subscriber = existing[0];
       
@@ -1016,20 +1019,40 @@ export async function subscribeToNewsletter(email: string) {
           })
           .where(eq(newsletterSubscribers.id, subscriber.id));
         
-        return { success: true, message: "Successfully resubscribed to newsletter!" };
+        isResubscribe = true;
+      } else {
+        // Already subscribed
+        return { success: true, message: "You're already subscribed to our newsletter!" };
       }
-      
-      // Already subscribed
-      return { success: true, message: "You're already subscribed to our newsletter!" };
+    } else {
+      // Create new subscription
+      await db.insert(newsletterSubscribers).values({
+        email,
+        status: "active",
+      });
+      isNewSubscriber = true;
     }
 
-    // Create new subscription
-    await db.insert(newsletterSubscribers).values({
-      email,
-      status: "active",
-    });
+    // Send welcome email (non-blocking - don't fail subscription if email fails)
+    if (isNewSubscriber || isResubscribe) {
+      // Import dynamically to avoid circular dependencies
+      import('./emailService').then(async ({ sendWelcomeEmail }) => {
+        const emailResult = await sendWelcomeEmail(email);
+        if (emailResult.success) {
+          console.log(`[Newsletter] Welcome email sent to ${email}`);
+        } else {
+          console.warn(`[Newsletter] Failed to send welcome email to ${email}:`, emailResult.error);
+        }
+      }).catch(err => {
+        console.error('[Newsletter] Error importing email service:', err);
+      });
+    }
 
-    return { success: true, message: "Successfully subscribed to newsletter!" };
+    const message = isResubscribe 
+      ? "Successfully resubscribed to newsletter!" 
+      : "Successfully subscribed to newsletter!";
+    
+    return { success: true, message };
   } catch (error) {
     console.error("[Newsletter] Subscription error:", error);
     throw new Error("Failed to subscribe to newsletter");
