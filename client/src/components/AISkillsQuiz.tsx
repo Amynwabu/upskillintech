@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import SocialShareButtons from "@/components/SocialShareButtons";
 import { 
   quizQuestions, 
   learningPaths, 
@@ -149,6 +150,11 @@ export default function AISkillsQuiz() {
             >
               Retake Quiz
             </Button>
+          </div>
+
+          {/* Social Share Buttons */}
+          <div className="pt-6 border-t border-border">
+            <SocialShareButtons learningPath={recommendedPath} />
           </div>
         </CardContent>
       </Card>
