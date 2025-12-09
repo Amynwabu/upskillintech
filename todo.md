@@ -804,3 +804,18 @@
 - [ ] Test comment functionality (requires user to post comment)
 - [ ] Test responsive design on mobile
 - [x] Commented out Marketplace-related code (products/orders tables, stripe webhook)
+
+
+## Homepage Hero Section Update
+- [x] Find compelling glowy AI-related hero image (professional with glowing data streams)
+- [x] Update hero section with new image
+- [x] Write more compelling hook/headline for hero section ("From AI Curious to AI Confident")
+- [x] Ensure image has glowy/futuristic aesthetic with gradient overlays
+
+## Navigation Tab Rename
+- [x] Rename "Apply" tab to "Transform" (more action-oriented and compelling)
+- [x] Update Navigation component
+- [x] Update Footer component
+- [x] Update App.tsx routes (/apply → /transform)
+- [x] Rename Apply.tsx page file to Transform.tsx
+- [x] Update component export name

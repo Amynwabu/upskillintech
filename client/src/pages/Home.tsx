@@ -38,19 +38,20 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div className="space-y-6 md:space-y-8 z-10">
                 <div className="space-y-3 md:space-y-4">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 mb-4">
+                    <Sparkles className="text-green-400" size={18} />
+                    <span className="text-sm font-medium text-green-400">AI-Powered Career Transformation</span>
+                  </div>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                    <span className="block text-white/90 italic text-2xl sm:text-3xl md:text-4xl font-light mb-1 md:mb-2">
-                      Where Your
+                    <span className="block text-white">
+                      From AI Curious to
                     </span>
-                    <span className="block bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                      AI Journey
-                    </span>
-                    <span className="block text-white italic text-2xl sm:text-3xl md:text-4xl font-light mt-1 md:mt-2">
-                      Happens
+                    <span className="block bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mt-2">
+                      AI Confident
                     </span>
                   </h1>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-lg">
-                    Learn, Grow, and Transform with AI
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-lg leading-relaxed">
+                    Master AI skills that matter. Transform your career with hands-on training designed for real-world impact.
                   </p>
                 </div>
 
@@ -75,13 +76,15 @@ export default function Home() {
               </div>
 
               <div className="relative hidden lg:block">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20 border-2 border-green-500/20">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/30">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-green-500/20 blur-3xl"></div>
                   <img 
-                    src="/images/hero-ai-training.jpg" 
-                    alt="Professional AI Training Workshop" 
-                    className="w-full h-auto object-cover"
+                    src="/images/hero-ai-glow.jpg" 
+                    alt="AI Technology Visualization" 
+                    className="w-full h-auto object-cover relative z-10 rounded-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent z-20"></div>
+                  <div className="absolute inset-0 border-2 border-gradient-to-r from-cyan-500/30 to-green-500/30 rounded-2xl z-30"></div>
                 </div>
               </div>
             </div>

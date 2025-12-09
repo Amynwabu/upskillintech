@@ -14,7 +14,7 @@ import Community from "./pages/Community";
 import Learn from "./pages/Learn";
 import Profile from "./pages/Profile";
 import CourseDetail from "./pages/CourseDetail";
-import Apply from "./pages/Apply";
+import Transform from "./pages/Transform";
 import Consult from "./pages/Consult";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -25,7 +25,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/learn"} component={Learn} />
-      <Route path={"/apply"} component={Apply} />
+      <Route path={"/transform"} component={Transform} />
       <Route path={"/consult"} component={Consult} />
       <Route path={"/course/:id"} component={CourseDetail} />
       <Route path={"/profile"} component={Profile} />

@@ -16,7 +16,7 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/learn", label: "Learn" },
-    { href: "/apply", label: "Apply" },
+    { href: "/transform", label: "Transform" },
     { href: "/consult", label: "Consult" },
     { href: "/community", label: "Community" },
     { href: "/blog", label: "Blog" },
