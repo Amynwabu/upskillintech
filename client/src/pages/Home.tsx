@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Link } from "wouter";
 import { ArrowRight, BookOpen, Zap, Users, Target, Sparkles, Award, TrendingUp, CheckCircle2 } from "lucide-react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import AISkillsQuiz from "@/components/AISkillsQuiz";
 
 export default function Home() {
   const { user, isAuthenticated } = useAuth();
@@ -256,6 +257,23 @@ export default function Home() {
                 <div className="text-xs sm:text-sm text-muted-foreground">Success Rate</div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* AI Skills Assessment Quiz */}
+        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
+          <div className="container">
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 mb-4">
+                <Sparkles className="text-green-400" size={18} />
+                <span className="text-sm font-medium text-green-600 dark:text-green-400">Personalized for You</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">Find Your Perfect Learning Path</h2>
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
+                Take our quick 2-minute assessment and get personalized course recommendations tailored to your goals
+              </p>
+            </div>
+            <AISkillsQuiz />
           </div>
         </section>
 
