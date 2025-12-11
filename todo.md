@@ -935,3 +935,13 @@
 - [x] Update social media icons to LinkedIn and TikTok only
 - [x] Connect all footer links to actual pages
 - [x] Test all footer navigation links (all clickable and properly routed)
+
+
+## Footer Newsletter Signup
+- [x] Add newsletter signup section to Footer component
+- [x] Create email input field with validation
+- [x] Add subscribe button with loading state
+- [x] Integrate with existing newsletter.subscribe tRPC procedure
+- [x] Add success/error toast notifications (using sonner)
+- [x] Style newsletter section to match footer design (centered between logo and social icons)
+- [x] Test newsletter subscription flow (form displays correctly, accepts input, integrates with tRPC)

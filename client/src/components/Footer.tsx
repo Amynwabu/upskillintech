@@ -1,10 +1,38 @@
 import { Link } from "wouter";
 import { APP_TITLE } from "@/const";
-import { Linkedin } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { trpc } from "@/lib/trpc";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const subscribeMutation = trpc.newsletter.subscribe.useMutation({
+    onSuccess: () => {
+      toast.success("Successfully subscribed to newsletter!");
+      setEmail("");
+      setIsSubmitting(false);
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to subscribe. Please try again.");
+      setIsSubmitting(false);
+    },
+  });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+    setIsSubmitting(true);
+    subscribeMutation.mutate({ email });
+  };
 
   const footerSections = [
     {
@@ -61,9 +89,10 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-200">
       {/* Main Footer Content */}
       <div className="container py-12">
-        {/* Top Section - Logo & Social */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 pb-8 border-b border-gray-200">
-          <div className="mb-6 md:mb-0">
+        {/* Top Section - Logo, Newsletter & Social */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12 pb-8 border-b border-gray-200">
+          {/* Logo */}
+          <div className="flex-shrink-0">
             <Link href="/">
               <span className="text-2xl font-bold text-black cursor-pointer">
                 {APP_TITLE}
@@ -71,33 +100,64 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex gap-4 items-center">
-            <a
-              href="https://linkedin.com/company/upskillintech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-[#0A66C2] transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5" />
-            </a>
-            <a
-              href="https://tiktok.com/@upskillintech"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black transition-colors"
-              aria-label="TikTok"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+          {/* Newsletter Signup */}
+          <div className="flex-1 max-w-md">
+            <div className="flex items-center gap-2 mb-2">
+              <Mail className="w-5 h-5 text-gray-600" />
+              <h3 className="font-semibold text-black">Stay Updated</h3>
+            </div>
+            <p className="text-sm text-gray-600 mb-4">
+              Get the latest AI insights, course updates, and exclusive content delivered to your inbox.
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1"
+                disabled={isSubmitting}
+                required
+              />
+              <Button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="bg-black hover:bg-gray-800"
               >
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-              </svg>
-            </a>
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
+              </Button>
+            </form>
+          </div>
+
+          {/* Social Icons & CTA */}
+          <div className="flex flex-col items-start lg:items-end gap-4">
+            <div className="flex gap-4 items-center">
+              <a
+                href="https://linkedin.com/company/upskillintech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-[#0A66C2] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://tiktok.com/@upskillintech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-black transition-colors"
+                aria-label="TikTok"
+              >
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg>
+              </a>
+            </div>
             <Link href="/contact">
               <Button variant="outline" size="sm">
                 Contact us
