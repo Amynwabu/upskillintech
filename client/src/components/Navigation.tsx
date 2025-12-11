@@ -19,7 +19,7 @@ export default function Navigation() {
     { href: "/transform", label: "Transform" },
     { href: "/consult", label: "Consult" },
     { href: "/community", label: "Community" },
-    { href: "/blog", label: "Resources" },
+    { href: "/resources", label: "Resources" },
   ];
 
   return (
@@ -28,8 +28,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/">
-            <span className="text-2xl font-bold bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent cursor-pointer">
-              {APP_TITLE}
+            <span className="text-2xl font-bold text-black dark:text-white cursor-pointer">
+              UpskillinTech
             </span>
           </Link>
 

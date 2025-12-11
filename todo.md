@@ -865,3 +865,22 @@
 
 - [x] Rename "Learn" to "Learning" in Navigation component
 - [x] Rename "Learn" to "Learning" in Footer component
+
+
+## Expand Resources Section
+- [x] Create Resources landing page (/resources) with sections for Blog, Research, and Events
+- [x] Keep existing Blog page (/blog) with blog posts (still accessible at /blog)
+- [x] Create Research page (/resources/research) with AI research articles and whitepapers (6 sample papers with search and category filtering)
+- [x] Create Events page (/resources/events) with upcoming workshops, webinars, and conferences (6 sample events with type filtering)
+- [x] Update navigation to link to Resources landing page (/resources)
+- [x] Update Footer to include Resources and Blog links
+- [x] Update App.tsx with new routes (/resources, /resources/research, /resources/events)
+- [ ] Add database schema for research articles (not needed - using static data)
+- [ ] Add database schema for events (not needed - using static data)
+- [ ] Create tRPC procedures for research and events (not needed - using static data)
+
+## Logo Update
+- [x] Change logo from current design to black "UpskillinTech" text
+- [x] Update Navigation component logo (black text with dark mode support)
+- [x] Footer uses APP_TITLE constant (no separate logo)
+- [x] Ensure logo is readable on light background
