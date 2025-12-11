@@ -95,7 +95,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#learn" className="text-muted-foreground hover:text-foreground transition-colors">Learn</a></li>
+              <li><a href="#learn" className="text-muted-foreground hover:text-foreground transition-colors">Learning</a></li>
               <li><a href="#transform" className="text-muted-foreground hover:text-foreground transition-colors">Transform</a></li>
               <li><a href="#consult" className="text-muted-foreground hover:text-foreground transition-colors">Consult</a></li>
               <li><a href="#community" className="text-muted-foreground hover:text-foreground transition-colors">Community</a></li>
@@ -106,7 +106,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
+              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Resources</Link></li>
               <li><Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
               <li><Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link></li>

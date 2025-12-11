@@ -15,11 +15,11 @@ export default function Navigation() {
   const { unreadCount } = useNotifications();
 
   const navLinks = [
-    { href: "/learn", label: "Learn" },
+    { href: "/learn", label: "Learning" },
     { href: "/transform", label: "Transform" },
     { href: "/consult", label: "Consult" },
     { href: "/community", label: "Community" },
-    { href: "/blog", label: "Blog" },
+    { href: "/blog", label: "Resources" },
   ];
 
   return (

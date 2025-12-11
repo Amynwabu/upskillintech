@@ -856,3 +856,12 @@
 - [x] Test share functionality on each platform in browser (Twitter tested successfully - opens X.com share dialog)
 - [x] Ensure proper URL encoding for share text (handled by URLSearchParams)
 - [x] Verify buttons open correct share URLs with proper parameters
+
+
+## Rename Blog to Resources
+- [x] Update Navigation component (change "Blog" to "Resources" in navLinks)
+- [x] Update Footer component (change "Blog" to "Resources")
+- [ ] Verify all navigation links work correctly
+
+- [x] Rename "Learn" to "Learning" in Navigation component
+- [x] Rename "Learn" to "Learning" in Footer component
