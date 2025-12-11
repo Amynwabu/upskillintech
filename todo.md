@@ -884,3 +884,20 @@
 - [x] Update Navigation component logo (black text with dark mode support)
 - [x] Footer uses APP_TITLE constant (no separate logo)
 - [x] Ensure logo is readable on light background
+
+
+## Homepage Restructure (360learning.com Style)
+- [x] Research 360learning.com homepage layout and structure
+- [x] Update navigation menu order: Learning, Consulting, Transform, Resources (with Community dropdown)
+- [x] Reposition logo to match 360learning.com style (left side)
+- [x] Implement Resources dropdown with 5 sub-items
+- [x] Update CTA buttons to match 360learning style (Sign In + Book a demo)
+- [x] Restructure homepage hero section layout (centered, clean white background)
+- [x] Update hero headline to multi-line 360learning style
+- [x] Update CTA buttons to match 360learning ("I want a demo" + "See how it works")
+- [x] Add product screenshot below hero CTAs
+- [x] Move Community link under Resources dropdown menu
+- [x] Implement dropdown functionality for Resources menu (hover and click)
+- [x] Test all navigation links and dropdowns (Resources dropdown working perfectly)
+- [x] Test hero section layout and CTAs
+- [ ] Verify responsive design on mobile (desktop tested successfully)

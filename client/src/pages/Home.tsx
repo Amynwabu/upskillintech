@@ -25,77 +25,64 @@ export default function Home() {
       <Navigation />
       
       <main className="flex-1 pt-16">
-        {/* Hero Section - TheConstruct.ai inspired */}
+        {/* Hero Section - 360learning.com inspired */}
         <section 
           ref={heroSection.elementRef as React.RefObject<HTMLElement>}
-          className={`relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white transition-opacity duration-700 ${
+          className={`relative overflow-hidden bg-white py-20 md:py-32 transition-opacity duration-700 ${
             heroSection.isVisible ? 'animate-fade-in' : 'opacity-0-initial'
           }`}
         >
-          {/* Animated background pattern */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-          
-          <div className="container relative py-16 md:py-24 lg:py-32">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className="space-y-6 md:space-y-8 z-10">
-                <div className="space-y-3 md:space-y-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 mb-4">
-                    <Sparkles className="text-green-400" size={18} />
-                    <span className="text-sm font-medium text-green-400">AI-Powered Career Transformation</span>
-                  </div>
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                    <span className="block text-white">
-                      From AI Curious to
-                    </span>
-                    <span className="block bg-gradient-to-r from-green-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent mt-2">
-                      AI Confident
-                    </span>
-                  </h1>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-lg leading-relaxed">
-                    Master AI skills that matter. Transform your career with hands-on training designed for real-world impact.
-                  </p>
-                </div>
+          <div className="container relative">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 mb-8">
+                <Sparkles className="text-green-600" size={16} />
+                <span className="text-sm font-medium text-green-700">AI-Powered Career Transformation</span>
+              </div>
+              
+              {/* Main Headline - 360learning style: centered, large, multi-line */}
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+                <span className="block text-black">
+                  The learning platform that
+                </span>
+                <span className="block text-black">
+                  combines the{" "}
+                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    power of AI
+                  </span>
+                  {" "}with the
+                </span>
+                <span className="block text-black">
+                  magic of collaborative learning
+                </span>
+              </h1>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/learn">
-                    <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white border-0 shadow-lg shadow-green-500/30">
-                      Get started for FREE
-                    </Button>
-                  </Link>
-                  {isAuthenticated ? (
-                    <Link href="/profile">
-                      <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                        Go to Dashboard
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10">
-                      Log in
-                    </Button>
-                  )}
-                </div>
+              {/* CTA Buttons - 360learning style */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Link href="/onboarding">
+                  <Button size="lg" className="bg-black hover:bg-black/90 text-white px-8">
+                    I want a demo
+                  </Button>
+                </Link>
+                <Link href="/learn">
+                  <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black/5 px-8">
+                    See how it works
+                  </Button>
+                </Link>
               </div>
 
-              <div className="relative hidden lg:block">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-cyan-500/30">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-transparent to-green-500/20 blur-3xl"></div>
+              {/* Product Screenshot/Demo - 360learning style */}
+              <div className="relative mt-12">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <img 
                     src="/images/hero-ai-glow.jpg" 
-                    alt="AI Technology Visualization" 
-                    className="w-full h-auto object-cover relative z-10 rounded-2xl"
+                    alt="AI Learning Platform" 
+                    className="w-full h-auto object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent z-20"></div>
-                  <div className="absolute inset-0 border-2 border-gradient-to-r from-cyan-500/30 to-green-500/30 rounded-2xl z-30"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Wave divider */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-              <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="currentColor" className="text-background"/>
-            </svg>
           </div>
         </section>
 

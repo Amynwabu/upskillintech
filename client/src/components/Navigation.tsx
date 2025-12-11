@@ -4,54 +4,87 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
-import { Menu, X, LogOut, User, Bell } from "lucide-react";
+import { Menu, X, LogOut, User, Bell, ChevronDown } from "lucide-react";
 import { useNotifications } from "@/hooks/useNotifications";
 import { Badge } from "@/components/ui/badge";
 import { APP_TITLE } from "@/const";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
   const { unreadCount } = useNotifications();
 
   const navLinks = [
     { href: "/learn", label: "Learning" },
+    { href: "/consult", label: "Consulting" },
     { href: "/transform", label: "Transform" },
-    { href: "/consult", label: "Consult" },
+  ];
+
+  const resourcesLinks = [
+    { href: "/resources", label: "Resources Hub" },
+    { href: "/blog", label: "Blog" },
+    { href: "/resources/research", label: "Research" },
+    { href: "/resources/events", label: "Events" },
     { href: "/community", label: "Community" },
-    { href: "/resources", label: "Resources" },
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo - Left Side */}
           <Link href="/">
             <span className="text-2xl font-bold text-black dark:text-white cursor-pointer">
               UpskillinTech
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Center/Left after logo */}
+          <div className="hidden md:flex items-center gap-6 flex-1 ml-12">
             {navLinks.map((link) => (
-              link.href.startsWith('#') ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-foreground transition-colors font-medium"
-                >
+              <Link key={link.href} href={link.href}>
+                <span className="text-foreground/80 hover:text-foreground transition-colors font-medium cursor-pointer">
                   {link.label}
-                </a>
-              ) : (
-                <Link key={link.href} href={link.href}>
-                  <span className="text-foreground/80 hover:text-foreground transition-colors font-medium cursor-pointer">
-                    {link.label}
-                  </span>
-                </Link>
-              )
+                </span>
+              </Link>
             ))}
+            
+            {/* Resources Dropdown */}
+            <div className="relative">
+              <button
+                className="flex items-center gap-1 text-foreground/80 hover:text-foreground transition-colors font-medium"
+                onMouseEnter={() => setIsResourcesOpen(true)}
+                onMouseLeave={() => setIsResourcesOpen(false)}
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+              >
+                Resources
+                <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesOpen ? "rotate-180" : ""}`} />
+              </button>
+              
+              {isResourcesOpen && (
+                <div
+                  className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg py-2"
+                  onMouseEnter={() => setIsResourcesOpen(true)}
+                  onMouseLeave={() => setIsResourcesOpen(false)}
+                >
+                  {resourcesLinks.map((link) => (
+                    <Link key={link.href} href={link.href}>
+                      <span
+                        className="block px-4 py-2 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
+                        onClick={() => setIsResourcesOpen(false)}
+                      >
+                        {link.label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right Side Actions */}
+          <div className="hidden md:flex items-center gap-4">
             {isAuthenticated ? (
               <>
                 <Button variant="ghost" size="icon" className="relative" title="Notifications">
@@ -72,7 +105,7 @@ export default function Navigation() {
                         {user?.name?.charAt(0) || "U"}
                       </AvatarFallback>
                     </Avatar>
-                    <span className="hidden md:inline">{user?.name || "Profile"}</span>
+                    <span className="hidden lg:inline">{user?.name || "Profile"}</span>
                   </Button>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => logout()} title="Logout">
@@ -82,13 +115,13 @@ export default function Navigation() {
             ) : (
               <>
                 <a href={getLoginUrl()}>
-                  <Button variant="outline">
-                    Login
+                  <Button variant="ghost" className="text-foreground/80 hover:text-foreground">
+                    Sign In
                   </Button>
                 </a>
                 <Link href="/onboarding">
-                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Start Your Journey
+                  <Button className="bg-black hover:bg-black/90 text-white border-2 border-black">
+                    Book a demo
                   </Button>
                 </Link>
               </>
@@ -110,26 +143,31 @@ export default function Navigation() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                link.href.startsWith('#') ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2"
+                <Link key={link.href} href={link.href}>
+                  <span
+                    className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 block cursor-pointer"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
-                ) : (
+                  </span>
+                </Link>
+              ))}
+              
+              {/* Resources Submenu for Mobile */}
+              <div className="border-t border-border pt-2">
+                <span className="text-foreground/60 text-sm font-semibold px-2">Resources</span>
+                {resourcesLinks.map((link) => (
                   <Link key={link.href} href={link.href}>
                     <span
-                      className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 block cursor-pointer"
+                      className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 pl-4 block cursor-pointer"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {link.label}
                     </span>
                   </Link>
-                )
-              ))}
+                ))}
+              </div>
+
               {isAuthenticated ? (
                 <>
                   <Link href="/dashboard">
@@ -146,13 +184,13 @@ export default function Navigation() {
               ) : (
                 <>
                   <a href={getLoginUrl()} className="w-full">
-                    <Button variant="outline" className="w-full">
-                      Login
+                    <Button variant="ghost" className="w-full">
+                      Sign In
                     </Button>
                   </a>
                   <Link href="/onboarding">
-                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-                      Start Your Journey
+                    <Button className="bg-black hover:bg-black/90 text-white w-full">
+                      Book a demo
                     </Button>
                   </Link>
                 </>
