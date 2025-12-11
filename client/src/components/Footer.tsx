@@ -1,16 +1,67 @@
 import { Link } from "wouter";
 import { APP_TITLE } from "@/const";
-import { Linkedin, Facebook, Youtube } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const footerSections = [
+    {
+      title: "Learning",
+      links: [
+        { label: "All Courses", href: "/courses" },
+        { label: "AI for Business", href: "/courses" },
+        { label: "AI for Education", href: "/courses" },
+        { label: "Mentorship Programs", href: "/courses" },
+        { label: "Certifications", href: "/courses" },
+      ],
+    },
+    {
+      title: "Consulting",
+      links: [
+        { label: "Business Consulting", href: "/consulting" },
+        { label: "AI Strategy", href: "/consulting" },
+        { label: "Implementation Support", href: "/consulting" },
+        { label: "Training Programs", href: "/consulting" },
+      ],
+    },
+    {
+      title: "Transform",
+      links: [
+        { label: "Career Transformation", href: "/transform" },
+        { label: "Skills Assessment", href: "/" },
+        { label: "Learning Paths", href: "/courses" },
+        { label: "Success Stories", href: "/transform" },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Blog", href: "/blog" },
+        { label: "Research", href: "/resources/research" },
+        { label: "Events", href: "/resources/events" },
+        { label: "Community", href: "/community" },
+        { label: "Resource Hub", href: "/resources" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About Us", href: "/about" },
+        { label: "Contact", href: "/contact" },
+        { label: "Careers", href: "/about" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Terms of Service", href: "/terms" },
+      ],
+    },
+  ];
+
   return (
     <footer className="bg-white border-t border-gray-200">
       {/* Main Footer Content */}
       <div className="container py-12">
-        {/* Top Section - Logo, Social, CTAs */}
+        {/* Top Section - Logo & Social */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 pb-8 border-b border-gray-200">
           <div className="mb-6 md:mb-0">
             <Link href="/">
@@ -21,45 +72,34 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mb-6 md:mb-0">
-            <a 
-              href="https://linkedin.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-gray-600 hover:text-black transition-colors"
+          <div className="flex gap-4 items-center">
+            <a
+              href="https://linkedin.com/company/upskillintech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:text-[#0A66C2] transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin size={24} />
+              <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="https://facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://tiktok.com/@upskillintech"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-600 hover:text-black transition-colors"
-              aria-label="Facebook"
+              aria-label="TikTok"
             >
-              <Facebook size={24} />
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+              </svg>
             </a>
-            <a 
-              href="https://youtube.com" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-gray-600 hover:text-black transition-colors"
-              aria-label="YouTube"
-            >
-              <Youtube size={24} />
-            </a>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/onboarding">
-              <Button className="bg-black hover:bg-black/90 text-white">
-                Get a demo
-              </Button>
-            </Link>
             <Link href="/contact">
-              <Button variant="outline" className="border-2 border-black text-black hover:bg-black/5">
+              <Button variant="outline" size="sm">
                 Contact us
               </Button>
             </Link>
@@ -67,207 +107,46 @@ export default function Footer() {
         </div>
 
         {/* Footer Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold text-black mb-4">Company</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/about">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Why {APP_TITLE}
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Customers
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Newsroom
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Careers
-                  </span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Product */}
-          <div>
-            <h4 className="font-semibold text-black mb-4">Product</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    LMS
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    LXP
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Academies
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Skills
-                  </span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Use cases and trends */}
-          <div>
-            <h4 className="font-semibold text-black mb-4">Use cases and trends</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Collaborative learning
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/transform">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Employee onboarding
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Compliance training
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/learn">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Sales enablement
-                  </span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources & Community */}
-          <div>
-            <h4 className="font-semibold text-black mb-4">Resources & Community</h4>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/resources">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Ebooks, guides, tools
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/community">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    The L&D Collective
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    {APP_TITLE} Brand Center
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources/events">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Meetups and events
-                  </span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Customers */}
-          <div>
-            <h4 className="font-semibold text-black mb-4">Customers</h4>
-            <ul className="space-y-3">
-              <li>
-                <a 
-                  href="/login" 
-                  className="text-gray-600 hover:text-black transition-colors text-sm"
-                >
-                  Login
-                </a>
-              </li>
-              <li>
-                <Link href="/help">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Knowledge base
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Release notes
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/events">
-                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
-                    Events and webinars
-                  </span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h3 className="font-semibold text-black mb-4">{section.title}</h3>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link href={link.href}>
+                      <a className="text-gray-600 hover:text-black transition-colors text-sm">
+                        {link.label}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom Section - Copyright and Legal */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-600">
-              &copy; {currentYear} {APP_TITLE}. All rights reserved.
-            </p>
-            <div className="flex gap-6">
-              <Link href="/privacy">
-                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
-                  Privacy Policy
-                </span>
-              </Link>
-              <Link href="/terms">
-                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
-                  Terms of Service
-                </span>
-              </Link>
-              <Link href="/cookies">
-                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
-                  Cookie Policy
-                </span>
-              </Link>
-            </div>
+        {/* Bottom Section - Copyright & Legal */}
+        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-gray-600">
+            © {currentYear} {APP_TITLE}. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="/privacy">
+              <a className="text-sm text-gray-600 hover:text-black transition-colors">
+                Privacy Policy
+              </a>
+            </Link>
+            <Link href="/terms">
+              <a className="text-sm text-gray-600 hover:text-black transition-colors">
+                Terms of Service
+              </a>
+            </Link>
+            <Link href="/cookies">
+              <a className="text-sm text-gray-600 hover:text-black transition-colors">
+                Cookie Policy
+              </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -920,3 +920,18 @@
 - [x] Fix sessionInfo property access (use sessionInfo.openId directly)
 - [x] Add null check for sessionInfo
 - [ ] Test WebSocket connection after server restart (requires restart to apply changes)
+
+
+## Footer Restructure and Rebranding
+- [ ] Update VITE_APP_TITLE from "UpskillinTech Hub" to "UpskillinTech" (USER ACTION: Update in Management UI → Settings → General)
+- [x] Rebuild footer with actual website menu structure (Learning, Consulting, Transform, Resources with submenus)
+- [x] Remove "Get a demo" button from footer (replaced with "Contact us")
+- [x] Remove fake menu items (Company, Product, Use cases, Customers columns)
+- [x] Add Learning submenu (All Courses, AI for Business, AI for Education, Mentorship, Certifications)
+- [x] Add Consulting submenu (Business Consulting, AI Strategy, Implementation Support, Training)
+- [x] Add Transform submenu (Career Transformation, Skills Assessment, Learning Paths, Success Stories)
+- [x] Add Resources submenu (Blog, Research, Events, Community, Resource Hub)
+- [x] Add Company section (About Us, Contact, Careers, Privacy, Terms)
+- [x] Update social media icons to LinkedIn and TikTok only
+- [x] Connect all footer links to actual pages
+- [x] Test all footer navigation links (all clickable and properly routed)
