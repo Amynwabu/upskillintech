@@ -38,7 +38,12 @@ export function setupWebSocket(httpServer: HTTPServer) {
       }
 
       // Verify session token using SDK
-      const sessionInfo = await sdk.verifySessionToken(token);
+      const sessionInfo = await sdk.verifySession(token);
+      
+      if (!sessionInfo || !sessionInfo.openId) {
+        return next(new Error("Invalid session"));
+      }
+      
       const user = await db.getUserByOpenId(sessionInfo.openId);
       
       if (!user) {

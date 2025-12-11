@@ -413,6 +413,127 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Demo Booking Form Section - 360learning style */}
+        <section className="py-16 md:py-20 bg-gray-50">
+          <div className="container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left Side - Headline and Benefits */}
+              <div className="space-y-8">
+                <div>
+                  <div className="inline-block bg-blue-100 px-6 py-3 rounded-lg mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+                      Discover the learning platform powered by collaborative learning.
+                    </h2>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-lg font-medium text-black">A 15-minute discussion with an expert</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-lg font-medium text-black">100% tailored to your needs - with ❤️</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-lg font-medium text-black">No commitment. Free as can be.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Form */}
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <form className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input
+                      type="text"
+                      placeholder="First name"
+                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Last name"
+                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input
+                      type="email"
+                      placeholder="Work Email"
+                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone number"
+                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
+                  
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600">
+                      <option value="">Timeframe to buy an LMS</option>
+                      <option value="immediate">Immediate (0-3 months)</option>
+                      <option value="short">Short term (3-6 months)</option>
+                      <option value="medium">Medium term (6-12 months)</option>
+                      <option value="long">Long term (12+ months)</option>
+                    </select>
+                    <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600">
+                      <option value="">Number of platform users</option>
+                      <option value="small">1-50 users</option>
+                      <option value="medium">51-200 users</option>
+                      <option value="large">201-500 users</option>
+                      <option value="enterprise">500+ users</option>
+                    </select>
+                  </div>
+                  
+                  <textarea
+                    placeholder="Tell us more about your project"
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                  
+                  <input
+                    type="text"
+                    placeholder="How did you hear about us?"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  />
+                  
+                  <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white py-6 text-lg font-semibold">
+                    Book my demo
+                  </Button>
+                  
+                  <p className="text-xs text-gray-500 text-center">
+                    By providing your contact info, you agree to receive communications from UpskillinTech. You can opt-out at any time.
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA Section */}
         <section 
           ref={ctaSection.elementRef as React.RefObject<HTMLElement>}

@@ -901,3 +901,22 @@
 - [x] Test all navigation links and dropdowns (Resources dropdown working perfectly)
 - [x] Test hero section layout and CTAs
 - [ ] Verify responsive design on mobile (desktop tested successfully)
+
+
+## Add Demo Booking Form and Enhanced Footer
+- [x] Create demo booking form section on homepage (before footer)
+- [x] Add form fields: First name, Last name, Work Email, Phone number, Timeframe, Number of users, Project details, How did you hear about us
+- [x] Style form to match 360learning.com design (left side: headline + benefits, right side: form)
+- [x] Add 3 benefit points with icons (15-min discussion, 100% tailored, No commitment)
+- [x] Update Footer component with multi-column layout
+- [x] Add footer columns: Company, Product, Use cases and trends, Resources & Community, Customers
+- [x] Add social media icons to footer (LinkedIn, Facebook, YouTube)
+- [x] Add "Get a demo" and "Contact us" buttons to footer
+- [x] Add legal links (Privacy Policy, Terms of Service, Cookie Policy)
+
+## Fix WebSocket Authentication Error
+- [x] Investigate WebSocket authentication error in server/websocket.ts
+- [x] Fix verifySessionToken method call (changed to verifySession)
+- [x] Fix sessionInfo property access (use sessionInfo.openId directly)
+- [x] Add null check for sessionInfo
+- [ ] Test WebSocket connection after server restart (requires restart to apply changes)

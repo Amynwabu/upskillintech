@@ -1,122 +1,274 @@
-import { useState } from "react";
 import { Link } from "wouter";
 import { APP_TITLE } from "@/const";
-import { Mail, Linkedin, Twitter, Youtube, Send } from "lucide-react";
+import { Linkedin, Facebook, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { toast } from "sonner";
-import { trpc } from "@/lib/trpc";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
-  
-  const subscribeNewsletter = trpc.newsletter.subscribe.useMutation({
-    onSuccess: (data) => {
-      toast.success(data.message);
-      setEmail("");
-    },
-    onError: (error) => {
-      toast.error(error.message || "Please try again later");
-    },
-  });
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) {
-      toast.error("Please enter your email address");
-      return;
-    }
-    subscribeNewsletter.mutate({ email });
-  };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-white border-t border-gray-200">
+      {/* Main Footer Content */}
       <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="col-span-1 lg:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent mb-4">
-              {APP_TITLE}
-            </h3>
-            <p className="text-muted-foreground mb-4 max-w-md">
-              Transform Skills. Power Growth. Live AI. Your bridge from AI awareness to AI integration.
-            </p>
-            
-            {/* Newsletter Signup */}
-            <div className="mb-6">
-              <h4 className="font-semibold mb-3 text-foreground">Stay Updated</h4>
-              <p className="text-sm text-muted-foreground mb-3">
-                Get the latest course updates and AI insights delivered to your inbox.
-              </p>
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-md">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={subscribeNewsletter.isPending}
-                  className="flex-1"
-                />
-                <Button 
-                  type="submit" 
-                  disabled={subscribeNewsletter.isPending}
-                  className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white"
-                >
-                  {subscribeNewsletter.isPending ? (
-                    "Subscribing..."
-                  ) : (
-                    <>
-                      Subscribe
-                      <Send className="ml-2 h-4 w-4" />
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-
-            <div className="flex gap-4">
-              <a href="mailto:contact@upskillintech.com" className="text-muted-foreground hover:text-primary transition-colors">
-                <Mail size={20} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Linkedin size={20} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Youtube size={20} />
-              </a>
-            </div>
+        {/* Top Section - Logo, Social, CTAs */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 pb-8 border-b border-gray-200">
+          <div className="mb-6 md:mb-0">
+            <Link href="/">
+              <span className="text-2xl font-bold text-black cursor-pointer">
+                {APP_TITLE}
+              </span>
+            </Link>
           </div>
 
-          {/* Quick Links */}
+          {/* Social Icons */}
+          <div className="flex gap-4 mb-6 md:mb-0">
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-600 hover:text-black transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={24} />
+            </a>
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-600 hover:text-black transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={24} />
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-600 hover:text-black transition-colors"
+              aria-label="YouTube"
+            >
+              <Youtube size={24} />
+            </a>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/onboarding">
+              <Button className="bg-black hover:bg-black/90 text-white">
+                Get a demo
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" className="border-2 border-black text-black hover:bg-black/5">
+                Contact us
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Footer Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          {/* Company */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="#learn" className="text-muted-foreground hover:text-foreground transition-colors">Learning</a></li>
-              <li><a href="#transform" className="text-muted-foreground hover:text-foreground transition-colors">Transform</a></li>
-              <li><a href="#consult" className="text-muted-foreground hover:text-foreground transition-colors">Consult</a></li>
-              <li><a href="#community" className="text-muted-foreground hover:text-foreground transition-colors">Community</a></li>
+            <h4 className="font-semibold text-black mb-4">Company</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/about">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Why {APP_TITLE}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/about">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Customers
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Newsroom
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Careers
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Product */}
           <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2">
-              <li><Link href="/resources" className="text-muted-foreground hover:text-foreground transition-colors">Resources</Link></li>
-              <li><Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
-              <li><Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link></li>
+            <h4 className="font-semibold text-black mb-4">Product</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    LMS
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    LXP
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Academies
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Skills
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Use cases and trends */}
+          <div>
+            <h4 className="font-semibold text-black mb-4">Use cases and trends</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Collaborative learning
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/transform">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Employee onboarding
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Compliance training
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/learn">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Sales enablement
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources & Community */}
+          <div>
+            <h4 className="font-semibold text-black mb-4">Resources & Community</h4>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/resources">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Ebooks, guides, tools
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/community">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    The L&D Collective
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    {APP_TITLE} Brand Center
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources/events">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Meetups and events
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Customers */}
+          <div>
+            <h4 className="font-semibold text-black mb-4">Customers</h4>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href="/login" 
+                  className="text-gray-600 hover:text-black transition-colors text-sm"
+                >
+                  Login
+                </a>
+              </li>
+              <li>
+                <Link href="/help">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Knowledge base
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Release notes
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/events">
+                  <span className="text-gray-600 hover:text-black transition-colors cursor-pointer text-sm">
+                    Events and webinars
+                  </span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear} {APP_TITLE}. All rights reserved.</p>
+        {/* Bottom Section - Copyright and Legal */}
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600">
+              &copy; {currentYear} {APP_TITLE}. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <Link href="/privacy">
+                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
+                  Privacy Policy
+                </span>
+              </Link>
+              <Link href="/terms">
+                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
+                  Terms of Service
+                </span>
+              </Link>
+              <Link href="/cookies">
+                <span className="text-sm text-gray-600 hover:text-black transition-colors cursor-pointer">
+                  Cookie Policy
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
