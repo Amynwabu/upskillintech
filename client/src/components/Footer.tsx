@@ -79,6 +79,7 @@ export default function Footer() {
         { label: "About Us", href: "/about" },
         { label: "Contact", href: "/contact" },
         { label: "Careers", href: "/about" },
+        { label: "Newsletter Preferences", href: "/newsletter/preferences" },
         { label: "Privacy Policy", href: "/privacy" },
         { label: "Terms of Service", href: "/terms" },
       ],

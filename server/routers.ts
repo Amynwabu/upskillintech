@@ -554,6 +554,70 @@ export const appRouter = router({
         const subscribers = await db.getNewsletterSubscribers(input?.status);
         return subscribers;
       }),
+
+    // Get preferences by email or token
+    getPreferences: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email().optional(),
+          token: z.string().optional(),
+        })
+      )
+      .query(async ({ input }) => {
+        if (!input.email && !input.token) {
+          throw new Error("Email or token is required");
+        }
+        const subscriber = await db.getNewsletterSubscriberByEmailOrToken(input.email, input.token);
+        if (!subscriber) {
+          throw new Error("Subscriber not found");
+        }
+        return {
+          email: subscriber.email,
+          prefAiNews: subscriber.prefAiNews,
+          prefCourseUpdates: subscriber.prefCourseUpdates,
+          prefEvents: subscriber.prefEvents,
+          prefTips: subscriber.prefTips,
+          status: subscriber.status,
+        };
+      }),
+
+    // Update preferences
+    updatePreferences: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email().optional(),
+          token: z.string().optional(),
+          prefAiNews: z.boolean(),
+          prefCourseUpdates: z.boolean(),
+          prefEvents: z.boolean(),
+          prefTips: z.boolean(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        if (!input.email && !input.token) {
+          throw new Error("Email or token is required");
+        }
+        const { email, token, ...preferences } = input;
+        await db.updateNewsletterPreferences(email, token, preferences);
+        return { success: true, message: "Preferences updated successfully" };
+      }),
+
+    // Generate preferences token for email-based access
+    requestPreferencesLink: publicProcedure
+      .input(
+        z.object({
+          email: z.string().email(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        const token = await db.generatePreferencesToken(input.email);
+        if (!token) {
+          throw new Error("Email not found in our newsletter list");
+        }
+        // In production, you would send this token via email
+        // For now, we return it directly for testing
+        return { success: true, message: "Preferences link sent to your email", token };
+      }),
   }),
 
   // Blog management

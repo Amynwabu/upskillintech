@@ -455,6 +455,13 @@ export const newsletterSubscribers = mysqlTable("newsletter_subscribers", {
   id: int("id").autoincrement().primaryKey(),
   email: varchar("email", { length: 320 }).notNull().unique(),
   status: mysqlEnum("status", ["active", "unsubscribed"]).default("active").notNull(),
+  // Content category preferences
+  prefAiNews: boolean("prefAiNews").default(true).notNull(),
+  prefCourseUpdates: boolean("prefCourseUpdates").default(true).notNull(),
+  prefEvents: boolean("prefEvents").default(true).notNull(),
+  prefTips: boolean("prefTips").default(true).notNull(),
+  // Preference management token for email-based access
+  preferencesToken: varchar("preferencesToken", { length: 64 }),
   subscribedAt: timestamp("subscribedAt").defaultNow().notNull(),
   unsubscribedAt: timestamp("unsubscribedAt"),
 });

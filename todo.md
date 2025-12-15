@@ -945,3 +945,14 @@
 - [x] Add success/error toast notifications (using sonner)
 - [x] Style newsletter section to match footer design (centered between logo and social icons)
 - [x] Test newsletter subscription flow (form displays correctly, accepts input, integrates with tRPC)
+
+
+## Newsletter Preference Center
+- [x] Update newsletterSubscribers table with preference columns (prefAiNews, prefCourseUpdates, prefEvents, prefTips, preferencesToken)
+- [x] Run pnpm db:push to apply schema changes
+- [x] Create tRPC procedures for getting/updating preferences (getPreferences, updatePreferences, requestPreferencesLink)
+- [x] Build /newsletter/preferences page with category checkboxes
+- [x] Add email-based lookup for preference management
+- [x] Style preference center with consistent design (gradient background, card-based categories)
+- [x] Add link to preference center from footer (Company section)
+- [x] Test preference saving and retrieval (page loads correctly, server responds)

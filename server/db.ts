@@ -1088,6 +1088,97 @@ export async function getNewsletterSubscribers(status?: "active" | "unsubscribed
   return await db.select().from(newsletterSubscribers);
 }
 
+/**
+ * Get newsletter subscriber by email or preferences token
+ */
+export async function getNewsletterSubscriberByEmailOrToken(email?: string, token?: string) {
+  const db = await getDb();
+  if (!db) return null;
+
+  if (email) {
+    const result = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.email, email))
+      .limit(1);
+    return result[0] || null;
+  }
+
+  if (token) {
+    const result = await db
+      .select()
+      .from(newsletterSubscribers)
+      .where(eq(newsletterSubscribers.preferencesToken, token))
+      .limit(1);
+    return result[0] || null;
+  }
+
+  return null;
+}
+
+/**
+ * Update newsletter preferences
+ */
+export async function updateNewsletterPreferences(
+  email: string | undefined,
+  token: string | undefined,
+  preferences: {
+    prefAiNews: boolean;
+    prefCourseUpdates: boolean;
+    prefEvents: boolean;
+    prefTips: boolean;
+  }
+) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const condition = email
+    ? eq(newsletterSubscribers.email, email)
+    : token
+    ? eq(newsletterSubscribers.preferencesToken, token)
+    : null;
+
+  if (!condition) throw new Error("Email or token is required");
+
+  await db
+    .update(newsletterSubscribers)
+    .set({
+      prefAiNews: preferences.prefAiNews,
+      prefCourseUpdates: preferences.prefCourseUpdates,
+      prefEvents: preferences.prefEvents,
+      prefTips: preferences.prefTips,
+    })
+    .where(condition);
+}
+
+/**
+ * Generate a preferences token for email-based access
+ */
+export async function generatePreferencesToken(email: string): Promise<string | null> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // Check if subscriber exists
+  const existing = await db
+    .select()
+    .from(newsletterSubscribers)
+    .where(eq(newsletterSubscribers.email, email))
+    .limit(1);
+
+  if (existing.length === 0) return null;
+
+  // Generate a random token
+  const token = crypto.randomUUID().replace(/-/g, "");
+
+  // Update the subscriber with the new token
+  await db
+    .update(newsletterSubscribers)
+    .set({ preferencesToken: token })
+    .where(eq(newsletterSubscribers.email, email));
+
+  return token;
+}
+
 
 // ==================== Blog Functions ====================
 
