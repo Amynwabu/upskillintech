@@ -166,3 +166,166 @@ export async function validateSendGridConfig(): Promise<{ valid: boolean; error?
     return { valid: false, error: error.message };
   }
 }
+
+
+/**
+ * Send preference confirmation email after user updates their newsletter preferences
+ */
+export interface NewsletterPreferences {
+  prefAiNews: boolean;
+  prefCourseUpdates: boolean;
+  prefEvents: boolean;
+  prefTips: boolean;
+}
+
+export async function sendPreferenceConfirmationEmail(
+  email: string,
+  preferences: NewsletterPreferences,
+  preferencesToken: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!SENDGRID_API_KEY) {
+    console.warn('[EmailService] Cannot send email: SendGrid not configured');
+    return { success: false, error: 'Email service not configured' };
+  }
+
+  // Build the list of selected preferences
+  const selectedPreferences: string[] = [];
+  if (preferences.prefAiNews) selectedPreferences.push('AI News & Insights');
+  if (preferences.prefCourseUpdates) selectedPreferences.push('Course Updates');
+  if (preferences.prefEvents) selectedPreferences.push('Events & Webinars');
+  if (preferences.prefTips) selectedPreferences.push('Tips & Tutorials');
+
+  const preferencesListText = selectedPreferences.length > 0 
+    ? selectedPreferences.join(', ') 
+    : 'No categories selected';
+
+  const preferencesListHtml = selectedPreferences.length > 0
+    ? selectedPreferences.map(p => `<li style="margin-bottom: 8px; color: #10b981;">✓ ${p}</li>`).join('')
+    : '<li style="color: #94a3b8;">No categories selected</li>';
+
+  const preferencesUrl = `https://upskillintech.com/newsletter/preferences?token=${preferencesToken}`;
+
+  try {
+    const msg = {
+      to: email,
+      from: {
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
+      },
+      subject: 'Your Newsletter Preferences Have Been Updated ✅',
+      text: `Your Newsletter Preferences Have Been Updated
+
+Hi there!
+
+We've successfully updated your newsletter preferences. Here's a summary of what you'll receive:
+
+Selected Categories:
+${selectedPreferences.length > 0 ? selectedPreferences.map(p => `• ${p}`).join('\n') : '• No categories selected'}
+
+You can update your preferences anytime by visiting:
+${preferencesUrl}
+
+If you didn't make this change, please contact us immediately.
+
+Best regards,
+The UpskillinTech Team
+
+---
+You're receiving this email because you updated your newsletter preferences.
+To unsubscribe from all emails, visit: ${preferencesUrl}`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Preferences Updated</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table role="presentation" style="width: 600px; max-width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 8px 8px 0 0;">
+              <h1 style="margin: 0; color: #10b981; font-size: 32px; font-weight: bold;">UpskillinTech</h1>
+              <p style="margin: 10px 0 0; color: #94a3b8; font-size: 16px;">Transform Skills. Power Growth. Live AI.</p>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <div style="text-align: center; margin-bottom: 30px;">
+                <div style="display: inline-block; width: 60px; height: 60px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); border-radius: 50%; line-height: 60px; font-size: 30px;">
+                  ✅
+                </div>
+              </div>
+              
+              <h2 style="margin: 0 0 20px; color: #1e293b; font-size: 24px; font-weight: bold; text-align: center;">Preferences Updated Successfully!</h2>
+              
+              <p style="margin: 0 0 24px; color: #475569; font-size: 16px; line-height: 1.6; text-align: center;">
+                We've updated your newsletter preferences. Here's what you'll receive from us:
+              </p>
+              
+              <div style="margin: 30px 0; padding: 24px; background-color: #f1f5f9; border-radius: 8px;">
+                <h3 style="margin: 0 0 16px; color: #1e293b; font-size: 18px; font-weight: 600;">Your Selected Categories:</h3>
+                <ul style="margin: 0; padding-left: 20px; list-style: none;">
+                  ${preferencesListHtml}
+                </ul>
+              </div>
+              
+              <p style="margin: 24px 0; color: #475569; font-size: 16px; line-height: 1.6; text-align: center;">
+                Want to make changes? You can update your preferences anytime.
+              </p>
+              
+              <table role="presentation" style="margin: 30px auto;">
+                <tr>
+                  <td align="center">
+                    <a href="${preferencesUrl}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">Manage Preferences</a>
+                  </td>
+                </tr>
+              </table>
+              
+              <div style="margin-top: 30px; padding: 16px; background-color: #fef3c7; border-radius: 6px; border-left: 4px solid #f59e0b;">
+                <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.5;">
+                  <strong>Didn't make this change?</strong><br>
+                  If you didn't update your preferences, please contact us immediately at support@upskillintech.com
+                </p>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 30px 40px; background-color: #f8fafc; border-radius: 0 0 8px 8px; text-align: center;">
+              <p style="margin: 0 0 10px; color: #64748b; font-size: 14px;">
+                Best regards,<br>
+                <strong>The UpskillinTech Team</strong>
+              </p>
+              <p style="margin: 20px 0 0; color: #94a3b8; font-size: 12px;">
+                You're receiving this email because you updated your newsletter preferences.<br>
+                <a href="${preferencesUrl}" style="color: #10b981; text-decoration: underline;">Manage Preferences</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`,
+    };
+
+    await sgMail.send(msg);
+    console.log(`[EmailService] Preference confirmation email sent successfully to ${email}`);
+    return { success: true };
+  } catch (error: any) {
+    console.error('[EmailService] Failed to send preference confirmation email:', error.response?.body || error.message);
+    return { 
+      success: false, 
+      error: error.response?.body?.errors?.[0]?.message || error.message 
+    };
+  }
+}

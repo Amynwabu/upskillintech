@@ -4,6 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
+import { sendPreferenceConfirmationEmail } from "./emailService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -598,7 +599,33 @@ export const appRouter = router({
           throw new Error("Email or token is required");
         }
         const { email, token, ...preferences } = input;
+        
+        // Update preferences in database
         await db.updateNewsletterPreferences(email, token, preferences);
+        
+        // Get subscriber info to send confirmation email
+        const subscriber = await db.getNewsletterSubscriberByEmailOrToken(email, token);
+        if (subscriber && subscriber.email) {
+          // Generate token if not exists for future preference management
+          let preferencesToken = subscriber.preferencesToken;
+          if (!preferencesToken) {
+            preferencesToken = crypto.randomUUID();
+            await db.updateNewsletterPreferencesToken(subscriber.email, preferencesToken);
+          }
+          
+          // Send confirmation email
+          await sendPreferenceConfirmationEmail(
+            subscriber.email,
+            {
+              prefAiNews: preferences.prefAiNews,
+              prefCourseUpdates: preferences.prefCourseUpdates,
+              prefEvents: preferences.prefEvents,
+              prefTips: preferences.prefTips,
+            },
+            preferencesToken
+          );
+        }
+        
         return { success: true, message: "Preferences updated successfully" };
       }),
 

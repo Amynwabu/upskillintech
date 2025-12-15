@@ -956,3 +956,11 @@
 - [x] Style preference center with consistent design (gradient background, card-based categories)
 - [x] Add link to preference center from footer (Company section)
 - [x] Test preference saving and retrieval (page loads correctly, server responds)
+
+
+## Newsletter Preference Confirmation Email
+- [x] Create email template for preference confirmation (HTML with selected categories)
+- [x] Add sendPreferenceConfirmationEmail function using SendGrid
+- [x] Integrate email sending into updatePreferences tRPC procedure
+- [x] Include link to preference center in confirmation email (with token for direct access)
+- [x] Test email sending after preference update (vitest tests pass - 3 tests)

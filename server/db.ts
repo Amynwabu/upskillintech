@@ -1152,6 +1152,19 @@ export async function updateNewsletterPreferences(
 }
 
 /**
+ * Update preferences token for a subscriber
+ */
+export async function updateNewsletterPreferencesToken(email: string, token: string): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db
+    .update(newsletterSubscribers)
+    .set({ preferencesToken: token })
+    .where(eq(newsletterSubscribers.email, email));
+}
+
+/**
  * Generate a preferences token for email-based access
  */
 export async function generatePreferencesToken(email: string): Promise<string | null> {
