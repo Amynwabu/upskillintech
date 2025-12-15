@@ -482,3 +482,135 @@ export function generatePreferenceConfirmationHtml(preferences: NewsletterPrefer
 </body>
 </html>`;
 }
+
+
+/**
+ * Generate password reset email HTML template for preview
+ */
+export function generatePasswordResetEmailHtml(resetLink?: string): string {
+  const link = resetLink || "https://upskillintech.com/reset-password?token=PREVIEW_TOKEN";
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Your Password</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 12px 12px 0 0;">
+              <div style="width: 64px; height: 64px; margin: 0 auto 16px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 32px;">🔐</span>
+              </div>
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">Password Reset Request</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                We received a request to reset your password for your UpskillinTech account. If you made this request, click the button below to create a new password.
+              </p>
+              
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${link}" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                  Reset My Password
+                </a>
+              </div>
+              
+              <p style="margin: 20px 0; color: #6b7280; font-size: 14px; line-height: 1.6; text-align: center;">
+                This link will expire in <strong>1 hour</strong> for security reasons.
+              </p>
+              
+              <!-- Security Notice -->
+              <div style="margin: 30px 0; padding: 16px; background-color: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+                <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.6;">
+                  <strong>⚠️ Didn't request this?</strong><br>
+                  If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.
+                </p>
+              </div>
+              
+              <!-- Alternative Link -->
+              <p style="margin: 20px 0 0; color: #6b7280; font-size: 12px; line-height: 1.6;">
+                If the button doesn't work, copy and paste this link into your browser:<br>
+                <a href="${link}" style="color: #10b981; word-break: break-all;">${link}</a>
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 40px 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
+                © 2024 UpskillinTech. All rights reserved.
+              </p>
+              <p style="margin: 10px 0 0; color: #9ca3af; font-size: 12px;">
+                This is an automated message. Please do not reply to this email.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
+/**
+ * Send password reset email
+ */
+export async function sendPasswordResetEmail(
+  email: string,
+  resetToken: string
+): Promise<{ success: boolean; error?: string }> {
+  if (!SENDGRID_API_KEY) {
+    console.warn('[EmailService] Cannot send email: SendGrid not configured');
+    return { success: false, error: 'Email service not configured' };
+  }
+
+  const resetLink = `https://upskillintech.com/reset-password?token=${resetToken}`;
+  const html = generatePasswordResetEmailHtml(resetLink);
+
+  try {
+    const msg = {
+      to: email,
+      from: {
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
+      },
+      subject: 'Reset Your UpskillinTech Password',
+      text: `Password Reset Request
+
+We received a request to reset your password for your UpskillinTech account.
+
+Click the link below to create a new password:
+${resetLink}
+
+This link will expire in 1 hour for security reasons.
+
+If you didn't request a password reset, you can safely ignore this email. Your password will remain unchanged.
+
+---
+© 2024 UpskillinTech. All rights reserved.
+This is an automated message. Please do not reply to this email.`,
+      html,
+    };
+
+    await sgMail.send(msg);
+    console.log(`[EmailService] Password reset email sent to ${email}`);
+    return { success: true };
+  } catch (error: any) {
+    console.error('[EmailService] Failed to send password reset email:', error?.response?.body || error);
+    return { 
+      success: false, 
+      error: error?.response?.body?.errors?.[0]?.message || 'Failed to send email' 
+    };
+  }
+}

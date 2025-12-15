@@ -91,3 +91,34 @@ describe('Admin Email Panel - Template Generation', () => {
     expect(html).toContain('support@upskillintech.com');
   });
 });
+
+// Password Reset Email Template Tests
+describe("generatePasswordResetEmailHtml", () => {
+  it("should generate valid HTML with default reset link", async () => {
+    const { generatePasswordResetEmailHtml } = await import("./emailService");
+    const html = generatePasswordResetEmailHtml();
+    
+    expect(html).toContain("Password Reset Request");
+    expect(html).toContain("Reset My Password");
+    expect(html).toContain("PREVIEW_TOKEN");
+    expect(html).toContain("1 hour");
+    expect(html).toContain("Didn't request this?");
+  });
+
+  it("should include custom reset link when provided", async () => {
+    const { generatePasswordResetEmailHtml } = await import("./emailService");
+    const customLink = "https://example.com/reset?token=abc123";
+    const html = generatePasswordResetEmailHtml(customLink);
+    
+    expect(html).toContain(customLink);
+    expect(html).not.toContain("PREVIEW_TOKEN");
+  });
+
+  it("should include security warning section", async () => {
+    const { generatePasswordResetEmailHtml } = await import("./emailService");
+    const html = generatePasswordResetEmailHtml();
+    
+    expect(html).toContain("Didn't request this?");
+    expect(html).toContain("safely ignore this email");
+  });
+});

@@ -975,3 +975,12 @@
 - [x] Add admin navigation link to email panel (/admin/emails route added)
 - [x] Restrict access to admin users only (role check in component and tRPC procedures)
 - [x] Test preview and send functionality (6 vitest tests pass for template generation)
+
+
+## Password Reset Email Template
+- [x] Create generatePasswordResetEmailHtml function in emailService.ts
+- [x] Add sendPasswordResetEmail function for actual sending
+- [x] Update admin.previewEmailTemplate tRPC procedure to include password_reset option
+- [x] Update admin.sendTestEmail tRPC procedure to include password_reset option
+- [x] Update AdminEmails.tsx to include Password Reset in template selector
+- [x] Add vitest tests for password reset email template (3 tests pass)

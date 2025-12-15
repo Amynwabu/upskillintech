@@ -11,7 +11,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
 import { ArrowLeft, Mail, Eye, Send, RefreshCw, Shield } from "lucide-react";
 
-type EmailTemplate = "welcome" | "preference_confirmation";
+type EmailTemplate = "welcome" | "preference_confirmation" | "password_reset";
 
 interface PreferenceOptions {
   prefAiNews: boolean;
@@ -105,6 +105,7 @@ export default function AdminEmails() {
   const templateDescriptions: Record<EmailTemplate, string> = {
     welcome: "Sent to new newsletter subscribers when they sign up",
     preference_confirmation: "Sent when users update their newsletter preferences",
+    password_reset: "Sent when users request to reset their password",
   };
 
   return (
@@ -164,6 +165,7 @@ export default function AdminEmails() {
                     <SelectContent>
                       <SelectItem value="welcome">Welcome Email</SelectItem>
                       <SelectItem value="preference_confirmation">Preference Confirmation</SelectItem>
+                      <SelectItem value="password_reset">Password Reset</SelectItem>
                     </SelectContent>
                   </Select>
                   <p className="text-xs text-gray-500 mt-1">

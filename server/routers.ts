@@ -4,7 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
-import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail } from "./emailService";
+import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail } from "./emailService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -717,7 +717,7 @@ export const appRouter = router({
     previewEmailTemplate: protectedProcedure
       .input(
         z.object({
-          template: z.enum(["welcome", "preference_confirmation"]),
+          template: z.enum(["welcome", "preference_confirmation", "password_reset"]),
           preferences: z.object({
             prefAiNews: z.boolean(),
             prefCourseUpdates: z.boolean(),
@@ -735,7 +735,7 @@ export const appRouter = router({
         let html: string;
         if (input.template === "welcome") {
           html = generateWelcomeEmailHtml();
-        } else {
+        } else if (input.template === "preference_confirmation") {
           const preferences = input.preferences || {
             prefAiNews: true,
             prefCourseUpdates: true,
@@ -743,6 +743,8 @@ export const appRouter = router({
             prefTips: true,
           };
           html = generatePreferenceConfirmationHtml(preferences);
+        } else {
+          html = generatePasswordResetEmailHtml();
         }
 
         return { html };
@@ -751,7 +753,7 @@ export const appRouter = router({
     sendTestEmail: protectedProcedure
       .input(
         z.object({
-          template: z.enum(["welcome", "preference_confirmation"]),
+          template: z.enum(["welcome", "preference_confirmation", "password_reset"]),
           recipientEmail: z.string().email(),
           preferences: z.object({
             prefAiNews: z.boolean(),
@@ -772,7 +774,7 @@ export const appRouter = router({
           if (!result.success) {
             throw new Error(result.error || "Failed to send email");
           }
-        } else {
+        } else if (input.template === "preference_confirmation") {
           const preferences = input.preferences || {
             prefAiNews: true,
             prefCourseUpdates: true,
@@ -783,6 +785,14 @@ export const appRouter = router({
             input.recipientEmail,
             preferences,
             "test-token-preview"
+          );
+          if (!result.success) {
+            throw new Error(result.error || "Failed to send email");
+          }
+        } else {
+          const result = await sendPasswordResetEmail(
+            input.recipientEmail,
+            "test-reset-token-preview"
           );
           if (!result.success) {
             throw new Error(result.error || "Failed to send email");
