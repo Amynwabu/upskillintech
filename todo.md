@@ -964,3 +964,14 @@
 - [x] Integrate email sending into updatePreferences tRPC procedure
 - [x] Include link to preference center in confirmation email (with token for direct access)
 - [x] Test email sending after preference update (vitest tests pass - 3 tests)
+
+
+## Admin Email Panel
+- [x] Create /admin/emails page for email template management
+- [x] Add email template preview functionality (render HTML in iframe)
+- [x] Implement test send functionality with custom recipient email
+- [x] Add tRPC procedures for preview and test send (admin-only)
+- [x] Create template selector dropdown (Welcome, Preference Confirmation)
+- [x] Add admin navigation link to email panel (/admin/emails route added)
+- [x] Restrict access to admin users only (role check in component and tRPC procedures)
+- [x] Test preview and send functionality (6 vitest tests pass for template generation)

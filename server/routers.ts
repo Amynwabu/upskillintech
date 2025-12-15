@@ -4,7 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
-import { sendPreferenceConfirmationEmail } from "./emailService";
+import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail } from "./emailService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -709,6 +709,87 @@ export const appRouter = router({
       )
       .query(async ({ input }) => {
         return db.getRelatedBlogPosts(input.postId, input.categoryId, input.limit);
+      }),
+  }),
+
+  // Admin routes (admin-only access)
+  admin: router({
+    previewEmailTemplate: protectedProcedure
+      .input(
+        z.object({
+          template: z.enum(["welcome", "preference_confirmation"]),
+          preferences: z.object({
+            prefAiNews: z.boolean(),
+            prefCourseUpdates: z.boolean(),
+            prefEvents: z.boolean(),
+            prefTips: z.boolean(),
+          }).optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        // Check if user is admin
+        if (ctx.user.role !== "admin") {
+          throw new Error("Admin access required");
+        }
+
+        let html: string;
+        if (input.template === "welcome") {
+          html = generateWelcomeEmailHtml();
+        } else {
+          const preferences = input.preferences || {
+            prefAiNews: true,
+            prefCourseUpdates: true,
+            prefEvents: false,
+            prefTips: true,
+          };
+          html = generatePreferenceConfirmationHtml(preferences);
+        }
+
+        return { html };
+      }),
+
+    sendTestEmail: protectedProcedure
+      .input(
+        z.object({
+          template: z.enum(["welcome", "preference_confirmation"]),
+          recipientEmail: z.string().email(),
+          preferences: z.object({
+            prefAiNews: z.boolean(),
+            prefCourseUpdates: z.boolean(),
+            prefEvents: z.boolean(),
+            prefTips: z.boolean(),
+          }).optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        // Check if user is admin
+        if (ctx.user.role !== "admin") {
+          throw new Error("Admin access required");
+        }
+
+        if (input.template === "welcome") {
+          const result = await sendWelcomeEmail(input.recipientEmail);
+          if (!result.success) {
+            throw new Error(result.error || "Failed to send email");
+          }
+        } else {
+          const preferences = input.preferences || {
+            prefAiNews: true,
+            prefCourseUpdates: true,
+            prefEvents: false,
+            prefTips: true,
+          };
+          const result = await sendPreferenceConfirmationEmail(
+            input.recipientEmail,
+            preferences,
+            "test-token-preview"
+          );
+          if (!result.success) {
+            throw new Error(result.error || "Failed to send email");
+          }
+        }
+
+        return { success: true };
       }),
   }),
 });

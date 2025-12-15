@@ -329,3 +329,156 @@ To unsubscribe from all emails, visit: ${preferencesUrl}`,
     };
   }
 }
+
+
+/**
+ * Generate welcome email HTML template for preview
+ */
+export function generateWelcomeEmailHtml(): string {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to UpskillinTech</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px 12px 0 0;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">Welcome to UpskillinTech! 🚀</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Thank you for subscribing to our newsletter. You're now part of a community of <strong>1,000+ learners</strong> transforming their skills with AI.
+              </p>
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Here's what you can expect:
+              </p>
+              <ul style="margin: 0 0 30px; padding-left: 20px; color: #374151; font-size: 16px; line-height: 1.8;">
+                <li>Latest AI course updates and new releases</li>
+                <li>Exclusive learning resources and tips</li>
+                <li>Community events and live workshops</li>
+                <li>Special offers for premium courses</li>
+              </ul>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="https://upskillintech.com" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                  Start Learning Now
+                </a>
+              </div>
+              <p style="margin: 30px 0 0; color: #6b7280; font-size: 14px; line-height: 1.6;">
+                If you have any questions, feel free to reply to this email.
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 40px 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
+                © 2024 UpskillinTech. All rights reserved.
+              </p>
+              <p style="margin: 10px 0 0; color: #9ca3af; font-size: 12px;">
+                <a href="#" style="color: #10b981; text-decoration: none;">Manage Preferences</a> · 
+                <a href="#" style="color: #10b981; text-decoration: none;">Unsubscribe</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
+/**
+ * Generate preference confirmation email HTML template for preview
+ */
+export function generatePreferenceConfirmationHtml(preferences: NewsletterPreferences): string {
+  const selectedCategories = [];
+  if (preferences.prefAiNews) selectedCategories.push("AI News & Insights");
+  if (preferences.prefCourseUpdates) selectedCategories.push("Course Updates");
+  if (preferences.prefEvents) selectedCategories.push("Events & Webinars");
+  if (preferences.prefTips) selectedCategories.push("Tips & Tutorials");
+
+  const categoriesHtml = selectedCategories.length > 0
+    ? selectedCategories.map(cat => `
+        <tr>
+          <td style="padding: 12px 16px; border-bottom: 1px solid #e5e7eb;">
+            <span style="color: #10b981; margin-right: 8px;">✓</span>
+            <span style="color: #374151;">${cat}</span>
+          </td>
+        </tr>
+      `).join('')
+    : `<tr><td style="padding: 12px 16px; color: #6b7280;">No categories selected</td></tr>`;
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter Preferences Updated</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px 12px 0 0;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">Preferences Updated ✓</h1>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
+                Your newsletter preferences have been successfully updated. Here's a summary of your current selections:
+              </p>
+              
+              <!-- Categories Table -->
+              <table style="width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden;">
+                <tr>
+                  <td style="padding: 12px 16px; background-color: #f9fafb; font-weight: 600; color: #374151; border-bottom: 1px solid #e5e7eb;">
+                    Your Selected Categories
+                  </td>
+                </tr>
+                ${categoriesHtml}
+              </table>
+              
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="https://upskillintech.com/newsletter/preferences?token=PREVIEW_TOKEN" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                  Manage Preferences
+                </a>
+              </div>
+              
+              <p style="margin: 30px 0 0; color: #6b7280; font-size: 14px; line-height: 1.6; padding: 16px; background-color: #fef3c7; border-radius: 8px;">
+                <strong>Didn't make this change?</strong> If you didn't update your preferences, please contact us immediately at support@upskillintech.com
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 40px 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
+                © 2024 UpskillinTech. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
