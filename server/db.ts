@@ -883,7 +883,14 @@ export async function createCommunityPost(data: {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
 
-  const [post] = await db.insert(communityPosts).values(data).returning();
+  const result = await db.insert(communityPosts).values({
+    userId: data.userId,
+    category: data.category as "business" | "education" | "faith" | "creator" | "general",
+    content: data.content,
+    attachments: data.attachments || null,
+  }).$returningId();
+  const postId = result[0]?.id;
+  const [post] = await db.select().from(communityPosts).where(eq(communityPosts.id, postId)).limit(1);
   return post;
 }
 
@@ -906,11 +913,12 @@ export async function likeCommunityPost(postId: number, userId: number) {
     if (post.length > 0) {
       await db
         .update(communityPosts)
-        .set({ likesCount: Math.max(0, (post[0].likesCount || 0) - 1) })
+        .set({ likeCount: Math.max(0, (post[0].likeCount || 0) - 1) })
         .where(eq(communityPosts.id, postId));
     }
     
-    return { liked: false };
+    const updatedPost = await db.select().from(communityPosts).where(eq(communityPosts.id, postId)).limit(1);
+    return { liked: false, likeCount: updatedPost[0]?.likeCount || 0 };
   } else {
     // Like
     await db.insert(postLikes).values({ postId, userId });
@@ -919,11 +927,12 @@ export async function likeCommunityPost(postId: number, userId: number) {
     if (post.length > 0) {
       await db
         .update(communityPosts)
-        .set({ likesCount: (post[0].likesCount || 0) + 1 })
+        .set({ likeCount: (post[0].likeCount || 0) + 1 })
         .where(eq(communityPosts.id, postId));
     }
     
-    return { liked: true };
+    const updatedPost2 = await db.select().from(communityPosts).where(eq(communityPosts.id, postId)).limit(1);
+    return { liked: true, likeCount: updatedPost2[0]?.likeCount || 0 };
   }
 }
 
@@ -935,14 +944,16 @@ export async function addCommunityComment(data: {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
 
-  const [comment] = await db.insert(communityComments).values(data).returning();
+  const result = await db.insert(communityComments).values(data).$returningId();
+  const commentId = result[0]?.id;
+  const [comment] = await db.select().from(communityComments).where(eq(communityComments.id, commentId)).limit(1);
   
   // Increment comments count
   const post = await db.select().from(communityPosts).where(eq(communityPosts.id, data.postId)).limit(1);
   if (post.length > 0) {
     await db
       .update(communityPosts)
-      .set({ commentsCount: (post[0].commentsCount || 0) + 1 })
+      .set({ commentCount: (post[0].commentCount || 0) + 1 })
       .where(eq(communityPosts.id, data.postId));
   }
 
@@ -1417,5 +1428,181 @@ export async function getRelatedBlogPosts(postId: number, categoryId: number, li
       )
     )
     .orderBy(desc(blogPosts.publishedAt))
+    .limit(limit);
+}
+
+
+// ============================================================================
+// Email Analytics Functions
+// ============================================================================
+
+export interface EmailAnalyticsSummary {
+  totalSent: number;
+  delivered: number;
+  opened: number;
+  clicked: number;
+  bounced: number;
+  unsubscribed: number;
+  spamReports: number;
+  openRate: number;
+  clickRate: number;
+  bounceRate: number;
+}
+
+export interface EmailEventsByDate {
+  date: string;
+  delivered: number;
+  opened: number;
+  clicked: number;
+  bounced: number;
+}
+
+export interface EmailEventsByTemplate {
+  templateType: string;
+  count: number;
+}
+
+export async function getEmailAnalyticsSummary(days: number = 30): Promise<EmailAnalyticsSummary> {
+  const db = await getDb();
+  if (!db) {
+    return {
+      totalSent: 0,
+      delivered: 0,
+      opened: 0,
+      clicked: 0,
+      bounced: 0,
+      unsubscribed: 0,
+      spamReports: 0,
+      openRate: 0,
+      clickRate: 0,
+      bounceRate: 0,
+    };
+  }
+
+  const { emailEvents } = await import("../drizzle/schema");
+  const { sql, gte } = await import("drizzle-orm");
+
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - days);
+
+  const results = await db
+    .select({
+      eventType: emailEvents.eventType,
+      count: sql<number>`count(*)`,
+    })
+    .from(emailEvents)
+    .where(gte(emailEvents.timestamp, startDate))
+    .groupBy(emailEvents.eventType);
+
+  const counts: Record<string, number> = {};
+  results.forEach((r) => {
+    counts[r.eventType] = Number(r.count);
+  });
+
+  const totalSent = (counts.processed || 0) + (counts.delivered || 0);
+  const delivered = counts.delivered || 0;
+  const opened = counts.open || 0;
+  const clicked = counts.click || 0;
+  const bounced = counts.bounce || 0;
+  const unsubscribed = (counts.unsubscribe || 0) + (counts.group_unsubscribe || 0);
+  const spamReports = counts.spamreport || 0;
+
+  return {
+    totalSent,
+    delivered,
+    opened,
+    clicked,
+    bounced,
+    unsubscribed,
+    spamReports,
+    openRate: delivered > 0 ? Math.round((opened / delivered) * 100) : 0,
+    clickRate: delivered > 0 ? Math.round((clicked / delivered) * 100) : 0,
+    bounceRate: totalSent > 0 ? Math.round((bounced / totalSent) * 100) : 0,
+  };
+}
+
+export async function getEmailEventsByDate(days: number = 30): Promise<EmailEventsByDate[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  const { emailEvents } = await import("../drizzle/schema");
+  const { sql, gte, and, inArray } = await import("drizzle-orm");
+
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - days);
+
+  const results = await db
+    .select({
+      date: sql<string>`DATE(timestamp)`,
+      eventType: emailEvents.eventType,
+      count: sql<number>`count(*)`,
+    })
+    .from(emailEvents)
+    .where(
+      and(
+        gte(emailEvents.timestamp, startDate),
+        inArray(emailEvents.eventType, ["delivered", "open", "click", "bounce"])
+      )
+    )
+    .groupBy(sql`DATE(timestamp)`, emailEvents.eventType)
+    .orderBy(sql`DATE(timestamp)`);
+
+  // Group by date
+  const dateMap: Record<string, EmailEventsByDate> = {};
+  results.forEach((r) => {
+    const dateStr = String(r.date);
+    if (!dateMap[dateStr]) {
+      dateMap[dateStr] = { date: dateStr, delivered: 0, opened: 0, clicked: 0, bounced: 0 };
+    }
+    if (r.eventType === "delivered") dateMap[dateStr].delivered = Number(r.count);
+    if (r.eventType === "open") dateMap[dateStr].opened = Number(r.count);
+    if (r.eventType === "click") dateMap[dateStr].clicked = Number(r.count);
+    if (r.eventType === "bounce") dateMap[dateStr].bounced = Number(r.count);
+  });
+
+  return Object.values(dateMap).sort((a, b) => a.date.localeCompare(b.date));
+}
+
+export async function getEmailEventsByTemplate(days: number = 30): Promise<EmailEventsByTemplate[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  const { emailEvents } = await import("../drizzle/schema");
+  const { sql, gte, isNotNull, and } = await import("drizzle-orm");
+
+  const startDate = new Date();
+  startDate.setDate(startDate.getDate() - days);
+
+  const results = await db
+    .select({
+      templateType: emailEvents.templateType,
+      count: sql<number>`count(*)`,
+    })
+    .from(emailEvents)
+    .where(
+      and(
+        gte(emailEvents.timestamp, startDate),
+        isNotNull(emailEvents.templateType)
+      )
+    )
+    .groupBy(emailEvents.templateType);
+
+  return results.map((r) => ({
+    templateType: r.templateType || "unknown",
+    count: Number(r.count),
+  }));
+}
+
+export async function getRecentEmailEvents(limit: number = 50) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const { emailEvents } = await import("../drizzle/schema");
+  const { desc } = await import("drizzle-orm");
+
+  return db
+    .select()
+    .from(emailEvents)
+    .orderBy(desc(emailEvents.timestamp))
     .limit(limit);
 }

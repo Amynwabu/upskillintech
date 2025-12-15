@@ -23,6 +23,7 @@ import Research from "./pages/Research";
 import Events from "./pages/Events";
 import NewsletterPreferences from "./pages/NewsletterPreferences";
 import AdminEmails from "./pages/AdminEmails";
+import AdminEmailAnalytics from "./pages/AdminEmailAnalytics";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -46,6 +47,7 @@ function Router() {
       <Route path={"/resources/events"} component={Events} />
       <Route path={"/newsletter/preferences"} component={NewsletterPreferences} />
       <Route path={"/admin/emails"} component={AdminEmails} />
+      <Route path={"/admin/email-analytics"} component={AdminEmailAnalytics} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

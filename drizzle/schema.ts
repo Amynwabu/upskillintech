@@ -468,3 +468,36 @@ export const newsletterSubscribers = mysqlTable("newsletter_subscribers", {
 
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
 export type InsertNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+
+
+/**
+ * Email Events - for tracking email analytics (opens, clicks, bounces, etc.)
+ */
+export const emailEvents = mysqlTable("email_events", {
+  id: int("id").autoincrement().primaryKey(),
+  messageId: varchar("messageId", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  eventType: mysqlEnum("eventType", [
+    "processed",
+    "dropped",
+    "delivered",
+    "deferred",
+    "bounce",
+    "open",
+    "click",
+    "spamreport",
+    "unsubscribe",
+    "group_unsubscribe",
+    "group_resubscribe"
+  ]).notNull(),
+  templateType: varchar("templateType", { length: 50 }), // welcome, preference_confirmation, password_reset, event_registration
+  url: text("url"), // For click events
+  userAgent: text("userAgent"),
+  ip: varchar("ip", { length: 45 }),
+  reason: text("reason"), // For bounce/drop events
+  timestamp: timestamp("timestamp").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type EmailEvent = typeof emailEvents.$inferSelect;
+export type InsertEmailEvent = typeof emailEvents.$inferInsert;

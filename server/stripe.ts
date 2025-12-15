@@ -3,7 +3,7 @@ import { ENV } from "./_core/env";
 
 export const stripe = ENV.stripeSecretKey
   ? new Stripe(ENV.stripeSecretKey, {
-      apiVersion: "2024-12-18.acacia",
+      apiVersion: "2025-11-17.clover",
     })
   : null;
 

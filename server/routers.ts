@@ -2,6 +2,7 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import * as db from "./db";
 import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail, generateEventRegistrationEmailHtml, sendEventRegistrationEmail, EventDetails } from "./emailService";
@@ -448,7 +449,7 @@ export const appRouter = router({
           userId: ctx.user.id,
           content: input.content,
           category: input.category,
-          attachments: input.attachments,
+          attachments: input.attachments ? JSON.stringify(input.attachments) : undefined,
         });
 
         // Broadcast new post via WebSocket
@@ -818,6 +819,35 @@ export const appRouter = router({
         }
 
         return { success: true };
+      }),
+
+    getEmailAnalytics: protectedProcedure
+      .input(
+        z.object({
+          days: z.number().min(1).max(365).default(30),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        // Check if user is admin
+        if (ctx.user.role !== "admin") {
+          throw new Error("Admin access required");
+        }
+
+        const { getEmailAnalyticsSummary, getEmailEventsByDate, getEmailEventsByTemplate, getRecentEmailEvents } = await import("./db");
+
+        const [summary, eventsByDate, eventsByTemplate, recentEvents] = await Promise.all([
+          getEmailAnalyticsSummary(input.days),
+          getEmailEventsByDate(input.days),
+          getEmailEventsByTemplate(input.days),
+          getRecentEmailEvents(20),
+        ]);
+
+        return {
+          summary,
+          eventsByDate,
+          eventsByTemplate,
+          recentEvents,
+        };
       }),
   }),
 });

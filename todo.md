@@ -995,3 +995,17 @@
 - [x] Update AdminEmails.tsx to include Event Registration in template selector
 - [x] Add event details form fields in admin panel for preview customization (using default event data)
 - [x] Add vitest tests for event registration email template (5 tests pass)
+
+
+## Email Analytics Dashboard
+- [x] Create emailEvents table in database schema (id, messageId, email, eventType, timestamp, metadata)
+- [x] Run pnpm db:push to apply schema changes
+- [x] Create SendGrid webhook endpoint at /api/webhooks/sendgrid for event ingestion
+- [x] Add database helper functions for email event storage and retrieval (getEmailAnalyticsSummary, getEmailEventsByDate, getEmailEventsByTemplate, getRecentEmailEvents)
+- [x] Create admin.getEmailAnalytics tRPC procedure for dashboard data
+- [x] Build /admin/email-analytics page with visual charts
+- [x] Display metrics: total sent, delivered, opened, clicked, bounced, unsubscribed, spam reports
+- [x] Add time-based filtering (last 7 days, 30 days, 90 days, last year)
+- [x] Create bar chart for email performance over time
+- [x] Create progress bar chart for event type distribution by template
+- [x] Add vitest tests for email analytics functionality (11 tests pass)

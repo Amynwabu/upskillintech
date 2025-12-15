@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
-import { ArrowLeft, Mail, Eye, Send, RefreshCw, Shield } from "lucide-react";
+import { ArrowLeft, Mail, Eye, Send, RefreshCw, Shield, BarChart3 } from "lucide-react";
 
 type EmailTemplate = "welcome" | "preference_confirmation" | "password_reset" | "event_registration";
 
@@ -127,9 +127,17 @@ export default function AdminEmails() {
                 <p className="text-sm text-gray-500">Preview and test email templates before they go live</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
-              <Shield className="w-4 h-4" />
-              Admin Panel
+            <div className="flex items-center gap-4">
+              <Link href="/admin/email-analytics">
+                <Button variant="outline" size="sm">
+                  <BarChart3 className="w-4 h-4 mr-2" />
+                  View Analytics
+                </Button>
+              </Link>
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-sm font-medium">
+                <Shield className="w-4 h-4" />
+                Admin Panel
+              </div>
             </div>
           </div>
         </div>
