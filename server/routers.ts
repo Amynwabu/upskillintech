@@ -4,7 +4,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import * as db from "./db";
-import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail } from "./emailService";
+import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail, generateEventRegistrationEmailHtml, sendEventRegistrationEmail, EventDetails } from "./emailService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -717,7 +717,7 @@ export const appRouter = router({
     previewEmailTemplate: protectedProcedure
       .input(
         z.object({
-          template: z.enum(["welcome", "preference_confirmation", "password_reset"]),
+          template: z.enum(["welcome", "preference_confirmation", "password_reset", "event_registration"]),
           preferences: z.object({
             prefAiNews: z.boolean(),
             prefCourseUpdates: z.boolean(),
@@ -743,8 +743,10 @@ export const appRouter = router({
             prefTips: true,
           };
           html = generatePreferenceConfirmationHtml(preferences);
-        } else {
+        } else if (input.template === "password_reset") {
           html = generatePasswordResetEmailHtml();
+        } else {
+          html = generateEventRegistrationEmailHtml();
         }
 
         return { html };
@@ -789,11 +791,27 @@ export const appRouter = router({
           if (!result.success) {
             throw new Error(result.error || "Failed to send email");
           }
-        } else {
+        } else if (input.template === "password_reset") {
           const result = await sendPasswordResetEmail(
             input.recipientEmail,
             "test-reset-token-preview"
           );
+          if (!result.success) {
+            throw new Error(result.error || "Failed to send email");
+          }
+        } else {
+          const testEvent: EventDetails = {
+            title: "AI Fundamentals Workshop",
+            description: "Learn the basics of artificial intelligence and machine learning in this hands-on workshop.",
+            date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+            duration: 120,
+            location: "Online via Zoom",
+            hostName: "Dr. Sarah Chen",
+            hostEmail: "sarah@upskillintech.com",
+            eventType: "workshop",
+            registrationId: "REG-TEST-001",
+          };
+          const result = await sendEventRegistrationEmail(input.recipientEmail, testEvent);
           if (!result.success) {
             throw new Error(result.error || "Failed to send email");
           }

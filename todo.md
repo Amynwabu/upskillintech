@@ -984,3 +984,14 @@
 - [x] Update admin.sendTestEmail tRPC procedure to include password_reset option
 - [x] Update AdminEmails.tsx to include Password Reset in template selector
 - [x] Add vitest tests for password reset email template (3 tests pass)
+
+
+## Event Registration Email Template
+- [x] Create generateEventRegistrationEmailHtml function with event details
+- [x] Create generateICSCalendarInvite function for calendar attachment
+- [x] Add sendEventRegistrationEmail function with ICS attachment
+- [x] Update admin.previewEmailTemplate tRPC procedure to include event_registration
+- [x] Update admin.sendTestEmail tRPC procedure to include event_registration
+- [x] Update AdminEmails.tsx to include Event Registration in template selector
+- [x] Add event details form fields in admin panel for preview customization (using default event data)
+- [x] Add vitest tests for event registration email template (5 tests pass)

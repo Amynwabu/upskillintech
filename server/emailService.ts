@@ -614,3 +614,302 @@ This is an automated message. Please do not reply to this email.`,
     };
   }
 }
+
+
+/**
+ * Event details interface for registration emails
+ */
+export interface EventDetails {
+  title: string;
+  description: string;
+  date: Date;
+  duration: number; // in minutes
+  location: string;
+  hostName: string;
+  hostEmail?: string;
+  eventType: "workshop" | "webinar" | "conference" | "meetup";
+  registrationId?: string;
+}
+
+/**
+ * Generate ICS calendar invite content
+ */
+export function generateICSCalendarInvite(event: EventDetails): string {
+  const startDate = event.date;
+  const endDate = new Date(startDate.getTime() + event.duration * 60000);
+  
+  const formatICSDate = (date: Date): string => {
+    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  };
+  
+  const uid = event.registrationId || `event-${Date.now()}@upskillintech.com`;
+  
+  return `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UpskillinTech//Event Registration//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${formatICSDate(new Date())}
+DTSTART:${formatICSDate(startDate)}
+DTEND:${formatICSDate(endDate)}
+SUMMARY:${event.title}
+DESCRIPTION:${event.description.replace(/\n/g, '\\n')}
+LOCATION:${event.location}
+ORGANIZER;CN=${event.hostName}:mailto:${event.hostEmail || 'events@upskillintech.com'}
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: ${event.title} starts in 30 minutes
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+}
+
+/**
+ * Generate event registration confirmation email HTML
+ */
+export function generateEventRegistrationEmailHtml(event?: EventDetails): string {
+  const defaultEvent: EventDetails = {
+    title: "AI Fundamentals Workshop",
+    description: "Learn the basics of artificial intelligence and machine learning in this hands-on workshop.",
+    date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 1 week from now
+    duration: 120,
+    location: "Online via Zoom",
+    hostName: "Dr. Sarah Chen",
+    hostEmail: "sarah@upskillintech.com",
+    eventType: "workshop",
+    registrationId: "REG-PREVIEW-001",
+  };
+  
+  const e = event || defaultEvent;
+  const eventDate = new Date(e.date);
+  const formattedDate = eventDate.toLocaleDateString('en-US', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+  const formattedTime = eventDate.toLocaleTimeString('en-US', { 
+    hour: '2-digit', 
+    minute: '2-digit',
+    timeZoneName: 'short'
+  });
+  
+  const eventTypeEmoji = {
+    workshop: "🛠️",
+    webinar: "📺",
+    conference: "🎤",
+    meetup: "👥",
+  };
+  
+  const eventTypeLabel = {
+    workshop: "Workshop",
+    webinar: "Webinar",
+    conference: "Conference",
+    meetup: "Meetup",
+  };
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Registration Confirmed</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="max-width: 600px; width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%); border-radius: 12px 12px 0 0;">
+              <div style="width: 64px; height: 64px; margin: 0 auto 16px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 32px;">🎉</span>
+              </div>
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">You're Registered!</h1>
+              <p style="margin: 10px 0 0; color: rgba(255, 255, 255, 0.9); font-size: 14px;">Your spot has been confirmed</p>
+            </td>
+          </tr>
+          <!-- Event Details Card -->
+          <tr>
+            <td style="padding: 30px 40px;">
+              <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px; padding: 24px; border: 1px solid #e2e8f0;">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                  <span style="font-size: 24px; margin-right: 12px;">${eventTypeEmoji[e.eventType]}</span>
+                  <span style="background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">${eventTypeLabel[e.eventType]}</span>
+                </div>
+                <h2 style="margin: 0 0 16px; color: #1e293b; font-size: 20px; font-weight: 700;">${e.title}</h2>
+                <p style="margin: 0 0 20px; color: #64748b; font-size: 14px; line-height: 1.6;">${e.description}</p>
+                
+                <!-- Event Info Grid -->
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 12px 0; border-top: 1px solid #e2e8f0;">
+                      <div style="display: flex; align-items: center;">
+                        <span style="font-size: 18px; margin-right: 12px;">📅</span>
+                        <div>
+                          <div style="color: #64748b; font-size: 12px; font-weight: 500;">DATE</div>
+                          <div style="color: #1e293b; font-size: 14px; font-weight: 600;">${formattedDate}</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px 0; border-top: 1px solid #e2e8f0;">
+                      <div style="display: flex; align-items: center;">
+                        <span style="font-size: 18px; margin-right: 12px;">⏰</span>
+                        <div>
+                          <div style="color: #64748b; font-size: 12px; font-weight: 500;">TIME</div>
+                          <div style="color: #1e293b; font-size: 14px; font-weight: 600;">${formattedTime} (${e.duration} minutes)</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px 0; border-top: 1px solid #e2e8f0;">
+                      <div style="display: flex; align-items: center;">
+                        <span style="font-size: 18px; margin-right: 12px;">📍</span>
+                        <div>
+                          <div style="color: #64748b; font-size: 12px; font-weight: 500;">LOCATION</div>
+                          <div style="color: #1e293b; font-size: 14px; font-weight: 600;">${e.location}</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px 0; border-top: 1px solid #e2e8f0;">
+                      <div style="display: flex; align-items: center;">
+                        <span style="font-size: 18px; margin-right: 12px;">👤</span>
+                        <div>
+                          <div style="color: #64748b; font-size: 12px; font-weight: 500;">HOST</div>
+                          <div style="color: #1e293b; font-size: 14px; font-weight: 600;">${e.hostName}</div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+          <!-- Calendar Button -->
+          <tr>
+            <td style="padding: 0 40px 30px; text-align: center;">
+              <p style="margin: 0 0 16px; color: #64748b; font-size: 14px;">
+                📎 A calendar invite (.ics file) is attached to this email
+              </p>
+              <a href="https://upskillintech.com/events" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                View All Events
+              </a>
+            </td>
+          </tr>
+          <!-- What to Expect -->
+          <tr>
+            <td style="padding: 0 40px 30px;">
+              <div style="background-color: #fef3c7; border-radius: 8px; padding: 16px; border-left: 4px solid #f59e0b;">
+                <h3 style="margin: 0 0 8px; color: #92400e; font-size: 14px; font-weight: 600;">📝 What to Expect</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #92400e; font-size: 13px; line-height: 1.6;">
+                  <li>You'll receive a reminder email 24 hours before the event</li>
+                  <li>Join link will be sent 30 minutes before start time</li>
+                  <li>Have questions ready for the Q&A session</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <!-- Registration ID -->
+          <tr>
+            <td style="padding: 0 40px 30px; text-align: center;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
+                Registration ID: <strong>${e.registrationId || 'N/A'}</strong>
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 40px 30px; text-align: center; border-top: 1px solid #e5e7eb;">
+              <p style="margin: 0; color: #9ca3af; font-size: 12px;">
+                © 2024 UpskillinTech. All rights reserved.
+              </p>
+              <p style="margin: 10px 0 0; color: #9ca3af; font-size: 12px;">
+                Need to cancel? <a href="https://upskillintech.com/events/cancel" style="color: #8b5cf6;">Manage your registration</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
+/**
+ * Send event registration confirmation email with calendar invite
+ */
+export async function sendEventRegistrationEmail(
+  email: string,
+  event: EventDetails
+): Promise<{ success: boolean; error?: string }> {
+  if (!SENDGRID_API_KEY) {
+    console.warn('[EmailService] Cannot send email: SendGrid not configured');
+    return { success: false, error: 'Email service not configured' };
+  }
+
+  const html = generateEventRegistrationEmailHtml(event);
+  const icsContent = generateICSCalendarInvite(event);
+  const icsBase64 = Buffer.from(icsContent).toString('base64');
+
+  try {
+    const msg = {
+      to: email,
+      from: {
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
+      },
+      subject: `You're Registered: ${event.title}`,
+      text: `Event Registration Confirmed!
+
+You're registered for: ${event.title}
+
+Event Details:
+- Date: ${event.date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+- Time: ${event.date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+- Duration: ${event.duration} minutes
+- Location: ${event.location}
+- Host: ${event.hostName}
+
+${event.description}
+
+Registration ID: ${event.registrationId || 'N/A'}
+
+A calendar invite is attached to this email.
+
+---
+© 2024 UpskillinTech. All rights reserved.`,
+      html,
+      attachments: [
+        {
+          content: icsBase64,
+          filename: `${event.title.replace(/[^a-zA-Z0-9]/g, '_')}.ics`,
+          type: 'text/calendar',
+          disposition: 'attachment',
+        },
+      ],
+    };
+
+    await sgMail.send(msg);
+    console.log(`[EmailService] Event registration email sent to ${email} for "${event.title}"`);
+    return { success: true };
+  } catch (error: any) {
+    console.error('[EmailService] Failed to send event registration email:', error?.response?.body || error);
+    return { 
+      success: false, 
+      error: error?.response?.body?.errors?.[0]?.message || 'Failed to send email' 
+    };
+  }
+}
