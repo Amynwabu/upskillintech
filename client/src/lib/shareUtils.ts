@@ -19,7 +19,7 @@ export function generateShareContent(learningPath: LearningPath): ShareContent {
 
   const emoji = pathEmojis[learningPath.id] || "🎯";
   
-  const text = `I just discovered my perfect AI learning path: ${emoji} ${learningPath.title}! Take the quiz to find yours at UpskillinTech Hub.`;
+  const text = `I just discovered my perfect AI learning path: ${emoji} ${learningPath.title}! Take the quiz to find yours at UpskillinTech.`;
   
   return {
     text,

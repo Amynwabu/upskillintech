@@ -501,3 +501,43 @@ export const emailEvents = mysqlTable("email_events", {
 
 export type EmailEvent = typeof emailEvents.$inferSelect;
 export type InsertEmailEvent = typeof emailEvents.$inferInsert;
+
+
+// Email Campaigns
+export const emailCampaigns = mysqlTable("email_campaigns", {
+  id: int("id").primaryKey().autoincrement(),
+  name: varchar("name", { length: 255 }).notNull(),
+  subject: varchar("subject", { length: 500 }).notNull(),
+  templateType: varchar("templateType", { length: 50 }).notNull(), // newsletter, announcement, promotion, event_invite, custom
+  htmlContent: text("htmlContent").notNull(),
+  textContent: text("textContent"),
+  recipientFilter: varchar("recipientFilter", { length: 50 }).notNull(), // all, ai_news, course_updates, events, tips
+  status: varchar("status", { length: 20 }).notNull().default("draft"), // draft, scheduled, sending, sent, cancelled, failed
+  scheduledAt: timestamp("scheduledAt"),
+  startedAt: timestamp("startedAt"),
+  completedAt: timestamp("completedAt"),
+  totalRecipients: int("totalRecipients").default(0).notNull(),
+  sentCount: int("sentCount").default(0).notNull(),
+  failedCount: int("failedCount").default(0).notNull(),
+  createdBy: int("createdBy").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type EmailCampaign = typeof emailCampaigns.$inferSelect;
+export type InsertEmailCampaign = typeof emailCampaigns.$inferInsert;
+
+// Campaign Recipients
+export const campaignRecipients = mysqlTable("campaign_recipients", {
+  id: int("id").primaryKey().autoincrement(),
+  campaignId: int("campaignId").notNull(),
+  email: varchar("email", { length: 255 }).notNull(),
+  status: varchar("status", { length: 20 }).notNull().default("pending"), // pending, sent, failed, bounced
+  messageId: varchar("messageId", { length: 255 }),
+  sentAt: timestamp("sentAt"),
+  error: text("error"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type CampaignRecipient = typeof campaignRecipients.$inferSelect;
+export type InsertCampaignRecipient = typeof campaignRecipients.$inferInsert;

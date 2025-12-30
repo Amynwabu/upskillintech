@@ -3,7 +3,7 @@ import sgMail from '@sendgrid/mail';
 // Initialize SendGrid with API key
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const SENDER_EMAIL = process.env.SENDGRID_SENDER_EMAIL || 'noreply@upskillintech.com';
-const SENDER_NAME = 'UpskillinTech Hub';
+const SENDER_NAME = 'UpskillinTech';
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
@@ -27,8 +27,8 @@ export async function sendWelcomeEmail(email: string): Promise<{ success: boolea
         email: SENDER_EMAIL,
         name: SENDER_NAME,
       },
-      subject: 'Welcome to UpskillinTech Hub Newsletter! 🚀',
-      text: `Welcome to UpskillinTech Hub!
+      subject: 'Welcome to UpskillinTech Newsletter! 🚀',
+      text: `Welcome to UpskillinTech!
 
 Thank you for subscribing to our newsletter. You're now part of a community of 1,000+ learners transforming their skills with AI.
 
@@ -44,7 +44,7 @@ https://upskillintech.com
 If you have any questions, feel free to reply to this email.
 
 Best regards,
-The UpskillinTech Hub Team
+The UpskillinTech Team
 
 ---
 You're receiving this email because you subscribed to our newsletter. If you wish to unsubscribe, click here: [unsubscribe link]`,
@@ -54,7 +54,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to UpskillinTech Hub</title>
+  <title>Welcome to UpskillinTech</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
   <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -64,7 +64,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
           <!-- Header -->
           <tr>
             <td style="padding: 40px 40px 20px; text-align: center; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 8px 8px 0 0;">
-              <h1 style="margin: 0; color: #10b981; font-size: 32px; font-weight: bold;">UpskillinTech Hub</h1>
+              <h1 style="margin: 0; color: #10b981; font-size: 32px; font-weight: bold;">UpskillinTech</h1>
               <p style="margin: 10px 0 0; color: #94a3b8; font-size: 16px;">Transform Skills. Power Growth. Live AI.</p>
             </td>
           </tr>
@@ -111,7 +111,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
             <td style="padding: 30px 40px; background-color: #f8fafc; border-radius: 0 0 8px 8px; text-align: center;">
               <p style="margin: 0 0 10px; color: #64748b; font-size: 14px;">
                 Best regards,<br>
-                <strong>The UpskillinTech Hub Team</strong>
+                <strong>The UpskillinTech Team</strong>
               </p>
               <p style="margin: 20px 0 0; color: #94a3b8; font-size: 12px;">
                 You're receiving this email because you subscribed to our newsletter.<br>

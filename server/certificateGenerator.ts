@@ -43,11 +43,11 @@ export async function generateCertificatePDF(data: CertificateData): Promise<Buf
       doc.rect(40, 40, pageWidth - 80, pageHeight - 80).stroke();
       doc.restore();
 
-      // Header - UpskillinTech Hub
+      // Header - UpskillinTech
       doc.fontSize(32)
         .fillColor("#10b981")
         .font("Helvetica-Bold")
-        .text("UpskillinTech Hub", 0, 80, {
+        .text("UpskillinTech", 0, 80, {
           align: "center",
           width: pageWidth,
         });

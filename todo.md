@@ -1009,3 +1009,30 @@
 - [x] Create bar chart for email performance over time
 - [x] Create progress bar chart for event type distribution by template
 - [x] Add vitest tests for email analytics functionality (11 tests pass)
+
+
+## Email Campaign Scheduling System
+- [ ] Create emailCampaigns table (id, name, subject, templateType, content, status, scheduledAt, sentAt, recipientFilter, totalRecipients, sentCount, failedCount)
+- [ ] Create campaignRecipients table (id, campaignId, email, status, sentAt, error)
+- [ ] Run pnpm db:push to apply schema changes
+- [ ] Add database helper functions for campaign CRUD operations
+- [ ] Create tRPC procedures: campaigns.list, campaigns.create, campaigns.update, campaigns.delete, campaigns.schedule, campaigns.cancel, campaigns.getStats
+- [ ] Build batch email sender with rate limiting (100 emails per minute)
+- [ ] Create campaign scheduler that checks for pending campaigns and triggers batch sending
+- [ ] Build /admin/campaigns page with campaign list, status indicators, and action buttons
+- [ ] Create campaign creation form with template selection, recipient filtering, and scheduling
+- [ ] Add campaign detail view showing send progress and recipient status
+- [ ] Display campaign metrics (sent, delivered, opened, clicked) linked to email analytics
+- [ ] Add vitest tests for campaign scheduling functionality
+
+
+## Branding Update - Logo and Name
+- [x] Copy new logo file to public directory
+- [x] Update APP_LOGO constant to use /logo.png
+- [ ] Update VITE_APP_TITLE to remove "Hub" (USER ACTION: Update in Management UI → Settings → General)
+- [x] Search and replace "UpskillinTech Hub" with "UpskillinTech" in all files
+- [x] Update email templates to use "UpskillinTech"
+- [x] Update certificate generator to use "UpskillinTech"
+- [x] Update share utils to use "UpskillinTech"
+- [x] Test logo display across all pages (verified in header)
+- [ ] Save checkpoint with branding updates
