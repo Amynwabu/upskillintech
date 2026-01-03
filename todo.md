@@ -1061,4 +1061,11 @@
 - [x] Increase logo size in footer (h-12 to h-16)
 - [x] Update Navigation component to use logo image instead of text
 - [x] Test logo display with transparent background (verified in browser)
-- [ ] Save checkpoint with logo improvements
+- [x] Save checkpoint with logo improvements (version: 252c4950)
+
+
+## Logo Size Increase - Standard Website Visibility
+- [x] Increase header logo from h-14 to h-20 for better visibility
+- [x] Increase footer logo from h-16 to h-20 for consistency
+- [x] Test logo proportions and visibility (verified at h-20 in browser)
+- [ ] Save checkpoint with improved logo sizes
