@@ -1043,4 +1043,13 @@
 - [x] Add new AI-themed hero image to public directory
 - [x] Update Home page to use new hero image
 - [x] Test logo and hero image display (verified in browser)
-- [ ] Save checkpoint with visual updates
+- [x] Save checkpoint with visual updates (version: 35668830)
+
+
+## Logo and Favicon Update (Icon + Text)
+- [x] Replace logo with combined icon+text version
+- [x] Extract icon portion for favicon (created favicon.ico)
+- [x] Update footer to use new logo
+- [x] Verify logo displays in header and footer (logo shows in both locations)
+- [x] Test favicon display in browser tab (favicon.ico created and loaded)
+- [ ] Save checkpoint with branding updates

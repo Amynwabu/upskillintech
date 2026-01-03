@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { APP_TITLE } from "@/const";
+import { APP_TITLE, APP_LOGO } from "@/const";
 import { Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -95,9 +95,11 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              <span className="text-2xl font-bold text-black cursor-pointer">
-                {APP_TITLE}
-              </span>
+              <img 
+                src={APP_LOGO} 
+                alt={APP_TITLE}
+                className="h-12 w-auto cursor-pointer"
+              />
             </Link>
           </div>
 
