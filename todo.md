@@ -1085,4 +1085,12 @@
 - [x] Increase header logo to 100px (h-25)
 - [x] Increase footer logo to 100px (h-25)
 - [x] Test logo display and visibility (verified 100px transparent logo in header)
+- [x] Save checkpoint with updated logo (version: 6c2b00dc)
+
+
+## Logo File Replacement and Navigation Update
+- [x] Replace logo.png with new UpskillintechLogo.png file
+- [x] Update Navigation component to use simple img tag with h-14 size
+- [x] Remove APP_LOGO import and use direct /logo.png path
+- [x] Test logo display in header (verified h-14 size with transparent background)
 - [ ] Save checkpoint with updated logo
