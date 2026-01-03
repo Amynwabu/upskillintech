@@ -38,7 +38,7 @@ export default function Navigation() {
             <img 
               src={APP_LOGO} 
               alt={APP_TITLE}
-              className="h-16 w-auto cursor-pointer"
+              className="h-25 w-auto cursor-pointer"
             />
           </Link>
 
