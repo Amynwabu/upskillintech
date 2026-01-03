@@ -98,7 +98,7 @@ export default function Footer() {
               <img 
                 src={APP_LOGO} 
                 alt={APP_TITLE}
-                className="h-12 w-auto cursor-pointer"
+                className="h-16 w-auto cursor-pointer"
               />
             </Link>
           </div>

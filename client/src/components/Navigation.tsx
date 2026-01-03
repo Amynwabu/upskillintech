@@ -7,7 +7,7 @@ import { getLoginUrl } from "@/const";
 import { Menu, X, LogOut, User, Bell, ChevronDown } from "lucide-react";
 import { useNotifications } from "@/hooks/useNotifications";
 import { Badge } from "@/components/ui/badge";
-import { APP_TITLE } from "@/const";
+import { APP_TITLE, APP_LOGO } from "@/const";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,9 +35,11 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo - Left Side */}
           <Link href="/">
-            <span className="text-2xl font-bold text-black dark:text-white cursor-pointer">
-              UpskillinTech
-            </span>
+            <img 
+              src={APP_LOGO} 
+              alt={APP_TITLE}
+              className="h-14 w-auto cursor-pointer"
+            />
           </Link>
 
           {/* Desktop Navigation - Center/Left after logo */}
