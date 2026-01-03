@@ -75,7 +75,7 @@ export default function Home() {
               <div className="relative mt-12">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
                   <img 
-                    src="/images/hero-ai-glow.jpg" 
+                    src="/hero-ai.png" 
                     alt="AI Learning Platform" 
                     className="w-full h-auto object-cover"
                   />

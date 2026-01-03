@@ -1036,3 +1036,11 @@
 - [x] Update share utils to use "UpskillinTech"
 - [x] Test logo display across all pages (verified in header)
 - [x] Save checkpoint with branding updates (version: 09818b0e)
+
+
+## Logo and Hero Image Update
+- [x] Replace logo with text-based UpskillinTech logo
+- [x] Add new AI-themed hero image to public directory
+- [x] Update Home page to use new hero image
+- [x] Test logo and hero image display (verified in browser)
+- [ ] Save checkpoint with visual updates
