@@ -1035,4 +1035,4 @@
 - [x] Update certificate generator to use "UpskillinTech"
 - [x] Update share utils to use "UpskillinTech"
 - [x] Test logo display across all pages (verified in header)
-- [ ] Save checkpoint with branding updates
+- [x] Save checkpoint with branding updates (version: 09818b0e)
