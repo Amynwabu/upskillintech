@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, title, slug FROM blog_posts ORDER BY id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2x7DhzEJNfHLCxa.8bcd11651c13 --database cCWtAt3SyT6BXK2HRwbL9K --execute SELECT id, title, slug FROM blog_posts ORDER BY id",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Getting Started with AI: A Beginner's Guide",
+      "slug": "getting-started-with-ai"
+    },
+    {
+      "id": "2",
+      "title": "How AI is Revolutionizing Business Operations",
+      "slug": "ai-revolutionizing-business"
+    },
+    {
+      "id": "3",
+      "title": "Top 10 AI Tools Every Professional Should Know",
+      "slug": "top-10-ai-tools"
+    },
+    {
+      "id": "4",
+      "title": "The Future of AI in Education",
+      "slug": "future-ai-education"
+    },
+    {
+      "id": "5",
+      "title": "Building Your First AI-Powered Application",
+      "slug": "building-first-ai-app"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\n1\tGetting Started with AI: A Beginner's Guide\tgetting-started-with-ai\n2\tHow AI is Revolutionizing Business Operations\tai-revolutionizing-business\n3\tTop 10 AI Tools Every Professional Should Know\ttop-10-ai-tools\n4\tThe Future of AI in Education\tfuture-ai-education\n5\tBuilding Your First AI-Powered Application\tbuilding-first-ai-app\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

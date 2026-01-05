@@ -1,0 +1,56 @@
+{
+  "query": "SELECT id, title, slug, excerpt, content FROM blog_posts ORDER BY id LIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2x7DhzEJNfHLCxa.8bcd11651c13 --database cCWtAt3SyT6BXK2HRwbL9K --execute SELECT id, title, slug, excerpt, content FROM blog_posts ORDER BY id LIMIT 10",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Getting Started with AI: A Beginner's Guide",
+      "slug": "getting-started-with-ai",
+      "excerpt": "Discover the fundamentals of artificial intelligence and how it's transforming industries worldwide.",
+      "content": "Artificial Intelligence is no longer a futuristic concept—it's here, and it's reshaping how we work, learn, and live. Whether you're a business owner, educator, or curious individual, understanding AI basics is essential in today's digital landscape."
+    },
+    {
+      "id": "2",
+      "title": "How AI is Revolutionizing Business Operations",
+      "slug": "ai-revolutionizing-business",
+      "excerpt": "Explore real-world examples of how companies are using AI to automate workflows and boost productivity.",
+      "content": "Businesses across all sectors are discovering the transformative power of AI. From automating repetitive tasks to generating deep customer insights, AI is becoming the competitive advantage that separates industry leaders from followers."
+    },
+    {
+      "id": "3",
+      "title": "Top 10 AI Tools Every Professional Should Know",
+      "slug": "top-10-ai-tools",
+      "excerpt": "A curated list of the most powerful AI tools that can supercharge your workflow and creativity.",
+      "content": "The AI tool landscape is vast and growing every day. From writing assistants to image generators, there's an AI solution for almost every professional need. But which tools are truly worth your time?"
+    },
+    {
+      "id": "4",
+      "title": "The Future of AI in Education",
+      "slug": "future-ai-education",
+      "excerpt": "How artificial intelligence is personalizing learning experiences and empowering educators worldwide.",
+      "content": "Education is undergoing a profound transformation powered by AI. Personalized learning paths, intelligent tutoring systems, and automated grading are just the beginning of what's possible."
+    },
+    {
+      "id": "5",
+      "title": "Building Your First AI-Powered Application",
+      "slug": "building-first-ai-app",
+      "excerpt": "A step-by-step guide to creating your own AI application, even if you're not a developer.",
+      "content": "You don't need to be a coding expert to build AI-powered applications anymore. With no-code and low-code platforms, anyone with a creative idea can bring AI solutions to life."
+    }
+  ],
+  "messages": [
+    "In this comprehensive guide, we'll explore what AI really means, the different types of AI systems, and how you can start your AI journey today. From machine learning to neural networks, we break down complex concepts into digestible insights.",
+    "The key to success with AI isn't about becoming a programmer overnight. It's about understanding the possibilities, identifying opportunities in your field, and learning how to leverage AI tools effectively. Let's dive into the exciting world of artificial intelligence together.",
+    "In this article, we examine case studies from companies that have successfully integrated AI into their operations. You'll learn about practical applications like chatbots for customer service, predictive analytics for inventory management, and AI-powered marketing automation.",
+    "The future of business isn't just about adopting technology—it's about strategic AI integration that amplifies human capabilities and drives sustainable growth. Discover how your organization can start this journey today.",
+    "We've compiled a list of the top 10 AI tools that are making waves across industries. Each tool is evaluated based on ease of use, practical applications, and real-world impact. Whether you're in marketing, design, development, or education, you'll find tools that can transform your daily workflow.",
+    "The best part? Most of these tools offer free tiers or trials, making it easy to experiment and find what works best for you. Let's explore the AI toolkit that will define the future of work.",
+    "This article explores how AI is making education more accessible, adaptive, and effective. We look at real implementations in schools and universities, examining both the opportunities and challenges of AI-powered education.",
+    "The goal isn't to replace teachers—it's to empower them with tools that allow for more meaningful student interactions and truly personalized learning experiences. Join us as we explore the classroom of tomorrow.",
+    "This practical guide walks you through the entire process of building your first AI app. From defining your use case to selecting the right tools and deploying your solution, we cover everything you need to know.",
+    "We'll use real examples and provide templates you can customize for your own projects. By the end of this guide, you'll have a working AI application and the confidence to build more. Let's turn your AI ideas into reality."
+  ],
+  "stdout": "id\ttitle\tslug\texcerpt\tcontent\n1\tGetting Started with AI: A Beginner's Guide\tgetting-started-with-ai\tDiscover the fundamentals of artificial intelligence and how it's transforming industries worldwide.\tArtificial Intelligence is no longer a futuristic concept—it's here, and it's reshaping how we work, learn, and live. Whether you're a business owner, educator, or curious individual, understanding AI basics is essential in today's digital landscape.\n\nIn this comprehensive guide, we'll explore what AI really means, the different types of AI systems, and how you can start your AI journey today. From machine learning to neural networks, we break down complex concepts into digestible insights.\n\nThe key to success with AI isn't about becoming a programmer overnight. It's about understanding the possibilities, identifying opportunities in your field, and learning how to leverage AI tools effectively. Let's dive into the exciting world of artificial intelligence together.\n2\tHow AI is Revolutionizing Business Operations\tai-revolutionizing-business\tExplore real-world examples of how companies are using AI to automate workflows and boost productivity.\tBusinesses across all sectors are discovering the transformative power of AI. From automating repetitive tasks to generating deep customer insights, AI is becoming the competitive advantage that separates industry leaders from followers.\n\nIn this article, we examine case studies from companies that have successfully integrated AI into their operations. You'll learn about practical applications like chatbots for customer service, predictive analytics for inventory management, and AI-powered marketing automation.\n\nThe future of business isn't just about adopting technology—it's about strategic AI integration that amplifies human capabilities and drives sustainable growth. Discover how your organization can start this journey today.\n3\tTop 10 AI Tools Every Professional Should Know\ttop-10-ai-tools\tA curated list of the most powerful AI tools that can supercharge your workflow and creativity.\tThe AI tool landscape is vast and growing every day. From writing assistants to image generators, there's an AI solution for almost every professional need. But which tools are truly worth your time?\n\nWe've compiled a list of the top 10 AI tools that are making waves across industries. Each tool is evaluated based on ease of use, practical applications, and real-world impact. Whether you're in marketing, design, development, or education, you'll find tools that can transform your daily workflow.\n\nThe best part? Most of these tools offer free tiers or trials, making it easy to experiment and find what works best for you. Let's explore the AI toolkit that will define the future of work.\n4\tThe Future of AI in Education\tfuture-ai-education\tHow artificial intelligence is personalizing learning experiences and empowering educators worldwide.\tEducation is undergoing a profound transformation powered by AI. Personalized learning paths, intelligent tutoring systems, and automated grading are just the beginning of what's possible.\n\nThis article explores how AI is making education more accessible, adaptive, and effective. We look at real implementations in schools and universities, examining both the opportunities and challenges of AI-powered education.\n\nThe goal isn't to replace teachers—it's to empower them with tools that allow for more meaningful student interactions and truly personalized learning experiences. Join us as we explore the classroom of tomorrow.\n5\tBuilding Your First AI-Powered Application\tbuilding-first-ai-app\tA step-by-step guide to creating your own AI application, even if you're not a developer.\tYou don't need to be a coding expert to build AI-powered applications anymore. With no-code and low-code platforms, anyone with a creative idea can bring AI solutions to life.\n\nThis practical guide walks you through the entire process of building your first AI app. From defining your use case to selecting the right tools and deploying your solution, we cover everything you need to know.\n\nWe'll use real examples and provide templates you can customize for your own projects. By the end of this guide, you'll have a working AI application and the confidence to build more. Let's turn your AI ideas into reality.\n",
+  "stderr": "",
+  "execution_time_ms": 719
+}
