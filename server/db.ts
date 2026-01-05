@@ -1606,3 +1606,47 @@ export async function getRecentEmailEvents(limit: number = 50) {
     .orderBy(desc(emailEvents.timestamp))
     .limit(limit);
 }
+
+
+// Webinar registrations
+export async function registerWebinar(data: {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  role?: string;
+  webinarTitle: string;
+  webinarDate: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const { webinarRegistrations } = await import("../drizzle/schema");
+
+  const [registration] = await db.insert(webinarRegistrations).values({
+    name: data.name,
+    email: data.email,
+    phone: data.phone || null,
+    company: data.company || null,
+    role: data.role || null,
+    webinarTitle: data.webinarTitle,
+    webinarDate: data.webinarDate,
+    confirmationSent: true,
+    attended: false,
+  }).$returningId();
+
+  return { id: registration.id };
+}
+
+export async function getAllWebinarRegistrations() {
+  const db = await getDb();
+  if (!db) return [];
+
+  const { webinarRegistrations } = await import("../drizzle/schema");
+  const { desc } = await import("drizzle-orm");
+
+  return db
+    .select()
+    .from(webinarRegistrations)
+    .orderBy(desc(webinarRegistrations.createdAt));
+}

@@ -541,3 +541,22 @@ export const campaignRecipients = mysqlTable("campaign_recipients", {
 
 export type CampaignRecipient = typeof campaignRecipients.$inferSelect;
 export type InsertCampaignRecipient = typeof campaignRecipients.$inferInsert;
+
+
+// Webinar Registrations
+export const webinarRegistrations = mysqlTable("webinar_registrations", {
+  id: int("id").primaryKey().autoincrement(),
+  name: varchar("name", { length: 255 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  phone: varchar("phone", { length: 50 }),
+  company: varchar("company", { length: 255 }),
+  role: varchar("role", { length: 255 }),
+  webinarTitle: varchar("webinarTitle", { length: 500 }).notNull(),
+  webinarDate: varchar("webinarDate", { length: 100 }).notNull(),
+  confirmationSent: boolean("confirmationSent").default(false).notNull(),
+  attended: boolean("attended").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type WebinarRegistration = typeof webinarRegistrations.$inferSelect;
+export type InsertWebinarRegistration = typeof webinarRegistrations.$inferInsert;

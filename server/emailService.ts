@@ -629,6 +629,7 @@ export interface EventDetails {
   hostEmail?: string;
   eventType: "workshop" | "webinar" | "conference" | "meetup";
   registrationId?: string;
+  zoomLink?: string;
 }
 
 /**
@@ -793,6 +794,19 @@ export function generateEventRegistrationEmailHtml(event?: EventDetails): string
                       </div>
                     </td>
                   </tr>
+                  ${e.zoomLink ? `
+                  <tr>
+                    <td style="padding: 12px 0; border-top: 1px solid #e2e8f0;">
+                      <div style="display: flex; align-items: center;">
+                        <span style="font-size: 18px; margin-right: 12px;">🔗</span>
+                        <div style="flex: 1;">
+                          <div style="color: #64748b; font-size: 12px; font-weight: 500;">JOIN LINK</div>
+                          <a href="${e.zoomLink}" style="color: #2563eb; font-size: 14px; font-weight: 600; text-decoration: none;">${e.zoomLink}</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  ` : ''}
                 </table>
               </div>
             </td>

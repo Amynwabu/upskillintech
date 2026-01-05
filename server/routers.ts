@@ -850,6 +850,55 @@ export const appRouter = router({
         };
       }),
   }),
+
+  // Webinar registrations
+  webinar: router({    register: publicProcedure
+      .input(
+        z.object({
+          name: z.string().min(1),
+          email: z.string().email(),
+          phone: z.string().optional(),
+          company: z.string().optional(),
+          role: z.string().optional(),
+          webinarTitle: z.string(),
+          webinarDate: z.string(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        const { registerWebinar } = await import("./db");
+        const registration = await registerWebinar(input);
+        
+        // Send confirmation email
+        const eventDetails: EventDetails = {
+          title: input.webinarTitle,
+          description: "You will learn AI skills that will help you work less and earn more, including: What AI can do for you, Use AI in daily work, Kick-start your niche with AI, Launch into jobs: from AI-ready CVs to applications and interviews that win the right roles, Free tools you can use immediately.",
+          date: new Date("2026-01-17T19:00:00Z"), // 7PM UK time
+          duration: 90,
+          location: "Online via Zoom",
+          hostName: "Dr. Amaka Adiuku",
+          hostEmail: "amaka.adiuku@gmail.com",
+          eventType: "webinar",
+          registrationId: `REG-${registration.id}`,
+          zoomLink: "https://shorturl.at/2yAwE",
+        };
+        
+        await sendEventRegistrationEmail(input.email, eventDetails);
+        
+        return { success: true, registrationId: registration.id };
+      }),
+
+    exportRegistrations: protectedProcedure
+      .query(async ({ ctx }) => {
+        // Check if user is admin
+        if (ctx.user.role !== "admin") {
+          throw new Error("Admin access required");
+        }
+        
+        const { getAllWebinarRegistrations } = await import("./db");
+        const registrations = await getAllWebinarRegistrations();
+        return registrations;
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
