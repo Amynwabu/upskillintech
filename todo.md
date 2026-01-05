@@ -1110,4 +1110,11 @@
 - [x] Increase header logo from h-24 to h-30 (120px)
 - [x] Increase footer logo from h-25 to h-30 (120px)
 - [x] Test logo display at new size (verified 120px in header)
-- [ ] Save checkpoint with increased logo size
+- [x] Save checkpoint with increased logo size (version: ab5a5efb)
+
+
+## Resources Dropdown Menu Fix
+- [x] Check Navigation component Resources dropdown structure
+- [x] Fix dropdown links to properly navigate to pages (changed span to a tags)
+- [x] Test all Resources menu links (Blog, Events, Community, Resource Hub) - verified working
+- [ ] Save checkpoint with fixed navigation
