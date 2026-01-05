@@ -70,12 +70,12 @@ export default function Navigation() {
                 >
                   {resourcesLinks.map((link) => (
                     <Link key={link.href} href={link.href}>
-                      <a
+                      <span
                         className="block px-4 py-2 text-foreground/80 hover:text-foreground hover:bg-muted transition-colors cursor-pointer"
                         onClick={() => setIsResourcesOpen(false)}
                       >
                         {link.label}
-                      </a>
+                      </span>
                     </Link>
                   ))}
                 </div>
