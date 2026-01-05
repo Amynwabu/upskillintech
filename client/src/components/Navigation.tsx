@@ -36,7 +36,7 @@ export default function Navigation() {
           <img
             src="/logo.png"
             alt="UpskillinTech"
-            className="h-24 w-auto"
+            className="h-30 w-auto"
           />
         </Link>
 

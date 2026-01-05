@@ -1103,4 +1103,11 @@
 - [x] Increase logo to h-24 (96px)
 - [x] Simplify container structure with flex justify-between px-8
 - [x] Test navigation display and functionality (verified white bg, py-6, h-24 logo)
-- [ ] Save checkpoint with redesigned navigation
+- [x] Save checkpoint with redesigned navigation (version: 7c072761)
+
+
+## Logo Size Increase to 120px
+- [x] Increase header logo from h-24 to h-30 (120px)
+- [x] Increase footer logo from h-25 to h-30 (120px)
+- [x] Test logo display at new size (verified 120px in header)
+- [ ] Save checkpoint with increased logo size
