@@ -1169,4 +1169,13 @@
 - [x] Link button to /events/webinar
 - [x] Style button to stand out and drive conversions (featured webinar CTA card with gradient background)
 - [x] Test button navigation (button successfully navigates from Events page to /events/webinar)
-- [ ] Save checkpoint with Events page update
+- [x] Save checkpoint with Events page update (version: 5f66301d)
+
+
+## Automated Webinar Reminder Emails
+- [x] Create email template for 24-hour reminder (sendWebinarReminderEmail function added)
+- [x] Add reminder_sent flag to webinar_registrations table
+- [x] Create service function to send reminder emails (sendWebinarReminders in server/tasks/)
+- [x] Set up scheduled task to run daily and check for upcoming webinars (checks 24h window)
+- [x] Test reminder email system (task runs successfully, will send reminders 24h before webinar on Jan 16, 2026)
+- [ ] Save checkpoint with automated reminder system

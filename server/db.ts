@@ -1650,3 +1650,17 @@ export async function getAllWebinarRegistrations() {
     .from(webinarRegistrations)
     .orderBy(desc(webinarRegistrations.createdAt));
 }
+
+
+export async function markWebinarReminderSent(registrationId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const { webinarRegistrations } = await import("../drizzle/schema");
+  const { eq } = await import("drizzle-orm");
+
+  await db
+    .update(webinarRegistrations)
+    .set({ reminderSent: true })
+    .where(eq(webinarRegistrations.id, registrationId));
+}

@@ -555,6 +555,7 @@ export const webinarRegistrations = mysqlTable("webinar_registrations", {
   webinarDate: varchar("webinarDate", { length: 100 }).notNull(),
   confirmationSent: boolean("confirmationSent").default(false).notNull(),
   attended: boolean("attended").default(false).notNull(),
+  reminderSent: boolean("reminderSent").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 

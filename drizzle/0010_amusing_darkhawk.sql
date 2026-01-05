@@ -1,0 +1,1 @@
+ALTER TABLE `webinar_registrations` ADD `reminderSent` boolean DEFAULT false NOT NULL;

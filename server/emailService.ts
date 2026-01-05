@@ -927,3 +927,170 @@ A calendar invite is attached to this email.
     };
   }
 }
+
+
+/**
+ * Send 24-hour reminder email for webinar
+ */
+export async function sendWebinarReminderEmail(
+  email: string,
+  name: string,
+  webinarDetails: {
+    title: string;
+    date: string;
+    time: string;
+    zoomLink: string;
+  }
+): Promise<{ success: boolean; error?: string }> {
+  if (!SENDGRID_API_KEY) {
+    console.warn('[EmailService] Cannot send email: SendGrid not configured');
+    return { success: false, error: 'Email service not configured' };
+  }
+
+  try {
+    const msg = {
+      to: email,
+      from: {
+        email: 'amaka.adiuku@gmail.com',
+        name: 'Dr. Amaka Adiuku',
+      },
+      subject: '⏰ Reminder: Your Webinar Starts Tomorrow!',
+      text: `Hi ${name},
+
+This is a friendly reminder that you're registered for our webinar tomorrow!
+
+Webinar: ${webinarDetails.title}
+Date: ${webinarDetails.date}
+Time: ${webinarDetails.time}
+Duration: 90 minutes
+
+Join Zoom Meeting:
+${webinarDetails.zoomLink}
+
+What to Prepare:
+• A quiet space for learning
+• Notebook for taking notes
+• Questions you'd like to ask
+
+We're excited to see you there!
+
+If you have any questions before the webinar, feel free to reply to this email.
+
+Best regards,
+Dr. Amaka Adiuku
+UpskillinTech
+
+---
+© 2026 UpskillinTech. All rights reserved.`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webinar Reminder</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #0f172a;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="width: 600px; max-width: 100%; border-collapse: collapse; background-color: #1e293b; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+          
+          <!-- Header with Gradient -->
+          <tr>
+            <td style="padding: 40px; text-align: center; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);">
+              <div style="font-size: 48px; margin-bottom: 16px;">⏰</div>
+              <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold;">Webinar Tomorrow!</h1>
+              <p style="margin: 12px 0 0; color: #f0fdf4; font-size: 16px;">Don't miss your exclusive AI learning session</p>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 40px;">
+              <p style="margin: 0 0 24px; color: #e2e8f0; font-size: 18px; line-height: 1.6;">
+                Hi <strong style="color: #10b981;">${name}</strong>,
+              </p>
+              
+              <p style="margin: 0 0 32px; color: #cbd5e1; font-size: 16px; line-height: 1.6;">
+                This is a friendly reminder that you're registered for our webinar <strong>tomorrow</strong>! We're excited to have you join us.
+              </p>
+              
+              <!-- Webinar Details Card -->
+              <div style="margin: 32px 0; padding: 24px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 2px solid #10b981; border-radius: 12px;">
+                <h2 style="margin: 0 0 20px; color: #10b981; font-size: 22px; font-weight: bold;">${webinarDetails.title}</h2>
+                
+                <table style="width: 100%; border-collapse: collapse;">
+                  <tr>
+                    <td style="padding: 8px 0; color: #94a3b8; font-size: 14px; width: 80px;">📅 Date:</td>
+                    <td style="padding: 8px 0; color: #e2e8f0; font-size: 16px; font-weight: 600;">${webinarDetails.date}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #94a3b8; font-size: 14px;">⏰ Time:</td>
+                    <td style="padding: 8px 0; color: #e2e8f0; font-size: 16px; font-weight: 600;">${webinarDetails.time}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #94a3b8; font-size: 14px;">⌛ Duration:</td>
+                    <td style="padding: 8px 0; color: #e2e8f0; font-size: 16px; font-weight: 600;">90 minutes</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <!-- Zoom Link Button -->
+              <div style="text-align: center; margin: 32px 0;">
+                <a href="${webinarDetails.zoomLink}" style="display: inline-block; padding: 16px 48px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                  Join Zoom Meeting
+                </a>
+              </div>
+              
+              <!-- Preparation Tips -->
+              <div style="margin: 32px 0; padding: 24px; background-color: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; border-radius: 8px;">
+                <h3 style="margin: 0 0 16px; color: #10b981; font-size: 18px; font-weight: 600;">What to Prepare:</h3>
+                <ul style="margin: 0; padding-left: 20px; color: #cbd5e1; font-size: 15px; line-height: 1.8;">
+                  <li>A quiet space for learning</li>
+                  <li>Notebook for taking notes</li>
+                  <li>Questions you'd like to ask</li>
+                </ul>
+              </div>
+              
+              <p style="margin: 32px 0 0; color: #cbd5e1; font-size: 16px; line-height: 1.6;">
+                We're excited to see you there! If you have any questions before the webinar, feel free to reply to this email.
+              </p>
+              
+              <p style="margin: 24px 0 0; color: #e2e8f0; font-size: 16px;">
+                Best regards,<br>
+                <strong style="color: #10b981;">Dr. Amaka Adiuku</strong><br>
+                <span style="color: #94a3b8;">UpskillinTech</span>
+              </p>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 32px; text-align: center; background-color: #0f172a; border-top: 1px solid #334155;">
+              <p style="margin: 0; color: #64748b; font-size: 13px;">
+                © 2026 UpskillinTech. All rights reserved.
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`,
+    };
+
+    await sgMail.send(msg);
+    console.log(`[EmailService] Webinar reminder email sent to ${email}`);
+    return { success: true };
+  } catch (error: any) {
+    console.error('[EmailService] Failed to send webinar reminder email:', error?.response?.body || error);
+    return { 
+      success: false, 
+      error: error?.response?.body?.errors?.[0]?.message || 'Failed to send email' 
+    };
+  }
+}
