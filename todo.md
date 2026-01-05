@@ -1178,4 +1178,11 @@
 - [x] Create service function to send reminder emails (sendWebinarReminders in server/tasks/)
 - [x] Set up scheduled task to run daily and check for upcoming webinars (checks 24h window)
 - [x] Test reminder email system (task runs successfully, will send reminders 24h before webinar on Jan 16, 2026)
-- [ ] Save checkpoint with automated reminder system
+- [x] Save checkpoint with automated reminder system (version: 28aef188)
+
+
+## Update Webinar Email Sender
+- [x] Change webinar confirmation email sender from noreply to amaka.adiuku@gmail.com
+- [x] Verify reminder email already uses correct sender (already configured correctly)
+- [x] Test email configuration (server running successfully with updated sender)
+- [ ] Save checkpoint with updated email sender

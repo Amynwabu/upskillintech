@@ -879,11 +879,19 @@ export async function sendEventRegistrationEmail(
   const icsBase64 = Buffer.from(icsContent).toString('base64');
 
   try {
+    // Use host email for webinar registrations, otherwise use default sender
+    const senderEmail = event.eventType === 'webinar' && event.hostEmail 
+      ? event.hostEmail 
+      : SENDER_EMAIL;
+    const senderName = event.eventType === 'webinar' && event.hostName
+      ? event.hostName
+      : SENDER_NAME;
+
     const msg = {
       to: email,
       from: {
-        email: SENDER_EMAIL,
-        name: SENDER_NAME,
+        email: senderEmail,
+        name: senderName,
       },
       subject: `You're Registered: ${event.title}`,
       text: `Event Registration Confirmed!
