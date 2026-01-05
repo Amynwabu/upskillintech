@@ -1161,4 +1161,12 @@
 - [x] Fix favicon not appearing on all pages (favicon files exist and are properly referenced in index.html)
 - [x] Fix Resources dropdown navigation not clickable (removed nested anchor tags)
 - [x] Test all fixes across different pages (Resources dropdown working, navigates to Blog successfully)
-- [ ] Save checkpoint with bug fixes
+- [x] Save checkpoint with bug fixes (version: a2f1af49)
+
+
+## Events Page - Register Now Button
+- [x] Add prominent "Register Now" button to Events page header/hero section
+- [x] Link button to /events/webinar
+- [x] Style button to stand out and drive conversions (featured webinar CTA card with gradient background)
+- [x] Test button navigation (button successfully navigates from Events page to /events/webinar)
+- [ ] Save checkpoint with Events page update

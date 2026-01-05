@@ -159,6 +159,30 @@ export default function Events() {
             <p className="text-xl text-muted-foreground mb-8">
               Connect with the AI community through webinars, workshops, conferences, and local meetups
             </p>
+
+            {/* Featured Webinar CTA */}
+            <div className="bg-gradient-to-r from-green-500/10 via-teal-500/10 to-blue-500/10 border border-green-500/20 rounded-2xl p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500 text-white text-xs font-semibold mb-3">
+                    <Video className="w-3 h-3" />
+                    FEATURED WEBINAR
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">Build the Right AI Skillset</h3>
+                  <p className="text-muted-foreground mb-3">
+                    Join Dr. Amaka Adiuku for a live session on January 17, 2026 • 7PM UK / 8PM Nigeria Time
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    Learn AI skills that will help you work less and earn more
+                  </p>
+                </div>
+                <Link href="/events/webinar">
+                  <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 shadow-lg shadow-green-500/20">
+                    Register Now - Free
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
