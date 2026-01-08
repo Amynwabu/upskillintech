@@ -1196,3 +1196,12 @@
 - [ ] Test confirmation email delivery (pending valid SendGrid API key)
 - [ ] Test admin notification email delivery (pending valid SendGrid API key)
 - [x] Save checkpoint with email system implementation
+
+
+## Homepage Hero Redesign - Udemy Business Style
+- [x] Copy reference image to project
+- [x] Redesign hero section with diagonal split layout (dark left, teal/image right)
+- [x] Update hero text styling and layout
+- [x] Add professional image or placeholder
+- [x] Test responsive design (hero displays correctly on desktop)
+- [ ] Save checkpoint with new hero design

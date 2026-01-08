@@ -25,61 +25,95 @@ export default function Home() {
       <Navigation />
       
       <main className="flex-1 pt-16">
-        {/* Hero Section - 360learning.com inspired */}
+        {/* Hero Section - Udemy Business inspired with diagonal split */}
         <section 
           ref={heroSection.elementRef as React.RefObject<HTMLElement>}
-          className={`relative overflow-hidden bg-white py-20 md:py-32 transition-opacity duration-700 ${
+          className={`relative overflow-hidden bg-[#1c1d1f] transition-opacity duration-700 ${
             heroSection.isVisible ? 'animate-fade-in' : 'opacity-0-initial'
           }`}
+          style={{ minHeight: '600px' }}
         >
-          <div className="container relative">
-            <div className="max-w-5xl mx-auto text-center">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-50 border border-green-200 mb-8">
-                <Sparkles className="text-green-600" size={16} />
-                <span className="text-sm font-medium text-green-700">AI-Powered Career Transformation</span>
-              </div>
-              
-              {/* Main Headline - 360learning style: centered, large, multi-line */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-                <span className="block text-black">
-                  The learning platform that
-                </span>
-                <span className="block text-black">
-                  combines the{" "}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    power of AI
-                  </span>
-                  {" "}with the
-                </span>
-                <span className="block text-black">
-                  magic of collaborative learning
-                </span>
-              </h1>
+          <div className="relative h-full">
+            {/* Diagonal Split Container */}
+            <div className="grid lg:grid-cols-2 h-full">
+              {/* Left Side - Dark Background with Content */}
+              <div className="relative z-10 flex items-center py-16 px-6 md:px-12 lg:px-16">
+                <div className="max-w-2xl">
+                  {/* Badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-8">
+                    <Sparkles className="text-green-400" size={16} />
+                    <span className="text-sm font-medium text-green-400">AI-Powered Career Transformation</span>
+                  </div>
+                  
+                  {/* Main Headline */}
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+                    <span className="text-teal-400">AI</span>
+                    <span className="text-white"> puts teams at the top of their game</span>
+                  </h1>
 
-              {/* CTA Buttons - 360learning style */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Link href="/onboarding">
-                  <Button size="lg" className="bg-black hover:bg-black/90 text-white px-8">
-                    I want a demo
-                  </Button>
-                </Link>
-                <Link href="/learn">
-                  <Button size="lg" variant="outline" className="border-2 border-black text-black hover:bg-black/5 px-8">
-                    See how it works
-                  </Button>
-                </Link>
+                  {/* Subheadline */}
+                  <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+                    Are you ready to discover how AI can unlock endless possibilities for your people and your organization?
+                  </p>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                    <Link href="/onboarding">
+                      <Button size="lg" className="bg-white hover:bg-gray-100 text-black px-8 font-semibold">
+                        Compare plans
+                      </Button>
+                    </Link>
+                    <Link href="/learn">
+                      <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 font-semibold">
+                        Learn more
+                      </Button>
+                    </Link>
+                  </div>
+
+                  {/* Video Thumbnail */}
+                  <div className="relative w-full max-w-sm">
+                    <div className="relative rounded-lg overflow-hidden shadow-xl bg-teal-400 aspect-video">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1"></div>
+                        </div>
+                      </div>
+                      <img 
+                        src="/hero-ai.png" 
+                        alt="AI Learning Platform" 
+                        className="w-full h-full object-cover opacity-60"
+                      />
+                    </div>
+                    <p className="text-sm text-gray-400 mt-3">
+                      Curious about what we offer? Watch this video.
+                    </p>
+                  </div>
+                </div>
               </div>
 
-              {/* Product Screenshot/Demo - 360learning style */}
-              <div className="relative mt-12">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              {/* Right Side - Diagonal Teal Background with Image */}
+              <div className="relative hidden lg:block">
+                {/* Diagonal Overlay */}
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600"
+                  style={{
+                    clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+                  }}
+                ></div>
+                
+                {/* Professional Image */}
+                <div 
+                  className="absolute inset-0 flex items-center justify-end"
+                  style={{
+                    clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+                  }}
+                >
                   <img 
-                    src="/hero-ai.png" 
-                    alt="AI Learning Platform" 
-                    className="w-full h-auto object-cover"
+                    src="/hero-professional-woman.jpg" 
+                    alt="Professional woman" 
+                    className="h-full w-auto object-cover grayscale"
+                    style={{ maxHeight: '600px' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
                 </div>
               </div>
             </div>
