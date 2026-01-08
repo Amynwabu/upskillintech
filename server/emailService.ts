@@ -1102,3 +1102,189 @@ UpskillinTech
     };
   }
 }
+
+
+/**
+ * Send admin notification email when someone registers for webinar
+ */
+export async function sendWebinarRegistrationNotification(
+  registrationData: {
+    name: string;
+    email: string;
+    phone?: string;
+    company?: string;
+    role?: string;
+    registrationId: number;
+    registeredAt: Date;
+  }
+): Promise<{ success: boolean; error?: string }> {
+  if (!SENDGRID_API_KEY) {
+    console.warn('[EmailService] Cannot send email: SendGrid not configured');
+    return { success: false, error: 'Email service not configured' };
+  }
+
+  try {
+    const msg = {
+      to: 'amaka.adiuku@gmail.com',
+      from: {
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
+      },
+      subject: `🎉 New Webinar Registration: ${registrationData.name}`,
+      text: `New Webinar Registration
+
+Someone just registered for your webinar "Build the Right AI Skillset"!
+
+Registration Details:
+- Name: ${registrationData.name}
+- Email: ${registrationData.email}
+- Phone: ${registrationData.phone || 'Not provided'}
+- Company: ${registrationData.company || 'Not provided'}
+- Role: ${registrationData.role || 'Not provided'}
+- Registration ID: REG-${registrationData.registrationId}
+- Registered At: ${registrationData.registeredAt.toLocaleString('en-US', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  })}
+
+View all registrations in your admin dashboard:
+https://upskillintech.com/admin/webinar-registrations
+
+---
+© 2026 UpskillinTech. All rights reserved.`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Webinar Registration</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f5;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="width: 600px; max-width: 100%; border-collapse: collapse; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="padding: 32px; text-align: center; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);">
+              <div style="font-size: 48px; margin-bottom: 12px;">🎉</div>
+              <h1 style="margin: 0; color: #ffffff; font-size: 26px; font-weight: bold;">New Webinar Registration!</h1>
+              <p style="margin: 8px 0 0; color: #f0fdf4; font-size: 15px;">Someone just signed up for your AI webinar</p>
+            </td>
+          </tr>
+          
+          <!-- Body -->
+          <tr>
+            <td style="padding: 32px;">
+              <h2 style="margin: 0 0 24px; color: #1e293b; font-size: 20px; font-weight: 600;">Registration Details</h2>
+              
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Name</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px; font-weight: 600;">${registrationData.name}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Email</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <a href="mailto:${registrationData.email}" style="color: #10b981; font-size: 15px; text-decoration: none;">${registrationData.email}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Phone</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px;">${registrationData.phone || '<span style="color: #94a3b8;">Not provided</span>'}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Company</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px;">${registrationData.company || '<span style="color: #94a3b8;">Not provided</span>'}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Role</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px;">${registrationData.role || '<span style="color: #94a3b8;">Not provided</span>'}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Registration ID</span>
+                  </td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px; font-weight: 600;">REG-${registrationData.registrationId}</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0;">
+                    <span style="color: #64748b; font-size: 14px; font-weight: 500;">Registered At</span>
+                  </td>
+                  <td style="padding: 12px 0; text-align: right;">
+                    <span style="color: #1e293b; font-size: 15px;">${registrationData.registeredAt.toLocaleString('en-US', { 
+                      weekday: 'long', 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric',
+                      hour: '2-digit',
+                      minute: '2-digit'
+                    })}</span>
+                  </td>
+                </tr>
+              </table>
+              
+              <div style="text-align: center; margin: 32px 0;">
+                <a href="https://upskillintech.com/admin/webinar-registrations" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 16px; font-weight: 600; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                  View All Registrations
+                </a>
+              </div>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 24px; text-align: center; background-color: #f8fafc; border-top: 1px solid #e2e8f0;">
+              <p style="margin: 0; color: #64748b; font-size: 13px;">
+                © 2026 UpskillinTech. All rights reserved.
+              </p>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`,
+    };
+
+    await sgMail.send(msg);
+    console.log(`[EmailService] Admin notification sent for registration ${registrationData.registrationId}`);
+    return { success: true };
+  } catch (error: any) {
+    console.error('[EmailService] Failed to send admin notification:', error?.response?.body || error);
+    return { 
+      success: false, 
+      error: error?.response?.body?.errors?.[0]?.message || 'Failed to send email' 
+    };
+  }
+}

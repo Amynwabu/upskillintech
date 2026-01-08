@@ -5,7 +5,7 @@ import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import * as db from "./db";
-import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail, generateEventRegistrationEmailHtml, sendEventRegistrationEmail, EventDetails } from "./emailService";
+import { sendPreferenceConfirmationEmail, generateWelcomeEmailHtml, generatePreferenceConfirmationHtml, sendWelcomeEmail, generatePasswordResetEmailHtml, sendPasswordResetEmail, generateEventRegistrationEmailHtml, sendEventRegistrationEmail, EventDetails, sendWebinarRegistrationNotification } from "./emailService";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -882,9 +882,25 @@ export const appRouter = router({
           zoomLink: "https://shorturl.at/2yAwE",
         };
         
-        await sendEventRegistrationEmail(input.email, eventDetails);
+        // Send confirmation email to registrant
+        const confirmationResult = await sendEventRegistrationEmail(input.email, eventDetails);
         
-        return { success: true, registrationId: registration.id };
+        // Send admin notification email
+        await sendWebinarRegistrationNotification({
+          name: input.name,
+          email: input.email,
+          phone: input.phone,
+          company: input.company,
+          role: input.role,
+          registrationId: registration.id,
+          registeredAt: new Date(),
+        });
+        
+        return { 
+          success: true, 
+          registrationId: registration.id,
+          emailSent: confirmationResult.success 
+        };
       }),
 
     exportRegistrations: protectedProcedure
