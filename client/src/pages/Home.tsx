@@ -128,11 +128,7 @@ export default function Home() {
           }`}
         >
           <div className="container">
-            <div className="text-center mb-8">
-              <p className="text-lg text-muted-foreground">
-                Join <span className="font-bold text-primary">1,000+</span> learners to learn and grow your AI skills here
-              </p>
-            </div>
+
             
             {/* Partner logos placeholder */}
             <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
@@ -265,14 +261,7 @@ export default function Home() {
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">10+</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">Flagship Courses</div>
               </div>
-              <div className="text-center space-y-1 md:space-y-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">1,000+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Students Trained</div>
-              </div>
-              <div className="text-center space-y-1 md:space-y-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 to-yellow-500 bg-clip-text text-transparent">50+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Business Partners</div>
-              </div>
+
               <div className="text-center space-y-1 md:space-y-2">
                 <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 to-green-500 bg-clip-text text-transparent">95%</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">Success Rate</div>

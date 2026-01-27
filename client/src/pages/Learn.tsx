@@ -64,10 +64,7 @@ export default function Learn() {
                     <BookOpen className="text-primary" size={20} />
                     <span className="font-semibold">{courses?.length || 0} Courses</span>
                   </div>
-                  <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <Users className="text-secondary" size={20} />
-                    <span className="font-semibold">1,000+ Learners</span>
-                  </div>
+
                   <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
                     <Award className="text-accent" size={20} />
                     <span className="font-semibold">Certificates</span>
@@ -272,7 +269,7 @@ export default function Learn() {
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of learners transforming their careers with AI skills. 
+              Transform your career with AI skills. 
               Get personalized learning paths and hands-on projects.
             </p>
             {!isAuthenticated && (
