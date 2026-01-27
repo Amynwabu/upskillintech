@@ -180,7 +180,7 @@ export default function WebinarRegistration() {
                       id="phone"
                       name="phone"
                       type="tel"
-                      placeholder="+44 7700 900000"
+                      placeholder="Your phone number"
                       value={formData.phone}
                       onChange={handleChange}
                     />
