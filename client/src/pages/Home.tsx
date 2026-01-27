@@ -25,7 +25,7 @@ export default function Home() {
       <Navigation />
       
       <main className="flex-1 pt-16">
-        {/* Hero Section - Udemy Business inspired with diagonal split */}
+        {/* Hero Section */}
         <section 
           ref={heroSection.elementRef as React.RefObject<HTMLElement>}
           className={`relative overflow-hidden bg-[#1c1d1f] transition-opacity duration-700 ${
@@ -34,74 +34,36 @@ export default function Home() {
           style={{ minHeight: '600px' }}
         >
           <div className="relative h-full">
-            {/* Diagonal Split Container */}
             <div className="grid lg:grid-cols-2 h-full">
-              {/* Left Side - Dark Background with Content */}
               <div className="relative z-10 flex items-center py-16 px-6 md:px-12 lg:px-16">
                 <div className="max-w-2xl">
-                  {/* Badge */}
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-8">
-                    <Sparkles className="text-green-400" size={16} />
-                    <span className="text-sm font-medium text-green-400">AI-Powered Career Transformation</span>
-                  </div>
-                  
-                  {/* Main Headline */}
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
-                    <span className="text-teal-400">AI</span>
-                    <span className="text-white"> puts teams at the top of their game</span>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6 text-white">
+                    Don't Just Adapt to the Future. <span className="text-teal-400">Lead It.</span>
                   </h1>
-
-                  {/* Subheadline */}
                   <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                    Are you ready to discover how AI can unlock endless possibilities for your people and your organization?
+                    Master AI, automate your workflows, and career-proof your skills without the burnout. Expert-led training by Dr. Ndidiamaka Adiuku (PhD, Robotics & AI).
                   </p>
-
-                  {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                    <Link href="/onboarding">
-                      <Button size="lg" className="bg-white hover:bg-gray-100 text-black px-8 font-semibold">
-                        Compare plans
-                      </Button>
-                    </Link>
                     <Link href="/learn">
-                      <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 font-semibold">
-                        Learn more
+                      <Button size="lg" className="bg-white hover:bg-gray-100 text-black px-8 font-semibold">
+                        Start Learning
                       </Button>
                     </Link>
-                  </div>
-
-                  {/* Video Thumbnail */}
-                  <div className="relative w-full max-w-sm">
-                    <div className="relative rounded-lg overflow-hidden shadow-xl bg-teal-400 aspect-video">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1"></div>
-                        </div>
-                      </div>
-                      <img 
-                        src="/hero-ai.png" 
-                        alt="AI Learning Platform" 
-                        className="w-full h-full object-cover opacity-60"
-                      />
-                    </div>
-                    <p className="text-sm text-gray-400 mt-3">
-                      Curious about what we offer? Watch this video.
-                    </p>
+                    <Link href="/consulting">
+                      <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 font-semibold">
+                        Book a Consultation
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
-
-              {/* Right Side - Diagonal Teal Background with Image */}
               <div className="relative hidden lg:block">
-                {/* Diagonal Overlay */}
                 <div 
                   className="absolute inset-0 bg-gradient-to-br from-teal-500 to-teal-600"
                   style={{
                     clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
                   }}
                 ></div>
-                
-                {/* Professional Image */}
                 <div 
                   className="absolute inset-0 flex items-center justify-end"
                   style={{
@@ -120,264 +82,59 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Social Proof Section */}
-        <section 
-          ref={socialProofSection.elementRef as React.RefObject<HTMLElement>}
-          className={`py-12 bg-background transition-all duration-700 ${
-            socialProofSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
-          }`}
-        >
+        {/* About Section */}
+        <section className="py-12 md:py-16 lg:py-20 bg-card/50">
           <div className="container">
-
-            
-            {/* Partner logos placeholder */}
-            <div className="flex flex-wrap justify-center items-center gap-12 opacity-60">
-              <div className="text-2xl font-bold text-muted-foreground">Microsoft</div>
-              <div className="text-2xl font-bold text-muted-foreground">Google</div>
-              <div className="text-2xl font-bold text-muted-foreground">OpenAI</div>
-              <div className="text-2xl font-bold text-muted-foreground">AWS</div>
-            </div>
-          </div>
-        </section>
-
-        {/* Three Column Features */}
-        <section 
-          ref={featuresSection.elementRef as React.RefObject<HTMLElement>}
-          className="py-12 md:py-16 lg:py-20 bg-card/50"
-        >
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
-              {/* Learn */}
-              <div className={`space-y-4 transition-all duration-700 ${
-                featuresSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
-              }`}>
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center border border-green-500/30">
-                  <BookOpen className="text-green-500" size={28} />
-                </div>
-                <h3 className="text-2xl font-bold">Learn</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Study all AI subjects by practicing with real-world projects and hands-on exercises. From fundamentals to advanced applications, master AI at your own pace.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-500 mt-1 flex-shrink-0" size={18} />
-                    <span className="text-sm">10+ comprehensive courses</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-500 mt-1 flex-shrink-0" size={18} />
-                    <span className="text-sm">Interactive quizzes & projects</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="text-green-500 mt-1 flex-shrink-0" size={18} />
-                    <span className="text-sm">Professional certificates</span>
-                  </li>
-                </ul>
-                <Link href="/learn">
-                  <Button variant="link" className="text-green-500 hover:text-green-600 p-0">
-                    Explore courses <ArrowRight className="ml-2" size={16} />
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Grow */}
-              <div className={`space-y-4 transition-all duration-700 ${
-                featuresSection.isVisible ? 'animate-fade-in-delay-1' : 'opacity-0-initial'
-              }`}>
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-teal-500/20 to-cyan-500/20 flex items-center justify-center border border-teal-500/30">
-                  <TrendingUp className="text-teal-500" size={28} />
-                </div>
-                <h3 className="text-2xl font-bold">Grow</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Boost your AI skills to new heights with hands-on mentorships, specialized live training, and community support from industry experts.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center">
-                      <Target className="text-teal-500" size={20} />
-                    </div>
-                    <span className="text-sm font-medium">1-on-1 Mentorship</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center">
-                      <Users className="text-teal-500" size={20} />
-                    </div>
-                    <span className="text-sm font-medium">Live Workshops</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center">
-                      <Award className="text-teal-500" size={20} />
-                    </div>
-                    <span className="text-sm font-medium">Certification Programs</span>
-                  </div>
-                </div>
-                <Link href="/consult">
-                  <Button variant="link" className="text-teal-500 hover:text-teal-600 p-0">
-                    Learn more <ArrowRight className="ml-2" size={16} />
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Opportunities */}
-              <div className={`space-y-4 transition-all duration-700 ${
-                featuresSection.isVisible ? 'animate-fade-in-delay-2' : 'opacity-0-initial'
-              }`}>
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-yellow-500/20 flex items-center justify-center border border-cyan-500/30">
-                  <Sparkles className="text-cyan-500" size={28} />
-                </div>
-                <h3 className="text-2xl font-bold">Opportunities</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Connect with your peers, access ready-to-use automation templates, and be inspired by AI experts in our vibrant community ecosystem.
-                </p>
-                <div className="space-y-2">
-                  <div className="p-3 rounded-lg bg-cyan-500/5 border border-cyan-500/20">
-                    <div className="font-medium text-sm">Community Forum</div>
-                    <div className="text-xs text-muted-foreground">Share insights & collaborate</div>
-                  </div>
-                  <div className="p-3 rounded-lg bg-cyan-500/5 border border-cyan-500/20">
-                    <div className="font-medium text-sm">AI Templates Library</div>
-                    <div className="text-xs text-muted-foreground">50+ automation tools</div>
-                  </div>
-                </div>
-                <Link href="/community">
-                  <Button variant="link" className="text-cyan-500 hover:text-cyan-600 p-0">
-                    Join community <ArrowRight className="ml-2" size={16} />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section 
-          ref={statsSection.elementRef as React.RefObject<HTMLElement>}
-          className={`py-12 md:py-16 bg-background transition-all duration-700 ${
-            statsSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
-          }`}
-        >
-          <div className="container">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-              <div className="text-center space-y-1 md:space-y-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-500 to-teal-500 bg-clip-text text-transparent">10+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Flagship Courses</div>
-              </div>
-
-              <div className="text-center space-y-1 md:space-y-2">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 to-green-500 bg-clip-text text-transparent">95%</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Success Rate</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* AI Skills Assessment Quiz */}
-        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
-          <div className="container">
-            <div className="text-center mb-8 md:mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-500/10 to-teal-500/10 border border-green-500/20 mb-4">
-                <Sparkles className="text-green-400" size={18} />
-                <span className="text-sm font-medium text-green-600 dark:text-green-400">Personalized for You</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">Find Your Perfect Learning Path</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                Take our quick 2-minute assessment and get personalized course recommendations tailored to your goals
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4">Tech Training with Academic Rigor & Real-World Application</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                In a world flooded with generic "tech gurus," UpskillinTech stands apart. We don't just teach you to click buttons; we teach you to think like a technologist.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                Founded by Dr. Ndidiamaka Adiuku, a Research Fellow in AI and Robotics at Cranfield University, our mission is to demystify complex technology. Whether you are a business looking to integrate AI, a professional seeking a career pivot, or a faith-based organization streamlining administration, we bridge the gap between "technical theory" and "practical success."
               </p>
             </div>
-            <AISkillsQuiz />
           </div>
         </section>
 
-        {/* Featured Courses Preview */}
-        <section 
-          ref={coursesSection.elementRef as React.RefObject<HTMLElement>}
-          className="py-12 md:py-16 lg:py-20 bg-card/30"
-        >
+        {/* The Problem/Solution Section */}
+        <section className="py-12 md:py-16 lg:py-20 bg-background">
           <div className="container">
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 px-4">Start Your Learning Journey</h2>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-                Choose from our comprehensive AI courses designed for professionals, businesses, and organizations
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-12">
-              {/* Course category cards */}
-              <Card className={`border-2 hover:border-green-500/50 transition-all hover:shadow-lg group overflow-hidden ${
-                coursesSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
-              }`}>
-                <div className="relative h-40 sm:h-48 overflow-hidden">
-                  <img 
-                    src="/images/ai-workshop.jpg" 
-                    alt="AI for Business" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="inline-block px-3 py-1 bg-green-500 text-white text-xs font-semibold rounded-full mb-2">
-                      BUSINESS
-                    </div>
-                  </div>
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4">Why UpskillinTech?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">The Problem</h3>
+                  <p className="text-muted-foreground leading-relaxed">Technology is moving faster than ever. Professionals are burned out trying to keep up, and businesses are losing money on inefficient workflows.</p>
                 </div>
-                <CardHeader>
-                  <CardTitle>AI for Business & Automation</CardTitle>
-                  <CardDescription>
-                    Master AI tools to automate workflows, boost productivity, and transform your business operations
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">5 courses • 20+ hours</span>
-                    <Link href="/learn">
-                      <Button variant="ghost" size="sm" className="text-green-500 hover:text-green-600">
-                        Explore <ArrowRight className="ml-2" size={16} />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className={`border-2 hover:border-teal-500/50 transition-all hover:shadow-lg group overflow-hidden ${
-                coursesSection.isVisible ? 'animate-fade-in-delay-1' : 'opacity-0-initial'
-              }`}>
-                <div className="relative h-40 sm:h-48 overflow-hidden">
-                  <img 
-                    src="/images/team-collaboration.jpg" 
-                    alt="AI for Education" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="inline-block px-3 py-1 bg-teal-500 text-white text-xs font-semibold rounded-full mb-2">
-                      EDUCATION
-                    </div>
-                  </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">The Solution</h3>
+                  <p className="text-muted-foreground leading-relaxed">We provide targeted, bite-sized, and strategic training. We focus on AI Literacy and Process Automation—the skills that actually save you time and increase your income.</p>
                 </div>
-                <CardHeader>
-                  <CardTitle>AI for Schools & Organizations</CardTitle>
-                  <CardDescription>
-                    Comprehensive AI literacy programs for educators, students, and institutional transformation
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">3 courses • 15+ hours</span>
-                    <Link href="/learn">
-                      <Button variant="ghost" size="sm" className="text-teal-500 hover:text-teal-600">
-                        Explore <ArrowRight className="ml-2" size={16} />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+              </div>
             </div>
+          </div>
+        </section>
 
-            <div className="text-center px-4">
-              <Link href="/learn">
-                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white w-full sm:w-auto">
-                  View All Courses
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-              </Link>
+        {/* Services Snapshot */}
+        <section className="py-12 md:py-16 lg:py-20 bg-card/50">
+          <div className="container">
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8">Services Snapshot</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">AI for Business & Career</h3>
+                  <p className="text-muted-foreground leading-relaxed">Learn to use tools like ChatGPT, Copilot, and Automation platforms to reduce your workload by 30%.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Corporate & Group Training</h3>
+                  <p className="text-muted-foreground leading-relaxed">Custom workshops for teams to boost productivity and foster innovation.</p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">Faith-Based Tech Strategy</h3>
+                  <p className="text-muted-foreground leading-relaxed">Unique consulting for churches and ministries to leverage technology for better administration.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -436,156 +193,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Demo Booking Form Section - 360learning style */}
-        <section className="py-16 md:py-20 bg-gray-50">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left Side - Headline and Benefits */}
-              <div className="space-y-8">
-                <div>
-                  <div className="inline-block bg-blue-100 px-6 py-3 rounded-lg mb-6">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-                      Discover the learning platform powered by collaborative learning.
-                    </h2>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-lg font-medium text-black">A 15-minute discussion with an expert</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-lg font-medium text-black">100% tailored to your needs - with ❤️</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-lg font-medium text-black">No commitment. Free as can be.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Form */}
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <form className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="First name"
-                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Last name"
-                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <input
-                      type="email"
-                      placeholder="Work Email"
-                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                    <input
-                      type="tel"
-                      placeholder="Phone number"
-                      className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600">
-                      <option value="">Timeframe to buy an LMS</option>
-                      <option value="immediate">Immediate (0-3 months)</option>
-                      <option value="short">Short term (3-6 months)</option>
-                      <option value="medium">Medium term (6-12 months)</option>
-                      <option value="long">Long term (12+ months)</option>
-                    </select>
-                    <select className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-gray-600">
-                      <option value="">Number of platform users</option>
-                      <option value="small">1-50 users</option>
-                      <option value="medium">51-200 users</option>
-                      <option value="large">201-500 users</option>
-                      <option value="enterprise">500+ users</option>
-                    </select>
-                  </div>
-                  
-                  <textarea
-                    placeholder="Tell us more about your project"
-                    rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  
-                  <input
-                    type="text"
-                    placeholder="How did you hear about us?"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  />
-                  
-                  <Button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white py-6 text-lg font-semibold">
-                    Book my demo
-                  </Button>
-                  
-                  <p className="text-xs text-gray-500 text-center">
-                    By providing your contact info, you agree to receive communications from UpskillinTech. You can opt-out at any time.
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
+        {/* CTA Section */}
         <section 
           ref={ctaSection.elementRef as React.RefObject<HTMLElement>}
-          className={`py-16 md:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden transition-all duration-700 ${
-            ctaSection.isVisible ? 'animate-fade-in-up' : 'opacity-0-initial'
+          className={`py-16 md:py-20 bg-gradient-to-r from-green-500/10 via-teal-500/10 to-cyan-500/10 transition-all duration-700 ${
+            ctaSection.isVisible ? 'animate-fade-in' : 'opacity-0-initial'
           }`}
         >
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4xIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00em0wLTMwYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0IDEuNzkgNCA0IDQgNC0xLjc5IDQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-          
-          <div className="container text-center relative z-10 px-4">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4">
-              Are you ready to make a difference in the world?
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto">
-              The future of AI depends on you. Are you ready to get started?
+          <div className="container text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Join thousands of learners transforming their careers with AI skills. 
+              Get personalized learning paths and hands-on projects.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/learn">
-                <Button size="lg" className="bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white shadow-lg shadow-green-500/30 w-full sm:w-auto">
-                  Start Learning Today
-                  <Sparkles className="ml-2" size={20} />
+            {!isAuthenticated && (
+              <Link href="/onboarding">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Get Started Free
                 </Button>
               </Link>
-              <Link href="/consult">
-                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto">
-                  Book a Consultation
-                </Button>
-              </Link>
-            </div>
+            )}
           </div>
         </section>
       </main>
