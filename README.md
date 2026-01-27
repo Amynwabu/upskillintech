@@ -146,7 +146,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Built with [Manus](https://manus.app) - AI-powered development platform
 - Cranfield University for research collaboration
 - All contributors and community members
 

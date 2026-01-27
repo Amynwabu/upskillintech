@@ -66,7 +66,7 @@ export default function Learn() {
                   </div>
                   <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
                     <Users className="text-secondary" size={20} />
-                    <span className="font-semibold">10,000+ Learners</span>
+                    <span className="font-semibold">1,000+ Learners</span>
                   </div>
                   <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
                     <Award className="text-accent" size={20} />
