@@ -15,16 +15,13 @@ export default function Learn() {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
   const [selectedLevel, setSelectedLevel] = useState<string | undefined>(undefined);
   const { isAuthenticated } = useAuth();
-
   const { data: courses, isLoading } = trpc.courses.list.useQuery({
     category: selectedCategory as any,
     level: selectedLevel as any,
   });
-
   const { data: myEnrollments } = trpc.courses.getMyEnrollments.useQuery(undefined, {
     enabled: isAuthenticated,
   });
-
   const enrolledCourseIds = new Set(myEnrollments?.map(e => e.courseId) || []);
 
   const categories = [
@@ -45,7 +42,7 @@ export default function Learn() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
-      
+
       <main className="flex-1 pt-20">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
@@ -56,7 +53,7 @@ export default function Learn() {
                   Learn AI, Transform Your Future
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
-                  Master AI skills with structured courses, hands-on projects, and expert guidance. 
+                  Master AI skills with structured courses, hands-on projects, and expert guidance.
                   From AI literacy to business automation, we've got you covered.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -64,7 +61,6 @@ export default function Learn() {
                     <BookOpen className="text-primary" size={20} />
                     <span className="font-semibold">{courses?.length || 0} Courses</span>
                   </div>
-
                   <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">
                     <Award className="text-accent" size={20} />
                     <span className="font-semibold">Certificates</span>
@@ -171,7 +167,7 @@ export default function Learn() {
             <h2 className="text-2xl font-bold mb-8">
               {selectedCategory ? `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Courses` : "All Courses"}
             </h2>
-            
+
             {isLoading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -190,7 +186,7 @@ export default function Learn() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courses.map((course) => {
                   const isEnrolled = enrolledCourseIds.has(course.id);
-                  
+
                   return (
                     <Card key={course.id} className="hover:shadow-lg transition-shadow flex flex-col">
                       <CardHeader>
@@ -213,23 +209,6 @@ export default function Learn() {
                               <span>{course.estimatedHours}h</span>
                             </div>
                           </div>
-                          <div className="flex items-center gap-4 text-sm">
-                            <div className="flex items-center gap-1">
-                              <Users size={16} className="text-muted-foreground" />
-                              <span>{course.enrollmentCount} enrolled</span>
-                            </div>
-                            {course.rating && (
-                              <div className="flex items-center gap-1">
-                                <Star size={16} className="text-yellow-500 fill-yellow-500" />
-                                <span>{(course.rating / 20).toFixed(1)}</span>
-                              </div>
-                            )}
-                          </div>
-                          {course.isPremium && (
-                            <Badge variant="default" className="bg-accent text-accent-foreground">
-                              Premium
-                            </Badge>
-                          )}
                         </div>
                       </CardContent>
                       <CardFooter className="flex gap-2">
@@ -244,9 +223,7 @@ export default function Learn() {
                           </Link>
                         ) : (
                           <Link href={`/course/${course.id}`} className="flex-1">
-                            <Button className="w-full">
-                              {course.price > 0 ? `$${(course.price / 100).toFixed(2)}` : "Enroll Free"}
-                            </Button>
+                            <Button className="w-full">Enroll Free</Button>
                           </Link>
                         )}
                       </CardFooter>
@@ -269,7 +246,7 @@ export default function Learn() {
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Transform your career with AI skills. 
+              Transform your career with AI skills.
               Get personalized learning paths and hands-on projects.
             </p>
             {!isAuthenticated && (
