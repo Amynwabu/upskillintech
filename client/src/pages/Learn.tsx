@@ -45,7 +45,7 @@ export default function Learn() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
+        <section className="min-h-screen py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
