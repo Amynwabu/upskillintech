@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Calendar, MapPin, Users, Clock, ArrowLeft, Video, Building2, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function Events() {
   const [selectedType, setSelectedType] = useState("All");
@@ -131,7 +133,8 @@ export default function Events() {
     }
   };
 
-  return (
+  264
+    
     <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="pt-24 pb-12 border-b border-border">
