@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { FileText, Download, Calendar, User, ArrowLeft, Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function Research() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -88,6 +90,8 @@ export default function Research() {
   });
 
   return (
+        <>
+                <Navigation />
     <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="pt-24 pb-12 border-b border-border">
@@ -246,5 +250,7 @@ export default function Research() {
         </div>
       </section>
     </div>
-  );
+      <Footer />
+              </>
+          );
 }
