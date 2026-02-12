@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { BookOpen, FileText, Calendar, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 export default function Resources() {
   const resourceCategories = [
@@ -31,6 +33,8 @@ export default function Resources() {
   ];
 
   return (
+        <>
+                <Navigation />
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -168,5 +172,7 @@ export default function Resources() {
         </div>
       </section>
     </div>
-  );
+        <Footer />
+              </>
+          );
 }
