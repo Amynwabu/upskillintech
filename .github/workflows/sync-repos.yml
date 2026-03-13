@@ -1,0 +1,67 @@
+name: Sync with Another Repository
+
+# This workflow syncs content from another repository
+# Customize the source_repo and paths to match your needs
+
+on:
+  # Run on schedule (daily at midnight)
+  schedule:
+    - cron: '0 0 * * *'
+  
+  # Allow manual triggering
+  workflow_dispatch:
+  
+  # Run when the other repo pushes (requires webhook setup)
+  repository_dispatch:
+    types: [sync-request]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Checkout source repository
+        uses: actions/checkout@v3
+        with:
+          repository: Amynwabu/SOURCE-REPO-NAME  # CHANGE THIS
+          path: source-repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+      
+      - name: Sync specific folders
+        run: |
+          # Example: Sync docs folder
+          # rsync -av --delete source-repo/docs/ ./docs/
+          
+          # Example: Sync specific files
+          # cp source-repo/README.md ./README.md
+          
+          # Example: Sync entire content (careful!)
+          # rsync -av --delete --exclude='.git' source-repo/ ./
+          
+          echo "Configure your sync commands here"
+          echo "Examples above show different sync patterns"
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Sync from source repository [automated]"
+          git push
