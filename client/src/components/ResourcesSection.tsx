@@ -91,7 +91,7 @@ export default function ResourcesSection() {
                 </div>
                 <h3 className="mb-3" style={{ fontSize: "1.2rem" }}>{r.title}</h3>
                 <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#6B7280" }}>{r.desc}</p>
-                <div className="flex items-center gap-1.5 font-semibold text-sm mt-auto" style={{ color: r.color, fontFamily: "'Poppins', sans-serif" }}>
+                <div className="flex items-center gap-1.5 font-semibold text-sm mt-auto" style={{ color: r.color, fontFamily: "'Sora', sans-serif" }}>
                   Explore <ArrowRight size={15} />
                 </div>
               </a>

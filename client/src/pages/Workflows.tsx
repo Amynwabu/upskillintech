@@ -159,7 +159,7 @@ export default function WorkflowsPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
       {/* Hero */}
@@ -167,7 +167,7 @@ export default function WorkflowsPage() {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               AI Workflows That Work in the Real World
             </h1>
             <p className="text-lg mb-6" style={{ color: "#555" }}>
@@ -187,7 +187,7 @@ export default function WorkflowsPage() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "6", l: "Workflow Templates" }, { v: "24+", l: "Copy-Paste Prompts" }, { v: "5 min", l: "Fastest Workflow" }, { v: "Free", l: "All Workflows" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -210,7 +210,7 @@ export default function WorkflowsPage() {
                   background: activeCategory === cat.id ? "#38B54A" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                 }}
               >
                 {cat.label}
@@ -230,7 +230,7 @@ export default function WorkflowsPage() {
                         <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: `${wf.color}12`, color: wf.color }}>{wf.categoryLabel}</span>
                         <span className="text-xs px-2 py-1 rounded-full" style={{ background: "#F7F8FA", color: "#6B7280", border: "1px solid #E5E7EB" }}>{wf.difficulty}</span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{wf.title}</h3>
+                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{wf.title}</h3>
                       <p className="text-sm" style={{ color: "#6B7280" }}>{wf.subtitle}</p>
                     </div>
                     <div className="flex flex-wrap gap-3 text-xs shrink-0" style={{ color: "#9CA3AF" }}>
@@ -248,7 +248,7 @@ export default function WorkflowsPage() {
                             <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ background: "#021301" }}>
                               {si + 1}
                             </div>
-                            <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>{step.label}</span>
+                            <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
                           </div>
                           {si < wf.steps.length - 1 && (
                             <span className="text-lg font-bold mb-4" style={{ color: "#E6B800" }}>→</span>
@@ -271,7 +271,7 @@ export default function WorkflowsPage() {
                                 {si + 1}
                               </div>
                               <div>
-                                <p className="font-semibold text-sm mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{step.label}</p>
+                                <p className="font-semibold text-sm mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{step.label}</p>
                                 <p className="text-sm" style={{ color: "#4B5563" }}>{step.desc}</p>
                               </div>
                             </div>
@@ -342,7 +342,7 @@ export default function WorkflowsPage() {
       {/* Download CTA */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
             Get the Complete AI Workflow Playbook
           </h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>
@@ -350,7 +350,7 @@ export default function WorkflowsPage() {
           </p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("Playbook on its way!", { description: "Check your inbox for the AI Workflow Playbook." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#1C1C1C" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
               <Download size={16} /> Download Playbook
             </button>
           </form>

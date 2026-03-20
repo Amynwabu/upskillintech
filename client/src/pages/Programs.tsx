@@ -1,7 +1,7 @@
 /**
  * Programs Page — /programs
  * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
- * Typography: Poppins (headings) + Inter (body)
+ * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, 4 Programme Cards, How It Works, Testimonials, FAQ, Final CTA
  */
 

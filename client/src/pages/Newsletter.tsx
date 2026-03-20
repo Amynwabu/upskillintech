@@ -95,7 +95,7 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
       <main className="flex-1 pt-[76px]">
 
@@ -108,7 +108,7 @@ export default function Newsletter() {
                 <Mail size={16} />
                 Free Weekly Newsletter
               </div>
-              <h1 className="font-bold mb-6" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "#111827", lineHeight: 1.15 }}>
+              <h1 className="font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.5rem)", color: "#111827", lineHeight: 1.15 }}>
                 The UpskillinTech Newsletter
               </h1>
               <p className="mb-4 text-lg" style={{ color: "#374151", lineHeight: 1.75 }}>
@@ -139,7 +139,7 @@ export default function Newsletter() {
             <div className="text-center mb-14">
               <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
                 style={{ background: "rgba(56,181,74,0.1)", color: "#38B54A" }}>What's Inside</span>
-              <h2 className="font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827" }}>
+              <h2 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827" }}>
                 What You'll Receive Every Week
               </h2>
               <p className="max-w-2xl mx-auto text-lg" style={{ color: "#6B7280" }}>
@@ -156,7 +156,7 @@ export default function Newsletter() {
                       style={{ background: "rgba(56,181,74,0.12)" }}>
                       <Icon size={22} style={{ color: "#38B54A" }} />
                     </div>
-                    <h3 className="font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem", color: "#111827" }}>
+                    <h3 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#111827" }}>
                       {b.title}
                     </h3>
                     <p style={{ color: "#6B7280", fontSize: "0.95rem", lineHeight: 1.65 }}>{b.desc}</p>
@@ -173,7 +173,7 @@ export default function Newsletter() {
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
                 style={{ background: "rgba(56,181,74,0.1)", color: "#38B54A" }}>Latest Edition</span>
-              <h2 className="font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827" }}>
+              <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827" }}>
                 This Week's Edition
               </h2>
             </div>
@@ -190,7 +190,7 @@ export default function Newsletter() {
                   style={{ background: "rgba(56,181,74,0.12)", color: "#38B54A" }}>
                   {EDITIONS[0].tag}
                 </div>
-                <h3 className="font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "#111827", lineHeight: 1.3 }}>
+                <h3 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "#111827", lineHeight: 1.3 }}>
                   {EDITIONS[0].title}
                 </h3>
                 <p className="mb-6 text-lg" style={{ color: "#4B5563", lineHeight: 1.75 }}>
@@ -217,7 +217,7 @@ export default function Newsletter() {
               <div>
                 <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-3"
                   style={{ background: "rgba(56,181,74,0.1)", color: "#38B54A" }}>Past Editions</span>
-                <h2 className="font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", color: "#111827" }}>
+                <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", color: "#111827" }}>
                   Explore Previous Issues
                 </h2>
               </div>
@@ -236,7 +236,7 @@ export default function Newsletter() {
                     style={{ background: `${ed.tagColor}18`, color: ed.tagColor }}>
                     {ed.tag}
                   </div>
-                  <h3 className="font-bold mb-3" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem", color: "#111827", lineHeight: 1.4 }}>
+                  <h3 className="font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#111827", lineHeight: 1.4 }}>
                     {ed.title}
                   </h3>
                   <p className="mb-5" style={{ color: "#6B7280", fontSize: "0.9rem", lineHeight: 1.65 }}>
@@ -272,7 +272,7 @@ export default function Newsletter() {
                 style={{ background: "rgba(56,181,74,0.2)" }}>
                 <Mail size={28} style={{ color: "#38B54A" }} />
               </div>
-              <h2 className="font-bold mb-4 text-white" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
+              <h2 className="font-bold mb-4 text-white" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
                 Stay Updated with UpskillinTech
               </h2>
               <p className="mb-10 text-lg" style={{ color: "rgba(255,255,255,0.65)", lineHeight: 1.75 }}>
@@ -282,7 +282,7 @@ export default function Newsletter() {
               {submitted ? (
                 <div className="rounded-2xl p-10 text-center" style={{ background: "rgba(56,181,74,0.15)", border: "1.5px solid rgba(56,181,74,0.3)" }}>
                   <CheckCircle size={48} className="mx-auto mb-4" style={{ color: "#38B54A" }} />
-                  <h3 className="font-bold text-white text-2xl mb-3" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                  <h3 className="font-bold text-white text-2xl mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
                     Thank you for subscribing!
                   </h3>
                   <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "1.05rem", lineHeight: 1.7 }}>

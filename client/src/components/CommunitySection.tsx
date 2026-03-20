@@ -34,7 +34,7 @@ export default function CommunitySection() {
                     <CheckCircle size={18} style={{ color: "#38B54A" }} />
                   </div>
                   <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Poppins', sans-serif", color: "#111827", fontSize: "1rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
                       {b.title}
                     </div>
                     <div style={{ fontSize: "0.925rem", color: "#6B7280", lineHeight: 1.6 }}>{b.desc}</div>
@@ -72,7 +72,7 @@ export default function CommunitySection() {
               >
                 <span style={{ fontSize: "1.5rem" }}>🌍</span>
                 <div>
-                  <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#38B54A" }}>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#38B54A" }}>
                     Growing Community
                   </div>
                   <div style={{ fontSize: "0.8rem", color: "#6B7280" }}>Professionals across Africa & beyond</div>

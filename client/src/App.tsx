@@ -19,28 +19,45 @@ import Community from "./pages/Community";
 import Newsletter from "./pages/Newsletter";
 import NewsletterArticle from "./pages/NewsletterArticle";
 import NewsletterArchive from "./pages/NewsletterArchive";
+import Events from "./pages/Events";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
+      {/* Core */}
       <Route path={"/"} component={Home} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
+
+      {/* Resources & Content */}
       <Route path={"/resources"} component={Resources} />
       <Route path={"/resources/blog"} component={Blog} />
       <Route path={"/resources/ai-guides"} component={AIGuides} />
       <Route path={"/resources/case-studies"} component={CaseStudies} />
       <Route path={"/resources/webinars"} component={Webinars} />
       <Route path={"/resources/workflows"} component={WorkflowsPage} />
-      <Route path={"/about"} component={About} />
-      <Route path={"/enterprise"} component={Enterprise} />
-      <Route path={"/contact"} component={Contact} />
+
+      {/* Programs & Learning */}
       <Route path={"/programs"} component={Programs} />
+      <Route path={"/enterprise"} component={Enterprise} />
+
+      {/* Community & Events */}
       <Route path={"/community"} component={Community} />
+      <Route path={"/events"} component={Events} />
+
+      {/* Newsletter */}
       <Route path={"/newsletter"} component={Newsletter} />
       <Route path={"/newsletter/archive"} component={NewsletterArchive} />
       <Route path={"/newsletter/:slug"} component={NewsletterArticle} />
+
+      {/* Legal */}
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
+
+      {/* Fallback */}
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );

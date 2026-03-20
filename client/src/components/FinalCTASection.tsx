@@ -17,9 +17,9 @@ function useInView(threshold = 0.2) {
 }
 
 const trustItems = [
-  { icon: Users, label: "1,000+ Professionals Trained" },
-  { icon: Star, label: "95% Success Rate" },
-  { icon: Clock, label: "Practical From Day One" },
+  { icon: Users, label: "1,000+ Professionals Reached" },
+  { icon: Star, label: "20+ Countries" },
+  { icon: Clock, label: "Free Resources Available" },
 ];
 
 export default function FinalCTASection() {
@@ -45,27 +45,27 @@ export default function FinalCTASection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-8" style={{ background: "rgba(255,255,255,0.18)" }}>
             <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: "#E6B800" }} />
-            <span className="font-semibold" style={{ color: "#ffffff", fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem" }}>
-              Next Cohort Enrolling Now
+            <span className="font-semibold" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif", fontSize: "0.9rem" }}>
+              Independent AI Awareness Platform
             </span>
           </div>
 
-          <h2 className="mb-6" style={{ color: "#ffffff", fontWeight: 800, lineHeight: 1.15 }}>
-            Start Your Journey to Becoming an{" "}
-            <span style={{ color: "#E6B800" }}>AI-Enabled Professional</span>
+          <h2 className="mb-6" style={{ color: "#ffffff", fontWeight: 800, lineHeight: 1.15, fontFamily: "'Sora', sans-serif" }}>
+            Ready to Understand &amp; Adopt AI{" "}
+            <span style={{ color: "#E6B800" }}>Responsibly?</span>
           </h2>
 
-          <p className="mb-12 max-w-2xl mx-auto" style={{ fontSize: "1.2rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
-            Join the next cohort and begin integrating AI into your daily work. Save hours every week, stay ahead of the curve, and transform how you work — starting today.
+          <p className="mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
+            Explore free AI insights, practical productivity guides, and structured learning programs — designed to help you think, lead, and create impact in an AI-powered world.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mb-12">
             <a
-              href="/programs"
+              href="/resources/blog"
               className="flex items-center gap-2 font-bold rounded-xl px-8 py-4 transition-all duration-200"
               style={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontSize: "1.1rem",
                 background: "#E6B800",
                 color: "#111827",
@@ -75,13 +75,13 @@ export default function FinalCTASection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(230,184,0,0.55)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(230,184,0,0.40)"; }}
             >
-              Explore Programs <ArrowRight size={20} />
+              Explore Free Insights <ArrowRight size={20} />
             </a>
             <a
-              href="/community"
+              href="/programs"
               className="flex items-center gap-2 font-bold rounded-xl px-8 py-4 transition-all duration-200"
               style={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontSize: "1.1rem",
                 background: "transparent",
                 color: "#ffffff",
@@ -91,7 +91,7 @@ export default function FinalCTASection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.15)"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "#ffffff"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.70)"; }}
             >
-              Join the Community
+              View Programs
             </a>
           </div>
 
@@ -102,7 +102,7 @@ export default function FinalCTASection() {
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.18)" }}>
                   <Icon size={18} style={{ color: "#E6B800" }} />
                 </div>
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.975rem", fontWeight: 500, color: "rgba(255,255,255,0.90)" }}>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", fontWeight: 500, color: "rgba(255,255,255,0.90)" }}>
                   {label}
                 </span>
               </div>

@@ -1,11 +1,13 @@
 /**
- * FounderSection — UpskillinTech v3
+ * FounderSection — UpskillinTech v3.1
+ * Mission framing: Positions the founder as the voice behind the independent
+ * AI awareness platform — researcher, educator, and thought leader.
  * White background, split layout: photo left, bio right
- * Larger text, expertise tags, stronger visual hierarchy
+ * Typography: Sora headings, DM Sans body
  */
 const FOUNDER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/founder-portrait-g2gj6Gs4zs3JeXJbWqWTy7.webp";
 
-const expertise = ["AI Research", "Robotics", "Education Technology", "Workflow Automation", "AI Strategy"];
+const expertise = ["AI Research", "Robotics", "Technology Literacy", "Workflow Automation", "AI Adoption", "Public Engagement"];
 
 export default function FounderSection() {
   return (
@@ -20,8 +22,8 @@ export default function FounderSection() {
                 style={{
                   maxWidth: 360,
                   width: "100%",
-                  boxShadow: "0 24px 64px rgba(56,181,74,0.20)",
-                  border: "3px solid rgba(230,184,0,0.30)",
+                  boxShadow: "0 24px 64px rgba(13,148,136,0.18)",
+                  border: "3px solid rgba(13,148,136,0.20)",
                 }}
               >
                 <img
@@ -34,31 +36,34 @@ export default function FounderSection() {
               {/* Floating credential badge */}
               <div
                 className="absolute -bottom-5 -right-5 rounded-2xl px-5 py-4 text-center"
-                style={{ background: "#38B54A", boxShadow: "0 8px 24px rgba(56,181,74,0.35)" }}
+                style={{ background: "#0D9488", boxShadow: "0 8px 24px rgba(13,148,136,0.35)" }}
               >
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>PhD</div>
-                <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>AI & Robotics</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>PhD</div>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>AI &amp; Robotics</div>
               </div>
             </div>
           </div>
 
           {/* Right: Bio */}
           <div>
-            <span className="section-label mb-5">About the Founder</span>
-            <h2 className="mt-4 mb-3">
-              Built on Real <span style={{ color: "#38B54A" }}>AI Expertise</span>
+            <span className="section-label mb-5">The Voice Behind the Platform</span>
+            <h2 className="mt-4 mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
+              Insights Grounded in{" "}
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                Real Research
+              </span>
             </h2>
-            <p className="font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#38B54A", fontSize: "1.2rem" }}>
+            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488", fontSize: "1.2rem" }}>
               Dr. Amaka Adiuku
             </p>
-            <p className="mb-6" style={{ fontSize: "1rem", color: "#6B7280" }}>
-              Lecturer in AI | Robotics Researcher | Educator
+            <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#6B7280" }}>
+              AI Researcher · Lecturer · Educator · Technology Literacy Advocate
             </p>
-            <p className="mb-4" style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
-              Dr. Amaka Adiuku is a researcher, educator, and AI practitioner who founded UpskillinTech to bridge the gap between AI theory and real-world professional application.
+            <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
+              UpskillinTech is an independent platform I created to share practical AI insights with professionals, leaders, and organisations navigating the AI era. My goal is simple: help people understand and adopt AI responsibly — without the overwhelm.
             </p>
-            <p className="mb-8" style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
-              UpskillinTech combines cutting-edge AI research, industry collaboration, and practical workflow innovation to help professionals, organisations, and communities thrive in an AI-powered world.
+            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
+              As a researcher and university lecturer in AI and Robotics, I bring academic depth and real-world application together — to bridge the gap between AI theory and everyday professional practice.
             </p>
 
             {/* Expertise tags */}
@@ -68,11 +73,11 @@ export default function FounderSection() {
                   key={tag}
                   className="px-4 py-1.5 rounded-full font-semibold"
                   style={{
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'Sora', sans-serif",
                     fontSize: "0.875rem",
-                    background: "rgba(56,181,74,0.10)",
-                    color: "#38B54A",
-                    border: "1px solid rgba(56,181,74,0.20)",
+                    background: "rgba(13,148,136,0.08)",
+                    color: "#0D9488",
+                    border: "1px solid rgba(13,148,136,0.18)",
                   }}
                 >
                   {tag}
@@ -80,8 +85,8 @@ export default function FounderSection() {
               ))}
             </div>
 
-            <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
-              Learn More About Us
+            <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488" }}>
+              About UpskillinTech
             </a>
           </div>
         </div>

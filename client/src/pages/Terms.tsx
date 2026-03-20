@@ -1,8 +1,12 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
 export default function Terms() {
   return (
     <div className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1>
+      <Navbar />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+        <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Terms of Service</h1>
         <p className="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
 
         <div className="space-y-8 text-gray-700 leading-7">
@@ -209,6 +213,7 @@ export default function Terms() {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 /**
  * Community Page — /community
  * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
- * Typography: Poppins (headings) + Inter (body)
+ * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, What You Get, Masterclasses, Peer Network, Events, Join CTA
  */
 
