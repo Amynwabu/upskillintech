@@ -1,541 +1,454 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Textarea } from "@/components/ui/textarea";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import Navigation from "@/components/Navigation";
+/**
+ * Community Page — /community
+ * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Typography: Poppins (headings) + Inter (body)
+ * Sections: Hero, What You Get, Masterclasses, Peer Network, Events, Join CTA
+ */
+
+import { useState } from "react";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { 
-  Users, 
-  Calendar, 
-  MessageSquare, 
-  Heart, 
-  Share2,
-  Trophy,
-  Flame,
-  Clock,
-  Video,
-  Pin,
-  TrendingUp,
-  Send,
-  Plus
+import {
+  ArrowRight, Users, Calendar, Zap, MessageSquare,
+  BookOpen, Award, Globe, CheckCircle, Play,
+  Linkedin, Youtube, Instagram, Star, Clock, MapPin
 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
-import { useAuth } from "@/_core/hooks/useAuth";
-import { useWebSocket } from "@/contexts/WebSocketContext";
-import { toast } from "sonner";
+
+const benefits = [
+  {
+    icon: BookOpen,
+    title: "Monthly Masterclasses",
+    desc: "Live sessions on specific AI tools, workflows, and productivity strategies — hosted by Dr. Amaka Adiuku and guest practitioners.",
+    color: "#38B54A",
+  },
+  {
+    icon: Zap,
+    title: "Workflow Sharing",
+    desc: "Access and contribute to a growing library of real AI workflows shared by community members across different industries and roles.",
+    color: "#8B9E1A",
+  },
+  {
+    icon: Users,
+    title: "Peer Network",
+    desc: "Connect with AI-curious professionals from across Africa and the diaspora. Share challenges, wins, and insights with people on the same journey.",
+    color: "#E6B800",
+  },
+  {
+    icon: MessageSquare,
+    title: "Community Discussions",
+    desc: "Ongoing conversations about AI tools, news, and practical applications in a focused, professional community space.",
+    color: "#38B54A",
+  },
+  {
+    icon: Calendar,
+    title: "Events & Webinars",
+    desc: "Priority access to UpskillinTech events, webinars, and workshops — including early registration and member-only sessions.",
+    color: "#8B9E1A",
+  },
+  {
+    icon: Award,
+    title: "Learning Resources",
+    desc: "Exclusive guides, templates, prompt libraries, and AI workflow resources available only to community members.",
+    color: "#E6B800",
+  },
+];
+
+const masterclasses = [
+  {
+    title: "Using ChatGPT for Professional Research",
+    date: "Monthly — 1st Thursday",
+    time: "6:00 PM WAT / 7:00 PM CAT",
+    host: "Dr. Amaka Adiuku",
+    desc: "A practical walkthrough of using ChatGPT to conduct research, synthesise information, and produce structured reports faster.",
+    tags: ["ChatGPT", "Research", "Productivity"],
+    status: "Upcoming",
+  },
+  {
+    title: "Building Your Personal AI Productivity System",
+    date: "Monthly — 3rd Thursday",
+    time: "6:00 PM WAT / 7:00 PM CAT",
+    host: "Dr. Amaka Adiuku",
+    desc: "Design a complete AI-powered productivity system tailored to your role — covering task management, communication, and decision-making.",
+    tags: ["Productivity", "Workflows", "AI Tools"],
+    status: "Upcoming",
+  },
+  {
+    title: "AI for Educators: Lesson Planning & Feedback",
+    date: "Quarterly",
+    time: "6:00 PM WAT / 7:00 PM CAT",
+    host: "Guest Educator",
+    desc: "How teachers and trainers can use AI to design better lessons, provide faster feedback, and personalise learning experiences.",
+    tags: ["Education", "Teaching", "AI Tools"],
+    status: "Recorded",
+  },
+  {
+    title: "AI for Church & Ministry Administration",
+    date: "Quarterly",
+    time: "6:00 PM WAT / 7:00 PM CAT",
+    host: "Dr. Amaka Adiuku",
+    desc: "Practical AI applications for church communications, sermon preparation, event management, and community outreach.",
+    tags: ["Ministry", "Church", "Administration"],
+    status: "Recorded",
+  },
+];
+
+const upcomingEvents = [
+  {
+    title: "UpskillinTech AI Summit 2025",
+    type: "Conference",
+    date: "October 2025",
+    location: "Lagos, Nigeria + Online",
+    desc: "A full-day event bringing together AI practitioners, professionals, and leaders to explore the future of AI in African workplaces.",
+    color: "#38B54A",
+  },
+  {
+    title: "AI for Organisations Workshop",
+    type: "Workshop",
+    date: "Monthly",
+    location: "Online (Zoom)",
+    desc: "A half-day workshop for HR managers, operations leaders, and executives exploring how to integrate AI into their organisational workflows.",
+    color: "#8B9E1A",
+  },
+  {
+    title: "AI Literacy for Faith Communities",
+    type: "Webinar",
+    date: "Quarterly",
+    location: "Online (Zoom)",
+    desc: "A focused webinar for pastors, church administrators, and ministry leaders on responsible and practical AI use in faith communities.",
+    color: "#E6B800",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Chioma Eze",
+    role: "HR Professional",
+    company: "Port Harcourt, Nigeria",
+    quote: "The UpskillinTech community is unlike any other. The masterclasses are practical, the peer discussions are insightful, and I've made real connections with professionals on the same AI journey.",
+    rating: 5,
+  },
+  {
+    name: "Samuel Oduya",
+    role: "Secondary School Principal",
+    company: "Accra, Ghana",
+    quote: "The monthly masterclasses have been transformative. I've implemented AI workflows in my school's administration that have saved us hours every week.",
+    rating: 5,
+  },
+  {
+    name: "Grace Mwangi",
+    role: "Nonprofit Manager",
+    company: "Nairobi, Kenya",
+    quote: "Being part of this community has accelerated my AI learning more than any course. The workflow sharing alone is worth it.",
+    rating: 5,
+  },
+];
 
 export default function Community() {
-  const [selectedGroup, setSelectedGroup] = useState<"all" | "business" | "faith" | "education" | "creators">("all");
-  const [newPostContent, setNewPostContent] = useState("");
-  const [newPostCategory, setNewPostCategory] = useState<"business" | "faith" | "education" | "creators">("business");
-  const [isCreatePostOpen, setIsCreatePostOpen] = useState(false);
-  const [commentInputs, setCommentInputs] = useState<Record<number, string>>({});
-  const [showComments, setShowComments] = useState<Record<number, boolean>>({});
-  
-  const { isAuthenticated } = useAuth();
-  const { socket, on, off } = useWebSocket();
-  const utils = trpc.useUtils();
+  const [activeTab, setActiveTab] = useState<"upcoming" | "recorded">("upcoming");
 
-  // Fetch posts
-  const { data: posts, isLoading } = trpc.community.getPosts.useQuery({
-    category: selectedGroup === "all" ? undefined : selectedGroup,
-    limit: 20,
-    offset: 0,
-  });
-
-  // Create post mutation
-  const createPostMutation = trpc.community.createPost.useMutation({
-    onSuccess: () => {
-      utils.community.getPosts.invalidate();
-      setNewPostContent("");
-      setIsCreatePostOpen(false);
-      toast.success("Post created successfully!");
-    },
-    onError: (error) => {
-      toast.error(`Failed to create post: ${error.message}`);
-    },
-  });
-
-  // Like post mutation
-  const likePostMutation = trpc.community.likePost.useMutation({
-    onSuccess: () => {
-      utils.community.getPosts.invalidate();
-    },
-  });
-
-  // Add comment mutation
-  const addCommentMutation = trpc.community.addComment.useMutation({
-    onSuccess: (_, variables) => {
-      utils.community.getComments.invalidate({ postId: variables.postId });
-      setCommentInputs(prev => ({ ...prev, [variables.postId]: "" }));
-      toast.success("Comment added!");
-    },
-  });
-
-  // WebSocket real-time updates
-  useEffect(() => {
-    if (!socket) return;
-
-    const handleNewPost = (data: any) => {
-      toast.success(`New post from ${data.authorName}`);
-      utils.community.getPosts.invalidate();
-    };
-
-    const handlePostLiked = (data: any) => {
-      utils.community.getPosts.invalidate();
-    };
-
-    const handleNewComment = (data: any) => {
-      utils.community.getComments.invalidate({ postId: data.postId });
-    };
-
-    on("new_post", handleNewPost);
-    on("post_liked", handlePostLiked);
-    on("new_comment", handleNewComment);
-
-    return () => {
-      off("new_post", handleNewPost);
-      off("post_liked", handlePostLiked);
-      off("new_comment", handleNewComment);
-    };
-  }, [socket, on, off, utils]);
-
-  const handleCreatePost = () => {
-    if (!newPostContent.trim()) {
-      toast.error("Please enter post content");
-      return;
-    }
-
-    createPostMutation.mutate({
-      content: newPostContent,
-      category: newPostCategory,
-    });
-  };
-
-  const handleLikePost = (postId: number) => {
-    if (!isAuthenticated) {
-      toast.error("Please login to like posts");
-      return;
-    }
-    likePostMutation.mutate({ postId });
-  };
-
-  const handleAddComment = (postId: number) => {
-    const content = commentInputs[postId]?.trim();
-    if (!content) {
-      toast.error("Please enter a comment");
-      return;
-    }
-
-    if (!isAuthenticated) {
-      toast.error("Please login to comment");
-      return;
-    }
-
-    addCommentMutation.mutate({ postId, content });
-  };
-
-  const toggleComments = (postId: number) => {
-    setShowComments(prev => ({ ...prev, [postId]: !prev[postId] }));
-  };
-
-  const liveEvents = [
-    {
-      id: 1,
-      title: "AI for SMEs: Workflow Automation Workshop",
-      date: "Tomorrow",
-      time: "2:00 PM EST",
-      attendees: 156,
-      category: "business",
-      countdown: "18h 32m"
-    },
-    {
-      id: 2,
-      title: "Faith & Technology: Integrating AI in Ministry",
-      date: "Friday",
-      time: "6:00 PM EST",
-      attendees: 89,
-      category: "faith",
-      countdown: "2d 20h"
-    }
-  ];
-
-  const leaderboard = [
-    { rank: 1, name: "Emma Rodriguez", avatar: "ER", xp: 3450, streak: 28, badge: "🏆" },
-    { rank: 2, name: "James Wilson", avatar: "JW", xp: 3210, streak: 21, badge: "🥈" },
-    { rank: 3, name: "Aisha Patel", avatar: "AP", xp: 2980, streak: 19, badge: "🥉" },
-    { rank: 4, name: "Carlos Martinez", avatar: "CM", xp: 2750, streak: 15, badge: "⭐" },
-    { rank: 5, name: "Lisa Thompson", avatar: "LT", xp: 2640, streak: 14, badge: "⭐" }
-  ];
+  const filteredMasterclasses = masterclasses.filter(m =>
+    activeTab === "upcoming" ? m.status === "Upcoming" : m.status === "Recorded"
+  );
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navigation />
-      
-      <main className="flex-1 pt-16">
-        <div className="container py-8">
-          {/* Header */}
-          <div className="mb-8 grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">
-                Community Hub
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                Connect, learn, and grow with AI enthusiasts worldwide. Share your success stories, ask questions, and collaborate with professionals across business, education, faith, and creative sectors.
-              </p>
-            </div>
-            <div className="relative">
-              <img
-                src="/community-engagement.jpg"
-                alt="Community members engaging and networking"
-                className="rounded-lg shadow-lg w-full h-auto object-cover"
-              />
-            </div>
+    <div className="min-h-screen bg-white font-inter">
+      <Navbar />
+
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <section
+        className="relative pt-24 pb-16 overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}
+      >
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
+        <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
+
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-gray-900 relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
+            style={{ background: "rgba(255,255,255,0.2)" }}>
+            <Users size={12} /> UpskillinTech Community
           </div>
-
-          {/* Live Events Banner */}
-          <div className="mb-8">
-            <Card className="border-2 border-primary bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Video className="text-primary" size={24} />
-                    <CardTitle>Upcoming Live Events</CardTitle>
-                  </div>
-                  <img
-                    src="/networking-event.jpg"
-                    alt="Live networking event"
-                    className="hidden md:block w-24 h-16 rounded-md object-cover"
-                  />
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {liveEvents.map((event) => (
-                    <div key={event.id} className="p-4 bg-background rounded-lg border-2 border-border hover:border-primary transition-all">
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex-1">
-                          <h3 className="font-semibold mb-1">{event.title}</h3>
-                          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-1">
-                              <Calendar size={14} />
-                              <span>{event.date} at {event.time}</span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Users size={14} />
-                              <span>{event.attendees} attending</span>
-                            </div>
-                          </div>
-                        </div>
-                        <Badge variant="secondary" className="ml-2">
-                          <Clock size={12} className="mr-1" />
-                          {event.countdown}
-                        </Badge>
-                      </div>
-                      <Button size="sm" className="w-full">
-                        Join Event
-                      </Button>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* Main Feed */}
-            <div className="lg:col-span-2 space-y-6">
-              {/* Group Tabs */}
-              <Tabs value={selectedGroup} onValueChange={(v) => setSelectedGroup(v as any)}>
-                <div className="flex items-center justify-between mb-4">
-                  <TabsList className="grid grid-cols-5 w-full max-w-2xl">
-                    <TabsTrigger value="all">All</TabsTrigger>
-                    <TabsTrigger value="business">Business</TabsTrigger>
-                    <TabsTrigger value="faith">Faith</TabsTrigger>
-                    <TabsTrigger value="education">Education</TabsTrigger>
-                    <TabsTrigger value="creators">Creators</TabsTrigger>
-                  </TabsList>
-                  
-                  {/* Create Post Button */}
-                  <Dialog open={isCreatePostOpen} onOpenChange={setIsCreatePostOpen}>
-                    <DialogTrigger asChild>
-                      <Button disabled={!isAuthenticated}>
-                        <Plus size={16} className="mr-2" />
-                        Create Post
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>Create a New Post</DialogTitle>
-                        <DialogDescription>
-                          Share your thoughts, questions, or success stories with the community.
-                        </DialogDescription>
-                      </DialogHeader>
-                      <div className="space-y-4">
-                        <div>
-                          <label className="text-sm font-medium mb-2 block">Category</label>
-                          <Tabs value={newPostCategory} onValueChange={(v) => setNewPostCategory(v as any)}>
-                            <TabsList className="grid grid-cols-4 w-full">
-                              <TabsTrigger value="business">Business</TabsTrigger>
-                              <TabsTrigger value="faith">Faith</TabsTrigger>
-                              <TabsTrigger value="education">Education</TabsTrigger>
-                              <TabsTrigger value="creators">Creators</TabsTrigger>
-                            </TabsList>
-                          </Tabs>
-                        </div>
-                        <div>
-                          <label className="text-sm font-medium mb-2 block">Content</label>
-                          <Textarea
-                            placeholder="What's on your mind?"
-                            value={newPostContent}
-                            onChange={(e) => setNewPostContent(e.target.value)}
-                            rows={6}
-                            className="resize-none"
-                          />
-                        </div>
-                      </div>
-                      <DialogFooter>
-                        <Button variant="outline" onClick={() => setIsCreatePostOpen(false)}>
-                          Cancel
-                        </Button>
-                        <Button onClick={handleCreatePost} disabled={createPostMutation.isPending}>
-                          {createPostMutation.isPending ? "Posting..." : "Post"}
-                        </Button>
-                      </DialogFooter>
-                    </DialogContent>
-                  </Dialog>
-                </div>
-              </Tabs>
-
-              {/* Posts Feed */}
-              {isLoading ? (
-                <div className="text-center py-8">
-                  <p className="text-muted-foreground">Loading posts...</p>
-                </div>
-              ) : posts && posts.length > 0 ? (
-                posts.map((post) => (
-                  <PostCard
-                    key={post.id}
-                    post={post}
-                    onLike={handleLikePost}
-                    onComment={handleAddComment}
-                    commentInput={commentInputs[post.id] || ""}
-                    onCommentInputChange={(value) =>
-                      setCommentInputs(prev => ({ ...prev, [post.id]: value }))
-                    }
-                    showComments={showComments[post.id] || false}
-                    onToggleComments={() => toggleComments(post.id)}
-                  />
-                ))
-              ) : (
-                <Card>
-                  <CardContent className="py-12 text-center">
-                    <MessageSquare size={48} className="mx-auto mb-4 text-muted-foreground" />
-                    <h3 className="text-lg font-semibold mb-2">No posts yet</h3>
-                    <p className="text-muted-foreground mb-4">
-                      Be the first to share something with the community!
-                    </p>
-                    {isAuthenticated && (
-                      <Button onClick={() => setIsCreatePostOpen(true)}>
-                        Create First Post
-                      </Button>
-                    )}
-                  </CardContent>
-                </Card>
-              )}
-            </div>
-
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Leaderboard */}
-              <Card>
-                <CardHeader>
-                  <div className="flex items-center gap-2">
-                    <Trophy className="text-accent" size={20} />
-                    <CardTitle className="text-lg">Top Contributors</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {leaderboard.map((user) => (
-                      <div key={user.rank} className="flex items-center gap-3 p-2 rounded-lg hover:bg-accent/10 transition-colors">
-                        <span className="text-2xl">{user.badge}</span>
-                        <Avatar className="h-10 w-10">
-                          <AvatarFallback>{user.avatar}</AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                          <p className="font-medium text-sm">{user.name}</p>
-                          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <span>{user.xp} XP</span>
-                            <span>•</span>
-                            <div className="flex items-center gap-1">
-                              <Flame size={12} className="text-orange-500" />
-                              <span>{user.streak} days</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Community Stats */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Community Stats</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Active Members</span>
-                    <span className="font-semibold">2,847</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Posts This Week</span>
-                    <span className="font-semibold">156</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Live Events</span>
-                    <span className="font-semibold">8</span>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+          <h1 className="font-poppins font-bold text-4xl lg:text-5xl leading-tight mb-5">
+            Join the UpskillinTech Community
+          </h1>
+          <p className="text-lg opacity-90 mb-4 max-w-2xl mx-auto leading-relaxed">
+            A growing network of AI-curious professionals, educators, leaders,
+            and changemakers committed to using AI to do better work.
+          </p>
+          <p className="text-base opacity-80 mb-8 max-w-xl mx-auto">
+            Monthly masterclasses. Workflow sharing. Peer networking.
+            Events and webinars. All in one community.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
+              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              Join the Community <ArrowRight size={16} />
+            </a>
+            <a href="#masterclasses"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-gray-900 transition-all"
+              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#38B54A"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#38B54A"; }}>
+              See Masterclasses
+            </a>
           </div>
         </div>
-      </main>
+
+        {/* Stats bar */}
+        <div className="max-w-5xl mx-auto px-4 lg:px-8 mt-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {[
+              { value: "500+", label: "Community Members" },
+              { value: "24+", label: "Masterclasses Hosted" },
+              { value: "12+", label: "Countries Represented" },
+              { value: "Free", label: "To Join" },
+            ].map((stat, i) => (
+              <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
+                style={{ background: "rgba(56,181,74,0.10)" }}>
+                <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
+                <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── What You Get ─────────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
+              style={{ background: "#f0faf0", color: "#38B54A" }}>Community Benefits</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              What You Get as a Member
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+              The UpskillinTech community is designed to support your AI learning
+              journey with practical resources, real connections, and regular learning opportunities.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <div key={i} className="rounded-2xl border p-6 hover:shadow-lg transition-all hover:-translate-y-1"
+                  style={{ borderColor: "#e8e8e8" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+                    style={{ background: `${b.color}15` }}>
+                    <Icon size={22} style={{ color: b.color }} />
+                  </div>
+                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#1C1C1C" }}>{b.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#555" }}>{b.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Masterclasses ────────────────────────────────────────────────── */}
+      <section id="masterclasses" className="section-py" style={{ background: "#f8faf8" }}>
+        <div className="max-w-5xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
+              style={{ background: "#f0faf0", color: "#38B54A" }}>Monthly Masterclasses</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              Learn. Apply. Grow.
+            </h2>
+            <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "#555" }}>
+              Live monthly sessions on practical AI topics — hosted by Dr. Amaka Adiuku
+              and guest practitioners. All sessions are recorded for community members.
+            </p>
+            {/* Tabs */}
+            <div className="inline-flex rounded-xl overflow-hidden border" style={{ borderColor: "#e8e8e8" }}>
+              {(["upcoming", "recorded"] as const).map(tab => (
+                <button key={tab} onClick={() => setActiveTab(tab)}
+                  className="px-6 py-2.5 text-sm font-semibold capitalize transition-all"
+                  style={{
+                    background: activeTab === tab ? "#38B54A" : "#fff",
+                    color: activeTab === tab ? "#fff" : "#555",
+                  }}>
+                  {tab === "upcoming" ? "Upcoming Sessions" : "Past Recordings"}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {filteredMasterclasses.map((mc, i) => (
+              <div key={i} className="bg-white rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
+                style={{ borderColor: "#e8e8e8" }}>
+                <div className="h-1.5" style={{ background: "linear-gradient(90deg, #38B54A, #8B9E1A)" }} />
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="font-poppins font-bold text-base" style={{ color: "#1C1C1C" }}>{mc.title}</h3>
+                    <span className="shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full"
+                      style={{
+                        background: mc.status === "Upcoming" ? "#f0faf0" : "#f5f5f5",
+                        color: mc.status === "Upcoming" ? "#38B54A" : "#888",
+                      }}>
+                      {mc.status}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#555" }}>{mc.desc}</p>
+                  <div className="space-y-1.5 mb-4">
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                      <Calendar size={12} style={{ color: "#38B54A" }} /> {mc.date}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                      <Clock size={12} style={{ color: "#38B54A" }} /> {mc.time}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                      <Users size={12} style={{ color: "#38B54A" }} /> Hosted by {mc.host}
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {mc.tags.map((tag, j) => (
+                      <span key={j} className="text-xs px-2 py-0.5 rounded-full"
+                        style={{ background: "#f0faf0", color: "#38B54A" }}>{tag}</span>
+                    ))}
+                  </div>
+                  <a href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all"
+                    style={{ color: "#38B54A" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#8B9E1A")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#38B54A")}>
+                    {mc.status === "Upcoming" ? "Register for Session" : "Watch Recording"}
+                    <ArrowRight size={12} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Upcoming Events ───────────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
+              style={{ background: "#f0faf0", color: "#38B54A" }}>Events & Webinars</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              Upcoming Events
+            </h2>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+              Community members get priority access and early registration for all
+              UpskillinTech events, workshops, and webinars.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {upcomingEvents.map((ev, i) => (
+              <div key={i} className="rounded-2xl border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
+                style={{ borderColor: "#e8e8e8" }}>
+                <div className="h-2" style={{ background: ev.color }} />
+                <div className="p-6">
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full mb-3 inline-block"
+                    style={{ background: `${ev.color}15`, color: ev.color }}>{ev.type}</span>
+                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#1C1C1C" }}>{ev.title}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#555" }}>{ev.desc}</p>
+                  <div className="space-y-1.5 mb-5">
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                      <Calendar size={12} style={{ color: ev.color }} /> {ev.date}
+                    </div>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                      <MapPin size={12} style={{ color: ev.color }} /> {ev.location}
+                    </div>
+                  </div>
+                  <a href="/contact"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold"
+                    style={{ color: ev.color }}>
+                    Register Interest <ArrowRight size={12} />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ─────────────────────────────────────────────────── */}
+      <section className="section-py" style={{ background: "#1C1C1C" }}>
+        <div className="max-w-5xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
+              style={{ background: "rgba(56,181,74,0.2)", color: "#38B54A" }}>Community Voices</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
+              What Members Are Saying
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="rounded-2xl p-6"
+                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <Star key={j} size={14} fill="#E6B800" style={{ color: "#E6B800" }} />
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed mb-5 italic" style={{ color: "rgba(255,255,255,0.8)" }}>
+                  "{t.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
+                    style={{ background: "linear-gradient(135deg, #38B54A, #8B9E1A)" }}>
+                    {t.name.split(" ").map(n => n[0]).join("")}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm text-white">{t.name}</p>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>{t.role} · {t.company}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Join CTA ─────────────────────────────────────────────────────── */}
+      <section className="section-py"
+        style={{ background: "linear-gradient(135deg, #38B54A 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        <div className="max-w-3xl mx-auto px-4 text-center text-white">
+          <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
+            Ready to Join the Community?
+          </h2>
+          <p className="text-base opacity-90 mb-4 max-w-xl mx-auto">
+            Connect with professionals across Africa and the diaspora who are
+            using AI to transform how they work. Monthly masterclasses, workflow
+            sharing, and a supportive peer network — all in one place.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {["Monthly Masterclasses", "Workflow Library", "Peer Network", "Events Access"].map((item, i) => (
+              <span key={i} className="flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full"
+                style={{ background: "rgba(255,255,255,0.2)" }}>
+                <CheckCircle size={12} /> {item}
+              </span>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/contact"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
+              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              Join the Community <ArrowRight size={15} />
+            </a>
+            <a href="/programs"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#38B54A"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
+              Explore Programmes
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
-  );
-}
-
-// Post Card Component
-function PostCard({
-  post,
-  onLike,
-  onComment,
-  commentInput,
-  onCommentInputChange,
-  showComments,
-  onToggleComments,
-}: {
-  post: any;
-  onLike: (postId: number) => void;
-  onComment: (postId: number) => void;
-  commentInput: string;
-  onCommentInputChange: (value: string) => void;
-  showComments: boolean;
-  onToggleComments: () => void;
-}) {
-  const { data: comments } = trpc.community.getComments.useQuery(
-    { postId: post.id },
-    { enabled: showComments }
-  );
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "business": return "bg-primary/10 text-primary";
-      case "faith": return "bg-secondary/10 text-secondary";
-      case "education": return "bg-accent/10 text-accent";
-      case "creators": return "bg-purple-100 text-purple-700";
-      default: return "bg-gray-100 text-gray-700";
-    }
-  };
-
-  return (
-    <Card>
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            <Avatar>
-              <AvatarFallback>{post.authorName?.substring(0, 2).toUpperCase() || "U"}</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="font-semibold">{post.authorName || "Anonymous"}</p>
-              <p className="text-sm text-muted-foreground">
-                {new Date(post.createdAt).toLocaleDateString()}
-              </p>
-            </div>
-          </div>
-          <Badge className={getCategoryColor(post.category)}>
-            {post.category}
-          </Badge>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <p className="mb-4 whitespace-pre-wrap">{post.content}</p>
-        
-        <div className="flex items-center gap-4 pt-4 border-t">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => onLike(post.id)}
-            className="gap-2"
-          >
-            <Heart size={16} className={post.isLiked ? "fill-red-500 text-red-500" : ""} />
-            <span>{post.likeCount || 0}</span>
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onToggleComments}
-            className="gap-2"
-          >
-            <MessageSquare size={16} />
-            <span>{post.commentCount || 0}</span>
-          </Button>
-          <Button variant="ghost" size="sm" className="gap-2">
-            <Share2 size={16} />
-            Share
-          </Button>
-        </div>
-
-        {/* Comments Section */}
-        {showComments && (
-          <div className="mt-4 pt-4 border-t space-y-4">
-            {/* Comment Input */}
-            <div className="flex gap-2">
-              <Textarea
-                placeholder="Write a comment..."
-                value={commentInput}
-                onChange={(e) => onCommentInputChange(e.target.value)}
-                rows={2}
-                className="resize-none"
-              />
-              <Button onClick={() => onComment(post.id)} size="sm">
-                <Send size={16} />
-              </Button>
-            </div>
-
-            {/* Comments List */}
-            {comments && comments.length > 0 && (
-              <div className="space-y-3">
-                {comments.map((comment: any) => (
-                  <div key={comment.id} className="flex gap-3 p-3 bg-muted/50 rounded-lg">
-                    <Avatar className="h-8 w-8">
-                      <AvatarFallback className="text-xs">
-                        {comment.authorName?.substring(0, 2).toUpperCase() || "U"}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div className="flex-1">
-                      <p className="text-sm font-medium">{comment.authorName || "Anonymous"}</p>
-                      <p className="text-sm text-muted-foreground">{comment.content}</p>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        {new Date(comment.createdAt).toLocaleDateString()}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-      </CardContent>
-    </Card>
   );
 }

@@ -90,7 +90,7 @@ export default function Events() {
       id: 6,
       title: "Computer Vision Masterclass: From Theory to Production",
       type: "Workshop",
-      date: "January 10, 2026"
+      date: "January 10, 2026",
       time: "10:00 AM - 5:00 PM EST",
       location: "Seattle, WA",
       attendees: 40,
@@ -133,8 +133,7 @@ export default function Events() {
     }
   };
 
-  264
-    
+  return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <section className="pt-24 pb-12 border-b border-border">

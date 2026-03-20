@@ -1,223 +1,120 @@
-import { Link } from "wouter";
-import { APP_TITLE, APP_LOGO } from "@/const";
-import { Linkedin, Mail, Youtube, Instagram, Facebook, Twitter } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { trpc } from "@/lib/trpc";
-import { useState } from "react";
-import { toast } from "sonner";
+/**
+ * Footer — UpskillinTech v3
+ * Dark #111827 background, larger text, bigger logo, green hover accents
+ */
+import { Linkedin, Youtube, Instagram, Twitter } from "lucide-react";
+
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
+
+const footerLinks = {
+  Programs: [
+    { label: "AI-Enabled Professional", href: "/programs" },
+    { label: "AI Foundations", href: "/programs" },
+    { label: "AI Leadership", href: "/programs" },
+    { label: "Enterprise Training", href: "/enterprise" },
+  ],
+  Community: [
+    { label: "Join Community", href: "/community" },
+    { label: "Events & Webinars", href: "/community" },
+    { label: "AI Masterclasses", href: "/community" },
+    { label: "Peer Network", href: "/community" },
+  ],
+  Resources: [
+    { label: "Blog & Insights", href: "/resources/blog" },
+    { label: "AI Guides", href: "/resources/ai-guides" },
+    { label: "Case Studies", href: "/resources/case-studies" },
+    { label: "Webinars", href: "/resources/webinars" },
+    { label: "AI Workflow Library", href: "/resources/workflows" },
+    { label: "Newsletter", href: "/newsletter" },
+  ],
+  About: [
+    { label: "About UpskillinTech", href: "/about" },
+    { label: "Our Approach", href: "/about" },
+    { label: "Contact Us", href: "/contact" },
+    { label: "Careers", href: "#" },
+  ],
+};
+
+const socialLinks = [
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Youtube, label: "YouTube", href: "#" },
+  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Twitter, label: "Twitter/X", href: "#" },
+];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const subscribeMutation = trpc.newsletter.subscribe.useMutation({
-    onSuccess: () => {
-      toast.success("Successfully subscribed to newsletter!");
-      setEmail("");
-      setIsSubmitting(false);
-    },
-    onError: (error) => {
-      toast.error(error.message || "Failed to subscribe. Please try again.");
-      setIsSubmitting(false);
-    },
-  });
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-    setIsSubmitting(true);
-    subscribeMutation.mutate({ email });
-  };
-
-  const footerSections = [
-    {
-      title: "Learning",
-      links: [
-        { label: "All Courses", href: "/courses" },
-        { label: "AI for Business", href: "/courses" },
-        { label: "AI for Education", href: "/courses" },
-        { label: "Mentorship Programs", href: "/courses" },
-        { label: "Certifications", href: "/courses" },
-      ],
-    },
-    {
-      title: "Consulting",
-      links: [
-        { label: "Business Consulting", href: "/consulting" },
-        { label: "AI Strategy", href: "/consulting" },
-        { label: "Implementation Support", href: "/consulting" },
-        { label: "Training Programs", href: "/consulting" },
-      ],
-    },
-    {
-      title: "Transform",
-      links: [
-        { label: "Career Transformation", href: "/transform" },
-        { label: "Skills Assessment", href: "/" },
-        { label: "Learning Paths", href: "/courses" },
-        { label: "Success Stories", href: "/transform" },
-      ],
-    },
-    {
-      title: "Resources",
-      links: [
-        { label: "Blog", href: "/blog" },
-        { label: "Research", href: "/resources/research" },
-        { label: "Events", href: "/resources/events" },
-        { label: "Community", href: "/community" },
-        { label: "Resource Hub", href: "/resources" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About Us", href: "/about" },
-        { label: "Contact", href: "/contact" },
-        { label: "Careers", href: "/about" },
-        { label: "Newsletter Preferences", href: "/newsletter/preferences" },
-        { label: "Privacy Policy", href: "/privacy" },
-        { label: "Terms of Service", href: "/terms" },
-      ],
-    },
-  ];
-
   return (
-    <footer className="bg-white border-t border-gray-200">
-      {/* Main Footer Content */}
-      <div className="container py-12">
-        {/* Top Section - Logo, Newsletter & Social */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-12 pb-8 border-b border-gray-200">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <img 
-                src={APP_LOGO} 
-                alt={APP_TITLE}
-                className="h-30 w-auto cursor-pointer"
+    <footer id="footer" style={{ background: "#111827" }}>
+      <div className="container py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
+          {/* Brand column */}
+          <div className="lg:col-span-2 sm:col-span-2">
+            <div className="mb-5">
+              <img
+                src={LOGO_URL}
+                alt="UpskillinTech"
+                style={{ height: "64px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
               />
-            </Link>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="flex-1 max-w-md">
-            <div className="flex items-center gap-2 mb-2">
-              <Mail className="w-5 h-5 text-gray-600" />
-              <h3 className="font-semibold text-black">Stay Updated</h3>
             </div>
-            <p className="text-sm text-gray-600 mb-4">
-              Get the latest AI insights, course updates, and exclusive content delivered to your inbox.
+            <p className="mb-7 leading-relaxed" style={{ fontSize: "0.975rem", color: "rgba(255,255,255,0.50)", lineHeight: 1.75 }}>
+              Helping professionals become AI-enabled. Not just AI-aware — AI productive and AI transformed.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1"
-                disabled={isSubmitting}
-                required
-              />
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="bg-black hover:bg-gray-800"
-              >
-                {isSubmitting ? "Subscribing..." : "Subscribe"}
-              </Button>
-            </form>
-          </div>
-
-          {/* Social Icons & CTA */}
-          <div className="flex flex-col items-start lg:items-end gap-4">
-            <div className="flex gap-4 items-center">
-              <a
-                href="https://linkedin.com/company/Upskillintech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#0A66C2] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://tiktok.com/@upskillintech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-black transition-colors"
-                aria-label="TikTok"
-              >
-                <svg
-                  className="w-5 h-5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                </svg>
-              </a>
-              <a
-                href="https://youtube.com/@upskillinTech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#FF0000] transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com/upskillintechs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#E4405F] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com/Upskillintech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#1877F2] transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com/Upskillintech"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#1DA1F2] transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
+            {/* Social Links */}
+            <div className="flex items-center gap-3">
+              {socialLinks.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    className="flex items-center justify-center transition-all duration-200"
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: "0.625rem",
+                      background: "rgba(255,255,255,0.08)",
+                      color: "rgba(255,255,255,0.55)",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
+                      (e.currentTarget as HTMLElement).style.background = "#38B54A";
+                      (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
+                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                    }}
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
             </div>
-            <Link href="/contact">
-              <Button variant="outline" size="sm">
-                Contact us
-              </Button>
-            </Link>
           </div>
-        </div>
 
-        {/* Footer Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h3 className="font-semibold text-black mb-4">{section.title}</h3>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
+          {/* Link columns */}
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h4
+                className="font-bold mb-5"
+                style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1rem", color: "#ffffff" }}
+              >
+                {category}
+              </h4>
+              <ul className="flex flex-col gap-3">
+                {links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href}>
-                      <a className="text-gray-600 hover:text-black transition-colors text-sm">
-                        {link.label}
-                      </a>
-                    </Link>
+                    <a
+                      href={link.href}
+                      className="transition-colors duration-200"
+                      style={{ fontSize: "0.925rem", color: "rgba(255,255,255,0.45)", textDecoration: "none", lineHeight: 1.5 }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#38B54A"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
+                    >
+                      {link.label}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -225,27 +122,27 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Bottom Section - Copyright & Legal */}
-        <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-600">
-            © {currentYear} {APP_TITLE}. All rights reserved.
+        {/* Bottom Bar */}
+        <div
+          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+        >
+          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.35)" }}>
+            © {new Date().getFullYear()} UpskillinTech. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="/privacy">
-              <a className="text-sm text-gray-600 hover:text-black transition-colors">
-                Privacy Policy
+          <div className="flex items-center gap-6">
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (
+              <a
+                key={item}
+                href="#"
+                className="transition-colors duration-200"
+                style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.30)", textDecoration: "none" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#38B54A"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.30)"; }}
+              >
+                {item}
               </a>
-            </Link>
-            <Link href="/terms">
-              <a className="text-sm text-gray-600 hover:text-black transition-colors">
-                Terms of Service
-              </a>
-            </Link>
-            <Link href="/cookies">
-              <a className="text-sm text-gray-600 hover:text-black transition-colors">
-                Cookie Policy
-              </a>
-            </Link>
+            ))}
           </div>
         </div>
       </div>

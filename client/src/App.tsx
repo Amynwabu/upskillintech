@@ -4,54 +4,41 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { WebSocketProvider } from "./contexts/WebSocketContext";
 import Home from "./pages/Home";
-import Onboarding from "./pages/Onboarding";
-import Dashboard from "./pages/Dashboard";
-import LearningPlayer from "./pages/LearningPlayer";
-import Templates from "./pages/Templates";
-import Community from "./pages/Community";
-import Learn from "./pages/Learn";
-import Profile from "./pages/Profile";
-import CourseDetail from "./pages/CourseDetail";
-import Transform from "./pages/Transform";
-import Consult from "./pages/Consult";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
 import Resources from "./pages/Resources";
-import Research from "./pages/Research";
-import Events from "./pages/Events";
-import NewsletterPreferences from "./pages/NewsletterPreferences";
-import AdminEmails from "./pages/AdminEmails";
-import AdminEmailAnalytics from "./pages/AdminEmailAnalytics";
-import WebinarRegistration from "./pages/WebinarRegistration";
-import AdminWebinarRegistrations from "./pages/AdminWebinarRegistrations";
+import Blog from "./pages/Blog";
+import AIGuides from "./pages/AIGuides";
+import CaseStudies from "./pages/CaseStudies";
+import Webinars from "./pages/Webinars";
+import WorkflowsPage from "./pages/Workflows";
+import About from "./pages/About";
+import Enterprise from "./pages/Enterprise";
+import Contact from "./pages/Contact";
+import Programs from "./pages/Programs";
+import Community from "./pages/Community";
+import Newsletter from "./pages/Newsletter";
+import NewsletterArticle from "./pages/NewsletterArticle";
+import NewsletterArchive from "./pages/NewsletterArchive";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/learn"} component={Learn} />
-      <Route path={"/transform"} component={Transform} />
-      <Route path={"/consult"} component={Consult} />
-      <Route path={"/course/:id"} component={CourseDetail} />
-      <Route path={"/profile"} component={Profile} />
-      <Route path={"/onboarding"} component={Onboarding} />
-      <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/learning/:courseId"} component={LearningPlayer} />
-      <Route path={"/templates"} component={Templates} />
-      <Route path={"/community"} component={Community} />
       <Route path={"/resources"} component={Resources} />
-      <Route path={"/blog"} component={Blog} />
-      <Route path={"/blog/:slug"} component={BlogPost} />
-      <Route path={"/resources/research"} component={Research} />
-      <Route path={"/resources/events"} component={Events} />
-      <Route path={"/events/webinar"} component={WebinarRegistration} />
-      <Route path={"/newsletter/preferences"} component={NewsletterPreferences} />
-      <Route path={"/admin/emails"} component={AdminEmails} />
-      <Route path={"/admin/email-analytics"} component={AdminEmailAnalytics} />
-      <Route path={"/admin/webinar-registrations"} component={AdminWebinarRegistrations} />
+      <Route path={"/resources/blog"} component={Blog} />
+      <Route path={"/resources/ai-guides"} component={AIGuides} />
+      <Route path={"/resources/case-studies"} component={CaseStudies} />
+      <Route path={"/resources/webinars"} component={Webinars} />
+      <Route path={"/resources/workflows"} component={WorkflowsPage} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/enterprise"} component={Enterprise} />
+      <Route path={"/contact"} component={Contact} />
+      <Route path={"/programs"} component={Programs} />
+      <Route path={"/community"} component={Community} />
+      <Route path={"/newsletter"} component={Newsletter} />
+      <Route path={"/newsletter/archive"} component={NewsletterArchive} />
+      <Route path={"/newsletter/:slug"} component={NewsletterArticle} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
@@ -59,24 +46,14 @@ function Router() {
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <WebSocketProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-          </TooltipProvider>
-        </WebSocketProvider>
+      <ThemeProvider defaultTheme="light">
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
