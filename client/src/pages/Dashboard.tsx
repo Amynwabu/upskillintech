@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
   BookOpen, 
@@ -27,14 +27,14 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-16 bg-muted/30">
+      <main className="flex-1 pt-[76px] bg-[#F7F8FA]">
         <div className="container py-8">
           {/* Welcome Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Welcome back, <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{userName}</span>! 👋
+              Welcome back, <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{userName}</span>! 👋
             </h1>
             <p className="text-muted-foreground">Continue your AI journey and reach new milestones</p>
           </div>

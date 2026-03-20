@@ -1,7 +1,7 @@
 /**
  * Contact Page — /contact
  * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
- * Typography: Poppins (headings) + Inter (body)
+ * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Inquiry Categories (4 cards), Contact Form, Alternative Contact
  */
 

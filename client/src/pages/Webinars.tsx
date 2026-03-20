@@ -135,7 +135,7 @@ export default function Webinars() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
       {/* Hero */}
@@ -143,7 +143,7 @@ export default function Webinars() {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Webinars</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               Learn Live. Watch On Demand. Grow Every Month.
             </h1>
             <p className="text-lg mb-6" style={{ color: "#555" }}>
@@ -163,7 +163,7 @@ export default function Webinars() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "8+", l: "Past Recordings" }, { v: "3", l: "Upcoming Sessions" }, { v: "4,000+", l: "Total Attendees" }, { v: "Free", l: "To Register" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -177,7 +177,7 @@ export default function Webinars() {
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">Register Now</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>Upcoming Webinars</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Upcoming Webinars</h2>
             <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#6B7280" }}>Secure your spot for our next live sessions — all free to attend.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -186,7 +186,7 @@ export default function Webinars() {
                 <div className="h-2" style={{ background: w.color }} />
                 <div className="p-7 flex flex-col flex-1">
                   <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full w-fit mb-4" style={{ background: `${w.color}12`, color: w.color }}>Upcoming</span>
-                  <h3 className="text-lg font-bold mb-3 leading-snug" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{w.title}</h3>
+                  <h3 className="text-lg font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{w.title}</h3>
                   <div className="flex flex-col gap-1.5 text-xs mb-4" style={{ color: "#6B7280" }}>
                     <span className="flex items-center gap-1.5"><Calendar size={12} /> {w.date} at {w.time}</span>
                     <span className="flex items-center gap-1.5"><Clock size={12} /> {w.duration}</span>
@@ -209,13 +209,13 @@ export default function Webinars() {
                     <form onSubmit={(e) => handleRegister(e, w.title)} className="flex flex-col gap-2">
                       <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Your Name" className="rounded-lg px-3 py-2.5 text-sm outline-none" style={{ border: "1.5px solid #E5E7EB" }} />
                       <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="rounded-lg px-3 py-2.5 text-sm outline-none" style={{ border: "1.5px solid #E5E7EB" }} />
-                      <button type="submit" className="w-full font-bold py-2.5 rounded-lg text-sm" style={{ background: w.color, color: "#fff", fontFamily: "'Poppins', sans-serif" }}>
+                      <button type="submit" className="w-full font-bold py-2.5 rounded-lg text-sm" style={{ background: w.color, color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                         Confirm Registration
                       </button>
                       <button type="button" onClick={() => setSelectedWebinar(null)} className="text-xs text-center" style={{ color: "#9CA3AF" }}>Cancel</button>
                     </form>
                   ) : (
-                    <button onClick={() => setSelectedWebinar(w.id)} className="w-full font-bold py-3 rounded-lg flex items-center justify-center gap-2" style={{ background: w.color, color: "#fff", fontFamily: "'Poppins', sans-serif" }}>
+                    <button onClick={() => setSelectedWebinar(w.id)} className="w-full font-bold py-3 rounded-lg flex items-center justify-center gap-2" style={{ background: w.color, color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                       <Calendar size={16} /> Register Free
                     </button>
                   )}
@@ -231,7 +231,7 @@ export default function Webinars() {
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">On Demand</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>Past Webinar Recordings</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Past Webinar Recordings</h2>
             <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#6B7280" }}>Missed a session? Watch the recordings from our most popular webinars.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -247,7 +247,7 @@ export default function Webinars() {
                       <Users size={12} /> {w.views} views
                     </span>
                   </div>
-                  <h3 className="font-bold mb-2 leading-snug" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{w.title}</h3>
+                  <h3 className="font-bold mb-2 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{w.title}</h3>
                   <div className="flex items-center gap-3 text-xs mb-3" style={{ color: "#6B7280" }}>
                     <span className="flex items-center gap-1"><Mic size={12} /> {w.speaker}</span>
                     <span className="flex items-center gap-1"><Clock size={12} /> {w.duration}</span>
@@ -258,7 +258,7 @@ export default function Webinars() {
                       <span key={h} className="text-xs px-2 py-1 rounded-full" style={{ background: `${w.color}10`, color: w.color, border: `1px solid ${w.color}25` }}>{h}</span>
                     ))}
                   </div>
-                  <button onClick={() => handleWatch(w.title)} className="w-full font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm" style={{ background: `${w.color}12`, color: w.color, border: `1.5px solid ${w.color}30`, fontFamily: "'Poppins', sans-serif" }}>
+                  <button onClick={() => handleWatch(w.title)} className="w-full font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm" style={{ background: `${w.color}12`, color: w.color, border: `1.5px solid ${w.color}30`, fontFamily: "'Sora', sans-serif" }}>
                     <Play size={15} /> Watch Recording
                   </button>
                 </div>
@@ -271,11 +271,11 @@ export default function Webinars() {
       {/* Newsletter CTA */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>Never Miss a Webinar</h2>
+          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Never Miss a Webinar</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get notified about upcoming sessions and receive recordings directly in your inbox.</p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("You're on the list!", { description: "We'll notify you about upcoming webinars." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#1C1C1C" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
               Notify Me
             </button>
           </form>

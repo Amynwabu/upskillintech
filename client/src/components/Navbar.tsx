@@ -1,7 +1,7 @@
 /**
  * Navbar — UpskillinTech v3
  * Design: White bg, taller (72px), larger logo, bigger nav text, green CTA
- * Font: Poppins
+ * Font: Sora
  */
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
@@ -74,7 +74,7 @@ export default function Navbar() {
                 href={link.href}
                 className="font-semibold transition-colors duration-150"
                 style={{
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
                   color: "#111827",
                   textDecoration: "none",
@@ -92,7 +92,7 @@ export default function Navbar() {
               <button
                 className="flex items-center gap-1.5 font-semibold transition-colors duration-150"
                 style={{
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
                   color: resourcesOpen ? "#38B54A" : "#111827",
                   background: "none",
@@ -126,7 +126,7 @@ export default function Navbar() {
                       style={{
                         background: "linear-gradient(135deg, rgba(56,181,74,0.08), rgba(230,184,0,0.08))",
                         color: "#38B54A",
-                        fontFamily: "'Poppins', sans-serif",
+                        fontFamily: "'Sora', sans-serif",
                         fontSize: "0.95rem",
                         textDecoration: "none",
                       }}
@@ -148,7 +148,7 @@ export default function Navbar() {
                           {r.icon}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.9rem", color: "#111827" }}>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#111827" }}>
                             {r.label}
                           </div>
                           <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{r.desc}</div>
@@ -162,9 +162,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center">
-            <Link href="/programs" className="btn-primary" style={{ fontSize: "0.95rem", padding: "0.75rem 1.75rem" }}>
-              Join Program
+          <div className="hidden md:flex items-center gap-3">
+            <Link href="/programs" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#374151", textDecoration: "none" }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#374151")}
+            >
+              Programs
+            </Link>
+            <Link href="/resources/blog" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
+              Free AI Insights
             </Link>
           </div>
 
@@ -190,7 +196,7 @@ export default function Navbar() {
                 href={link.href}
                 className="font-semibold py-3 px-3 rounded-xl"
                 style={{
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                   fontSize: "1rem",
                   color: "#111827",
                   textDecoration: "none",
@@ -224,8 +230,11 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link href="/programs" className="btn-primary mt-3 text-center justify-center" onClick={() => setMenuOpen(false)}>
-              Join Program
+            <Link href="/resources/blog" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
+              Free AI Insights
+            </Link>
+            <Link href="/programs" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
+              View Programs
             </Link>
           </div>
         </div>

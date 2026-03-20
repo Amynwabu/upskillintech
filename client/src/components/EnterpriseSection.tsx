@@ -35,7 +35,7 @@ export default function EnterpriseSection() {
                     <CheckCircle size={18} style={{ color: "#38B54A" }} />
                   </div>
                   <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Poppins', sans-serif", color: "#111827", fontSize: "1rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
                       {b.title}
                     </div>
                     <div style={{ fontSize: "0.925rem", color: "#6B7280", lineHeight: 1.6 }}>{b.desc}</div>
@@ -71,7 +71,7 @@ export default function EnterpriseSection() {
                 className="absolute top-5 right-5 rounded-2xl px-5 py-3 text-center"
                 style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.12)" }}
               >
-                <div style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#38B54A" }}>50+</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#38B54A" }}>50+</div>
                 <div style={{ fontSize: "0.8rem", color: "#6B7280", fontWeight: 500 }}>Business Partners</div>
               </div>
             </div>

@@ -265,11 +265,11 @@ export default function NewsletterArticle() {
 
   if (!article) {
     return (
-      <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         <Navbar />
         <main className="flex-1 pt-[76px] flex items-center justify-center">
           <div className="text-center py-20">
-            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#111827" }}>Edition Not Found</h1>
+            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>Edition Not Found</h1>
             <p className="text-lg mb-8" style={{ color: "#6B7280" }}>This newsletter edition doesn't exist or has been moved.</p>
             <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#38B54A" }}>
               ← Back to Newsletter
@@ -284,7 +284,7 @@ export default function NewsletterArticle() {
   const relatedArticles = article.relatedSlugs.map(s => ALL_EDITIONS.find(e => e.slug === s)).filter(Boolean);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
       <main className="flex-1 pt-[76px]">
 
@@ -309,7 +309,7 @@ export default function NewsletterArticle() {
                 style={{ background: `${article.tagColor}18`, color: article.tagColor }}>
                 {article.tag}
               </div>
-              <h1 className="font-bold mb-6" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827", lineHeight: 1.2 }}>
+              <h1 className="font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827", lineHeight: 1.2 }}>
                 {article.title}
               </h1>
               <div className="flex flex-wrap items-center gap-5" style={{ color: "#6B7280", fontSize: "0.95rem" }}>
@@ -336,7 +336,7 @@ export default function NewsletterArticle() {
                         style={{ background: `${color}20` }}>
                         <Icon size={20} style={{ color }} />
                       </div>
-                      <h2 className="font-bold" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.15rem", color: "#111827" }}>
+                      <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#111827" }}>
                         {section.title}
                       </h2>
                     </div>
@@ -359,7 +359,7 @@ export default function NewsletterArticle() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <div className="rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #111827, #1a2e1a)" }}>
-                <h3 className="font-bold text-white mb-3" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.6rem" }}>
+                <h3 className="font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem" }}>
                   Explore UpskillinTech
                 </h3>
                 <p className="mb-8" style={{ color: "rgba(255,255,255,0.65)", fontSize: "1rem" }}>
@@ -386,7 +386,7 @@ export default function NewsletterArticle() {
 
               {/* Mini subscribe form */}
               <div className="mt-8 rounded-2xl p-8" style={{ border: "1.5px solid #E5E7EB", background: "#fff" }}>
-                <h4 className="font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.1rem", color: "#111827" }}>
+                <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#111827" }}>
                   Enjoyed this edition?
                 </h4>
                 <p className="mb-5" style={{ color: "#6B7280", fontSize: "0.95rem" }}>Subscribe to get the next one delivered straight to your inbox.</p>
@@ -421,7 +421,7 @@ export default function NewsletterArticle() {
           <section style={{ background: "#ffffff", padding: "60px 0" }}>
             <div className="container">
               <div className="max-w-3xl mx-auto">
-                <h3 className="font-bold mb-8" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.5rem", color: "#111827" }}>
+                <h3 className="font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.5rem", color: "#111827" }}>
                   Related Editions
                 </h3>
                 <div className="grid sm:grid-cols-3 gap-5">
@@ -433,7 +433,7 @@ export default function NewsletterArticle() {
                         style={{ background: `${rel.tagColor}18`, color: rel.tagColor }}>
                         {rel.tag}
                       </div>
-                      <h4 className="font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.95rem", color: "#111827", lineHeight: 1.4 }}>
+                      <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", color: "#111827", lineHeight: 1.4 }}>
                         {rel.title}
                       </h4>
                       <div className="flex items-center gap-3" style={{ color: "#9CA3AF", fontSize: "0.8rem" }}>

@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { FileText, Download, Calendar, User, ArrowLeft, Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Research() {
@@ -90,11 +90,11 @@ export default function Research() {
   });
 
   return (
-        <>
-                <Navigation />
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen flex flex-col bg-background">
+      <Navbar />
+      <main className="flex-1 pt-[76px]">
       {/* Header */}
-      <section className="pt-24 pb-12 border-b border-border">
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
         <div className="container">
           <Link href="/resources">
             <Button variant="ghost" className="mb-6">
@@ -104,14 +104,14 @@ export default function Research() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
-              <FileText className="w-4 h-4 text-purple-500" />
-              <span className="text-sm font-medium text-purple-500">Research & Whitepapers</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(56,181,74,0.10)] border border-[rgba(56,181,74,0.20)] mb-6">
+              <FileText className="w-4 h-4 text-[#38B54A]" />
+              <span className="text-sm font-medium text-[#38B54A]">Research & Whitepapers</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               AI Research{" "}
-              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Library
               </span>
             </h1>
@@ -148,8 +148,8 @@ export default function Research() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === category
-                    ? "bg-purple-500 text-white"
-                    : "bg-card border border-border hover:border-purple-500/50"
+                    ? "bg-[#38B54A] text-white"
+                    : "bg-card border border-border hover:border-[rgba(56,181,74,0.5)]"
                 }`}
               >
                 {category}
@@ -172,15 +172,15 @@ export default function Research() {
             {filteredPapers.map((paper) => (
               <div
                 key={paper.id}
-                className="p-6 rounded-xl bg-card border border-border hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all"
+                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(56,181,74,0.5)] hover:shadow-lg hover:shadow-[rgba(56,181,74,0.10)] transition-all"
               >
                 {/* Category Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
-                  <span className="text-xs font-medium text-purple-500">{paper.category}</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(56,181,74,0.10)] border border-[rgba(56,181,74,0.20)] mb-4">
+                  <span className="text-xs font-medium text-[#38B54A]">{paper.category}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 hover:text-purple-500 transition-colors">
+                <h3 className="text-2xl font-bold mb-3 hover:text-[#38B54A] transition-colors">
                   {paper.title}
                 </h3>
 
@@ -213,7 +213,7 @@ export default function Research() {
                     <Button variant="outline" size="sm">
                       Read More
                     </Button>
-                    <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90">
+                    <Button size="sm" className="btn-primary">
                       <Download className="w-4 h-4 mr-2" />
                       Download PDF
                     </Button>
@@ -243,14 +243,14 @@ export default function Research() {
             <p className="text-muted-foreground mb-8">
               Are you conducting AI research? We'd love to feature your work in our library
             </p>
-            <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:opacity-90">
+            <Button size="lg" className="btn-primary">
               Submit Your Paper
             </Button>
           </div>
         </div>
       </section>
-    </div>
+      </main>
       <Footer />
-              </>
-          );
+    </div>
+  );
 }

@@ -2,7 +2,7 @@
  * About Page — UpskillinTech
  * URL: /about
  * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Yellow (#E6B800) + Dark (#1C1C1C)
- * Font: Poppins (headings) + Inter (body)
+ * Font: Sora (headings) + Inter (body)
  * 8 Sections: Hero, Mission, Founder, Vision, Ecosystem, Partnerships, Impact, Final CTA
  */
 import { useEffect, useRef, useState } from "react";
@@ -89,7 +89,7 @@ const IMPACT_STATS = [
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
@@ -100,17 +100,17 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
                 Enabling People and Organizations to Thrive in the Age of AI
               </h1>
               <p className="text-lg mb-8 leading-relaxed" style={{ color: "#555" }}>
                 UpskillinTech helps professionals, leaders, and organisations integrate AI into real work, decision-making, and productivity systems — not just as a concept, but as a daily practice.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif", textDecoration: "none" }}>
+                <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#1C1C1C", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <ArrowRight size={16} /> Explore Programs
                 </Link>
-                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Poppins', sans-serif", textDecoration: "none" }}>
+                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <Users size={16} /> Join Community
                 </Link>
               </div>
@@ -122,7 +122,7 @@ export default function About() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(56,181,74,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
                     <Brain size={32} style={{ color: "#1C1C1C" }} />
-                    <span className="text-xs font-bold mt-1" style={{ color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>AI-Enabled</span>
+                    <span className="text-xs font-bold mt-1" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>AI-Enabled</span>
                   </div>
                 </div>
                 {/* Orbit nodes */}
@@ -139,7 +139,7 @@ export default function About() {
                     <div key={label} className="absolute flex flex-col items-center" style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}>
                       <div className="w-14 h-14 rounded-full flex flex-col items-center justify-center" style={{ background: "rgba(255,255,255,0.25)", border: "2px solid rgba(255,255,255,0.50)" }}>
                         <div style={{ color: "#1C1C1C" }}>{icon}</div>
-                        <span className="text-xs font-bold" style={{ color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>{label}</span>
+                        <span className="text-xs font-bold" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>{label}</span>
                       </div>
                     </div>
                   );
@@ -156,7 +156,7 @@ export default function About() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "1,000+", l: "Professionals Trained" }, { v: "50+", l: "Organisations Engaged" }, { v: "2,500+", l: "Community Members" }, { v: "95%", l: "Satisfaction Rate" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="section-label">Our Mission</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
                 Bridging the Gap Between AI Awareness and AI Productivity
               </h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "#4B5563" }}>
@@ -187,7 +187,7 @@ export default function About() {
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3" style={{ background: `${p.color}15`, color: p.color }}>
                     {p.icon}
                   </div>
-                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
+                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
                   <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{p.desc}</p>
                 </div>
               ))}
@@ -201,7 +201,7 @@ export default function About() {
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Founder</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>Meet Dr. Amaka Adiuku</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Meet Dr. Amaka Adiuku</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             {/* Left: Photo + credentials */}
@@ -224,12 +224,12 @@ export default function About() {
                     }}
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>
+                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
                   Founder & CEO
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>Dr. Amaka Adiuku</h3>
-              <p className="text-sm mb-4" style={{ color: "#38B54A", fontFamily: "'Poppins', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
+              <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Dr. Amaka Adiuku</h3>
+              <p className="text-sm mb-4" style={{ color: "#38B54A", fontFamily: "'Sora', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
               <div className="flex flex-wrap gap-2">
                 {["AI Research", "Robotics", "Education", "Industry Collaboration"].map(tag => (
                   <span key={tag} className="text-xs px-3 py-1 rounded-full" style={{ background: "#38B54A12", color: "#38B54A", border: "1px solid #38B54A25" }}>{tag}</span>
@@ -249,7 +249,7 @@ export default function About() {
                   <div key={e.label} className="p-4 rounded-xl" style={{ background: "#fff", border: "1px solid #E5E7EB", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${e.color}12`, color: e.color }}>{e.icon}</div>
-                      <h4 className="font-bold text-sm" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{e.label}</h4>
+                      <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{e.label}</h4>
                     </div>
                     <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{e.desc}</p>
                   </div>
@@ -266,7 +266,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.15)", color: "#38B54A", border: "1px solid rgba(56,181,74,0.25)" }}>Our Vision</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
                 A World Where AI Empowers Every Professional
               </h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.75)" }}>
@@ -283,7 +283,7 @@ export default function About() {
                     {v.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>{v.label}</h4>
+                    <h4 className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>{v.label}</h4>
                     <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.60)" }}>{v.desc}</p>
                   </div>
                 </div>
@@ -298,7 +298,7 @@ export default function About() {
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Platform Structure</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>The UpskillinTech Ecosystem</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>The UpskillinTech Ecosystem</h2>
             <p className="text-lg max-w-xl mx-auto" style={{ color: "#6B7280" }}>
               A four-stage journey from AI awareness to community — designed to take professionals from curious to capable.
             </p>
@@ -313,15 +313,15 @@ export default function About() {
                 )}
                 <div className="relative z-10 w-20 h-20 rounded-2xl flex items-center justify-center mb-5" style={{ background: `${stage.color}12`, border: `2px solid ${stage.color}30`, color: stage.color }}>
                   {stage.icon}
-                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center text-white" style={{ background: stage.color, fontFamily: "'Poppins', sans-serif" }}>{i + 1}</span>
+                  <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center text-white" style={{ background: stage.color, fontFamily: "'Sora', sans-serif" }}>{i + 1}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{stage.label}</h3>
+                <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{stage.label}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>{stage.desc}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#38B54A", color: "#fff", fontFamily: "'Poppins', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#38B54A", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               Explore Programs <ChevronRight size={16} />
             </Link>
           </div>
@@ -334,7 +334,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="section-label">Partnerships</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
                 Collaborating to Advance AI Literacy
               </h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "#4B5563" }}>
@@ -346,7 +346,7 @@ export default function About() {
               <button
                 onClick={() => toast.info("Partnership enquiries", { description: "Email us at partnerships@upskillintech.com to discuss collaboration opportunities." })}
                 className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm"
-                style={{ background: "#38B54A", color: "#fff", fontFamily: "'Poppins', sans-serif" }}
+                style={{ background: "#38B54A", color: "#fff", fontFamily: "'Sora', sans-serif" }}
               >
                 <Handshake size={16} /> Partner With Us
               </button>
@@ -355,7 +355,7 @@ export default function About() {
               {PARTNERSHIP_TYPES.map((p) => (
                 <div key={p.label} className="p-5 rounded-2xl bg-white" style={{ border: "1px solid #E5E7EB", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#38B54A12", color: "#38B54A" }}>{p.icon}</div>
-                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
+                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
                   <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{p.desc}</p>
                 </div>
               ))}
@@ -363,10 +363,10 @@ export default function About() {
           </div>
           {/* Partner logos placeholder */}
           <div className="mt-14 pt-10 border-t" style={{ borderColor: "#E5E7EB" }}>
-            <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Poppins', sans-serif" }}>TRUSTED BY ORGANISATIONS AND INSTITUTIONS</p>
+            <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>TRUSTED BY ORGANISATIONS AND INSTITUTIONS</p>
             <div className="flex flex-wrap gap-6 justify-center items-center">
               {["Educational Institution", "Research Partner", "Corporate Partner", "Community Organisation", "Faith Community"].map((org) => (
-                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#fff", border: "1.5px solid #E5E7EB", color: "#9CA3AF", fontFamily: "'Poppins', sans-serif" }}>
+                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#fff", border: "1.5px solid #E5E7EB", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
                   {org}
                 </div>
               ))}
@@ -380,7 +380,7 @@ export default function About() {
         <div className="container">
           <div className="text-center mb-14">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(255,255,255,0.20)", color: "#fff", border: "1px solid rgba(255,255,255,0.35)" }}>Our Impact</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
               Real Impact, Measurable Results
             </h2>
             <p className="text-lg max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.85)" }}>
@@ -390,10 +390,10 @@ export default function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {IMPACT_STATS.map((s) => (
               <div key={s.label} className="p-6 rounded-2xl text-center" style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", backdropFilter: "blur(8px)" }}>
-                <div className="text-4xl font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+                <div className="text-4xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
                   <CountUp end={s.value} suffix={s.suffix} />
                 </div>
-                <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Poppins', sans-serif", color: "rgba(255,255,255,0.90)" }}>{s.label}</h4>
+                <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "rgba(255,255,255,0.90)" }}>{s.label}</h4>
                 <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>{s.desc}</p>
               </div>
             ))}
@@ -407,7 +407,7 @@ export default function About() {
               <div key={item.title} className="p-6 rounded-2xl flex gap-4" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.20)" }}>
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(255,255,255,0.20)", color: "#fff" }}>{item.icon}</div>
                 <div>
-                  <h4 className="font-bold mb-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>{item.title}</h4>
+                  <h4 className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>{item.title}</h4>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.70)" }}>{item.desc}</p>
                 </div>
               </div>
@@ -420,7 +420,7 @@ export default function About() {
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(56,181,74,0.15)", color: "#38B54A", border: "1px solid rgba(56,181,74,0.25)" }}>Join the Journey</span>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
             Join the UpskillinTech Journey
           </h2>
           <p className="text-lg mb-4 leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
@@ -430,10 +430,10 @@ export default function About() {
             Whether you are a professional looking to save time, a leader building an AI-ready team, or an organisation developing an AI strategy — UpskillinTech has a path for you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#38B54A", color: "#fff", fontFamily: "'Poppins', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#38B54A", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
-            <Link href="/#community" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.20)", fontFamily: "'Poppins', sans-serif", textDecoration: "none" }}>
+            <Link href="/#community" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.20)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               <Users size={18} /> Join the Community
             </Link>
           </div>

@@ -136,19 +136,19 @@ export default function WorkflowsSection() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(56,181,74,0.10)", color: "#38B54A", fontFamily: "'Poppins', sans-serif" }}
+            style={{ background: "rgba(56,181,74,0.10)", color: "#38B54A", fontFamily: "'Sora', sans-serif" }}
           >
             AI Workflows in Action
           </span>
           <h2
             className="text-3xl lg:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}
+            style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
           >
             How Professionals Use AI
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
-            style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif" }}
+            style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}
           >
             Real AI workflows used in professional environments — ready to adapt and implement today.
           </p>
@@ -170,7 +170,7 @@ export default function WorkflowsSection() {
                     background: isActive ? "#ffffff" : "transparent",
                     border: isActive ? `2px solid ${wf.color}` : "2px solid transparent",
                     boxShadow: isActive ? "0 4px 20px rgba(0,0,0,0.08)" : "none",
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'Sora', sans-serif",
                   }}
                 >
                   <div
@@ -219,11 +219,11 @@ export default function WorkflowsSection() {
                 <div>
                   <h3
                     className="font-bold text-xl"
-                    style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}
+                    style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
                   >
                     {active.title}
                   </h3>
-                  <p className="text-sm mt-0.5" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif" }}>
+                  <p className="text-sm mt-0.5" style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}>
                     {active.subtitle}
                   </p>
                 </div>
@@ -236,7 +236,7 @@ export default function WorkflowsSection() {
                 <Zap size={14} style={{ color: "#E6B800" }} />
                 <span
                   className="text-xs font-bold"
-                  style={{ color: "#B8920A", fontFamily: "'Poppins', sans-serif" }}
+                  style={{ color: "#B8920A", fontFamily: "'Sora', sans-serif" }}
                 >
                   {active.outcome}
                 </span>
@@ -271,18 +271,18 @@ export default function WorkflowsSection() {
                       </div>
                       <span
                         className="text-xs font-bold uppercase tracking-wider"
-                        style={{ color: active.color, fontFamily: "'Poppins', sans-serif" }}
+                        style={{ color: active.color, fontFamily: "'Sora', sans-serif" }}
                       >
                         {step.label}
                       </span>
                     </div>
                     <h4
                       className="font-semibold text-sm mb-2"
-                      style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}
+                      style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
                     >
                       {step.title}
                     </h4>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6B7280", fontFamily: "'Inter', sans-serif" }}>
+                    <p className="text-xs leading-relaxed" style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}>
                       {step.desc}
                     </p>
                   </div>
@@ -296,7 +296,7 @@ export default function WorkflowsSection() {
               <div className="flex items-center gap-3 flex-wrap">
                 <div className="flex items-center gap-1.5">
                   <Clock size={13} style={{ color: "#9CA3AF" }} />
-                  <span className="text-xs" style={{ color: "#9CA3AF", fontFamily: "'Inter', sans-serif" }}>
+                  <span className="text-xs" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                     Tools used:
                   </span>
                 </div>
@@ -308,7 +308,7 @@ export default function WorkflowsSection() {
                       background: "rgba(56,181,74,0.08)",
                       color: "#38B54A",
                       border: "1px solid rgba(56,181,74,0.20)",
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                     }}
                   >
                     {tool}
@@ -318,7 +318,7 @@ export default function WorkflowsSection() {
               <a
                 href="/resources/workflows"
                 className="inline-flex items-center gap-2 text-sm font-semibold transition-all"
-                style={{ color: active.color, fontFamily: "'Poppins', sans-serif" }}
+                style={{ color: active.color, fontFamily: "'Sora', sans-serif" }}
                 onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.75")}
                 onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
               >
@@ -334,7 +334,7 @@ export default function WorkflowsSection() {
           <a
             href="/programs"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-sm transition-all"
-            style={{ background: "#38B54A", color: "#fff", fontFamily: "'Poppins', sans-serif", boxShadow: "0 4px 16px rgba(56,181,74,0.30)" }}
+            style={{ background: "#38B54A", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(56,181,74,0.30)" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#2ea043")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "#38B54A")}
           >

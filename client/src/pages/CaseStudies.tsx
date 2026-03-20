@@ -187,7 +187,7 @@ export default function CaseStudies() {
   const filtered = activeCategory === "all" ? CASE_STUDIES : CASE_STUDIES.filter(cs => cs.category === activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
       {/* Hero */}
@@ -195,7 +195,7 @@ export default function CaseStudies() {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               Real People. Real Results. Real AI Integration.
             </h1>
             <p className="text-lg mb-6" style={{ color: "#555" }}>
@@ -209,7 +209,7 @@ export default function CaseStudies() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {METRICS.map(m => (
                 <div key={m.label}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{m.value}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{m.value}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{m.label}</div>
                 </div>
               ))}
@@ -232,7 +232,7 @@ export default function CaseStudies() {
                   background: activeCategory === cat.id ? "#38B54A" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                 }}
               >
                 {cat.label}
@@ -252,7 +252,7 @@ export default function CaseStudies() {
                         <div className="rounded-xl p-2" style={{ background: `${cs.color}15` }}>{cs.icon}</div>
                         <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: `${cs.color}12`, color: cs.color }}>{cs.categoryLabel}</span>
                       </div>
-                      <div className="font-bold text-lg" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{cs.name}</div>
+                      <div className="font-bold text-lg" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{cs.name}</div>
                       <div className="text-sm" style={{ color: "#6B7280" }}>{cs.role}</div>
                       <div className="text-xs mt-1" style={{ color: "#9CA3AF" }}>{cs.industry} · {cs.location}</div>
                       <div className="mt-3 flex items-center gap-1 text-xs font-semibold" style={{ color: cs.color }}>
@@ -262,7 +262,7 @@ export default function CaseStudies() {
 
                     {/* Right: Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{cs.headline}</h3>
+                      <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{cs.headline}</h3>
 
                       {expanded === cs.id ? (
                         <div className="space-y-5">
@@ -329,17 +329,17 @@ export default function CaseStudies() {
       {/* CTA */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>
+          <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
             Your Success Story Starts Here
           </h2>
           <p className="text-lg mb-8" style={{ color: "rgba(255,255,255,0.70)" }}>
             Join the professionals and organisations already transforming how they work with AI. The AI-Enabled Professional Program gives you the skills, frameworks, and support to get real results.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Join the Program
             </Link>
-            <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Poppins', sans-serif" }}>
+            <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
               ← Back to Resources
             </Link>
           </div>

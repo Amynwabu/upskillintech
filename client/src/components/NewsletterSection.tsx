@@ -41,7 +41,7 @@ export default function NewsletterSection() {
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.20)" }}>
               <Mail size={16} style={{ color: "#111827" }} />
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#111827" }}>
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#111827" }}>
                 Free Newsletter
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function NewsletterSection() {
             {perks.map((p) => (
               <div key={p} className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: "rgba(255,255,255,0.18)" }}>
                 <CheckCircle size={15} style={{ color: "#111827", flexShrink: 0 }} />
-                <span style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.85rem", fontWeight: 500, color: "#111827" }}>{p}</span>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", fontWeight: 500, color: "#111827" }}>{p}</span>
               </div>
             ))}
           </div>
@@ -72,7 +72,7 @@ export default function NewsletterSection() {
               onChange={(e) => setName(e.target.value)}
               className="flex-1 rounded-xl px-5 py-4 outline-none"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
                 border: "none",
                 color: "#111827",
@@ -88,7 +88,7 @@ export default function NewsletterSection() {
               required
               className="flex-1 rounded-xl px-5 py-4 outline-none"
               style={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
                 border: "none",
                 color: "#111827",
@@ -100,7 +100,7 @@ export default function NewsletterSection() {
               type="submit"
               className="shrink-0 font-bold rounded-xl px-8 py-4 transition-all duration-200"
               style={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: "'Sora', sans-serif",
                 fontSize: "1rem",
                 background: "#111827",
                 color: "#ffffff",

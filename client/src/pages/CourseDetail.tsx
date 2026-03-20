@@ -18,7 +18,7 @@ import {
   Award,
   DollarSign
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -76,7 +76,7 @@ export default function CourseDetail() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
-        <Navigation />
+        <Navbar />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
@@ -91,7 +91,7 @@ export default function CourseDetail() {
   if (!courseDetails) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
-        <Navigation />
+        <Navbar />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-2">Course Not Found</h2>
@@ -111,9 +111,9 @@ export default function CourseDetail() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-20 pb-12">
+      <main className="flex-1 pt-[76px] pb-12">
         {/* Course Header */}
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 py-12">
           <div className="container">

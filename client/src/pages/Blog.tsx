@@ -189,7 +189,7 @@ export default function Blog() {
   const rest = filtered.filter(a => !a.featured);
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
       {/* Hero */}
@@ -197,7 +197,7 @@ export default function Blog() {
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               Practical Insights on AI for the Modern Professional
             </h1>
             <p className="text-lg mb-6" style={{ color: "#555" }}>
@@ -229,7 +229,7 @@ export default function Blog() {
       {activeCategory === "all" && (
         <section className="section-py" style={{ background: "#fff" }}>
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>Featured Articles</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Featured Articles</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featured.map(article => (
                 <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #38B54A20", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
@@ -241,7 +241,7 @@ export default function Blog() {
                       </span>
                       <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "#FEFCE8", color: "#8B6914" }}>Featured</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
+                    <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "#6B7280" }}>{article.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 text-xs" style={{ color: "#9CA3AF" }}>
@@ -275,7 +275,7 @@ export default function Blog() {
                   background: activeCategory === cat.id ? "#38B54A" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Sora', sans-serif",
                 }}
               >
                 {cat.label}
@@ -291,7 +291,7 @@ export default function Blog() {
                   <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#38B54A" }}>
                     {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                   </span>
-                  <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Poppins', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
+                  <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#6B7280" }}>{article.excerpt}</p>
                   <div className="flex flex-wrap gap-1 mb-4">
                     {article.tags.slice(0, 2).map(tag => (
@@ -324,11 +324,11 @@ export default function Blog() {
       {/* Newsletter CTA */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Poppins', sans-serif", color: "#fff" }}>Never Miss an Article</h2>
+          <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Never Miss an Article</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get the latest AI insights, guides, and workflows delivered to your inbox every week.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#1C1C1C" }} />
-            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Poppins', sans-serif" }}>
+            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
               Subscribe
             </button>
           </div>

@@ -29,7 +29,7 @@ import {
   FileText,
   Briefcase
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -132,11 +132,11 @@ export default function Transform() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-20 pb-12">
+      <main className="flex-1 pt-[76px] pb-12">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 py-16">
+        <section className="py-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>

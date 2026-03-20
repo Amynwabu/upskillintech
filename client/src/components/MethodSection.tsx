@@ -65,7 +65,7 @@ export default function MethodSection() {
                     borderRadius: "50%",
                     background: step.color,
                     color: step.textColor,
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'Sora', sans-serif",
                     fontSize: "1.4rem",
                     fontWeight: 800,
                     boxShadow: `0 8px 24px ${step.shadow}`,
@@ -76,7 +76,7 @@ export default function MethodSection() {
                 <div className="text-center px-4">
                   <div
                     className="font-bold mb-2"
-                    style={{ fontFamily: "'Poppins', sans-serif", color: "#111827", fontSize: "1.1rem" }}
+                    style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1.1rem" }}
                   >
                     {step.label}
                   </div>
@@ -111,7 +111,7 @@ export default function MethodSection() {
                     borderRadius: "50%",
                     background: step.color,
                     color: step.textColor,
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "'Sora', sans-serif",
                     fontSize: "1.1rem",
                     fontWeight: 800,
                     boxShadow: `0 4px 16px ${step.shadow}`,
@@ -126,7 +126,7 @@ export default function MethodSection() {
               <div className="pb-10">
                 <div
                   className="font-bold mb-2"
-                  style={{ fontFamily: "'Poppins', sans-serif", color: "#111827", fontSize: "1.15rem" }}
+                  style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1.15rem" }}
                 >
                   {step.label}
                 </div>

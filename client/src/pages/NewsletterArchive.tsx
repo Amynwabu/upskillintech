@@ -40,7 +40,7 @@ export default function NewsletterArchive() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
       <main className="flex-1 pt-[76px]">
 
@@ -65,7 +65,7 @@ export default function NewsletterArchive() {
                 style={{ background: "rgba(56,181,74,0.12)", color: "#38B54A" }}>
                 <Mail size={16} /> Newsletter Archive
               </div>
-              <h1 className="font-bold mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#111827", lineHeight: 1.2 }}>
+              <h1 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#111827", lineHeight: 1.2 }}>
                 Every Edition, All in One Place
               </h1>
               <p className="text-lg" style={{ color: "#6B7280", lineHeight: 1.75 }}>
@@ -137,7 +137,7 @@ export default function NewsletterArchive() {
                             style={{ background: `${ed.tagColor}18`, color: ed.tagColor }}>
                             {ed.tag}
                           </div>
-                          <h3 className="font-bold mb-2" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "1.15rem", color: "#111827", lineHeight: 1.35 }}>
+                          <h3 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#111827", lineHeight: 1.35 }}>
                             {ed.title}
                           </h3>
                           <p className="mb-4" style={{ color: "#6B7280", fontSize: "0.95rem", lineHeight: 1.65 }}>
@@ -168,7 +168,7 @@ export default function NewsletterArchive() {
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
               <Mail size={40} className="mx-auto mb-5" style={{ color: "#38B54A" }} />
-              <h2 className="font-bold text-white mb-3" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
+              <h2 className="font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
                 Don't Miss the Next Edition
               </h2>
               <p className="mb-8 text-lg" style={{ color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>

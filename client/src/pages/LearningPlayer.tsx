@@ -20,7 +20,7 @@ import {
   Sparkles,
   Lock,
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
@@ -164,7 +164,7 @@ export default function LearningPlayer() {
   if (!courseDetails || !currentModule) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
-        <Navigation />
+        <Navbar />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
@@ -177,9 +177,9 @@ export default function LearningPlayer() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-[76px]">
         <div className="flex h-[calc(100vh-5rem)]">
           {/* Sidebar - Module Navigation */}
           <aside className="w-80 border-r border-border bg-muted/30 overflow-y-auto">

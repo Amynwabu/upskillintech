@@ -104,7 +104,7 @@ export default function ProgramsSection() {
                 <a
                   href="/programs"
                   className="flex items-center gap-1.5 font-semibold text-sm mt-auto"
-                  style={{ color: p.color, textDecoration: "none", fontFamily: "'Poppins', sans-serif" }}
+                  style={{ color: p.color, textDecoration: "none", fontFamily: "'Sora', sans-serif" }}
                 >
                   Learn More <ArrowRight size={15} />
                 </a>

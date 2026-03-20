@@ -5,7 +5,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Calendar, Clock, Eye, ArrowLeft, User, MessageCircle, Send } from "lucide-react";
 import { toast } from "sonner";
@@ -54,8 +54,8 @@ export default function BlogPost() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
-        <Navigation />
-        <main className="flex-1 pt-16">
+        <Navbar />
+        <main className="flex-1 pt-[76px]">
           <div className="container py-16">
             <div className="max-w-4xl mx-auto space-y-8 animate-pulse">
               <div className="h-96 bg-slate-800 rounded-2xl"></div>
@@ -76,8 +76,8 @@ export default function BlogPost() {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col bg-background">
-        <Navigation />
-        <main className="flex-1 pt-16">
+        <Navbar />
+        <main className="flex-1 pt-[76px]">
           <div className="container py-16 text-center">
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
             <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
@@ -96,9 +96,9 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
 
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-[76px]">
         {/* Back Button */}
         <div className="container py-6">
           <Link href="/blog">
