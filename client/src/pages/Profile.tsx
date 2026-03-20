@@ -18,7 +18,7 @@ import {
   CheckCircle2,
   Star
 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -67,9 +67,9 @@ export default function Profile() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-20 pb-12">
+      <main className="flex-1 pt-[76px] pb-12">
         <div className="container">
           {/* Profile Header */}
           <div className="mb-8">

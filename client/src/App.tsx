@@ -22,6 +22,24 @@ import NewsletterArchive from "./pages/NewsletterArchive";
 import Events from "./pages/Events";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Cookies from "./pages/Cookies";
+import Dashboard from "./pages/Dashboard";
+import Learn from "./pages/Learn";
+import LearningPath from "./pages/LearningPath";
+import LearningPlayer from "./pages/LearningPlayer";
+import CourseDetail from "./pages/CourseDetail";
+import BlogPost from "./pages/BlogPost";
+import Profile from "./pages/Profile";
+import Onboarding from "./pages/Onboarding";
+import Consult from "./pages/Consult";
+import Transform from "./pages/Transform";
+import Research from "./pages/Research";
+import Templates from "./pages/Templates";
+import WebinarRegistration from "./pages/WebinarRegistration";
+import NewsletterPreferences from "./pages/NewsletterPreferences";
+import AdminEmails from "./pages/AdminEmails";
+import AdminEmailAnalytics from "./pages/AdminEmailAnalytics";
+import AdminWebinarRegistrations from "./pages/AdminWebinarRegistrations";
 
 function Router() {
   return (
@@ -38,23 +56,49 @@ function Router() {
       <Route path={"/resources/case-studies"} component={CaseStudies} />
       <Route path={"/resources/webinars"} component={Webinars} />
       <Route path={"/resources/workflows"} component={WorkflowsPage} />
+      <Route path={"/resources/research"} component={Research} />
+      <Route path={"/resources/templates"} component={Templates} />
+      <Route path={"/blog/:slug"} component={BlogPost} />
 
       {/* Programs & Learning */}
       <Route path={"/programs"} component={Programs} />
       <Route path={"/enterprise"} component={Enterprise} />
+      <Route path={"/learn"} component={Learn} />
+      <Route path={"/learn/:pathId"} component={LearningPath} />
+      <Route path={"/learn/:courseId/player"} component={LearningPlayer} />
+      <Route path={"/courses/:id"} component={CourseDetail} />
 
       {/* Community & Events */}
       <Route path={"/community"} component={Community} />
       <Route path={"/events"} component={Events} />
 
+      {/* Consulting & AI Tools */}
+      <Route path={"/consult"} component={Consult} />
+      <Route path={"/transform"} component={Transform} />
+
       {/* Newsletter */}
       <Route path={"/newsletter"} component={Newsletter} />
       <Route path={"/newsletter/archive"} component={NewsletterArchive} />
+      <Route path={"/newsletter/preferences"} component={NewsletterPreferences} />
       <Route path={"/newsletter/:slug"} component={NewsletterArticle} />
+
+      {/* Webinars */}
+      <Route path={"/resources/webinars/:id/register"} component={WebinarRegistration} />
+
+      {/* User */}
+      <Route path={"/dashboard"} component={Dashboard} />
+      <Route path={"/profile"} component={Profile} />
+      <Route path={"/onboarding"} component={Onboarding} />
+
+      {/* Admin */}
+      <Route path={"/admin/emails"} component={AdminEmails} />
+      <Route path={"/admin/email-analytics"} component={AdminEmailAnalytics} />
+      <Route path={"/admin/webinar-registrations"} component={AdminWebinarRegistrations} />
 
       {/* Legal */}
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
+      <Route path={"/cookies"} component={Cookies} />
 
       {/* Fallback */}
       <Route path={"/404"} component={NotFound} />

@@ -138,10 +138,10 @@ export default function Cookies() {
               Instructions for managing cookies in popular browsers:
             </p>
             <ul className="list-disc list-inside mt-2 ml-2">
-              <li>Chrome: Settings > Privacy and security > Cookies and other site data</li>
-              <li>Firefox: Preferences > Privacy & Security > Cookies and Site Data</li>
-              <li>Safari: Preferences > Privacy > Cookies and website data</li>
-              <li>Edge: Settings > Privacy, search, and services > Cookies and other site permissions</li>
+              <li>Chrome: Settings {'>>'} Privacy and security {'>>'} Cookies and other site data</li>
+              <li>Firefox: Preferences {'>>'} Privacy &amp; Security {'>>'} Cookies and Site Data</li>
+              <li>Safari: Preferences {'>>'} Privacy {'>>'} Cookies and website data</li>
+              <li>Edge: Settings {'>>'} Privacy, search, and services {'>>'} Cookies and other site permissions</li>
             </ul>
           </section>
 

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
   Search, 
@@ -130,9 +130,9 @@ export default function Templates() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-[76px]">
         <div className="container py-8">
           {/* Header */}
           <div className="mb-8">

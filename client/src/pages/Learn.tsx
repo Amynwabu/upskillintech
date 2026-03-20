@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { BookOpen, Clock, Users, Star, TrendingUp, Award, CheckCircle2 } from "lucide-react";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -41,15 +41,15 @@ export default function Learn() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <Navigation />
+      <Navbar />
 
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-[76px]">
         {/* Hero Section */}
-        <section className="py-12 sm:py-16 md:py-20 6 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
+        <section className="py-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <h1 className="mb-6" style={{ fontFamily: "Sora, sans-serif", fontWeight: 800, color: "#111827" }}>
                   Learn AI, Transform Your Future
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
@@ -242,7 +242,7 @@ export default function Learn() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10">
+        <section className="py-16" style={{ background: "#F7F8FA" }}>
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

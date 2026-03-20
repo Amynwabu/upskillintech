@@ -5,7 +5,7 @@ import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import Navigation from "@/components/Navigation";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { 
   CheckCircle2, 
@@ -58,9 +58,9 @@ export default function LearningPath() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      <Navbar />
       
-      <main className="flex-1 pt-16">
+      <main className="flex-1 pt-[76px]">
         <div className="container py-8">
           {/* Header */}
           <div className="mb-8">
