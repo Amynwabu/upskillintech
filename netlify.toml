@@ -9,7 +9,6 @@
 
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["express", "serverless-http", "mysql2"]
 
 [[redirects]]
   from = "/api/*"
