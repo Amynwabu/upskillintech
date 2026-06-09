@@ -126,9 +126,9 @@ export default function HeroSection() {
         <div className="container py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[
-              { value: "1,000+", label: "Professionals Reached" },
+              { value: "500+", label: "Students Trained" },
               { value: "20+", label: "Countries" },
-              { value: "50+", label: "AI Insights Published" },
+              { value: "50+", label: "Organisations Served" },
               { value: "Free", label: "Resources Available" },
             ].map((stat) => (
               <div key={stat.label}>

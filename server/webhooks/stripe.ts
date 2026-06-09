@@ -6,6 +6,11 @@ import { getDb } from "../db";
 // import { orders } from "../../drizzle/schema"; // DEPRECATED - Marketplace removed
 
 export async function handleStripeWebhook(req: Request, res: Response) {
+  if (!ENV.stripeEnabled) {
+    console.log("[Stripe Webhook] Stripe disabled; skipping webhook processing");
+    return res.status(200).json({ skipped: true, reason: "stripe_disabled" });
+  }
+
   const sig = req.headers["stripe-signature"];
 
   if (!sig) {
@@ -18,13 +23,18 @@ export async function handleStripeWebhook(req: Request, res: Response) {
     return res.status(400).send("Stripe not configured");
   }
 
+  if (!ENV.stripeWebhookSecret) {
+    console.error("[Stripe Webhook] Webhook secret not configured");
+    return res.status(400).send("Stripe webhook secret not configured");
+  }
+
   let event: Stripe.Event;
 
   try {
     event = stripe.webhooks.constructEvent(
       req.body,
       sig,
-      ENV.stripeWebhookSecret!
+      ENV.stripeWebhookSecret
     );
   } catch (err: any) {
     console.error(`[Stripe Webhook] Signature verification failed:`, err.message);

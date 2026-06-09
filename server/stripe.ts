@@ -1,9 +1,9 @@
 import Stripe from "stripe";
 import { ENV } from "./_core/env";
 
-export const stripe = ENV.stripeSecretKey
+export const stripe = ENV.stripeEnabled && ENV.stripeSecretKey
   ? new Stripe(ENV.stripeSecretKey, {
-      apiVersion: "2025-11-17.clover",
+      apiVersion: "2026-05-27.dahlia",
     })
   : null;
 

@@ -1,6 +1,7 @@
-import { Server as SocketIOServer } from "socket.io";
+import { COOKIE_NAME } from "@shared/const";
+import { parse as parseCookieHeader } from "cookie";
 import type { Server as HTTPServer } from "http";
-import type { Socket } from "socket.io";
+import { Server as SocketIOServer, type Socket } from "socket.io";
 import { sdk } from "./_core/sdk";
 import * as db from "./db";
 
@@ -18,41 +19,65 @@ export function getIO(): SocketIOServer {
   return ioInstance;
 }
 
+function getSessionToken(socket: Socket) {
+  const cookieHeader = socket.handshake.headers.cookie;
+  const cookies = cookieHeader ? parseCookieHeader(cookieHeader) : {};
+  const cookieToken = cookies[COOKIE_NAME];
+  const authToken = socket.handshake.auth?.token;
+
+  return typeof cookieToken === "string"
+    ? cookieToken
+    : typeof authToken === "string"
+      ? authToken
+      : undefined;
+}
+
 export function setupWebSocket(httpServer: HTTPServer) {
   const io = new SocketIOServer(httpServer, {
     cors: {
-      origin: "*", // In production, specify your frontend URL
+      origin: true,
+      credentials: true,
       methods: ["GET", "POST"],
     },
   });
-  
+
   ioInstance = io;
 
-  // Authentication middleware
-  io.use(async (socket: any, next) => {
+  io.use(async (socket: AuthenticatedSocket, next) => {
     try {
-      const token = socket.handshake.auth.token;
-      
+      const token = getSessionToken(socket);
+
       if (!token) {
         return next(new Error("Authentication required"));
       }
 
-      // Verify session token using SDK
       const sessionInfo = await sdk.verifySession(token);
-      
-      if (!sessionInfo || !sessionInfo.openId) {
+
+      if (!sessionInfo?.openId) {
         return next(new Error("Invalid session"));
       }
-      
-      const user = await db.getUserByOpenId(sessionInfo.openId);
-      
+
+      let user = await db.getUserByOpenId(sessionInfo.openId);
+
+      if (!user) {
+        const userInfo = await sdk.getUserInfoWithJwt(token);
+        await db.upsertUser({
+          openId: userInfo.openId,
+          name: userInfo.name || null,
+          email: userInfo.email ?? null,
+          loginMethod: userInfo.loginMethod ?? userInfo.platform ?? null,
+          lastSignedIn: new Date(),
+        });
+        user = await db.getUserByOpenId(userInfo.openId);
+      }
+
       if (!user) {
         return next(new Error("User not found"));
       }
-      
+
       socket.userId = user.id;
       socket.userEmail = user.email || "Unknown";
-      
+
       console.log(`[WebSocket] User ${socket.userEmail} (ID: ${user.id}) connected`);
       next();
     } catch (error) {
@@ -61,34 +86,26 @@ export function setupWebSocket(httpServer: HTTPServer) {
     }
   });
 
-  // Connection handler
-  io.on("connection", (socket: any) => {
+  io.on("connection", (socket: AuthenticatedSocket) => {
     const userId = socket.userId;
-    
-    // Join user-specific room for targeted notifications
+
     socket.join(`user:${userId}`);
-    
-    // Broadcast user online status
     io.emit("user:online", { userId, email: socket.userEmail });
 
-    // Handle disconnection
     socket.on("disconnect", () => {
       console.log(`[WebSocket] User ${socket.userEmail} disconnected`);
       io.emit("user:offline", { userId });
     });
 
-    // Community events
-    socket.on("community:newPost", (data: any) => {
-      // Broadcast new post to all connected clients
+    socket.on("community:newPost", (data: unknown) => {
       io.emit("community:postCreated", {
-        ...data,
+        ...(typeof data === "object" && data ? data : {}),
         userId,
         timestamp: new Date().toISOString(),
       });
     });
 
     socket.on("community:likePost", (data: { postId: number }) => {
-      // Broadcast like update
       io.emit("community:postLiked", {
         postId: data.postId,
         userId,
@@ -96,7 +113,6 @@ export function setupWebSocket(httpServer: HTTPServer) {
     });
 
     socket.on("community:newComment", (data: { postId: number; comment: string }) => {
-      // Broadcast new comment
       io.emit("community:commentAdded", {
         ...data,
         userId,
@@ -105,7 +121,6 @@ export function setupWebSocket(httpServer: HTTPServer) {
       });
     });
 
-    // Typing indicators
     socket.on("community:typing", (data: { postId: number }) => {
       socket.broadcast.emit("community:userTyping", {
         postId: data.postId,
@@ -125,7 +140,6 @@ export function setupWebSocket(httpServer: HTTPServer) {
   return io;
 }
 
-// Helper function to send notification to specific user
 export function sendNotificationToUser(
   userId: number,
   notification: {
@@ -142,14 +156,10 @@ export function sendNotificationToUser(
   });
 }
 
-// Helper function to broadcast community update
-export function broadcastCommunityUpdate(
-  event: string,
-  data: any
-) {
+export function broadcastCommunityUpdate(event: string, data: unknown) {
   const io = getIO();
   io.emit(event, {
-    ...data,
+    ...(typeof data === "object" && data ? data : {}),
     timestamp: new Date().toISOString(),
   });
 }

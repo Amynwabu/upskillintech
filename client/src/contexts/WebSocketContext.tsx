@@ -1,15 +1,13 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from "react";
-import { io, Socket } from "socket.io-client";
-import Cookies from "js-cookie";
-import { COOKIE_NAME } from "@/const";
+import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { io, type Socket } from "socket.io-client";
 
-interface WebSocketContextType {
+type WebSocketContextType = {
   socket: Socket | null;
   isConnected: boolean;
-  emit: (event: string, data: any) => void;
+  emit: (event: string, data: unknown) => void;
   on: (event: string, handler: (...args: any[]) => void) => void;
   off: (event: string, handler: (...args: any[]) => void) => void;
-}
+};
 
 const WebSocketContext = createContext<WebSocketContextType>({
   socket: null,
@@ -20,41 +18,25 @@ const WebSocketContext = createContext<WebSocketContextType>({
 });
 
 export function useWebSocket() {
-  const context = useContext(WebSocketContext);
-  if (!context) {
-    throw new Error("useWebSocket must be used within WebSocketProvider");
-  }
-  return context;
+  return useContext(WebSocketContext);
 }
 
-interface WebSocketProviderProps {
+type WebSocketProviderProps = {
   children: React.ReactNode;
-}
+};
 
 export function WebSocketProvider({ children }: WebSocketProviderProps) {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    // Get session token from cookie
-    const sessionToken = Cookies.get(COOKIE_NAME);
-    
-    if (!sessionToken) {
-      console.log("[WebSocket] No session token found, skipping connection");
-      return;
-    }
-
-    // Connect to WebSocket server
     const socketInstance = io({
-      auth: {
-        token: sessionToken,
-      },
+      withCredentials: true,
       reconnection: true,
       reconnectionDelay: 1000,
       reconnectionAttempts: 5,
     });
 
-    // Connection event handlers
     socketInstance.on("connect", () => {
       console.log("[WebSocket] Connected to server");
       setIsConnected(true);
@@ -72,43 +54,26 @@ export function WebSocketProvider({ children }: WebSocketProviderProps) {
 
     setSocket(socketInstance);
 
-    // Cleanup on unmount
     return () => {
-      console.log("[WebSocket] Cleaning up connection");
       socketInstance.disconnect();
     };
   }, []);
 
-  const emit = useCallback((event: string, data: any) => {
-    if (socket && isConnected) {
-      socket.emit(event, data);
-    } else {
-      console.warn("[WebSocket] Cannot emit, socket not connected");
-    }
+  const emit = useCallback((event: string, data: unknown) => {
+    if (!socket || !isConnected) return;
+    socket.emit(event, data);
   }, [socket, isConnected]);
 
   const on = useCallback((event: string, handler: (...args: any[]) => void) => {
-    if (socket) {
-      socket.on(event, handler);
-    }
+    socket?.on(event, handler);
   }, [socket]);
 
   const off = useCallback((event: string, handler: (...args: any[]) => void) => {
-    if (socket) {
-      socket.off(event, handler);
-    }
+    socket?.off(event, handler);
   }, [socket]);
 
-  const value: WebSocketContextType = {
-    socket,
-    isConnected,
-    emit,
-    on,
-    off,
-  };
-
   return (
-    <WebSocketContext.Provider value={value}>
+    <WebSocketContext.Provider value={{ socket, isConnected, emit, on, off }}>
       {children}
     </WebSocketContext.Provider>
   );

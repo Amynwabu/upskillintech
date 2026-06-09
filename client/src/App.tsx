@@ -40,6 +40,8 @@ import NewsletterPreferences from "./pages/NewsletterPreferences";
 import AdminEmails from "./pages/AdminEmails";
 import AdminEmailAnalytics from "./pages/AdminEmailAnalytics";
 import AdminWebinarRegistrations from "./pages/AdminWebinarRegistrations";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { WebSocketProvider } from "./contexts/WebSocketContext";
 
 function Router() {
   return (
@@ -86,9 +88,21 @@ function Router() {
       <Route path={"/resources/webinars/:id/register"} component={WebinarRegistration} />
 
       {/* User */}
-      <Route path={"/dashboard"} component={Dashboard} />
-      <Route path={"/profile"} component={Profile} />
-      <Route path={"/onboarding"} component={Onboarding} />
+      <Route path={"/dashboard"}>
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      </Route>
+      <Route path={"/profile"}>
+        <ProtectedRoute>
+          <Profile />
+        </ProtectedRoute>
+      </Route>
+      <Route path={"/onboarding"}>
+        <ProtectedRoute>
+          <Onboarding />
+        </ProtectedRoute>
+      </Route>
 
       {/* Admin */}
       <Route path={"/admin/emails"} component={AdminEmails} />
@@ -113,7 +127,9 @@ function App() {
       <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <WebSocketProvider>
+            <Router />
+          </WebSocketProvider>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

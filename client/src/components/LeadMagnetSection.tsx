@@ -42,7 +42,7 @@ export default function LeadMagnetSection() {
   ];
 
   return (
-    <section id="lead-magnet" className="py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 50%, #16A34A 100%)" }}>
+    <section id="lead-magnet" className="overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 50%, #16A34A 100%)" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Guide Preview */}

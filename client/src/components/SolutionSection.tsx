@@ -53,7 +53,7 @@ export default function SolutionSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="solution" className="py-20 lg:py-28" style={{ background: "#0F172A" }}>
+    <section id="solution" className="overflow-hidden py-20 lg:py-28" style={{ background: "#0F172A" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}

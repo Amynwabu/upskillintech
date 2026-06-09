@@ -2,7 +2,7 @@
  * Footer — UpskillinTech v3
  * Dark #111827 background, larger text, bigger logo, green hover accents
  */
-import { Linkedin, Youtube, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
 
@@ -36,10 +36,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Youtube, label: "YouTube", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
-  { icon: Twitter, label: "Twitter/X", href: "#" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/upskillintech" },
+  { icon: Music2, label: "TikTok", href: "https://www.tiktok.com/@upskillintech" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@upskillintech" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/upskillintech" },
 ];
 
 export default function Footer() {
@@ -71,6 +71,8 @@ export default function Footer() {
                     key={s.label}
                     href={s.href}
                     aria-label={s.label}
+                    target="_blank"
+                    rel="noreferrer"
                     className="flex items-center justify-center transition-all duration-200"
                     style={{
                       width: 42,

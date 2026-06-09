@@ -6,6 +6,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail } from "lucide-react";
+import { useAuth } from "@/_core/hooks/useAuth";
+import GoogleSignInButton from "@/components/GoogleSignInButton";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
 
@@ -31,6 +33,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { loading, user } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -67,7 +70,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -162,21 +165,25 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <Link href="/programs" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#374151", textDecoration: "none" }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#374151")}
-            >
-              Programs
-            </Link>
-            <Link href="/resources/blog" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
-              Free AI Insights
+          <div className="hidden xl:flex items-center gap-3">
+            {!loading && user ? (
+              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#374151", textDecoration: "none" }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#374151")}
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <GoogleSignInButton size="sm" />
+            )}
+            <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
+              Get Started
             </Link>
           </div>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-md"
+            className="xl:hidden p-2 rounded-md"
             style={{ color: "#111827" }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
@@ -188,7 +195,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t" style={{ borderColor: "#E5E7EB" }}>
+        <div className="xl:hidden bg-white border-t" style={{ borderColor: "#E5E7EB" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
@@ -230,12 +237,16 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link href="/resources/blog" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
-              Free AI Insights
+            <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
+              Get Started
             </Link>
-            <Link href="/programs" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
-              View Programs
-            </Link>
+            {!loading && user ? (
+              <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
+                Dashboard
+              </Link>
+            ) : (
+              <GoogleSignInButton className="mt-2 w-full" onClick={() => setMenuOpen(false)} />
+            )}
           </div>
         </div>
       )}

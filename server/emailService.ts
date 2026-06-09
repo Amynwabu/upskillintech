@@ -959,8 +959,8 @@ export async function sendWebinarReminderEmail(
     const msg = {
       to: email,
       from: {
-        email: 'amaka.adiuku@gmail.com',
-        name: 'Dr. Amaka Adiuku',
+        email: SENDER_EMAIL,
+        name: SENDER_NAME,
       },
       subject: '⏰ Reminder: Your Webinar Starts Tomorrow!',
       text: `Hi ${name},

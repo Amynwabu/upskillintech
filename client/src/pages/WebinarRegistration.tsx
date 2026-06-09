@@ -90,7 +90,7 @@ export default function WebinarRegistration() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Hero Section with Flyer */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto box-border w-full max-w-7xl overflow-hidden px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
           {/* Webinar Flyer */}
           <div className="order-2 lg:order-1">
