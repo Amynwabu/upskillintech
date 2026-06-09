@@ -6,6 +6,7 @@
 dist/
 build/
 *.dist
+__manus__/
 
 # Environment variables
 .env
