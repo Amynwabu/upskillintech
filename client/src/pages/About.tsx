@@ -209,7 +209,7 @@ export default function About() {
               <div className="relative mb-6">
                 <div className="w-52 h-52 rounded-2xl overflow-hidden" style={{ border: "4px solid #38B54A" }}>
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/founder-portrait_b3a8b2b1.webp"
+                    src="/founder-amaka-adiuku.png"
                     alt="Dr. Amaka Adiuku"
                     className="w-full h-full object-cover"
                     onError={(e) => {

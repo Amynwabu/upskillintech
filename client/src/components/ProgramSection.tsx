@@ -7,7 +7,7 @@
 import { useRef, useEffect, useState } from "react";
 import { X, Check, ArrowRight, Star } from "lucide-react";
 
-const MENTORING_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/mentoring-session-9mUjt3WzCTKftvJGVcVk9z.webp";
+const MENTORING_IMAGE = "/community-engagement.jpg";
 
 const beforeItems = [
   "Overwhelmed by AI tools",

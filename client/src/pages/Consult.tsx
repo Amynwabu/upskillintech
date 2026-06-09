@@ -191,7 +191,7 @@ export default function Consult() {
               </div>
               <div className="relative">
                 <img
-                  src="/mentoring-session.jpg"
+                  src="/community-engagement.jpg"
                   alt="Professional AI consultation and mentoring session"
                   className="rounded-lg shadow-2xl w-full h-auto object-cover"
                 />
@@ -309,7 +309,7 @@ export default function Consult() {
               </div>
               <div className="relative">
                 <img
-                  src="/business-meeting.jpg"
+                  src="/upskilling-professionals.png"
                   alt="Successful business team meeting"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />

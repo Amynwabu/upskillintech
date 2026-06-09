@@ -7,7 +7,7 @@
 import { useRef, useEffect, useState } from "react";
 import { Briefcase, Users, Building2, ArrowRight } from "lucide-react";
 
-const WORKSHOP_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/team-workshop-bMAWioFg8P87QuCK6GTYJU.webp";
+const WORKSHOP_IMAGE = "/training-diverse-team.jpg";
 
 const audiences = [
   {

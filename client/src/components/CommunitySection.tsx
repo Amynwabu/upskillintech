@@ -4,7 +4,7 @@
  */
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-const COMMUNITY_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/community-networking-foQRzPoSFZJMPVfXMtbbZA.webp";
+const COMMUNITY_IMG = "/community-engagement.jpg";
 
 const benefits = [
   { title: "Monthly Masterclasses", desc: "Live sessions with AI experts covering the latest tools and strategies." },

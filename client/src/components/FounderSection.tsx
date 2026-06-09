@@ -5,7 +5,7 @@
  * White background, split layout: photo left, bio right
  * Typography: Sora headings, DM Sans body
  */
-const FOUNDER_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/founder-portrait-g2gj6Gs4zs3JeXJbWqWTy7.webp";
+const FOUNDER_IMG = "/founder-amaka-adiuku.png";
 
 const expertise = ["AI Research", "Robotics", "Technology Literacy", "Workflow Automation", "AI Adoption", "Public Engagement"];
 

@@ -9,7 +9,7 @@
  */
 import { ArrowRight, BookOpen } from "lucide-react";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/hero-realistic-team-nun6Shd8E5rHXixQdtx7Wn.webp";
+const HERO_IMG = "/upskilling-professionals.png";
 
 export default function HeroSection() {
   return (
