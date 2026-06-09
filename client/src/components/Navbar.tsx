@@ -21,13 +21,19 @@ const RESOURCE_LINKS = [
   { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#E6B800" }} /> },
 ];
 
+const PROGRAM_LINKS = [
+  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#38B54A" }} /> },
+  { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
+  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
+];
+
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Programs", href: "/programs" },
-  { label: "Masterclass", href: "/masterclass" },
-  { label: "Enterprise", href: "/enterprise" },
-  { label: "Community", href: "/community" },
   { label: "About", href: "/about" },
+];
+
+const secondaryNavLinks = [
+  { label: "Community", href: "/community" },
 ];
 
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
@@ -79,9 +85,16 @@ function MobileNavLink({ label, href, onClick }: { label: string; href: string; 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const programsDropdownRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { loading, user } = useAuth();
+  const [programsActive] = useRoute("/programs");
+  const [masterclassActive] = useRoute("/masterclass");
+  const [masterclassesActive] = useRoute("/masterclasses");
+  const [enterpriseActive] = useRoute("/enterprise");
+  const isProgramsActive = programsActive || masterclassActive || masterclassesActive || enterpriseActive;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -93,6 +106,9 @@ export default function Navbar() {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setResourcesOpen(false);
+      }
+      if (programsDropdownRef.current && !programsDropdownRef.current.contains(e.target as Node)) {
+        setProgramsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -123,6 +139,73 @@ export default function Navbar() {
               <DesktopNavLink key={link.label} label={link.label} href={link.href} />
             ))}
 
+            {/* Programs dropdown */}
+            <div className="relative" ref={programsDropdownRef}>
+              <button
+                className="flex items-center gap-1.5 font-semibold transition-colors duration-150"
+                style={{
+                  fontFamily: "'Sora', sans-serif",
+                  fontSize: "0.975rem",
+                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#111827",
+                  fontWeight: isProgramsActive ? 800 : 600,
+                  background: "none",
+                  border: "none",
+                  letterSpacing: "0.01em",
+                }}
+                onClick={() => {
+                  setProgramsOpen(!programsOpen);
+                  setResourcesOpen(false);
+                }}
+              >
+                Programs{" "}
+                <ChevronDown
+                  size={16}
+                  style={{
+                    transition: "transform 0.2s",
+                    transform: programsOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  }}
+                />
+              </button>
+              {programsOpen && (
+                <div
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
+                  style={{
+                    background: "#fff",
+                    boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
+                    border: "1px solid #E5E7EB",
+                  }}
+                >
+                  <div className="p-2.5">
+                    {PROGRAM_LINKS.map((item) => (
+                      <Link
+                        key={item.label}
+                        href={item.href}
+                        className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
+                        style={{ textDecoration: "none" }}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#F7F8FA")}
+                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
+                        onClick={() => setProgramsOpen(false)}
+                      >
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#F0FDF4" }}>
+                          {item.icon}
+                        </div>
+                        <div>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#111827" }}>
+                            {item.label}
+                          </div>
+                          <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{item.desc}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {secondaryNavLinks.map((link) => (
+              <DesktopNavLink key={link.label} label={link.label} href={link.href} />
+            ))}
+
             {/* Resources dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
@@ -135,7 +218,10 @@ export default function Navbar() {
                   border: "none",
                   letterSpacing: "0.01em",
                 }}
-                onClick={() => setResourcesOpen(!resourcesOpen)}
+                onClick={() => {
+                  setResourcesOpen(!resourcesOpen);
+                  setProgramsOpen(false);
+                }}
               >
                 Resources{" "}
                 <ChevronDown
@@ -207,11 +293,13 @@ export default function Navbar() {
                 Dashboard
               </Link>
             ) : (
-              <GoogleSignInButton size="sm" />
+              <GoogleSignInButton size="sm" label="Get Started" variant="default" />
             )}
-            <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
-              Get Started
-            </Link>
+            {!loading && user && (
+              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
+                Get Started
+              </Link>
+            )}
           </div>
 
           {/* Mobile hamburger */}
@@ -231,6 +319,25 @@ export default function Navbar() {
         <div className="xl:hidden bg-white border-t" style={{ borderColor: "#E5E7EB" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
+              <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
+            ))}
+            <div className="mt-2 mb-1">
+              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#9CA3AF" }}>
+                Programs
+              </p>
+              {PROGRAM_LINKS.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
+                  style={{ color: "#111827", textDecoration: "none", fontSize: "0.95rem" }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.icon} {item.label}
+                </Link>
+              ))}
+            </div>
+            {secondaryNavLinks.map((link) => (
               <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
             ))}
             <div className="mt-2 mb-1">
@@ -257,15 +364,17 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
-              Get Started
-            </Link>
             {!loading && user ? (
-              <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
-                Dashboard
-              </Link>
+              <>
+                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
+                  Get Started
+                </Link>
+                <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
+                  Dashboard
+                </Link>
+              </>
             ) : (
-              <GoogleSignInButton className="mt-2 w-full" onClick={() => setMenuOpen(false)} />
+              <GoogleSignInButton className="mt-3 w-full" label="Get Started" variant="default" onClick={() => setMenuOpen(false)} />
             )}
           </div>
         </div>
