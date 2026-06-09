@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Enterprise from "./pages/Enterprise";
 import Contact from "./pages/Contact";
 import Programs from "./pages/Programs";
+import Masterclass from "./pages/Masterclass";
 import Community from "./pages/Community";
 import Newsletter from "./pages/Newsletter";
 import NewsletterArticle from "./pages/NewsletterArticle";
@@ -64,6 +65,8 @@ function Router() {
 
       {/* Programs & Learning */}
       <Route path={"/programs"} component={Programs} />
+      <Route path={"/masterclass"} component={Masterclass} />
+      <Route path={"/masterclasses"} component={Masterclass} />
       <Route path={"/enterprise"} component={Enterprise} />
       <Route path={"/learn"} component={Learn} />
       <Route path={"/learn/:pathId"} component={LearningPath} />

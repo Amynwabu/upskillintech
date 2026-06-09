@@ -18,13 +18,14 @@ const footerLinks = {
     { label: "AI Foundations", href: "/programs" },
     { label: "AI-Enabled Professional", href: "/programs" },
     { label: "AI Leadership", href: "/programs" },
+    { label: "AI Masterclass", href: "/masterclass" },
     { label: "Enterprise Training", href: "/enterprise" },
     { label: "Webinars", href: "/resources/webinars" },
   ],
   Community: [
     { label: "Join the Community", href: "/community" },
     { label: "Events & Meetups", href: "/events" },
-    { label: "AI Masterclasses", href: "/community" },
+    { label: "AI Masterclasses", href: "/masterclass" },
     { label: "Peer Network", href: "/community" },
   ],
   Company: [
