@@ -4,6 +4,7 @@ import sgMail from '@sendgrid/mail';
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const SENDER_EMAIL = process.env.SENDGRID_SENDER_EMAIL || 'noreply@upskillintech.com';
 const SENDER_NAME = 'UpskillinTech';
+const AI_TOOLKIT_URL = 'https://upskillintech.com/resources/ai-guides';
 
 if (SENDGRID_API_KEY) {
   sgMail.setApiKey(SENDGRID_API_KEY);
@@ -27,14 +28,17 @@ export async function sendWelcomeEmail(email: string): Promise<{ success: boolea
         email: SENDER_EMAIL,
         name: SENDER_NAME,
       },
-      subject: 'Welcome to UpskillinTech Newsletter! 🚀',
+      subject: 'Your Free AI Toolkit from UpskillinTech',
       text: `Welcome to UpskillinTech!
 
-Thank you for subscribing to our newsletter. You're now part of a community of 1,000+ learners transforming their skills with AI.
+Thank you for subscribing. Your Free AI Toolkit is ready:
+${AI_TOOLKIT_URL}
+
+You're now part of a community of 1,000+ learners transforming their skills with AI.
 
 Here's what you can expect:
+• Practical AI prompts and workflow templates
 • Latest AI course updates and new releases
-• Exclusive learning resources and tips
 • Community events and live workshops
 • Special offers for premium courses
 
@@ -72,30 +76,34 @@ You're receiving this email because you subscribed to our newsletter. If you wis
           <!-- Body -->
           <tr>
             <td style="padding: 40px;">
-              <h2 style="margin: 0 0 20px; color: #1e293b; font-size: 24px; font-weight: bold;">Welcome to Our Community! 🚀</h2>
+              <h2 style="margin: 0 0 20px; color: #1e293b; font-size: 24px; font-weight: bold;">Your Free AI Toolkit Is Ready</h2>
               
               <p style="margin: 0 0 16px; color: #475569; font-size: 16px; line-height: 1.6;">
-                Thank you for subscribing to our newsletter. You're now part of a community of <strong>1,000+ learners</strong> transforming their skills with AI.
+                Thank you for subscribing. Your toolkit includes practical AI prompts, workflow ideas, and responsible adoption tips for professionals.
+              </p>
+
+              <p style="margin: 0 0 16px; color: #475569; font-size: 16px; line-height: 1.6;">
+                You're now part of a community of <strong>1,000+ learners</strong> transforming their skills with AI.
               </p>
               
               <div style="margin: 30px 0; padding: 20px; background-color: #f1f5f9; border-left: 4px solid #10b981; border-radius: 4px;">
                 <h3 style="margin: 0 0 12px; color: #1e293b; font-size: 18px; font-weight: 600;">What You'll Receive:</h3>
                 <ul style="margin: 0; padding-left: 20px; color: #475569;">
+                  <li style="margin-bottom: 8px;">Practical AI prompts and workflow templates</li>
                   <li style="margin-bottom: 8px;">Latest AI course updates and new releases</li>
-                  <li style="margin-bottom: 8px;">Exclusive learning resources and tips</li>
                   <li style="margin-bottom: 8px;">Community events and live workshops</li>
                   <li style="margin-bottom: 8px;">Special offers for premium courses</li>
                 </ul>
               </div>
               
               <p style="margin: 24px 0; color: #475569; font-size: 16px; line-height: 1.6;">
-                Ready to start your AI journey? Explore our comprehensive courses designed for professionals, businesses, and organizations.
+                Start with the free toolkit, then explore the courses, webinars, and templates when you are ready to go deeper.
               </p>
               
               <table role="presentation" style="margin: 30px 0;">
                 <tr>
                   <td align="center">
-                    <a href="https://upskillintech.com" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">Explore Courses</a>
+                    <a href="${AI_TOOLKIT_URL}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%); color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 16px;">Download the Free AI Toolkit</a>
                   </td>
                 </tr>
               </table>

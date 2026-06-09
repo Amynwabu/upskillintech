@@ -4,12 +4,13 @@
  * Font: Sora
  */
 import { useState, useEffect, useRef } from "react";
-import { Link } from "wouter";
+import { Link, useRoute } from "wouter";
 import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
+const ACTIVE_NAV_COLOR = "#0D9488";
 
 const RESOURCE_LINKS = [
   { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#38B54A" }} /> },
@@ -27,6 +28,52 @@ const navLinks = [
   { label: "Community", href: "/community" },
   { label: "About", href: "/about" },
 ];
+
+function DesktopNavLink({ label, href }: { label: string; href: string }) {
+  const [active] = useRoute(href);
+  const color = active ? ACTIVE_NAV_COLOR : "#111827";
+
+  return (
+    <Link
+      href={href}
+      className="font-semibold transition-colors duration-150"
+      style={{
+        fontFamily: "'Sora', sans-serif",
+        fontSize: "0.975rem",
+        color,
+        fontWeight: active ? 800 : 600,
+        textDecoration: "none",
+        letterSpacing: "0.01em",
+      }}
+      onMouseEnter={(e) => ((e.target as HTMLElement).style.color = ACTIVE_NAV_COLOR)}
+      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = color)}
+    >
+      {label}
+    </Link>
+  );
+}
+
+function MobileNavLink({ label, href, onClick }: { label: string; href: string; onClick: () => void }) {
+  const [active] = useRoute(href);
+
+  return (
+    <Link
+      href={href}
+      className="font-semibold py-3 px-3 rounded-xl"
+      style={{
+        fontFamily: "'Sora', sans-serif",
+        fontSize: "1rem",
+        color: active ? ACTIVE_NAV_COLOR : "#111827",
+        fontWeight: active ? 800 : 600,
+        textDecoration: "none",
+        background: active ? "rgba(13,148,136,0.08)" : "transparent",
+      }}
+      onClick={onClick}
+    >
+      {label}
+    </Link>
+  );
+}
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,22 +119,7 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden xl:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="font-semibold transition-colors duration-150"
-                style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: "0.975rem",
-                  color: "#111827",
-                  textDecoration: "none",
-                  letterSpacing: "0.01em",
-                }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#38B54A")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#111827")}
-              >
-                {link.label}
-              </Link>
+              <DesktopNavLink key={link.label} label={link.label} href={link.href} />
             ))}
 
             {/* Resources dropdown */}
@@ -198,20 +230,7 @@ export default function Navbar() {
         <div className="xl:hidden bg-white border-t" style={{ borderColor: "#E5E7EB" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="font-semibold py-3 px-3 rounded-xl"
-                style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: "1rem",
-                  color: "#111827",
-                  textDecoration: "none",
-                }}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
             ))}
             <div className="mt-2 mb-1">
               <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#9CA3AF" }}>

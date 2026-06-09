@@ -9,12 +9,14 @@
  *   Programs → Workflows → Enterprise → Community → Founder → Newsletter → FinalCTA → Footer
  */
 import Navbar from "@/components/Navbar";
+import WebinarPromoBanner from "@/components/WebinarPromoBanner";
 import HeroSection from "@/components/HeroSection";
 import AudienceSection from "@/components/AudienceSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import EcosystemSection from "@/components/EcosystemSection";
 import ProgramsSection from "@/components/ProgramsSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import WorkflowsSection from "@/components/WorkflowsSection";
 import EnterpriseSection from "@/components/EnterpriseSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -28,6 +30,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1 pt-[76px]">
+        <WebinarPromoBanner />
+
         {/* 1. Hero — Who we are & the invitation */}
         <HeroSection />
 
@@ -45,6 +49,9 @@ export default function Home() {
 
         {/* 6. Programs — Structured AI learning paths */}
         <ProgramsSection />
+
+        {/* 7. Testimonials — Social proof from workshops and webinars */}
+        <TestimonialsSection />
 
         {/* 7. Workflows — Practical AI automation templates */}
         <WorkflowsSection />

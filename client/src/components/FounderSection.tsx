@@ -85,9 +85,23 @@ export default function FounderSection() {
               ))}
             </div>
 
-            <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488" }}>
-              About UpskillinTech
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488" }}>
+                About UpskillinTech
+              </a>
+              <a
+                href="/contact"
+                className="btn-outline"
+                style={{
+                  fontSize: "1.05rem",
+                  padding: "1rem 2.25rem",
+                  borderColor: "#0D9488",
+                  color: "#0D9488",
+                }}
+              >
+                Book a Discovery Call
+              </a>
+            </div>
           </div>
         </div>
       </div>

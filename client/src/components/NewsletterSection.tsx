@@ -8,10 +8,10 @@ import { Mail, CheckCircle } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 
 const perks = [
-  "Weekly AI tool reviews",
-  "Free workflow templates",
-  "Exclusive training discounts",
-  "Community event invites",
+  "10 AI prompts for professionals",
+  "Workflow checklist",
+  "Weekly AI tool picks",
+  "Webinar invites",
 ];
 
 export default function NewsletterSection() {
@@ -42,14 +42,14 @@ export default function NewsletterSection() {
             <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.20)" }}>
               <Mail size={16} style={{ color: "#111827" }} />
               <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#111827" }}>
-                Free Newsletter
+                Free AI Toolkit
               </span>
             </div>
             <h2 className="mb-4" style={{ color: "#111827" }}>
-              Stay Ahead in the AI Era
+              Get the Free AI Toolkit (PDF)
             </h2>
             <p style={{ fontSize: "1.15rem", color: "rgba(0,0,0,0.65)", lineHeight: 1.7 }}>
-              Subscribe to the UpskillinTech newsletter for AI insights, practical workflows, and strategies delivered to your inbox.
+              Download 10 practical AI prompts for professionals, plus a simple workflow checklist to help you use AI responsibly at work.
             </p>
           </div>
 
@@ -110,11 +110,11 @@ export default function NewsletterSection() {
               onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "#1f2937"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(-2px)"; }}
               onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.background = "#111827"; (e.currentTarget as HTMLButtonElement).style.transform = "translateY(0)"; }}
             >
-              Subscribe Free
+              Send Me the Toolkit
             </button>
           </form>
           <p className="text-center mt-4" style={{ fontSize: "0.85rem", color: "rgba(0,0,0,0.55)" }}>
-            No spam. Unsubscribe anytime. Join 1,000+ professionals already subscribed.
+            Includes weekly AI insights. No spam. Unsubscribe anytime.
           </p>
         </div>
       </div>
