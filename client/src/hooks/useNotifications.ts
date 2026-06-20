@@ -74,10 +74,25 @@ export function useNotifications() {
     };
   }, [isConnected, on, off, utils]);
 
+  const showNotification = (
+    title: string,
+    message: string,
+    type: "success" | "error" | "info" = "info"
+  ) => {
+    if (type === "error") {
+      toast.error(title, { description: message });
+    } else if (type === "success") {
+      toast.success(title, { description: message });
+    } else {
+      toast(title, { description: message });
+    }
+  };
+
   return {
     notifications,
     unreadCount,
     markAsRead: (id: number) => markAsRead.mutate({ id }),
     markAllAsRead: () => markAllAsRead.mutate(),
+    showNotification,
   };
 }
