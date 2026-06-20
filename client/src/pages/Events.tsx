@@ -140,7 +140,7 @@ export default function Events() {
 
             <h1 className="mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
               Upcoming{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 AI Events
               </span>
             </h1>
@@ -150,7 +150,7 @@ export default function Events() {
             </p>
 
             {/* Featured Webinar CTA */}
-            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(56,181,74,0.08))", border: "1px solid rgba(13,148,136,0.20)" }}>
+            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(13,148,136,0.08))", border: "1px solid rgba(13,148,136,0.20)" }}>
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex-1">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-semibold mb-3" style={{ background: "#0D9488" }}>

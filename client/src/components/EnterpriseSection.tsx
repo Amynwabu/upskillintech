@@ -23,7 +23,7 @@ export default function EnterpriseSection() {
           <div>
             <span className="section-label mb-5">Enterprise Solutions</span>
             <h2 className="mt-4 mb-5">
-              AI Transformation for <span style={{ color: "#38B54A" }}>Organisations</span>
+              AI Transformation for <span style={{ color: "#0D9488" }}>Organisations</span>
             </h2>
             <p className="mb-8" style={{ fontSize: "1.15rem", color: "#6B7280", lineHeight: 1.75 }}>
               UpskillinTech partners with organisations to build AI-ready teams, design intelligent workflows, and develop sustainable AI strategies that deliver measurable results.
@@ -31,8 +31,8 @@ export default function EnterpriseSection() {
             <ul className="flex flex-col gap-5 mb-10">
               {benefits.map((b) => (
                 <li key={b.title} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(56,181,74,0.12)" }}>
-                    <CheckCircle size={18} style={{ color: "#38B54A" }} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(13,148,136,0.12)" }}>
+                    <CheckCircle size={18} style={{ color: "#0D9488" }} />
                   </div>
                   <div>
                     <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
@@ -71,7 +71,7 @@ export default function EnterpriseSection() {
                 className="absolute top-5 right-5 rounded-2xl px-5 py-3 text-center"
                 style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.12)" }}
               >
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#38B54A" }}>50+</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#0D9488" }}>50+</div>
                 <div style={{ fontSize: "0.8rem", color: "#6B7280", fontWeight: 500 }}>Business Partners</div>
               </div>
             </div>

@@ -10,8 +10,27 @@ import {
   Sparkles,
   Users,
 } from "lucide-react";
+import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { trpc } from "@/lib/trpc";
+
+function ReserveSeatButton({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  const checkout = trpc.checkout.masterclass.useMutation({
+    onSuccess: ({ url }) => { window.location.href = url; },
+    onError: (err) => toast.error(err.message),
+  });
+  return (
+    <button
+      onClick={() => checkout.mutate()}
+      disabled={checkout.isPending}
+      className={className}
+      style={style}
+    >
+      {checkout.isPending ? "Redirecting to payment…" : <>Reserve Your Seat — £50 / ₦50,000 <ArrowRight size={18} /></>}
+    </button>
+  );
+}
 
 const sessions = [
   {
@@ -79,9 +98,10 @@ export default function Masterclass() {
                   <span className="inline-flex items-center gap-2 px-3 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.75)" }}><Users size={15} /> Beginners welcome</span>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Link href="/resources/webinars/1/register" className="btn-primary justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2rem", background: "#0D9488" }}>
-                    Reserve Your Seat <ArrowRight size={18} />
-                  </Link>
+                  <ReserveSeatButton
+                    className="btn-primary justify-center inline-flex items-center gap-2"
+                    style={{ fontSize: "1.05rem", padding: "1rem 2rem", background: "#0D9488" }}
+                  />
                   <Link href="/resources/webinars" className="btn-outline justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2rem" }}>
                     Watch Past Sessions
                   </Link>
@@ -160,12 +180,12 @@ export default function Masterclass() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <span className="section-label" style={{ color: "#38B54A" }}>Who It Is For</span>
+                <span className="section-label" style={{ color: "#0D9488" }}>Who It Is For</span>
                 <h2 className="mt-4 mb-6" style={{ color: "#ffffff" }}>For professionals who need clarity, not hype</h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {audience.map((item) => (
                     <div key={item} className="flex items-start gap-3">
-                      <CheckCircle2 size={18} className="shrink-0 mt-1" style={{ color: "#38B54A" }} />
+                      <CheckCircle2 size={18} className="shrink-0 mt-1" style={{ color: "#0D9488" }} />
                       <span style={{ color: "rgba(255,255,255,0.78)", lineHeight: 1.6 }}>{item}</span>
                     </div>
                   ))}
@@ -182,8 +202,8 @@ export default function Masterclass() {
                     const Icon = item.icon;
                     return (
                       <div key={item.title} className="flex items-start gap-4">
-                        <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(56,181,74,0.16)" }}>
-                          <Icon size={20} style={{ color: "#38B54A" }} />
+                        <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(13,148,136,0.16)" }}>
+                          <Icon size={20} style={{ color: "#0D9488" }} />
                         </div>
                         <div>
                           <div className="font-bold mb-1" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif" }}>{item.title}</div>
@@ -205,9 +225,10 @@ export default function Masterclass() {
               Reserve a seat, get the joining details, and start building practical AI skills you can use immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/resources/webinars/1/register" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold" style={{ background: "#ffffff", color: "#0D9488", textDecoration: "none", fontFamily: "'Sora', sans-serif" }}>
-                Register Free <ArrowRight size={18} />
-              </Link>
+              <ReserveSeatButton
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold cursor-pointer border-0"
+                style={{ background: "#ffffff", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
+              />
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold" style={{ border: "2px solid rgba(255,255,255,0.6)", color: "#ffffff", textDecoration: "none", fontFamily: "'Sora', sans-serif" }}>
                 Ask a Question
               </Link>

@@ -7,8 +7,8 @@ import { Briefcase, BookOpen, Users, Zap, ArrowRight } from "lucide-react";
 const programs = [
   {
     icon: Briefcase,
-    color: "#38B54A",
-    bg: "rgba(56,181,74,0.10)",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "AI-Enabled Professional",
     subtitle: "For Working Professionals",
     desc: "Learn to integrate AI tools into your daily work — from writing and analysis to decision-making and client communication.",
@@ -25,8 +25,8 @@ const programs = [
   },
   {
     icon: Users,
-    color: "#38B54A",
-    bg: "rgba(56,181,74,0.10)",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "AI Leadership",
     subtitle: "For Educators & Leaders",
     desc: "Designed for pastors, educators, and community leaders who want to lead AI adoption and inspire others to embrace the future.",
@@ -51,10 +51,10 @@ export default function ProgramsSection() {
         <div className="text-center mb-14">
           <span className="section-label mb-5">Our Programmes</span>
           <h2 className="mt-4 mb-4">
-            UpskillinTech <span style={{ color: "#38B54A" }}>Programs</span>
+            UpskillinTech <span style={{ color: "#0D9488" }}>Programs</span>
           </h2>
           <div className="flex justify-center gap-1.5 mb-5">
-            <div style={{ width: 64, height: 4, background: "#38B54A", borderRadius: 2 }} />
+            <div style={{ width: 64, height: 4, background: "#0D9488", borderRadius: 2 }} />
             <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
           </div>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#6B7280" }}>
@@ -78,7 +78,7 @@ export default function ProgramsSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(56,181,74,0.16)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(13,148,136,0.16)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";

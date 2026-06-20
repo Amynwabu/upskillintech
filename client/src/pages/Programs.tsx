@@ -1,6 +1,6 @@
 /**
  * Programs Page — /programs
- * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, 4 Programme Cards, How It Works, Testimonials, FAQ, Final CTA
  */
@@ -21,7 +21,7 @@ const programs = [
     badge: "Most Popular",
     badgeColor: "#E6B800",
     icon: TrendingUp,
-    color: "#38B54A",
+    color: "#0D9488",
     title: "AI-Enabled Professional",
     tagline: "Use AI in your daily work.",
     description:
@@ -50,7 +50,7 @@ const programs = [
   {
     id: "ai-foundations",
     badge: "Beginner Friendly",
-    badgeColor: "#38B54A",
+    badgeColor: "#0D9488",
     icon: BookOpen,
     color: "#8B9E1A",
     title: "AI Foundations",
@@ -110,9 +110,9 @@ const programs = [
   {
     id: "webinars",
     badge: "Free & Paid",
-    badgeColor: "#38B54A",
+    badgeColor: "#0D9488",
     icon: Play,
-    color: "#38B54A",
+    color: "#0D9488",
     title: "Webinars & Masterclasses",
     tagline: "Build AI productivity systems.",
     description:
@@ -133,7 +133,8 @@ const programs = [
       { num: "03", title: "AI for Specific Roles", desc: "Targeted sessions for educators, managers, healthcare workers, and more." },
       { num: "04", title: "AI Trends & Updates", desc: "Monthly sessions on the latest AI developments and what they mean for professionals." },
     ],
-    price: "Register Free",
+    price: "Reserve Seat — £50 / ₦50,000",
+    href: "/masterclass",
     highlight: false,
   },
 ];
@@ -229,8 +230,8 @@ export default function Programs() {
             </a>
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-gray-900 transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#38B54A"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#38B54A"; }}>
+              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
               Talk to Us
             </a>
           </div>
@@ -246,7 +247,7 @@ export default function Programs() {
               { value: "8hrs", label: "Avg. Time Saved / Week" },
             ].map((stat, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
-                style={{ background: "rgba(56,181,74,0.10)" }}>
+                style={{ background: "rgba(13,148,136,0.10)" }}>
                 <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
               </div>
@@ -260,7 +261,7 @@ export default function Programs() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>Our Programmes</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>Our Programmes</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Choose Your Learning Path
             </h2>
@@ -315,7 +316,7 @@ export default function Programs() {
                     </div>
                     <div className="shrink-0 flex items-center gap-3">
                       <a
-                        href="/contact"
+                        href={(prog as any).href ?? "/contact"}
                         className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all"
                         style={{ background: prog.color, color: "#fff" }}
                         onClick={e => e.stopPropagation()}
@@ -376,7 +377,7 @@ export default function Programs() {
 
                       {/* Mobile CTA */}
                       <div className="mt-6 sm:hidden">
-                        <a href="/contact"
+                        <a href={(prog as any).href ?? "/contact"}
                           className="w-full flex items-center justify-center gap-2 py-3 rounded-lg text-sm font-semibold transition-all"
                           style={{ background: prog.color, color: "#fff" }}>
                           {prog.price} <ArrowRight size={14} />
@@ -396,7 +397,7 @@ export default function Programs() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>How It Works</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>How It Works</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Your Path to AI Proficiency
             </h2>
@@ -407,10 +408,10 @@ export default function Programs() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "01", icon: Target, title: "Choose Your Programme", desc: "Select the programme that matches your current level and goals.", color: "#38B54A" },
+              { step: "01", icon: Target, title: "Choose Your Programme", desc: "Select the programme that matches your current level and goals.", color: "#0D9488" },
               { step: "02", icon: BookOpen, title: "Learn at Your Pace", desc: "Work through structured modules with videos, exercises, and resources.", color: "#8B9E1A" },
               { step: "03", icon: Zap, title: "Apply in Real Work", desc: "Implement what you learn directly in your daily workflows and tasks.", color: "#E6B800" },
-              { step: "04", icon: Award, title: "Get Certified", desc: "Complete the programme and receive your UpskillinTech certificate.", color: "#38B54A" },
+              { step: "04", icon: Award, title: "Get Certified", desc: "Complete the programme and receive your UpskillinTech certificate.", color: "#0D9488" },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -439,7 +440,7 @@ export default function Programs() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(56,181,74,0.2)", color: "#38B54A" }}>What Professionals Say</span>
+              style={{ background: "rgba(13,148,136,0.2)", color: "#0D9488" }}>What Professionals Say</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               Real Results from Real Professionals
             </h2>
@@ -457,7 +458,7 @@ export default function Programs() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                    style={{ background: "linear-gradient(135deg, #38B54A, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
                     {t.name.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
@@ -476,7 +477,7 @@ export default function Programs() {
         <div className="max-w-3xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>FAQ</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>FAQ</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Frequently Asked Questions
             </h2>
@@ -484,7 +485,7 @@ export default function Programs() {
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="rounded-xl border overflow-hidden transition-all"
-                style={{ borderColor: openFaq === i ? "#38B54A" : "#e8e8e8" }}>
+                style={{ borderColor: openFaq === i ? "#0D9488" : "#e8e8e8" }}>
                 <button
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   style={{ background: openFaq === i ? "#f0faf0" : "#fff" }}
@@ -492,7 +493,7 @@ export default function Programs() {
                 >
                   <span className="font-poppins font-semibold text-sm" style={{ color: "#1C1C1C" }}>{faq.q}</span>
                   {openFaq === i
-                    ? <ChevronUp size={16} style={{ color: "#38B54A", flexShrink: 0 }} />
+                    ? <ChevronUp size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
                     : <ChevronDown size={16} style={{ color: "#999", flexShrink: 0 }} />}
                 </button>
                 {openFaq === i && (
@@ -508,7 +509,7 @@ export default function Programs() {
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="section-py"
-        style={{ background: "linear-gradient(135deg, #38B54A 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Become AI-Enabled?
@@ -527,7 +528,7 @@ export default function Programs() {
             </a>
             <a href="/enterprise"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#38B54A"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Enterprise Training
             </a>

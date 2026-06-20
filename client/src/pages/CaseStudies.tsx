@@ -1,7 +1,7 @@
 /**
  * Case Studies Page — UpskillinTech
  * URL: /resources/case-studies
- * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -21,7 +21,7 @@ const CASE_STUDIES = [
     id: 1,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#38B54A" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "Sarah O.",
     role: "Senior Project Manager",
     industry: "Financial Services",
@@ -37,13 +37,13 @@ const CASE_STUDIES = [
     ],
     quote: "I used to feel like I was always behind. Now I'm always ahead. AI didn't replace my thinking — it gave me time to actually think.",
     timeToResult: "6 weeks",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     id: 2,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#38B54A" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "James A.",
     role: "Independent Consultant",
     industry: "Management Consulting",
@@ -59,13 +59,13 @@ const CASE_STUDIES = [
     ],
     quote: "I thought AI was for tech companies. Now I can't imagine running my consulting practice without it. It's like having a brilliant junior analyst available 24/7.",
     timeToResult: "8 weeks",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     id: 3,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#38B54A" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "Dr. Priya M.",
     role: "University Lecturer",
     industry: "Higher Education",
@@ -81,7 +81,7 @@ const CASE_STUDIES = [
     ],
     quote: "My students get better feedback faster, and I have time to actually research again. AI gave me back my academic identity.",
     timeToResult: "4 weeks",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     id: 4,
@@ -194,7 +194,7 @@ export default function CaseStudies() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               Real People. Real Results. Real AI Integration.
             </h1>
@@ -229,7 +229,7 @@ export default function CaseStudies() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#38B54A" : "#fff",
+                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
                   fontFamily: "'Sora', sans-serif",

@@ -12,6 +12,7 @@ import { achievementsRouter } from "./routers/achievements";
 import { certificatesRouter } from "./routers/certificates";
 import { blogRouter } from "./routers/blog";
 import { adminRouter } from "./routers/admin";
+import { checkoutRouter } from "./routers/checkout";
 
 export const appRouter = router({
   system: systemRouter,
@@ -54,6 +55,9 @@ export const appRouter = router({
 
   // Admin: email templates, analytics
   admin: adminRouter,
+
+  // Stripe checkout for paid products
+  checkout: checkoutRouter,
 });
 
 export type AppRouter = typeof appRouter;

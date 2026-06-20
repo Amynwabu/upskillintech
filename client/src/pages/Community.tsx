@@ -1,6 +1,6 @@
 /**
  * Community Page — /community
- * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, What You Get, Masterclasses, Peer Network, Events, Join CTA
  */
@@ -19,7 +19,7 @@ const benefits = [
     icon: BookOpen,
     title: "Monthly Masterclasses",
     desc: "Live sessions on specific AI tools, workflows, and productivity strategies — hosted by Dr. Amaka Adiuku and guest practitioners.",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     icon: Zap,
@@ -37,7 +37,7 @@ const benefits = [
     icon: MessageSquare,
     title: "Community Discussions",
     desc: "Ongoing conversations about AI tools, news, and practical applications in a focused, professional community space.",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     icon: Calendar,
@@ -99,7 +99,7 @@ const upcomingEvents = [
     date: "October 2025",
     location: "Lagos, Nigeria + Online",
     desc: "A full-day event bringing together AI practitioners, professionals, and leaders to explore the future of AI in African workplaces.",
-    color: "#38B54A",
+    color: "#0D9488",
   },
   {
     title: "AI for Organisations Workshop",
@@ -190,8 +190,8 @@ export default function Community() {
             </a>
             <a href="#masterclasses"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-gray-900 transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#38B54A"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#38B54A"; }}>
+              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
               See Masterclasses
             </a>
           </div>
@@ -207,7 +207,7 @@ export default function Community() {
               { value: "Free", label: "To Join" },
             ].map((stat, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
-                style={{ background: "rgba(56,181,74,0.10)" }}>
+                style={{ background: "rgba(13,148,136,0.10)" }}>
                 <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
               </div>
@@ -221,7 +221,7 @@ export default function Community() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>Community Benefits</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>Community Benefits</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               What You Get as a Member
             </h2>
@@ -255,7 +255,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>Monthly Masterclasses</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>Monthly Masterclasses</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Learn. Apply. Grow.
             </h2>
@@ -269,7 +269,7 @@ export default function Community() {
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className="px-6 py-2.5 text-sm font-semibold capitalize transition-all"
                   style={{
-                    background: activeTab === tab ? "#38B54A" : "#fff",
+                    background: activeTab === tab ? "#0D9488" : "#fff",
                     color: activeTab === tab ? "#fff" : "#555",
                   }}>
                   {tab === "upcoming" ? "Upcoming Sessions" : "Past Recordings"}
@@ -282,14 +282,14 @@ export default function Community() {
             {filteredMasterclasses.map((mc, i) => (
               <div key={i} className="bg-white rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
                 style={{ borderColor: "#e8e8e8" }}>
-                <div className="h-1.5" style={{ background: "linear-gradient(90deg, #38B54A, #8B9E1A)" }} />
+                <div className="h-1.5" style={{ background: "linear-gradient(90deg, #0D9488, #8B9E1A)" }} />
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <h3 className="font-poppins font-bold text-base" style={{ color: "#1C1C1C" }}>{mc.title}</h3>
                     <span className="shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full"
                       style={{
                         background: mc.status === "Upcoming" ? "#f0faf0" : "#f5f5f5",
-                        color: mc.status === "Upcoming" ? "#38B54A" : "#888",
+                        color: mc.status === "Upcoming" ? "#0D9488" : "#888",
                       }}>
                       {mc.status}
                     </span>
@@ -297,26 +297,26 @@ export default function Community() {
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#555" }}>{mc.desc}</p>
                   <div className="space-y-1.5 mb-4">
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
-                      <Calendar size={12} style={{ color: "#38B54A" }} /> {mc.date}
+                      <Calendar size={12} style={{ color: "#0D9488" }} /> {mc.date}
                     </div>
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
-                      <Clock size={12} style={{ color: "#38B54A" }} /> {mc.time}
+                      <Clock size={12} style={{ color: "#0D9488" }} /> {mc.time}
                     </div>
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
-                      <Users size={12} style={{ color: "#38B54A" }} /> Hosted by {mc.host}
+                      <Users size={12} style={{ color: "#0D9488" }} /> Hosted by {mc.host}
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {mc.tags.map((tag, j) => (
                       <span key={j} className="text-xs px-2 py-0.5 rounded-full"
-                        style={{ background: "#f0faf0", color: "#38B54A" }}>{tag}</span>
+                        style={{ background: "#f0faf0", color: "#0D9488" }}>{tag}</span>
                     ))}
                   </div>
                   <a href="/contact"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all"
-                    style={{ color: "#38B54A" }}
+                    style={{ color: "#0D9488" }}
                     onMouseEnter={e => (e.currentTarget.style.color = "#8B9E1A")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#38B54A")}>
+                    onMouseLeave={e => (e.currentTarget.style.color = "#0D9488")}>
                     {mc.status === "Upcoming" ? "Register for Session" : "Watch Recording"}
                     <ArrowRight size={12} />
                   </a>
@@ -332,7 +332,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>Events & Webinars</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>Events & Webinars</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Upcoming Events
             </h2>
@@ -377,7 +377,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(56,181,74,0.2)", color: "#38B54A" }}>Community Voices</span>
+              style={{ background: "rgba(13,148,136,0.2)", color: "#0D9488" }}>Community Voices</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               What Members Are Saying
             </h2>
@@ -396,7 +396,7 @@ export default function Community() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                    style={{ background: "linear-gradient(135deg, #38B54A, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
                     {t.name.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
@@ -412,7 +412,7 @@ export default function Community() {
 
       {/* ── Join CTA ─────────────────────────────────────────────────────── */}
       <section className="section-py"
-        style={{ background: "linear-gradient(135deg, #38B54A 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Join the Community?
@@ -440,7 +440,7 @@ export default function Community() {
             </a>
             <a href="/programs"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#38B54A"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Explore Programmes
             </a>

@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const ALL_EDITIONS = [
-  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", excerpt: "Most people treat AI like a search engine. The real power is using AI for thinking, strategy, and workflow automation — and it changes everything.", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#38B54A" },
+  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", excerpt: "Most people treat AI like a search engine. The real power is using AI for thinking, strategy, and workflow automation — and it changes everything.", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#0D9488" },
   { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", excerpt: "Practical, copy-paste AI workflows for meetings, research, content creation, email management, and client reporting — tested by real professionals.", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#8B9E1A" },
   { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", excerpt: "Teams are adopting AI faster than their managers. Here's why leaders who don't upskill now will find themselves managing workflows they don't understand.", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#D97706" },
   { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", excerpt: "A step-by-step guide to building a personal AI productivity stack — from choosing the right tools to creating workflows that actually stick.", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#7C3AED" },
@@ -48,9 +48,9 @@ export default function NewsletterArchive() {
         <div style={{ background: "#F9FAFB", borderBottom: "1px solid #E5E7EB", padding: "14px 0" }}>
           <div className="container">
             <div className="flex items-center gap-2 text-sm" style={{ color: "#6B7280" }}>
-              <Link href="/resources" style={{ color: "#38B54A", textDecoration: "none" }}>Resources</Link>
+              <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
-              <Link href="/newsletter" style={{ color: "#38B54A", textDecoration: "none" }}>Newsletter</Link>
+              <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
               <span style={{ color: "#374151" }}>Archive</span>
             </div>
@@ -62,7 +62,7 @@ export default function NewsletterArchive() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-sm font-semibold"
-                style={{ background: "rgba(56,181,74,0.12)", color: "#38B54A" }}>
+                style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488" }}>
                 <Mail size={16} /> Newsletter Archive
               </div>
               <h1 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#111827", lineHeight: 1.2 }}>
@@ -99,9 +99,9 @@ export default function NewsletterArchive() {
                     onClick={() => setActiveTag(tag)}
                     className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
                     style={{
-                      background: activeTag === tag ? "#38B54A" : "#F3F4F6",
+                      background: activeTag === tag ? "#0D9488" : "#F3F4F6",
                       color: activeTag === tag ? "#fff" : "#374151",
-                      border: activeTag === tag ? "1.5px solid #38B54A" : "1.5px solid #E5E7EB",
+                      border: activeTag === tag ? "1.5px solid #0D9488" : "1.5px solid #E5E7EB",
                     }}
                   >
                     {tag}
@@ -121,7 +121,7 @@ export default function NewsletterArchive() {
                   <p className="text-lg" style={{ color: "#6B7280" }}>No editions found matching your search.</p>
                   <button onClick={() => { setSearch(""); setActiveTag("All"); }}
                     className="mt-4 px-5 py-2.5 rounded-xl font-semibold text-white"
-                    style={{ background: "#38B54A" }}>
+                    style={{ background: "#0D9488" }}>
                     Clear Filters
                   </button>
                 </div>
@@ -150,7 +150,7 @@ export default function NewsletterArchive() {
                         </div>
                         <div className="flex-shrink-0 flex items-center">
                           <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-semibold text-sm"
-                            style={{ background: "rgba(56,181,74,0.1)", color: "#38B54A" }}>
+                            style={{ background: "rgba(13,148,136,0.1)", color: "#0D9488" }}>
                             Read <ArrowRight size={14} />
                           </span>
                         </div>
@@ -167,7 +167,7 @@ export default function NewsletterArchive() {
         <section style={{ background: "linear-gradient(135deg, #111827 0%, #1a2e1a 100%)", padding: "70px 0" }}>
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
-              <Mail size={40} className="mx-auto mb-5" style={{ color: "#38B54A" }} />
+              <Mail size={40} className="mx-auto mb-5" style={{ color: "#0D9488" }} />
               <h2 className="font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
                 Don't Miss the Next Edition
               </h2>
@@ -175,7 +175,7 @@ export default function NewsletterArchive() {
                 Subscribe free and get practical AI insights delivered to your inbox every week.
               </p>
               {subDone ? (
-                <div className="flex items-center justify-center gap-3" style={{ color: "#38B54A" }}>
+                <div className="flex items-center justify-center gap-3" style={{ color: "#0D9488" }}>
                   <CheckCircle size={24} />
                   <span className="font-semibold text-lg text-white">You're subscribed!</span>
                 </div>
@@ -190,7 +190,7 @@ export default function NewsletterArchive() {
                   />
                   <button type="submit" disabled={subscribe.isPending}
                     className="px-7 py-4 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
-                    style={{ background: "linear-gradient(135deg, #38B54A, #8B9E1A)", whiteSpace: "nowrap" }}>
+                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)", whiteSpace: "nowrap" }}>
                     {subscribe.isPending ? "..." : "Subscribe"}
                   </button>
                 </form>

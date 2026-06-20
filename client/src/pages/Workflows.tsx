@@ -1,7 +1,7 @@
 /**
  * AI Workflow Library Page — UpskillinTech
  * URL: /resources/workflows
- * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -29,7 +29,7 @@ const WORKFLOWS = [
     timeToComplete: "5 minutes",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Otter.ai or Fireflies (optional)"],
-    color: "#38B54A",
+    color: "#0D9488",
     steps: [
       { label: "Record or Note", desc: "Record the meeting audio or take rough notes during the session. Use Otter.ai for automatic transcription." },
       { label: "Paste Transcript", desc: "Paste the transcript or notes into ChatGPT or Claude with the prompt: 'Summarise this meeting. Extract: 1) Key decisions, 2) Action items with owners, 3) Open questions.'" },
@@ -91,7 +91,7 @@ const WORKFLOWS = [
     timeToComplete: "30 minutes/day",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Gmail or Outlook"],
-    color: "#38B54A",
+    color: "#0D9488",
     steps: [
       { label: "Batch Emails", desc: "Set two dedicated email times per day (e.g., 9am and 4pm). Don't check email outside these windows. This alone saves 1–2 hours daily." },
       { label: "Categorise", desc: "Sort emails into: Respond Now, Delegate, File, Delete. Only 'Respond Now' emails need your attention in this session." },
@@ -166,7 +166,7 @@ export default function WorkflowsPage() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(56,181,74,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
               AI Workflows That Work in the Real World
             </h1>
@@ -207,7 +207,7 @@ export default function WorkflowsPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#38B54A" : "#fff",
+                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
                   fontFamily: "'Sora', sans-serif",
@@ -355,7 +355,7 @@ export default function WorkflowsPage() {
             </button>
           </form>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#38B54A" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#0D9488" }}>
               <ArrowRight size={15} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.60)" }}>
