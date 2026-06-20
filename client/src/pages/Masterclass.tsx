@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -13,7 +14,53 @@ import {
 import { toast } from "sonner";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AIChatBox, type Message } from "@/components/AIChatBox";
 import { trpc } from "@/lib/trpc";
+
+const SYSTEM_PROMPT =
+  "You are an AI productivity coach for UpskillinTech, an AI awareness and training platform founded by Dr. Amaka Adiuku. " +
+  "Your role is to help professionals understand how AI can help them in their work, answer questions about AI tools, " +
+  "productivity workflows, and responsible AI adoption. You give practical, jargon-free advice. " +
+  "When relevant, mention UpskillinTech's masterclass, programmes, or community as next steps. " +
+  "Keep replies concise and actionable.";
+
+function MasterclassChat() {
+  const [messages, setMessages] = useState<Message[]>([
+    { role: "system", content: SYSTEM_PROMPT },
+  ]);
+
+  const chatMutation = trpc.ai.chat.useMutation({
+    onSuccess: ({ reply }) => {
+      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+    },
+    onError: (err) => {
+      toast.error(err.message);
+    },
+  });
+
+  const handleSend = (content: string) => {
+    const newMessages: Message[] = [...messages, { role: "user", content }];
+    setMessages(newMessages);
+    chatMutation.mutate({ messages: newMessages });
+  };
+
+  return (
+    <AIChatBox
+      messages={messages}
+      onSendMessage={handleSend}
+      isLoading={chatMutation.isPending}
+      placeholder="Ask anything about AI at work…"
+      height="480px"
+      emptyStateMessage="Ask me anything about AI productivity or this masterclass"
+      suggestedPrompts={[
+        "How can I use AI to save time on emails?",
+        "What's a good first AI tool for a non-technical professional?",
+        "How do I write better prompts for ChatGPT?",
+        "Is it safe to use AI tools at work?",
+      ]}
+    />
+  );
+}
 
 function ReserveSeatButton({ className, style }: { className?: string; style?: React.CSSProperties }) {
   const checkout = trpc.checkout.masterclass.useMutation({
@@ -215,6 +262,19 @@ export default function Masterclass() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="section-py" style={{ background: "#ffffff" }}>
+          <div className="container max-w-3xl mx-auto">
+            <div className="text-center mb-10">
+              <span className="section-label">Try It Now</span>
+              <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>Ask our AI productivity coach</h2>
+              <p style={{ color: "#6B7280", fontSize: "1.05rem", lineHeight: 1.7 }}>
+                Not sure if this masterclass is for you? Ask a question and get instant, practical guidance on AI at work.
+              </p>
+            </div>
+            <MasterclassChat />
           </div>
         </section>
 

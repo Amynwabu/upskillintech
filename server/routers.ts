@@ -13,6 +13,7 @@ import { certificatesRouter } from "./routers/certificates";
 import { blogRouter } from "./routers/blog";
 import { adminRouter } from "./routers/admin";
 import { checkoutRouter } from "./routers/checkout";
+import { aiRouter } from "./routers/ai";
 
 export const appRouter = router({
   system: systemRouter,
@@ -58,6 +59,9 @@ export const appRouter = router({
 
   // Stripe checkout for paid products
   checkout: checkoutRouter,
+
+  // AI chat (backed by invokeLLM / Forge API)
+  ai: aiRouter,
 });
 
 export type AppRouter = typeof appRouter;
