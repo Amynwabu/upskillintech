@@ -15,8 +15,8 @@ export async function sendWebinarReminders() {
     
     // Master Class sessions — last two Saturdays of July 2026
     const sessions = [
-      { date: new Date('2026-07-18T19:00:00Z'), label: 'Saturday, 18 July 2026', shortDate: '18 July 2026' },
-      { date: new Date('2026-07-25T19:00:00Z'), label: 'Saturday, 25 July 2026', shortDate: '25 July 2026' },
+      { date: new Date('2026-07-18T13:00:00Z'), label: 'Saturday, 18 July 2026', shortDate: '18 July 2026' },
+      { date: new Date('2026-07-25T13:00:00Z'), label: 'Saturday, 25 July 2026', shortDate: '25 July 2026' },
     ];
 
     const upcomingSession = sessions.find((s) => {
@@ -54,9 +54,9 @@ export async function sendWebinarReminders() {
           registration.email,
           registration.name,
           {
-            title: 'AI Master Class: Build Practical AI Skills for Work',
+            title: 'Build, Brand & Grow with AI — AI Transformation Master Class',
             date: upcomingSession.label,
-            time: '7PM UK time, 8PM Nigeria Time',
+            time: '2PM – 4PM UK / Nigeria Time',
             zoomLink: 'https://shorturl.at/2yAwE'
           }
         );
