@@ -15,6 +15,7 @@ import AudienceSection from "@/components/AudienceSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import EcosystemSection from "@/components/EcosystemSection";
+import AISkillsQuiz from "@/components/AISkillsQuiz";
 import ProgramsSection from "@/components/ProgramsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WorkflowsSection from "@/components/WorkflowsSection";
@@ -46,6 +47,20 @@ export default function Home() {
 
         {/* 5. Ecosystem — Awareness → Learning → Application → Community */}
         <EcosystemSection />
+
+        {/* 5b. Quiz — Personalised learning path recommender */}
+        <section className="section-py" style={{ background: "#F7F8FA" }}>
+          <div className="container">
+            <div className="text-center mb-10">
+              <span className="section-label">Find Your Path</span>
+              <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>Which AI programme is right for you?</h2>
+              <p className="max-w-xl mx-auto" style={{ color: "#6B7280", fontSize: "1.05rem" }}>
+                Answer 5 quick questions and get a personalised learning path recommendation.
+              </p>
+            </div>
+            <AISkillsQuiz />
+          </div>
+        </section>
 
         {/* 6. Programs — Structured AI learning paths */}
         <ProgramsSection />

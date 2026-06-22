@@ -9,20 +9,20 @@ import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail }
 import { useAuth } from "@/_core/hooks/useAuth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
+const LOGO_URL = "/logo.png";
 const ACTIVE_NAV_COLOR = "#0D9488";
 
 const RESOURCE_LINKS = [
-  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#38B54A" }} /> },
+  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
   { label: "AI Guides", desc: "Free downloadable guides", href: "/resources/ai-guides", icon: <FileText size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#38B54A" }} /> },
+  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
   { label: "Webinars", desc: "Live & recorded sessions", href: "/resources/webinars", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
   { label: "AI Workflows", desc: "Step-by-step templates", href: "/resources/workflows", icon: <Zap size={18} style={{ color: "#8B9E1A" }} /> },
   { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#E6B800" }} /> },
 ];
 
 const PROGRAM_LINKS = [
-  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#38B54A" }} /> },
+  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
   { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
   { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
 ];
@@ -213,7 +213,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: resourcesOpen ? "#38B54A" : "#111827",
+                  color: resourcesOpen ? "#0D9488" : "#111827",
                   background: "none",
                   border: "none",
                   letterSpacing: "0.01em",
@@ -246,8 +246,8 @@ export default function Navbar() {
                       href="/resources"
                       className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 font-bold"
                       style={{
-                        background: "linear-gradient(135deg, rgba(56,181,74,0.08), rgba(230,184,0,0.08))",
-                        color: "#38B54A",
+                        background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(230,184,0,0.08))",
+                        color: "#0D9488",
                         fontFamily: "'Sora', sans-serif",
                         fontSize: "0.95rem",
                         textDecoration: "none",
@@ -347,7 +347,7 @@ export default function Navbar() {
               <Link
                 href="/resources"
                 className="font-bold py-2.5 px-3 block rounded-xl"
-                style={{ color: "#38B54A", textDecoration: "none", fontSize: "1rem" }}
+                style={{ color: "#0D9488", textDecoration: "none", fontSize: "1rem" }}
                 onClick={() => setMenuOpen(false)}
               >
                 All Resources

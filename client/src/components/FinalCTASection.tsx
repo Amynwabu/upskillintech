@@ -30,7 +30,7 @@ export default function FinalCTASection() {
       id="final-cta"
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #38B54A 0%, #2d9e3e 40%, #1a7a2e 100%)",
+        background: "linear-gradient(135deg, #0D9488 0%, #2d9e3e 40%, #1a7a2e 100%)",
         padding: "7rem 0",
       }}
     >

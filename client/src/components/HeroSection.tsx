@@ -22,7 +22,7 @@ export default function HeroSection() {
     >
       {/* Decorative blobs */}
       <div className="absolute top-[-100px] right-[-100px] rounded-full pointer-events-none" style={{ width: 480, height: 480, background: "rgba(13,148,136,0.06)" }} />
-      <div className="absolute bottom-[-80px] left-[-80px] rounded-full pointer-events-none" style={{ width: 320, height: 320, background: "rgba(56,181,74,0.07)" }} />
+      <div className="absolute bottom-[-80px] left-[-80px] rounded-full pointer-events-none" style={{ width: 320, height: 320, background: "rgba(13,148,136,0.07)" }} />
       <div className="absolute top-1/2 left-1/3 rounded-full pointer-events-none" style={{ width: 200, height: 200, background: "rgba(215,119,6,0.04)", transform: "translate(-50%,-50%)" }} />
 
       <div className="container relative z-10">
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
             <h1 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827" }}>
               Understand AI. Adopt It{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Responsibly.
               </span>
             </h1>
@@ -122,7 +122,7 @@ export default function HeroSection() {
       </div>
 
       {/* Stats bar */}
-      <div style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 50%, #38B54A 100%)", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
+      <div style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 50%, #0D9488 100%)", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
         <div className="container py-6">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
             {[

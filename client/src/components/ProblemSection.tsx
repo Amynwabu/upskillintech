@@ -7,8 +7,8 @@ import { Settings, GitBranch, FlaskConical, TrendingDown } from "lucide-react";
 const problems = [
   {
     icon: Settings,
-    color: "#38B54A",
-    bg: "rgba(56,181,74,0.10)",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "Too Many Tools",
     desc: "Thousands of AI tools exist with no clear starting point — professionals feel overwhelmed before they even begin.",
   },
@@ -21,8 +21,8 @@ const problems = [
   },
   {
     icon: FlaskConical,
-    color: "#38B54A",
-    bg: "rgba(56,181,74,0.10)",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "Random Experimentation",
     desc: "AI becomes trial-and-error instead of a productivity engine — leading to frustration, not results.",
   },
@@ -44,7 +44,7 @@ export default function ProblemSection() {
           <span className="section-label mb-5">The Problem</span>
           <h2 className="mt-4 mb-5">
             Why Most Professionals<br />
-            <span style={{ color: "#38B54A" }}>Struggle With AI</span>
+            <span style={{ color: "#0D9488" }}>Struggle With AI</span>
           </h2>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#6B7280" }}>
             We don't just teach AI tools. We help you integrate AI into real work — with structure, strategy, and measurable results.

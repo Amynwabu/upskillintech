@@ -49,7 +49,7 @@ export default function FounderSection() {
             <span className="section-label mb-5">The Voice Behind the Platform</span>
             <h2 className="mt-4 mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
               Insights Grounded in{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #38B54A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Real Research
               </span>
             </h2>

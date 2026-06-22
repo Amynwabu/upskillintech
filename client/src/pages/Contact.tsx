@@ -1,6 +1,6 @@
 /**
  * Contact Page — /contact
- * Design: Green (#38B54A) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Inquiry Categories (4 cards), Contact Form, Alternative Contact
  */
@@ -31,7 +31,7 @@ const inquiryCategories = [
       "General questions about UpskillinTech",
     ],
     cta: "Contact Us",
-    color: "#38B54A",
+    color: "#0D9488",
     value: "General Inquiry",
   },
   {
@@ -79,7 +79,7 @@ const inquiryCategories = [
       "Professional development sessions",
     ],
     cta: "Invite Speaker",
-    color: "#38B54A",
+    color: "#0D9488",
     value: "Speaking & Events",
   },
 ];
@@ -185,7 +185,7 @@ export default function Contact() {
               { label: "Event Organisers", desc: "Inviting speakers" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
-                style={{ background: "rgba(56,181,74,0.10)" }}>
+                style={{ background: "rgba(13,148,136,0.10)" }}>
                 <p className="font-poppins font-semibold text-sm">{item.label}</p>
                 <p className="text-xs opacity-80 mt-0.5">{item.desc}</p>
               </div>
@@ -199,7 +199,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#38B54A" }}>How Can We Help?</span>
+              style={{ background: "#f0faf0", color: "#0D9488" }}>How Can We Help?</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
               Select Your Inquiry Type
             </h2>
@@ -276,7 +276,7 @@ export default function Contact() {
             {/* Left — info */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-                style={{ background: "#f0faf0", color: "#38B54A" }}>Send a Message</span>
+                style={{ background: "#f0faf0", color: "#0D9488" }}>Send a Message</span>
               <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-5" style={{ color: "#1C1C1C" }}>
                 We'd Love to Hear From You
               </h2>
@@ -299,7 +299,7 @@ export default function Contact() {
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-poppins font-bold text-xs text-white"
-                        style={{ background: "#38B54A" }}>
+                        style={{ background: "#0D9488" }}>
                         {item.step}
                       </div>
                       <div>
@@ -318,13 +318,13 @@ export default function Contact() {
                   style={{ borderColor: "#e8e8e8" }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                     style={{ background: "#f0faf0" }}>
-                    <Mail size={18} style={{ color: "#38B54A" }} />
+                    <Mail size={18} style={{ color: "#0D9488" }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>Email</p>
                     <p className="text-sm font-medium" style={{ color: "#1C1C1C" }}>info@upskillintech.com</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#38B54A" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#0D9488" }} />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-xl border transition-all hover:shadow-md group"
@@ -337,7 +337,7 @@ export default function Contact() {
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>LinkedIn</p>
                     <p className="text-sm font-medium" style={{ color: "#1C1C1C" }}>UpskillinTech Official Page</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#38B54A" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#0D9488" }} />
                 </a>
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function Contact() {
                 <div className="rounded-2xl border p-10 text-center" style={{ borderColor: "#e8e8e8" }}>
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
                     style={{ background: "#f0faf0" }}>
-                    <CheckCircle size={32} style={{ color: "#38B54A" }} />
+                    <CheckCircle size={32} style={{ color: "#0D9488" }} />
                   </div>
                   <h3 className="font-poppins font-bold text-xl mb-3" style={{ color: "#1C1C1C" }}>
                     Message Received!
@@ -360,9 +360,9 @@ export default function Contact() {
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", inquiryType: "", message: "" }); setSelectedCategory(null); }}
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all"
-                    style={{ background: "#38B54A", color: "#fff" }}
+                    style={{ background: "#0D9488", color: "#fff" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "#2ea040")}
-                    onMouseLeave={e => (e.currentTarget.style.background = "#38B54A")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "#0D9488")}
                   >
                     Send Another Message
                   </button>
@@ -375,7 +375,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#444" }}>
-                        Name <span style={{ color: "#38B54A" }}>*</span>
+                        Name <span style={{ color: "#0D9488" }}>*</span>
                       </label>
                       <input
                         type="text"
@@ -384,14 +384,14 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, name: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#ddd", color: "#1C1C1C" }}
-                        onFocus={e => (e.target.style.borderColor = "#38B54A")}
+                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
                         onBlur={e => (e.target.style.borderColor = "#ddd")}
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#444" }}>
-                        Email <span style={{ color: "#38B54A" }}>*</span>
+                        Email <span style={{ color: "#0D9488" }}>*</span>
                       </label>
                       <input
                         type="email"
@@ -400,7 +400,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, email: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#ddd", color: "#1C1C1C" }}
-                        onFocus={e => (e.target.style.borderColor = "#38B54A")}
+                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
                         onBlur={e => (e.target.style.borderColor = "#ddd")}
                       />
                     </div>
@@ -416,7 +416,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, organisation: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#ddd", color: "#1C1C1C" }}
-                        onFocus={e => (e.target.style.borderColor = "#38B54A")}
+                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
                         onBlur={e => (e.target.style.borderColor = "#ddd")}
                       />
                     </div>
@@ -430,7 +430,7 @@ export default function Contact() {
                         onChange={e => { setForm({ ...form, inquiryType: e.target.value }); setSelectedCategory(e.target.value); }}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#ddd", color: form.inquiryType ? "#1C1C1C" : "#999" }}
-                        onFocus={e => (e.target.style.borderColor = "#38B54A")}
+                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
                         onBlur={e => (e.target.style.borderColor = "#ddd")}
                       >
                         <option value="">Select inquiry type</option>
@@ -440,7 +440,7 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#444" }}>
-                        Message <span style={{ color: "#38B54A" }}>*</span>
+                        Message <span style={{ color: "#0D9488" }}>*</span>
                       </label>
                       <textarea
                         rows={5}
@@ -449,7 +449,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, message: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all resize-none"
                         style={{ borderColor: "#ddd", color: "#1C1C1C" }}
-                        onFocus={e => (e.target.style.borderColor = "#38B54A")}
+                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
                         onBlur={e => (e.target.style.borderColor = "#ddd")}
                       />
                     </div>
@@ -458,9 +458,9 @@ export default function Contact() {
                       type="submit"
                       disabled={submitting}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60"
-                      style={{ background: "#38B54A", color: "#fff" }}
+                      style={{ background: "#0D9488", color: "#fff" }}
                       onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#2ea040"; }}
-                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#38B54A"; }}
+                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#0D9488"; }}
                     >
                       {submitting ? "Sending…" : <><Send size={15} /> Send Message</>}
                     </button>
@@ -480,7 +480,7 @@ export default function Contact() {
       <section className="section-py" style={{ background: "#f8faf8" }}>
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-            style={{ background: "#f0faf0", color: "#38B54A" }}>Other Ways to Connect</span>
+            style={{ background: "#f0faf0", color: "#0D9488" }}>Other Ways to Connect</span>
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3" style={{ color: "#1C1C1C" }}>
             Find Us Online
           </h2>
@@ -495,7 +495,7 @@ export default function Contact() {
                 label: "Email",
                 value: "info@upskillintech.com",
                 href: "mailto:info@upskillintech.com",
-                color: "#38B54A",
+                color: "#0D9488",
               },
               {
                 icon: Linkedin,
@@ -544,7 +544,7 @@ export default function Contact() {
 
           {/* Response time note */}
           <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm"
-            style={{ background: "#f0faf0", color: "#38B54A" }}>
+            style={{ background: "#f0faf0", color: "#0D9488" }}>
             <CheckCircle size={15} />
             We aim to respond to all inquiries within 2 business days.
           </div>
@@ -553,7 +553,7 @@ export default function Contact() {
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="py-14"
-        style={{ background: "linear-gradient(135deg, #38B54A 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Start Your AI Journey?
@@ -572,7 +572,7 @@ export default function Contact() {
             </a>
             <a href="/enterprise"
               className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#38B54A"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Enterprise Solutions
             </a>

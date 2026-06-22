@@ -84,7 +84,7 @@ export default function Footer() {
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                      (e.currentTarget as HTMLElement).style.background = "#38B54A";
+                      (e.currentTarget as HTMLElement).style.background = "#0D9488";
                       (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={(e) => {
@@ -116,7 +116,7 @@ export default function Footer() {
                       href={link.href}
                       className="transition-colors duration-200"
                       style={{ fontSize: "0.925rem", color: "rgba(255,255,255,0.45)", textDecoration: "none", lineHeight: 1.5 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#38B54A"; }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
                     >
                       {link.label}
@@ -146,7 +146,7 @@ export default function Footer() {
                 href={item.href}
                 className="transition-colors duration-200"
                 style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.30)", textDecoration: "none" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#38B54A"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.30)"; }}
               >
                 {item.label}

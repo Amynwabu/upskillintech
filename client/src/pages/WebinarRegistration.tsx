@@ -1,27 +1,54 @@
 import { useState } from "react";
+import { Link } from "wouter";
+import { CheckCircle2, Calendar, Clock, Users, ArrowLeft, Sparkles, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, Calendar, Clock, Users } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { useNotifications } from "@/hooks/useNotifications";
+
+const MASTERCLASS_TITLE = "Build, Brand & Grow with AI";
+const MASTERCLASS_SUBTITLE = "Transform Your Knowledge into a Business, Brand & Revenue Stream";
+const MASTERCLASS_TIME = "2PM – 4PM UK / Nigeria Time";
+const MASTERCLASS_DURATION = "2-hour live hands-on session";
+const MASTERCLASS_PRICE = "£50 / ₦50,000";
+
+const SESSIONS = [
+  {
+    label: "Session 1 — Saturday, 18 July 2026",
+    webinarDate: "Saturday, 18 July 2026 - 2PM UK / Nigeria Time",
+    shortDate: "18 July 2026",
+  },
+  {
+    label: "Session 2 — Saturday, 25 July 2026",
+    webinarDate: "Saturday, 25 July 2026 - 2PM UK / Nigeria Time",
+    shortDate: "25 July 2026",
+  },
+];
+
+const CURRICULUM = [
+  { emoji: "💡", text: "Discover profitable business opportunities" },
+  { emoji: "🎯", text: "Identify and attract your ideal audience" },
+  { emoji: "📋", text: "Create a professional business plan" },
+  { emoji: "🎨", text: "Build a memorable brand" },
+  { emoji: "🌐", text: "Launch your website" },
+  { emoji: "📅", text: "Generate 30 days of content in minutes" },
+  { emoji: "🎥", text: "Create videos, podcasts and marketing assets" },
+  { emoji: "⚙️", text: "Automate repetitive tasks and workflows" },
+  { emoji: "📈", text: "Grow your business with AI" },
+];
 
 export default function WebinarRegistration() {
   const { showNotification } = useNotifications();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    role: "",
-  });
+  const [selectedSession, setSelectedSession] = useState(0);
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", company: "", role: "" });
 
   const registerMutation = trpc.webinar.register.useMutation({
     onSuccess: () => {
       setIsSubmitted(true);
-      showNotification("Registration Successful!", "Check your email for the Zoom link and webinar details.", "success");
+      showNotification("Registration Confirmed!", "Check your email for your joining details.", "success");
     },
     onError: (error) => {
       showNotification("Registration Failed", error.message || "Please try again later.", "error");
@@ -30,57 +57,61 @@ export default function WebinarRegistration() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const session = SESSIONS[selectedSession];
     registerMutation.mutate({
       ...formData,
-      webinarTitle: "Build the Right AI Skillset",
-      webinarDate: "Saturday, 17 January 2026 - 7PM UK / 8PM Nigeria",
+      webinarTitle: MASTERCLASS_TITLE,
+      webinarDate: session.webinarDate,
     });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   if (isSubmitted) {
+    const session = SESSIONS[selectedSession];
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
-        <Card className="max-w-2xl w-full bg-white/95 backdrop-blur">
-          <CardHeader className="text-center space-y-4">
-            <div className="mx-auto w-20 h-20 rounded-full bg-teal-100 flex items-center justify-center">
-              <CheckCircle2 className="w-12 h-12 text-teal-600" />
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #0D9488 0%, #111827 60%)" }}>
+        <Card className="max-w-2xl w-full bg-white/97 shadow-2xl">
+          <CardHeader className="text-center space-y-4 pb-4">
+            <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
+              <CheckCircle2 className="w-12 h-12" style={{ color: "#0D9488" }} />
             </div>
-            <CardTitle className="text-3xl font-bold">You're Registered!</CardTitle>
-            <CardDescription className="text-lg">
-              Thank you for registering for "Build the Right AI Skillset" webinar.
+            <CardTitle className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>
+              You're Registered!
+            </CardTitle>
+            <CardDescription className="text-base" style={{ color: "#6B7280" }}>
+              You've secured your seat for <strong>{MASTERCLASS_TITLE}</strong> with Dr. Amaka Adiuku.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="bg-slate-50 rounded-lg p-6 space-y-4">
-              <h3 className="font-semibold text-lg">What's Next?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-                  <span>Check your email for the Zoom link and calendar invite</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-                  <span>Mark your calendar for Saturday, 17 January 2026</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-teal-600 mt-0.5 flex-shrink-0" />
-                  <span>You'll receive a reminder email 24 hours before the webinar</span>
-                </li>
+            <div className="rounded-xl p-5 space-y-3" style={{ background: "#F7F8FA", border: "1px solid #E5E7EB" }}>
+              <div className="flex items-center gap-2 font-semibold" style={{ color: "#111827", fontFamily: "'Sora', sans-serif" }}>
+                <Calendar className="w-4 h-4" style={{ color: "#0D9488" }} /> {session.shortDate} · 2PM – 4PM UK / Nigeria Time
+              </div>
+              <p className="text-sm" style={{ color: "#6B7280" }}>What happens next:</p>
+              <ul className="space-y-2">
+                {[
+                  "Check your email for the Zoom link and calendar invite",
+                  `Mark your calendar: ${session.label}`,
+                  "You'll receive a reminder 24 hours before the session",
+                  "Your free 1-on-1 AI Transformation Session will be booked after the class",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#374151" }}>
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#0D9488" }} />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="text-center text-sm text-muted-foreground">
-              Can't find the email? Check your spam folder or contact us at{" "}
-              <a href="mailto:amaka.adiuku@gmail.com" className="text-teal-600 hover:underline">
-                amaka.adiuku@gmail.com
-              </a>
-            </div>
+            <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
+              Can't find the email? Check your spam folder or contact{" "}
+              <a href="mailto:amaka.adiuku@gmail.com" style={{ color: "#0D9488" }}>amaka.adiuku@gmail.com</a>
+            </p>
+            <Link href="/masterclass" className="block text-center text-sm font-semibold" style={{ color: "#0D9488" }}>
+              ← Back to Masterclass page
+            </Link>
           </CardContent>
         </Card>
       </div>
@@ -88,161 +119,168 @@ export default function WebinarRegistration() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Hero Section with Flyer */}
-      <div className="mx-auto box-border w-full max-w-7xl overflow-hidden px-4 py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
-          {/* Webinar Flyer */}
-          <div className="order-2 lg:order-1">
-            <img
-              src="/webinar-ai-skillset.png"
-              alt="Build the Right AI Skillset Webinar"
-              className="w-full rounded-2xl shadow-2xl"
-            />
+    <div className="min-h-screen" style={{ background: "linear-gradient(160deg, #0a1628 0%, #111827 50%, #0D3330 100%)" }}>
+      {/* Back link */}
+      <div className="container pt-6">
+        <Link href="/masterclass" className="inline-flex items-center gap-2 text-sm" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>
+          <ArrowLeft size={14} /> Back to Masterclass
+        </Link>
+      </div>
+
+      <div className="container py-10">
+        <div className="grid lg:grid-cols-[1fr_480px] gap-12 items-start max-w-6xl mx-auto">
+
+          {/* ── Left: Masterclass info ── */}
+          <div className="text-white space-y-8">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(13,148,136,0.20)", border: "1px solid rgba(13,148,136,0.35)" }}>
+              <Sparkles size={14} style={{ color: "#0D9488" }} />
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#5EEAD4" }}>
+                AI Transformation Master Class — July 2026
+              </span>
+            </div>
+
+            {/* Title */}
+            <div>
+              <h1 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.1, color: "#ffffff" }}>
+                {MASTERCLASS_TITLE}
+              </h1>
+              <p className="mt-3 text-lg" style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.65 }}>
+                {MASTERCLASS_SUBTITLE}
+              </p>
+            </div>
+
+            {/* Session dates */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              {SESSIONS.map((s) => (
+                <div key={s.shortDate} className="flex items-center gap-3 rounded-xl px-4 py-3" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                  <Calendar size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
+                  <div>
+                    <div className="text-sm font-semibold" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif" }}>{s.shortDate}</div>
+                    <div className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>{MASTERCLASS_TIME}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* What you will learn */}
+            <div>
+              <h2 className="mb-5" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.3rem", color: "#ffffff" }}>
+                What You Will Learn
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {CURRICULUM.map((item) => (
+                  <div key={item.text} className="flex items-start gap-3 rounded-xl px-4 py-3" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)" }}>
+                    <span className="text-xl leading-none mt-0.5">{item.emoji}</span>
+                    <span className="text-sm" style={{ color: "rgba(255,255,255,0.82)", lineHeight: 1.55 }}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 1-on-1 bonus */}
+            <div className="flex items-start gap-4 rounded-2xl p-5" style={{ background: "rgba(230,184,0,0.10)", border: "1px solid rgba(230,184,0,0.25)" }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(230,184,0,0.20)" }}>
+                <Gift size={20} style={{ color: "#E6B800" }} />
+              </div>
+              <div>
+                <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#E6B800" }}>Exclusive Bonus — Included Free</div>
+                <div className="text-sm" style={{ color: "rgba(255,255,255,0.70)", lineHeight: 1.6 }}>
+                  Every participant gets a free 1-on-1 AI Transformation Session with Dr. Amaka — a personalised session tailored to your business, career, and goals.
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Registration Form */}
-          <div className="order-1 lg:order-2">
-            <Card className="bg-white/95 backdrop-blur shadow-2xl">
+          {/* ── Right: Registration form ── */}
+          <div>
+            <Card className="shadow-2xl" style={{ background: "rgba(255,255,255,0.97)" }}>
               <CardHeader className="space-y-3">
-                <div className="inline-block px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium w-fit">
-                  ✨ AI-Powered Career Transformation
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
+                  Limited Seats Available
                 </div>
-                <CardTitle className="text-3xl font-bold">
-                  Register for Free Webinar
+                <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#111827" }}>
+                  Reserve Your Seat
                 </CardTitle>
-                <CardDescription className="text-base">
-                  Secure your spot for this exclusive live session with Dr. Amaka Adiuku
+                <CardDescription style={{ color: "#6B7280" }}>
+                  Secure your place for a live, hands-on session with Dr. Amaka Adiuku
                 </CardDescription>
 
-                {/* Event Details */}
-                <div className="grid grid-cols-1 gap-3 pt-4">
-                  <div className="flex items-center gap-3 text-sm">
-                    <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
-                      <Calendar className="w-5 h-5 text-slate-700" />
-                    </div>
-                    <div>
-                      <div className="font-medium">Saturday, 17 January 2026</div>
-                      <div className="text-muted-foreground">Mark your calendar</div>
-                    </div>
+                {/* Session picker */}
+                <div className="pt-1 space-y-2">
+                  <Label className="text-sm font-semibold" style={{ color: "#374151" }}>Choose your session *</Label>
+                  <div className="space-y-2">
+                    {SESSIONS.map((s, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSelectedSession(i)}
+                        className="w-full flex items-center gap-3 rounded-xl border p-3 text-left transition-all text-sm"
+                        style={{
+                          borderColor: selectedSession === i ? "#0D9488" : "#E5E7EB",
+                          background: selectedSession === i ? "rgba(13,148,136,0.06)" : "#fff",
+                        }}
+                      >
+                        <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center" style={{ borderColor: selectedSession === i ? "#0D9488" : "#D1D5DB" }}>
+                          {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#0D9488" }} />}
+                        </div>
+                        <div>
+                          <div className="font-semibold" style={{ color: "#111827", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
+                          <div className="text-xs" style={{ color: "#6B7280" }}>{MASTERCLASS_TIME} · {MASTERCLASS_DURATION}</div>
+                        </div>
+                      </button>
+                    ))}
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-slate-700" />
-                    </div>
-                    <div>
-                      <div className="font-medium">7PM UK Time | 8PM Nigeria Time</div>
-                      <div className="text-muted-foreground">90-minute live session</div>
-                    </div>
+                </div>
+
+                {/* Meta */}
+                <div className="flex items-center gap-3 pt-1 rounded-xl p-3" style={{ background: "#F7F8FA", border: "1px solid #E5E7EB" }}>
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
+                    <Users size={16} style={{ color: "#0D9488" }} />
                   </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
-                      <Users className="w-5 h-5 text-slate-700" />
-                    </div>
-                    <div>
-                      <div className="font-medium">Limited Spots Available</div>
-                      <div className="text-muted-foreground">Register now to secure your seat</div>
-                    </div>
+                  <div className="text-sm">
+                    <div className="font-semibold" style={{ color: "#111827" }}>{MASTERCLASS_PRICE}</div>
+                    <div style={{ color: "#6B7280" }}>Includes free 1-on-1 session</div>
                   </div>
                 </div>
               </CardHeader>
 
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      placeholder="John Doe"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
+                    <Input id="name" name="name" placeholder="e.g. Amaka Obi" value={formData.name} onChange={handleChange} required />
                   </div>
-
-                  <div className="space-y-2">
+                  <div className="space-y-1.5">
                     <Label htmlFor="email">Email Address *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      placeholder="john@example.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
+                    <Input id="email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} required />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number (Optional)</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="Your phone number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
+                  <div className="space-y-1.5">
+                    <Label htmlFor="phone">Phone Number <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Input id="phone" name="phone" type="tel" placeholder="+44 or +234" value={formData.phone} onChange={handleChange} />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company/Organization (Optional)</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      placeholder="Your Company"
-                      value={formData.company}
-                      onChange={handleChange}
-                    />
+                  <div className="space-y-1.5">
+                    <Label htmlFor="company">Company / Organisation <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Input id="company" name="company" placeholder="Your company" value={formData.company} onChange={handleChange} />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="role">Current Role (Optional)</Label>
-                    <Input
-                      id="role"
-                      name="role"
-                      placeholder="e.g., Marketing Manager, Software Developer"
-                      value={formData.role}
-                      onChange={handleChange}
-                    />
+                  <div className="space-y-1.5">
+                    <Label htmlFor="role">Current Role <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Input id="role" name="role" placeholder="e.g. Marketing Manager, Founder" value={formData.role} onChange={handleChange} />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white font-semibold py-6 text-lg"
+                    className="w-full text-white font-bold py-6 text-base"
+                    style={{ background: "linear-gradient(135deg, #0D9488 0%, #16A34A 100%)", border: "none", fontFamily: "'Sora', sans-serif" }}
                     disabled={registerMutation.isPending}
                   >
-                    {registerMutation.isPending ? "Registering..." : "Secure Your Free Slot Now"}
+                    {registerMutation.isPending ? "Registering…" : `Reserve My Seat — ${MASTERCLASS_PRICE}`}
                   </Button>
 
-                  <p className="text-xs text-center text-muted-foreground">
-                    By registering, you'll receive the Zoom link and event updates via email.
+                  <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
+                    By registering you'll receive the Zoom link and session updates by email.
                   </p>
                 </form>
-              </CardContent>
-            </Card>
-
-            {/* What You'll Learn */}
-            <Card className="mt-6 bg-white/95 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="text-xl">What You'll Learn</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {[
-                    "What AI can do for you",
-                    "Use AI in daily work",
-                    "Kick-start your niche with AI",
-                    "Launch into jobs: from AI-ready CVs to applications and interviews that win the right roles",
-                    "Free tools you can use immediately",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
             </Card>
           </div>

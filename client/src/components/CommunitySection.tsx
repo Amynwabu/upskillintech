@@ -22,7 +22,7 @@ export default function CommunitySection() {
           <div>
             <span className="section-label mb-5">Community</span>
             <h2 className="mt-4 mb-5">
-              Join the UpskillinTech <span style={{ color: "#38B54A" }}>Community</span>
+              Join the UpskillinTech <span style={{ color: "#0D9488" }}>Community</span>
             </h2>
             <p className="mb-8" style={{ fontSize: "1.15rem", color: "#4B5563", lineHeight: 1.75 }}>
               Learn, share workflows, and collaborate with thousands of professionals who are integrating AI into their work and lives.
@@ -30,8 +30,8 @@ export default function CommunitySection() {
             <ul className="flex flex-col gap-5 mb-10">
               {benefits.map((b) => (
                 <li key={b.title} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(56,181,74,0.15)" }}>
-                    <CheckCircle size={18} style={{ color: "#38B54A" }} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(13,148,136,0.15)" }}>
+                    <CheckCircle size={18} style={{ color: "#0D9488" }} />
                   </div>
                   <div>
                     <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
@@ -72,7 +72,7 @@ export default function CommunitySection() {
               >
                 <span style={{ fontSize: "1.5rem" }}>🌍</span>
                 <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#38B54A" }}>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#0D9488" }}>
                     Growing Community
                   </div>
                   <div style={{ fontSize: "0.8rem", color: "#6B7280" }}>Professionals across Africa & beyond</div>

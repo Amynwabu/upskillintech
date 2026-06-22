@@ -13,24 +13,29 @@ export async function sendWebinarReminders() {
     const now = new Date();
     const targetDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours from now
     
-    // Webinar date: January 17, 2026
-    const webinarDate = new Date('2026-01-17T19:00:00Z'); // 7PM UK time
-    
-    // Check if webinar is approximately 24 hours away (within a 2-hour window)
-    const timeDiff = webinarDate.getTime() - now.getTime();
-    const hoursUntilWebinar = timeDiff / (1000 * 60 * 60);
-    
-    console.log(`[WebinarReminders] Hours until webinar: ${hoursUntilWebinar.toFixed(2)}`);
-    
-    // Only send reminders if webinar is between 23-25 hours away
-    if (hoursUntilWebinar < 23 || hoursUntilWebinar > 25) {
-      console.log('[WebinarReminders] Not time to send reminders yet (must be 24h before webinar)');
+    // Master Class sessions — last two Saturdays of July 2026
+    const sessions = [
+      { date: new Date('2026-07-18T13:00:00Z'), label: 'Saturday, 18 July 2026', shortDate: '18 July 2026' },
+      { date: new Date('2026-07-25T13:00:00Z'), label: 'Saturday, 25 July 2026', shortDate: '25 July 2026' },
+    ];
+
+    const upcomingSession = sessions.find((s) => {
+      const hoursUntil = (s.date.getTime() - now.getTime()) / (1000 * 60 * 60);
+      return hoursUntil >= 23 && hoursUntil <= 25;
+    });
+
+    if (!upcomingSession) {
+      console.log('[WebinarReminders] Not time to send reminders yet (must be 24h before a session)');
       return { sent: 0, message: 'Not time to send reminders' };
     }
-    
-    // Get all registrations that haven't received reminder yet
+
+    console.log(`[WebinarReminders] Sending reminders for session: ${upcomingSession.label}`);
+
+    // Get registrations for this specific session that haven't had a reminder
     const registrations = await getAllWebinarRegistrations();
-    const pendingReminders = registrations.filter((reg: any) => !reg.reminderSent);
+    const pendingReminders = registrations.filter(
+      (reg: any) => !reg.reminderSent && reg.webinarDate?.includes(upcomingSession.shortDate)
+    );
     
     console.log(`[WebinarReminders] Found ${pendingReminders.length} registrations pending reminder`);
     
@@ -49,9 +54,9 @@ export async function sendWebinarReminders() {
           registration.email,
           registration.name,
           {
-            title: 'Build the Right AI Skillset',
-            date: 'Saturday, 17 January 2026',
-            time: '7PM UK time, 8PM Nigeria Time',
+            title: 'Build, Brand & Grow with AI — AI Transformation Master Class',
+            date: upcomingSession.label,
+            time: '2PM – 4PM UK / Nigeria Time',
             zoomLink: 'https://shorturl.at/2yAwE'
           }
         );
