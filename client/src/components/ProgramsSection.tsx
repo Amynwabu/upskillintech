@@ -6,40 +6,40 @@ import { Briefcase, BookOpen, Users, Zap, ArrowRight } from "lucide-react";
 
 const programs = [
   {
-    icon: Briefcase,
-    color: "#0D9488",
-    bg: "rgba(13,148,136,0.10)",
-    title: "AI-Enabled Professional",
-    subtitle: "For Working Professionals",
-    desc: "Learn to integrate AI tools into your daily work — from writing and analysis to decision-making and client communication.",
-    outcomes: ["Save 5–10 hrs/week", "AI-powered workflows", "Practical certification"],
-  },
-  {
     icon: BookOpen,
-    color: "#8B9E1A",
-    bg: "rgba(139,158,26,0.10)",
-    title: "AI Foundations",
-    subtitle: "For Beginners",
-    desc: "Start your AI journey with a structured, beginner-friendly programme that builds real confidence with AI tools from day one.",
-    outcomes: ["No prior experience needed", "Hands-on projects", "Community support"],
-  },
-  {
-    icon: Users,
     color: "#0D9488",
     bg: "rgba(13,148,136,0.10)",
-    title: "AI Leadership",
-    subtitle: "For Educators & Leaders",
-    desc: "Designed for pastors, educators, and community leaders who want to lead AI adoption and inspire others to embrace the future.",
-    outcomes: ["Lead AI strategy", "Inspire your team", "Community impact"],
+    title: "AI Starter Bootcamp",
+    subtitle: "For Beginners",
+    desc: "Understand AI and start using it confidently — with no technical background required. Build practical skills from day one.",
+    outcomes: ["No prior experience needed", "Hands-on tools & prompts", "Community support"],
+  },
+  {
+    icon: Briefcase,
+    color: "#16A34A",
+    bg: "rgba(22,163,74,0.10)",
+    title: "AI Productivity for Everyday Work",
+    subtitle: "For Professionals & Individuals",
+    desc: "Use AI for emails, planning, writing, research, documents, and presentations — and save hours every single week.",
+    outcomes: ["Save 5–10 hrs/week", "Real workflow practice", "Practical certification"],
   },
   {
     icon: Zap,
-    color: "#E6B800",
-    bg: "rgba(230,184,0,0.12)",
-    title: "AI Automation & Workflows",
-    subtitle: "For Productivity Seekers",
-    desc: "Build powerful AI-powered productivity systems that automate repetitive tasks and free up your time for high-value work.",
-    outcomes: ["Automate repetitive tasks", "Custom AI workflows", "ROI-focused results"],
+    color: "#D97706",
+    bg: "rgba(217,119,6,0.10)",
+    title: "AI Automation Sprint",
+    subtitle: "For Solopreneurs & Business Owners",
+    desc: "Automate repetitive tasks, customer communication, content workflows, and business admin — using tools you already have.",
+    outcomes: ["Automate client workflows", "Save hours every week", "ROI-focused results"],
+  },
+  {
+    icon: Users,
+    color: "#7C3AED",
+    bg: "rgba(124,58,237,0.10)",
+    title: "AI Adoption for Leaders & Teams",
+    subtitle: "For Business Owners, Churches & Organisations",
+    desc: "Structured AI adoption for teams — covering training, workflow redesign, governance, and safe, responsible implementation.",
+    outcomes: ["Team-wide AI confidence", "Custom adoption roadmap", "Safe AI governance"],
   },
 ];
 
@@ -49,16 +49,16 @@ export default function ProgramsSection() {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="section-label mb-5">Our Programmes</span>
+          <span className="section-label mb-5">Programmes &amp; Bootcamps</span>
           <h2 className="mt-4 mb-4">
-            UpskillinTech <span style={{ color: "#0D9488" }}>Programs</span>
+            Find your <span style={{ color: "#0D9488" }}>AI adoption path</span>
           </h2>
           <div className="flex justify-center gap-1.5 mb-5">
             <div style={{ width: 64, height: 4, background: "#0D9488", borderRadius: 2 }} />
             <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
           </div>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#6B7280" }}>
-            Structured learning paths designed for real-world results — not just certificates.
+            Practical AI adoption programmes for every starting point — from complete beginner to team-wide implementation.
           </p>
         </div>
 

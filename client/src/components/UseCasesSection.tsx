@@ -1,46 +1,79 @@
-import { Clock, FileText, BarChart2, Users, Repeat, Inbox } from "lucide-react";
+import {
+  Mail, Calendar, PenLine, Search, BarChart2, Users,
+  Repeat, Inbox, MonitorSmartphone, FileText, BookOpen, Church,
+} from "lucide-react";
 
 const cases = [
   {
-    icon: FileText,
-    who: "A solopreneur",
-    task: "drafts client proposals",
-    outcome: "in 20 minutes instead of two hours.",
+    icon: Mail,
+    title: "AI for Emails",
+    outcome: "Write clearer replies, follow-ups, proposals, and customer messages in minutes.",
     color: "#0D9488",
   },
   {
-    icon: Clock,
-    who: "A business owner",
-    task: "turns meeting notes into action items and follow-up emails",
-    outcome: "automatically, with no manual write-up.",
+    icon: PenLine,
+    title: "AI for Social Media Content",
+    outcome: "Build a full content calendar and write posts in your voice — weeks of content in one session.",
     color: "#16A34A",
   },
   {
-    icon: BarChart2,
-    who: "A working professional",
-    task: "researches a topic, summarises long reports, and preps for a presentation",
-    outcome: "in a fraction of the usual time.",
+    icon: FileText,
+    title: "AI for Business Admin",
+    outcome: "Draft proposals, invoices, SOPs, and reports without starting from a blank page.",
     color: "#D97706",
   },
   {
     icon: Users,
-    who: "A team leader",
-    task: "creates a first draft of their team's onboarding documents",
-    outcome: "from a quick briefing note, not from scratch.",
+    title: "AI for Customer Service",
+    outcome: "Respond faster, personalise messages, and handle common enquiries automatically.",
+    color: "#7C3AED",
+  },
+  {
+    icon: BarChart2,
+    title: "AI for Excel & Data",
+    outcome: "Analyse spreadsheets, spot trends, and turn numbers into clear summaries without formulas.",
+    color: "#DB2777",
+  },
+  {
+    icon: MonitorSmartphone,
+    title: "AI for Presentations",
+    outcome: "Turn a brief into a structured slide deck with key messages and speaker notes in minutes.",
+    color: "#0D9488",
+  },
+  {
+    icon: Search,
+    title: "AI for Research",
+    outcome: "Gather information, summarise long documents, and compare sources at speed.",
+    color: "#16A34A",
+  },
+  {
+    icon: Calendar,
+    title: "AI for Meetings & Notes",
+    outcome: "Transcribe, summarise, and turn meeting notes into action plans automatically.",
+    color: "#D97706",
+  },
+  {
+    icon: Inbox,
+    title: "AI for Personal Planning",
+    outcome: "Plan your week, track goals, organise tasks, and stay on top of life without the overwhelm.",
     color: "#7C3AED",
   },
   {
     icon: Repeat,
-    who: "A content creator",
-    task: "repurposes one piece of content into five formats",
-    outcome: "for LinkedIn, email, Instagram, a blog, and a short video script.",
+    title: "AI for Solopreneur Workflows",
+    outcome: "Automate client onboarding, content creation, and follow-ups so you can focus on delivery.",
+    color: "#DB2777",
+  },
+  {
+    icon: BookOpen,
+    title: "AI for Small Business Marketing",
+    outcome: "Create campaigns, write ad copy, design visuals, and reach more customers with less effort.",
     color: "#0D9488",
   },
   {
-    icon: Inbox,
-    who: "An individual",
-    task: "manages their inbox, plans their week, and tracks key tasks",
-    outcome: "using AI to stay on top of things without the overwhelm.",
+    icon: Church,
+    title: "AI for Churches & Community Groups",
+    outcome: "Write sermons, newsletters, event plans, and community communications faster and more consistently.",
     color: "#16A34A",
   },
 ];
@@ -49,40 +82,41 @@ export default function UseCasesSection() {
   return (
     <section
       id="use-cases"
-      aria-label="Everyday AI use cases"
+      aria-label="What you can do with AI"
       className="section-py"
       style={{ background: "white" }}
     >
       <div className="container">
-        <div className="text-center mb-14" style={{ maxWidth: 600, margin: "0 auto 3.5rem" }}>
-          <span className="section-label">Everyday AI</span>
+        <div className="text-center mb-14" style={{ maxWidth: 620, margin: "0 auto 3.5rem" }}>
+          <span className="section-label">What You Can Actually Do With AI</span>
           <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
-            What can you actually do with AI?
+            Real tasks. Real results. No jargon.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#6B7280", lineHeight: 1.7 }}>
-            Not theory. Not demos. Real tasks that real people do every day — made faster, easier, and better with AI.
+            Not theory. Not demos. Practical outcomes that individuals, solopreneurs, business owners, and teams achieve every day with AI.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {cases.map((c, i) => {
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {cases.map((c) => {
             const Icon = c.icon;
             return (
               <div
-                key={i}
-                className="rounded-2xl p-6"
+                key={c.title}
+                className="rounded-2xl p-5"
                 style={{ background: "#F9F8F6", border: "1px solid #E5E7EB" }}
               >
                 <div
-                  className="flex items-center justify-center rounded-xl mb-4"
-                  style={{ width: 40, height: 40, background: `${c.color}12` }}
+                  className="flex items-center justify-center rounded-xl mb-3"
+                  style={{ width: 38, height: 38, background: `${c.color}12` }}
                 >
-                  <Icon size={20} style={{ color: c.color }} />
+                  <Icon size={18} style={{ color: c.color }} />
                 </div>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#111827", lineHeight: 1.65 }}>
-                  <strong style={{ fontWeight: 600 }}>{c.who}</strong>{" "}
-                  <span style={{ color: "#374151" }}>{c.task} — </span>
-                  <span style={{ color: c.color, fontWeight: 600 }}>{c.outcome}</span>
+                <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#111827", marginBottom: "0.5rem" }}>
+                  {c.title}
+                </h3>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8375rem", color: "#6B7280", lineHeight: 1.6 }}>
+                  {c.outcome}
                 </p>
               </div>
             );

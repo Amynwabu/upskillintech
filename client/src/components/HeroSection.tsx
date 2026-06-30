@@ -50,7 +50,7 @@ export default function HeroSection() {
                   letterSpacing: "0.02em",
                 }}
               >
-                Practical AI Education &amp; Adoption
+                Practical AI Adoption — No Technical Background Required
               </span>
             </div>
 
@@ -64,9 +64,9 @@ export default function HeroSection() {
                 marginBottom: "1.25rem",
               }}
             >
-              Use AI confidently —{" "}
+              Move from AI Curiosity to{" "}
               <span style={{ color: "#0D9488" }}>
-                in your work, your business, your life.
+                Practical AI Adoption.
               </span>
             </h1>
 
@@ -80,8 +80,9 @@ export default function HeroSection() {
                 maxWidth: 560,
               }}
             >
-              Practical AI education and support for individuals, solopreneurs, business owners,
-              and teams who want to use AI responsibly and get real results.
+              UpskillinTech helps individuals, solopreneurs, business owners, and teams use AI
+              confidently for productivity, content, planning, automation, and smarter work —
+              start where you are, no technical background required.
             </p>
 
             <div
@@ -104,10 +105,10 @@ export default function HeroSection() {
                 }}
               >
                 <Download size={18} />
-                Get the free AI toolkit
+                Start Your AI Adoption Journey
               </a>
               <a
-                href="#programs"
+                href="/resources/ai-guides"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -124,7 +125,7 @@ export default function HeroSection() {
                   transition: "border-color 0.15s, color 0.15s",
                 }}
               >
-                Explore programmes
+                Explore Free AI Tools &amp; Guides
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -154,7 +155,7 @@ export default function HeroSection() {
               >
                 <img
                   src={HERO_IMG}
-                  alt="Professionals using AI tools in a collaborative work setting"
+                  alt="African-led multicultural group learning practical AI tools in a modern workspace"
                   width={520}
                   height={400}
                   loading="eager"
