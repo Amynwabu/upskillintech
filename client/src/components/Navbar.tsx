@@ -131,6 +131,7 @@ export default function Navbar() {
               src={LOGO_URL}
               alt="UpskillinTech"
               style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(1.15) saturate(1.25)" }}
             />
           </Link>
 

@@ -28,6 +28,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
         <Navbar />
         <main className="container flex flex-1 items-center justify-center pt-[92px]">
           <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6 rounded-lg bg-[#151B23] p-8 text-center shadow-sm">
+          <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6 rounded-lg bg-white p-8 text-center shadow-sm">
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">
                 Sign in to continue
