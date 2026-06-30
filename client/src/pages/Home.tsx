@@ -7,6 +7,7 @@ import UseCasesSection from "@/components/UseCasesSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
 import ProgramsSection from "@/components/ProgramsSection";
+import MasterclassPromo from "@/components/MasterclassPromo";
 import WorkflowsSection from "@/components/WorkflowsSection";
 import EnterpriseSection from "@/components/EnterpriseSection";
 import CommunitySection from "@/components/CommunitySection";
@@ -29,6 +30,7 @@ export default function Home() {
         <ProblemSection />
         <SolutionSection />
         <ProgramsSection />
+        <MasterclassPromo />
         <WorkflowsSection />
         <EnterpriseSection />
         <CommunitySection />
