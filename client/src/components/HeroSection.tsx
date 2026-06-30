@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 
-const HERO_IMG = "/upskilling-professionals.png";
+const HERO_IMG = "/training-diverse-team.jpg";
 
 export default function HeroSection() {
   return (
@@ -145,21 +145,22 @@ export default function HeroSection() {
 
           {/* Right: Photo */}
           <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-            <div style={{ position: "relative", maxWidth: 520, width: "100%" }}>
+            <div style={{ position: "relative", maxWidth: 600, width: "100%" }}>
               <div
                 style={{
-                  borderRadius: "1.25rem",
+                  borderRadius: "1.5rem",
                   overflow: "hidden",
-                  boxShadow: "0 24px 64px rgba(0,0,0,0.12)",
+                  boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
+                  border: "4px solid rgba(13,148,136,0.12)",
                 }}
               >
                 <img
                   src={HERO_IMG}
-                  alt="African-led multicultural group learning practical AI tools in a modern workspace"
-                  width={520}
-                  height={400}
+                  alt="Diverse African and multicultural professionals learning practical AI tools together"
+                  width={600}
+                  height={460}
                   loading="eager"
-                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                  style={{ width: "100%", height: "460px", display: "block", objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
               <div

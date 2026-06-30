@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { Link } from "wouter";
 
 export default function WebinarPromoBanner() {
@@ -7,16 +7,16 @@ export default function WebinarPromoBanner() {
       <div className="container">
         <div className="flex flex-col gap-2 py-3 text-white sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif" }}>
-            <Calendar size={16} />
-            <span>Free webinar: Build practical AI skills for work</span>
+            <Zap size={16} color="#E6B800" />
+            <span>July AI Masterclass — Live practical sessions with Dr. Amaka</span>
             <span className="hidden md:inline" style={{ color: "rgba(255,255,255,0.82)", fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}>
-              Live sessions and replays available
+              ₦50,000 · £50 · Limited spots
             </span>
           </div>
           <Link
-            href="/resources/webinars"
+            href="/masterclass"
             className="inline-flex items-center gap-1 text-sm font-bold text-white underline-offset-4 hover:underline"
-            style={{ fontFamily: "'Sora', sans-serif", textDecoration: "none" }}
+            style={{ fontFamily: "'Sora', sans-serif", textDecoration: "none", whiteSpace: "nowrap" }}
           >
             Reserve your spot <ArrowRight size={15} />
           </Link>
