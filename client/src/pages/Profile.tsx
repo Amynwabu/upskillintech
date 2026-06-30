@@ -69,7 +69,7 @@ export default function Profile() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
-      <main className="flex-1 pt-[92px] pb-12">
+      <main className="flex-1 pt-[72px] pb-12">
         <div className="container">
           {/* Profile Header */}
           <div className="mb-8">

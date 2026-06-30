@@ -13,7 +13,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F7F8FA] pt-[92px]">
+      <div className="min-h-screen bg-[#F7F8FA] pt-[72px]">
         <Navbar />
         <main className="container flex min-h-[calc(100vh-92px)] items-center justify-center">
           <div className="h-10 w-10 animate-spin rounded-full border-4 border-primary/20 border-t-primary" />
@@ -26,9 +26,8 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     return (
       <div className="flex min-h-screen flex-col bg-[#F7F8FA]">
         <Navbar />
-        <main className="container flex flex-1 items-center justify-center pt-[92px]">
+        <main className="container flex flex-1 items-center justify-center pt-[72px]">
           <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6 rounded-lg bg-[#151B23] p-8 text-center shadow-sm">
-          <div className="mx-auto flex w-full max-w-md flex-col items-center gap-6 rounded-lg bg-white p-8 text-center shadow-sm">
             <div>
               <h1 className="text-2xl font-semibold tracking-tight">
                 Sign in to continue

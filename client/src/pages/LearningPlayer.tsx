@@ -179,7 +179,7 @@ export default function LearningPlayer() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
         <div className="flex h-[calc(100vh-5rem)]">
           {/* Sidebar - Module Navigation */}
           <aside className="w-80 border-r border-border bg-muted/30 overflow-y-auto">
