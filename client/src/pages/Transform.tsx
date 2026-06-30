@@ -136,7 +136,7 @@ export default function Transform() {
       
       <main className="flex-1 pt-[76px] pb-12">
         {/* Hero Section */}
-        <section className="py-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
+        <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>

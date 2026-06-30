@@ -94,7 +94,7 @@ export default function Research() {
       <Navbar />
       <main className="flex-1 pt-[76px]">
       {/* Header */}
-      <section className="py-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
+      <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
         <div className="container">
           <Link href="/resources">
             <Button variant="ghost" className="mb-6">
