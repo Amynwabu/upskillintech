@@ -73,24 +73,24 @@ export default function WebinarRegistration() {
     const session = SESSIONS[selectedSession];
     return (
       <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #0D9488 0%, #111827 60%)" }}>
-        <Card className="max-w-2xl w-full bg-white/97 shadow-2xl">
+        <Card className="max-w-2xl w-full bg-[#151B23]/97 shadow-2xl">
           <CardHeader className="text-center space-y-4 pb-4">
             <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
               <CheckCircle2 className="w-12 h-12" style={{ color: "#0D9488" }} />
             </div>
-            <CardTitle className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>
+            <CardTitle className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               You're Registered!
             </CardTitle>
-            <CardDescription className="text-base" style={{ color: "#6B7280" }}>
+            <CardDescription className="text-base" style={{ color: "#9CA3AF" }}>
               You've secured your seat for <strong>{MASTERCLASS_TITLE}</strong> with Dr. Amaka Adiuku.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="rounded-xl p-5 space-y-3" style={{ background: "#F7F8FA", border: "1px solid #E5E7EB" }}>
-              <div className="flex items-center gap-2 font-semibold" style={{ color: "#111827", fontFamily: "'Sora', sans-serif" }}>
+            <div className="rounded-xl p-5 space-y-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
+              <div className="flex items-center gap-2 font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
                 <Calendar className="w-4 h-4" style={{ color: "#0D9488" }} /> {session.shortDate} · 2PM – 4PM UK / Nigeria Time
               </div>
-              <p className="text-sm" style={{ color: "#6B7280" }}>What happens next:</p>
+              <p className="text-sm" style={{ color: "#9CA3AF" }}>What happens next:</p>
               <ul className="space-y-2">
                 {[
                   "Check your email for the Zoom link and calendar invite",
@@ -98,7 +98,7 @@ export default function WebinarRegistration() {
                   "You'll receive a reminder 24 hours before the session",
                   "Your free 1-on-1 AI Transformation Session will be booked after the class",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#374151" }}>
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#D1D5DB" }}>
                     <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#0D9488" }} />
                     {item}
                   </li>
@@ -199,16 +199,16 @@ export default function WebinarRegistration() {
                 <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
                   Limited Seats Available
                 </div>
-                <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#111827" }}>
+                <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#F3F4F6" }}>
                   Reserve Your Seat
                 </CardTitle>
-                <CardDescription style={{ color: "#6B7280" }}>
+                <CardDescription style={{ color: "#9CA3AF" }}>
                   Secure your place for a live, hands-on session with Dr. Amaka Adiuku
                 </CardDescription>
 
                 {/* Session picker */}
                 <div className="pt-1 space-y-2">
-                  <Label className="text-sm font-semibold" style={{ color: "#374151" }}>Choose your session *</Label>
+                  <Label className="text-sm font-semibold" style={{ color: "#D1D5DB" }}>Choose your session *</Label>
                   <div className="space-y-2">
                     {SESSIONS.map((s, i) => (
                       <button
@@ -225,8 +225,8 @@ export default function WebinarRegistration() {
                           {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#0D9488" }} />}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ color: "#111827", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
-                          <div className="text-xs" style={{ color: "#6B7280" }}>{MASTERCLASS_TIME} · {MASTERCLASS_DURATION}</div>
+                          <div className="font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
+                          <div className="text-xs" style={{ color: "#9CA3AF" }}>{MASTERCLASS_TIME} · {MASTERCLASS_DURATION}</div>
                         </div>
                       </button>
                     ))}
@@ -234,13 +234,13 @@ export default function WebinarRegistration() {
                 </div>
 
                 {/* Meta */}
-                <div className="flex items-center gap-3 pt-1 rounded-xl p-3" style={{ background: "#F7F8FA", border: "1px solid #E5E7EB" }}>
+                <div className="flex items-center gap-3 pt-1 rounded-xl p-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
                   <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
                     <Users size={16} style={{ color: "#0D9488" }} />
                   </div>
                   <div className="text-sm">
-                    <div className="font-semibold" style={{ color: "#111827" }}>{MASTERCLASS_PRICE}</div>
-                    <div style={{ color: "#6B7280" }}>Includes free 1-on-1 session</div>
+                    <div className="font-semibold" style={{ color: "#F3F4F6" }}>{MASTERCLASS_PRICE}</div>
+                    <div style={{ color: "#9CA3AF" }}>Includes free 1-on-1 session</div>
                   </div>
                 </div>
               </CardHeader>

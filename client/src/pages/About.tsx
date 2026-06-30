@@ -93,24 +93,24 @@ export default function About() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px), radial-gradient(circle at 80% 20%, #fff 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="container relative z-10 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
-              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
+              <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Enabling People and Organizations to Thrive in the Age of AI
               </h1>
-              <p className="text-lg mb-8 leading-relaxed" style={{ color: "#555" }}>
+              <p className="text-lg mb-8 leading-relaxed" style={{ color: "#9CA3AF" }}>
                 UpskillinTech helps professionals, leaders, and organisations integrate AI into real work, decision-making, and productivity systems — not just as a concept, but as a daily practice.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#1C1C1C", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+                <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#F3F4F6", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <ArrowRight size={16} /> Explore Programs
                 </Link>
-                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <Users size={16} /> Join Community
                 </Link>
               </div>
@@ -121,8 +121,8 @@ export default function About() {
                 {/* Central circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(13,148,136,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
-                    <Brain size={32} style={{ color: "#1C1C1C" }} />
-                    <span className="text-xs font-bold mt-1" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>AI-Enabled</span>
+                    <Brain size={32} style={{ color: "#F3F4F6" }} />
+                    <span className="text-xs font-bold mt-1" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>AI-Enabled</span>
                   </div>
                 </div>
                 {/* Orbit nodes */}
@@ -138,8 +138,8 @@ export default function About() {
                   return (
                     <div key={label} className="absolute flex flex-col items-center" style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}>
                       <div className="w-14 h-14 rounded-full flex flex-col items-center justify-center" style={{ background: "rgba(255,255,255,0.25)", border: "2px solid rgba(255,255,255,0.50)" }}>
-                        <div style={{ color: "#1C1C1C" }}>{icon}</div>
-                        <span className="text-xs font-bold" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>{label}</span>
+                        <div style={{ color: "#F3F4F6" }}>{icon}</div>
+                        <span className="text-xs font-bold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{label}</span>
                       </div>
                     </div>
                   );
@@ -156,7 +156,7 @@ export default function About() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "1,000+", l: "Professionals Trained" }, { v: "50+", l: "Organisations Engaged" }, { v: "2,500+", l: "Community Members" }, { v: "95%", l: "Satisfaction Rate" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -166,18 +166,18 @@ export default function About() {
       </section>
 
       {/* ── 2. MISSION ──────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#fff" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="section-label">Our Mission</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Bridging the Gap Between AI Awareness and AI Productivity
               </h2>
-              <p className="text-lg leading-relaxed mb-6" style={{ color: "#4B5563" }}>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "#D1D5DB" }}>
                 Most professionals know AI exists. Very few know how to make it work for them. UpskillinTech exists to close that gap — not through theory, but through structured, practical learning that changes how people work every day.
               </p>
-              <p className="leading-relaxed" style={{ color: "#6B7280" }}>
+              <p className="leading-relaxed" style={{ color: "#9CA3AF" }}>
                 We believe that AI literacy is not a technical skill — it is a professional skill. And like every professional skill, it can be taught, practised, and mastered by anyone willing to invest the time.
               </p>
             </div>
@@ -187,8 +187,8 @@ export default function About() {
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-3" style={{ background: `${p.color}15`, color: p.color }}>
                     {p.icon}
                   </div>
-                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{p.desc}</p>
+                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{p.label}</h4>
+                  <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -197,11 +197,11 @@ export default function About() {
       </section>
 
       {/* ── 3. FOUNDER ──────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Founder</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Meet Dr. Amaka Adiuku</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Meet Dr. Amaka Adiuku</h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             {/* Left: Photo + credentials */}
@@ -224,11 +224,11 @@ export default function About() {
                     }}
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
+                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
                   Founder & CEO
                 </div>
               </div>
-              <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Dr. Amaka Adiuku</h3>
+              <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Dr. Amaka Adiuku</h3>
               <p className="text-sm mb-4" style={{ color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
               <div className="flex flex-wrap gap-2">
                 {["AI Research", "Robotics", "Education", "Industry Collaboration"].map(tag => (
@@ -238,20 +238,20 @@ export default function About() {
             </div>
             {/* Right: Bio + expertise blocks */}
             <div>
-              <p className="text-lg leading-relaxed mb-4" style={{ color: "#4B5563" }}>
+              <p className="text-lg leading-relaxed mb-4" style={{ color: "#D1D5DB" }}>
                 UpskillinTech is founded by Dr. Amaka Adiuku, whose work combines artificial intelligence, robotics, and real-world industry applications. Her experience spans research, education, and industry collaboration — enabling the UpskillinTech platform to deliver practical AI learning grounded in real-world impact.
               </p>
-              <p className="leading-relaxed mb-8" style={{ color: "#6B7280" }}>
+              <p className="leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
                 Dr. Adiuku's approach to AI education is shaped by a conviction that practical application matters more than theoretical awareness. Every UpskillinTech programme reflects this philosophy: structured, actionable, and designed to produce measurable change in how professionals work.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {FOUNDER_EXPERTISE.map((e) => (
-                  <div key={e.label} className="p-4 rounded-xl" style={{ background: "#fff", border: "1px solid #E5E7EB", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+                  <div key={e.label} className="p-4 rounded-xl" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${e.color}12`, color: e.color }}>{e.icon}</div>
-                      <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{e.label}</h4>
+                      <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{e.label}</h4>
                     </div>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{e.desc}</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>{e.desc}</p>
                   </div>
                 ))}
               </div>
@@ -294,12 +294,12 @@ export default function About() {
       </section>
 
       {/* ── 5. ECOSYSTEM ────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#fff" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Platform Structure</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>The UpskillinTech Ecosystem</h2>
-            <p className="text-lg max-w-xl mx-auto" style={{ color: "#6B7280" }}>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>The UpskillinTech Ecosystem</h2>
+            <p className="text-lg max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>
               A four-stage journey from AI awareness to community — designed to take professionals from curious to capable.
             </p>
           </div>
@@ -315,8 +315,8 @@ export default function About() {
                   {stage.icon}
                   <span className="absolute -top-2 -right-2 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center text-white" style={{ background: stage.color, fontFamily: "'Sora', sans-serif" }}>{i + 1}</span>
                 </div>
-                <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{stage.label}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>{stage.desc}</p>
+                <h3 className="text-lg font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{stage.label}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{stage.desc}</p>
               </div>
             ))}
           </div>
@@ -329,18 +329,18 @@ export default function About() {
       </section>
 
       {/* ── 6. PARTNERSHIPS ─────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <span className="section-label">Partnerships</span>
-              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+              <h2 className="text-4xl lg:text-5xl font-bold mt-2 mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Collaborating to Advance AI Literacy
               </h2>
-              <p className="text-lg leading-relaxed mb-6" style={{ color: "#4B5563" }}>
+              <p className="text-lg leading-relaxed mb-6" style={{ color: "#D1D5DB" }}>
                 UpskillinTech collaborates with educational institutions, organisations, and industry partners committed to advancing AI literacy and responsible technology adoption.
               </p>
-              <p className="leading-relaxed mb-8" style={{ color: "#6B7280" }}>
+              <p className="leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
                 We believe that AI transformation is most effective when it is community-driven. Our partnerships extend the reach of AI education to professionals and organisations who need it most.
               </p>
               <button
@@ -353,10 +353,10 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {PARTNERSHIP_TYPES.map((p) => (
-                <div key={p.label} className="p-5 rounded-2xl bg-white" style={{ border: "1px solid #E5E7EB", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+                <div key={p.label} className="p-5 rounded-2xl bg-[#151B23]" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#0D948812", color: "#0D9488" }}>{p.icon}</div>
-                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{p.label}</h4>
-                  <p className="text-xs leading-relaxed" style={{ color: "#6B7280" }}>{p.desc}</p>
+                  <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{p.label}</h4>
+                  <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -366,7 +366,7 @@ export default function About() {
             <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>TRUSTED BY ORGANISATIONS AND INSTITUTIONS</p>
             <div className="flex flex-wrap gap-6 justify-center items-center">
               {["Educational Institution", "Research Partner", "Corporate Partner", "Community Organisation", "Faith Community"].map((org) => (
-                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#fff", border: "1.5px solid #E5E7EB", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
+                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#151B23", border: "1.5px solid #1F2937", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
                   {org}
                 </div>
               ))}
@@ -376,7 +376,7 @@ export default function About() {
       </section>
 
       {/* ── 7. IMPACT ───────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
+      <section className="section-py" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(255,255,255,0.20)", color: "#fff", border: "1px solid rgba(255,255,255,0.35)" }}>Our Impact</span>

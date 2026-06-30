@@ -195,20 +195,20 @@ export default function Programs() {
   const [expandedProgram, setExpandedProgram] = useState<string | null>("ai-enabled-professional");
 
   return (
-    <div className="min-h-screen bg-white font-inter">
+    <div className="min-h-screen bg-[#151B23] font-inter">
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section
         className="relative pt-24 pb-16 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}
+        style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}
       >
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
 
-        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-gray-900 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
             style={{ background: "rgba(255,255,255,0.2)" }}>
             <GraduationCap size={12} /> UpskillinTech Programmes
@@ -223,13 +223,13 @@ export default function Programs() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="#programmes"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              style={{ background: "#E6B800", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
               onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
               Explore Programmes <ArrowRight size={16} />
             </a>
             <a href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-gray-900 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all"
               onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
               Talk to Us
@@ -246,7 +246,7 @@ export default function Programs() {
               { value: "95%", label: "Satisfaction Rate" },
               { value: "8hrs", label: "Avg. Time Saved / Week" },
             ].map((stat, i) => (
-              <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
+              <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
                 style={{ background: "rgba(13,148,136,0.10)" }}>
                 <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
@@ -257,15 +257,15 @@ export default function Programs() {
       </section>
 
       {/* ── Programme Cards ───────────────────────────────────────────────── */}
-      <section id="programmes" className="py-20 bg-white">
+      <section id="programmes" className="py-20 bg-[#151B23]">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>Our Programmes</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>Our Programmes</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Choose Your Learning Path
             </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>
               Whether you are just starting out or ready to lead AI transformation,
               there is a programme designed for your level and goals.
             </p>
@@ -279,7 +279,7 @@ export default function Programs() {
                 <div key={prog.id}
                   className="rounded-2xl border overflow-hidden transition-all duration-300"
                   style={{
-                    borderColor: isExpanded ? prog.color : "#e8e8e8",
+                    borderColor: isExpanded ? prog.color : "#1F2937",
                     boxShadow: isExpanded ? `0 4px 24px ${prog.color}20` : "0 1px 4px rgba(0,0,0,0.06)",
                   }}>
                   {/* Card header */}
@@ -294,22 +294,22 @@ export default function Programs() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-1">
-                        <h3 className="font-poppins font-bold text-lg" style={{ color: "#1C1C1C" }}>{prog.title}</h3>
+                        <h3 className="font-poppins font-bold text-lg" style={{ color: "#F3F4F6" }}>{prog.title}</h3>
                         <span className="text-xs font-semibold px-2 py-0.5 rounded-full"
                           style={{ background: `${prog.badgeColor}20`, color: prog.badgeColor }}>
                           {prog.badge}
                         </span>
                       </div>
                       <p className="text-sm font-medium mb-2" style={{ color: prog.color }}>{prog.tagline}</p>
-                      <p className="text-sm leading-relaxed" style={{ color: "#555" }}>{prog.description}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{prog.description}</p>
                       <div className="flex flex-wrap gap-4 mt-3">
-                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#666" }}>
+                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#9CA3AF" }}>
                           <Clock size={12} style={{ color: prog.color }} /> {prog.duration}
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#666" }}>
+                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#9CA3AF" }}>
                           <Users size={12} style={{ color: prog.color }} /> {prog.audience}
                         </span>
-                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#666" }}>
+                        <span className="flex items-center gap-1.5 text-xs" style={{ color: "#9CA3AF" }}>
                           <BookOpen size={12} style={{ color: prog.color }} /> {prog.format}
                         </span>
                       </div>
@@ -340,12 +340,12 @@ export default function Programs() {
                       <div className="grid md:grid-cols-2 gap-8 pt-6">
                         {/* Outcomes */}
                         <div>
-                          <h4 className="font-poppins font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: "#1C1C1C" }}>
+                          <h4 className="font-poppins font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: "#F3F4F6" }}>
                             <Target size={15} style={{ color: prog.color }} /> What You Will Achieve
                           </h4>
                           <ul className="space-y-2.5">
                             {prog.outcomes.map((outcome, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#444" }}>
+                              <li key={i} className="flex items-start gap-2 text-sm" style={{ color: "#D1D5DB" }}>
                                 <CheckCircle size={14} className="mt-0.5 shrink-0" style={{ color: prog.color }} />
                                 {outcome}
                               </li>
@@ -355,7 +355,7 @@ export default function Programs() {
 
                         {/* Modules */}
                         <div>
-                          <h4 className="font-poppins font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: "#1C1C1C" }}>
+                          <h4 className="font-poppins font-semibold text-sm mb-4 flex items-center gap-2" style={{ color: "#F3F4F6" }}>
                             <BookOpen size={15} style={{ color: prog.color }} /> Programme Modules
                           </h4>
                           <div className="space-y-3">
@@ -366,8 +366,8 @@ export default function Programs() {
                                   {mod.num}
                                 </span>
                                 <div>
-                                  <p className="text-sm font-semibold" style={{ color: "#1C1C1C" }}>{mod.title}</p>
-                                  <p className="text-xs mt-0.5" style={{ color: "#666" }}>{mod.desc}</p>
+                                  <p className="text-sm font-semibold" style={{ color: "#F3F4F6" }}>{mod.title}</p>
+                                  <p className="text-xs mt-0.5" style={{ color: "#9CA3AF" }}>{mod.desc}</p>
                                 </div>
                               </div>
                             ))}
@@ -393,15 +393,15 @@ export default function Programs() {
       </section>
 
       {/* ── How It Works ─────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#f8faf8" }}>
+      <section className="section-py" style={{ background: "#11161A" }}>
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>How It Works</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>How It Works</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Your Path to AI Proficiency
             </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>
               A simple, structured process from enrolment to AI-enabled professional.
             </p>
           </div>
@@ -426,8 +426,8 @@ export default function Programs() {
                       {item.step}
                     </span>
                   </div>
-                  <h3 className="font-poppins font-semibold text-base mb-2" style={{ color: "#1C1C1C" }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#666" }}>{item.desc}</p>
+                  <h3 className="font-poppins font-semibold text-base mb-2" style={{ color: "#F3F4F6" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{item.desc}</p>
                 </div>
               );
             })}
@@ -473,32 +473,32 @@ export default function Programs() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#151B23]">
         <div className="max-w-3xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>FAQ</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>FAQ</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Frequently Asked Questions
             </h2>
           </div>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="rounded-xl border overflow-hidden transition-all"
-                style={{ borderColor: openFaq === i ? "#0D9488" : "#e8e8e8" }}>
+                style={{ borderColor: openFaq === i ? "#0D9488" : "#1F2937" }}>
                 <button
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   style={{ background: openFaq === i ? "#f0faf0" : "#fff" }}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
-                  <span className="font-poppins font-semibold text-sm" style={{ color: "#1C1C1C" }}>{faq.q}</span>
+                  <span className="font-poppins font-semibold text-sm" style={{ color: "#F3F4F6" }}>{faq.q}</span>
                   {openFaq === i
                     ? <ChevronUp size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
                     : <ChevronDown size={16} style={{ color: "#999", flexShrink: 0 }} />}
                 </button>
                 {openFaq === i && (
                   <div className="px-5 pb-5">
-                    <p className="text-sm leading-relaxed" style={{ color: "#555" }}>{faq.a}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{faq.a}</p>
                   </div>
                 )}
               </div>
@@ -521,7 +521,7 @@ export default function Programs() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              style={{ background: "#E6B800", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
               onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
               Enrol Now <ArrowRight size={15} />

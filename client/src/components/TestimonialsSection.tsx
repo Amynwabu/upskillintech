@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-sm" style={{ fontFamily: "'Sora', sans-serif" }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif" }}>{t.role} - {t.company}</div>
+                  <div className="text-xs" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>{t.role} - {t.company}</div>
                 </div>
               </div>
             </div>

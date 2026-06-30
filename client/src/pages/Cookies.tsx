@@ -1,20 +1,20 @@
 export default function Cookies() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#151B23]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Cookie Policy</h1>
+        <h1 className="text-4xl font-bold text-[#F3F4F6] mb-8">Cookie Policy</h1>
         <p className="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
 
         <div className="space-y-8 text-gray-700 leading-7">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">1. Introduction</h2>
             <p>
               UpskillinTech ("Company") uses cookies and similar tracking technologies on our website (upskillintech.com) to enhance user experience, analyze usage, and improve our services. This Cookie Policy explains what cookies are, how we use them, and your choices regarding cookies.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. What Are Cookies?</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">2. What Are Cookies?</h2>
             <p>
               Cookies are small text files stored on your device (computer, tablet, or smartphone) when you visit our website. They contain information that helps identify you and remember your preferences.
             </p>
@@ -30,9 +30,9 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Types of Cookies We Use</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">3. Types of Cookies We Use</h2>
 
-            <h3 className="text-xl font-semibold text-gray-800 mt-4 mb-2">3.1 Essential Cookies</h3>
+            <h3 className="text-xl font-semibold text-[#F3F4F6] mt-4 mb-2">3.1 Essential Cookies</h3>
             <p>
               These cookies are strictly necessary for the website to function properly. They enable core functionalities such as:
             </p>
@@ -46,7 +46,7 @@ export default function Cookies() {
               <strong>Consent Required:</strong> No - These cookies are essential for the website to function.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-800 mt-4 mb-2">3.2 Performance Cookies</h3>
+            <h3 className="text-xl font-semibold text-[#F3F4F6] mt-4 mb-2">3.2 Performance Cookies</h3>
             <p>
               These cookies help us understand how visitors use our website, including:
             </p>
@@ -63,7 +63,7 @@ export default function Cookies() {
               <strong>Consent Required:</strong> Yes - Performance cookies require your consent.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-800 mt-4 mb-2">3.3 Functional Cookies</h3>
+            <h3 className="text-xl font-semibold text-[#F3F4F6] mt-4 mb-2">3.3 Functional Cookies</h3>
             <p>
               These cookies remember your preferences and choices, such as:
             </p>
@@ -77,7 +77,7 @@ export default function Cookies() {
               <strong>Consent Required:</strong> Yes - Functional cookies require your consent for non-essential preferences.
             </p>
 
-            <h3 className="text-xl font-semibold text-gray-800 mt-4 mb-2">3.4 Marketing Cookies</h3>
+            <h3 className="text-xl font-semibold text-[#F3F4F6] mt-4 mb-2">3.4 Marketing Cookies</h3>
             <p>
               These cookies track your browsing activity to deliver personalized advertising and content, including:
             </p>
@@ -93,7 +93,7 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Cookie Duration</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">4. Cookie Duration</h2>
             <p>
               Cookies are classified by their lifespan:
             </p>
@@ -107,7 +107,7 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Third-Party Cookies</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">5. Third-Party Cookies</h2>
             <p>
               We allow third-party service providers to place cookies on our website for:
             </p>
@@ -124,7 +124,7 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Your Cookie Choices</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">6. Your Cookie Choices</h2>
             <p>
               You have several options to control cookies:
             </p>
@@ -146,7 +146,7 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Impact of Disabling Cookies</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">7. Impact of Disabling Cookies</h2>
             <p>
               Disabling cookies may affect your experience on our website:
             </p>
@@ -162,7 +162,7 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. GDPR and Cookie Consent</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">8. GDPR and Cookie Consent</h2>
             <p>
               Under UK GDPR and ePrivacy regulations, we must obtain your explicit consent before using non-essential cookies. We use a cookie consent banner to:
             </p>
@@ -178,13 +178,13 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Cookie List</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">9. Cookie List</h2>
             <p>
               Here is a detailed list of the main cookies we use:
             </p>
             <div className="mt-4 overflow-x-auto">
               <table className="w-full border border-gray-300">
-                <thead className="bg-gray-100">
+                <thead className="bg-[#1A2230]">
                   <tr>
                     <th className="border border-gray-300 p-2 text-left">Cookie Name</th>
                     <th className="border border-gray-300 p-2 text-left">Type</th>
@@ -229,18 +229,18 @@ export default function Cookies() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Updates to This Policy</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">10. Updates to This Policy</h2>
             <p>
               We may update this Cookie Policy periodically to reflect changes in our cookie practices, technology, or legal requirements. The updated policy will be posted on this page with an updated "Last updated" date.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Contact Us</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">11. Contact Us</h2>
             <p>
               If you have questions about our cookie practices or this Cookie Policy, please contact us at:
             </p>
-            <div className="mt-4 bg-gray-50 p-4 rounded">
+            <div className="mt-4 bg-[#151B23] p-4 rounded">
               <p><strong>UpskillinTech</strong></p>
               <p>Email: privacy@upskillintech.com</p>
               <p>Website: upskillintech.com</p>

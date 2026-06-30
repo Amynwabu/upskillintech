@@ -51,7 +51,7 @@ export default function ProgramSection() {
               Professional Program
             </span>
           </h2>
-          <p className="text-lg" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
+          <p className="text-lg" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
             A practical program designed to help professionals integrate AI into their daily workflows — from day one.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function ProgramSection() {
                   {beforeItems.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
                       <X size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#DC2626" }} />
-                      <span className="text-sm" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
+                      <span className="text-sm" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -115,11 +115,11 @@ export default function ProgramSection() {
               </div>
 
               {/* Content */}
-              <div className="p-6 flex-1 flex flex-col bg-white">
+              <div className="p-6 flex-1 flex flex-col bg-[#151B23]">
                 <h3 className="font-bold text-xl mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#0F172A" }}>
                   AI-Enabled Professional Program
                 </h3>
-                <p className="text-sm mb-5 leading-relaxed" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif" }}>
+                <p className="text-sm mb-5 leading-relaxed" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                   A structured cohort-based program with live sessions, practical assignments, and peer learning — designed to transform how you work with AI.
                 </p>
 

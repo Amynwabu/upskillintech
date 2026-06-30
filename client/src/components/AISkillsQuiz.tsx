@@ -160,7 +160,7 @@ export default function AISkillsQuiz() {
     const Icon = result.icon;
     return (
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
-        <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.12)", border: "1px solid #E5E7EB" }}>
+        <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.12)", border: "1px solid #1F2937" }}>
           {/* Result header */}
           <div style={{ background: result.gradient, padding: "2.5rem 2rem", textAlign: "center" }}>
             <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}>
@@ -178,27 +178,27 @@ export default function AISkillsQuiz() {
           </div>
 
           {/* Recommended path */}
-          <div style={{ background: "#ffffff", padding: "2rem" }}>
+          <div style={{ background: "#151B23", padding: "2rem" }}>
             <div style={{ marginBottom: "1.5rem" }}>
-              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#111827", marginBottom: "0.5rem" }}>
+              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.5rem" }}>
                 Your recommended next step
               </div>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "#4B5563", lineHeight: 1.65 }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "#D1D5DB", lineHeight: 1.65 }}>
                 {result.next}
               </p>
             </div>
 
             <div style={{ marginBottom: "1.75rem" }}>
-              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#111827", marginBottom: "0.75rem" }}>
+              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.75rem" }}>
                 Recommended for you
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {result.programmes.map((p, i) => (
-                  <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#F9F8F6", borderRadius: "0.625rem", padding: "0.625rem 0.875rem" }}>
+                  <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#0B0F14", borderRadius: "0.625rem", padding: "0.625rem 0.875rem" }}>
                     <div style={{ width: 24, height: 24, borderRadius: "50%", background: result.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.65rem", color: "#fff" }}>{i + 1}</span>
                     </div>
-                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#374151", fontWeight: 500 }}>{p}</span>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", fontWeight: 500 }}>{p}</span>
                   </div>
                 ))}
               </div>
@@ -219,7 +219,7 @@ export default function AISkillsQuiz() {
               <button
                 onClick={handleRestart}
                 style={{
-                  background: "transparent", border: "1.5px solid #D1D5DB", color: "#374151",
+                  background: "transparent", border: "1.5px solid #374151", color: "#D1D5DB",
                   borderRadius: "0.75rem", padding: "0.875rem 1.5rem",
                   fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.9rem", cursor: "pointer",
                 }}
@@ -235,11 +235,11 @@ export default function AISkillsQuiz() {
 
   return (
     <div style={{ maxWidth: 640, margin: "0 auto" }}>
-      <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #E5E7EB", background: "#ffffff" }}>
+      <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #1F2937", background: "#151B23" }}>
         {/* Progress */}
         <div style={{ padding: "1.5rem 2rem 0" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#6B7280" }}>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#9CA3AF" }}>
               Question {step + 1} of {questions.length}
             </span>
             <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#0D9488" }}>
@@ -253,7 +253,7 @@ export default function AISkillsQuiz() {
 
         {/* Question */}
         <div style={{ padding: "1.75rem 2rem 0" }}>
-          <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#111827", lineHeight: 1.4, marginBottom: "1.5rem" }}>
+          <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#F3F4F6", lineHeight: 1.4, marginBottom: "1.5rem" }}>
             {q.question}
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem", marginBottom: "2rem" }}>
@@ -263,7 +263,7 @@ export default function AISkillsQuiz() {
                 onClick={() => handleSelect(opt.value)}
                 style={{
                   textAlign: "left", padding: "0.875rem 1rem", borderRadius: "0.75rem", cursor: "pointer",
-                  border: selected === opt.value ? "2px solid #0D9488" : "1.5px solid #E5E7EB",
+                  border: selected === opt.value ? "2px solid #0D9488" : "1.5px solid #1F2937",
                   background: selected === opt.value ? "rgba(13,148,136,0.06)" : "#ffffff",
                   fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#0D9488" : "#374151",
                   fontWeight: selected === opt.value ? 600 : 400,
@@ -292,7 +292,7 @@ export default function AISkillsQuiz() {
               onClick={handleBack}
               style={{
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                background: "transparent", border: "1.5px solid #E5E7EB", color: "#374151",
+                background: "transparent", border: "1.5px solid #1F2937", color: "#D1D5DB",
                 borderRadius: "0.75rem", padding: "0.875rem 1.25rem",
                 fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.9rem", cursor: "pointer",
               }}

@@ -4,7 +4,7 @@ const HERO_IMG = "/training-diverse-team.jpg";
 
 export default function HeroSection() {
   return (
-    <section aria-label="Hero" style={{ background: "#F9F8F6", paddingTop: "92px" }}>
+    <section aria-label="Hero" style={{ background: "#0B0F14", paddingTop: "92px" }}>
       <div className="container">
         <div
           style={{
@@ -59,7 +59,7 @@ export default function HeroSection() {
                 fontFamily: "'Sora', sans-serif",
                 fontWeight: 800,
                 fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
-                color: "#111827",
+                color: "#F3F4F6",
                 lineHeight: 1.1,
                 marginBottom: "1.25rem",
               }}
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1.15rem",
                 lineHeight: 1.75,
-                color: "#374151",
+                color: "#D1D5DB",
                 marginBottom: "2.25rem",
                 maxWidth: 560,
               }}
@@ -116,12 +116,12 @@ export default function HeroSection() {
                   fontSize: "1rem",
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 600,
-                  color: "#111827",
+                  color: "#F3F4F6",
                   textDecoration: "none",
                   padding: "0.9rem 1.75rem",
                   borderRadius: "0.75rem",
-                  border: "1.5px solid #D1D5DB",
-                  background: "white",
+                  border: "1.5px solid #374151",
+                  background: "#151B23",
                   transition: "border-color 0.15s, color 0.15s",
                 }}
               >
@@ -134,12 +134,12 @@ export default function HeroSection() {
               style={{
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "0.875rem",
-                color: "#6B7280",
+                color: "#9CA3AF",
               }}
             >
               Trusted by{" "}
-              <strong style={{ color: "#111827" }}>1,000+ professionals</strong> across{" "}
-              <strong style={{ color: "#111827" }}>20+ countries</strong> — founded by a PhD AI researcher.
+              <strong style={{ color: "#F3F4F6" }}>1,000+ professionals</strong> across{" "}
+              <strong style={{ color: "#F3F4F6" }}>20+ countries</strong> — founded by a PhD AI researcher.
             </p>
           </div>
 
@@ -193,7 +193,7 @@ export default function HeroSection() {
                     style={{
                       fontFamily: "'DM Sans', sans-serif",
                       fontSize: "0.75rem",
-                      color: "#6B7280",
+                      color: "#9CA3AF",
                     }}
                   >
                     Adopting AI Responsibly

@@ -45,14 +45,14 @@ export default function NewsletterArchive() {
       <main className="flex-1 pt-[92px]">
 
         {/* ── Breadcrumb ── */}
-        <div style={{ background: "#F9FAFB", borderBottom: "1px solid #E5E7EB", padding: "14px 0" }}>
+        <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
-            <div className="flex items-center gap-2 text-sm" style={{ color: "#6B7280" }}>
+            <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
               <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
               <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
-              <span style={{ color: "#374151" }}>Archive</span>
+              <span style={{ color: "#D1D5DB" }}>Archive</span>
             </div>
           </div>
         </div>
@@ -65,10 +65,10 @@ export default function NewsletterArchive() {
                 style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488" }}>
                 <Mail size={16} /> Newsletter Archive
               </div>
-              <h1 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#111827", lineHeight: 1.2 }}>
+              <h1 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#F3F4F6", lineHeight: 1.2 }}>
                 Every Edition, All in One Place
               </h1>
-              <p className="text-lg" style={{ color: "#6B7280", lineHeight: 1.75 }}>
+              <p className="text-lg" style={{ color: "#9CA3AF", lineHeight: 1.75 }}>
                 Browse all past editions of the UpskillinTech newsletter. Search by topic, filter by category, or scroll through the full archive.
               </p>
             </div>
@@ -76,7 +76,7 @@ export default function NewsletterArchive() {
         </section>
 
         {/* ── Search & Filter ── */}
-        <section style={{ background: "#ffffff", padding: "40px 0 20px" }}>
+        <section style={{ background: "#151B23", padding: "40px 0 20px" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               {/* Search */}
@@ -88,7 +88,7 @@ export default function NewsletterArchive() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 rounded-xl outline-none"
-                  style={{ border: "1.5px solid #E5E7EB", fontSize: "1rem", background: "#F9FAFB" }}
+                  style={{ border: "1.5px solid #1F2937", fontSize: "1rem", background: "#151B23" }}
                 />
               </div>
               {/* Tag filters */}
@@ -101,7 +101,7 @@ export default function NewsletterArchive() {
                     style={{
                       background: activeTag === tag ? "#0D9488" : "#F3F4F6",
                       color: activeTag === tag ? "#fff" : "#374151",
-                      border: activeTag === tag ? "1.5px solid #0D9488" : "1.5px solid #E5E7EB",
+                      border: activeTag === tag ? "1.5px solid #0D9488" : "1.5px solid #1F2937",
                     }}
                   >
                     {tag}
@@ -113,12 +113,12 @@ export default function NewsletterArchive() {
         </section>
 
         {/* ── Editions List ── */}
-        <section style={{ background: "#ffffff", padding: "20px 0 80px" }}>
+        <section style={{ background: "#151B23", padding: "20px 0 80px" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               {filtered.length === 0 ? (
                 <div className="text-center py-20">
-                  <p className="text-lg" style={{ color: "#6B7280" }}>No editions found matching your search.</p>
+                  <p className="text-lg" style={{ color: "#9CA3AF" }}>No editions found matching your search.</p>
                   <button onClick={() => { setSearch(""); setActiveTag("All"); }}
                     className="mt-4 px-5 py-2.5 rounded-xl font-semibold text-white"
                     style={{ background: "#0D9488" }}>
@@ -130,17 +130,17 @@ export default function NewsletterArchive() {
                   {filtered.map((ed) => (
                     <Link key={ed.slug} href={`/newsletter/${ed.slug}`}
                       className="block rounded-2xl p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
-                      style={{ border: "1.5px solid #E5E7EB", background: "#FAFAFA" }}>
+                      style={{ border: "1.5px solid #1F2937", background: "#FAFAFA" }}>
                       <div className="flex flex-col sm:flex-row sm:items-start gap-4">
                         <div className="flex-1">
                           <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-3"
                             style={{ background: `${ed.tagColor}18`, color: ed.tagColor }}>
                             {ed.tag}
                           </div>
-                          <h3 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#111827", lineHeight: 1.35 }}>
+                          <h3 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#F3F4F6", lineHeight: 1.35 }}>
                             {ed.title}
                           </h3>
-                          <p className="mb-4" style={{ color: "#6B7280", fontSize: "0.95rem", lineHeight: 1.65 }}>
+                          <p className="mb-4" style={{ color: "#9CA3AF", fontSize: "0.95rem", lineHeight: 1.65 }}>
                             {ed.excerpt}
                           </p>
                           <div className="flex items-center gap-5" style={{ color: "#9CA3AF", fontSize: "0.85rem" }}>

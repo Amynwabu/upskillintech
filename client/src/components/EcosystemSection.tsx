@@ -61,7 +61,7 @@ export default function EcosystemSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="ecosystem" className="py-20 lg:py-28" style={{ background: "white" }}>
+    <section id="ecosystem" className="py-20 lg:py-28" style={{ background: "#151B23" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         {/* Header */}
         <div className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
@@ -72,7 +72,7 @@ export default function EcosystemSection() {
               Ecosystem
             </span>
           </h2>
-          <p className="text-lg" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
+          <p className="text-lg" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
             We're not just a course platform. We're a complete ecosystem designed to take you from AI awareness to full AI transformation.
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function EcosystemSection() {
                     <p className="text-xs font-semibold mb-3" style={{ color: stage.color, fontFamily: "'Sora', sans-serif" }}>
                       {stage.subtitle}
                     </p>
-                    <p className="text-sm mb-4 leading-relaxed" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="text-sm mb-4 leading-relaxed" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                       {stage.desc}
                     </p>
                     <ul className="space-y-1.5">

@@ -32,7 +32,7 @@ export default function AdminEmailAnalytics() {
   // Check admin access
   if (!user || user.role !== "admin") {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#151B23] flex items-center justify-center">
         <Card className="max-w-md">
           <CardContent className="pt-6 text-center">
             <AlertTriangle className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
@@ -56,9 +56,9 @@ export default function AdminEmailAnalytics() {
   const maxDelivered = Math.max(...eventsByDate.map(d => d.delivered), 1);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#151B23]">
       {/* Header */}
-      <div className="bg-white border-b">
+      <div className="bg-[#151B23] border-b">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -262,7 +262,7 @@ export default function AdminEmailAnalytics() {
                               </span>
                               <span className="text-gray-600">{template.count} events</span>
                             </div>
-                            <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
+                            <div className="h-4 bg-[#1A2230] rounded-full overflow-hidden">
                               <div 
                                 className={`h-full ${colors[i % colors.length]} transition-all`}
                                 style={{ width: `${percentage}%` }}
@@ -314,7 +314,7 @@ export default function AdminEmailAnalytics() {
                                 event.eventType === "open" ? "bg-blue-100 text-blue-700" :
                                 event.eventType === "click" ? "bg-purple-100 text-purple-700" :
                                 event.eventType === "bounce" ? "bg-red-100 text-red-700" :
-                                "bg-gray-100 text-gray-700"
+                                "bg-[#1A2230] text-gray-700"
                               }`}>
                                 {event.eventType}
                               </span>

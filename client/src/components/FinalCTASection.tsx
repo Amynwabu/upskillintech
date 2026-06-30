@@ -68,7 +68,7 @@ export default function FinalCTASection() {
                 fontFamily: "'Sora', sans-serif",
                 fontSize: "1.1rem",
                 background: "#E6B800",
-                color: "#111827",
+                color: "#F3F4F6",
                 textDecoration: "none",
                 boxShadow: "0 8px 24px rgba(230,184,0,0.40)",
               }}

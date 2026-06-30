@@ -30,7 +30,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-white z-50 py-6">
+    <nav className="fixed top-0 w-full bg-[#151B23] z-50 py-6">
       <div className="flex justify-between px-8">
         <Link href="/">
           <img

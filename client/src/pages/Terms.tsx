@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#151B23]">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Terms of Service</h1>
@@ -11,7 +11,7 @@ export default function Terms() {
 
         <div className="space-y-8 text-gray-700 leading-7">
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">1. Acceptance of Terms</h2>
             <p>
               By accessing and using upskillintech.com ("Website") and our services ("Services"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not access or use our Website or Services.
             </p>
@@ -21,7 +21,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Use License</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">2. Use License</h2>
             <p>
               We grant you a non-exclusive, non-transferable, limited right to access and use the Website and Services for your personal, educational, or business purposes, subject to these Terms.
             </p>
@@ -37,7 +37,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">3. User Accounts</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">3. User Accounts</h2>
             <p>
               To access certain features of our Services, you may be required to create an account. You are responsible for maintaining the confidentiality of your login credentials and are liable for all activities under your account.
             </p>
@@ -47,7 +47,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Intellectual Property Rights</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">4. Intellectual Property Rights</h2>
             <p>
               All content on the Website, including text, graphics, logos, images, audio, video, and software, is the property of UpskillinTech or its content suppliers and is protected by UK and international copyright laws.
             </p>
@@ -57,7 +57,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Payment and Billing</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">5. Payment and Billing</h2>
             <p>
               For paid Services, you agree to pay the fees stated at the time of purchase. All prices are exclusive of VAT, which will be added where applicable.
             </p>
@@ -72,7 +72,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Refund Policy</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">6. Refund Policy</h2>
             <p>
               We offer a 14-day refund period for most Services as required by UK Consumer Rights legislation, provided the Service has not been substantially used.
             </p>
@@ -85,7 +85,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Disclaimer of Warranties</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">7. Disclaimer of Warranties</h2>
             <p>
               The Website and Services are provided on an "AS IS" and "AS AVAILABLE" basis without any warranties, express or implied.
             </p>
@@ -104,7 +104,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">8. Limitation of Liability</h2>
             <p>
               To the fullest extent permitted by law, UpskillinTech shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including lost profits, loss of data, or business interruption, arising from your use of the Website or Services.
             </p>
@@ -114,7 +114,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Indemnification</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">9. Indemnification</h2>
             <p>
               You agree to indemnify, defend, and hold harmless UpskillinTech, its officers, directors, employees, and agents from any claims, damages, losses, or expenses (including legal fees) arising from:
             </p>
@@ -128,7 +128,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Prohibited Conduct</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">10. Prohibited Conduct</h2>
             <p>
               You agree not to engage in any of the following prohibited conduct:
             </p>
@@ -144,7 +144,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Suspension and Termination</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">11. Suspension and Termination</h2>
             <p>
               We reserve the right to suspend or terminate your account and access to the Services at any time, with or without cause, and with or without notice. Reasons for suspension or termination may include:
             </p>
@@ -160,14 +160,14 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">12. Third-Party Services</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">12. Third-Party Services</h2>
             <p>
               The Website may contain links to third-party websites and services. We are not responsible for the content, policies, or practices of third-party services. Your use of third-party services is subject to their terms and conditions.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">13. Governing Law and Jurisdiction</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">13. Governing Law and Jurisdiction</h2>
             <p>
               These Terms are governed by and construed in accordance with the laws of England and Wales, without regard to its conflict of laws principles.
             </p>
@@ -177,7 +177,7 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">14. Dispute Resolution</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">14. Dispute Resolution</h2>
             <p>
               Before initiating legal proceedings, we encourage you to contact us at support@upskillintech.com to attempt to resolve any disputes. We will attempt to resolve complaints within 30 days of receipt.
             </p>
@@ -187,25 +187,25 @@ export default function Terms() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">15. Severability</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">15. Severability</h2>
             <p>
               If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect, and the invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">16. Entire Agreement</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">16. Entire Agreement</h2>
             <p>
               These Terms, together with our Privacy Policy and any other agreements referenced herein, constitute the entire agreement between you and UpskillinTech regarding the use of the Website and Services, and supersede all prior agreements and understandings.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">17. Contact Information</h2>
+            <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">17. Contact Information</h2>
             <p>
               If you have any questions about these Terms of Service, please contact us at:
             </p>
-            <div className="mt-4 bg-gray-50 p-4 rounded">
+            <div className="mt-4 bg-[#151B23] p-4 rounded">
               <p><strong>UpskillinTech</strong></p>
               <p>Email: support@upskillintech.com</p>
               <p>Website: upskillintech.com</p>

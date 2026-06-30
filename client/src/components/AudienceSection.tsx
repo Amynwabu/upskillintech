@@ -78,10 +78,10 @@ export default function AudienceSection() {
       <div className="container">
         <div className="text-center mb-12" style={{ maxWidth: 600, margin: "0 auto 3rem" }}>
           <span className="section-label">Who it's for</span>
-          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
+          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
             Wherever you are, there's a place here for you.
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#6B7280", lineHeight: 1.7 }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
             UpskillinTech is built for people who want to use AI practically — whatever their starting point or background.
           </p>
         </div>
@@ -104,17 +104,17 @@ export default function AudienceSection() {
                 <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", color: a.color, marginBottom: "0.25rem" }}>
                   {a.label}
                 </div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", fontWeight: 600, color: "#6B7280", marginBottom: "0.75rem" }}>
+                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.75rem" }}>
                   {a.tagline}
                 </div>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#374151", lineHeight: 1.65, marginBottom: "1rem" }}>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", lineHeight: 1.65, marginBottom: "1rem" }}>
                   {a.desc}
                 </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: "0.45rem", marginBottom: "1.25rem", flex: 1 }}>
                   {a.useCases.map((uc) => (
                     <li key={uc} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem" }}>
                       <span style={{ width: 6, height: 6, borderRadius: "50%", background: a.color, display: "inline-block", flexShrink: 0, marginTop: "0.4rem" }} />
-                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8125rem", color: "#4B5563", lineHeight: 1.5 }}>{uc}</span>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8125rem", color: "#D1D5DB", lineHeight: 1.5 }}>{uc}</span>
                     </li>
                   ))}
                 </ul>

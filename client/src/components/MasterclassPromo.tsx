@@ -49,7 +49,7 @@ export default function MasterclassPromo() {
                 href="/masterclass"
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                  background: "#ffffff", color: "#0D9488", borderRadius: "0.75rem",
+                  background: "#151B23", color: "#0D9488", borderRadius: "0.75rem",
                   padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif",
                   fontWeight: 700, fontSize: "0.95rem", textDecoration: "none",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.15)",

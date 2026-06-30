@@ -84,15 +84,15 @@ export default function UseCasesSection() {
       id="use-cases"
       aria-label="What you can do with AI"
       className="section-py"
-      style={{ background: "white" }}
+      style={{ background: "#151B23" }}
     >
       <div className="container">
         <div className="text-center mb-14" style={{ maxWidth: 620, margin: "0 auto 3.5rem" }}>
           <span className="section-label">What You Can Actually Do With AI</span>
-          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
+          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
             Real tasks. Real results. No jargon.
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#6B7280", lineHeight: 1.7 }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
             Not theory. Not demos. Practical outcomes that individuals, solopreneurs, business owners, and teams achieve every day with AI.
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function UseCasesSection() {
               <div
                 key={c.title}
                 className="rounded-2xl p-5"
-                style={{ background: "#F9F8F6", border: "1px solid #E5E7EB" }}
+                style={{ background: "#0B0F14", border: "1px solid #1F2937" }}
               >
                 <div
                   className="flex items-center justify-center rounded-xl mb-3"
@@ -112,10 +112,10 @@ export default function UseCasesSection() {
                 >
                   <Icon size={18} style={{ color: c.color }} />
                 </div>
-                <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#111827", marginBottom: "0.5rem" }}>
+                <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem", color: "#F3F4F6", marginBottom: "0.5rem" }}>
                   {c.title}
                 </h3>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8375rem", color: "#6B7280", lineHeight: 1.6 }}>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8375rem", color: "#9CA3AF", lineHeight: 1.6 }}>
                   {c.outcome}
                 </p>
               </div>

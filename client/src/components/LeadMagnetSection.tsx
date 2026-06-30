@@ -110,7 +110,7 @@ export default function LeadMagnetSection() {
                       type="submit"
                       style={{
                         display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                        background: "#E6B800", color: "#111827", borderRadius: "0.75rem",
+                        background: "#E6B800", color: "#F3F4F6", borderRadius: "0.75rem",
                         padding: "0.875rem 1.5rem", border: "none", cursor: "pointer",
                         fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
                         whiteSpace: "nowrap",

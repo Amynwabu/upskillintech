@@ -49,7 +49,7 @@ export default function Learn() {
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h1 className="mb-6" style={{ fontFamily: "Sora, sans-serif", fontWeight: 800, color: "#111827" }}>
+                <h1 className="mb-6" style={{ fontFamily: "Sora, sans-serif", fontWeight: 800, color: "#F3F4F6" }}>
                   Learn AI, Transform Your Future
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
@@ -242,7 +242,7 @@ export default function Learn() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16" style={{ background: "#F7F8FA" }}>
+        <section className="py-16" style={{ background: "#151B23" }}>
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

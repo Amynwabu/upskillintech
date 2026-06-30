@@ -72,7 +72,7 @@ export default function WorkflowSection() {
                 Daily Work
               </span>
             </h2>
-            <p className="text-lg" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
+            <p className="text-lg" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
               These are real workflows our participants use every day to save time and deliver better results. You'll build workflows like these in the program.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function WorkflowSection() {
           {workflows.map((wf, i) => (
             <div
               key={wf.title}
-              className={`bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 ${inView ? "animate-fade-up" : "opacity-0"}`}
+              className={`bg-[#151B23] rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 ${inView ? "animate-fade-up" : "opacity-0"}`}
               style={{ animationDelay: `${i * 0.15}s`, animationFillMode: "forwards" }}
             >
               {/* Header */}
@@ -101,7 +101,7 @@ export default function WorkflowSection() {
                 </span>
               </div>
 
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif" }}>
+              <p className="text-sm mb-6 leading-relaxed" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                 {wf.desc}
               </p>
 
@@ -115,7 +115,7 @@ export default function WorkflowSection() {
                         <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${step.color}15` }}>
                           <Icon size={16} style={{ color: step.color }} />
                         </div>
-                        <span className="text-xs font-medium text-center" style={{ color: "#64748B", fontFamily: "'Sora', sans-serif", fontSize: "0.65rem" }}>
+                        <span className="text-xs font-medium text-center" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif", fontSize: "0.65rem" }}>
                           {step.label}
                         </span>
                       </div>

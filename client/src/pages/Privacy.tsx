@@ -3,15 +3,15 @@ import Footer from "@/components/Footer";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#151B23]">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Privacy Policy</h1>
         <p className="mb-10" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>Last updated: {new Date().toLocaleDateString()}</p>
 
-        <div className="space-y-10" style={{ fontFamily: "'DM Sans', sans-serif", color: "#374151", lineHeight: 1.8 }}>
+        <div className="space-y-10" style={{ fontFamily: "'DM Sans', sans-serif", color: "#D1D5DB", lineHeight: 1.8 }}>
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>1. Introduction</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>1. Introduction</h2>
             <p className="mt-3">
               UpskillinTech ("we", "us", "our") operates the upskillintech.com website and related services. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
             </p>
@@ -19,8 +19,8 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>2. Information We Collect</h2>
-            <h3 className="mt-4 mb-2 text-base font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#374151" }}>2.1 Personal Information</h3>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>2. Information We Collect</h2>
+            <h3 className="mt-4 mb-2 text-base font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#D1D5DB" }}>2.1 Personal Information</h3>
             <p>We may collect personal information that you voluntarily provide, including:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Name and email address</li>
@@ -31,7 +31,7 @@ export default function Privacy() {
               <li>Communications and feedback you send to us</li>
             </ul>
 
-            <h3 className="mt-5 mb-2 text-base font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#374151" }}>2.2 Automatically Collected Information</h3>
+            <h3 className="mt-5 mb-2 text-base font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#D1D5DB" }}>2.2 Automatically Collected Information</h3>
             <p>When you access our website, we automatically collect certain information:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Device information (browser type, IP address, operating system)</li>
@@ -42,7 +42,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>3. How We Use Your Information</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>3. How We Use Your Information</h2>
             <p>We use the information we collect for the following purposes:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Provide and improve our services</li>
@@ -56,7 +56,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>4. Legal Basis for Processing (GDPR)</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>4. Legal Basis for Processing (GDPR)</h2>
             <p>In the UK and EU, we process your personal data based on one or more of the following legal grounds:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Your explicit consent</li>
@@ -68,7 +68,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>5. Cookies and Tracking</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>5. Cookies and Tracking</h2>
             <p>We use cookies and similar technologies to enhance your experience. Types of cookies we use:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Essential cookies (required for site functionality)</li>
@@ -80,7 +80,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>6. Data Sharing and Disclosure</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>6. Data Sharing and Disclosure</h2>
             <p>We do not sell, trade, or rent your personal information to third parties. We may share information with:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li>Service providers who assist in our operations</li>
@@ -90,7 +90,7 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>7. Your Privacy Rights</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>7. Your Privacy Rights</h2>
             <p>Depending on your location, you may have the following rights:</p>
             <ul className="list-disc list-inside mt-2 ml-2 space-y-1">
               <li><strong>Right to Access:</strong> Obtain a copy of your personal data</li>
@@ -104,19 +104,19 @@ export default function Privacy() {
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>8. Data Security</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>8. Data Security</h2>
             <p>We implement appropriate technical and organizational security measures to protect your personal information, including SSL/TLS encryption, secure authentication, and regular security audits.</p>
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>9. Data Protection Officer</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>9. Data Protection Officer</h2>
             <p>As a UK-based organisation, we have appointed a Data Protection Officer. Contact our DPO at <a href="mailto:dpo@upskillintech.com" style={{ color: "#0D9488" }}>dpo@upskillintech.com</a>.</p>
           </section>
 
           <section>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>10. Contact Us</h2>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>10. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us:</p>
-            <div className="mt-4 p-5 rounded-xl" style={{ background: "#F7F8FA" }}>
+            <div className="mt-4 p-5 rounded-xl" style={{ background: "#151B23" }}>
               <p><strong>UpskillinTech</strong></p>
               <p>Email: <a href="mailto:privacy@upskillintech.com" style={{ color: "#0D9488" }}>privacy@upskillintech.com</a></p>
               <p>Website: upskillintech.com</p>

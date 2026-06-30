@@ -164,9 +164,9 @@ export default function NewsletterPreferences() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
-      <div className="bg-white border-b">
+      <div className="bg-[#151B23] border-b">
         <div className="container py-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#F3F4F6] transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Back to Home
           </Link>
@@ -179,7 +179,7 @@ export default function NewsletterPreferences() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 mb-6">
             <Mail className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-3">Newsletter Preferences</h1>
+          <h1 className="text-3xl font-bold text-[#F3F4F6] mb-3">Newsletter Preferences</h1>
           <p className="text-gray-600 max-w-md mx-auto">
             Customize your email experience. Choose the content categories you'd like to receive from UpskillinTech.
           </p>
@@ -260,7 +260,7 @@ export default function NewsletterPreferences() {
                       className={`cursor-pointer transition-all ${
                         preferences[category.id]
                           ? "border-green-300 bg-green-50/50"
-                          : "border-gray-200 hover:border-gray-300"
+                          : "border-[#1F2937] hover:border-gray-300"
                       }`}
                       onClick={() => handlePreferenceChange(category.id, !preferences[category.id])}
                     >
@@ -270,7 +270,7 @@ export default function NewsletterPreferences() {
                             className={`p-2 rounded-lg ${
                               preferences[category.id]
                                 ? "bg-green-100 text-green-600"
-                                : "bg-gray-100 text-gray-500"
+                                : "bg-[#1A2230] text-gray-500"
                             }`}
                           >
                             {category.icon}

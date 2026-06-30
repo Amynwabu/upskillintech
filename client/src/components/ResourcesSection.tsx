@@ -45,7 +45,7 @@ const resources = [
 
 export default function ResourcesSection() {
   return (
-    <section className="section-py" style={{ background: "#ffffff" }}>
+    <section className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
@@ -53,7 +53,7 @@ export default function ResourcesSection() {
           <h2 className="mt-4 mb-5">
             UpskillinTech <span style={{ color: "#0D9488" }}>Resources</span>
           </h2>
-          <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#6B7280" }}>
+          <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             Everything you need to start, grow, and lead with AI — available free to the community.
           </p>
         </div>
@@ -68,8 +68,8 @@ export default function ResourcesSection() {
                 href={r.href}
                 className="rounded-2xl p-7 flex flex-col transition-all duration-200"
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #E5E7EB",
+                  background: "#151B23",
+                  border: "1px solid #1F2937",
                   borderLeft: `4px solid ${r.color}`,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
                   textDecoration: "none",
@@ -90,7 +90,7 @@ export default function ResourcesSection() {
                   {r.count}
                 </div>
                 <h3 className="mb-3" style={{ fontSize: "1.2rem" }}>{r.title}</h3>
-                <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#6B7280" }}>{r.desc}</p>
+                <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#9CA3AF" }}>{r.desc}</p>
                 <div className="flex items-center gap-1.5 font-semibold text-sm mt-auto" style={{ color: r.color, fontFamily: "'Sora', sans-serif" }}>
                   Explore <ArrowRight size={15} />
                 </div>

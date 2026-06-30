@@ -163,17 +163,17 @@ export default function WorkflowsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               AI Workflows That Work in the Real World
             </h1>
-            <p className="text-lg mb-6" style={{ color: "#555" }}>
+            <p className="text-lg mb-6" style={{ color: "#9CA3AF" }}>
               Step-by-step AI workflows used by UpskillinTech graduates across meetings, research, content creation, and leadership. Each workflow includes the exact prompts to use.
             </p>
-            <div className="flex items-center gap-4 text-sm" style={{ color: "#555" }}>
+            <div className="flex items-center gap-4 text-sm" style={{ color: "#9CA3AF" }}>
               <span className="flex items-center gap-1"><Zap size={15} /> 6 Workflows</span>
               <span>·</span>
               <span className="flex items-center gap-1"><Copy size={15} /> Copy-Paste Prompts</span>
@@ -187,7 +187,7 @@ export default function WorkflowsPage() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "6", l: "Workflow Templates" }, { v: "24+", l: "Copy-Paste Prompts" }, { v: "5 min", l: "Fastest Workflow" }, { v: "Free", l: "All Workflows" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -197,7 +197,7 @@ export default function WorkflowsPage() {
       </section>
 
       {/* Workflow Library */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12 justify-center">
@@ -209,7 +209,7 @@ export default function WorkflowsPage() {
                 style={{
                   background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
-                  border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
+                  border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
                 }}
               >
@@ -220,7 +220,7 @@ export default function WorkflowsPage() {
 
           <div className="space-y-8">
             {filtered.map((wf) => (
-              <div key={wf.id} className="rounded-2xl bg-white overflow-hidden" style={{ border: "1px solid #E5E7EB", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+              <div key={wf.id} className="rounded-2xl bg-[#151B23] overflow-hidden" style={{ border: "1px solid #1F2937", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
                 <div className="h-1.5" style={{ background: wf.color }} />
                 <div className="p-8">
                   {/* Header */}
@@ -228,10 +228,10 @@ export default function WorkflowsPage() {
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: `${wf.color}12`, color: wf.color }}>{wf.categoryLabel}</span>
-                        <span className="text-xs px-2 py-1 rounded-full" style={{ background: "#F7F8FA", color: "#6B7280", border: "1px solid #E5E7EB" }}>{wf.difficulty}</span>
+                        <span className="text-xs px-2 py-1 rounded-full" style={{ background: "#151B23", color: "#9CA3AF", border: "1px solid #1F2937" }}>{wf.difficulty}</span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{wf.title}</h3>
-                      <p className="text-sm" style={{ color: "#6B7280" }}>{wf.subtitle}</p>
+                      <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{wf.title}</h3>
+                      <p className="text-sm" style={{ color: "#9CA3AF" }}>{wf.subtitle}</p>
                     </div>
                     <div className="flex flex-wrap gap-3 text-xs shrink-0" style={{ color: "#9CA3AF" }}>
                       <span className="flex items-center gap-1"><Clock size={12} /> {wf.timeToComplete}</span>
@@ -248,7 +248,7 @@ export default function WorkflowsPage() {
                             <div className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ background: "#021301" }}>
                               {si + 1}
                             </div>
-                            <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
+                            <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
                           </div>
                           {si < wf.steps.length - 1 && (
                             <span className="text-lg font-bold mb-4" style={{ color: "#E6B800" }}>→</span>
@@ -266,13 +266,13 @@ export default function WorkflowsPage() {
                         <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "#9CA3AF" }}>Step-by-Step Instructions</p>
                         <div className="space-y-3">
                           {wf.steps.map((step, si) => (
-                            <div key={step.label} className="flex gap-4 p-4 rounded-xl" style={{ background: "#F7F8FA" }}>
+                            <div key={step.label} className="flex gap-4 p-4 rounded-xl" style={{ background: "#151B23" }}>
                               <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ background: wf.color }}>
                                 {si + 1}
                               </div>
                               <div>
-                                <p className="font-semibold text-sm mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{step.label}</p>
-                                <p className="text-sm" style={{ color: "#4B5563" }}>{step.desc}</p>
+                                <p className="font-semibold text-sm mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{step.label}</p>
+                                <p className="text-sm" style={{ color: "#D1D5DB" }}>{step.desc}</p>
                               </div>
                             </div>
                           ))}
@@ -298,7 +298,7 @@ export default function WorkflowsPage() {
                           <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: "#9CA3AF" }}>Tools Needed</p>
                           <ul className="space-y-1.5">
                             {wf.toolsNeeded.map(t => (
-                              <li key={t} className="flex items-center gap-2 text-sm" style={{ color: "#4B5563" }}>
+                              <li key={t} className="flex items-center gap-2 text-sm" style={{ color: "#D1D5DB" }}>
                                 <CheckCircle2 size={13} style={{ color: wf.color }} /> {t}
                               </li>
                             ))}
@@ -308,7 +308,7 @@ export default function WorkflowsPage() {
                           <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: "#9CA3AF" }}>Expected Outcomes</p>
                           <ul className="space-y-1.5">
                             {wf.outcomes.map(o => (
-                              <li key={o} className="flex items-start gap-2 text-sm" style={{ color: "#4B5563" }}>
+                              <li key={o} className="flex items-start gap-2 text-sm" style={{ color: "#D1D5DB" }}>
                                 <Zap size={13} className="shrink-0 mt-0.5" style={{ color: wf.color }} /> {o}
                               </li>
                             ))}
@@ -327,7 +327,7 @@ export default function WorkflowsPage() {
                       {expandedWorkflow === wf.id ? "Show Less" : "View Full Workflow + Prompt"} <ChevronRight size={14} />
                     </button>
                     {expandedWorkflow === wf.id && (
-                      <button onClick={() => copyPrompt(wf.prompt, wf.title)} className="text-sm font-semibold flex items-center gap-1.5" style={{ color: "#6B7280" }}>
+                      <button onClick={() => copyPrompt(wf.prompt, wf.title)} className="text-sm font-semibold flex items-center gap-1.5" style={{ color: "#9CA3AF" }}>
                         <Copy size={13} /> Copy Prompt
                       </button>
                     )}
@@ -349,8 +349,8 @@ export default function WorkflowsPage() {
             Download all 6 workflows plus 10 bonus workflows in a single PDF — with step-by-step instructions, prompts, and Notion templates.
           </p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("Playbook on its way!", { description: "Check your inbox for the AI Workflow Playbook." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
-            <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#1C1C1C" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
+            <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <Download size={16} /> Download Playbook
             </button>
           </form>

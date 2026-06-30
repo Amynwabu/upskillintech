@@ -11,7 +11,7 @@ const expertise = ["AI Research", "Robotics", "Technology Literacy", "Workflow A
 
 export default function FounderSection() {
   return (
-    <section className="section-py" style={{ background: "#ffffff" }}>
+    <section className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
           {/* Left: Founder photo */}
@@ -56,13 +56,13 @@ export default function FounderSection() {
             <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488", fontSize: "1.2rem" }}>
               Dr. Amaka Adiuku
             </p>
-            <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#6B7280" }}>
+            <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF" }}>
               AI Researcher · Lecturer · Educator · Technology Literacy Advocate
             </p>
-            <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
+            <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
               UpskillinTech is an independent platform I created to share practical AI insights with professionals, leaders, and organisations navigating the AI era. My goal is simple: help people understand and adopt AI responsibly — without the overwhelm.
             </p>
-            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#4B5563" }}>
+            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
               As a researcher and university lecturer in AI and Robotics, I bring academic depth and real-world application together — to bridge the gap between AI theory and everyday professional practice.
             </p>
 

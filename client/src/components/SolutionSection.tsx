@@ -70,7 +70,7 @@ export default function SolutionSection() {
               We don't just teach AI tools.{" "}
               <span style={{ color: "white", fontWeight: 600 }}>We help you build a practical AI adoption habit.</span>
             </p>
-            <p className="mb-8" style={{ color: "#64748B", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
+            <p className="mb-8" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
               Every stage is designed around real tasks, real tools, and real results — so you move from
               learning into doing, fast.
             </p>

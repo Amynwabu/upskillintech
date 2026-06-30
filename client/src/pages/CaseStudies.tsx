@@ -191,14 +191,14 @@ export default function CaseStudies() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Real People. Real Results. Real AI Integration.
             </h1>
-            <p className="text-lg mb-6" style={{ color: "#555" }}>
+            <p className="text-lg mb-6" style={{ color: "#9CA3AF" }}>
               Discover how professionals, organisations, and ministry leaders have transformed their work using AI — with specific results, timelines, and strategies.
             </p>
           </div>
@@ -209,7 +209,7 @@ export default function CaseStudies() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {METRICS.map(m => (
                 <div key={m.label}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{m.value}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{m.value}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{m.label}</div>
                 </div>
               ))}
@@ -219,7 +219,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Filter + Case Studies */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12 justify-center">
@@ -231,7 +231,7 @@ export default function CaseStudies() {
                 style={{
                   background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
-                  border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
+                  border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
                 }}
               >
@@ -242,7 +242,7 @@ export default function CaseStudies() {
 
           <div className="space-y-8">
             {filtered.map((cs) => (
-              <div key={cs.id} className="rounded-2xl overflow-hidden bg-white" style={{ border: "1px solid #E5E7EB", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+              <div key={cs.id} className="rounded-2xl overflow-hidden bg-[#151B23]" style={{ border: "1px solid #1F2937", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
                 <div className="h-1.5" style={{ background: cs.color }} />
                 <div className="p-8">
                   <div className="flex flex-col lg:flex-row lg:items-start gap-6">
@@ -252,8 +252,8 @@ export default function CaseStudies() {
                         <div className="rounded-xl p-2" style={{ background: `${cs.color}15` }}>{cs.icon}</div>
                         <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: `${cs.color}12`, color: cs.color }}>{cs.categoryLabel}</span>
                       </div>
-                      <div className="font-bold text-lg" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{cs.name}</div>
-                      <div className="text-sm" style={{ color: "#6B7280" }}>{cs.role}</div>
+                      <div className="font-bold text-lg" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{cs.name}</div>
+                      <div className="text-sm" style={{ color: "#9CA3AF" }}>{cs.role}</div>
                       <div className="text-xs mt-1" style={{ color: "#9CA3AF" }}>{cs.industry} · {cs.location}</div>
                       <div className="mt-3 flex items-center gap-1 text-xs font-semibold" style={{ color: cs.color }}>
                         <Clock size={12} /> Results in {cs.timeToResult}
@@ -262,23 +262,23 @@ export default function CaseStudies() {
 
                     {/* Right: Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{cs.headline}</h3>
+                      <h3 className="text-2xl font-bold mb-4 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{cs.headline}</h3>
 
                       {expanded === cs.id ? (
                         <div className="space-y-5">
                           <div>
                             <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>The Challenge</p>
-                            <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>{cs.challenge}</p>
+                            <p className="text-sm leading-relaxed" style={{ color: "#D1D5DB" }}>{cs.challenge}</p>
                           </div>
                           <div>
                             <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>The Solution</p>
-                            <p className="text-sm leading-relaxed" style={{ color: "#4B5563" }}>{cs.solution}</p>
+                            <p className="text-sm leading-relaxed" style={{ color: "#D1D5DB" }}>{cs.solution}</p>
                           </div>
                           <div>
                             <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>Results</p>
                             <ul className="space-y-1.5">
                               {cs.results.map(r => (
-                                <li key={r} className="flex items-start gap-2 text-sm" style={{ color: "#4B5563" }}>
+                                <li key={r} className="flex items-start gap-2 text-sm" style={{ color: "#D1D5DB" }}>
                                   <TrendingUp size={14} className="shrink-0 mt-0.5" style={{ color: cs.color }} />
                                   {r}
                                 </li>
@@ -287,12 +287,12 @@ export default function CaseStudies() {
                           </div>
                           <blockquote className="rounded-xl p-4 border-l-4" style={{ background: `${cs.color}08`, borderColor: cs.color }}>
                             <Quote size={16} className="mb-2" style={{ color: cs.color }} />
-                            <p className="text-sm italic leading-relaxed" style={{ color: "#4B5563" }}>"{cs.quote}"</p>
+                            <p className="text-sm italic leading-relaxed" style={{ color: "#D1D5DB" }}>"{cs.quote}"</p>
                             <p className="text-xs font-semibold mt-2" style={{ color: cs.color }}>— {cs.name}, {cs.role}</p>
                           </blockquote>
                         </div>
                       ) : (
-                        <p className="text-sm leading-relaxed" style={{ color: "#6B7280" }}>{cs.challenge}</p>
+                        <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{cs.challenge}</p>
                       )}
 
                       <button
@@ -310,7 +310,7 @@ export default function CaseStudies() {
                         <p className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: "#9CA3AF" }}>Key Results</p>
                         <ul className="space-y-2">
                           {cs.results.slice(0, 3).map(r => (
-                            <li key={r} className="flex items-start gap-2 text-xs" style={{ color: "#4B5563" }}>
+                            <li key={r} className="flex items-start gap-2 text-xs" style={{ color: "#D1D5DB" }}>
                               <CheckCircle2 size={12} className="shrink-0 mt-0.5" style={{ color: cs.color }} />
                               {r}
                             </li>
@@ -336,7 +336,7 @@ export default function CaseStudies() {
             Join the professionals and organisations already transforming how they work with AI. The AI-Enabled Professional Program gives you the skills, frameworks, and support to get real results.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Join the Program
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
