@@ -243,9 +243,9 @@ export default function Masterclass() {
                   className="btn-primary justify-center inline-flex items-center gap-2"
                   style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}
                 />
-                <Link href="/contact" className="btn-outline justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", borderColor: "#0D9488", color: "#0D9488" }}>
+                <a href="mailto:hello@upskillintech.com" className="btn-outline justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", borderColor: "#0D9488", color: "#0D9488" }}>
                   Ask a Question
-                </Link>
+                </a>
               </div>
 
               {/* Pricing strip */}
@@ -417,13 +417,13 @@ export default function Masterclass() {
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold cursor-pointer border-0"
                 style={{ background: "#ffffff", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
               />
-              <Link
-                href="/contact"
+              <a
+                href="mailto:hello@upskillintech.com"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold"
                 style={{ border: "2px solid rgba(255,255,255,0.6)", color: "#ffffff", textDecoration: "none", fontFamily: "'Sora', sans-serif" }}
               >
                 Ask a Question
-              </Link>
+              </a>
             </div>
             <p className="flex items-center justify-center gap-2 text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
               <CheckCircle2 size={15} /> Includes a free 1-on-1 AI Transformation Consultation
