@@ -132,7 +132,7 @@ export default function Templates() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
         <div className="container py-8">
           {/* Header */}
           <div className="mb-8">

@@ -124,14 +124,13 @@ export default function Navbar() {
       }}
     >
       <div className="container">
-        <div className="flex items-center justify-between" style={{ height: "92px" }}>
+        <div className="flex items-center justify-between" style={{ height: "72px" }}>
           {/* Logo — larger and more prominent */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <img
               src={LOGO_URL}
               alt="UpskillinTech"
-              style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
-              style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(1.15) saturate(1.25)" }}
+              style={{ height: "60px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
             />
           </Link>
 

@@ -4,8 +4,7 @@ const HERO_IMG = "/training-diverse-team.jpg";
 
 export default function HeroSection() {
   return (
-    <section aria-label="Hero" style={{ background: "#0B0F14", paddingTop: "92px" }}>
-    <section aria-label="Hero" style={{ background: "#F9F8F6", paddingTop: "92px" }}>
+    <section aria-label="Hero" style={{ background: "#0B0F14", paddingTop: "72px" }}>
       <div className="container">
         <div
           style={{

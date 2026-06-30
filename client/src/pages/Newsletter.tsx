@@ -97,7 +97,7 @@ export default function Newsletter() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
 
         {/* ── Hero ── */}
         <section style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 60%, #fffef0 100%)", padding: "80px 0 60px" }}>

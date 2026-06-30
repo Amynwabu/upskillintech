@@ -89,7 +89,7 @@ export default function Challenge() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
 
         {/* Hero */}
         <section style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 60%, #16A34A 100%)", padding: "5rem 1.5rem 4rem" }}>

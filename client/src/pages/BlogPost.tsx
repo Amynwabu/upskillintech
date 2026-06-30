@@ -55,7 +55,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
-        <main className="flex-1 pt-[92px]">
+        <main className="flex-1 pt-[72px]">
           <div className="container py-16">
             <div className="max-w-4xl mx-auto space-y-8 animate-pulse">
               <div className="h-96 bg-slate-800 rounded-2xl"></div>
@@ -77,7 +77,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
-        <main className="flex-1 pt-[92px]">
+        <main className="flex-1 pt-[72px]">
           <div className="container py-16 text-center">
             <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
             <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
@@ -98,7 +98,7 @@ export default function BlogPost() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
         {/* Back Button */}
         <div className="container py-6">
           <Link href="/blog">

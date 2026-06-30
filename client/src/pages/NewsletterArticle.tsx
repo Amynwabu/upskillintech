@@ -267,7 +267,7 @@ export default function NewsletterArticle() {
     return (
       <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
         <Navbar />
-        <main className="flex-1 pt-[92px] flex items-center justify-center">
+        <main className="flex-1 pt-[72px] flex items-center justify-center">
           <div className="text-center py-20">
             <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Edition Not Found</h1>
             <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition doesn't exist or has been moved.</p>
@@ -286,7 +286,7 @@ export default function NewsletterArticle() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
-      <main className="flex-1 pt-[92px]">
+      <main className="flex-1 pt-[72px]">
 
         {/* ── Breadcrumb ── */}
         <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
