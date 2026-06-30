@@ -130,7 +130,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="UpskillinTech"
-              style={{ height: "60px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+              style={{ height: "60px", width: "auto", objectFit: "contain" }}
             />
           </Link>
 
