@@ -88,7 +88,7 @@ export default function Events() {
     },
     {
       id: 6,
-      title: "AI Productivity Masterclass with Dr. Amaka Adiuku",
+      title: "AI Productivity Masterclass",
       type: "Webinar",
       date: "January 17, 2026",
       time: "7:00 PM UK / 8:00 PM Nigeria",

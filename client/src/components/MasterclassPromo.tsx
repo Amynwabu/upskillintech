@@ -31,7 +31,7 @@ export default function MasterclassPromo() {
               AI Transformation Master Class
             </h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.7, marginBottom: "1.5rem", maxWidth: 480 }}>
-              Build a real AI-powered business in 10 steps — from idea to income. Hands-on, live, with Dr. Amaka Adiuku. No tech background needed.
+              Build a real AI-powered business in 10 steps — from idea to income. No tech background needed.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginBottom: "2rem" }}>
               {[

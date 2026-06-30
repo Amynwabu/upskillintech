@@ -82,7 +82,7 @@ export default function WebinarRegistration() {
               You're Registered!
             </CardTitle>
             <CardDescription className="text-base" style={{ color: "#9CA3AF" }}>
-              You've secured your seat for <strong>{MASTERCLASS_TITLE}</strong> with Dr. Amaka Adiuku.
+              You've secured your seat for <strong>{MASTERCLASS_TITLE}</strong>.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -186,7 +186,7 @@ export default function WebinarRegistration() {
               <div>
                 <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#E6B800" }}>Exclusive Bonus — Included Free</div>
                 <div className="text-sm" style={{ color: "rgba(255,255,255,0.70)", lineHeight: 1.6 }}>
-                  Every participant gets a free 1-on-1 AI Transformation Session with Dr. Amaka — a personalised session tailored to your business, career, and goals.
+                  Every participant gets a free 1-on-1 AI Transformation Session — a personalised session tailored to your business, career, and goals.
                 </div>
               </div>
             </div>
@@ -203,7 +203,7 @@ export default function WebinarRegistration() {
                   Reserve Your Seat
                 </CardTitle>
                 <CardDescription style={{ color: "#9CA3AF" }}>
-                  Secure your place for a live, hands-on session with Dr. Amaka Adiuku
+                  Secure your place for a live, hands-on session
                 </CardDescription>
 
                 {/* Session picker */}

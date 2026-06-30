@@ -65,7 +65,7 @@ const PAST = [
     speakerRole: "Founder, UpskillinTech",
     views: "1,200+",
     description: "The most-watched UpskillinTech webinar. Dr. Amaka walks through the exact AI productivity system used by programme graduates to save 10+ hours every week — with live demonstrations and Q&A.",
-    highlights: ["Live ChatGPT demonstration", "5-step productivity framework", "Real examples from graduates", "Q&A with Dr. Amaka"],
+    highlights: ["Live ChatGPT demonstration", "5-step productivity framework", "Real examples from graduates", "Q&A"],
     color: "#0D9488",
   },
   {
@@ -147,7 +147,7 @@ export default function Webinars() {
               Learn Live. Watch On Demand. Grow Every Month.
             </h1>
             <p className="text-lg mb-6" style={{ color: "#9CA3AF" }}>
-              Join live masterclasses with Dr. Amaka Adiuku and the UpskillinTech team — or watch past recordings at your own pace. Every session is practical, specific, and immediately applicable.
+              Join live masterclasses and the UpskillinTech team — or watch past recordings at your own pace. Every session is practical, specific, and immediately applicable.
             </p>
             <div className="flex items-center gap-4 text-sm" style={{ color: "#9CA3AF" }}>
               <span className="flex items-center gap-1"><Video size={15} /> 8+ Recordings</span>
