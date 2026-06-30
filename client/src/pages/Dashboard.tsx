@@ -29,7 +29,7 @@ export default function Dashboard() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       
-      <main className="flex-1 pt-[76px] bg-[#F7F8FA]">
+      <main className="flex-1 pt-[92px] bg-[#F7F8FA]">
         <div className="container py-8">
           {/* Welcome Header */}
           <div className="mb-8">

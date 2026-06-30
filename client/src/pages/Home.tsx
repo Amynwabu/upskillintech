@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1 pt-[76px]">
+      <main className="flex-1 pt-[92px]">
         <WebinarPromoBanner />
         <HeroSection />
         <TrustStrip />

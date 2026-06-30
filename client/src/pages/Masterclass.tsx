@@ -192,7 +192,7 @@ export default function Masterclass() {
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
 
-      <main className="flex-1 pt-[76px]">
+      <main className="flex-1 pt-[92px]">
         {/* ── Hero ─────────────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden"

@@ -34,7 +34,7 @@ export default function Navigation() {
       <div className="flex justify-between px-8">
         <Link href="/">
           <img
-            src="/logo.png"
+            src="/logo-transparent.png"
             alt="UpskillinTech"
             className="h-30 w-auto"
           />

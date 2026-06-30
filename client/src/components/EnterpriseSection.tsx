@@ -5,7 +5,7 @@
  */
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-const ENTERPRISE_IMG = "/upskilling-professionals.png";
+const ENTERPRISE_IMG = "/networking-event.jpg";
 
 const benefits = [
   { title: "Train Teams in AI Productivity", desc: "Upskill your entire workforce with structured, role-specific AI training programmes." },
