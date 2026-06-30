@@ -42,7 +42,7 @@ export default function NewsletterArchive() {
   return (
     <div className="min-h-screen flex flex-col" style={{ fontFamily: "'DM Sans', sans-serif" }}>
       <Navbar />
-      <main className="flex-1 pt-[76px]">
+      <main className="flex-1 pt-[92px]">
 
         {/* ── Breadcrumb ── */}
         <div style={{ background: "#F9FAFB", borderBottom: "1px solid #E5E7EB", padding: "14px 0" }}>

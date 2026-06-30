@@ -9,7 +9,7 @@ import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail }
 import { useAuth } from "@/_core/hooks/useAuth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/logo-transparent.png";
 const ACTIVE_NAV_COLOR = "#0D9488";
 
 const RESOURCE_LINKS = [
@@ -123,13 +123,13 @@ export default function Navbar() {
       }}
     >
       <div className="container">
-        <div className="flex items-center justify-between" style={{ height: "76px" }}>
+        <div className="flex items-center justify-between" style={{ height: "92px" }}>
           {/* Logo — larger and more prominent */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <img
               src={LOGO_URL}
               alt="UpskillinTech"
-              style={{ height: "82px", width: "auto", objectFit: "contain", filter: "brightness(1.15) saturate(1.2)" }}
+              style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(1.15) saturate(1.25)" }}
             />
           </Link>
 

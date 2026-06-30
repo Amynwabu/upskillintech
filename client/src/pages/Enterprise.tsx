@@ -343,7 +343,7 @@ export default function Enterprise() {
           <div className="relative hidden lg:flex justify-end items-end">
             <div className="relative rounded-t-2xl overflow-hidden shadow-2xl" style={{ width: "100%", maxWidth: 520, height: 420 }}>
               <img
-                src="/upskilling-professionals.png"
+                src="/networking-event.jpg"
                 alt="Enterprise AI training workshop"
                 className="w-full h-full object-cover"
               />

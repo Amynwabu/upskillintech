@@ -113,7 +113,7 @@ export default function CourseDetail() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
-      <main className="flex-1 pt-[76px] pb-12">
+      <main className="flex-1 pt-[92px] pb-12">
         {/* Course Header */}
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 py-12">
           <div className="container">

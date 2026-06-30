@@ -162,7 +162,7 @@ export default function Consult() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
-      <main className="flex-1 pt-[76px] pb-12">
+      <main className="flex-1 pt-[92px] pb-12">
         {/* Hero Section */}
         <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
           <div className="container">
@@ -309,7 +309,7 @@ export default function Consult() {
               </div>
               <div className="relative">
                 <img
-                  src="/upskilling-professionals.png"
+                  src="/networking-event.jpg"
                   alt="Successful business team meeting"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
                 />

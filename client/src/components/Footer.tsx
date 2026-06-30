@@ -4,7 +4,7 @@
  */
 import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
 
-const LOGO_URL = "/logo.png";
+const LOGO_URL = "/logo-transparent.png";
 
 const footerLinks = {
   Insights: [
@@ -54,7 +54,7 @@ export default function Footer() {
               <img
                 src={LOGO_URL}
                 alt="UpskillinTech"
-                style={{ height: "64px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                style={{ height: "76px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
               />
             </div>
             <p className="mb-3 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>

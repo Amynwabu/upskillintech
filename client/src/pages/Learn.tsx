@@ -43,7 +43,7 @@ export default function Learn() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <main className="flex-1 pt-[76px]">
+      <main className="flex-1 pt-[92px]">
         {/* Hero Section */}
         <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
           <div className="container">
@@ -74,7 +74,7 @@ export default function Learn() {
                   className="rounded-lg shadow-lg w-full h-48 object-cover"
                 />
                 <img
-                  src="/group-discussion.jpg"
+                  src="/community-engagement.jpg"
                   alt="Group discussion and collaborative learning"
                   className="rounded-lg shadow-lg w-full h-48 object-cover mt-8"
                 />
