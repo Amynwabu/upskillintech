@@ -45,7 +45,7 @@ const programs = [
 
 export default function ProgramsSection() {
   return (
-    <section id="programs" className="section-py" style={{ background: "#ffffff" }}>
+    <section id="programs" className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
@@ -57,7 +57,7 @@ export default function ProgramsSection() {
             <div style={{ width: 64, height: 4, background: "#0D9488", borderRadius: 2 }} />
             <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
           </div>
-          <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#6B7280" }}>
+          <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             Practical AI adoption programmes for every starting point — from complete beginner to team-wide implementation.
           </p>
         </div>
@@ -71,8 +71,8 @@ export default function ProgramsSection() {
                 key={p.title}
                 className="rounded-2xl p-7 flex flex-col transition-all duration-200"
                 style={{
-                  background: "#ffffff",
-                  border: "1px solid #E5E7EB",
+                  background: "#151B23",
+                  border: "1px solid #1F2937",
                   borderTop: `4px solid ${p.color}`,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
                 }}
@@ -92,10 +92,10 @@ export default function ProgramsSection() {
                   {p.subtitle}
                 </div>
                 <h3 className="mb-3" style={{ fontSize: "1.15rem" }}>{p.title}</h3>
-                <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#6B7280" }}>{p.desc}</p>
+                <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#9CA3AF" }}>{p.desc}</p>
                 <ul className="flex flex-col gap-1.5 mb-5">
                   {p.outcomes.map((o) => (
-                    <li key={o} className="flex items-center gap-2" style={{ fontSize: "0.875rem", color: "#374151" }}>
+                    <li key={o} className="flex items-center gap-2" style={{ fontSize: "0.875rem", color: "#D1D5DB" }}>
                       <span style={{ width: 7, height: 7, borderRadius: "50%", background: p.color, display: "inline-block", flexShrink: 0 }} />
                       {o}
                     </li>

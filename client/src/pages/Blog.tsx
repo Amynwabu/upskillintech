@@ -193,17 +193,17 @@ export default function Blog() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#1C1C1C", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
-            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
+            <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Practical Insights on AI for the Modern Professional
             </h1>
-            <p className="text-lg mb-6" style={{ color: "#555" }}>
+            <p className="text-lg mb-6" style={{ color: "#9CA3AF" }}>
               Explore how AI is transforming work, leadership, and innovation — with actionable articles written for professionals who want results, not just theory.
             </p>
-            <div className="flex items-center gap-4 text-sm" style={{ color: "#555" }}>
+            <div className="flex items-center gap-4 text-sm" style={{ color: "#9CA3AF" }}>
               <span className="flex items-center gap-1"><BookOpen size={15} /> 40+ Articles</span>
               <span>·</span>
               <span className="flex items-center gap-1"><Users size={15} /> 5 Categories</span>
@@ -216,7 +216,7 @@ export default function Blog() {
           <div className="container py-3">
             <div className="flex flex-wrap gap-6 justify-center">
               {CATEGORIES.slice(1).map(c => (
-                <span key={c.id} className="text-xs font-semibold flex items-center gap-1" style={{ color: "#1C1C1C" }}>
+                <span key={c.id} className="text-xs font-semibold flex items-center gap-1" style={{ color: "#F3F4F6" }}>
                   {CATEGORY_ICONS[c.id]} {c.label}
                 </span>
               ))}
@@ -227,22 +227,22 @@ export default function Blog() {
 
       {/* Featured Articles */}
       {activeCategory === "all" && (
-        <section className="section-py" style={{ background: "#fff" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Featured Articles</h2>
+            <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Featured Articles</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featured.map(article => (
                 <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #0D948820", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
                   <div className="h-2" style={{ background: "linear-gradient(90deg, #0D9488, #E6B800)" }} />
                   <div className="p-7">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#F0FDF4", color: "#0D9488" }}>
+                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#10231C", color: "#0D9488" }}>
                         {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                       </span>
                       <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "#FEFCE8", color: "#8B6914" }}>Featured</span>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
-                    <p className="text-sm leading-relaxed mb-5" style={{ color: "#6B7280" }}>{article.excerpt}</p>
+                    <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
+                    <p className="text-sm leading-relaxed mb-5" style={{ color: "#9CA3AF" }}>{article.excerpt}</p>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3 text-xs" style={{ color: "#9CA3AF" }}>
                         <span className="flex items-center gap-1"><Clock size={12} /> {article.readTime}</span>
@@ -262,7 +262,7 @@ export default function Blog() {
       )}
 
       {/* Category Filter + All Articles */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           {/* Filter tabs */}
           <div className="flex flex-wrap gap-2 mb-10">
@@ -274,7 +274,7 @@ export default function Blog() {
                 style={{
                   background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
-                  border: activeCategory === cat.id ? "none" : "1px solid #E5E7EB",
+                  border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
                 }}
               >
@@ -285,17 +285,17 @@ export default function Blog() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(activeCategory === "all" ? rest : filtered).map(article => (
-              <div key={article.id} className="rounded-xl bg-white flex flex-col" style={{ border: "1px solid #E5E7EB", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+              <div key={article.id} className="rounded-xl bg-[#151B23] flex flex-col" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
                 <div className="h-1.5 rounded-t-xl" style={{ background: CATEGORY_COLORS[article.category] || "#0D9488" }} />
                 <div className="p-6 flex flex-col flex-1">
                   <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#0D9488" }}>
                     {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                   </span>
-                  <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{article.title}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#6B7280" }}>{article.excerpt}</p>
+                  <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#9CA3AF" }}>{article.excerpt}</p>
                   <div className="flex flex-wrap gap-1 mb-4">
                     {article.tags.slice(0, 2).map(tag => (
-                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style={{ background: "#F7F8FA", color: "#6B7280", border: "1px solid #E5E7EB" }}>
+                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style={{ background: "#151B23", color: "#9CA3AF", border: "1px solid #1F2937" }}>
                         <Tag size={10} /> {tag}
                       </span>
                     ))}
@@ -315,7 +315,7 @@ export default function Blog() {
 
           {filtered.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-lg" style={{ color: "#6B7280" }}>No articles found in this category yet.</p>
+              <p className="text-lg" style={{ color: "#9CA3AF" }}>No articles found in this category yet.</p>
             </div>
           )}
         </div>
@@ -327,8 +327,8 @@ export default function Blog() {
           <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Never Miss an Article</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get the latest AI insights, guides, and workflows delivered to your inbox every week.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#1C1C1C" }} />
-            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
+            <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
+            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               Subscribe
             </button>
           </div>
@@ -336,7 +336,7 @@ export default function Blog() {
       </section>
 
       {/* Back to Resources */}
-      <section className="py-8" style={{ background: "#F7F8FA" }}>
+      <section className="py-8" style={{ background: "#151B23" }}>
         <div className="container text-center">
           <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#0D9488" }}>
             ← Back to Resources Hub

@@ -182,7 +182,7 @@ export default function AIGuides() {
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "4", l: "Free Guides" }, { v: "50+", l: "AI Prompts" }, { v: "100+", l: "Pages of Content" }, { v: "1,000+", l: "Downloads" }].map(s => (
                 <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{s.v}</div>
+                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
@@ -192,24 +192,24 @@ export default function AIGuides() {
       </section>
 
       {/* Guides Grid */}
-      <section className="section-py" style={{ background: "#fff" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">Free Downloads</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>Download Your Free AI Guides</h2>
-            <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#6B7280" }}>Each guide is packed with practical frameworks, templates, and examples you can use immediately.</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Download Your Free AI Guides</h2>
+            <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>Each guide is packed with practical frameworks, templates, and examples you can use immediately.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {GUIDES.map((guide) => (
               <div key={guide.id} className="rounded-2xl p-8 flex flex-col" style={{ background: guide.bg, border: `2px solid ${guide.border}25`, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
                 <div className="flex items-start justify-between mb-4">
-                  <div className="rounded-xl p-3" style={{ background: "#fff", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>{guide.icon}</div>
+                  <div className="rounded-xl p-3" style={{ background: "#151B23", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>{guide.icon}</div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style={{ background: `${guide.badgeColor}18`, color: guide.badgeColor }}>{guide.badge}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{guide.title}</h3>
+                <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{guide.title}</h3>
                 <p className="text-sm font-semibold mb-3" style={{ color: guide.border }}>{guide.subtitle}</p>
-                <p className="text-sm leading-relaxed mb-5" style={{ color: "#4B5563" }}>{guide.desc}</p>
-                <div className="flex gap-4 text-xs mb-5" style={{ color: "#6B7280" }}>
+                <p className="text-sm leading-relaxed mb-5" style={{ color: "#D1D5DB" }}>{guide.desc}</p>
+                <div className="flex gap-4 text-xs mb-5" style={{ color: "#9CA3AF" }}>
                   <span className="flex items-center gap-1"><FileText size={12} /> {guide.pages}</span>
                   <span className="flex items-center gap-1"><Target size={12} /> {guide.level}</span>
                   <span className="flex items-center gap-1"><Download size={12} /> {guide.format}</span>
@@ -218,7 +218,7 @@ export default function AIGuides() {
                   <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>What's Inside</p>
                   <ul className="space-y-1.5">
                     {guide.includes.map(item => (
-                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "#4B5563" }}>
+                      <li key={item} className="flex items-start gap-2 text-sm" style={{ color: "#D1D5DB" }}>
                         <CheckCircle2 size={14} className="shrink-0 mt-0.5" style={{ color: guide.border }} />
                         {item}
                       </li>
@@ -232,7 +232,7 @@ export default function AIGuides() {
                     onChange={e => setEmail(e.target.value)}
                     placeholder="your@email.com"
                     className="flex-1 rounded-lg px-3 py-2.5 text-sm outline-none"
-                    style={{ border: `1.5px solid ${guide.border}40`, background: "#fff" }}
+                    style={{ border: `1.5px solid ${guide.border}40`, background: "#151B23" }}
                   />
                   <button type="submit" className="flex items-center gap-2 font-semibold px-4 py-2.5 rounded-lg text-sm whitespace-nowrap" style={{ background: guide.border, color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                     <Download size={15} /> Download
@@ -245,27 +245,27 @@ export default function AIGuides() {
       </section>
 
       {/* Prompt Library */}
-      <section className="section-py" style={{ background: "#F7F8FA" }}>
+      <section className="section-py" style={{ background: "#151B23" }}>
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">Prompt Library</span>
-            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>50 AI Prompts — Browse & Copy</h2>
-            <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#6B7280" }}>Click any prompt to expand it, then copy and paste directly into your AI tool of choice.</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mt-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>50 AI Prompts — Browse & Copy</h2>
+            <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>Click any prompt to expand it, then copy and paste directly into your AI tool of choice.</p>
           </div>
           <div className="space-y-10">
             {PROMPT_CATEGORIES.map((cat) => (
               <div key={cat.category}>
                 <div className="flex items-center gap-3 mb-5">
                   <div className="h-1 w-8 rounded-full" style={{ background: cat.color }} />
-                  <h3 className="text-lg font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{cat.category}</h3>
+                  <h3 className="text-lg font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{cat.category}</h3>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4">
                   {cat.prompts.map((p) => (
-                    <div key={p.title} className="rounded-xl overflow-hidden" style={{ background: "#fff", border: "1px solid #E5E7EB", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+                    <div key={p.title} className="rounded-xl overflow-hidden" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
                       <div className="h-1" style={{ background: cat.color }} />
                       <div className="p-5">
                         <div className="flex items-start justify-between mb-3">
-                          <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}>{p.title}</h4>
+                          <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{p.title}</h4>
                           <button
                             onClick={() => setExpandedPrompt(expandedPrompt === p.title ? null : p.title)}
                             className="text-xs font-semibold px-2 py-1 rounded-full ml-2 shrink-0"
@@ -276,7 +276,7 @@ export default function AIGuides() {
                         </div>
                         {expandedPrompt === p.title && (
                           <div className="mb-3">
-                            <p className="text-xs leading-relaxed p-3 rounded-lg" style={{ background: "#F7F8FA", color: "#4B5563", fontFamily: "monospace" }}>{p.prompt}</p>
+                            <p className="text-xs leading-relaxed p-3 rounded-lg" style={{ background: "#151B23", color: "#D1D5DB", fontFamily: "monospace" }}>{p.prompt}</p>
                           </div>
                         )}
                         <button
@@ -294,7 +294,7 @@ export default function AIGuides() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <p className="text-sm mb-4" style={{ color: "#6B7280" }}>Want all 50 prompts in one place?</p>
+            <p className="text-sm mb-4" style={{ color: "#9CA3AF" }}>Want all 50 prompts in one place?</p>
             <form onSubmit={(e) => handleDownload(e, "50 AI Prompts Library")} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "2px solid #0D9488" }} />
               <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
@@ -311,7 +311,7 @@ export default function AIGuides() {
           <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Ready to Go Deeper?</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Guides are a great start — but the AI-Enabled Professional Program takes you from reading about AI to actually using it in your work every day.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#E6B800", color: "#1C1C1C", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>

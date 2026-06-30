@@ -24,7 +24,7 @@ export default function CommunitySection() {
             <h2 className="mt-4 mb-5">
               Join the UpskillinTech <span style={{ color: "#0D9488" }}>Community</span>
             </h2>
-            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#4B5563", lineHeight: 1.75 }}>
+            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#D1D5DB", lineHeight: 1.75 }}>
               Learn, share workflows, and collaborate with thousands of professionals who are integrating AI into their work and lives.
             </p>
             <ul className="flex flex-col gap-5 mb-10">
@@ -34,10 +34,10 @@ export default function CommunitySection() {
                     <CheckCircle size={18} style={{ color: "#0D9488" }} />
                   </div>
                   <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1rem" }}>
                       {b.title}
                     </div>
-                    <div style={{ fontSize: "0.925rem", color: "#6B7280", lineHeight: 1.6 }}>{b.desc}</div>
+                    <div style={{ fontSize: "0.925rem", color: "#9CA3AF", lineHeight: 1.6 }}>{b.desc}</div>
                   </div>
                 </li>
               ))}
@@ -75,7 +75,7 @@ export default function CommunitySection() {
                   <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#0D9488" }}>
                     Growing Community
                   </div>
-                  <div style={{ fontSize: "0.8rem", color: "#6B7280" }}>Professionals across Africa & beyond</div>
+                  <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>Professionals across Africa & beyond</div>
                 </div>
               </div>
             </div>

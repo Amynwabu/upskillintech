@@ -151,20 +151,20 @@ export default function Community() {
   );
 
   return (
-    <div className="min-h-screen bg-white font-inter">
+    <div className="min-h-screen bg-[#151B23] font-inter">
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section
         className="relative pt-24 pb-16 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 40%, #fffef0 100%)" }}
+        style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}
       >
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
 
-        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-gray-900 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
             style={{ background: "rgba(255,255,255,0.2)" }}>
             <Users size={12} /> UpskillinTech Community
@@ -183,13 +183,13 @@ export default function Community() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              style={{ background: "#E6B800", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
               onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
               Join the Community <ArrowRight size={16} />
             </a>
             <a href="#masterclasses"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-gray-900 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all"
               onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
               See Masterclasses
@@ -206,7 +206,7 @@ export default function Community() {
               { value: "12+", label: "Countries Represented" },
               { value: "Free", label: "To Join" },
             ].map((stat, i) => (
-              <div key={i} className="rounded-xl px-4 py-3 text-center text-gray-900"
+              <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
                 style={{ background: "rgba(13,148,136,0.10)" }}>
                 <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
@@ -217,15 +217,15 @@ export default function Community() {
       </section>
 
       {/* ── What You Get ─────────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#151B23]">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>Community Benefits</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>Community Benefits</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               What You Get as a Member
             </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>
               The UpskillinTech community is designed to support your AI learning
               journey with practical resources, real connections, and regular learning opportunities.
             </p>
@@ -236,13 +236,13 @@ export default function Community() {
               const Icon = b.icon;
               return (
                 <div key={i} className="rounded-2xl border p-6 hover:shadow-lg transition-all hover:-translate-y-1"
-                  style={{ borderColor: "#e8e8e8" }}>
+                  style={{ borderColor: "#1F2937" }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: `${b.color}15` }}>
                     <Icon size={22} style={{ color: b.color }} />
                   </div>
-                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#1C1C1C" }}>{b.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#555" }}>{b.desc}</p>
+                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#F3F4F6" }}>{b.title}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{b.desc}</p>
                 </div>
               );
             })}
@@ -251,20 +251,20 @@ export default function Community() {
       </section>
 
       {/* ── Masterclasses ────────────────────────────────────────────────── */}
-      <section id="masterclasses" className="section-py" style={{ background: "#f8faf8" }}>
+      <section id="masterclasses" className="section-py" style={{ background: "#11161A" }}>
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>Monthly Masterclasses</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>Monthly Masterclasses</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Learn. Apply. Grow.
             </h2>
-            <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "#555" }}>
+            <p className="text-base max-w-xl mx-auto mb-6" style={{ color: "#9CA3AF" }}>
               Live monthly sessions on practical AI topics — hosted by Dr. Amaka Adiuku
               and guest practitioners. All sessions are recorded for community members.
             </p>
             {/* Tabs */}
-            <div className="inline-flex rounded-xl overflow-hidden border" style={{ borderColor: "#e8e8e8" }}>
+            <div className="inline-flex rounded-xl overflow-hidden border" style={{ borderColor: "#1F2937" }}>
               {(["upcoming", "recorded"] as const).map(tab => (
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className="px-6 py-2.5 text-sm font-semibold capitalize transition-all"
@@ -280,12 +280,12 @@ export default function Community() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {filteredMasterclasses.map((mc, i) => (
-              <div key={i} className="bg-white rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
-                style={{ borderColor: "#e8e8e8" }}>
+              <div key={i} className="bg-[#151B23] rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
+                style={{ borderColor: "#1F2937" }}>
                 <div className="h-1.5" style={{ background: "linear-gradient(90deg, #0D9488, #8B9E1A)" }} />
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <h3 className="font-poppins font-bold text-base" style={{ color: "#1C1C1C" }}>{mc.title}</h3>
+                    <h3 className="font-poppins font-bold text-base" style={{ color: "#F3F4F6" }}>{mc.title}</h3>
                     <span className="shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full"
                       style={{
                         background: mc.status === "Upcoming" ? "#f0faf0" : "#f5f5f5",
@@ -294,22 +294,22 @@ export default function Community() {
                       {mc.status}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#555" }}>{mc.desc}</p>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#9CA3AF" }}>{mc.desc}</p>
                   <div className="space-y-1.5 mb-4">
-                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
                       <Calendar size={12} style={{ color: "#0D9488" }} /> {mc.date}
                     </div>
-                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
                       <Clock size={12} style={{ color: "#0D9488" }} /> {mc.time}
                     </div>
-                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
                       <Users size={12} style={{ color: "#0D9488" }} /> Hosted by {mc.host}
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {mc.tags.map((tag, j) => (
                       <span key={j} className="text-xs px-2 py-0.5 rounded-full"
-                        style={{ background: "#f0faf0", color: "#0D9488" }}>{tag}</span>
+                        style={{ background: "#10231C", color: "#0D9488" }}>{tag}</span>
                     ))}
                   </div>
                   <a href="/contact"
@@ -328,15 +328,15 @@ export default function Community() {
       </section>
 
       {/* ── Upcoming Events ───────────────────────────────────────────────── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#151B23]">
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#f0faf0", color: "#0D9488" }}>Events & Webinars</span>
-            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#1C1C1C" }}>
+              style={{ background: "#10231C", color: "#0D9488" }}>Events & Webinars</span>
+            <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Upcoming Events
             </h2>
-            <p className="text-base max-w-xl mx-auto" style={{ color: "#555" }}>
+            <p className="text-base max-w-xl mx-auto" style={{ color: "#9CA3AF" }}>
               Community members get priority access and early registration for all
               UpskillinTech events, workshops, and webinars.
             </p>
@@ -345,18 +345,18 @@ export default function Community() {
           <div className="grid md:grid-cols-3 gap-6">
             {upcomingEvents.map((ev, i) => (
               <div key={i} className="rounded-2xl border overflow-hidden hover:shadow-lg transition-all hover:-translate-y-1"
-                style={{ borderColor: "#e8e8e8" }}>
+                style={{ borderColor: "#1F2937" }}>
                 <div className="h-2" style={{ background: ev.color }} />
                 <div className="p-6">
                   <span className="text-xs font-semibold px-2 py-0.5 rounded-full mb-3 inline-block"
                     style={{ background: `${ev.color}15`, color: ev.color }}>{ev.type}</span>
-                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#1C1C1C" }}>{ev.title}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#555" }}>{ev.desc}</p>
+                  <h3 className="font-poppins font-bold text-base mb-2" style={{ color: "#F3F4F6" }}>{ev.title}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: "#9CA3AF" }}>{ev.desc}</p>
                   <div className="space-y-1.5 mb-5">
-                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
                       <Calendar size={12} style={{ color: ev.color }} /> {ev.date}
                     </div>
-                    <div className="flex items-center gap-2 text-xs" style={{ color: "#666" }}>
+                    <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
                       <MapPin size={12} style={{ color: ev.color }} /> {ev.location}
                     </div>
                   </div>
@@ -433,7 +433,7 @@ export default function Community() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#1C1C1C" }}
+              style={{ background: "#E6B800", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
               onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
               Join the Community <ArrowRight size={15} />

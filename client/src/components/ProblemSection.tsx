@@ -38,10 +38,10 @@ export default function ProblemSection() {
       <div className="container">
         <div className="text-center mb-14" style={{ maxWidth: 560, margin: "0 auto 3.5rem" }}>
           <span className="section-label">The real problem</span>
-          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
+          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
             Sound familiar? You're not alone.
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#6B7280", lineHeight: 1.7 }}>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
             Most people struggle with AI for the same four reasons. Here's what's really going on — and how we help.
           </p>
         </div>
@@ -62,10 +62,10 @@ export default function ProblemSection() {
                   <Icon size={24} style={{ color: p.color }} />
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#111827", marginBottom: "0.5rem", lineHeight: 1.4 }}>
+                  <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#F3F4F6", marginBottom: "0.5rem", lineHeight: 1.4 }}>
                     {p.title}
                   </h3>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#6B7280", lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#9CA3AF", lineHeight: 1.7 }}>
                     {p.desc}
                   </p>
                 </div>

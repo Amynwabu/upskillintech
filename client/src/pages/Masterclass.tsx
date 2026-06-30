@@ -209,15 +209,15 @@ export default function Masterclass() {
                   AI Transformation Master Class · July 2025
                 </span>
               </div>
-              <h1 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827", fontSize: "clamp(2.25rem, 5vw, 4rem)", lineHeight: 1.08 }}>
+              <h1 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", fontSize: "clamp(2.25rem, 5vw, 4rem)", lineHeight: 1.08 }}>
                 From Idea to Income — Build a Real Business with AI in 10 Steps
               </h1>
-              <p className="mb-8" style={{ fontSize: "1.2rem", lineHeight: 1.75, color: "#374151" }}>
+              <p className="mb-8" style={{ fontSize: "1.2rem", lineHeight: 1.75, color: "#D1D5DB" }}>
                 Join Dr. Amaka Adiuku for a hands-on Master Class where you'll use AI to find your idea, build your
                 brand, launch your website, create a month of content, and start growing — step by step, with no
                 technical background required.
               </p>
-              <div className="flex flex-wrap justify-center gap-3 mb-9" style={{ color: "#4B5563" }}>
+              <div className="flex flex-wrap justify-center gap-3 mb-9" style={{ color: "#D1D5DB" }}>
                 <span className="inline-flex items-center gap-2 px-3 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.75)" }}>
                   <Calendar size={15} /> Last two Saturdays of July
                 </span>
@@ -242,11 +242,11 @@ export default function Masterclass() {
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <div className="rounded-2xl px-6 py-4 text-center" style={{ background: "rgba(255,255,255,0.9)", boxShadow: "0 10px 28px rgba(0,0,0,0.08)" }}>
                   <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#0D9488" }}>₦50,000</div>
-                  <div style={{ fontSize: "0.85rem", color: "#6B7280" }}>Nigeria</div>
+                  <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>Nigeria</div>
                 </div>
                 <div className="rounded-2xl px-6 py-4 text-center" style={{ background: "rgba(255,255,255,0.9)", boxShadow: "0 10px 28px rgba(0,0,0,0.08)" }}>
                   <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#0D9488" }}>£50</div>
-                  <div style={{ fontSize: "0.85rem", color: "#6B7280" }}>UK / International</div>
+                  <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>UK / International</div>
                 </div>
               </div>
             </div>
@@ -254,7 +254,7 @@ export default function Masterclass() {
         </section>
 
         {/* ── Stats strip ──────────────────────────────────────────────── */}
-        <section style={{ background: "#ffffff", borderBottom: "1px solid #E5E7EB", borderTop: "1px solid #E5E7EB", padding: "2.5rem 0" }}>
+        <section style={{ background: "#151B23", borderBottom: "1px solid #1F2937", borderTop: "1px solid #1F2937", padding: "2.5rem 0" }}>
           <div className="container">
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "2rem 4rem", alignItems: "center" }}>
               {[
@@ -265,7 +265,7 @@ export default function Masterclass() {
               ].map((s) => (
                 <div key={s.label} style={{ textAlign: "center" }}>
                   <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2rem)", color: "#0D9488", lineHeight: 1.1 }}>{s.num}</div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#6B7280", marginTop: "0.2rem", fontWeight: 500 }}>{s.label}</div>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#9CA3AF", marginTop: "0.2rem", fontWeight: 500 }}>{s.label}</div>
                 </div>
               ))}
             </div>
@@ -273,7 +273,7 @@ export default function Masterclass() {
         </section>
 
         {/* ── Free Webinar ─────────────────────────────────────────────── */}
-        <section className="section-py" style={{ background: "#F9FAFB" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <div className="rounded-2xl overflow-hidden" style={{ border: "2px solid #0D9488", boxShadow: "0 12px 40px rgba(13,148,136,0.12)" }}>
@@ -283,13 +283,13 @@ export default function Masterclass() {
                   </div>
                   <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", color: "rgba(255,255,255,0.9)" }}>Start here before the Master Class</span>
                 </div>
-                <div style={{ background: "#ffffff", padding: "2rem 2rem 2.5rem" }}>
+                <div style={{ background: "#151B23", padding: "2rem 2rem 2.5rem" }}>
                   <div className="grid lg:grid-cols-2 gap-8 items-start">
                     <div>
-                      <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.6rem", color: "#111827", marginBottom: "0.75rem", lineHeight: 1.25 }}>
+                      <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.6rem", color: "#F3F4F6", marginBottom: "0.75rem", lineHeight: 1.25 }}>
                         Free AI Literacy Webinar
                       </h2>
-                      <p style={{ color: "#4B5563", lineHeight: 1.75, marginBottom: "1.5rem" }}>
+                      <p style={{ color: "#D1D5DB", lineHeight: 1.75, marginBottom: "1.5rem" }}>
                         Your live introduction to AI in the real world. See exactly what's possible for your business — in under 3 hours, with Dr. Amaka Adiuku.
                       </p>
                       <a
@@ -314,7 +314,7 @@ export default function Masterclass() {
                       ].map((item) => (
                         <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                           <CheckCircle2 size={17} style={{ color: "#0D9488", flexShrink: 0, marginTop: "2px" }} />
-                          <span style={{ fontSize: "0.95rem", color: "#374151", lineHeight: 1.55 }}>{item}</span>
+                          <span style={{ fontSize: "0.95rem", color: "#D1D5DB", lineHeight: 1.55 }}>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -326,16 +326,16 @@ export default function Masterclass() {
         </section>
 
         {/* ── Who It's For / Audience chips ────────────────────────────── */}
-        <section className="section-py" style={{ background: "#ffffff" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container max-w-4xl mx-auto text-center">
             <span className="section-label mb-3">Who This Is For</span>
-            <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>Built for African & diaspora professionals ready to grow</h2>
-            <p style={{ color: "#6B7280", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
+            <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>Built for African & diaspora professionals ready to grow</h2>
+            <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
               Whether you're in Nigeria or the UK, employed or self-employed — if you're ready to move from AI curiosity to real results, this is for you.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.625rem", marginBottom: "2rem" }}>
               {["Educators & coaches", "Entrepreneurs", "Freelancers", "Small business owners", "Corporate professionals", "Nigerian & UK diaspora", "Anyone ready to grow"].map((chip) => (
-                <span key={chip} style={{ fontSize: "0.875rem", padding: "0.4rem 1rem", borderRadius: "20px", border: "1px solid #D1D5DB", color: "#374151", background: "#F9FAFB" }}>{chip}</span>
+                <span key={chip} style={{ fontSize: "0.875rem", padding: "0.4rem 1rem", borderRadius: "20px", border: "1px solid #D1D5DB", color: "#D1D5DB", background: "#151B23" }}>{chip}</span>
               ))}
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
@@ -357,8 +357,8 @@ export default function Masterclass() {
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="section-label mb-3">Sound familiar?</span>
-              <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>If any of these sound like you, this programme was made for you</h2>
-              <p style={{ color: "#6B7280", fontSize: "1.05rem", lineHeight: 1.7 }}>
+              <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>If any of these sound like you, this programme was made for you</h2>
+              <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7 }}>
                 We solve 16 real business struggles — with AI, live, in the room.
               </p>
             </div>
@@ -373,11 +373,11 @@ export default function Masterclass() {
                     {cat.items.map((item) => {
                       const Icon = item.icon;
                       return (
-                        <div key={item.title} style={{ background: "#ffffff", border: "1px solid #E5E7EB", borderRadius: "12px", padding: "1rem 1.125rem", display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
+                        <div key={item.title} style={{ background: "#151B23", border: "1px solid #1F2937", borderRadius: "12px", padding: "1rem 1.125rem", display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
                           <Icon size={20} style={{ color: cat.color, flexShrink: 0, marginTop: "2px" }} />
                           <div>
-                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: "#111827", marginBottom: "0.25rem" }}>{item.title}</div>
-                            <div style={{ fontSize: "0.8125rem", color: "#6B7280", lineHeight: 1.55 }}>{item.desc}</div>
+                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.25rem" }}>{item.title}</div>
+                            <div style={{ fontSize: "0.8125rem", color: "#9CA3AF", lineHeight: 1.55 }}>{item.desc}</div>
                           </div>
                         </div>
                       );
@@ -390,12 +390,12 @@ export default function Masterclass() {
         </section>
 
         {/* ── Mid-page CTA ─────────────────────────────────────────────── */}
-        <section style={{ background: "#F9FAFB", borderTop: "1px solid #E5E7EB", borderBottom: "1px solid #E5E7EB", padding: "2rem 0" }}>
+        <section style={{ background: "#151B23", borderTop: "1px solid #1F2937", borderBottom: "1px solid #1F2937", padding: "2rem 0" }}>
           <div className="container">
             <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.5rem" }}>
               <div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#111827", marginBottom: "0.25rem" }}>Ready to solve these problems — in July?</div>
-                <div style={{ fontSize: "0.9rem", color: "#6B7280" }}>Join the free webinar first, then decide if the Master Class is right for you.</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#F3F4F6", marginBottom: "0.25rem" }}>Ready to solve these problems — in July?</div>
+                <div style={{ fontSize: "0.9rem", color: "#9CA3AF" }}>Join the free webinar first, then decide if the Master Class is right for you.</div>
               </div>
               <ReserveSeatButton
                 className="btn-primary inline-flex items-center gap-2"
@@ -406,12 +406,12 @@ export default function Masterclass() {
         </section>
 
         {/* ── 10 Modules ───────────────────────────────────────────────── */}
-        <section className="section-py" style={{ background: "#ffffff" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <span className="section-label" style={{ color: "#0D9488", background: "rgba(13,148,136,0.10)", borderColor: "rgba(13,148,136,0.20)" }}>The Curriculum</span>
-              <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>What You Will Learn &amp; Do</h2>
-              <p style={{ color: "#6B7280", lineHeight: 1.75, fontSize: "1.05rem" }}>
+              <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>What You Will Learn &amp; Do</h2>
+              <p style={{ color: "#9CA3AF", lineHeight: 1.75, fontSize: "1.05rem" }}>
                 Ten practical steps that take you from a raw idea to a real, AI-powered business — built live, in the room, with Dr. Amaka.
               </p>
             </div>
@@ -419,15 +419,15 @@ export default function Masterclass() {
               {modules.map((m) => {
                 const Icon = m.icon;
                 return (
-                  <div key={m.num} className="relative rounded-2xl p-6 flex flex-col" style={{ background: "#ffffff", border: "1px solid #E5E7EB", boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}>
+                  <div key={m.num} className="relative rounded-2xl p-6 flex flex-col" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 6px 20px rgba(0,0,0,0.05)" }}>
                     <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full flex items-center justify-center font-bold text-white" style={{ background: m.color, fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", boxShadow: "0 4px 10px rgba(0,0,0,0.18)" }}>
                       {m.num}
                     </div>
                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4" style={{ background: `${m.color}14` }}>
                       <Icon size={26} style={{ color: m.color }} />
                     </div>
-                    <h3 className="mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1.02rem", lineHeight: 1.3 }}>{m.title}</h3>
-                    <p className="text-sm flex-1" style={{ color: "#6B7280", lineHeight: 1.6 }}>{m.desc}</p>
+                    <h3 className="mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1.02rem", lineHeight: 1.3 }}>{m.title}</h3>
+                    <p className="text-sm flex-1" style={{ color: "#9CA3AF", lineHeight: 1.6 }}>{m.desc}</p>
                   </div>
                 );
               })}
@@ -436,12 +436,12 @@ export default function Masterclass() {
         </section>
 
         {/* ── Who It's For / No Tech Skills / 1-on-1 ──────────────────── */}
-        <section className="section-py" style={{ background: "#F7F8FA" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
             <div className="grid lg:grid-cols-[1.1fr_1.1fr_1fr] gap-6 items-stretch">
-              <div className="rounded-2xl p-7" style={{ background: "#ffffff", border: "1px solid #E5E7EB" }}>
+              <div className="rounded-2xl p-7" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
                 <span className="section-label mb-4 inline-block" style={{ color: "#7C3AED", background: "rgba(124,58,237,0.10)", borderColor: "rgba(124,58,237,0.20)" }}>Who Is This For</span>
-                <h3 className="mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1.3rem" }}>Built for people ready to build</h3>
+                <h3 className="mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1.3rem" }}>Built for people ready to build</h3>
                 <div className="grid grid-cols-1 gap-4">
                   {audience.map((a) => {
                     const Icon = a.icon;
@@ -450,16 +450,16 @@ export default function Masterclass() {
                         <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(124,58,237,0.10)" }}>
                           <Icon size={18} style={{ color: "#7C3AED" }} />
                         </div>
-                        <span style={{ color: "#374151", fontWeight: 500 }}>{a.label}</span>
+                        <span style={{ color: "#D1D5DB", fontWeight: 500 }}>{a.label}</span>
                       </div>
                     );
                   })}
                 </div>
               </div>
 
-              <div className="rounded-2xl p-7" style={{ background: "#ffffff", border: "1px solid #E5E7EB" }}>
+              <div className="rounded-2xl p-7" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
                 <span className="section-label mb-4 inline-block" style={{ color: "#16A34A", background: "rgba(22,163,74,0.10)", borderColor: "rgba(22,163,74,0.20)" }}>No Tech Skills? No Problem!</span>
-                <h3 className="mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1.3rem" }}>Designed for true beginners</h3>
+                <h3 className="mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1.3rem" }}>Designed for true beginners</h3>
                 <div className="grid grid-cols-1 gap-4">
                   {reassurance.map((r) => {
                     const Icon = r.icon;
@@ -469,8 +469,8 @@ export default function Masterclass() {
                           <Icon size={18} style={{ color: "#16A34A" }} />
                         </div>
                         <div>
-                          <div className="font-bold" style={{ color: "#111827", fontFamily: "'Sora', sans-serif", fontSize: "0.95rem" }}>{r.title}</div>
-                          <div className="text-sm" style={{ color: "#6B7280" }}>{r.desc}</div>
+                          <div className="font-bold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif", fontSize: "0.95rem" }}>{r.title}</div>
+                          <div className="text-sm" style={{ color: "#9CA3AF" }}>{r.desc}</div>
                         </div>
                       </div>
                     );
@@ -496,12 +496,12 @@ export default function Masterclass() {
         </section>
 
         {/* ── AI Chat Widget ────────────────────────────────────────────── */}
-        <section className="section-py" style={{ background: "#ffffff" }}>
+        <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <span className="section-label">Try It Now</span>
-              <h2 className="mt-4 mb-4" style={{ color: "#111827" }}>Ask our AI productivity coach</h2>
-              <p style={{ color: "#6B7280", fontSize: "1.05rem", lineHeight: 1.7 }}>
+              <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>Ask our AI productivity coach</h2>
+              <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7 }}>
                 Not sure if this masterclass is for you? Ask a question and get instant, practical guidance on AI at work.
               </p>
             </div>
@@ -519,7 +519,7 @@ export default function Masterclass() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
               <ReserveSeatButton
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold cursor-pointer border-0"
-                style={{ background: "#ffffff", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
+                style={{ background: "#151B23", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
               />
               <a
                 href="mailto:hello@upskillintech.com"

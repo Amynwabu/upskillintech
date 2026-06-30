@@ -38,7 +38,7 @@ const secondaryNavLinks = [
 
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
   const [active] = useRoute(href);
-  const color = active ? ACTIVE_NAV_COLOR : "#111827";
+  const color = active ? ACTIVE_NAV_COLOR : "#F3F4F6";
 
   return (
     <Link
@@ -70,7 +70,7 @@ function MobileNavLink({ label, href, onClick }: { label: string; href: string; 
       style={{
         fontFamily: "'Sora', sans-serif",
         fontSize: "1rem",
-        color: active ? ACTIVE_NAV_COLOR : "#111827",
+        color: active ? ACTIVE_NAV_COLOR : "#F3F4F6",
         fontWeight: active ? 800 : 600,
         textDecoration: "none",
         background: active ? "rgba(13,148,136,0.08)" : "transparent",
@@ -117,9 +117,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.10)" : "0 1px 0 #E5E7EB",
+        background: "#0B0F14",
+        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.35)" : "0 1px 0 #1F2937",
       }}
     >
       <div className="container">
@@ -129,6 +130,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="UpskillinTech"
+              style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
               style={{ height: "100px", width: "auto", objectFit: "contain", filter: "brightness(1.15) saturate(1.25)" }}
             />
           </Link>
@@ -170,9 +172,9 @@ export default function Navbar() {
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
                   style={{
-                    background: "#fff",
+                    background: "#151B23",
                     boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #E5E7EB",
+                    border: "1px solid #1F2937",
                   }}
                 >
                   <div className="p-2.5">
@@ -182,15 +184,15 @@ export default function Navbar() {
                         href={item.href}
                         className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
                         style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#F7F8FA")}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#1A2230")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
                         onClick={() => setProgramsOpen(false)}
                       >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#F0FDF4" }}>
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#10231C" }}>
                           {item.icon}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#111827" }}>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#F3F4F6" }}>
                             {item.label}
                           </div>
                           <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{item.desc}</div>
@@ -213,7 +215,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: resourcesOpen ? "#0D9488" : "#111827",
+                  color: resourcesOpen ? "#0D9488" : "#F3F4F6",
                   background: "none",
                   border: "none",
                   letterSpacing: "0.01em",
@@ -236,9 +238,9 @@ export default function Navbar() {
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
                   style={{
-                    background: "#fff",
+                    background: "#151B23",
                     boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #E5E7EB",
+                    border: "1px solid #1F2937",
                   }}
                 >
                   <div className="p-2.5">
@@ -262,15 +264,15 @@ export default function Navbar() {
                         href={r.href}
                         className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
                         style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#F7F8FA")}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#1A2230")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
                         onClick={() => setResourcesOpen(false)}
                       >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#F0FDF4" }}>
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#10231C" }}>
                           {r.icon}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#111827" }}>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#F3F4F6" }}>
                             {r.label}
                           </div>
                           <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{r.desc}</div>
@@ -286,9 +288,9 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden xl:flex items-center gap-3">
             {!loading && user ? (
-              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#374151", textDecoration: "none" }}
+              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#D1D5DB", textDecoration: "none" }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#374151")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D1D5DB")}
               >
                 Dashboard
               </Link>
@@ -305,7 +307,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             className="xl:hidden p-2 rounded-md"
-            style={{ color: "#111827" }}
+            style={{ color: "#F3F4F6" }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -316,7 +318,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="xl:hidden bg-white border-t" style={{ borderColor: "#E5E7EB" }}>
+        <div className="xl:hidden border-t" style={{ background: "#0B0F14", borderColor: "#1F2937" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
               <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
@@ -330,7 +332,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#111827", textDecoration: "none", fontSize: "0.95rem" }}
+                  style={{ color: "#F3F4F6", textDecoration: "none", fontSize: "0.95rem" }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.icon} {item.label}
@@ -357,7 +359,7 @@ export default function Navbar() {
                   key={r.label}
                   href={r.href}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#111827", textDecoration: "none", fontSize: "0.95rem" }}
+                  style={{ color: "#F3F4F6", textDecoration: "none", fontSize: "0.95rem" }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {r.icon} {r.label}

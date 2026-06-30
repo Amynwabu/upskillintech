@@ -126,11 +126,11 @@ export default function Events() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#151B23]">
       <Navbar />
 
       {/* Header */}
-      <section className="pt-32 pb-12 border-b border-gray-100" style={{ background: "linear-gradient(135deg, #f0fdfc 0%, #f7fef7 100%)" }}>
+      <section className="pt-32 pb-12 border-b border-[#1F2937]" style={{ background: "linear-gradient(135deg, #f0fdfc 0%, #f7fef7 100%)" }}>
         <div className="container">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(13,148,136,0.10)", border: "1px solid rgba(13,148,136,0.25)" }}>
@@ -145,7 +145,7 @@ export default function Events() {
               </span>
             </h1>
 
-            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "#6B7280" }}>
+            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "#9CA3AF" }}>
               Connect with the AI community through webinars, workshops, conferences, and local meetups — all focused on practical AI adoption.
             </p>
 
@@ -157,10 +157,10 @@ export default function Events() {
                     <Video className="w-3 h-3" />
                     FEATURED EVENT
                   </div>
-                  <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>
+                  <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                     AI Productivity Masterclass
                   </h3>
-                  <p className="mb-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "#6B7280" }}>
+                  <p className="mb-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>
                     With Dr. Amaka Adiuku · January 17, 2026 · 7PM UK / 8PM Nigeria
                   </p>
                   <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>
@@ -179,7 +179,7 @@ export default function Events() {
       </section>
 
       {/* Event Type Filter */}
-      <section className="py-5 border-b border-gray-100 bg-gray-50">
+      <section className="py-5 border-b border-[#1F2937] bg-[#151B23]">
         <div className="container">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
             <Calendar className="w-4 h-4 text-gray-400 flex-shrink-0" />
@@ -188,7 +188,7 @@ export default function Events() {
                 key={type}
                 onClick={() => setSelectedType(type)}
                 className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
-                  selectedType === type ? "text-white" : "bg-white border border-gray-200 text-gray-600 hover:border-teal-400"
+                  selectedType === type ? "text-white" : "bg-[#151B23] border border-[#1F2937] text-gray-600 hover:border-teal-400"
                 }`}
                 style={selectedType === type ? { background: "#0D9488", fontFamily: "'Sora', sans-serif" } : { fontFamily: "'Sora', sans-serif" }}
               >
@@ -213,7 +213,7 @@ export default function Events() {
                 <div
                   key={event.id}
                   className="group rounded-2xl border overflow-hidden transition-all duration-200 hover:shadow-xl"
-                  style={{ background: "#fff", borderColor: "#E5E7EB" }}
+                  style={{ background: "#151B23", borderColor: "#E5E7EB" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(13,148,136,0.4)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#E5E7EB"; }}
                 >
@@ -237,10 +237,10 @@ export default function Events() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 transition-colors group-hover:text-teal-600" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>
+                    <h3 className="text-xl font-bold mb-3 transition-colors group-hover:text-teal-600" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                       {event.title}
                     </h3>
-                    <p className="text-sm mb-4 line-clamp-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "#6B7280" }}>
+                    <p className="text-sm mb-4 line-clamp-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>
                       {event.description}
                     </p>
 
@@ -259,7 +259,7 @@ export default function Events() {
                     </div>
 
                     <div className="pt-4 mb-4" style={{ borderTop: "1px solid #F3F4F6" }}>
-                      <p className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>{event.speaker}</p>
+                      <p className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{event.speaker}</p>
                       <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>{event.speakerTitle}</p>
                     </div>
 
@@ -289,10 +289,10 @@ export default function Events() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ background: "#F7F8FA" }}>
+      <section className="py-16" style={{ background: "#151B23" }}>
         <div className="container max-w-3xl text-center">
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>Host an Event with Us</h2>
-          <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", color: "#6B7280" }}>
+          <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>
             Want to share your AI expertise? Partner with UpskillinTech to host a workshop, webinar, or meetup for our community.
           </p>
           <a href="/contact" className="btn-primary" style={{ fontSize: "1rem" }}>

@@ -40,12 +40,12 @@ export default function NewsletterSection() {
           {/* Header */}
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 mb-5 px-4 py-2 rounded-full" style={{ background: "rgba(255,255,255,0.20)" }}>
-              <Mail size={16} style={{ color: "#111827" }} />
-              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#111827" }}>
+              <Mail size={16} style={{ color: "#F3F4F6" }} />
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#F3F4F6" }}>
                 Free AI Toolkit
               </span>
             </div>
-            <h2 className="mb-4" style={{ color: "#111827" }}>
+            <h2 className="mb-4" style={{ color: "#F3F4F6" }}>
               Get the Free AI Toolkit (PDF)
             </h2>
             <p style={{ fontSize: "1.15rem", color: "rgba(0,0,0,0.65)", lineHeight: 1.7 }}>
@@ -57,8 +57,8 @@ export default function NewsletterSection() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
             {perks.map((p) => (
               <div key={p} className="flex items-center gap-2 px-3 py-2 rounded-xl" style={{ background: "rgba(255,255,255,0.18)" }}>
-                <CheckCircle size={15} style={{ color: "#111827", flexShrink: 0 }} />
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", fontWeight: 500, color: "#111827" }}>{p}</span>
+                <CheckCircle size={15} style={{ color: "#F3F4F6", flexShrink: 0 }} />
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", fontWeight: 500, color: "#F3F4F6" }}>{p}</span>
               </div>
             ))}
           </div>
@@ -75,7 +75,7 @@ export default function NewsletterSection() {
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
                 border: "none",
-                color: "#111827",
+                color: "#F3F4F6",
                 background: "rgba(255,255,255,0.95)",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
@@ -91,7 +91,7 @@ export default function NewsletterSection() {
                 fontFamily: "'DM Sans', sans-serif",
                 fontSize: "1rem",
                 border: "none",
-                color: "#111827",
+                color: "#F3F4F6",
                 background: "rgba(255,255,255,0.95)",
                 boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}

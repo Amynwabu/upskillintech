@@ -16,7 +16,7 @@ const benefits = [
 
 export default function EnterpriseSection() {
   return (
-    <section id="enterprise" className="section-py" style={{ background: "#F7F8FA" }}>
+    <section id="enterprise" className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
@@ -25,7 +25,7 @@ export default function EnterpriseSection() {
             <h2 className="mt-4 mb-5">
               AI Transformation for <span style={{ color: "#0D9488" }}>Organisations</span>
             </h2>
-            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#6B7280", lineHeight: 1.75 }}>
+            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#9CA3AF", lineHeight: 1.75 }}>
               UpskillinTech partners with organisations to build AI-ready teams, design intelligent workflows, and develop sustainable AI strategies that deliver measurable results.
             </p>
             <ul className="flex flex-col gap-5 mb-10">
@@ -35,10 +35,10 @@ export default function EnterpriseSection() {
                     <CheckCircle size={18} style={{ color: "#0D9488" }} />
                   </div>
                   <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#111827", fontSize: "1rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1rem" }}>
                       {b.title}
                     </div>
-                    <div style={{ fontSize: "0.925rem", color: "#6B7280", lineHeight: 1.6 }}>{b.desc}</div>
+                    <div style={{ fontSize: "0.925rem", color: "#9CA3AF", lineHeight: 1.6 }}>{b.desc}</div>
                   </div>
                 </li>
               ))}
@@ -72,7 +72,7 @@ export default function EnterpriseSection() {
                 style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.12)" }}
               >
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#0D9488" }}>50+</div>
-                <div style={{ fontSize: "0.8rem", color: "#6B7280", fontWeight: 500 }}>Business Partners</div>
+                <div style={{ fontSize: "0.8rem", color: "#9CA3AF", fontWeight: 500 }}>Business Partners</div>
               </div>
             </div>
           </div>

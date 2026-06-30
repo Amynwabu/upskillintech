@@ -130,7 +130,7 @@ export default function WorkflowsSection() {
   const ActiveIcon = active.icon;
 
   return (
-    <section className="py-24" style={{ background: "#F7F8FA" }}>
+    <section className="py-24" style={{ background: "#151B23" }}>
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
@@ -142,13 +142,13 @@ export default function WorkflowsSection() {
           </span>
           <h2
             className="text-3xl lg:text-4xl font-bold mb-4"
-            style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
+            style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}
           >
             How Professionals Use AI
           </h2>
           <p
             className="text-lg max-w-2xl mx-auto"
-            style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}
           >
             Real AI workflows used in professional environments — ready to adapt and implement today.
           </p>
@@ -202,8 +202,8 @@ export default function WorkflowsSection() {
           <div
             className="flex-1 rounded-2xl p-8 lg:p-10"
             style={{
-              background: "#ffffff",
-              border: "1px solid #E5E7EB",
+              background: "#151B23",
+              border: "1px solid #1F2937",
               boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
             }}
           >
@@ -219,11 +219,11 @@ export default function WorkflowsSection() {
                 <div>
                   <h3
                     className="font-bold text-xl"
-                    style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
+                    style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}
                   >
                     {active.title}
                   </h3>
-                  <p className="text-sm mt-0.5" style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}>
+                  <p className="text-sm mt-0.5" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                     {active.subtitle}
                   </p>
                 </div>
@@ -257,8 +257,8 @@ export default function WorkflowsSection() {
                   <div
                     className="rounded-xl p-5 h-full"
                     style={{
-                      background: "#F9FAFB",
-                      border: `1px solid #E5E7EB`,
+                      background: "#151B23",
+                      border: `1px solid #1F2937`,
                     }}
                   >
                     {/* Step number + label */}
@@ -278,11 +278,11 @@ export default function WorkflowsSection() {
                     </div>
                     <h4
                       className="font-semibold text-sm mb-2"
-                      style={{ fontFamily: "'Sora', sans-serif", color: "#1C1C1C" }}
+                      style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}
                     >
                       {step.title}
                     </h4>
-                    <p className="text-xs leading-relaxed" style={{ color: "#6B7280", fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
                       {step.desc}
                     </p>
                   </div>

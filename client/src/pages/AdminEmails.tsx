@@ -59,7 +59,7 @@ export default function AdminEmails() {
   // Check if user is admin
   if (!user || user.role !== "admin") {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-[#151B23] flex items-center justify-center">
         <Card className="max-w-md">
           <CardHeader className="text-center">
             <Shield className="w-12 h-12 mx-auto text-red-500 mb-4" />
@@ -110,9 +110,9 @@ export default function AdminEmails() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#151B23]">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200">
+      <header className="bg-[#151B23] border-b border-[#1F2937]">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -123,7 +123,7 @@ export default function AdminEmails() {
                 </Button>
               </Link>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">Email Templates</h1>
+                <h1 className="text-2xl font-bold text-[#F3F4F6]">Email Templates</h1>
                 <p className="text-sm text-gray-500">Preview and test email templates before they go live</p>
               </div>
             </div>
@@ -316,7 +316,7 @@ export default function AdminEmails() {
               </CardHeader>
               <CardContent>
                 {previewHtml ? (
-                  <div className="border rounded-lg overflow-hidden bg-white">
+                  <div className="border rounded-lg overflow-hidden bg-[#151B23]">
                     <iframe
                       srcDoc={previewHtml}
                       className="w-full h-[600px] border-0"
@@ -325,7 +325,7 @@ export default function AdminEmails() {
                     />
                   </div>
                 ) : (
-                  <div className="flex flex-col items-center justify-center h-[600px] bg-gray-100 rounded-lg border-2 border-dashed border-gray-300">
+                  <div className="flex flex-col items-center justify-center h-[600px] bg-[#1A2230] rounded-lg border-2 border-dashed border-gray-300">
                     <Mail className="w-16 h-16 text-gray-400 mb-4" />
                     <p className="text-gray-500 text-center">
                       Select a template and click "Preview Template"<br />

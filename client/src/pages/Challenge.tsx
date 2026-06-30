@@ -108,7 +108,7 @@ export default function Challenge() {
               <a
                 href="#day-1"
                 onClick={() => setActiveDay(0)}
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#E6B800", color: "#111827", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#E6B800", color: "#F3F4F6", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}
               >
                 Start Day 1 <ArrowRight size={15} />
               </a>
@@ -140,14 +140,14 @@ export default function Challenge() {
         </section>
 
         {/* Days */}
-        <section id="day-1" style={{ background: "#F9F8F6", padding: "4rem 1.5rem" }}>
+        <section id="day-1" style={{ background: "#0B0F14", padding: "4rem 1.5rem" }}>
           <div style={{ maxWidth: 860, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
               <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#0D9488", textTransform: "uppercase", letterSpacing: "0.08em" }}>The Challenge</span>
-              <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#111827", marginTop: "0.5rem" }}>
+              <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F3F4F6", marginTop: "0.5rem" }}>
                 One task. One day. Real results.
               </h2>
-              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#6B7280", marginTop: "0.75rem" }}>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF", marginTop: "0.75rem" }}>
                 Click any day to see the full task, suggested prompt, and pro tips.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function Challenge() {
                 return (
                   <div
                     key={d.day}
-                    style={{ borderRadius: "1rem", border: `1.5px solid ${isOpen ? d.color : "#E5E7EB"}`, background: "#ffffff", overflow: "hidden", transition: "border-color 0.2s" }}
+                    style={{ borderRadius: "1rem", border: `1.5px solid ${isOpen ? d.color : "#E5E7EB"}`, background: "#151B23", overflow: "hidden", transition: "border-color 0.2s" }}
                   >
                     <button
                       onClick={() => setActiveDay(isOpen ? null : i)}
@@ -170,8 +170,8 @@ export default function Challenge() {
                       </div>
                       <div style={{ flex: 1 }}>
                         <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.7rem", fontWeight: 600, color: d.color, textTransform: "uppercase", letterSpacing: "0.07em" }}>Day {d.day}</div>
-                        <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#111827" }}>{d.title}</div>
-                        <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#6B7280" }}>{d.tagline}</div>
+                        <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1rem", color: "#F3F4F6" }}>{d.title}</div>
+                        <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#9CA3AF" }}>{d.tagline}</div>
                       </div>
                       <div style={{ color: d.color, fontSize: "1.2rem", fontWeight: 700, flexShrink: 0 }}>{isOpen ? "−" : "+"}</div>
                     </button>
@@ -180,9 +180,9 @@ export default function Challenge() {
                       <div style={{ padding: "0 1.5rem 1.5rem", borderTop: `1px solid #F3F4F6` }}>
                         <div style={{ marginTop: "1.25rem", display: "flex", flexDirection: "column", gap: "1.25rem" }}>
 
-                          <div style={{ background: "#F9F8F6", borderRadius: "0.75rem", padding: "1.25rem" }}>
-                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#374151", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Your task</div>
-                            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "#374151", lineHeight: 1.65 }}>{d.task}</p>
+                          <div style={{ background: "#0B0F14", borderRadius: "0.75rem", padding: "1.25rem" }}>
+                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#D1D5DB", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Your task</div>
+                            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "#D1D5DB", lineHeight: 1.65 }}>{d.task}</p>
                           </div>
 
                           <div style={{ background: "#0F172A", borderRadius: "0.75rem", padding: "1.25rem" }}>
@@ -192,19 +192,19 @@ export default function Challenge() {
 
                           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
                             <div style={{ flex: 1, minWidth: 200 }}>
-                              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#374151", marginBottom: "0.625rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Pro tips</div>
+                              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#D1D5DB", marginBottom: "0.625rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Pro tips</div>
                               <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: 0, padding: 0, listStyle: "none" }}>
                                 {d.tips.map((t) => (
                                   <li key={t} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem" }}>
                                     <CheckCircle2 size={15} color={d.color} style={{ flexShrink: 0, marginTop: 2 }} />
-                                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#4B5563", lineHeight: 1.5 }}>{t}</span>
+                                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", lineHeight: 1.5 }}>{t}</span>
                                   </li>
                                 ))}
                               </ul>
                             </div>
                             <div style={{ borderRadius: "0.75rem", padding: "1rem 1.25rem", background: `${d.color}12`, border: `1px solid ${d.color}30`, alignSelf: "flex-start" }}>
                               <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.7rem", fontWeight: 600, color: d.color, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "0.3rem" }}>Outcome</div>
-                              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#374151", lineHeight: 1.5, fontWeight: 500 }}>{d.outcome}</p>
+                              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", lineHeight: 1.5, fontWeight: 500 }}>{d.outcome}</p>
                             </div>
                           </div>
 
@@ -227,12 +227,12 @@ export default function Challenge() {
         </section>
 
         {/* CTA */}
-        <section style={{ background: "#ffffff", padding: "4rem 1.5rem", textAlign: "center" }}>
+        <section style={{ background: "#151B23", padding: "4rem 1.5rem", textAlign: "center" }}>
           <div style={{ maxWidth: 600, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#111827", marginBottom: "1rem" }}>
+            <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#F3F4F6", marginBottom: "1rem" }}>
               Ready to go deeper?
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#6B7280", lineHeight: 1.7, marginBottom: "2rem" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF", lineHeight: 1.7, marginBottom: "2rem" }}>
               The 7-Day Challenge is just the beginning. Join the AI Starter Bootcamp to build structured AI skills with community support and expert guidance.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>

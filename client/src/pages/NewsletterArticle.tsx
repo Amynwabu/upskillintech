@@ -269,8 +269,8 @@ export default function NewsletterArticle() {
         <Navbar />
         <main className="flex-1 pt-[92px] flex items-center justify-center">
           <div className="text-center py-20">
-            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#111827" }}>Edition Not Found</h1>
-            <p className="text-lg mb-8" style={{ color: "#6B7280" }}>This newsletter edition doesn't exist or has been moved.</p>
+            <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Edition Not Found</h1>
+            <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition doesn't exist or has been moved.</p>
             <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#0D9488" }}>
               ← Back to Newsletter
             </Link>
@@ -289,14 +289,14 @@ export default function NewsletterArticle() {
       <main className="flex-1 pt-[92px]">
 
         {/* ── Breadcrumb ── */}
-        <div style={{ background: "#F9FAFB", borderBottom: "1px solid #E5E7EB", padding: "14px 0" }}>
+        <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
-            <div className="flex items-center gap-2 text-sm" style={{ color: "#6B7280" }}>
+            <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
               <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
               <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
-              <span style={{ color: "#374151" }}>{article.title}</span>
+              <span style={{ color: "#D1D5DB" }}>{article.title}</span>
             </div>
           </div>
         </div>
@@ -309,10 +309,10 @@ export default function NewsletterArticle() {
                 style={{ background: `${article.tagColor}18`, color: article.tagColor }}>
                 {article.tag}
               </div>
-              <h1 className="font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#111827", lineHeight: 1.2 }}>
+              <h1 className="font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#F3F4F6", lineHeight: 1.2 }}>
                 {article.title}
               </h1>
-              <div className="flex flex-wrap items-center gap-5" style={{ color: "#6B7280", fontSize: "0.95rem" }}>
+              <div className="flex flex-wrap items-center gap-5" style={{ color: "#9CA3AF", fontSize: "0.95rem" }}>
                 <span className="flex items-center gap-1.5"><Users size={15} /> {article.author}</span>
                 <span className="flex items-center gap-1.5"><Calendar size={15} /> {article.date}</span>
                 <span className="flex items-center gap-1.5"><Clock size={15} /> {article.readTime}</span>
@@ -322,7 +322,7 @@ export default function NewsletterArticle() {
         </section>
 
         {/* ── Article Body ── */}
-        <section style={{ background: "#ffffff", padding: "60px 0" }}>
+        <section style={{ background: "#151B23", padding: "60px 0" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               {article.sections.map((section, i) => {
@@ -336,11 +336,11 @@ export default function NewsletterArticle() {
                         style={{ background: `${color}20` }}>
                         <Icon size={20} style={{ color }} />
                       </div>
-                      <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#111827" }}>
+                      <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.15rem", color: "#F3F4F6" }}>
                         {section.title}
                       </h2>
                     </div>
-                    <div style={{ color: "#374151", lineHeight: 1.8, fontSize: "1rem" }}>
+                    <div style={{ color: "#D1D5DB", lineHeight: 1.8, fontSize: "1rem" }}>
                       {section.content.split("\n\n").map((para, j) => (
                         <p key={j} className="mb-4" dangerouslySetInnerHTML={{
                           __html: para.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
@@ -355,7 +355,7 @@ export default function NewsletterArticle() {
         </section>
 
         {/* ── CTA Section ── */}
-        <section style={{ background: "#F9FAFB", padding: "60px 0" }}>
+        <section style={{ background: "#151B23", padding: "60px 0" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <div className="rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #111827, #1a2e1a)" }}>
@@ -385,11 +385,11 @@ export default function NewsletterArticle() {
               </div>
 
               {/* Mini subscribe form */}
-              <div className="mt-8 rounded-2xl p-8" style={{ border: "1.5px solid #E5E7EB", background: "#fff" }}>
-                <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#111827" }}>
+              <div className="mt-8 rounded-2xl p-8" style={{ border: "1.5px solid #1F2937", background: "#151B23" }}>
+                <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#F3F4F6" }}>
                   Enjoyed this edition?
                 </h4>
-                <p className="mb-5" style={{ color: "#6B7280", fontSize: "0.95rem" }}>Subscribe to get the next one delivered straight to your inbox.</p>
+                <p className="mb-5" style={{ color: "#9CA3AF", fontSize: "0.95rem" }}>Subscribe to get the next one delivered straight to your inbox.</p>
                 {subDone ? (
                   <div className="flex items-center gap-3 text-green-600">
                     <CheckCircle size={20} />
@@ -402,7 +402,7 @@ export default function NewsletterArticle() {
                       type="email" placeholder="Your email address" value={email}
                       onChange={(e) => setEmail(e.target.value)} required
                       className="flex-1 px-4 py-3 rounded-xl outline-none"
-                      style={{ border: "1.5px solid #E5E7EB", fontSize: "0.95rem" }}
+                      style={{ border: "1.5px solid #1F2937", fontSize: "0.95rem" }}
                     />
                     <button type="submit" disabled={subscribe.isPending}
                       className="px-6 py-3 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
@@ -418,22 +418,22 @@ export default function NewsletterArticle() {
 
         {/* ── Related Articles ── */}
         {relatedArticles.length > 0 && (
-          <section style={{ background: "#ffffff", padding: "60px 0" }}>
+          <section style={{ background: "#151B23", padding: "60px 0" }}>
             <div className="container">
               <div className="max-w-3xl mx-auto">
-                <h3 className="font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.5rem", color: "#111827" }}>
+                <h3 className="font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.5rem", color: "#F3F4F6" }}>
                   Related Editions
                 </h3>
                 <div className="grid sm:grid-cols-3 gap-5">
                   {relatedArticles.map((rel) => rel && (
                     <Link key={rel.slug} href={`/newsletter/${rel.slug}`}
                       className="block rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
-                      style={{ border: "1.5px solid #E5E7EB", background: "#FAFAFA" }}>
+                      style={{ border: "1.5px solid #1F2937", background: "#FAFAFA" }}>
                       <div className="inline-block px-2.5 py-1 rounded-full text-xs font-bold mb-3"
                         style={{ background: `${rel.tagColor}18`, color: rel.tagColor }}>
                         {rel.tag}
                       </div>
-                      <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", color: "#111827", lineHeight: 1.4 }}>
+                      <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", color: "#F3F4F6", lineHeight: 1.4 }}>
                         {rel.title}
                       </h4>
                       <div className="flex items-center gap-3" style={{ color: "#9CA3AF", fontSize: "0.8rem" }}>
