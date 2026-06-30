@@ -4,7 +4,7 @@
  */
 import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
 
-const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/upskillintech_logo_transparent_2bd795be.png";
+const LOGO_URL = "/logo.png";
 
 const footerLinks = {
   Insights: [
