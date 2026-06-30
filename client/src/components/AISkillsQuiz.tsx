@@ -116,7 +116,7 @@ const levels = [
     gradient: "linear-gradient(135deg, #DB2777, #BE185D)",
     desc: "You're ahead of most people — and you're thinking about how to bring others along. Your focus is adoption, governance, and impact.",
     next: "AI Adoption for Leaders & Teams is designed exactly for you. Let's build a roadmap for your organisation.",
-    programmes: ["AI Adoption for Leaders & Teams", "Enterprise Solutions", "Discovery Call with Dr. Amaka"],
+    programmes: ["AI Adoption for Leaders & Teams", "Enterprise Solutions", "Discovery Call"],
     cta: "Explore Enterprise Solutions",
     ctaHref: "/enterprise",
   },

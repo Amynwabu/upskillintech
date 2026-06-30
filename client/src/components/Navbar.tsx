@@ -147,7 +147,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#111827",
+                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#F3F4F6",
                   fontWeight: isProgramsActive ? 800 : 600,
                   background: "none",
                   border: "none",

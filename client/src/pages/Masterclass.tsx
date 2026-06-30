@@ -290,7 +290,7 @@ export default function Masterclass() {
                         Free AI Literacy Webinar
                       </h2>
                       <p style={{ color: "#D1D5DB", lineHeight: 1.75, marginBottom: "1.5rem" }}>
-                        Your live introduction to AI in the real world. See exactly what's possible for your business — in under 3 hours, with Dr. Amaka Adiuku.
+                        Your live introduction to AI in the real world. See exactly what's possible for your business — in under 3 hours,.
                       </p>
                       <a
                         href="mailto:hello@upskillintech.com?subject=Webinar Registration"
@@ -310,7 +310,7 @@ export default function Masterclass() {
                         "Idea generation, content creation & visual design",
                         "Task automation & productivity tools",
                         "Real business examples (catering, fashion, education & more)",
-                        "Live Q&A with Dr. Amaka Adiuku",
+                        "Live Q&A",
                       ].map((item) => (
                         <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                           <CheckCircle2 size={17} style={{ color: "#0D9488", flexShrink: 0, marginTop: "2px" }} />
@@ -412,7 +412,7 @@ export default function Masterclass() {
               <span className="section-label" style={{ color: "#0D9488", background: "rgba(13,148,136,0.10)", borderColor: "rgba(13,148,136,0.20)" }}>The Curriculum</span>
               <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>What You Will Learn &amp; Do</h2>
               <p style={{ color: "#9CA3AF", lineHeight: 1.75, fontSize: "1.05rem" }}>
-                Ten practical steps that take you from a raw idea to a real, AI-powered business — built live, in the room, with Dr. Amaka.
+                Ten practical steps that take you from a raw idea to a real, AI-powered business — built live, in the room,.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
