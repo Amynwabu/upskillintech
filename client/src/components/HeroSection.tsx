@@ -1,119 +1,201 @@
-/**
- * HeroSection — UpskillinTech v3.1
- * Mission: Independent AI Awareness Platform
- * Copy: Positions UpskillinTech as the trusted source for AI insights,
- *       productivity, tools, and responsible adoption.
- * Background: light almost-white gradient with green/teal tints
- * Typography: Sora headings, DM Sans body
- * Layout: split grid — bold copy left, photo right
- */
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 const HERO_IMG = "/upskilling-professionals.png";
 
 export default function HeroSection() {
   return (
-    <section
-      className="relative overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)",
-        paddingTop: "76px",
-      }}
-    >
-      {/* Decorative blobs */}
-      <div className="absolute top-[-100px] right-[-100px] rounded-full pointer-events-none" style={{ width: 480, height: 480, background: "rgba(13,148,136,0.06)" }} />
-      <div className="absolute bottom-[-80px] left-[-80px] rounded-full pointer-events-none" style={{ width: 320, height: 320, background: "rgba(13,148,136,0.07)" }} />
-      <div className="absolute top-1/2 left-1/3 rounded-full pointer-events-none" style={{ width: 200, height: 200, background: "rgba(215,119,6,0.04)", transform: "translate(-50%,-50%)" }} />
-
-      <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-14 items-center py-20 lg:py-28">
+    <section aria-label="Hero" style={{ background: "#F9F8F6", paddingTop: "76px" }}>
+      <div className="container">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "3rem",
+            alignItems: "center",
+            paddingTop: "5rem",
+            paddingBottom: "5rem",
+          }}
+          className="hero-two-col"
+        >
           {/* Left: Copy */}
-          <div className="animate-fade-up">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style={{ background: "rgba(13,148,136,0.10)", border: "1px solid rgba(13,148,136,0.25)" }}>
-              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#0D9488", display: "inline-block" }} />
-              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 600, color: "#0D9488" }}>
-                Independent AI Awareness Platform
+          <div>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                padding: "0.4rem 1rem",
+                borderRadius: "99px",
+                background: "rgba(13,148,136,0.08)",
+                border: "1px solid rgba(13,148,136,0.20)",
+                marginBottom: "1.5rem",
+              }}
+            >
+              <span
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: "#0D9488",
+                  display: "inline-block",
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: "'Sora', sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  color: "#0D9488",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Practical AI Education &amp; Adoption
               </span>
             </div>
 
-            <h1 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#111827" }}>
-              Understand AI. Adopt It{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Responsibly.
+            <h1
+              style={{
+                fontFamily: "'Sora', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
+                color: "#111827",
+                lineHeight: 1.1,
+                marginBottom: "1.25rem",
+              }}
+            >
+              Use AI confidently —{" "}
+              <span style={{ color: "#0D9488" }}>
+                in your work, your business, your life.
               </span>
             </h1>
 
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", lineHeight: 1.75, color: "#374151", marginBottom: "1rem" }}>
-              Practical insights on AI productivity, AI tools, and the future of work — designed for professionals who want to stay ahead without being overwhelmed.
-            </p>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.15rem", lineHeight: 1.75, color: "#6B7280", marginBottom: "2.5rem" }}>
-              Join thousands of professionals who use UpskillinTech to navigate AI with clarity, confidence, and purpose.
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "1.15rem",
+                lineHeight: 1.75,
+                color: "#374151",
+                marginBottom: "2.25rem",
+                maxWidth: 560,
+              }}
+            >
+              Practical AI education and support for individuals, solopreneurs, business owners,
+              and teams who want to use AI responsibly and get real results.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 mb-10">
-              <a href="/resources/blog" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
-                <BookOpen size={20} />
-                Explore Free Insights
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.875rem",
+                marginBottom: "2.5rem",
+              }}
+            >
+              <a
+                href="#lead-magnet"
+                className="btn-primary"
+                style={{
+                  fontSize: "1rem",
+                  padding: "0.9rem 2rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                }}
+              >
+                <Download size={18} />
+                Get the free AI toolkit
               </a>
-              <a href="/programs" className="btn-outline" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
-                <ArrowRight size={20} />
-                View Programs
+              <a
+                href="#programs"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  fontSize: "1rem",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontWeight: 600,
+                  color: "#111827",
+                  textDecoration: "none",
+                  padding: "0.9rem 1.75rem",
+                  borderRadius: "0.75rem",
+                  border: "1.5px solid #D1D5DB",
+                  background: "white",
+                  transition: "border-color 0.15s, color 0.15s",
+                }}
+              >
+                Explore programmes
+                <ArrowRight size={16} />
               </a>
             </div>
 
-            {/* Trust breadcrumb */}
-            <div className="flex items-center gap-3 flex-wrap">
-              {["AI Awareness", "AI Productivity", "AI Transformation"].map((step, i) => (
-                <div key={step} className="flex items-center gap-3">
-                  <span
-                    className="font-semibold px-4 py-1.5 rounded-full"
-                    style={{
-                      fontFamily: "'Sora', sans-serif",
-                      fontSize: "0.875rem",
-                      background: "rgba(13,148,136,0.08)",
-                      color: "#0D9488",
-                      border: "1px solid rgba(13,148,136,0.20)",
-                    }}
-                  >
-                    {step}
-                  </span>
-                  {i < 2 && (
-                    <span style={{ color: "#D97706", fontWeight: 800, fontSize: "1.2rem" }}>→</span>
-                  )}
-                </div>
-              ))}
-            </div>
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "0.875rem",
+                color: "#6B7280",
+              }}
+            >
+              Trusted by{" "}
+              <strong style={{ color: "#111827" }}>1,000+ professionals</strong> across{" "}
+              <strong style={{ color: "#111827" }}>20+ countries</strong> — founded by a PhD AI researcher.
+            </p>
           </div>
 
           {/* Right: Photo */}
-          <div className="flex justify-center lg:justify-end animate-fade-up-delay-2">
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{
-                boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
-                maxWidth: 560,
-                width: "100%",
-              }}
-            >
-              <img
-                src={HERO_IMG}
-                alt="Diverse professionals collaborating with AI tools"
-                className="w-full h-auto"
-                style={{ display: "block" }}
-              />
-              {/* Floating badge */}
+          <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+            <div style={{ position: "relative", maxWidth: 520, width: "100%" }}>
               <div
-                className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl px-5 py-3"
-                style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.15)" }}
+                style={{
+                  borderRadius: "1.25rem",
+                  overflow: "hidden",
+                  boxShadow: "0 24px 64px rgba(0,0,0,0.12)",
+                }}
               >
-                <span style={{ fontSize: "1.6rem" }}>🌍</span>
+                <img
+                  src={HERO_IMG}
+                  alt="Professionals using AI tools in a collaborative work setting"
+                  width={520}
+                  height={400}
+                  loading="eager"
+                  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "1.25rem",
+                  left: "1.25rem",
+                  background: "rgba(255,255,255,0.97)",
+                  borderRadius: "1rem",
+                  padding: "0.75rem 1.25rem",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.75rem",
+                }}
+              >
+                <span style={{ fontSize: "1.5rem" }}>🌍</span>
                 <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#0D9488" }}>
+                  <div
+                    style={{
+                      fontFamily: "'Sora', sans-serif",
+                      fontWeight: 700,
+                      fontSize: "0.9rem",
+                      color: "#0D9488",
+                    }}
+                  >
                     1,000+ Professionals
                   </div>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#6B7280" }}>Adopting AI Responsibly</div>
+                  <div
+                    style={{
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "0.75rem",
+                      color: "#6B7280",
+                    }}
+                  >
+                    Adopting AI Responsibly
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,28 +203,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <div style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 50%, #0D9488 100%)", borderTop: "1px solid rgba(255,255,255,0.10)" }}>
-        <div className="container py-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-            {[
-              { value: "500+", label: "Students Trained" },
-              { value: "20+", label: "Countries" },
-              { value: "50+", label: "Organisations Served" },
-              { value: "Free", label: "Resources Available" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 800, color: "#ffffff", lineHeight: 1.1 }}>
-                  {stat.value}
-                </div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 500, color: "rgba(255,255,255,0.80)", marginTop: "0.25rem" }}>
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <style>{`
+        @media (min-width: 1024px) {
+          .hero-two-col { grid-template-columns: 1fr 1fr !important; }
+        }
+      `}</style>
     </section>
   );
 }
