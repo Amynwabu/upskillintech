@@ -14,7 +14,7 @@ const UPCOMING = [
   {
     id: 1,
     title: "AI Strategy for Leaders: Building an AI-Ready Organisation",
-    date: "April 10, 2025",
+    date: "August 14, 2026",
     time: "6:00 PM GMT",
     duration: "90 minutes",
     speaker: "Dr. Amaka Adiuku",
@@ -28,7 +28,7 @@ const UPCOMING = [
   {
     id: 2,
     title: "AI for Educators: Practical Tools for the Modern Classroom",
-    date: "April 24, 2025",
+    date: "August 28, 2026",
     time: "5:00 PM GMT",
     duration: "60 minutes",
     speaker: "UpskillinTech Team",
@@ -42,7 +42,7 @@ const UPCOMING = [
   {
     id: 3,
     title: "AI Automation for Small Business Owners",
-    date: "May 8, 2025",
+    date: "September 11, 2026",
     time: "6:00 PM GMT",
     duration: "75 minutes",
     speaker: "Dr. Amaka Adiuku",

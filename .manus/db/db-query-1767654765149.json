@@ -1,9 +1,0 @@
-{
-  "query": "ALTER TABLE webinar_registrations ADD COLUMN reminder_sent BOOLEAN DEFAULT FALSE;",
-  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2x7DhzEJNfHLCxa.8bcd11651c13 --database cCWtAt3SyT6BXK2HRwbL9K --execute ALTER TABLE webinar_registrations ADD COLUMN reminder_sent BOOLEAN DEFAULT FALSE;",
-  "rows": [],
-  "messages": [],
-  "stdout": "",
-  "stderr": "",
-  "execution_time_ms": 1111
-}

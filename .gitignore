@@ -110,3 +110,5 @@ temp/
 # Local Netlify folder
 .netlify
 .claude/worktrees/
+.manus/
+.manus-logs/

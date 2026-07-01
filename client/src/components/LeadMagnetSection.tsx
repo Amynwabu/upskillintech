@@ -31,7 +31,7 @@ export default function LeadMagnetSection() {
     e.preventDefault();
     if (!email) return;
     setSubmitted(true);
-    toast.success("Your AI Everyday Starter Kit is on its way!", {
+    toast.success("Your 50 AI Prompts Every Professional Should Know is on its way!", {
       description: "Check your inbox — it should arrive within a few minutes.",
     });
   };
@@ -50,7 +50,7 @@ export default function LeadMagnetSection() {
                 </div>
                 <div>
                   <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "rgba(255,255,255,0.65)", textTransform: "uppercase", letterSpacing: "0.07em" }}>Free Resource</div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#ffffff" }}>AI Everyday Starter Kit</div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#ffffff" }}>50 AI Prompts Every Professional Should Know</div>
                 </div>
               </div>
 
@@ -79,7 +79,7 @@ export default function LeadMagnetSection() {
               Free Download — No Credit Card Needed
             </div>
             <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2, marginBottom: "1rem" }}>
-              Download the Free AI Everyday Starter Kit
+              Download the Free 50 AI Prompts Every Professional Should Know
             </h2>
             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "rgba(255,255,255,0.82)", lineHeight: 1.75, marginBottom: "2rem" }}>
               Everything you need to start using AI practically — prompts, use cases, automation ideas, a safety checklist, and a tool comparison guide. Built for beginners and busy professionals.
@@ -116,7 +116,7 @@ export default function LeadMagnetSection() {
                         whiteSpace: "nowrap",
                       }}
                     >
-                      <Download size={15} /> Download Free Kit
+                      <Download size={15} /> Get Free Guide
                     </button>
                   </div>
                   <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.5)" }}>

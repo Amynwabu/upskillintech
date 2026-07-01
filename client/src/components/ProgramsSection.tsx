@@ -9,36 +9,36 @@ const programs = [
     icon: BookOpen,
     color: "#0D9488",
     bg: "rgba(13,148,136,0.10)",
-    title: "AI Starter Bootcamp",
+    title: "AI Foundations",
     subtitle: "For Beginners",
-    desc: "Understand AI and start using it confidently — with no technical background required. Build practical skills from day one.",
+    desc: "Understand AI and start using it confidently — with no technical background required. Build practical skills from day one using the C.L.E.A.R. prompting framework.",
     outcomes: ["No prior experience needed", "Hands-on tools & prompts", "Community support"],
   },
   {
     icon: Briefcase,
     color: "#16A34A",
     bg: "rgba(22,163,74,0.10)",
-    title: "AI Productivity for Everyday Work",
+    title: "AI-Enabled Professional",
     subtitle: "For Professionals & Individuals",
-    desc: "Use AI for emails, planning, writing, research, documents, and presentations — and save hours every single week.",
+    desc: "Use AI for emails, planning, writing, research, documents, and presentations — and save hours every single week. Think. Create. Build. Grow.",
     outcomes: ["Save 5–10 hrs/week", "Real workflow practice", "Practical certification"],
   },
   {
     icon: Zap,
     color: "#D97706",
     bg: "rgba(217,119,6,0.10)",
-    title: "AI Automation Sprint",
+    title: "Webinars & Masterclasses",
     subtitle: "For Solopreneurs & Business Owners",
-    desc: "Automate repetitive tasks, customer communication, content workflows, and business admin — using tools you already have.",
-    outcomes: ["Automate client workflows", "Save hours every week", "ROI-focused results"],
+    desc: "Live, practical sessions on AI tools, workflows, and productivity strategies — from the UpskillinTech team and guest practitioners.",
+    outcomes: ["Live & recorded sessions", "Real case studies", "Free for members"],
   },
   {
     icon: Users,
-    color: "#7C3AED",
-    bg: "rgba(124,58,237,0.10)",
-    title: "AI Adoption for Leaders & Teams",
-    subtitle: "For Business Owners, Churches & Organisations",
-    desc: "Structured AI adoption for teams — covering training, workflow redesign, governance, and safe, responsible implementation.",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
+    title: "AI Leadership",
+    subtitle: "For Business Owners & Organisations",
+    desc: "Structured AI adoption for teams — covering training, workflow redesign, governance, and safe, responsible implementation across your organisation.",
     outcomes: ["Team-wide AI confidence", "Custom adoption roadmap", "Safe AI governance"],
   },
 ];
@@ -49,16 +49,16 @@ export default function ProgramsSection() {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="section-label mb-5">Programmes &amp; Bootcamps</span>
+          <span className="section-label mb-5">Structured Programmes</span>
           <h2 className="mt-4 mb-4">
-            Find your <span style={{ color: "#0D9488" }}>AI adoption path</span>
+            The right programme for <span style={{ color: "#0D9488" }}>where you are now</span>
           </h2>
           <div className="flex justify-center gap-1.5 mb-5">
             <div style={{ width: 64, height: 4, background: "#0D9488", borderRadius: 2 }} />
             <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
           </div>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
-            Practical AI adoption programmes for every starting point — from complete beginner to team-wide implementation.
+            From AI Foundations to AI Leadership — structured learning paths designed for professionals in Nigeria, the UK, and across the diaspora.
           </p>
         </div>
 

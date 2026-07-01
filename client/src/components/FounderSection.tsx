@@ -57,13 +57,13 @@ export default function FounderSection() {
               Dr. Amaka Adiuku
             </p>
             <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF" }}>
-              AI Researcher · Lecturer · Educator · Technology Literacy Advocate
+              AI Researcher · Lecturer at Cranfield University · Educator · Investigative AI Journalist
             </p>
             <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
-              UpskillinTech is an independent platform I created to share practical AI insights with professionals, leaders, and organisations navigating the AI era. My goal is simple: help people understand and adopt AI responsibly — without the overwhelm.
+              UpskillinTech is an independent platform I built to help professionals across Nigeria, the UK, and the diaspora move from AI curiosity to practical AI adoption — calmly, confidently, and without the overwhelm.
             </p>
             <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
-              As a researcher and university lecturer in AI and Robotics, I bring academic depth and real-world application together — to bridge the gap between AI theory and everyday professional practice.
+              As a university lecturer in AI and Robotics at Cranfield University and a published researcher, I bring academic rigour and real-world application together. I also run an investigative YouTube channel and podcast covering AI manipulation, misinformation, and responsible AI adoption.
             </p>
 
             {/* Expertise tags */}
