@@ -50,7 +50,7 @@ export default function HeroSection() {
                   letterSpacing: "0.02em",
                 }}
               >
-                Practical AI Adoption — No Technical Background Required
+                Think. Create. Build. Grow. — No Technical Background Required
               </span>
             </div>
 
@@ -64,9 +64,9 @@ export default function HeroSection() {
                 marginBottom: "1.25rem",
               }}
             >
-              Move from AI Curiosity to{" "}
+              The Practical AI Platform for{" "}
               <span style={{ color: "#0D9488" }}>
-                Practical AI Adoption.
+                African &amp; Diaspora Professionals.
               </span>
             </h1>
 
@@ -80,9 +80,9 @@ export default function HeroSection() {
                 maxWidth: 560,
               }}
             >
-              UpskillinTech helps individuals, solopreneurs, business owners, and teams use AI
-              confidently for productivity, content, planning, automation, and smarter work —
-              start where you are, no technical background required.
+              Move from AI curiosity to practical AI adoption — with structured programmes,
+              free resources, and a community built for professionals in Nigeria, the UK,
+              and across the diaspora. Start where you are. No technical background needed.
             </p>
 
             <div
@@ -105,10 +105,10 @@ export default function HeroSection() {
                 }}
               >
                 <Download size={18} />
-                Start Your AI Adoption Journey
+                Get Your Free AI Starter Guide
               </a>
               <a
-                href="/resources/ai-guides"
+                href="/programs"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -125,7 +125,7 @@ export default function HeroSection() {
                   transition: "border-color 0.15s, color 0.15s",
                 }}
               >
-                Explore Free AI Tools &amp; Guides
+                Explore Programmes
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -139,7 +139,7 @@ export default function HeroSection() {
             >
               Trusted by{" "}
               <strong style={{ color: "#F3F4F6" }}>1,000+ professionals</strong> across{" "}
-              <strong style={{ color: "#F3F4F6" }}>20+ countries</strong> — founded by a PhD AI researcher.
+              <strong style={{ color: "#F3F4F6" }}>20+ countries</strong> — founded by a PhD AI &amp; Robotics researcher at Cranfield University.
             </p>
           </div>
 

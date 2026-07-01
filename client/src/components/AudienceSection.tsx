@@ -77,12 +77,12 @@ export default function AudienceSection() {
     >
       <div className="container">
         <div className="text-center mb-12" style={{ maxWidth: 600, margin: "0 auto 3rem" }}>
-          <span className="section-label">Who it's for</span>
+          <span className="section-label">Built for Real Professionals</span>
           <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
-            Wherever you are, there's a place here for you.
+            AI skills that fit your life, your work, your goals.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
-            UpskillinTech is built for people who want to use AI practically — whatever their starting point or background.
+            Whether you're a professional in Lagos, a solopreneur in London, or leading a team across the diaspora — UpskillinTech meets you where you are.
           </p>
         </div>
 

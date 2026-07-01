@@ -51,12 +51,12 @@ export default function FinalCTASection() {
           </div>
 
           <h2 className="mb-6" style={{ color: "#ffffff", fontWeight: 800, lineHeight: 1.15, fontFamily: "'Sora', sans-serif" }}>
-            Ready to Understand &amp; Adopt AI{" "}
-            <span style={{ color: "#E6B800" }}>Responsibly?</span>
+            Think. Create. Build. Grow.{" "}
+            <span style={{ color: "#E6B800" }}>Start Today.</span>
           </h2>
 
           <p className="mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
-            Explore free AI insights, practical productivity guides, and structured learning programs — designed to help you think, lead, and create impact in an AI-powered world.
+            Join 1,000+ professionals across Nigeria, the UK, and the diaspora who are already using AI to work smarter, grow faster, and lead with confidence.
           </p>
 
           {/* CTAs */}
