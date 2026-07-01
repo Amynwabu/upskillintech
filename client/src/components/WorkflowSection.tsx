@@ -7,7 +7,7 @@
 import { useRef, useEffect, useState } from "react";
 import { MessageSquare, Search, Database, Brain, FileText, BarChart2, CheckSquare, Presentation, FileBarChart, ArrowRight } from "lucide-react";
 
-const WORKFLOW_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/93064684/acUjws9faR2fssir6ETEdK/ai-workflow-illustration-9MtDqz9v88sW34zieqnwYJ.webp";
+const WORKFLOW_IMAGE = "/networking-event.jpg";
 
 const workflows = [
   {
