@@ -14,29 +14,29 @@ const workflows = [
     title: "Meeting Intelligence",
     desc: "Transform every meeting into structured, actionable outcomes automatically.",
     steps: [
-      { icon: MessageSquare, label: "Meeting", color: "#0D9488" },
+      { icon: MessageSquare, label: "Meeting", color: "#2E7B20" },
       { icon: Brain, label: "AI Summary", color: "#7C3AED" },
-      { icon: CheckSquare, label: "Action Items", color: "#16A34A" },
+      { icon: CheckSquare, label: "Action Items", color: "#3E9430" },
     ],
     timeSaved: "2 hrs/week",
-    color: "#0D9488",
+    color: "#2E7B20",
   },
   {
     title: "Research to Presentation",
     desc: "Go from raw research to polished presentations in a fraction of the time.",
     steps: [
-      { icon: Search, label: "Research", color: "#0D9488" },
+      { icon: Search, label: "Research", color: "#2E7B20" },
       { icon: Brain, label: "AI Insights", color: "#7C3AED" },
       { icon: Presentation, label: "Presentation", color: "#D97706" },
     ],
     timeSaved: "3 hrs/week",
-    color: "#16A34A",
+    color: "#3E9430",
   },
   {
     title: "Data-Driven Reports",
     desc: "Turn client data into professional reports with AI-powered analysis.",
     steps: [
-      { icon: Database, label: "Client Data", color: "#0D9488" },
+      { icon: Database, label: "Client Data", color: "#2E7B20" },
       { icon: BarChart2, label: "AI Analysis", color: "#7C3AED" },
       { icon: FileBarChart, label: "Report", color: "#DC2626" },
     ],
@@ -68,7 +68,7 @@ export default function WorkflowSection() {
             <div className="section-label mb-3">Real AI Workflows</div>
             <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
               How AI Improves{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #2E7B20, #3E9430)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Daily Work
               </span>
             </h2>

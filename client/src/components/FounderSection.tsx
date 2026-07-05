@@ -1,110 +1,97 @@
 /**
- * FounderSection — UpskillinTech v3.1
- * Mission framing: Positions the founder as the voice behind the independent
- * AI awareness platform — researcher, educator, and thought leader.
- * White background, split layout: photo left, bio right
- * Typography: Sora headings, DM Sans body
+ * FounderSection — UpskillinTech v4 "Evergreen"
+ * High-trust authority section on deep forest: photo, credentials row,
+ * first-person mission statement.
  */
 const FOUNDER_IMG = "/founder-amaka-adiuku.png";
 
-const expertise = ["AI Research", "Robotics", "Technology Literacy", "Workflow Automation", "AI Adoption", "Public Engagement"];
+const credentials = [
+  { value: "PhD", label: "AI & Robotics" },
+  { value: "Lecturer", label: "Cranfield University" },
+  { value: "Published", label: "AI researcher" },
+];
 
 export default function FounderSection() {
   return (
-    <section className="section-py" style={{ background: "#151B23" }}>
+    <section aria-label="About the founder" className="section-py" style={{ background: "#0C1F12" }}>
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-5 gap-14 items-center max-w-5xl mx-auto">
           {/* Left: Founder photo */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div
-                className="rounded-2xl overflow-hidden"
-                style={{
-                  maxWidth: 360,
-                  width: "100%",
-                  boxShadow: "0 24px 64px rgba(13,148,136,0.18)",
-                  border: "3px solid rgba(13,148,136,0.20)",
-                }}
-              >
-                <img
-                  src={FOUNDER_IMG}
-                  alt="Dr. Amaka Adiuku, Founder of UpskillinTech"
-                  className="w-full h-auto"
-                  style={{ display: "block" }}
-                />
-              </div>
-              {/* Floating credential badge */}
-              <div
-                className="absolute -bottom-5 -right-5 rounded-2xl px-5 py-4 text-center"
-                style={{ background: "#0D9488", boxShadow: "0 8px 24px rgba(13,148,136,0.35)" }}
-              >
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>PhD</div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>AI &amp; Robotics</div>
-              </div>
+          <div className="lg:col-span-2 flex justify-center">
+            <div
+              className="overflow-hidden"
+              style={{
+                maxWidth: 340,
+                width: "100%",
+                borderRadius: "1rem",
+                border: "1px solid rgba(255,255,255,0.14)",
+                boxShadow: "0 24px 60px rgba(0,0,0,0.35)",
+              }}
+            >
+              <img
+                src={FOUNDER_IMG}
+                alt="Dr. Amaka Adiuku, founder of UpskillinTech"
+                className="w-full h-auto"
+                style={{ display: "block" }}
+              />
             </div>
           </div>
 
           {/* Right: Bio */}
-          <div>
-            <span className="section-label mb-5">The Voice Behind the Platform</span>
-            <h2 className="mt-4 mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
-              Insights Grounded in{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                Real Research
-              </span>
-            </h2>
-            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488", fontSize: "1.2rem" }}>
+          <div className="lg:col-span-3">
+            <span className="section-label" style={{ color: "#7ED164" }}>Founder</span>
+            <h2 style={{ color: "#ffffff", marginTop: "1rem", marginBottom: "0.75rem" }}>
               Dr. Amaka Adiuku
-            </p>
-            <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF" }}>
-              AI Researcher · Lecturer at Cranfield University · Educator · Investigative AI Journalist
-            </p>
-            <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
-              UpskillinTech is an independent platform I built to help professionals across Nigeria, the UK, and the diaspora move from AI curiosity to practical AI adoption — calmly, confidently, and without the overwhelm.
-            </p>
-            <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
-              As a university lecturer in AI and Robotics at Cranfield University and a published researcher, I bring academic rigour and real-world application together. I also run an investigative YouTube channel and podcast covering AI manipulation, misinformation, and responsible AI adoption.
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.6)", marginBottom: "2rem" }}>
+              AI &amp; Robotics researcher · Lecturer at Cranfield University · AI educator and journalist
             </p>
 
-            {/* Expertise tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {expertise.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-1.5 rounded-full font-semibold"
-                  style={{
-                    fontFamily: "'Sora', sans-serif",
-                    fontSize: "0.875rem",
-                    background: "rgba(13,148,136,0.08)",
-                    color: "#0D9488",
-                    border: "1px solid rgba(13,148,136,0.18)",
-                  }}
-                >
-                  {tag}
-                </span>
+            {/* Credentials row */}
+            <div className="founder-creds mb-8">
+              {credentials.map((c) => (
+                <div key={c.label} className="founder-cred">
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.05rem", color: "#ffffff" }}>{c.value}</div>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.55)", marginTop: "0.15rem" }}>{c.label}</div>
+                </div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488" }}>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "rgba(255,255,255,0.82)", marginBottom: "1.25rem" }}>
+              "I built UpskillinTech to close the gap between AI research and real work. My
+              day job is teaching and researching AI — my mission here is making it useful
+              for professionals like you, calmly and without the hype."
+            </p>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", lineHeight: 1.75, color: "rgba(255,255,255,0.6)", marginBottom: "2.25rem" }}>
+              Alongside teaching and research, Dr. Adiuku runs an investigative YouTube channel
+              and podcast on AI manipulation, misinformation, and responsible adoption.
+            </p>
+
+            <div className="flex flex-wrap gap-3">
+              <a href="/about" className="btn-primary-white">
                 About UpskillinTech
               </a>
-              <a
-                href="/contact"
-                className="btn-outline"
-                style={{
-                  fontSize: "1.05rem",
-                  padding: "1rem 2.25rem",
-                  borderColor: "#0D9488",
-                  color: "#0D9488",
-                }}
-              >
+              <a href="/contact" className="btn-outline-white">
                 Book a Discovery Call
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        .founder-creds {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          border-top: 1px solid rgba(255,255,255,0.12);
+          border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+        .founder-cred { padding: 1.1rem 1rem 1.1rem 0; }
+        .founder-cred + .founder-cred {
+          border-left: 1px solid rgba(255,255,255,0.12);
+          padding-left: 1.25rem;
+        }
+      `}</style>
     </section>
   );
 }

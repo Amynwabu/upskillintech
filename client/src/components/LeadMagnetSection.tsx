@@ -1,8 +1,14 @@
+/**
+ * LeadMagnetSection — UpskillinTech v4 "Evergreen"
+ * "Start free" hub: the free prompt guide and the AI level quiz together,
+ * so free tools feel integrated rather than tacked on.
+ */
 import { useRef, useEffect, useState } from "react";
-import { Download, Mail, CheckCircle2, Check, Shield, Zap, BookOpen, ListChecks, BarChart2 } from "lucide-react";
+import { Download, Mail, Check } from "lucide-react";
 import { toast } from "sonner";
+import AISkillsQuiz from "@/components/AISkillsQuiz";
 
-function useInView(threshold = 0.2) {
+function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -14,12 +20,10 @@ function useInView(threshold = 0.2) {
 }
 
 const kitContents = [
-  { icon: BookOpen, label: "20 prompts for daily productivity", desc: "Emails, planning, research, writing, and communication" },
-  { icon: Zap, label: "10 AI use cases for business owners", desc: "Marketing, customer service, operations, and sales" },
-  { icon: ListChecks, label: "5 simple automation ideas", desc: "Workflows you can set up this week with free tools" },
-  { icon: Shield, label: "AI safety checklist", desc: "Use AI responsibly — what to share, what to protect" },
-  { icon: BarChart2, label: "Tool comparison guide", desc: "ChatGPT vs Claude vs Gemini — which fits your needs" },
-  { icon: CheckCircle2, label: "Beginner-friendly workflow examples", desc: "Real before-and-after examples you can copy immediately" },
+  "50 prompts for emails, planning, research, and writing",
+  "10 AI use cases for business owners",
+  "5 automation ideas you can set up this week",
+  "AI safety checklist and tool comparison guide",
 ];
 
 export default function LeadMagnetSection() {
@@ -31,121 +35,111 @@ export default function LeadMagnetSection() {
     e.preventDefault();
     if (!email) return;
     setSubmitted(true);
-    toast.success("Your 50 AI Prompts Every Professional Should Know is on its way!", {
+    toast.success("Your 50 AI Prompts guide is on its way!", {
       description: "Check your inbox — it should arrive within a few minutes.",
     });
   };
 
   return (
-    <section id="lead-magnet" className="overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 50%, #16A34A 100%)" }}>
-      <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="start-free" aria-label="Free resources" className="section-py" style={{ background: "#FFFFFF" }}>
+      <div className="container" ref={ref}>
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="section-label">Start free</span>
+          <h2 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
+            Two free ways to take the first step
+          </h2>
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#5D6B60", lineHeight: 1.7 }}>
+            Download the prompt guide, or answer five questions to find your AI starting
+            point and a recommended path.
+          </p>
+        </div>
 
-          {/* Left: Kit preview */}
-          <div className={`transition-all duration-700 ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
-            <div style={{ borderRadius: "1.5rem", padding: "2rem", background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)", border: "1px solid rgba(255,255,255,0.18)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
-                <div style={{ width: 44, height: 44, borderRadius: "0.75rem", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Download size={20} color="#fff" />
-                </div>
-                <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "rgba(255,255,255,0.65)", textTransform: "uppercase", letterSpacing: "0.07em" }}>Free Resource</div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1rem", color: "#ffffff" }}>50 AI Prompts Every Professional Should Know</div>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                {kitContents.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={item.label} style={{ display: "flex", alignItems: "flex-start", gap: "0.875rem" }}>
-                      <div style={{ width: 34, height: 34, borderRadius: "0.5rem", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        <Icon size={16} color="#fff" />
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.85rem", color: "#ffffff", marginBottom: "0.15rem" }}>{item.label}</div>
-                        <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.775rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{item.desc}</div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+        <div className={`grid lg:grid-cols-2 gap-8 items-start transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+          {/* Left: Free guide */}
+          <div
+            id="lead-magnet"
+            className="card-modern"
+            style={{ padding: "2.5rem", scrollMarginTop: "96px" }}
+          >
+            <div
+              className="flex items-center justify-center rounded-lg mb-6"
+              style={{ width: 46, height: 46, background: "#E9F5E2" }}
+            >
+              <Download size={21} style={{ color: "#2E7B20" }} />
             </div>
-          </div>
-
-          {/* Right: Email capture */}
-          <div className={`transition-all duration-700 delay-200 ${inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "rgba(255,255,255,0.65)", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: "0.75rem" }}>
-              Free Download — No Credit Card Needed
-            </div>
-            <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2, marginBottom: "1rem" }}>
-              Download the Free 50 AI Prompts Every Professional Should Know
-            </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.1rem", color: "rgba(255,255,255,0.82)", lineHeight: 1.75, marginBottom: "2rem" }}>
-              Everything you need to start using AI practically — prompts, use cases, automation ideas, a safety checklist, and a tool comparison guide. Built for beginners and busy professionals.
+            <p style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.72rem", fontWeight: 600, color: "#8A6D10", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "0.6rem" }}>
+              Free guide
             </p>
+            <h3 style={{ fontSize: "1.35rem", marginBottom: "0.75rem" }}>
+              50 AI Prompts Every Professional Should Know
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", color: "#3E4A41", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+              Everything you need to start using AI practically — built for busy
+              professionals, not engineers.
+            </p>
+
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "2rem" }}>
+              {kitContents.map((item) => (
+                <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem" }}>
+                  <Check size={16} style={{ color: "#2E7B20", flexShrink: 0, marginTop: "0.25rem" }} />
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#3E4A41", lineHeight: 1.6 }}>{item}</span>
+                </li>
+              ))}
+            </ul>
 
             {!submitted ? (
               <form onSubmit={handleSubmit}>
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-                    <div style={{ flex: 1, minWidth: 200, position: "relative" }}>
-                      <Mail size={16} style={{ position: "absolute", left: "0.875rem", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.45)" }} />
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email address"
-                        required
-                        style={{
-                          width: "100%", paddingLeft: "2.5rem", paddingRight: "1rem",
-                          paddingTop: "0.875rem", paddingBottom: "0.875rem",
-                          borderRadius: "0.75rem", border: "1px solid rgba(255,255,255,0.25)",
-                          background: "rgba(255,255,255,0.12)", color: "white",
-                          fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", outline: "none",
-                        }}
-                      />
-                    </div>
-                    <button
-                      type="submit"
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginBottom: "0.75rem" }}>
+                  <div style={{ flex: 1, minWidth: 200, position: "relative" }}>
+                    <Mail size={16} style={{ position: "absolute", left: "0.875rem", top: "50%", transform: "translateY(-50%)", color: "#8B968D" }} />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter your email address"
+                      aria-label="Email address"
+                      required
                       style={{
-                        display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                        background: "#E6B800", color: "#F3F4F6", borderRadius: "0.75rem",
-                        padding: "0.875rem 1.5rem", border: "none", cursor: "pointer",
-                        fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
-                        whiteSpace: "nowrap",
+                        width: "100%", paddingLeft: "2.5rem", paddingRight: "1rem",
+                        paddingTop: "0.8rem", paddingBottom: "0.8rem",
+                        borderRadius: "0.5rem", border: "1px solid #D7E0D6",
+                        background: "#FFFFFF", color: "#17211A",
+                        fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", outline: "none",
                       }}
-                    >
-                      <Download size={15} /> Get Free Guide
-                    </button>
+                    />
                   </div>
-                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.5)" }}>
-                    No spam. Unsubscribe anytime. We respect your privacy.
-                  </p>
+                  <button type="submit" className="btn-primary" style={{ whiteSpace: "nowrap" }}>
+                    <Download size={15} /> Get the Guide
+                  </button>
                 </div>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#5D6B60" }}>
+                  No spam. Unsubscribe anytime.
+                </p>
               </form>
             ) : (
-              <div style={{ borderRadius: "1rem", padding: "1.5rem", background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.20)" }}>
+              <div style={{ borderRadius: "0.75rem", padding: "1.25rem", background: "#F5FAF2", border: "1px solid #D2EBC5" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.875rem" }}>
-                  <div style={{ width: 40, height: 40, borderRadius: "50%", background: "rgba(255,255,255,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Check size={18} color="#fff" />
+                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: "#E9F5E2", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <Check size={18} style={{ color: "#2E7B20" }} />
                   </div>
                   <div>
-                    <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, color: "#ffffff", marginBottom: "0.2rem" }}>Starter Kit sent to your inbox!</div>
-                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "rgba(255,255,255,0.65)" }}>Check {email} — it should arrive in a few minutes.</div>
+                    <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.95rem", color: "#17211A", marginBottom: "0.15rem" }}>Guide sent to your inbox</div>
+                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.85rem", color: "#5D6B60" }}>Check {email} — it should arrive in a few minutes.</div>
                   </div>
                 </div>
               </div>
             )}
 
-            <div style={{ display: "flex", gap: "1.5rem", marginTop: "1.5rem", flexWrap: "wrap" }}>
-              <a href="/challenge" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", fontWeight: 600, color: "rgba(255,255,255,0.75)", textDecoration: "none" }}>
-                → Take the 7-Day AI Challenge
+            <p style={{ marginTop: "1.5rem", fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem" }}>
+              <a href="/challenge" style={{ color: "#2E7B20", fontWeight: 600, textDecoration: "none" }}>
+                Prefer a guided start? Take the 7-Day AI Challenge →
               </a>
-              <a href="#quiz" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", fontWeight: 600, color: "rgba(255,255,255,0.75)", textDecoration: "none" }}>
-                → Find your AI level
-              </a>
-            </div>
+            </p>
+          </div>
+
+          {/* Right: Quiz */}
+          <div id="quiz" style={{ scrollMarginTop: "96px" }}>
+            <AISkillsQuiz />
           </div>
         </div>
       </div>

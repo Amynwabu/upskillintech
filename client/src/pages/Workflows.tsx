@@ -1,7 +1,7 @@
 /**
  * AI Workflow Library Page — UpskillinTech
  * URL: /resources/workflows
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2E7B20) + Golden Green (#50B040) + Yellow (#D1A81D)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -29,7 +29,7 @@ const WORKFLOWS = [
     timeToComplete: "5 minutes",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Otter.ai or Fireflies (optional)"],
-    color: "#0D9488",
+    color: "#2E7B20",
     steps: [
       { label: "Record or Note", desc: "Record the meeting audio or take rough notes during the session. Use Otter.ai for automatic transcription." },
       { label: "Paste Transcript", desc: "Paste the transcript or notes into ChatGPT or Claude with the prompt: 'Summarise this meeting. Extract: 1) Key decisions, 2) Action items with owners, 3) Open questions.'" },
@@ -49,7 +49,7 @@ const WORKFLOWS = [
     timeToComplete: "2–4 hours",
     difficulty: "Intermediate",
     toolsNeeded: ["ChatGPT or Claude", "Perplexity AI", "Google Docs"],
-    color: "#8B9E1A",
+    color: "#50B040",
     steps: [
       { label: "Define Question", desc: "Write a clear research question. Be specific: 'What are the top 5 AI productivity tools for HR professionals in 2025?' is better than 'AI tools.'" },
       { label: "AI Research", desc: "Use Perplexity AI or ChatGPT to gather initial research. Prompt: 'Research [TOPIC] and provide: key findings, main sources, statistics, and expert opinions.'" },
@@ -70,7 +70,7 @@ const WORKFLOWS = [
     timeToComplete: "1–2 hours per piece",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Grammarly (optional)", "Canva (optional)"],
-    color: "#E6B800",
+    color: "#D1A81D",
     steps: [
       { label: "Idea & Brief", desc: "Define your content goal: Who is it for? What should they feel, know, or do after reading? Write a 3-sentence brief." },
       { label: "AI Outline", desc: "Prompt AI: 'Create a detailed outline for a [blog post/newsletter/LinkedIn article] about [TOPIC] for [AUDIENCE]. Include: headline, 5 key sections with subpoints, and a CTA.'" },
@@ -91,7 +91,7 @@ const WORKFLOWS = [
     timeToComplete: "30 minutes/day",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Gmail or Outlook"],
-    color: "#0D9488",
+    color: "#2E7B20",
     steps: [
       { label: "Batch Emails", desc: "Set two dedicated email times per day (e.g., 9am and 4pm). Don't check email outside these windows. This alone saves 1–2 hours daily." },
       { label: "Categorise", desc: "Sort emails into: Respond Now, Delegate, File, Delete. Only 'Respond Now' emails need your attention in this session." },
@@ -111,7 +111,7 @@ const WORKFLOWS = [
     timeToComplete: "30–60 minutes",
     difficulty: "Intermediate",
     toolsNeeded: ["ChatGPT or Claude"],
-    color: "#8B9E1A",
+    color: "#50B040",
     steps: [
       { label: "Define Decision", desc: "Write a clear decision statement: 'Should we [ACTION] given [CONTEXT]?' Include the key constraints, stakeholders, and timeline." },
       { label: "AI Analysis", desc: "Prompt: 'I need to make the following decision: [DECISION]. Provide: 1) Key factors to consider, 2) Potential risks and benefits of each option, 3) Questions I should be asking, 4) Frameworks that apply.'" },
@@ -132,7 +132,7 @@ const WORKFLOWS = [
     timeToComplete: "1–2 hours/month",
     difficulty: "Intermediate",
     toolsNeeded: ["Perplexity AI", "ChatGPT or Claude"],
-    color: "#E6B800",
+    color: "#D1A81D",
     steps: [
       { label: "Define Scope", desc: "List your top 5 competitors and the specific areas to monitor: pricing, product updates, marketing, hiring, partnerships." },
       { label: "Gather Intelligence", desc: "Use Perplexity AI: 'What are the latest developments from [COMPETITOR] in the past 3 months? Focus on: product updates, pricing changes, marketing campaigns, and strategic moves.'" },
@@ -166,7 +166,7 @@ export default function WorkflowsPage() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,123,32,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               AI Workflows That Work in the Real World
             </h1>
@@ -182,7 +182,7 @@ export default function WorkflowsPage() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #50B040 0%, #D1A81D 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "6", l: "Workflow Templates" }, { v: "24+", l: "Copy-Paste Prompts" }, { v: "5 min", l: "Fastest Workflow" }, { v: "Free", l: "All Workflows" }].map(s => (
@@ -207,7 +207,7 @@ export default function WorkflowsPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
+                  background: activeCategory === cat.id ? "#2E7B20" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -251,7 +251,7 @@ export default function WorkflowsPage() {
                             <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
                           </div>
                           {si < wf.steps.length - 1 && (
-                            <span className="text-lg font-bold mb-4" style={{ color: "#E6B800" }}>→</span>
+                            <span className="text-lg font-bold mb-4" style={{ color: "#D1A81D" }}>→</span>
                           )}
                         </div>
                       ))}
@@ -350,12 +350,12 @@ export default function WorkflowsPage() {
           </p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("Playbook on its way!", { description: "Check your inbox for the AI Workflow Playbook." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#D1A81D", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <Download size={16} /> Download Playbook
             </button>
           </form>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#0D9488" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#2E7B20" }}>
               <ArrowRight size={15} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.60)" }}>

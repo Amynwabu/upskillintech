@@ -1,84 +1,61 @@
 /**
- * CommunitySection — UpskillinTech v3
- * Soft yellow bg, split layout, richer benefits, larger text
+ * CommunitySection — UpskillinTech v4 "Evergreen"
+ * Compact community band: white card row with image, three benefits, one CTA.
  */
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const COMMUNITY_IMG = "/community-engagement.jpg";
 
 const benefits = [
-  { title: "Monthly Masterclasses", desc: "Live sessions with AI experts covering the latest tools and strategies." },
-  { title: "Workflow Sharing", desc: "Access and share real AI workflows from professionals across industries." },
-  { title: "Peer Networking", desc: "Connect with like-minded professionals who are building AI-powered careers." },
-  { title: "Community Events", desc: "Attend workshops, hackathons, and AI challenges with the community." },
+  "Monthly live masterclasses with practitioners",
+  "Real AI workflows shared across industries",
+  "A peer network across Africa and the diaspora",
 ];
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="section-py" style={{ background: "#FFF7D6" }}>
+    <section id="community" className="section-py" style={{ background: "#FFFFFF" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Text */}
-          <div>
-            <span className="section-label mb-5">Community</span>
-            <h2 className="mt-4 mb-5">
-              Join the UpskillinTech <span style={{ color: "#0D9488" }}>Community</span>
-            </h2>
-            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#D1D5DB", lineHeight: 1.75 }}>
-              Learn, share workflows, and collaborate with thousands of professionals who are integrating AI into their work and lives.
-            </p>
-            <ul className="flex flex-col gap-5 mb-10">
-              {benefits.map((b) => (
-                <li key={b.title} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(13,148,136,0.15)" }}>
-                    <CheckCircle size={18} style={{ color: "#0D9488" }} />
-                  </div>
-                  <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1rem" }}>
-                      {b.title}
-                    </div>
-                    <div style={{ fontSize: "0.925rem", color: "#9CA3AF", lineHeight: 1.6 }}>{b.desc}</div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="flex flex-wrap gap-4">
-              <a href="/community" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
-                <ArrowRight size={20} />
-                Join the Community
-              </a>
-              <a href="/community" className="btn-outline" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
-                Learn More
-              </a>
-            </div>
-          </div>
-
-          {/* Right: Photo */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Left: Photo */}
+          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
             <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{ maxWidth: 520, width: "100%", boxShadow: "0 24px 64px rgba(0,0,0,0.15)" }}
+              className="relative overflow-hidden"
+              style={{ maxWidth: 520, width: "100%", boxShadow: "0 24px 60px rgba(12,31,18,0.14)", borderRadius: "1rem", border: "1px solid #E3EAE2" }}
             >
               <img
                 src={COMMUNITY_IMG}
-                alt="Diverse professionals at a community networking event"
+                alt="Professionals connecting at a community networking event"
                 className="w-full h-auto"
                 style={{ display: "block" }}
               />
-              {/* Floating badge */}
-              <div
-                className="absolute bottom-5 left-5 flex items-center gap-3 rounded-2xl px-5 py-3"
-                style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.12)" }}
-              >
-                <span style={{ fontSize: "1.5rem" }}>🌍</span>
-                <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#0D9488" }}>
-                    Growing Community
-                  </div>
-                  <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>Professionals across Africa & beyond</div>
-                </div>
-              </div>
             </div>
+          </div>
+
+          {/* Right: Text */}
+          <div className="order-1 lg:order-2">
+            <span className="section-label">Community</span>
+            <h2 style={{ marginTop: "1rem", marginBottom: "1.25rem", maxWidth: 460 }}>
+              You don't have to figure it out alone
+            </h2>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#3E4A41", lineHeight: 1.75, marginBottom: "2rem", maxWidth: 460 }}>
+              Learn alongside professionals who are putting AI to work every day — sharing
+              what works, what doesn't, and what's next.
+            </p>
+            <ul className="flex flex-col gap-3 mb-9">
+              {benefits.map((b) => (
+                <li key={b} className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    style={{ width: 6, height: 6, borderRadius: "50%", background: "#50B040", display: "inline-block", flexShrink: 0, marginTop: "0.6rem" }}
+                  />
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "#3E4A41", lineHeight: 1.65 }}>{b}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/community" className="btn-primary">
+              Join the Community <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </div>

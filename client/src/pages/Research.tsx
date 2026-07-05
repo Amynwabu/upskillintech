@@ -104,14 +104,14 @@ export default function Research() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(13,148,136,0.10)] border border-[rgba(13,148,136,0.20)] mb-6">
-              <FileText className="w-4 h-4 text-[#0D9488]" />
-              <span className="text-sm font-medium text-[#0D9488]">Research & Whitepapers</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(46,123,32,0.10)] border border-[rgba(46,123,32,0.20)] mb-6">
+              <FileText className="w-4 h-4 text-[#2E7B20]" />
+              <span className="text-sm font-medium text-[#2E7B20]">Research & Whitepapers</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               AI Research{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #2E7B20, #2E7B20)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Library
               </span>
             </h1>
@@ -148,8 +148,8 @@ export default function Research() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === category
-                    ? "bg-[#0D9488] text-white"
-                    : "bg-card border border-border hover:border-[rgba(13,148,136,0.5)]"
+                    ? "bg-[#2E7B20] text-white"
+                    : "bg-card border border-border hover:border-[rgba(46,123,32,0.5)]"
                 }`}
               >
                 {category}
@@ -172,15 +172,15 @@ export default function Research() {
             {filteredPapers.map((paper) => (
               <div
                 key={paper.id}
-                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(13,148,136,0.5)] hover:shadow-lg hover:shadow-[rgba(13,148,136,0.10)] transition-all"
+                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(46,123,32,0.5)] hover:shadow-lg hover:shadow-[rgba(46,123,32,0.10)] transition-all"
               >
                 {/* Category Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(13,148,136,0.10)] border border-[rgba(13,148,136,0.20)] mb-4">
-                  <span className="text-xs font-medium text-[#0D9488]">{paper.category}</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(46,123,32,0.10)] border border-[rgba(46,123,32,0.20)] mb-4">
+                  <span className="text-xs font-medium text-[#2E7B20]">{paper.category}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 hover:text-[#0D9488] transition-colors">
+                <h3 className="text-2xl font-bold mb-3 hover:text-[#2E7B20] transition-colors">
                   {paper.title}
                 </h3>
 

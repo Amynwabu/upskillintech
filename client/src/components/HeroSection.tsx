@@ -1,88 +1,60 @@
+/**
+ * HeroSection — UpskillinTech v4 "Evergreen"
+ * Calm off-white hero: sharp headline, one primary + one secondary CTA,
+ * single trust line, photo with a restrained stat card.
+ */
 import { ArrowRight, Download } from "lucide-react";
 
 const HERO_IMG = "/training-diverse-team.jpg";
 
 export default function HeroSection() {
   return (
-    <section aria-label="Hero" style={{ background: "#0B0F14", paddingTop: "72px" }}>
+    <section aria-label="Hero" style={{ background: "#F5FAF2", borderBottom: "1px solid #E3EAE2" }}>
       <div className="container">
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "3rem",
+            gap: "3.5rem",
             alignItems: "center",
-            paddingTop: "5rem",
+            paddingTop: "4.5rem",
             paddingBottom: "5rem",
           }}
           className="hero-two-col"
         >
           {/* Left: Copy */}
           <div>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.4rem 1rem",
-                borderRadius: "99px",
-                background: "rgba(13,148,136,0.08)",
-                border: "1px solid rgba(13,148,136,0.20)",
-                marginBottom: "1.5rem",
-              }}
-            >
-              <span
-                style={{
-                  width: 7,
-                  height: 7,
-                  borderRadius: "50%",
-                  background: "#0D9488",
-                  display: "inline-block",
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: "0.8rem",
-                  fontWeight: 600,
-                  color: "#0D9488",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                Think. Create. Build. Grow. — No Technical Background Required
-              </span>
-            </div>
-
-            <h1
+            <p
               style={{
                 fontFamily: "'Sora', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(2.4rem, 5vw, 3.6rem)",
-                color: "#F3F4F6",
-                lineHeight: 1.1,
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                color: "#2E7B20",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
                 marginBottom: "1.25rem",
               }}
             >
-              The Practical AI Platform for{" "}
-              <span style={{ color: "#0D9488" }}>
-                African &amp; Diaspora Professionals.
-              </span>
+              Practical AI adoption — no technical background required
+            </p>
+
+            <h1 style={{ marginBottom: "1.5rem", maxWidth: 560 }}>
+              Learn to use AI in your work — properly, practically, and with confidence.
             </h1>
 
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "1.15rem",
-                lineHeight: 1.75,
-                color: "#D1D5DB",
+                fontSize: "1.125rem",
+                lineHeight: 1.7,
+                color: "#3E4A41",
                 marginBottom: "2.25rem",
-                maxWidth: 560,
+                maxWidth: 520,
               }}
             >
-              Move from AI curiosity to practical AI adoption — with structured programmes,
-              free resources, and a community built for professionals in Nigeria, the UK,
-              and across the diaspora. Start where you are. No technical background needed.
+              Structured programmes, real workflows, and a supportive community for African
+              and diaspora professionals, solopreneurs, and organisations — wherever you're
+              starting from.
             </p>
 
             <div
@@ -90,77 +62,49 @@ export default function HeroSection() {
                 display: "flex",
                 flexWrap: "wrap",
                 gap: "0.875rem",
-                marginBottom: "2.5rem",
+                marginBottom: "2.25rem",
               }}
             >
-              <a
-                href="#lead-magnet"
-                className="btn-primary"
-                style={{
-                  fontSize: "1rem",
-                  padding: "0.9rem 2rem",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                }}
-              >
-                <Download size={18} />
-                Get Your Free AI Starter Guide
-              </a>
-              <a
-                href="/programs"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  fontSize: "1rem",
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 600,
-                  color: "#F3F4F6",
-                  textDecoration: "none",
-                  padding: "0.9rem 1.75rem",
-                  borderRadius: "0.75rem",
-                  border: "1.5px solid #374151",
-                  background: "#151B23",
-                  transition: "border-color 0.15s, color 0.15s",
-                }}
-              >
+              <a href="/programs" className="btn-primary" style={{ fontSize: "1rem", padding: "0.9rem 2rem" }}>
                 Explore Programmes
-                <ArrowRight size={16} />
+                <ArrowRight size={17} />
+              </a>
+              <a href="#start-free" className="btn-outline" style={{ fontSize: "1rem", padding: "0.85rem 1.75rem" }}>
+                <Download size={16} />
+                Get the Free Starter Guide
               </a>
             </div>
 
             <p
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                fontSize: "0.875rem",
-                color: "#9CA3AF",
+                fontSize: "0.9rem",
+                color: "#5D6B60",
               }}
             >
-              Trusted by{" "}
-              <strong style={{ color: "#F3F4F6" }}>1,000+ professionals</strong> across{" "}
-              <strong style={{ color: "#F3F4F6" }}>20+ countries</strong> — founded by a PhD AI &amp; Robotics researcher at Cranfield University.
+              Trusted by <strong style={{ color: "#17211A", fontWeight: 600 }}>1,000+ professionals in 20+ countries</strong>.
+              Founded by a PhD AI &amp; Robotics researcher and lecturer at Cranfield University.
             </p>
           </div>
 
           {/* Right: Photo */}
           <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
-            <div style={{ position: "relative", maxWidth: 600, width: "100%" }}>
+            <div style={{ position: "relative", maxWidth: 560, width: "100%" }}>
               <div
                 style={{
-                  borderRadius: "1.5rem",
+                  borderRadius: "1rem",
                   overflow: "hidden",
-                  boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
-                  border: "4px solid rgba(13,148,136,0.12)",
+                  boxShadow: "0 24px 60px rgba(12,31,18,0.16)",
+                  border: "1px solid #E3EAE2",
                 }}
               >
                 <img
                   src={HERO_IMG}
-                  alt="Diverse African and multicultural professionals learning practical AI tools together"
-                  width={600}
-                  height={460}
+                  alt="African and multicultural professionals learning practical AI tools together"
+                  width={560}
+                  height={440}
                   loading="eager"
-                  style={{ width: "100%", height: "460px", display: "block", objectFit: "cover", objectPosition: "center top" }}
+                  style={{ width: "100%", height: "440px", display: "block", objectFit: "cover", objectPosition: "center top" }}
                 />
               </div>
               <div
@@ -168,36 +112,33 @@ export default function HeroSection() {
                   position: "absolute",
                   bottom: "1.25rem",
                   left: "1.25rem",
-                  background: "rgba(255,255,255,0.97)",
-                  borderRadius: "1rem",
-                  padding: "0.75rem 1.25rem",
-                  boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.75rem",
+                  background: "#ffffff",
+                  borderRadius: "0.75rem",
+                  padding: "0.8rem 1.2rem",
+                  boxShadow: "0 8px 24px rgba(12,31,18,0.14)",
+                  border: "1px solid #E3EAE2",
                 }}
               >
-                <span style={{ fontSize: "1.5rem" }}>🌍</span>
-                <div>
-                  <div
-                    style={{
-                      fontFamily: "'Sora', sans-serif",
-                      fontWeight: 700,
-                      fontSize: "0.9rem",
-                      color: "#0D9488",
-                    }}
-                  >
-                    1,000+ Professionals
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      fontSize: "0.75rem",
-                      color: "#9CA3AF",
-                    }}
-                  >
-                    Adopting AI Responsibly
-                  </div>
+                <div
+                  style={{
+                    fontFamily: "'Sora', sans-serif",
+                    fontWeight: 700,
+                    fontSize: "1.05rem",
+                    color: "#17211A",
+                    lineHeight: 1.2,
+                  }}
+                >
+                  1,000+ professionals
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontSize: "0.8rem",
+                    color: "#5D6B60",
+                    marginTop: "0.15rem",
+                  }}
+                >
+                  learning practical, responsible AI
                 </div>
               </div>
             </div>
@@ -207,7 +148,7 @@ export default function HeroSection() {
 
       <style>{`
         @media (min-width: 1024px) {
-          .hero-two-col { grid-template-columns: 1fr 1fr !important; }
+          .hero-two-col { grid-template-columns: 1.05fr 0.95fr !important; }
         }
       `}</style>
     </section>

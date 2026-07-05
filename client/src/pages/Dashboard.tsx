@@ -34,7 +34,7 @@ export default function Dashboard() {
           {/* Welcome Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Welcome back, <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{userName}</span>! 👋
+              Welcome back, <span style={{ background: "linear-gradient(135deg, #2E7B20, #2E7B20)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{userName}</span>! 👋
             </h1>
             <p className="text-muted-foreground">Continue your AI journey and reach new milestones</p>
           </div>

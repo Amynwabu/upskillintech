@@ -1,36 +1,38 @@
 /**
- * Footer — UpskillinTech v3
- * Dark #111827 background, larger text, bigger logo, green hover accents
+ * Footer — UpskillinTech v4 "Evergreen"
+ * Deep forest background, colored icon + white wordmark, tidy columns,
+ * green hover accents, clean bottom bar.
  */
 import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
 
-const LOGO_URL = "/logo-transparent.png";
+const ICON_URL = "/icon-mark.png";
+const LINK_COLOR = "rgba(255,255,255,0.55)";
+const LINK_HOVER = "#7ED164";
 
 const footerLinks = {
-  Insights: [
+  Programmes: [
+    { label: "AI Foundations", href: "/programs" },
+    { label: "AI-Enabled Professional", href: "/programs" },
+    { label: "AI Leadership", href: "/programs" },
+    { label: "Masterclass", href: "/masterclass" },
+    { label: "Enterprise Training", href: "/enterprise" },
+  ],
+  Resources: [
     { label: "Blog & Articles", href: "/resources/blog" },
     { label: "Free AI Guides", href: "/resources/ai-guides" },
     { label: "Case Studies", href: "/resources/case-studies" },
     { label: "AI Workflows", href: "/resources/workflows" },
-    { label: "Newsletter", href: "/newsletter" },
-  ],
-  Programs: [
-    { label: "AI Foundations", href: "/programs" },
-    { label: "AI-Enabled Professional", href: "/programs" },
-    { label: "AI Leadership", href: "/programs" },
-    { label: "AI Masterclass", href: "/masterclass" },
-    { label: "Enterprise Training", href: "/enterprise" },
     { label: "Webinars", href: "/resources/webinars" },
+    { label: "Newsletter", href: "/newsletter" },
   ],
   Community: [
     { label: "Join the Community", href: "/community" },
     { label: "Events & Meetups", href: "/events" },
-    { label: "AI Masterclasses", href: "/masterclass" },
-    { label: "Peer Network", href: "/community" },
+    { label: "7-Day AI Challenge", href: "/challenge" },
   ],
   Company: [
     { label: "About UpskillinTech", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Contact", href: "/contact" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
   ],
@@ -45,26 +47,29 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" style={{ background: "#111827" }}>
-      <div className="container py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
+    <footer id="footer" style={{ background: "#0C1F12" }}>
+      <div className="container" style={{ paddingTop: "5rem", paddingBottom: "3rem" }}>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-16">
           {/* Brand column */}
-          <div className="lg:col-span-2 sm:col-span-2">
-            <div className="mb-5">
+          <div className="lg:col-span-2 sm:col-span-2" style={{ maxWidth: 340 }}>
+            <div className="flex items-center gap-2.5 mb-5">
               <img
-                src={LOGO_URL}
-                alt="UpskillinTech"
-                style={{ height: "76px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
+                src={ICON_URL}
+                alt=""
+                aria-hidden="true"
+                style={{ height: "36px", width: "36px", objectFit: "contain" }}
               />
+              <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#ffffff", letterSpacing: "-0.01em" }}>
+                UpskillinTech
+              </span>
             </div>
-            <p className="mb-3 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
-              An independent AI awareness platform sharing insights on AI productivity, AI tools, and the future of work.
-            </p>
-            <p className="mb-7 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>
-              Helping professionals understand and adopt AI responsibly — to think, lead, and create impact in an AI-powered world.
+            <p className="mb-7" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.925rem", color: "rgba(255,255,255,0.62)", lineHeight: 1.75 }}>
+              Practical AI adoption for professionals, solopreneurs, business owners, and
+              organisations — founded by a PhD AI &amp; Robotics researcher. No technical
+              background required.
             </p>
             {/* Social Links */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               {socialLinks.map((s) => {
                 const Icon = s.icon;
                 return (
@@ -74,26 +79,24 @@ export default function Footer() {
                     aria-label={s.label}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-center transition-all duration-200"
+                    className="flex items-center justify-center transition-colors duration-200"
                     style={{
-                      width: 42,
-                      height: 42,
-                      borderRadius: "0.625rem",
-                      background: "rgba(255,255,255,0.08)",
-                      color: "rgba(255,255,255,0.55)",
+                      width: 40,
+                      height: 40,
+                      borderRadius: "0.5rem",
+                      background: "rgba(255,255,255,0.07)",
+                      color: "rgba(255,255,255,0.6)",
                     }}
                     onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                      (e.currentTarget as HTMLElement).style.background = "#0D9488";
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+                      (e.currentTarget as HTMLElement).style.color = "#0C1F12";
+                      (e.currentTarget as HTMLElement).style.background = LINK_HOVER;
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)";
-                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.6)";
+                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)";
                     }}
                   >
-                    <Icon size={18} />
+                    <Icon size={17} />
                   </a>
                 );
               })}
@@ -104,8 +107,15 @@ export default function Footer() {
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h4
-                className="font-bold mb-5"
-                style={{ fontFamily: "'Sora', sans-serif", fontSize: "1rem", color: "#ffffff" }}
+                className="mb-5"
+                style={{
+                  fontFamily: "'Sora', sans-serif",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  color: "rgba(255,255,255,0.9)",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                }}
               >
                 {category}
               </h4>
@@ -115,9 +125,9 @@ export default function Footer() {
                     <a
                       href={link.href}
                       className="transition-colors duration-200"
-                      style={{ fontSize: "0.925rem", color: "rgba(255,255,255,0.45)", textDecoration: "none", lineHeight: 1.5 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
+                      style={{ fontSize: "0.9rem", color: LINK_COLOR, textDecoration: "none", lineHeight: 1.5 }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = LINK_HOVER; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = LINK_COLOR; }}
                     >
                       {link.label}
                     </a>
@@ -131,9 +141,9 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div
           className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+          style={{ borderTop: "1px solid rgba(255,255,255,0.10)" }}
         >
-          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.35)" }}>
+          <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.4)" }}>
             © {new Date().getFullYear()} UpskillinTech. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -145,9 +155,9 @@ export default function Footer() {
                 key={item.label}
                 href={item.href}
                 className="transition-colors duration-200"
-                style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.30)", textDecoration: "none" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.30)"; }}
+                style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.4)", textDecoration: "none" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = LINK_HOVER; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.4)"; }}
               >
                 {item.label}
               </a>

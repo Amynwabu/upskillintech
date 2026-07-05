@@ -7,8 +7,8 @@ import { BookOpen, FileText, BarChart2, Video, ArrowRight } from "lucide-react";
 const resources = [
   {
     icon: BookOpen,
-    color: "#0D9488",
-    bg: "rgba(13,148,136,0.10)",
+    color: "#2E7B20",
+    bg: "rgba(46,123,32,0.10)",
     title: "Blog",
     desc: "Practical AI insights, how-to guides, and strategies for professionals ready to work smarter.",
     count: "20+ Articles",
@@ -16,7 +16,7 @@ const resources = [
   },
   {
     icon: FileText,
-    color: "#8B9E1A",
+    color: "#50B040",
     bg: "rgba(139,158,26,0.10)",
     title: "AI Guides",
     desc: "Free downloadable guides covering AI tools, prompt engineering, and workflow automation.",
@@ -25,8 +25,8 @@ const resources = [
   },
   {
     icon: BarChart2,
-    color: "#0D9488",
-    bg: "rgba(13,148,136,0.10)",
+    color: "#2E7B20",
+    bg: "rgba(46,123,32,0.10)",
     title: "Case Studies",
     desc: "Real-world stories of professionals and organisations who transformed their work with AI.",
     count: "6 Case Studies",
@@ -34,8 +34,8 @@ const resources = [
   },
   {
     icon: Video,
-    color: "#E6B800",
-    bg: "rgba(230,184,0,0.12)",
+    color: "#D1A81D",
+    bg: "rgba(209,168,29,0.12)",
     title: "Webinars",
     desc: "Live training sessions and recorded masterclasses on AI productivity and strategy.",
     count: "8 Sessions",
@@ -51,7 +51,7 @@ export default function ResourcesSection() {
         <div className="text-center mb-14">
           <span className="section-label mb-5">Free Resources</span>
           <h2 className="mt-4 mb-5">
-            UpskillinTech <span style={{ color: "#0D9488" }}>Resources</span>
+            UpskillinTech <span style={{ color: "#2E7B20" }}>Resources</span>
           </h2>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             Everything you need to start, grow, and lead with AI — available free to the community.
@@ -76,7 +76,7 @@ export default function ResourcesSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-5px)";
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(13,148,136,0.14)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(46,123,32,0.14)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";

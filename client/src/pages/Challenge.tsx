@@ -9,7 +9,7 @@ const days = [
     title: "AI for Email",
     tagline: "Write better emails in half the time",
     icon: Mail,
-    color: "#0D9488",
+    color: "#2E7B20",
     task: "Use ChatGPT or Claude to write 3 real emails you need to send today — a professional follow-up, a customer response, and one you've been procrastinating on.",
     prompt: "\"Write a professional follow-up email to [name] after [meeting/event]. Keep it warm, concise, and include a clear next step.\"",
     outcome: "You'll never stare at a blank email again.",
@@ -20,7 +20,7 @@ const days = [
     title: "AI for Weekly Planning",
     tagline: "Plan your whole week in 10 minutes",
     icon: Calendar,
-    color: "#16A34A",
+    color: "#3E9430",
     task: "Use AI to plan your upcoming week. List your priorities, tasks, and goals — then ask AI to turn them into a structured, realistic weekly plan.",
     prompt: "\"Here are my priorities this week: [list]. Help me create a realistic day-by-day plan with time blocks, accounting for energy levels and urgent vs important tasks.\"",
     outcome: "You'll start the week with clarity instead of chaos.",
@@ -64,7 +64,7 @@ const days = [
     title: "AI for Document Analysis",
     tagline: "Understand any document in minutes",
     icon: BookOpen,
-    color: "#0D9488",
+    color: "#2E7B20",
     task: "Upload or paste a long document — a report, contract, policy, article, or proposal — and ask AI to summarise it, extract key points, and identify what you need to act on.",
     prompt: "\"Here is a document: [paste or describe it]. Please: 1) Summarise in 5 bullet points, 2) List any action items or deadlines, 3) Flag anything I should question or investigate further.\"",
     outcome: "Never read a 40-page report from scratch again.",
@@ -75,7 +75,7 @@ const days = [
     title: "Build Your AI Toolkit",
     tagline: "Design your personal AI workflow",
     icon: Wrench,
-    color: "#16A34A",
+    color: "#3E9430",
     task: "Reflect on the past 6 days. Choose the 3 tasks where AI saved you the most time. Then build a simple personal AI workflow: which tools, which prompts, which habits will you keep?",
     prompt: "\"Based on these 3 tasks where AI helped me most: [list], help me design a simple weekly AI routine. What tools should I use, what prompts should I save, and how should I build this into my day?\"",
     outcome: "A personalised AI practice you'll actually stick with.",
@@ -92,10 +92,10 @@ export default function Challenge() {
       <main className="flex-1 pt-[72px]">
 
         {/* Hero */}
-        <section style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 60%, #16A34A 100%)", padding: "5rem 1.5rem 4rem" }}>
+        <section style={{ background: "linear-gradient(135deg, #2E7B20 0%, #256617 60%, #3E9430 100%)", padding: "5rem 1.5rem 4rem" }}>
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.15)", borderRadius: "2rem", padding: "0.4rem 1rem", marginBottom: "1.5rem" }}>
-              <Zap size={14} color="#E6B800" />
+              <Zap size={14} color="#D1A81D" />
               <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 600, color: "rgba(255,255,255,0.9)", letterSpacing: "0.06em", textTransform: "uppercase" }}>Free 7-Day Challenge</span>
             </div>
             <h1 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(2rem, 5vw, 3rem)", color: "#ffffff", lineHeight: 1.2, marginBottom: "1.25rem" }}>
@@ -108,7 +108,7 @@ export default function Challenge() {
               <a
                 href="#day-1"
                 onClick={() => setActiveDay(0)}
-                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#E6B800", color: "#F3F4F6", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#D1A81D", color: "#F3F4F6", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}
               >
                 Start Day 1 <ArrowRight size={15} />
               </a>
@@ -132,7 +132,7 @@ export default function Challenge() {
               { value: "100%", label: "Free" },
             ].map((s) => (
               <div key={s.label} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#E6B800" }}>{s.value}</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#D1A81D" }}>{s.value}</div>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.55)" }}>{s.label}</div>
               </div>
             ))}
@@ -143,7 +143,7 @@ export default function Challenge() {
         <section id="day-1" style={{ background: "#0B0F14", padding: "4rem 1.5rem" }}>
           <div style={{ maxWidth: 860, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#0D9488", textTransform: "uppercase", letterSpacing: "0.08em" }}>The Challenge</span>
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#2E7B20", textTransform: "uppercase", letterSpacing: "0.08em" }}>The Challenge</span>
               <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F3F4F6", marginTop: "0.5rem" }}>
                 One task. One day. Real results.
               </h2>
@@ -186,7 +186,7 @@ export default function Challenge() {
                           </div>
 
                           <div style={{ background: "#0F172A", borderRadius: "0.75rem", padding: "1.25rem" }}>
-                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#E6B800", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Try this prompt</div>
+                            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#D1A81D", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>Try this prompt</div>
                             <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.65, fontStyle: "italic" }}>{d.prompt}</p>
                           </div>
 
@@ -236,10 +236,10 @@ export default function Challenge() {
               The 7-Day Challenge is just the beginning. Join the AI Starter Bootcamp to build structured AI skills with community support and expert guidance.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="/programs" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#0D9488", color: "#fff", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
+              <a href="/programs" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#2E7B20", color: "#fff", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
                 Explore Programmes <ArrowRight size={15} />
               </a>
-              <a href="#lead-magnet" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#0D9488", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", border: "1.5px solid #0D9488" }}>
+              <a href="#lead-magnet" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#2E7B20", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", border: "1.5px solid #2E7B20" }}>
                 Get the Free Starter Kit
               </a>
             </div>

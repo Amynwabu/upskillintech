@@ -23,7 +23,7 @@ const workflows = [
     icon: Users,
     title: "Meeting Intelligence",
     subtitle: "Turn every meeting into actionable outcomes",
-    color: "#0D9488",
+    color: "#2E7B20",
     steps: [
       {
         label: "Capture",
@@ -49,7 +49,7 @@ const workflows = [
     icon: Search,
     title: "Research & Reporting",
     subtitle: "From raw data to polished insights in minutes",
-    color: "#8B9E1A",
+    color: "#50B040",
     steps: [
       {
         label: "Gather",
@@ -75,7 +75,7 @@ const workflows = [
     icon: PenLine,
     title: "Content Creation",
     subtitle: "From rough idea to polished final draft",
-    color: "#E6B800",
+    color: "#D1A81D",
     steps: [
       {
         label: "Ideate",
@@ -101,7 +101,7 @@ const workflows = [
     icon: BarChart3,
     title: "Strategic Decision-Making",
     subtitle: "AI-enhanced analysis for better decisions",
-    color: "#0D9488",
+    color: "#2E7B20",
     steps: [
       {
         label: "Define",
@@ -136,7 +136,7 @@ export default function WorkflowsSection() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(13,148,136,0.10)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
+            style={{ background: "rgba(46,123,32,0.10)", color: "#2E7B20", fontFamily: "'Sora', sans-serif" }}
           >
             AI Workflows in Action
           </span>
@@ -231,9 +231,9 @@ export default function WorkflowsSection() {
               {/* Outcome badge */}
               <div
                 className="flex items-center gap-2 px-4 py-2 rounded-full flex-shrink-0"
-                style={{ background: "rgba(230,184,0,0.12)", border: "1px solid rgba(230,184,0,0.30)" }}
+                style={{ background: "rgba(209,168,29,0.12)", border: "1px solid rgba(209,168,29,0.30)" }}
               >
-                <Zap size={14} style={{ color: "#E6B800" }} />
+                <Zap size={14} style={{ color: "#D1A81D" }} />
                 <span
                   className="text-xs font-bold"
                   style={{ color: "#B8920A", fontFamily: "'Sora', sans-serif" }}
@@ -251,7 +251,7 @@ export default function WorkflowsSection() {
                   {idx < active.steps.length - 1 && (
                     <div
                       className="hidden md:block absolute top-5 left-full w-5 h-0.5 z-10"
-                      style={{ background: `linear-gradient(to right, ${active.color}, #E6B800)` }}
+                      style={{ background: `linear-gradient(to right, ${active.color}, #D1A81D)` }}
                     />
                   )}
                   <div
@@ -305,9 +305,9 @@ export default function WorkflowsSection() {
                     key={tool}
                     className="text-xs px-2.5 py-1 rounded-full font-medium"
                     style={{
-                      background: "rgba(13,148,136,0.08)",
-                      color: "#0D9488",
-                      border: "1px solid rgba(13,148,136,0.20)",
+                      background: "rgba(46,123,32,0.08)",
+                      color: "#2E7B20",
+                      border: "1px solid rgba(46,123,32,0.20)",
                       fontFamily: "'DM Sans', sans-serif",
                     }}
                   >
@@ -334,9 +334,9 @@ export default function WorkflowsSection() {
           <a
             href="/programs"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-sm transition-all"
-            style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(13,148,136,0.30)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#2ea043")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#0D9488")}
+            style={{ background: "#2E7B20", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(46,123,32,0.30)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "#256617")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#2E7B20")}
           >
             Learn to Build Your Own AI Workflows
             <ChevronRight size={16} />

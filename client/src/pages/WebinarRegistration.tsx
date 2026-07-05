@@ -72,11 +72,11 @@ export default function WebinarRegistration() {
   if (isSubmitted) {
     const session = SESSIONS[selectedSession];
     return (
-      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #0D9488 0%, #111827 60%)" }}>
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #2E7B20 0%, #111827 60%)" }}>
         <Card className="max-w-2xl w-full bg-[#151B23]/97 shadow-2xl">
           <CardHeader className="text-center space-y-4 pb-4">
-            <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
-              <CheckCircle2 className="w-12 h-12" style={{ color: "#0D9488" }} />
+            <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(46,123,32,0.12)" }}>
+              <CheckCircle2 className="w-12 h-12" style={{ color: "#2E7B20" }} />
             </div>
             <CardTitle className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               You're Registered!
@@ -88,7 +88,7 @@ export default function WebinarRegistration() {
           <CardContent className="space-y-6">
             <div className="rounded-xl p-5 space-y-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
               <div className="flex items-center gap-2 font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
-                <Calendar className="w-4 h-4" style={{ color: "#0D9488" }} /> {session.shortDate} · 2PM – 4PM UK / Nigeria Time
+                <Calendar className="w-4 h-4" style={{ color: "#2E7B20" }} /> {session.shortDate} · 2PM – 4PM UK / Nigeria Time
               </div>
               <p className="text-sm" style={{ color: "#9CA3AF" }}>What happens next:</p>
               <ul className="space-y-2">
@@ -99,7 +99,7 @@ export default function WebinarRegistration() {
                   "Your free 1-on-1 AI Transformation Session will be booked after the class",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#D1D5DB" }}>
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#0D9488" }} />
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#2E7B20" }} />
                     {item}
                   </li>
                 ))}
@@ -107,9 +107,9 @@ export default function WebinarRegistration() {
             </div>
             <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
               Can't find the email? Check your spam folder or contact{" "}
-              <a href="mailto:amaka.adiuku@gmail.com" style={{ color: "#0D9488" }}>amaka.adiuku@gmail.com</a>
+              <a href="mailto:amaka.adiuku@gmail.com" style={{ color: "#2E7B20" }}>amaka.adiuku@gmail.com</a>
             </p>
-            <Link href="/masterclass" className="block text-center text-sm font-semibold" style={{ color: "#0D9488" }}>
+            <Link href="/masterclass" className="block text-center text-sm font-semibold" style={{ color: "#2E7B20" }}>
               ← Back to Masterclass page
             </Link>
           </CardContent>
@@ -133,8 +133,8 @@ export default function WebinarRegistration() {
           {/* ── Left: Masterclass info ── */}
           <div className="text-white space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(13,148,136,0.20)", border: "1px solid rgba(13,148,136,0.35)" }}>
-              <Sparkles size={14} style={{ color: "#0D9488" }} />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(46,123,32,0.20)", border: "1px solid rgba(46,123,32,0.35)" }}>
+              <Sparkles size={14} style={{ color: "#2E7B20" }} />
               <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#5EEAD4" }}>
                 AI Transformation Master Class — July 2026
               </span>
@@ -154,7 +154,7 @@ export default function WebinarRegistration() {
             <div className="flex flex-col sm:flex-row gap-3">
               {SESSIONS.map((s) => (
                 <div key={s.shortDate} className="flex items-center gap-3 rounded-xl px-4 py-3" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                  <Calendar size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
+                  <Calendar size={16} style={{ color: "#2E7B20", flexShrink: 0 }} />
                   <div>
                     <div className="text-sm font-semibold" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif" }}>{s.shortDate}</div>
                     <div className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>{MASTERCLASS_TIME}</div>
@@ -179,12 +179,12 @@ export default function WebinarRegistration() {
             </div>
 
             {/* 1-on-1 bonus */}
-            <div className="flex items-start gap-4 rounded-2xl p-5" style={{ background: "rgba(230,184,0,0.10)", border: "1px solid rgba(230,184,0,0.25)" }}>
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(230,184,0,0.20)" }}>
-                <Gift size={20} style={{ color: "#E6B800" }} />
+            <div className="flex items-start gap-4 rounded-2xl p-5" style={{ background: "rgba(209,168,29,0.10)", border: "1px solid rgba(209,168,29,0.25)" }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(209,168,29,0.20)" }}>
+                <Gift size={20} style={{ color: "#D1A81D" }} />
               </div>
               <div>
-                <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#E6B800" }}>Exclusive Bonus — Included Free</div>
+                <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#D1A81D" }}>Exclusive Bonus — Included Free</div>
                 <div className="text-sm" style={{ color: "rgba(255,255,255,0.70)", lineHeight: 1.6 }}>
                   Every participant gets a free 1-on-1 AI Transformation Session — a personalised session tailored to your business, career, and goals.
                 </div>
@@ -196,7 +196,7 @@ export default function WebinarRegistration() {
           <div>
             <Card className="shadow-2xl" style={{ background: "rgba(255,255,255,0.97)" }}>
               <CardHeader className="space-y-3">
-                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(46,123,32,0.12)", color: "#2E7B20", fontFamily: "'Sora', sans-serif" }}>
                   Limited Seats Available
                 </div>
                 <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#F3F4F6" }}>
@@ -217,12 +217,12 @@ export default function WebinarRegistration() {
                         onClick={() => setSelectedSession(i)}
                         className="w-full flex items-center gap-3 rounded-xl border p-3 text-left transition-all text-sm"
                         style={{
-                          borderColor: selectedSession === i ? "#0D9488" : "#E5E7EB",
-                          background: selectedSession === i ? "rgba(13,148,136,0.06)" : "#fff",
+                          borderColor: selectedSession === i ? "#2E7B20" : "#E5E7EB",
+                          background: selectedSession === i ? "rgba(46,123,32,0.06)" : "#fff",
                         }}
                       >
-                        <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center" style={{ borderColor: selectedSession === i ? "#0D9488" : "#D1D5DB" }}>
-                          {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#0D9488" }} />}
+                        <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center" style={{ borderColor: selectedSession === i ? "#2E7B20" : "#D1D5DB" }}>
+                          {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#2E7B20" }} />}
                         </div>
                         <div>
                           <div className="font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
@@ -235,8 +235,8 @@ export default function WebinarRegistration() {
 
                 {/* Meta */}
                 <div className="flex items-center gap-3 pt-1 rounded-xl p-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
-                    <Users size={16} style={{ color: "#0D9488" }} />
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(46,123,32,0.12)" }}>
+                    <Users size={16} style={{ color: "#2E7B20" }} />
                   </div>
                   <div className="text-sm">
                     <div className="font-semibold" style={{ color: "#F3F4F6" }}>{MASTERCLASS_PRICE}</div>
@@ -271,7 +271,7 @@ export default function WebinarRegistration() {
                   <Button
                     type="submit"
                     className="w-full text-white font-bold py-6 text-base"
-                    style={{ background: "linear-gradient(135deg, #0D9488 0%, #16A34A 100%)", border: "none", fontFamily: "'Sora', sans-serif" }}
+                    style={{ background: "linear-gradient(135deg, #2E7B20 0%, #3E9430 100%)", border: "none", fontFamily: "'Sora', sans-serif" }}
                     disabled={registerMutation.isPending}
                   >
                     {registerMutation.isPending ? "Registering…" : `Reserve My Seat — ${MASTERCLASS_PRICE}`}
