@@ -1,5 +1,7 @@
 # UpskillinTech
 
+[![CI - Build and Test](https://github.com/Amynwabu/upskillintech/actions/workflows/ci.yml/badge.svg)](https://github.com/Amynwabu/upskillintech/actions/workflows/ci.yml)
+
 ![UpskillinTech Logo](https://upskillintech.com/logo.png)
 
 > AI transformation ecosystem offering education, consultancy, community, and business tools to help individuals and organizations adopt AI, automate workflows, and upskill teams.
@@ -46,7 +48,7 @@ To democratize AI education and adoption by providing:
 
 - **Frontend**: TypeScript, React, Vite
 - **Backend**: Node.js, Express
-- **Database**: PostgreSQL, Drizzle ORM
+- **Database**: MySQL, Drizzle ORM
 - **Email**: SendGrid integration
 - **Automation**: n8n workflows
 - **Deployment**: Hostinger
@@ -105,9 +107,8 @@ The application will be available at `http://localhost:5000`
 
 ## 📚 Documentation
 
-- [API Documentation](./docs/api.md)
-- [Deployment Guide](./docs/deployment.md)
-- [Contributing Guidelines](./docs/contributing.md)
+- [Deployment Guide](./docs/DEPLOYMENT.md)
+- [Contributing Guidelines](./CONTRIBUTING.md)
 
 ## 🎯 Roadmap
 
@@ -122,7 +123,7 @@ The application will be available at `http://localhost:5000`
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Please read our [Contributing Guidelines](./docs/contributing.md) before submitting pull requests.
+We welcome contributions from the community! Please read our [Contributing Guidelines](./CONTRIBUTING.md) before submitting pull requests.
 
 ### Development Workflow
 

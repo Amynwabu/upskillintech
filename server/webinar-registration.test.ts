@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { registerWebinar, getAllWebinarRegistrations } from './server/db';
 
-describe('Webinar Registration System', () => {
+// Integration suite: needs a reachable database. Skipped in CI and local
+// environments where DATABASE_URL is not set.
+const hasDatabase = Boolean(process.env.DATABASE_URL);
+
+describe.skipIf(!hasDatabase)('Webinar Registration System', () => {
   it('should register a new webinar attendee', async () => {
     const testRegistration = {
       name: 'Test User',

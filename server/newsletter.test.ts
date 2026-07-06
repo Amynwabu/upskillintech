@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import * as db from './db';
 
-describe('Newsletter Database Functions', () => {
+// Integration suite: needs a reachable database. Skipped in CI and local
+// environments where DATABASE_URL is not set.
+const hasDatabase = Boolean(process.env.DATABASE_URL);
+
+describe.skipIf(!hasDatabase)('Newsletter Database Functions', () => {
   it('should subscribe a new email to newsletter', async () => {
     const testEmail = `test-${Date.now()}@example.com`;
     

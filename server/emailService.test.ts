@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
 import { validateSendGridConfig, sendWelcomeEmail } from './emailService';
 
-describe('SendGrid Email Service', () => {
+// Integration suite: needs a real SendGrid API key. Skipped in CI and local
+// environments where SENDGRID_API_KEY is not set.
+const hasSendGrid = Boolean(process.env.SENDGRID_API_KEY);
+
+describe.skipIf(!hasSendGrid)('SendGrid Email Service', () => {
   it('should validate SendGrid API key configuration', async () => {
     const result = await validateSendGridConfig();
     
