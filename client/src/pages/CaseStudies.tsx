@@ -1,7 +1,7 @@
 /**
  * Case Studies Page — UpskillinTech
  * URL: /resources/case-studies
- * Design: Green (#2E7B20) + Golden Green (#50B040) + Yellow (#D1A81D)
+ * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -21,7 +21,7 @@ const CASE_STUDIES = [
     id: 1,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#2E7B20" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "Sarah O.",
     role: "Senior Project Manager",
     industry: "Financial Services",
@@ -37,13 +37,13 @@ const CASE_STUDIES = [
     ],
     quote: "I used to feel like I was always behind. Now I'm always ahead. AI didn't replace my thinking — it gave me time to actually think.",
     timeToResult: "6 weeks",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     id: 2,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#2E7B20" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "James A.",
     role: "Independent Consultant",
     industry: "Management Consulting",
@@ -59,13 +59,13 @@ const CASE_STUDIES = [
     ],
     quote: "I thought AI was for tech companies. Now I can't imagine running my consulting practice without it. It's like having a brilliant junior analyst available 24/7.",
     timeToResult: "8 weeks",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     id: 3,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#2E7B20" }} />,
+    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
     name: "Dr. Priya M.",
     role: "University Lecturer",
     industry: "Higher Education",
@@ -81,13 +81,13 @@ const CASE_STUDIES = [
     ],
     quote: "My students get better feedback faster, and I have time to actually research again. AI gave me back my academic identity.",
     timeToResult: "4 weeks",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     id: 4,
     category: "organisation",
     categoryLabel: "Organisation",
-    icon: <Users size={20} style={{ color: "#50B040" }} />,
+    icon: <Users size={20} style={{ color: "#8B9E1A" }} />,
     name: "TechBridge Solutions",
     role: "50-person IT Services Company",
     industry: "Technology",
@@ -103,13 +103,13 @@ const CASE_STUDIES = [
     ],
     quote: "We went from scattered AI experiments to a coherent AI strategy. UpskillinTech didn't just train our team — they helped us think differently about how we work.",
     timeToResult: "90 days",
-    color: "#50B040",
+    color: "#8B9E1A",
   },
   {
     id: 5,
     category: "organisation",
     categoryLabel: "Organisation",
-    icon: <Users size={20} style={{ color: "#50B040" }} />,
+    icon: <Users size={20} style={{ color: "#8B9E1A" }} />,
     name: "Meridian HR Group",
     role: "HR Consultancy",
     industry: "Human Resources",
@@ -125,13 +125,13 @@ const CASE_STUDIES = [
     ],
     quote: "Our consultants now spend their time on what actually matters — understanding clients and candidates. The AI handles the paperwork.",
     timeToResult: "6 weeks",
-    color: "#50B040",
+    color: "#8B9E1A",
   },
   {
     id: 6,
     category: "ministry",
     categoryLabel: "Ministry & Education",
-    icon: <Star size={20} style={{ color: "#D1A81D" }} />,
+    icon: <Star size={20} style={{ color: "#E6B800" }} />,
     name: "Pastor David K.",
     role: "Senior Pastor",
     industry: "Faith Community",
@@ -147,13 +147,13 @@ const CASE_STUDIES = [
     ],
     quote: "I was sceptical at first — I thought AI would make my sermons feel less personal. The opposite happened. I have more time to pray, study, and listen to my congregation.",
     timeToResult: "3 weeks",
-    color: "#D1A81D",
+    color: "#E6B800",
   },
   {
     id: 7,
     category: "ministry",
     categoryLabel: "Ministry & Education",
-    icon: <Star size={20} style={{ color: "#D1A81D" }} />,
+    icon: <Star size={20} style={{ color: "#E6B800" }} />,
     name: "Bright Futures Academy",
     role: "Independent School",
     industry: "K-12 Education",
@@ -169,7 +169,7 @@ const CASE_STUDIES = [
     ],
     quote: "Our teachers are energised again. They're spending time teaching and connecting with students — not drowning in paperwork. AI changed the culture of our school.",
     timeToResult: "4 weeks",
-    color: "#D1A81D",
+    color: "#E6B800",
   },
 ];
 
@@ -194,7 +194,7 @@ export default function CaseStudies() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,123,32,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Real People. Real Results. Real AI Integration.
             </h1>
@@ -204,7 +204,7 @@ export default function CaseStudies() {
           </div>
         </div>
         {/* Metrics bar */}
-        <div style={{ background: "linear-gradient(90deg, #50B040 0%, #D1A81D 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {METRICS.map(m => (
@@ -229,7 +229,7 @@ export default function CaseStudies() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#2E7B20" : "#fff",
+                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -336,7 +336,7 @@ export default function CaseStudies() {
             Join the professionals and organisations already transforming how they work with AI. The AI-Enabled Professional Program gives you the skills, frameworks, and support to get real results.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#D1A81D", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Join the Program
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>

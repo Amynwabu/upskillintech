@@ -408,7 +408,7 @@ export default function Consult() {
         </section>
 
         {/* CTA */}
-        <section className="py-16" style={{ background: "linear-gradient(90deg, #2E7B20 0%, #3E9430 50%, #2E7B20 100%)" }}>
+        <section className="py-16" style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 50%, #0D9488 100%)" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto text-center text-primary-foreground">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">

@@ -1,108 +1,112 @@
 /**
- * ProgramsSection — UpskillinTech v4 "Evergreen"
- * Four scannable programme cards on white: level tag, one-line promise,
- * three outcomes, single accent color.
+ * ProgramsSection — UpskillinTech v3
+ * White bg, 4 large program cards, bold headings, richer descriptions, green top border
  */
 import { Briefcase, BookOpen, Users, Zap, ArrowRight } from "lucide-react";
 
 const programs = [
   {
     icon: BookOpen,
-    level: "Beginner",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "AI Foundations",
-    desc: "Understand AI and start using it confidently — no technical background required.",
+    subtitle: "For Beginners",
+    desc: "Understand AI and start using it confidently — with no technical background required. Build practical skills from day one using the C.L.E.A.R. prompting framework.",
     outcomes: ["No prior experience needed", "Hands-on tools & prompts", "Community support"],
   },
   {
     icon: Briefcase,
-    level: "Professional",
+    color: "#16A34A",
+    bg: "rgba(22,163,74,0.10)",
     title: "AI-Enabled Professional",
-    desc: "Apply AI to emails, documents, research, and presentations — and reclaim hours every week.",
-    outcomes: ["Save 5–10 hours a week", "Real workflow practice", "Practical certification"],
+    subtitle: "For Professionals & Individuals",
+    desc: "Use AI for emails, planning, writing, research, documents, and presentations — and save hours every single week. Think. Create. Build. Grow.",
+    outcomes: ["Save 5–10 hrs/week", "Real workflow practice", "Practical certification"],
   },
   {
     icon: Zap,
-    level: "Live sessions",
+    color: "#D97706",
+    bg: "rgba(217,119,6,0.10)",
     title: "Webinars & Masterclasses",
-    desc: "Live, practical sessions on AI tools, workflows, and productivity strategies.",
+    subtitle: "For Solopreneurs & Business Owners",
+    desc: "Live, practical sessions on AI tools, workflows, and productivity strategies — from the UpskillinTech team and guest practitioners.",
     outcomes: ["Live & recorded sessions", "Real case studies", "Free for members"],
   },
   {
     icon: Users,
-    level: "Leadership",
+    color: "#0D9488",
+    bg: "rgba(13,148,136,0.10)",
     title: "AI Leadership",
-    desc: "Structured AI adoption for teams — training, workflow redesign, and governance.",
+    subtitle: "For Business Owners & Organisations",
+    desc: "Structured AI adoption for teams — covering training, workflow redesign, governance, and safe, responsible implementation across your organisation.",
     outcomes: ["Team-wide AI confidence", "Custom adoption roadmap", "Safe AI governance"],
   },
 ];
 
 export default function ProgramsSection() {
   return (
-    <section id="programs" className="section-py" style={{ background: "#FFFFFF" }}>
+    <section id="programs" className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         {/* Header */}
-        <div style={{ maxWidth: 640, margin: "0 auto 4rem", textAlign: "center" }}>
-          <span className="section-label">Programmes</span>
-          <h2 style={{ marginTop: "1rem", marginBottom: "1rem" }}>
-            A clear path from first prompt to confident adoption
+        <div className="text-center mb-14">
+          <span className="section-label mb-5">Structured Programmes</span>
+          <h2 className="mt-4 mb-4">
+            The right programme for <span style={{ color: "#0D9488" }}>where you are now</span>
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#5D6B60", lineHeight: 1.7 }}>
-            Four structured programmes, each matched to a stage of the journey. Start where
-            you are — every programme is practical from day one.
+          <div className="flex justify-center gap-1.5 mb-5">
+            <div style={{ width: 64, height: 4, background: "#0D9488", borderRadius: 2 }} />
+            <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
+          </div>
+          <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
+            From AI Foundations to AI Leadership — structured learning paths designed for professionals in Nigeria, the UK, and across the diaspora.
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7 mb-12">
           {programs.map((p) => {
             const Icon = p.icon;
             return (
-              <div key={p.title} className="card-modern p-7 flex flex-col">
-                <div className="flex items-center justify-between mb-5">
-                  <div
-                    className="w-11 h-11 rounded-lg flex items-center justify-center"
-                    style={{ background: "#E9F5E2" }}
-                  >
-                    <Icon size={21} style={{ color: "#2E7B20" }} />
-                  </div>
-                  <span
-                    style={{
-                      fontFamily: "'Sora', sans-serif",
-                      fontSize: "0.7rem",
-                      fontWeight: 600,
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#2E7B20",
-                      background: "#F5FAF2",
-                      border: "1px solid #D2EBC5",
-                      borderRadius: "99px",
-                      padding: "0.25rem 0.7rem",
-                    }}
-                  >
-                    {p.level}
-                  </span>
+              <div
+                key={p.title}
+                className="rounded-2xl p-7 flex flex-col transition-all duration-200"
+                style={{
+                  background: "#151B23",
+                  border: "1px solid #1F2937",
+                  borderTop: `4px solid ${p.color}`,
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(13,148,136,0.16)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.07)";
+                }}
+              >
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-5" style={{ background: p.bg }}>
+                  <Icon size={28} style={{ color: p.color }} />
                 </div>
-                <h3 style={{ fontSize: "1.1rem", marginBottom: "0.6rem" }}>{p.title}</h3>
-                <p className="flex-1" style={{ fontSize: "0.9rem", lineHeight: 1.65, color: "#3E4A41", marginBottom: "1.25rem" }}>
-                  {p.desc}
-                </p>
-                <ul className="flex flex-col gap-2 mb-6" style={{ paddingTop: "1rem", borderTop: "1px solid #EDF2EC" }}>
+                <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: p.color }}>
+                  {p.subtitle}
+                </div>
+                <h3 className="mb-3" style={{ fontSize: "1.15rem" }}>{p.title}</h3>
+                <p className="mb-5 flex-1" style={{ fontSize: "0.95rem", lineHeight: 1.7, color: "#9CA3AF" }}>{p.desc}</p>
+                <ul className="flex flex-col gap-1.5 mb-5">
                   {p.outcomes.map((o) => (
-                    <li key={o} className="flex items-start gap-2.5" style={{ fontSize: "0.85rem", color: "#5D6B60", lineHeight: 1.5 }}>
-                      <span
-                        aria-hidden="true"
-                        style={{ width: 5, height: 5, borderRadius: "50%", background: "#50B040", display: "inline-block", flexShrink: 0, marginTop: "0.5rem" }}
-                      />
+                    <li key={o} className="flex items-center gap-2" style={{ fontSize: "0.875rem", color: "#D1D5DB" }}>
+                      <span style={{ width: 7, height: 7, borderRadius: "50%", background: p.color, display: "inline-block", flexShrink: 0 }} />
                       {o}
                     </li>
                   ))}
                 </ul>
                 <a
                   href="/programs"
-                  className="flex items-center gap-1.5 mt-auto"
-                  style={{ color: "#2E7B20", textDecoration: "none", fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.85rem" }}
+                  className="flex items-center gap-1.5 font-semibold text-sm mt-auto"
+                  style={{ color: p.color, textDecoration: "none", fontFamily: "'Sora', sans-serif" }}
                 >
-                  Learn more <ArrowRight size={14} />
+                  Learn More <ArrowRight size={15} />
                 </a>
               </div>
             );
@@ -110,8 +114,8 @@ export default function ProgramsSection() {
         </div>
 
         <div className="text-center">
-          <a href="/programs" className="btn-primary" style={{ fontSize: "1rem", padding: "0.9rem 2.25rem" }}>
-            Explore All Programmes
+          <a href="/programs" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.5rem" }}>
+            Explore All Programs
           </a>
         </div>
       </div>

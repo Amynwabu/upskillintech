@@ -1,12 +1,9 @@
-/**
- * TrustStrip — UpskillinTech v4 "Evergreen"
- * Editorial stat row on white: dark numerals, quiet labels, thin dividers.
- */
 const stats = [
-  { value: "1,000+", label: "Professionals trained" },
+  { value: "1,000+", label: "Professionals reached" },
+  { value: "500+", label: "Students trained" },
   { value: "20+", label: "Countries represented" },
   { value: "50+", label: "Organisations served" },
-  { value: "PhD-led", label: "AI & Robotics research" },
+  { value: "Free", label: "Resources available" },
 ];
 
 export default function TrustStrip() {
@@ -14,23 +11,31 @@ export default function TrustStrip() {
     <section
       aria-label="Platform statistics"
       style={{
-        background: "#FFFFFF",
-        borderBottom: "1px solid #E3EAE2",
-        padding: "2.5rem 0",
+        background: "#151B23",
+        borderTop: "1px solid #1F2937",
+        borderBottom: "1px solid #1F2937",
+        padding: "2rem 0",
       }}
     >
       <div className="container">
-        <div className="trust-strip-grid">
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "2rem 3.5rem",
+            alignItems: "center",
+          }}
+        >
           {stats.map((s) => (
-            <div key={s.label} className="trust-strip-item">
+            <div key={s.label} style={{ textAlign: "center" }}>
               <div
                 style={{
                   fontFamily: "'Sora', sans-serif",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   fontSize: "clamp(1.6rem, 3vw, 2rem)",
-                  color: "#17211A",
+                  color: "#0D9488",
                   lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
                 }}
               >
                 {s.value}
@@ -39,8 +44,8 @@ export default function TrustStrip() {
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
                   fontSize: "0.875rem",
-                  color: "#5D6B60",
-                  marginTop: "0.35rem",
+                  color: "#9CA3AF",
+                  marginTop: "0.2rem",
                   fontWeight: 500,
                 }}
               >
@@ -50,19 +55,6 @@ export default function TrustStrip() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        .trust-strip-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2rem 1rem;
-          text-align: center;
-        }
-        @media (min-width: 768px) {
-          .trust-strip-grid { grid-template-columns: repeat(4, 1fr); }
-          .trust-strip-item + .trust-strip-item { border-left: 1px solid #E3EAE2; }
-        }
-      `}</style>
     </section>
   );
 }

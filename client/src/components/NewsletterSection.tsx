@@ -34,7 +34,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section id="lead-magnet" className="section-py" style={{ background: "linear-gradient(135deg, #2E7B20 0%, #50B040 50%, #D1A81D 100%)" }}>
+    <section id="lead-magnet" className="section-py" style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 50%, #E6B800 100%)" }}>
       <div className="container">
         <div className="max-w-3xl mx-auto">
           {/* Header */}

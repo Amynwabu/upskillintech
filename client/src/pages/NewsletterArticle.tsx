@@ -23,7 +23,7 @@ const ARTICLES: Record<string, {
   "most-professionals-are-using-ai-wrong": {
     title: "Most Professionals Are Using AI Wrong",
     date: "March 2026", readTime: "5 min read", author: "UpskillinTech Team",
-    tag: "Featured Insight", tagColor: "#2E7B20",
+    tag: "Featured Insight", tagColor: "#0D9488",
     sections: [
       {
         type: "insight",
@@ -66,7 +66,7 @@ const ARTICLES: Record<string, {
   "5-ai-workflows-that-save-professionals-10-hours-a-week": {
     title: "5 AI Workflows That Save Professionals 10 Hours a Week",
     date: "February 2026", readTime: "7 min read", author: "UpskillinTech Team",
-    tag: "Workflow Guide", tagColor: "#50B040",
+    tag: "Workflow Guide", tagColor: "#8B9E1A",
     sections: [
       {
         type: "insight",
@@ -237,8 +237,8 @@ const ARTICLES: Record<string, {
 };
 
 const ALL_EDITIONS = [
-  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#2E7B20" },
-  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#50B040" },
+  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#0D9488" },
+  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#8B9E1A" },
   { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#D97706" },
   { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#7C3AED" },
   { slug: "ai-tools-for-educators-and-community-leaders", title: "AI Tools for Educators and Community Leaders", date: "November 2025", readTime: "5 min read", tag: "Education & Leadership", tagColor: "#0891B2" },
@@ -248,7 +248,7 @@ const SECTION_ICONS: Record<string, React.ElementType> = {
   insight: Lightbulb, tip: Zap, tool: BarChart2, workflow: BookOpen, community: Users, resource: Mail,
 };
 const SECTION_COLORS: Record<string, string> = {
-  insight: "#2E7B20", tip: "#D1A81D", tool: "#50B040", workflow: "#7C3AED", community: "#0891B2", resource: "#D97706",
+  insight: "#0D9488", tip: "#E6B800", tool: "#8B9E1A", workflow: "#7C3AED", community: "#0891B2", resource: "#D97706",
 };
 
 export default function NewsletterArticle() {
@@ -271,7 +271,7 @@ export default function NewsletterArticle() {
           <div className="text-center py-20">
             <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Edition Not Found</h1>
             <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition doesn't exist or has been moved.</p>
-            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#2E7B20" }}>
+            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#0D9488" }}>
               ← Back to Newsletter
             </Link>
           </div>
@@ -292,9 +292,9 @@ export default function NewsletterArticle() {
         <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
             <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
-              <Link href="/resources" style={{ color: "#2E7B20", textDecoration: "none" }}>Resources</Link>
+              <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
-              <Link href="/newsletter" style={{ color: "#2E7B20", textDecoration: "none" }}>Newsletter</Link>
+              <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
               <span style={{ color: "#D1D5DB" }}>{article.title}</span>
             </div>
@@ -327,7 +327,7 @@ export default function NewsletterArticle() {
             <div className="max-w-3xl mx-auto">
               {article.sections.map((section, i) => {
                 const Icon = SECTION_ICONS[section.type] || Lightbulb;
-                const color = SECTION_COLORS[section.type] || "#2E7B20";
+                const color = SECTION_COLORS[section.type] || "#0D9488";
                 return (
                   <div key={i} className="mb-10 rounded-2xl p-8"
                     style={{ border: `1.5px solid ${color}30`, background: `${color}08` }}>
@@ -368,7 +368,7 @@ export default function NewsletterArticle() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/programs"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white transition-all hover:opacity-90"
-                    style={{ background: "linear-gradient(135deg, #2E7B20, #50B040)" }}>
+                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
                     Explore Programs <ArrowRight size={16} />
                   </Link>
                   <Link href="/community"
@@ -406,7 +406,7 @@ export default function NewsletterArticle() {
                     />
                     <button type="submit" disabled={subscribe.isPending}
                       className="px-6 py-3 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
-                      style={{ background: "#2E7B20", whiteSpace: "nowrap" }}>
+                      style={{ background: "#0D9488", whiteSpace: "nowrap" }}>
                       {subscribe.isPending ? "..." : "Subscribe"}
                     </button>
                   </form>

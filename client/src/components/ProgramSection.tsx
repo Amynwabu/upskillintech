@@ -47,7 +47,7 @@ export default function ProgramSection() {
           <div className="section-label mb-3">Flagship Program</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
             The AI-Enabled{" "}
-            <span style={{ background: "linear-gradient(135deg, #2E7B20, #3E9430)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Professional Program
             </span>
           </h2>
@@ -80,17 +80,17 @@ export default function ProgramSection() {
               </div>
 
               {/* After */}
-              <div className="rounded-xl p-6 flex flex-col" style={{ background: "rgba(46,123,32,0.05)", border: "1px solid rgba(46,123,32,0.2)" }}>
+              <div className="rounded-xl p-6 flex flex-col" style={{ background: "rgba(13,148,136,0.05)", border: "1px solid rgba(13,148,136,0.2)" }}>
                 <div className="flex items-center gap-2 mb-5">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(46,123,32,0.1)" }}>
-                    <Check size={14} style={{ color: "#2E7B20" }} />
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(13,148,136,0.1)" }}>
+                    <Check size={14} style={{ color: "#0D9488" }} />
                   </div>
-                  <span className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#2E7B20" }}>After</span>
+                  <span className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488" }}>After</span>
                 </div>
                 <ul className="space-y-3 flex-1">
                   {afterItems.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <Check size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#3E9430" }} />
+                      <Check size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#16A34A" }} />
                       <span className="text-sm font-medium" style={{ color: "#0F172A", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
                     </li>
                   ))}
@@ -134,8 +134,8 @@ export default function ProgramSection() {
                     "Certificate of completion",
                   ].map((feat) => (
                     <div key={feat} className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(46,123,32,0.15)" }}>
-                        <Check size={9} style={{ color: "#2E7B20" }} />
+                      <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(13,148,136,0.15)" }}>
+                        <Check size={9} style={{ color: "#0D9488" }} />
                       </div>
                       <span className="text-xs" style={{ color: "#475569", fontFamily: "'DM Sans', sans-serif" }}>{feat}</span>
                     </div>

@@ -1,53 +1,54 @@
 /**
- * EnterpriseSection — UpskillinTech v4 "Evergreen"
- * "For organisations": split layout on soft tint, four concrete capabilities,
- * photo with a single stat card.
+ * EnterpriseSection — UpskillinTech v3
+ * Light gray background, split layout: text left, photo right
+ * Larger text, richer benefits, stronger visual hierarchy
  */
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 
 const ENTERPRISE_IMG = "/networking-event.jpg";
 
 const benefits = [
-  { title: "Team training", desc: "Role-specific AI training that upskills your whole workforce." },
-  { title: "Workflow design", desc: "Custom AI workflows that remove repetitive work and lift output." },
-  { title: "Adoption strategy", desc: "A long-term roadmap aligned with your organisation's goals." },
-  { title: "Measurable ROI", desc: "Clear metrics for time saved, productivity, and business impact." },
+  { title: "Train Teams in AI Productivity", desc: "Upskill your entire workforce with structured, role-specific AI training programmes." },
+  { title: "Design AI Workflows", desc: "Build custom AI-powered workflows that automate repetitive tasks and boost output." },
+  { title: "Develop AI Strategy", desc: "Create a long-term AI adoption roadmap aligned with your organisation's goals." },
+  { title: "Measure ROI", desc: "Track productivity gains, time savings, and business impact with clear metrics." },
 ];
 
 export default function EnterpriseSection() {
   return (
-    <section id="enterprise" className="section-py" style={{ background: "#F5FAF2", borderTop: "1px solid #E3EAE2", borderBottom: "1px solid #E3EAE2" }}>
+    <section id="enterprise" className="section-py" style={{ background: "#151B23" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>
-            <span className="section-label">For organisations</span>
-            <h2 style={{ marginTop: "1rem", marginBottom: "1.25rem", maxWidth: 480 }}>
-              Bring your whole team along
+            <span className="section-label mb-5">Enterprise Solutions</span>
+            <h2 className="mt-4 mb-5">
+              AI Transformation for <span style={{ color: "#0D9488" }}>Organisations</span>
             </h2>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#3E4A41", lineHeight: 1.75, marginBottom: "2.25rem", maxWidth: 480 }}>
-              We partner with organisations to build AI-ready teams — from structured
-              training and workflow redesign to governance and strategy that deliver
-              measurable results.
+            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#9CA3AF", lineHeight: 1.75 }}>
+              UpskillinTech partners with organisations to build AI-ready teams, design intelligent workflows, and develop sustainable AI strategies that deliver measurable results.
             </p>
-            <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-5 mb-10">
+            <ul className="flex flex-col gap-5 mb-10">
               {benefits.map((b) => (
-                <li key={b.title} className="flex items-start gap-3">
-                  <CheckCircle2 size={19} style={{ color: "#2E7B20", flexShrink: 0, marginTop: "0.15rem" }} />
+                <li key={b.title} className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(13,148,136,0.12)" }}>
+                    <CheckCircle size={18} style={{ color: "#0D9488" }} />
+                  </div>
                   <div>
-                    <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, color: "#17211A", fontSize: "0.95rem", marginBottom: "0.2rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1rem" }}>
                       {b.title}
                     </div>
-                    <div style={{ fontSize: "0.875rem", color: "#5D6B60", lineHeight: 1.6 }}>{b.desc}</div>
+                    <div style={{ fontSize: "0.925rem", color: "#9CA3AF", lineHeight: 1.6 }}>{b.desc}</div>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="flex flex-wrap gap-3">
-              <a href="/enterprise" className="btn-primary">
-                Enterprise Solutions <ArrowRight size={16} />
+            <div className="flex flex-wrap gap-4">
+              <a href="/enterprise" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
+                <ArrowRight size={20} />
+                Enterprise Solutions
               </a>
-              <a href="/contact" className="btn-outline">
+              <a href="/contact" className="btn-outline" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem" }}>
                 Book a Consultation
               </a>
             </div>
@@ -57,20 +58,21 @@ export default function EnterpriseSection() {
           <div className="flex justify-center lg:justify-end">
             <div
               className="relative rounded-2xl overflow-hidden"
-              style={{ maxWidth: 520, width: "100%", boxShadow: "0 24px 60px rgba(12,31,18,0.14)", borderRadius: "1rem", border: "1px solid #E3EAE2" }}
+              style={{ maxWidth: 520, width: "100%", boxShadow: "0 24px 64px rgba(0,0,0,0.15)" }}
             >
               <img
                 src={ENTERPRISE_IMG}
-                alt="AI training workshop with a diverse professional team"
+                alt="AI training workshop with diverse professional team"
                 className="w-full h-auto"
                 style={{ display: "block" }}
               />
+              {/* Floating stat */}
               <div
-                className="absolute top-5 right-5 rounded-xl px-5 py-3 text-center"
-                style={{ background: "#ffffff", boxShadow: "0 8px 24px rgba(12,31,18,0.14)", border: "1px solid #E3EAE2" }}
+                className="absolute top-5 right-5 rounded-2xl px-5 py-3 text-center"
+                style={{ background: "rgba(255,255,255,0.97)", boxShadow: "0 8px 24px rgba(0,0,0,0.12)" }}
               >
-                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.4rem", fontWeight: 700, color: "#17211A" }}>50+</div>
-                <div style={{ fontSize: "0.78rem", color: "#5D6B60", fontWeight: 500 }}>organisations served</div>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", fontWeight: 800, color: "#0D9488" }}>50+</div>
+                <div style={{ fontSize: "0.8rem", color: "#9CA3AF", fontWeight: 500 }}>Business Partners</div>
               </div>
             </div>
           </div>

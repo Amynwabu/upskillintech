@@ -15,7 +15,7 @@ const stages = [
     subtitle: "AI Content & Insights",
     desc: "AI content, webinars, and insights to help you understand what's happening in the AI world and why it matters for your work.",
     items: ["Weekly AI insights", "Free webinars", "AI trend reports"],
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     icon: BookOpen,
@@ -24,7 +24,7 @@ const stages = [
     subtitle: "Structured AI Programs",
     desc: "Structured programs that take you from AI basics to advanced workflow integration with practical, hands-on learning.",
     items: ["Cohort programs", "Self-paced courses", "Live workshops"],
-    color: "#3E9430",
+    color: "#16A34A",
   },
   {
     icon: Wrench,
@@ -68,7 +68,7 @@ export default function EcosystemSection() {
           <div className="section-label mb-3">The Platform</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
             The UpskillinTech{" "}
-            <span style={{ background: "linear-gradient(135deg, #2E7B20, #3E9430)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Ecosystem
             </span>
           </h2>
@@ -80,7 +80,7 @@ export default function EcosystemSection() {
         {/* Ecosystem Stages */}
         <div className="relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 mx-16" style={{ background: "linear-gradient(to right, #2E7B20, #3E9430, #D97706, #7C3AED)", opacity: 0.3 }} />
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 mx-16" style={{ background: "linear-gradient(to right, #0D9488, #16A34A, #D97706, #7C3AED)", opacity: 0.3 }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {stages.map((stage, i) => {

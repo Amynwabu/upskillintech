@@ -8,13 +8,13 @@ const cases = [
     icon: Mail,
     title: "AI for Emails",
     outcome: "Write clearer replies, follow-ups, proposals, and customer messages in minutes.",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     icon: PenLine,
     title: "AI for Social Media Content",
     outcome: "Build a full content calendar and write posts in your voice — weeks of content in one session.",
-    color: "#3E9430",
+    color: "#16A34A",
   },
   {
     icon: FileText,
@@ -38,13 +38,13 @@ const cases = [
     icon: MonitorSmartphone,
     title: "AI for Presentations",
     outcome: "Turn a brief into a structured slide deck with key messages and speaker notes in minutes.",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     icon: Search,
     title: "AI for Research",
     outcome: "Gather information, summarise long documents, and compare sources at speed.",
-    color: "#3E9430",
+    color: "#16A34A",
   },
   {
     icon: Calendar,
@@ -68,13 +68,13 @@ const cases = [
     icon: BookOpen,
     title: "AI for Small Business Marketing",
     outcome: "Create campaigns, write ad copy, design visuals, and reach more customers with less effort.",
-    color: "#2E7B20",
+    color: "#0D9488",
   },
   {
     icon: Church,
     title: "AI for Churches & Community Groups",
     outcome: "Write sermons, newsletters, event plans, and community communications faster and more consistently.",
-    color: "#3E9430",
+    color: "#16A34A",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function UseCasesSection() {
         <div className="text-center mt-10">
           <a
             href="#programs"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#2E7B20", textDecoration: "none" }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#0D9488", textDecoration: "none" }}
           >
             Learn how in our programmes →
           </a>

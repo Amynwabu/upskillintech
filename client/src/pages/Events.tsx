@@ -133,14 +133,14 @@ export default function Events() {
       <section className="pt-32 pb-12 border-b border-[#1F2937]" style={{ background: "linear-gradient(135deg, #f0fdfc 0%, #f7fef7 100%)" }}>
         <div className="container">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(46,123,32,0.10)", border: "1px solid rgba(46,123,32,0.25)" }}>
-              <Calendar className="w-4 h-4" style={{ color: "#2E7B20" }} />
-              <span className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#2E7B20" }}>Events &amp; Workshops</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(13,148,136,0.10)", border: "1px solid rgba(13,148,136,0.25)" }}>
+              <Calendar className="w-4 h-4" style={{ color: "#0D9488" }} />
+              <span className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488" }}>Events &amp; Workshops</span>
             </div>
 
             <h1 className="mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
               Upcoming{" "}
-              <span style={{ background: "linear-gradient(135deg, #2E7B20, #2E7B20)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 AI Events
               </span>
             </h1>
@@ -150,10 +150,10 @@ export default function Events() {
             </p>
 
             {/* Featured Webinar CTA */}
-            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(46,123,32,0.08), rgba(46,123,32,0.08))", border: "1px solid rgba(46,123,32,0.20)" }}>
+            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(13,148,136,0.08))", border: "1px solid rgba(13,148,136,0.20)" }}>
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-semibold mb-3" style={{ background: "#2E7B20" }}>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-semibold mb-3" style={{ background: "#0D9488" }}>
                     <Video className="w-3 h-3" />
                     FEATURED EVENT
                   </div>
@@ -168,7 +168,7 @@ export default function Events() {
                   </p>
                 </div>
                 <Link href="/resources/webinars">
-                  <Button size="lg" className="font-semibold px-8" style={{ background: "#2E7B20", color: "white" }}>
+                  <Button size="lg" className="font-semibold px-8" style={{ background: "#0D9488", color: "white" }}>
                     Register Free
                   </Button>
                 </Link>
@@ -190,7 +190,7 @@ export default function Events() {
                 className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
                   selectedType === type ? "text-white" : "bg-[#151B23] border border-[#1F2937] text-gray-600 hover:border-teal-400"
                 }`}
-                style={selectedType === type ? { background: "#2E7B20", fontFamily: "'Sora', sans-serif" } : { fontFamily: "'Sora', sans-serif" }}
+                style={selectedType === type ? { background: "#0D9488", fontFamily: "'Sora', sans-serif" } : { fontFamily: "'Sora', sans-serif" }}
               >
                 {type}
               </button>
@@ -214,7 +214,7 @@ export default function Events() {
                   key={event.id}
                   className="group rounded-2xl border overflow-hidden transition-all duration-200 hover:shadow-xl"
                   style={{ background: "#151B23", borderColor: "#E5E7EB" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(46,123,32,0.4)"; }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(13,148,136,0.4)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#E5E7EB"; }}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -266,9 +266,9 @@ export default function Events() {
                     <a
                       href={event.registrationUrl}
                       className="block w-full text-center font-bold rounded-xl px-6 py-3 transition-all"
-                      style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", background: "#2E7B20", color: "white", textDecoration: "none" }}
+                      style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", background: "#0D9488", color: "white", textDecoration: "none" }}
                       onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#0f766e"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#2E7B20"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#0D9488"; }}
                     >
                       Register Now
                     </a>

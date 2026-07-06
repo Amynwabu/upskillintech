@@ -1,10 +1,5 @@
-/**
- * AISkillsQuiz — UpskillinTech v4 "Evergreen"
- * Five-question AI level quiz, restyled for the light premium theme
- * with a single brand green.
- */
 import { useState } from "react";
-import { ArrowRight, ArrowLeft, Check, Compass, BookOpen, Zap, Wrench, Rocket } from "lucide-react";
+import { ArrowRight, ArrowLeft, CheckCircle2, Compass, BookOpen, Zap, Wrench, Rocket } from "lucide-react";
 
 const questions = [
   {
@@ -69,29 +64,35 @@ const levels = [
     id: "curious",
     title: "AI Curious",
     icon: Compass,
+    color: "#0D9488",
+    gradient: "linear-gradient(135deg, #0D9488, #0F766E)",
     desc: "You're at the start of your AI journey — curious but not sure where to begin. That's exactly the right place to be.",
-    next: "Start with the free prompt guide, then join the 7-Day AI Challenge to build your first practical habits.",
-    programmes: ["AI Foundations", "7-Day AI Challenge", "Free Prompt Guide"],
-    cta: "Get the Free Guide",
+    next: "Start with the AI Everyday Starter Kit (free), then join the 7-Day AI Challenge to build your first practical habits.",
+    programmes: ["AI Starter Bootcamp", "7-Day AI Everyday Challenge", "Free AI Starter Kit"],
+    cta: "Get the Free Starter Kit",
     ctaHref: "#lead-magnet",
   },
   {
     id: "beginner",
     title: "AI Beginner",
     icon: BookOpen,
+    color: "#16A34A",
+    gradient: "linear-gradient(135deg, #16A34A, #15803D)",
     desc: "You've dipped your toes in but haven't found a consistent practice yet. You're ready to move from dabbling to doing.",
-    next: "AI Foundations will build your confidence fast with structured, beginner-friendly sessions.",
-    programmes: ["AI Foundations", "7-Day AI Challenge", "AI-Enabled Professional"],
-    cta: "Explore AI Foundations",
+    next: "The AI Starter Bootcamp will build your confidence fast with structured, beginner-friendly sessions.",
+    programmes: ["AI Starter Bootcamp", "7-Day AI Everyday Challenge", "AI Productivity for Everyday Work"],
+    cta: "Explore the Bootcamp",
     ctaHref: "/programs",
   },
   {
     id: "active",
     title: "AI Active User",
     icon: Zap,
+    color: "#D97706",
+    gradient: "linear-gradient(135deg, #D97706, #B45309)",
     desc: "You're using AI regularly but in an ad-hoc way. You're ready to go deeper — with structure, strategy, and real productivity gains.",
-    next: "AI-Enabled Professional will help you turn occasional use into consistent time savings.",
-    programmes: ["AI-Enabled Professional", "Webinars & Masterclasses", "Workflow Templates"],
+    next: "AI Productivity for Everyday Work will help you turn occasional use into consistent time savings.",
+    programmes: ["AI Productivity for Everyday Work", "AI Automation Sprint", "Workflow Templates"],
     cta: "Explore Programmes",
     ctaHref: "/programs",
   },
@@ -99,9 +100,11 @@ const levels = [
     id: "builder",
     title: "AI Workflow Builder",
     icon: Wrench,
+    color: "#7C3AED",
+    gradient: "linear-gradient(135deg, #7C3AED, #6D28D9)",
     desc: "You're building workflows and getting real results. Now it's time to automate, scale, and get more out of every tool.",
-    next: "A focused consultation will help you systematise what's working and build the workflows that save the most time.",
-    programmes: ["AI Leadership", "Masterclass", "1-on-1 Consultation"],
+    next: "The AI Automation Sprint will help you systematise what's working and build the workflows that save the most time.",
+    programmes: ["AI Automation Sprint", "AI Adoption for Leaders & Teams", "1-on-1 Consultation"],
     cta: "Book a Consultation",
     ctaHref: "/contact",
   },
@@ -109,19 +112,15 @@ const levels = [
     id: "leader",
     title: "AI Adoption Leader",
     icon: Rocket,
+    color: "#DB2777",
+    gradient: "linear-gradient(135deg, #DB2777, #BE185D)",
     desc: "You're ahead of most people — and you're thinking about how to bring others along. Your focus is adoption, governance, and impact.",
-    next: "AI Leadership is designed exactly for you. Let's build a roadmap for your organisation.",
-    programmes: ["AI Leadership", "Enterprise Solutions", "Discovery Call"],
+    next: "AI Adoption for Leaders & Teams is designed exactly for you. Let's build a roadmap for your organisation.",
+    programmes: ["AI Adoption for Leaders & Teams", "Enterprise Solutions", "Discovery Call"],
     cta: "Explore Enterprise Solutions",
     ctaHref: "/enterprise",
   },
 ];
-
-const GREEN = "#2E7B20";
-const INK = "#17211A";
-const BODY = "#3E4A41";
-const MUTED = "#5D6B60";
-const BORDER = "#E3EAE2";
 
 function scoreToLevel(answers: Record<string, string>): number {
   const vals = Object.values(answers);
@@ -160,61 +159,74 @@ export default function AISkillsQuiz() {
   if (result) {
     const Icon = result.icon;
     return (
-      <div className="card-modern" style={{ overflow: "hidden" }}>
-        {/* Result header */}
-        <div style={{ background: "#0C1F12", padding: "2.5rem 2rem", textAlign: "center" }}>
-          <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(126,209,100,0.14)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}>
-            <Icon size={28} style={{ color: "#7ED164" }} />
-          </div>
-          <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.72rem", fontWeight: 600, color: "rgba(255,255,255,0.6)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
-            Your AI starting point
-          </div>
-          <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.75rem", color: "#ffffff", marginBottom: "0.75rem" }}>
-            {result.title}
-          </h3>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.65, maxWidth: 440, margin: "0 auto" }}>
-            {result.desc}
-          </p>
-        </div>
-
-        {/* Recommended path */}
-        <div style={{ background: "#FFFFFF", padding: "2rem" }}>
-          <div style={{ marginBottom: "1.5rem" }}>
-            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: INK, marginBottom: "0.5rem" }}>
-              Your recommended next step
+      <div style={{ maxWidth: 680, margin: "0 auto" }}>
+        <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 20px 60px rgba(0,0,0,0.12)", border: "1px solid #1F2937" }}>
+          {/* Result header */}
+          <div style={{ background: result.gradient, padding: "2.5rem 2rem", textAlign: "center" }}>
+            <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1.25rem" }}>
+              <Icon size={34} color="#fff" />
             </div>
-            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: BODY, lineHeight: 1.65 }}>
-              {result.next}
+            <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 600, color: "rgba(255,255,255,0.75)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "0.5rem" }}>
+              Your AI Starting Point
+            </div>
+            <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "2rem", color: "#ffffff", marginBottom: "0.75rem" }}>
+              {result.title}
+            </h3>
+            <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "rgba(255,255,255,0.88)", lineHeight: 1.65, maxWidth: 480, margin: "0 auto" }}>
+              {result.desc}
             </p>
           </div>
 
-          <div style={{ marginBottom: "1.75rem" }}>
-            <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: INK, marginBottom: "0.75rem" }}>
-              Recommended for you
+          {/* Recommended path */}
+          <div style={{ background: "#151B23", padding: "2rem" }}>
+            <div style={{ marginBottom: "1.5rem" }}>
+              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.5rem" }}>
+                Your recommended next step
+              </div>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9375rem", color: "#D1D5DB", lineHeight: 1.65 }}>
+                {result.next}
+              </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {result.programmes.map((p, i) => (
-                <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#F5FAF2", border: "1px solid #E3EAE2", borderRadius: "0.5rem", padding: "0.625rem 0.875rem" }}>
-                  <div style={{ width: 22, height: 22, borderRadius: "50%", background: GREEN, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.65rem", color: "#fff" }}>{i + 1}</span>
-                  </div>
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: BODY, fontWeight: 500 }}>{p}</span>
-                </div>
-              ))}
-            </div>
-          </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
-            <a href={result.ctaHref} className="btn-primary" style={{ fontSize: "0.9rem" }}>
-              {result.cta} <ArrowRight size={15} />
-            </a>
-            <button
-              onClick={handleRestart}
-              className="btn-outline"
-              style={{ fontSize: "0.9rem" }}
-            >
-              Retake quiz
-            </button>
+            <div style={{ marginBottom: "1.75rem" }}>
+              <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.75rem" }}>
+                Recommended for you
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {result.programmes.map((p, i) => (
+                  <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#0B0F14", borderRadius: "0.625rem", padding: "0.625rem 0.875rem" }}>
+                    <div style={{ width: 24, height: 24, borderRadius: "50%", background: result.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                      <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.65rem", color: "#fff" }}>{i + 1}</span>
+                    </div>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", fontWeight: 500 }}>{p}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+              <a
+                href={result.ctaHref}
+                style={{
+                  display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                  background: result.color, color: "#fff", borderRadius: "0.75rem",
+                  padding: "0.875rem 1.5rem", fontFamily: "'Sora', sans-serif",
+                  fontWeight: 700, fontSize: "0.9rem", textDecoration: "none",
+                }}
+              >
+                {result.cta} <ArrowRight size={15} />
+              </a>
+              <button
+                onClick={handleRestart}
+                style={{
+                  background: "transparent", border: "1.5px solid #374151", color: "#D1D5DB",
+                  borderRadius: "0.75rem", padding: "0.875rem 1.5rem",
+                  fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.9rem", cursor: "pointer",
+                }}
+              >
+                Retake quiz
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -222,86 +234,86 @@ export default function AISkillsQuiz() {
   }
 
   return (
-    <div className="card-modern" style={{ overflow: "hidden" }}>
-      {/* Header */}
-      <div style={{ padding: "2rem 2rem 0" }}>
-        <p style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.72rem", fontWeight: 600, color: "#8A6D10", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: "1.25rem" }}>
-          Free quiz — find your AI level
-        </p>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-          <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: MUTED }}>
-            Question {step + 1} of {questions.length}
-          </span>
-          <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 600, color: GREEN }}>
-            {Math.round(progress)}%
-          </span>
+    <div style={{ maxWidth: 640, margin: "0 auto" }}>
+      <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #1F2937", background: "#151B23" }}>
+        {/* Progress */}
+        <div style={{ padding: "1.5rem 2rem 0" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
+            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#9CA3AF" }}>
+              Question {step + 1} of {questions.length}
+            </span>
+            <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#0D9488" }}>
+              {Math.round(progress)}%
+            </span>
+          </div>
+          <div style={{ height: 4, background: "#F3F4F6", borderRadius: 2 }}>
+            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #0D9488, #16A34A)", borderRadius: 2, transition: "width 0.3s" }} />
+          </div>
         </div>
-        <div style={{ height: 4, background: "#E9F5E2", borderRadius: 2 }}>
-          <div style={{ height: "100%", width: `${progress}%`, background: GREEN, borderRadius: 2, transition: "width 0.3s" }} />
-        </div>
-      </div>
 
-      {/* Question */}
-      <div style={{ padding: "1.75rem 2rem 0" }}>
-        <h3 style={{ fontSize: "1.05rem", lineHeight: 1.4, marginBottom: "1.25rem" }}>
-          {q.question}
-        </h3>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.75rem" }}>
-          {q.options.map((opt) => {
-            const isSelected = selected === opt.value;
-            return (
+        {/* Question */}
+        <div style={{ padding: "1.75rem 2rem 0" }}>
+          <h3 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.1rem", color: "#F3F4F6", lineHeight: 1.4, marginBottom: "1.5rem" }}>
+            {q.question}
+          </h3>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem", marginBottom: "2rem" }}>
+            {q.options.map((opt) => (
               <button
                 key={opt.value}
                 onClick={() => handleSelect(opt.value)}
                 style={{
-                  textAlign: "left", padding: "0.8rem 1rem", borderRadius: "0.5rem", cursor: "pointer",
-                  border: isSelected ? `1.5px solid ${GREEN}` : `1.5px solid ${BORDER}`,
-                  background: isSelected ? "#F5FAF2" : "#ffffff",
-                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem",
-                  color: isSelected ? "#1B4A11" : BODY,
-                  fontWeight: isSelected ? 600 : 400,
+                  textAlign: "left", padding: "0.875rem 1rem", borderRadius: "0.75rem", cursor: "pointer",
+                  border: selected === opt.value ? "2px solid #0D9488" : "1.5px solid #1F2937",
+                  background: selected === opt.value ? "rgba(13,148,136,0.06)" : "#ffffff",
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#0D9488" : "#374151",
+                  fontWeight: selected === opt.value ? 600 : 400,
                   display: "flex", alignItems: "center", gap: "0.75rem",
                   transition: "all 0.15s",
                 }}
               >
-                <span
-                  aria-hidden="true"
-                  style={{
-                    width: 20, height: 20, borderRadius: "50%", flexShrink: 0,
-                    border: isSelected ? `2px solid ${GREEN}` : "2px solid #C7D2C8",
-                    background: isSelected ? GREEN : "transparent",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                  }}
-                >
-                  {isSelected && <Check size={12} color="#fff" />}
+                <span style={{
+                  width: 20, height: 20, borderRadius: "50%", flexShrink: 0,
+                  border: selected === opt.value ? "2px solid #0D9488" : "2px solid #D1D5DB",
+                  background: selected === opt.value ? "#0D9488" : "transparent",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  {selected === opt.value && <CheckCircle2 size={12} color="#fff" />}
                 </span>
                 {opt.text}
               </button>
-            );
-          })}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Navigation */}
-      <div style={{ padding: "0 2rem 2rem", display: "flex", gap: "0.75rem" }}>
-        {step > 0 && (
-          <button onClick={handleBack} className="btn-outline" style={{ fontSize: "0.9rem" }}>
-            <ArrowLeft size={15} /> Back
+        {/* Navigation */}
+        <div style={{ padding: "0 2rem 2rem", display: "flex", gap: "0.75rem" }}>
+          {step > 0 && (
+            <button
+              onClick={handleBack}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                background: "transparent", border: "1.5px solid #1F2937", color: "#D1D5DB",
+                borderRadius: "0.75rem", padding: "0.875rem 1.25rem",
+                fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.9rem", cursor: "pointer",
+              }}
+            >
+              <ArrowLeft size={15} /> Back
+            </button>
+          )}
+          <button
+            onClick={handleNext}
+            disabled={!selected}
+            style={{
+              flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
+              background: selected ? "#0D9488" : "#E5E7EB", color: selected ? "#fff" : "#9CA3AF",
+              borderRadius: "0.75rem", padding: "0.875rem 1.25rem", border: "none",
+              fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
+              cursor: selected ? "pointer" : "not-allowed", transition: "background 0.15s",
+            }}
+          >
+            {step === questions.length - 1 ? "See My AI Level" : "Next"} <ArrowRight size={15} />
           </button>
-        )}
-        <button
-          onClick={handleNext}
-          disabled={!selected}
-          style={{
-            flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
-            background: selected ? GREEN : "#EDF2EC", color: selected ? "#fff" : "#8B968D",
-            borderRadius: "0.5rem", padding: "0.8rem 1.25rem", border: "none",
-            fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.9rem",
-            cursor: selected ? "pointer" : "not-allowed", transition: "background 0.15s",
-          }}
-        >
-          {step === questions.length - 1 ? "See My AI Level" : "Next"} <ArrowRight size={15} />
-        </button>
+        </div>
       </div>
     </div>
   );
