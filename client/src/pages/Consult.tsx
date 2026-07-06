@@ -66,7 +66,7 @@ export default function Consult() {
       ],
       duration: "3-6 months",
       pricing: "From $5,000",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-teal-600 to-emerald-500",
     },
     {
       id: "school",
@@ -82,7 +82,7 @@ export default function Consult() {
       ],
       duration: "4-8 months",
       pricing: "From $8,000",
-      color: "from-purple-500 to-pink-500",
+      color: "from-emerald-600 to-green-500",
     },
     {
       id: "ministry",
@@ -98,7 +98,7 @@ export default function Consult() {
       ],
       duration: "2-4 months",
       pricing: "From $3,500",
-      color: "from-green-500 to-teal-500",
+      color: "from-amber-600 to-yellow-500",
     },
   ];
 
@@ -164,7 +164,7 @@ export default function Consult() {
       
       <main className="flex-1 pt-[72px] pb-12">
         {/* Hero Section */}
-        <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
+        <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #0B0F14 0%, #10231C 100%)" }}>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -320,8 +320,8 @@ export default function Consult() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                      <Building2 className="text-blue-600" size={24} />
+                    <div className="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center">
+                      <Building2 className="text-teal-700" size={24} />
                     </div>
                     <div>
                       <CardTitle className="text-lg">Tech Startup</CardTitle>
@@ -349,8 +349,8 @@ export default function Consult() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center">
-                      <School className="text-purple-600" size={24} />
+                    <div className="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                      <School className="text-amber-700" size={24} />
                     </div>
                     <div>
                       <CardTitle className="text-lg">Private School</CardTitle>
