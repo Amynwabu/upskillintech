@@ -10,21 +10,21 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
 
 const LOGO_URL = "/logo-transparent.png";
-const ACTIVE_NAV_COLOR = "#0D9488";
+const ACTIVE_NAV_COLOR = "#2ecc71";
 
 const RESOURCE_LINKS = [
-  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
-  { label: "AI Guides", desc: "Free downloadable guides", href: "/resources/ai-guides", icon: <FileText size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
-  { label: "Webinars", desc: "Live & recorded sessions", href: "/resources/webinars", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
-  { label: "AI Workflows", desc: "Step-by-step templates", href: "/resources/workflows", icon: <Zap size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#E6B800" }} /> },
+  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "AI Guides", desc: "Free downloadable guides", href: "/resources/ai-guides", icon: <FileText size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "Webinars", desc: "Live & recorded sessions", href: "/resources/webinars", icon: <Video size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "AI Workflows", desc: "Step-by-step templates", href: "/resources/workflows", icon: <Zap size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#2ecc71" }} /> },
 ];
 
 const PROGRAM_LINKS = [
-  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
-  { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
-  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
+  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#2ecc71" }} /> },
+  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#2ecc71" }} /> },
 ];
 
 const navLinks = [
@@ -73,7 +73,7 @@ function MobileNavLink({ label, href, onClick }: { label: string; href: string; 
         color: active ? ACTIVE_NAV_COLOR : "#F3F4F6",
         fontWeight: active ? 800 : 600,
         textDecoration: "none",
-        background: active ? "rgba(13,148,136,0.08)" : "transparent",
+        background: active ? "rgba(46,204,113,0.08)" : "transparent",
       }}
       onClick={onClick}
     >
@@ -119,7 +119,7 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "#0B0F14",
+        background: "#0d1117",
         boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.35)" : "0 1px 0 #1F2937",
       }}
     >
@@ -214,7 +214,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: resourcesOpen ? "#0D9488" : "#F3F4F6",
+                  color: resourcesOpen ? "#2ecc71" : "#F3F4F6",
                   background: "none",
                   border: "none",
                   letterSpacing: "0.01em",
@@ -247,8 +247,8 @@ export default function Navbar() {
                       href="/resources"
                       className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 font-bold"
                       style={{
-                        background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(230,184,0,0.08))",
-                        color: "#0D9488",
+                        background: "linear-gradient(135deg, rgba(46,204,113,0.08), rgba(46,204,113,0.08))",
+                        color: "#2ecc71",
                         fontFamily: "'Sora', sans-serif",
                         fontSize: "0.95rem",
                         textDecoration: "none",
@@ -288,7 +288,7 @@ export default function Navbar() {
           <div className="hidden xl:flex items-center gap-3">
             {!loading && user ? (
               <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#D1D5DB", textDecoration: "none" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#2ecc71")}
                 onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D1D5DB")}
               >
                 Dashboard
@@ -297,7 +297,7 @@ export default function Navbar() {
               <GoogleSignInButton size="sm" label="Get Started" variant="default" />
             )}
             {!loading && user && (
-              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
+              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#2ecc71", boxShadow: "0 4px 14px rgba(46,204,113,0.25)" }}>
                 Get Started
               </Link>
             )}
@@ -317,7 +317,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="xl:hidden border-t" style={{ background: "#0B0F14", borderColor: "#1F2937" }}>
+        <div className="xl:hidden border-t" style={{ background: "#0d1117", borderColor: "#1F2937" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
               <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
@@ -348,7 +348,7 @@ export default function Navbar() {
               <Link
                 href="/resources"
                 className="font-bold py-2.5 px-3 block rounded-xl"
-                style={{ color: "#0D9488", textDecoration: "none", fontSize: "1rem" }}
+                style={{ color: "#2ecc71", textDecoration: "none", fontSize: "1rem" }}
                 onClick={() => setMenuOpen(false)}
               >
                 All Resources
@@ -367,7 +367,7 @@ export default function Navbar() {
             </div>
             {!loading && user ? (
               <>
-                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
+                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#2ecc71" }} onClick={() => setMenuOpen(false)}>
                   Get Started
                 </Link>
                 <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>

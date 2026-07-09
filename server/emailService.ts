@@ -34,7 +34,7 @@ export async function sendWelcomeEmail(email: string): Promise<{ success: boolea
 Thank you for subscribing. Your Free AI Toolkit is ready:
 ${AI_TOOLKIT_URL}
 
-You're now part of a community of 1,000+ learners transforming their skills with AI.
+You are now part of a growing community of learners transforming their skills with AI.
 
 Here's what you can expect:
 • Practical AI prompts and workflow templates
@@ -51,7 +51,7 @@ Best regards,
 The UpskillinTech Team
 
 ---
-You're receiving this email because you subscribed to our newsletter. If you wish to unsubscribe, click here: [unsubscribe link]`,
+You are receiving this email because you subscribed to our newsletter. If you wish to unsubscribe, click here: [unsubscribe link]`,
       html: `
 <!DOCTYPE html>
 <html>
@@ -83,7 +83,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
               </p>
 
               <p style="margin: 0 0 16px; color: #475569; font-size: 16px; line-height: 1.6;">
-                You're now part of a community of <strong>1,000+ learners</strong> transforming their skills with AI.
+                You are now part of a growing community of learners transforming their skills with AI.
               </p>
               
               <div style="margin: 30px 0; padding: 20px; background-color: #f1f5f9; border-left: 4px solid #10b981; border-radius: 4px;">
@@ -109,7 +109,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
               </table>
               
               <p style="margin: 24px 0 0; color: #64748b; font-size: 14px; line-height: 1.6;">
-                Have questions? Feel free to reply to this email—we're here to help!
+                Have questions? Feel free to reply to this email—we are here to help!
               </p>
             </td>
           </tr>
@@ -122,7 +122,7 @@ You're receiving this email because you subscribed to our newsletter. If you wis
                 <strong>The UpskillinTech Team</strong>
               </p>
               <p style="margin: 20px 0 0; color: #94a3b8; font-size: 12px;">
-                You're receiving this email because you subscribed to our newsletter.<br>
+                You are receiving this email because you subscribed to our newsletter.<br>
                 <a href="{{unsubscribe_url}}" style="color: #10b981; text-decoration: underline;">Unsubscribe</a>
               </p>
             </td>
@@ -239,7 +239,7 @@ Best regards,
 The UpskillinTech Team
 
 ---
-You're receiving this email because you updated your newsletter preferences.
+You are receiving this email because you updated your newsletter preferences.
 To unsubscribe from all emails, visit: ${preferencesUrl}`,
       html: `
 <!DOCTYPE html>
@@ -313,7 +313,7 @@ To unsubscribe from all emails, visit: ${preferencesUrl}`,
                 <strong>The UpskillinTech Team</strong>
               </p>
               <p style="margin: 20px 0 0; color: #94a3b8; font-size: 12px;">
-                You're receiving this email because you updated your newsletter preferences.<br>
+                You are receiving this email because you updated your newsletter preferences.<br>
                 <a href="${preferencesUrl}" style="color: #10b981; text-decoration: underline;">Manage Preferences</a>
               </p>
             </td>
@@ -366,7 +366,7 @@ export function generateWelcomeEmailHtml(): string {
           <tr>
             <td style="padding: 40px;">
               <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
-                Thank you for subscribing to our newsletter. You're now part of a community of <strong>1,000+ learners</strong> transforming their skills with AI.
+                Thank you for subscribing to our newsletter. You are now part of a growing community of learners transforming their skills with AI.
               </p>
               <p style="margin: 0 0 20px; color: #374151; font-size: 16px; line-height: 1.6;">
                 Here's what you can expect:
@@ -741,7 +741,7 @@ export function generateEventRegistrationEmailHtml(event?: EventDetails): string
               <div style="width: 64px; height: 64px; margin: 0 auto 16px; background-color: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                 <span style="font-size: 32px;">🎉</span>
               </div>
-              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">You're Registered!</h1>
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700;">You are Registered!</h1>
               <p style="margin: 10px 0 0; color: rgba(255, 255, 255, 0.9); font-size: 14px;">Your spot has been confirmed</p>
             </td>
           </tr>
@@ -901,10 +901,10 @@ export async function sendEventRegistrationEmail(
         email: senderEmail,
         name: senderName,
       },
-      subject: `You're Registered: ${event.title}`,
+      subject: `You are Registered: ${event.title}`,
       text: `Event Registration Confirmed!
 
-You're registered for: ${event.title}
+You are registered for: ${event.title}
 
 Event Details:
 - Date: ${event.date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
@@ -973,7 +973,7 @@ export async function sendWebinarReminderEmail(
       subject: '⏰ Reminder: Your Webinar Starts Tomorrow!',
       text: `Hi ${name},
 
-This is a friendly reminder that you're registered for our webinar tomorrow!
+This is a friendly reminder that you are registered for our webinar tomorrow!
 
 Webinar: ${webinarDetails.title}
 Date: ${webinarDetails.date}
@@ -988,7 +988,7 @@ What to Prepare:
 • Notebook for taking notes
 • Questions you'd like to ask
 
-We're excited to see you there!
+We are excited to see you there!
 
 If you have any questions before the webinar, feel free to reply to this email.
 
@@ -1017,7 +1017,7 @@ UpskillinTech
             <td style="padding: 40px; text-align: center; background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);">
               <div style="font-size: 48px; margin-bottom: 16px;">⏰</div>
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold;">Webinar Tomorrow!</h1>
-              <p style="margin: 12px 0 0; color: #f0fdf4; font-size: 16px;">Don't miss your exclusive AI learning session</p>
+              <p style="margin: 12px 0 0; color: #f0fdf4; font-size: 16px;">Do not miss your exclusive AI learning session</p>
             </td>
           </tr>
           
@@ -1029,7 +1029,7 @@ UpskillinTech
               </p>
               
               <p style="margin: 0 0 32px; color: #cbd5e1; font-size: 16px; line-height: 1.6;">
-                This is a friendly reminder that you're registered for our webinar <strong>tomorrow</strong>! We're excited to have you join us.
+                This is a friendly reminder that you are registered for our webinar <strong>tomorrow</strong>! We are excited to have you join us.
               </p>
               
               <!-- Webinar Details Card -->
@@ -1070,7 +1070,7 @@ UpskillinTech
               </div>
               
               <p style="margin: 32px 0 0; color: #cbd5e1; font-size: 16px; line-height: 1.6;">
-                We're excited to see you there! If you have any questions before the webinar, feel free to reply to this email.
+                We are excited to see you there! If you have any questions before the webinar, feel free to reply to this email.
               </p>
               
               <p style="margin: 24px 0 0; color: #e2e8f0; font-size: 16px;">

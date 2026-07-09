@@ -71,7 +71,7 @@ export default function Consult() {
     {
       id: "school",
       icon: School,
-      title: "Educational Institution AI Integration",
+      title: "Educational Organisation AI Integration",
       description: "Empower educators and students with AI tools for modern learning",
       features: [
         "Curriculum AI integration plan",
@@ -146,7 +146,7 @@ export default function Consult() {
       return;
     }
 
-    toast.success("Consultation request submitted! We'll contact you within 24 hours.");
+    toast.success("Consultation request submitted! We will contact you within 24 hours.");
     setShowBookingModal(false);
     setBookingForm({
       name: user?.name || "",
@@ -226,7 +226,7 @@ export default function Consult() {
                       <div className="space-y-4">
                         {/* Features */}
                         <div>
-                          <h4 className="font-semibold mb-3">What's Included:</h4>
+                          <h4 className="font-semibold mb-3">What is Included:</h4>
                           <ul className="space-y-2">
                             {service.features.map((feature, idx) => (
                               <li key={idx} className="flex items-start gap-2 text-sm">
@@ -304,7 +304,7 @@ export default function Consult() {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
                 <p className="text-muted-foreground text-lg">
-                  Real results from organizations we've helped transform with AI integration and custom strategies.
+                  Real results from organizations we have helped transform with AI integration and custom strategies.
                 </p>
               </div>
               <div className="relative">
@@ -325,7 +325,7 @@ export default function Consult() {
                     </div>
                     <div>
                       <CardTitle className="text-lg">Tech Startup</CardTitle>
-                      <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
+                      <p className="text-sm text-muted-foreground">International</p>
                     </div>
                   </div>
                 </CardHeader>
@@ -408,14 +408,14 @@ export default function Consult() {
         </section>
 
         {/* CTA */}
-        <section className="py-16" style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 50%, #0D9488 100%)" }}>
+        <section className="py-16" style={{ background: "linear-gradient(90deg, #2ecc71 0%, #2ecc71 50%, #2ecc71 100%)" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto text-center text-primary-foreground">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Ready to Transform Your Organization?
               </h2>
               <p className="text-lg mb-8 opacity-90">
-                Book a free discovery call today and let's discuss how AI can drive your growth.
+                Book a free discovery call today and let us discuss how AI can drive your growth.
               </p>
               <Button
                 size="lg"
@@ -436,7 +436,7 @@ export default function Consult() {
           <DialogHeader>
             <DialogTitle>Book Your Consultation</DialogTitle>
             <DialogDescription>
-              Fill in your details and we'll get back to you within 24 hours to schedule your discovery call.
+              Fill in your details and we will get back to you within 24 hours to schedule your discovery call.
             </DialogDescription>
           </DialogHeader>
           
@@ -481,7 +481,7 @@ export default function Consult() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="sme">SME AI Transformation</SelectItem>
-                  <SelectItem value="school">Educational Institution</SelectItem>
+                  <SelectItem value="school">Educational Organisation</SelectItem>
                   <SelectItem value="ministry">Ministry & Church</SelectItem>
                 </SelectContent>
               </Select>

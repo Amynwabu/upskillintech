@@ -1,6 +1,6 @@
 /**
  * Programs Page — /programs
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Accent Yellow (#2ecc71)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, 4 Programme Cards, How It Works, Testimonials, FAQ, Final CTA
  */
@@ -19,9 +19,9 @@ const programs = [
   {
     id: "ai-enabled-professional",
     badge: "Most Popular",
-    badgeColor: "#E6B800",
+    badgeColor: "#2ecc71",
     icon: TrendingUp,
-    color: "#0D9488",
+    color: "#2ecc71",
     title: "AI-Enabled Professional",
     tagline: "Use AI in your daily work.",
     description:
@@ -50,9 +50,9 @@ const programs = [
   {
     id: "ai-foundations",
     badge: "Beginner Friendly",
-    badgeColor: "#0D9488",
+    badgeColor: "#2ecc71",
     icon: BookOpen,
-    color: "#8B9E1A",
+    color: "#2ecc71",
     title: "AI Foundations",
     tagline: "Start your AI journey.",
     description:
@@ -68,7 +68,7 @@ const programs = [
       "Identify where AI can help in your personal and professional life",
     ],
     modules: [
-      { num: "01", title: "What Is AI? A Practical Introduction", desc: "Demystifying AI — what it is, what it isn't, and why it matters." },
+      { num: "01", title: "What Is AI? A Practical Introduction", desc: "Demystifying AI — what it is, what it is not, and why it matters." },
       { num: "02", title: "Exploring AI Tools", desc: "Hands-on exploration of the most accessible and useful AI tools." },
       { num: "03", title: "AI for Everyday Tasks", desc: "Using AI to improve writing, research, and daily productivity." },
       { num: "04", title: "Your AI Learning Path", desc: "Building a personalised plan for continued AI learning and growth." },
@@ -79,9 +79,9 @@ const programs = [
   {
     id: "ai-leadership",
     badge: "For Leaders",
-    badgeColor: "#8B9E1A",
+    badgeColor: "#2ecc71",
     icon: Briefcase,
-    color: "#E6B800",
+    color: "#2ecc71",
     title: "AI Leadership",
     tagline: "AI for educators, pastors, and leaders.",
     description:
@@ -110,9 +110,9 @@ const programs = [
   {
     id: "webinars",
     badge: "Free & Paid",
-    badgeColor: "#0D9488",
+    badgeColor: "#2ecc71",
     icon: Play,
-    color: "#0D9488",
+    color: "#2ecc71",
     title: "Webinars & Masterclasses",
     tagline: "Build AI productivity systems.",
     description:
@@ -128,12 +128,12 @@ const programs = [
       "Stay current with the latest AI developments",
     ],
     modules: [
-      { num: "01", title: "AI Tools Deep Dives", desc: "In-depth sessions on specific tools: ChatGPT, Gemini, Perplexity, Notion AI, and more." },
+      { num: "01", title: "AI Tools Deep Dives", desc: "In-depth sessions on leading AI assistants, AI research tools, and AI productivity tools." },
       { num: "02", title: "AI Workflow Masterclasses", desc: "Step-by-step walkthroughs of real AI-powered productivity workflows." },
       { num: "03", title: "AI for Specific Roles", desc: "Targeted sessions for educators, managers, healthcare workers, and more." },
       { num: "04", title: "AI Trends & Updates", desc: "Monthly sessions on the latest AI developments and what they mean for professionals." },
     ],
-    price: "Reserve Seat — £50 / ₦50,000",
+    price: "Reserve Seat — £50 / $50",
     href: "/masterclass",
     highlight: false,
   },
@@ -154,7 +154,7 @@ const faqs = [
   },
   {
     q: "What AI tools will I learn to use?",
-    a: "Programmes cover a range of tools including ChatGPT, Gemini, Claude, Perplexity, Notion AI, Microsoft Copilot, and others. The focus is on practical application rather than any single tool.",
+    a: "Programmes cover a range of leading AI assistants, AI research tools, and AI productivity tools. The focus is on practical application rather than any single tool.",
   },
   {
     q: "Is there a certificate upon completion?",
@@ -170,7 +170,7 @@ const testimonials = [
   {
     name: "Amara Osei",
     role: "Marketing Manager",
-    company: "Lagos, Nigeria",
+    company: "International",
     quote: "The AI-Enabled Professional programme completely transformed how I work. I now use AI for research, drafting, and analysis — saving at least 8 hours every week.",
     rating: 5,
   },
@@ -184,7 +184,7 @@ const testimonials = [
   {
     name: "Pastor James Adeyemi",
     role: "Senior Pastor",
-    company: "Abuja, Nigeria",
+    company: "International",
     quote: "The AI Leadership programme helped me understand how to use AI responsibly in ministry. Our communications and administrative processes are now much more efficient.",
     rating: 5,
   },
@@ -206,7 +206,7 @@ export default function Programs() {
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
+          style={{ background: "radial-gradient(circle, #2ecc71 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
@@ -223,15 +223,15 @@ export default function Programs() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="#programmes"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Explore Programmes <ArrowRight size={16} />
             </a>
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
+              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#2ecc71"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#2ecc71"; }}>
               Talk to Us
             </a>
           </div>
@@ -241,14 +241,14 @@ export default function Programs() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8 mt-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[
-              { value: "1,000+", label: "Professionals Trained" },
+              { value: "Global", label: "Professional Community" },
               { value: "4", label: "Programmes Available" },
               { value: "95%", label: "Satisfaction Rate" },
               { value: "8hrs", label: "Avg. Time Saved / Week" },
             ].map((stat, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
-                style={{ background: "rgba(13,148,136,0.10)" }}>
-                <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
+                style={{ background: "rgba(46,204,113,0.10)" }}>
+                <p className="font-poppins font-bold text-xl" style={{ color: "#2ecc71" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
               </div>
             ))}
@@ -261,7 +261,7 @@ export default function Programs() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Our Programmes</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Our Programmes</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Choose Your Learning Path
             </h2>
@@ -397,7 +397,7 @@ export default function Programs() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>How It Works</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>How It Works</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Your Path to AI Proficiency
             </h2>
@@ -408,10 +408,10 @@ export default function Programs() {
 
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "01", icon: Target, title: "Choose Your Programme", desc: "Select the programme that matches your current level and goals.", color: "#0D9488" },
-              { step: "02", icon: BookOpen, title: "Learn at Your Pace", desc: "Work through structured modules with videos, exercises, and resources.", color: "#8B9E1A" },
-              { step: "03", icon: Zap, title: "Apply in Real Work", desc: "Implement what you learn directly in your daily workflows and tasks.", color: "#E6B800" },
-              { step: "04", icon: Award, title: "Get Certified", desc: "Complete the programme and receive your UpskillinTech certificate.", color: "#0D9488" },
+              { step: "01", icon: Target, title: "Choose Your Programme", desc: "Select the programme that matches your current level and goals.", color: "#2ecc71" },
+              { step: "02", icon: BookOpen, title: "Learn at Your Pace", desc: "Work through structured modules with videos, exercises, and resources.", color: "#2ecc71" },
+              { step: "03", icon: Zap, title: "Apply in Real Work", desc: "Implement what you learn directly in your daily workflows and tasks.", color: "#2ecc71" },
+              { step: "04", icon: Award, title: "Get Certified", desc: "Complete the programme and receive your UpskillinTech certificate.", color: "#2ecc71" },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -440,7 +440,7 @@ export default function Programs() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(13,148,136,0.2)", color: "#0D9488" }}>What Professionals Say</span>
+              style={{ background: "rgba(46,204,113,0.2)", color: "#2ecc71" }}>What Professionals Say</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               Real Results from Real Professionals
             </h2>
@@ -450,7 +450,7 @@ export default function Programs() {
               <div key={i} className="rounded-2xl p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={14} fill="#E6B800" style={{ color: "#E6B800" }} />
+                    <Star key={j} size={14} fill="#2ecc71" style={{ color: "#2ecc71" }} />
                   ))}
                 </div>
                 <p className="text-sm leading-relaxed mb-5 italic" style={{ color: "rgba(255,255,255,0.8)" }}>
@@ -458,7 +458,7 @@ export default function Programs() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)" }}>
                     {t.name.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
@@ -477,7 +477,7 @@ export default function Programs() {
         <div className="max-w-3xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>FAQ</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>FAQ</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Frequently Asked Questions
             </h2>
@@ -485,7 +485,7 @@ export default function Programs() {
           <div className="space-y-3">
             {faqs.map((faq, i) => (
               <div key={i} className="rounded-xl border overflow-hidden transition-all"
-                style={{ borderColor: openFaq === i ? "#0D9488" : "#1F2937" }}>
+                style={{ borderColor: openFaq === i ? "#2ecc71" : "#1F2937" }}>
                 <button
                   className="w-full flex items-center justify-between gap-4 p-5 text-left"
                   style={{ background: openFaq === i ? "#f0faf0" : "#fff" }}
@@ -493,7 +493,7 @@ export default function Programs() {
                 >
                   <span className="font-poppins font-semibold text-sm" style={{ color: "#F3F4F6" }}>{faq.q}</span>
                   {openFaq === i
-                    ? <ChevronUp size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
+                    ? <ChevronUp size={16} style={{ color: "#2ecc71", flexShrink: 0 }} />
                     : <ChevronDown size={16} style={{ color: "#999", flexShrink: 0 }} />}
                 </button>
                 {openFaq === i && (
@@ -509,7 +509,7 @@ export default function Programs() {
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="section-py"
-        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 60%, #2ecc71 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Become AI-Enabled?
@@ -521,14 +521,14 @@ export default function Programs() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Enrol Now <ArrowRight size={15} />
             </a>
             <a href="/enterprise"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#2ecc71"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Enterprise Training
             </a>

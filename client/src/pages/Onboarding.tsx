@@ -122,7 +122,7 @@ export default function Onboarding() {
             <CardHeader>
               <CardTitle className="text-2xl">How much time can you commit?</CardTitle>
               <CardDescription>
-                We'll personalize your learning path based on your availability
+                We will personalize your learning path based on your availability
               </CardDescription>
             </CardHeader>
             <CardContent>

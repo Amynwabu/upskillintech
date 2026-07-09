@@ -1,7 +1,7 @@
 /**
  * AI Workflow Library Page — UpskillinTech
  * URL: /resources/workflows
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -28,11 +28,11 @@ const WORKFLOWS = [
     subtitle: "Turn any meeting into a structured action plan in under 5 minutes",
     timeToComplete: "5 minutes",
     difficulty: "Beginner",
-    toolsNeeded: ["ChatGPT or Claude", "Otter.ai or Fireflies (optional)"],
-    color: "#0D9488",
+    toolsNeeded: ["An AI assistant", "AI transcription tools (optional)"],
+    color: "#2ecc71",
     steps: [
-      { label: "Record or Note", desc: "Record the meeting audio or take rough notes during the session. Use Otter.ai for automatic transcription." },
-      { label: "Paste Transcript", desc: "Paste the transcript or notes into ChatGPT or Claude with the prompt: 'Summarise this meeting. Extract: 1) Key decisions, 2) Action items with owners, 3) Open questions.'" },
+      { label: "Record or Note", desc: "Record the meeting audio or take rough notes during the session. Use AI transcription tools for automatic transcription." },
+      { label: "Paste Transcript", desc: "Paste the transcript or notes into an AI assistant with the prompt: 'Summarise this meeting. Extract: 1) Key decisions, 2) Action items with owners, 3) Open questions.'" },
       { label: "AI Summary", desc: "AI generates a structured summary with decisions, action items, owners, and deadlines — ready to share with the team." },
       { label: "Review & Send", desc: "Review the summary in under 2 minutes, make any corrections, and send to all attendees via email or Slack." },
     ],
@@ -48,12 +48,12 @@ const WORKFLOWS = [
     subtitle: "Go from a research question to a polished report in hours, not days",
     timeToComplete: "2–4 hours",
     difficulty: "Intermediate",
-    toolsNeeded: ["ChatGPT or Claude", "Perplexity AI", "Google Docs"],
-    color: "#8B9E1A",
+    toolsNeeded: ["An AI assistant", "AI research tools", "Google Docs"],
+    color: "#2ecc71",
     steps: [
       { label: "Define Question", desc: "Write a clear research question. Be specific: 'What are the top 5 AI productivity tools for HR professionals in 2025?' is better than 'AI tools.'" },
-      { label: "AI Research", desc: "Use Perplexity AI or ChatGPT to gather initial research. Prompt: 'Research [TOPIC] and provide: key findings, main sources, statistics, and expert opinions.'" },
-      { label: "Synthesise Findings", desc: "Paste all research into Claude and prompt: 'Synthesise these findings into a structured research brief with: executive summary, key themes, evidence, and implications.'" },
+      { label: "AI Research", desc: "Use an AI research tool or AI productivity tools to gather initial research. Prompt: 'Research [TOPIC] and provide: key findings, main sources, statistics, and expert opinions.'" },
+      { label: "Synthesise Findings", desc: "Paste all research into an AI assistant and prompt: 'Synthesise these findings into a structured research brief with: executive summary, key themes, evidence, and implications.'" },
       { label: "Draft Report", desc: "Use the synthesised brief to generate a full report draft. Prompt: 'Write a professional [X-page] report on [TOPIC] based on this research brief. Include an introduction, findings, analysis, and recommendations.'" },
       { label: "Review & Refine", desc: "Review the draft, add your own analysis and context, verify key facts, and refine the language to match your voice and audience." },
     ],
@@ -69,8 +69,8 @@ const WORKFLOWS = [
     subtitle: "Produce high-quality content consistently without burning out",
     timeToComplete: "1–2 hours per piece",
     difficulty: "Beginner",
-    toolsNeeded: ["ChatGPT or Claude", "Grammarly (optional)", "Canva (optional)"],
-    color: "#E6B800",
+    toolsNeeded: ["An AI assistant", "AI writing tools (optional)", "Canva (optional)"],
+    color: "#2ecc71",
     steps: [
       { label: "Idea & Brief", desc: "Define your content goal: Who is it for? What should they feel, know, or do after reading? Write a 3-sentence brief." },
       { label: "AI Outline", desc: "Prompt AI: 'Create a detailed outline for a [blog post/newsletter/LinkedIn article] about [TOPIC] for [AUDIENCE]. Include: headline, 5 key sections with subpoints, and a CTA.'" },
@@ -90,12 +90,12 @@ const WORKFLOWS = [
     subtitle: "Clear your inbox and respond to every email professionally in less time",
     timeToComplete: "30 minutes/day",
     difficulty: "Beginner",
-    toolsNeeded: ["ChatGPT or Claude", "Gmail or Outlook"],
-    color: "#0D9488",
+    toolsNeeded: ["An AI assistant", "Gmail or Outlook"],
+    color: "#2ecc71",
     steps: [
-      { label: "Batch Emails", desc: "Set two dedicated email times per day (e.g., 9am and 4pm). Don't check email outside these windows. This alone saves 1–2 hours daily." },
+      { label: "Batch Emails", desc: "Set two dedicated email times per day (e.g., 9am and 4pm). Do not check email outside these windows. This alone saves 1–2 hours daily." },
       { label: "Categorise", desc: "Sort emails into: Respond Now, Delegate, File, Delete. Only 'Respond Now' emails need your attention in this session." },
-      { label: "AI Draft", desc: "For complex emails, paste the email into ChatGPT with: 'Draft a professional response to this email. Tone: [professional/warm]. Key points to include: [LIST]. Keep it under 150 words.'" },
+      { label: "AI Draft", desc: "For complex emails, paste the email into AI productivity tools with: 'Draft a professional response to this email. Tone: [professional/warm]. Key points to include: [LIST]. Keep it under 150 words.'" },
       { label: "Personalise & Send", desc: "Review the draft, add any personal context, adjust the tone if needed, and send. Most emails take under 2 minutes with this approach." },
     ],
     prompt: "Draft a professional email response to the following email. Tone: [TONE]. Key points to address: [LIST KEY POINTS]. Keep it concise (under 150 words), clear, and end with a specific next step or call to action.\n\n[PASTE ORIGINAL EMAIL HERE]",
@@ -110,8 +110,8 @@ const WORKFLOWS = [
     subtitle: "Make better decisions faster with AI-assisted analysis",
     timeToComplete: "30–60 minutes",
     difficulty: "Intermediate",
-    toolsNeeded: ["ChatGPT or Claude"],
-    color: "#8B9E1A",
+    toolsNeeded: ["An AI assistant"],
+    color: "#2ecc71",
     steps: [
       { label: "Define Decision", desc: "Write a clear decision statement: 'Should we [ACTION] given [CONTEXT]?' Include the key constraints, stakeholders, and timeline." },
       { label: "AI Analysis", desc: "Prompt: 'I need to make the following decision: [DECISION]. Provide: 1) Key factors to consider, 2) Potential risks and benefits of each option, 3) Questions I should be asking, 4) Frameworks that apply.'" },
@@ -119,7 +119,7 @@ const WORKFLOWS = [
       { label: "Evaluation Matrix", desc: "Prompt: 'Create a decision matrix comparing these options against these criteria: [LIST CRITERIA]. Score each option 1–5 on each criterion and recommend the best option with reasoning.'" },
       { label: "Decision & Plan", desc: "Make your decision based on the analysis, then use AI to draft the implementation plan and communication to stakeholders." },
     ],
-    prompt: "I need to make a strategic decision: [DECISION STATEMENT]. Context: [CONTEXT]. Key constraints: [CONSTRAINTS]. Options I'm considering: [OPTIONS]. Please: 1) Analyse each option against the criteria of [CRITERIA], 2) Identify risks I may have missed, 3) Recommend the best option with clear reasoning, 4) Suggest the first 3 implementation steps.",
+    prompt: "I need to make a strategic decision: [DECISION STATEMENT]. Context: [CONTEXT]. Key constraints: [CONSTRAINTS]. Options I am considering: [OPTIONS]. Please: 1) Analyse each option against the criteria of [CRITERIA], 2) Identify risks I may have missed, 3) Recommend the best option with clear reasoning, 4) Suggest the first 3 implementation steps.",
     outcomes: ["More confident, evidence-based decisions", "Faster analysis of complex situations", "Reduced decision-making bias", "Clear rationale for stakeholder communication"],
     usedBy: "Executives, Managers, Team Leads, Consultants",
   },
@@ -131,12 +131,12 @@ const WORKFLOWS = [
     subtitle: "Stay ahead of your market with regular AI-powered competitor analysis",
     timeToComplete: "1–2 hours/month",
     difficulty: "Intermediate",
-    toolsNeeded: ["Perplexity AI", "ChatGPT or Claude"],
-    color: "#E6B800",
+    toolsNeeded: ["AI research tools", "An AI assistant"],
+    color: "#2ecc71",
     steps: [
       { label: "Define Scope", desc: "List your top 5 competitors and the specific areas to monitor: pricing, product updates, marketing, hiring, partnerships." },
-      { label: "Gather Intelligence", desc: "Use Perplexity AI: 'What are the latest developments from [COMPETITOR] in the past 3 months? Focus on: product updates, pricing changes, marketing campaigns, and strategic moves.'" },
-      { label: "Synthesise Insights", desc: "Paste all competitor data into Claude: 'Analyse this competitive intelligence. Identify: 1) Key trends across competitors, 2) Threats to our position, 3) Opportunities we could exploit.'" },
+      { label: "Gather Intelligence", desc: "Use an AI research tool: 'What are the latest developments from [COMPETITOR] in the past 3 months? Focus on: product updates, pricing changes, marketing campaigns, and strategic moves.'" },
+      { label: "Synthesise Insights", desc: "Paste all competitor data into an AI assistant: 'Analyse this competitive intelligence. Identify: 1) Key trends across competitors, 2) Threats to our position, 3) Opportunities we could exploit.'" },
       { label: "Strategic Implications", desc: "Prompt: 'Based on this competitive analysis, what are the 3 most important strategic implications for [YOUR COMPANY]? What should we do in the next 30 days?'" },
       { label: "Brief & Share", desc: "Generate a concise competitive intelligence brief for leadership. Prompt: 'Write a 1-page competitive intelligence brief summarising these findings for a senior leadership audience.'" },
     ],
@@ -166,7 +166,7 @@ export default function WorkflowsPage() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               AI Workflows That Work in the Real World
             </h1>
@@ -178,11 +178,11 @@ export default function WorkflowsPage() {
               <span>·</span>
               <span className="flex items-center gap-1"><Copy size={15} /> Copy-Paste Prompts</span>
               <span>·</span>
-              <span className="flex items-center gap-1"><Users size={15} /> Used by 1,000+ Professionals</span>
+              <span className="flex items-center gap-1"><Users size={15} /> Used by professionals worldwide</span>
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #2ecc71 0%, #2ecc71 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "6", l: "Workflow Templates" }, { v: "24+", l: "Copy-Paste Prompts" }, { v: "5 min", l: "Fastest Workflow" }, { v: "Free", l: "All Workflows" }].map(s => (
@@ -207,7 +207,7 @@ export default function WorkflowsPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
+                  background: activeCategory === cat.id ? "#2ecc71" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -251,7 +251,7 @@ export default function WorkflowsPage() {
                             <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
                           </div>
                           {si < wf.steps.length - 1 && (
-                            <span className="text-lg font-bold mb-4" style={{ color: "#E6B800" }}>→</span>
+                            <span className="text-lg font-bold mb-4" style={{ color: "#2ecc71" }}>→</span>
                           )}
                         </div>
                       ))}
@@ -346,16 +346,16 @@ export default function WorkflowsPage() {
             Get the Complete AI Workflow Playbook
           </h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>
-            Download all 6 workflows plus 10 bonus workflows in a single PDF — with step-by-step instructions, prompts, and Notion templates.
+            Download all 6 workflows plus 10 bonus workflows in a single PDF — with step-by-step instructions, prompts, and workbook templates.
           </p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("Playbook on its way!", { description: "Check your inbox for the AI Workflow Playbook." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <Download size={16} /> Download Playbook
             </button>
           </form>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#0D9488" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#2ecc71" }}>
               <ArrowRight size={15} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.60)" }}>

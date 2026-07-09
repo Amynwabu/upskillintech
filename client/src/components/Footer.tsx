@@ -1,8 +1,8 @@
 /**
  * Footer — UpskillinTech v3
- * Dark #111827 background, larger text, bigger logo, green hover accents
+ * Dark #0d1117 background, larger text, bigger logo, green hover accents
  */
-import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
+import { Linkedin, Music2, Youtube, Instagram, Twitter, Facebook } from "lucide-react";
 
 const LOGO_URL = "/logo-transparent.png";
 
@@ -38,6 +38,8 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/upskillintech" },
+  { icon: Twitter, label: "Twitter/X", href: "https://twitter.com/upskillintech" },
+  { icon: Facebook, label: "Facebook", href: "https://facebook.com/upskillintech" },
   { icon: Music2, label: "TikTok", href: "https://www.tiktok.com/@upskillintech" },
   { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@upskillintech" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/upskillintech" },
@@ -45,7 +47,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" style={{ background: "#111827" }}>
+    <footer id="footer" style={{ background: "#0d1117" }}>
       <div className="container py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
           {/* Brand column */}
@@ -84,7 +86,7 @@ export default function Footer() {
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                      (e.currentTarget as HTMLElement).style.background = "#0D9488";
+                      (e.currentTarget as HTMLElement).style.background = "#2ecc71";
                       (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={(e) => {
@@ -116,7 +118,7 @@ export default function Footer() {
                       href={link.href}
                       className="transition-colors duration-200"
                       style={{ fontSize: "0.925rem", color: "rgba(255,255,255,0.45)", textDecoration: "none", lineHeight: 1.5 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#2ecc71"; }}
                       onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
                     >
                       {link.label}
@@ -146,7 +148,7 @@ export default function Footer() {
                 href={item.href}
                 className="transition-colors duration-200"
                 style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.30)", textDecoration: "none" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#2ecc71"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.30)"; }}
               >
                 {item.label}

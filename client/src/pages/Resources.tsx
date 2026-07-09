@@ -1,6 +1,6 @@
 /**
  * Resources Hub Page — UpskillinTech
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71)
  * Font: Sora headings, Inter body
  * URL: /resources
  */
@@ -17,34 +17,34 @@ import { toast } from "sonner";
 
 const FEATURED = [
   {
-    icon: <BookOpen size={28} style={{ color: "#0D9488" }} />,
+    icon: <BookOpen size={28} style={{ color: "#2ecc71" }} />,
     badge: "Free Guide",
     title: "AI Productivity Guide",
     desc: "Learn how professionals save hours every week using structured AI workflows — from email management to strategic decision-making.",
     cta: "Read Guide",
     href: "/resources/ai-guides",
-    bg: "#F0FDF4",
-    border: "#0D9488",
+    bg: "#f4f4f4",
+    border: "#2ecc71",
   },
   {
-    icon: <FileText size={28} style={{ color: "#8B9E1A" }} />,
+    icon: <FileText size={28} style={{ color: "#2ecc71" }} />,
     badge: "Download",
     title: "50 AI Prompts Library",
-    desc: "Curated prompts for research, writing, strategy, and decision-making — ready to copy and use in ChatGPT, Gemini, or Claude.",
+    desc: "Curated prompts for research, writing, strategy, and decision-making — ready to copy and use in any AI assistant.",
     cta: "Download Free",
     href: "/resources/ai-guides",
-    bg: "#FEFCE8",
-    border: "#E6B800",
+    bg: "#f4f4f4",
+    border: "#2ecc71",
   },
   {
-    icon: <Zap size={28} style={{ color: "#8B9E1A" }} />,
+    icon: <Zap size={28} style={{ color: "#2ecc71" }} />,
     badge: "Playbook",
     title: "AI Workflow Playbook",
     desc: "Real-world examples of AI productivity systems used by professionals in meetings, research, content creation, and leadership.",
     cta: "Explore Playbook",
     href: "/resources/workflows",
     bg: "#F7F8FA",
-    border: "#8B9E1A",
+    border: "#2ecc71",
   },
 ];
 
@@ -63,9 +63,9 @@ const AI_GUIDES = [
 ];
 
 const CASE_STUDIES = [
-  { icon: <Briefcase size={22} style={{ color: "#0D9488" }} />, title: "Professional Use Cases", desc: "Examples of individuals integrating AI into their daily work — from consultants to educators.", href: "/resources/case-studies" },
-  { icon: <Users size={22} style={{ color: "#8B9E1A" }} />, title: "Organisational AI Adoption", desc: "How teams implement AI productivity systems and transform internal processes.", href: "/resources/case-studies" },
-  { icon: <Star size={22} style={{ color: "#E6B800" }} />, title: "Ministry AI Applications", desc: "Using AI to support teaching, communication, and administration in faith communities.", href: "/resources/case-studies" },
+  { icon: <Briefcase size={22} style={{ color: "#2ecc71" }} />, title: "Professional Use Cases", desc: "Examples of individuals integrating AI into their daily work — from consultants to educators.", href: "/resources/case-studies" },
+  { icon: <Users size={22} style={{ color: "#2ecc71" }} />, title: "Organisational AI Adoption", desc: "How teams implement AI productivity systems and transform internal processes.", href: "/resources/case-studies" },
+  { icon: <Star size={22} style={{ color: "#2ecc71" }} />, title: "Ministry AI Applications", desc: "Using AI to support teaching, communication, and administration in faith communities.", href: "/resources/case-studies" },
 ];
 
 const WEBINARS = [
@@ -110,11 +110,11 @@ export default function Resources() {
         className="relative overflow-hidden pt-16"
         style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}
       >
-        <div className="absolute top-[-80px] right-[-80px] rounded-full pointer-events-none" style={{ width: 400, height: 400, background: "rgba(230,184,0,0.10)" }} />
+        <div className="absolute top-[-80px] right-[-80px] rounded-full pointer-events-none" style={{ width: 400, height: 400, background: "rgba(46,204,113,0.10)" }} />
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-28">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Resource Hub</span>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Resource Hub</span>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Insights, Guides, and Practical Tools for the AI-Enabled World
               </h1>
@@ -122,7 +122,7 @@ export default function Resources() {
                 Explore articles, guides, workflows, and case studies that help professionals, leaders, and organisations integrate AI into real work and decision-making.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/resources/ai-guides" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all" style={{ background: "#151B23", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
+                <Link href="/resources/ai-guides" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg transition-all" style={{ background: "#151B23", color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>
                   <BookOpen size={18} /> Explore AI Guides
                 </Link>
                 <Link href="/resources/blog" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg border-2 transition-all" style={{ borderColor: "#fff", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
@@ -132,28 +132,14 @@ export default function Resources() {
             </div>
             <div className="hidden lg:grid grid-cols-2 gap-4 max-w-sm w-full ml-auto">
               {[
-                { icon: <BookOpen size={28} style={{ color: "#0D9488" }} />, label: "AI Guides", count: "12+" },
-                { icon: <FileText size={28} style={{ color: "#8B9E1A" }} />, label: "Blog Articles", count: "40+" },
-                { icon: <Play size={28} style={{ color: "#E6B800" }} />, label: "Webinars", count: "20+" },
-                { icon: <Zap size={28} style={{ color: "#0D9488" }} />, label: "Workflows", count: "15+" },
+                { icon: <BookOpen size={28} style={{ color: "#2ecc71" }} />, label: "AI Guides" },
+                { icon: <FileText size={28} style={{ color: "#2ecc71" }} />, label: "Blog Articles" },
+                { icon: <Play size={28} style={{ color: "#2ecc71" }} />, label: "Webinars" },
+                { icon: <Zap size={28} style={{ color: "#2ecc71" }} />, label: "Workflows" },
               ].map((item) => (
-                <div key={item.label} className="rounded-xl p-5 text-center" style={{ background: "rgba(255,255,255,0.92)", boxShadow: "0 4px 20px rgba(0,0,0,0.10)" }}>
+                <div key={item.label} className="rounded-xl p-5 text-center" style={{ background: "#ffffff", boxShadow: "0 4px 20px rgba(0,0,0,0.10)" }}>
                   <div className="flex justify-center mb-2">{item.icon}</div>
-                  <div className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{item.count}</div>
-                  <div className="text-xs" style={{ color: "#9CA3AF" }}>{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* Stats bar */}
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
-          <div className="container py-4">
-            <div className="flex flex-wrap justify-center gap-8 text-center">
-              {[{ v: "40+", l: "Articles Published" }, { v: "12+", l: "AI Guides" }, { v: "20+", l: "Webinar Recordings" }, { v: "15+", l: "Workflow Templates" }].map(s => (
-                <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
-                  <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
+                  <div className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.05rem", color: "#111111" }}>{item.label}</div>
                 </div>
               ))}
             </div>
@@ -176,8 +162,8 @@ export default function Resources() {
                   <div className="rounded-xl p-3" style={{ background: "#151B23", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>{f.icon}</div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style={{ background: `${f.border}18`, color: f.border }}>{f.badge}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{f.title}</h3>
-                <p className="text-sm leading-relaxed mb-6 flex-1" style={{ color: "#D1D5DB" }}>{f.desc}</p>
+                <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#111111" }}>{f.title}</h3>
+                <p className="leading-relaxed mb-6 flex-1" style={{ fontSize: "1.125rem", color: "#111111" }}>{f.desc}</p>
                 <Link href={f.href} className="inline-flex items-center gap-2 font-semibold text-sm" style={{ color: f.border }}>
                   {f.cta} <ChevronRight size={16} />
                 </Link>
@@ -198,18 +184,18 @@ export default function Resources() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {BLOG_CATEGORIES.map((cat) => (
               <Link key={cat.title} href={cat.href} className="group rounded-xl p-6 flex items-start gap-4 transition-all hover:-translate-y-1" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                <div className="rounded-xl p-3 shrink-0" style={{ background: "#10231C", color: "#0D9488" }}>{cat.icon}</div>
+                <div className="rounded-xl p-3 shrink-0" style={{ background: "#10231C", color: "#2ecc71" }}>{cat.icon}</div>
                 <div>
                   <h3 className="font-bold mb-1 group-hover:text-green-600 transition-colors" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{cat.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "#9CA3AF" }}>{cat.desc}</p>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold mt-3" style={{ color: "#0D9488" }}>View Articles <ChevronRight size={14} /></span>
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold mt-3" style={{ color: "#2ecc71" }}>View Articles <ChevronRight size={14} /></span>
                 </div>
               </Link>
             ))}
-            <Link href="/resources/blog" className="rounded-xl p-6 flex flex-col items-center justify-center text-center transition-all hover:-translate-y-1" style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)", boxShadow: "0 4px 20px rgba(13,148,136,0.25)" }}>
+            <Link href="/resources/blog" className="rounded-xl p-6 flex flex-col items-center justify-center text-center transition-all hover:-translate-y-1" style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)", boxShadow: "0 4px 20px rgba(46,204,113,0.25)" }}>
               <BookOpen size={32} style={{ color: "#fff" }} className="mb-3" />
               <h3 className="font-bold text-white mb-1" style={{ fontFamily: "'Sora', sans-serif" }}>View All Articles</h3>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.85)" }}>40+ articles and growing</p>
+              <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.85)" }}>Practical AI articles and guides</p>
             </Link>
           </div>
         </div>
@@ -227,30 +213,30 @@ export default function Resources() {
                 {AI_GUIDES.map((g) => (
                   <div key={g.title} className="flex items-start gap-4 rounded-xl p-5" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
                     <div className="rounded-lg p-2 shrink-0" style={{ background: "#10231C" }}>
-                      <BookOpen size={20} style={{ color: "#0D9488" }} />
+                      <BookOpen size={20} style={{ color: "#2ecc71" }} />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{g.title}</h3>
                       <p className="text-sm" style={{ color: "#9CA3AF" }}>{g.desc}</p>
                     </div>
-                    <Link href={g.href} className="shrink-0 text-sm font-semibold flex items-center gap-1" style={{ color: "#0D9488" }}>
+                    <Link href={g.href} className="shrink-0 text-sm font-semibold flex items-center gap-1" style={{ color: "#2ecc71" }}>
                       {g.cta} <ChevronRight size={14} />
                     </Link>
                   </div>
                 ))}
               </div>
-              <Link href="/resources/ai-guides" className="inline-flex items-center gap-2 mt-8 font-semibold px-6 py-3 rounded-lg" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+              <Link href="/resources/ai-guides" className="inline-flex items-center gap-2 mt-8 font-semibold px-6 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                 <Download size={18} /> Browse All Guides
               </Link>
             </div>
             {/* Email capture */}
-            <div className="rounded-2xl p-8" style={{ background: "linear-gradient(135deg, #8B9E1A 0%, #E6B800 100%)", boxShadow: "0 16px 48px rgba(139,158,26,0.25)" }}>
+            <div className="rounded-2xl p-8" style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 100%)", boxShadow: "0 16px 48px rgba(139,158,26,0.25)" }}>
               <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Get the Free AI Prompts Library</h3>
               <p className="mb-6 text-sm" style={{ color: "rgba(0,0,0,0.70)" }}>50 prompts for research, writing, strategy, and decision-making — delivered straight to your inbox.</p>
               <form onSubmit={handleDownload} className="flex flex-col gap-3">
                 <input type="text" placeholder="Your Name" className="rounded-lg px-4 py-3 text-sm outline-none w-full" style={{ border: "none", color: "#F3F4F6" }} />
                 <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="rounded-lg px-4 py-3 text-sm outline-none w-full" style={{ border: "none", color: "#F3F4F6" }} />
-                <button type="submit" className="w-full font-bold py-3 rounded-lg transition-all" style={{ background: "#1C1C1C", color: "#E6B800", fontFamily: "'Sora', sans-serif" }}>
+                <button type="submit" className="w-full font-bold py-3 rounded-lg transition-all" style={{ background: "#1C1C1C", color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>
                   Download Free Guide
                 </button>
               </form>
@@ -264,7 +250,7 @@ export default function Resources() {
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container">
           <div className="text-center mb-12">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ background: "rgba(230,184,0,0.15)", color: "#E6B800" }}>Real Impact</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3" style={{ background: "rgba(46,204,113,0.15)", color: "#2ecc71" }}>Real Impact</span>
             <h2 className="text-4xl lg:text-5xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Case Studies</h2>
             <p className="text-lg mt-3 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.70)" }}>Real examples of how professionals, organisations, and ministries use AI to improve productivity.</p>
           </div>
@@ -274,12 +260,12 @@ export default function Resources() {
                 <div className="rounded-xl p-3 mb-4 w-fit" style={{ background: "rgba(255,255,255,0.08)" }}>{cs.icon}</div>
                 <h3 className="text-lg font-bold mb-3 group-hover:text-yellow-400 transition-colors" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>{cs.title}</h3>
                 <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(255,255,255,0.65)" }}>{cs.desc}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold mt-5" style={{ color: "#E6B800" }}>View Case Studies <ChevronRight size={14} /></span>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold mt-5" style={{ color: "#2ecc71" }}>View Case Studies <ChevronRight size={14} /></span>
               </Link>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/resources/case-studies" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/resources/case-studies" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               View All Case Studies <ArrowRight size={18} />
             </Link>
           </div>
@@ -297,14 +283,14 @@ export default function Resources() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {WEBINARS.map((w) => (
               <div key={w.title} className="rounded-xl overflow-hidden" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.05)" }}>
-                <div className="h-2" style={{ background: w.type === "Upcoming" ? "#E6B800" : "#0D9488" }} />
+                <div className="h-2" style={{ background: w.type === "Upcoming" ? "#2ecc71" : "#2ecc71" }} />
                 <div className="p-6">
-                  <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: w.type === "Upcoming" ? "#FEFCE8" : "#F0FDF4", color: w.type === "Upcoming" ? "#8B6914" : "#166534" }}>{w.type}</span>
+                  <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: "rgba(46,204,113,0.14)", color: "#111111" }}>{w.type}</span>
                   <h3 className="font-bold mt-3 mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{w.title}</h3>
                   <div className="flex items-center gap-2 text-xs mb-4" style={{ color: "#9CA3AF" }}>
                     <Clock size={13} /> {w.date} · {w.speaker}
                   </div>
-                  <Link href={w.href} className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: w.type === "Upcoming" ? "#8B6914" : "#0D9488" }}>
+                  <Link href={w.href} className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: w.type === "Upcoming" ? "#8B6914" : "#2ecc71" }}>
                     {w.type === "Upcoming" ? "Register" : "Watch Now"} <ChevronRight size={14} />
                   </Link>
                 </div>
@@ -312,7 +298,7 @@ export default function Resources() {
             ))}
           </div>
           <div className="text-center">
-            <Link href="/resources/webinars" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/resources/webinars" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
               <Mic size={18} /> View All Webinars
             </Link>
           </div>
@@ -335,16 +321,16 @@ export default function Resources() {
                   {wf.steps.map((step, si) => (
                     <div key={step} className="flex items-center gap-2">
                       <span className="text-xs font-semibold px-3 py-1.5 rounded-lg text-white" style={{ background: "#021301" }}>{step}</span>
-                      {si < wf.steps.length - 1 && <span style={{ color: "#E6B800", fontWeight: 700 }}>→</span>}
+                      {si < wf.steps.length - 1 && <span style={{ color: "#2ecc71", fontWeight: 700 }}>→</span>}
                     </div>
                   ))}
                 </div>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold mt-4" style={{ color: "#0D9488" }}>Explore Workflow <ChevronRight size={14} /></span>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold mt-4" style={{ color: "#2ecc71" }}>Explore Workflow <ChevronRight size={14} /></span>
               </Link>
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/resources/workflows" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/resources/workflows" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
               <Zap size={18} /> View Full Workflow Library
             </Link>
           </div>
@@ -363,16 +349,16 @@ export default function Resources() {
               onChange={e => setSearchQuery(e.target.value)}
               placeholder="Search for AI productivity, workflows, prompts…"
               className="flex-1 rounded-lg px-4 py-3 text-sm outline-none"
-              style={{ border: "2px solid #0D9488", fontFamily: "'DM Sans', sans-serif" }}
+              style={{ border: "2px solid #2ecc71", fontFamily: "'DM Sans', sans-serif" }}
             />
-            <button type="submit" className="flex items-center gap-2 font-semibold px-5 py-3 rounded-lg" style={{ background: "#0D9488", color: "#fff" }}>
+            <button type="submit" className="flex items-center gap-2 font-semibold px-5 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#fff" }}>
               <Search size={18} />
             </button>
           </form>
           <div className="flex flex-wrap gap-2 justify-center">
             <span className="text-sm font-medium mr-2" style={{ color: "#9CA3AF" }}>Popular:</span>
             {POPULAR_TOPICS.map(t => (
-              <button key={t} onClick={() => { setSearchQuery(t); toast.success(`Searching "${t}"…`); }} className="text-sm px-3 py-1 rounded-full transition-all hover:bg-green-100" style={{ background: "#151B23", border: "1px solid #0D9488", color: "#0D9488" }}>
+              <button key={t} onClick={() => { setSearchQuery(t); toast.success(`Searching "${t}"…`); }} className="text-sm px-3 py-1 rounded-full transition-all hover:bg-green-100" style={{ background: "#151B23", border: "1px solid #2ecc71", color: "#2ecc71" }}>
                 {t}
               </button>
             ))}
@@ -383,7 +369,7 @@ export default function Resources() {
       {/* ── 9. LEAD MAGNET ── */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container">
-          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+          <div className="max-w-3xl mx-auto rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 60%, #2ecc71 100%)" }}>
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(0,0,0,0.15)", color: "#fff" }}>Free Resource</span>
             <h2 className="text-4xl lg:text-5xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
               50 AI Prompts Every Professional Should Know
@@ -393,7 +379,7 @@ export default function Resources() {
             </p>
             <form onSubmit={handleDownload} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter your email" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#1C1C1C", color: "#E6B800", fontFamily: "'Sora', sans-serif" }}>
+              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#1C1C1C", color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>
                 Download Free Guide
               </button>
             </form>
@@ -412,10 +398,10 @@ export default function Resources() {
             UpskillinTech programs teach professionals how to integrate AI into real work and productivity systems — not just theory, but hands-on transformation.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
-            <Link href="/#community" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "#0D9488", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#community" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "#2ecc71", color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>
               <Users size={18} /> Join Community
             </Link>
           </div>

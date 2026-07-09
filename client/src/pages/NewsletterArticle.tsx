@@ -23,37 +23,37 @@ const ARTICLES: Record<string, {
   "most-professionals-are-using-ai-wrong": {
     title: "Most Professionals Are Using AI Wrong",
     date: "March 2026", readTime: "5 min read", author: "UpskillinTech Team",
-    tag: "Featured Insight", tagColor: "#0D9488",
+    tag: "Featured Insight", tagColor: "#2ecc71",
     sections: [
       {
         type: "insight",
         title: "Featured Insight: The Search Engine Trap",
-        content: `Most professionals who use AI are stuck in what we call the "search engine trap." They type a question, get an answer, and move on. It's faster than Googling, sure — but it barely scratches the surface of what AI can actually do for your work.\n\nThe real power of AI isn't in answering questions. It's in thinking alongside you. When you use AI as a thinking partner — to stress-test your ideas, challenge your assumptions, explore scenarios, and structure your reasoning — you unlock a completely different level of productivity.\n\nHere's the shift: instead of asking "What is X?", start asking "Help me think through X. What am I missing? What are the risks? What would a sceptic say?" That single change in how you prompt AI will transform your output quality.`,
+        content: `Most professionals who use AI are stuck in what we call the "search engine trap." They type a question, get an answer, and move on. It is faster than Googling, sure — but it barely scratches the surface of what AI can actually do for your work.\n\nThe real power of AI is not in answering questions. It is in thinking alongside you. When you use AI as a thinking partner — to stress-test your ideas, challenge your assumptions, explore scenarios, and structure your reasoning — you unlock a completely different level of productivity.\n\nHere's the shift: instead of asking "What is X?", start asking "Help me think through X. What am I missing? What are the risks? What would a sceptic say?" That single change in how you prompt AI will transform your output quality.`,
       },
       {
         type: "tip",
         title: "Practical AI Tip: The 3-Layer Prompt Framework",
-        content: `Most AI prompts fail because they're too shallow. The 3-Layer Prompt Framework fixes this:\n\n**Layer 1 — Context:** Tell the AI who you are and what you're working on. ("I'm a project manager preparing a stakeholder update for a delayed software project.")\n\n**Layer 2 — Task:** Be specific about what you need. ("Draft a 3-paragraph executive summary that acknowledges the delay, explains the cause, and outlines the recovery plan.")\n\n**Layer 3 — Constraints:** Add guardrails. ("Keep it under 200 words. Use professional but direct language. Avoid jargon.")\n\nThis framework alone will make your AI outputs 10× more useful. Try it today on your next task.`,
+        content: `Most AI prompts fail because they are too shallow. The 3-Layer Prompt Framework fixes this:\n\n**Layer 1 — Context:** Tell the AI who you are and what you are working on. ("I am a project manager preparing a stakeholder update for a delayed software project.")\n\n**Layer 2 — Task:** Be specific about what you need. ("Draft a 3-paragraph executive summary that acknowledges the delay, explains the cause, and outlines the recovery plan.")\n\n**Layer 3 — Constraints:** Add guardrails. ("Keep it under 200 words. Use professional but direct language. Avoid jargon.")\n\nThis framework alone will make your AI outputs 10× more useful. Try it today on your next task.`,
       },
       {
         type: "tool",
-        title: "Tool Spotlight: Claude 3.5 Sonnet for Deep Work",
-        content: `This month's tool spotlight is Claude 3.5 Sonnet by Anthropic. While ChatGPT gets most of the attention, Claude consistently outperforms on tasks requiring nuanced reasoning, long-form writing, and careful analysis.\n\n**Best use cases:** Complex document analysis, writing first drafts of reports and proposals, strategic thinking exercises, and summarising long research papers.\n\n**Pro tip:** Claude handles very long context windows exceptionally well. You can paste an entire 50-page report and ask it to extract the five most important insights for your specific role. This alone can save 2–3 hours per week on research and reading.`,
+        title: "Tool Spotlight: AI Assistants for Deep Work",
+        content: `This month's tool spotlight is a leading AI assistant. Leading AI assistants consistently perform on tasks requiring nuanced reasoning, long-form writing, and careful analysis.\n\n**Best use cases:** Complex document analysis, writing first drafts of reports and proposals, strategic thinking exercises, and summarising long research papers.\n\n**Pro tip:** Claude handles very long context windows exceptionally well. You can paste an entire 50-page report and ask it to extract the five most important insights for your specific role. This alone can save 2–3 hours per week on research and reading.`,
       },
       {
         type: "workflow",
         title: "Workflow of the Month: The Weekly Review System",
-        content: `Every Sunday evening, spend 20 minutes with this AI-powered weekly review:\n\n1. **Brain dump** — Open a new chat and type everything on your mind: unfinished tasks, worries, ideas, upcoming deadlines. Don't filter.\n\n2. **AI organisation** — Prompt: "Organise this brain dump into: (a) urgent actions for this week, (b) important but not urgent items, (c) ideas to explore later, (d) things I can delegate or delete."\n\n3. **Priority check** — Prompt: "Based on my goals [paste your top 3 goals], which of these items will have the highest impact? What should I focus on first?"\n\n4. **Week plan** — Prompt: "Create a realistic daily plan for this week, blocking 2-hour deep work sessions in the morning and leaving afternoons for meetings and admin."\n\nProfessionals who use this system report saving 5–8 hours per week by eliminating decision fatigue and staying focused on what actually matters.`,
+        content: `Every Sunday evening, spend 20 minutes with this AI-powered weekly review:\n\n1. **Brain dump** — Open a new chat and type everything on your mind: unfinished tasks, worries, ideas, upcoming deadlines. Do not filter.\n\n2. **AI organisation** — Prompt: "Organise this brain dump into: (a) urgent actions for this week, (b) important but not urgent items, (c) ideas to explore later, (d) things I can delegate or delete."\n\n3. **Priority check** — Prompt: "Based on my goals [paste your top 3 goals], which of these items will have the highest impact? What should I focus on first?"\n\n4. **Week plan** — Prompt: "Create a realistic daily plan for this week, blocking 2-hour deep work sessions in the morning and leaving afternoons for meetings and admin."\n\nProfessionals who use this system report saving 5–8 hours per week by eliminating decision fatigue and staying focused on what actually matters.`,
       },
       {
         type: "community",
         title: "Community Update: March Masterclass Recap",
-        content: `Last week's masterclass on "AI for Client Communication" drew over 200 professionals from across Africa, the UK, and North America. The session covered how to use AI to draft client proposals, handle objections, and write follow-up emails that actually get responses.\n\nThe most popular takeaway? A simple prompt template for turning rough meeting notes into polished client summaries in under 3 minutes. We've added it to the AI Workflow Library — check it out at upskillintech.com/resources/workflows.\n\nNext masterclass: **"AI for Data Analysis Without Coding"** — April 10th, 6pm GMT. Register free at upskillintech.com/community.`,
+        content: `Last week's masterclass on "AI for Client Communication" drew over 200 professionals from around the world. The session covered how to use AI to draft client proposals, handle objections, and write follow-up emails that actually get responses.\n\nThe most popular takeaway? A simple prompt template for turning rough meeting notes into polished client summaries in under 3 minutes. We have added it to the AI Workflow Library — check it out at upskillintech.com/resources/workflows.\n\nNext masterclass: **"AI for Data Analysis Without Coding"** — April 10th, 6pm GMT. Register free at upskillintech.com/community.`,
       },
       {
         type: "resource",
         title: "Recommended Resource: Free AI Productivity Guide",
-        content: `If you're just getting started with AI in your professional life, our free guide "The AI-Enabled Professional Starter Kit" is the best place to begin. It covers:\n\n- The 5 AI tools every professional needs in 2026\n- 10 ready-to-use prompt templates for common work tasks\n- A 30-day AI integration roadmap\n- How to measure your AI productivity gains\n\nDownload it free at upskillintech.com/resources/ai-guides. Over 2,000 professionals have already used it to kickstart their AI journey.`,
+        content: `If you are just getting started with AI in your professional life, our free guide "The AI-Enabled Professional Starter Kit" is the best place to begin. It covers:\n\n- The 5 AI tools every professional needs in 2026\n- 10 ready-to-use prompt templates for common work tasks\n- A 30-day AI integration roadmap\n- How to measure your AI productivity gains\n\nDownload it free at upskillintech.com/resources/ai-guides. Over 2,000 professionals have already used it to kickstart their AI journey.`,
       },
     ],
     relatedSlugs: [
@@ -66,37 +66,37 @@ const ARTICLES: Record<string, {
   "5-ai-workflows-that-save-professionals-10-hours-a-week": {
     title: "5 AI Workflows That Save Professionals 10 Hours a Week",
     date: "February 2026", readTime: "7 min read", author: "UpskillinTech Team",
-    tag: "Workflow Guide", tagColor: "#8B9E1A",
+    tag: "Workflow Guide", tagColor: "#2ecc71",
     sections: [
       {
         type: "insight",
         title: "Featured Insight: The 10-Hour Opportunity",
-        content: `The average knowledge worker spends 28% of their workday on email, 20% on searching for information, and 14% on meetings. That's over 60% of your time on tasks that AI can dramatically accelerate — or eliminate entirely.\n\nThe five workflows below are used by professionals in our community who have reclaimed 10+ hours per week. They're not theoretical — they're battle-tested systems that work across industries, roles, and experience levels with AI.`,
+        content: `The average knowledge worker spends 28% of their workday on email, 20% on searching for information, and 14% on meetings. That is over 60% of your time on tasks that AI can dramatically accelerate — or eliminate entirely.\n\nThe five workflows below are used by professionals in our community who have reclaimed 10+ hours per week. They are not theoretical — they are battle-tested systems that work across industries, roles, and experience levels with AI.`,
       },
       {
         type: "workflow",
         title: "Workflow 1: The Meeting Intelligence System",
-        content: `**Time saved: 45 min per meeting**\n\n1. Record your meeting with Otter.ai or Fireflies (free tiers available)\n2. After the meeting, paste the transcript into ChatGPT\n3. Prompt: "Extract: (1) key decisions made, (2) action items with owners, (3) open questions, (4) a 3-sentence executive summary"\n4. Copy the output into Notion or your project management tool\n\nFor a 1-hour meeting, this replaces 45 minutes of note-taking and follow-up writing.`,
+        content: `**Time saved: 45 min per meeting**\n\n1. Record your meeting with AI transcription tools (free tiers available)\n2. After the meeting, paste the transcript into AI productivity tools\n3. Prompt: "Extract: (1) key decisions made, (2) action items with owners, (3) open questions, (4) a 3-sentence executive summary"\n4. Copy the output into your project management tool\n\nFor a 1-hour meeting, this replaces 45 minutes of note-taking and follow-up writing.`,
       },
       {
         type: "workflow",
         title: "Workflow 2: The Research Accelerator",
-        content: `**Time saved: 2 hours per research task**\n\n1. Use Perplexity AI to get a research overview with cited sources\n2. Open the top 3 sources and paste the key sections into Claude\n3. Prompt: "I'm a [your role] preparing [deliverable]. Synthesise these sources into the 5 most important insights relevant to my context. Flag any contradictions."\n4. Use the synthesis as the foundation for your report or presentation\n\nThis workflow turns a 3-hour research task into a 45-minute one.`,
+        content: `**Time saved: 2 hours per research task**\n\n1. Use an AI research tool to get a research overview with cited sources\n2. Open the top 3 sources and paste the key sections into Claude\n3. Prompt: "I am a [your role] preparing [deliverable]. Synthesise these sources into the 5 most important insights relevant to my context. Flag any contradictions."\n4. Use the synthesis as the foundation for your report or presentation\n\nThis workflow turns a 3-hour research task into a 45-minute one.`,
       },
       {
         type: "workflow",
         title: "Workflow 3: The Email Triage System",
-        content: `**Time saved: 1.5 hours per day**\n\n1. At the start of each day, copy your 10 most important emails into a single ChatGPT prompt\n2. Prompt: "For each email, suggest: (1) a one-sentence summary, (2) the required action, (3) a draft reply if needed. Prioritise by urgency."\n3. Review the suggestions, edit as needed, and send\n4. Use the saved time for deep work\n\nCombined with inbox zero principles, this system eliminates email anxiety entirely.`,
+        content: `**Time saved: 1.5 hours per day**\n\n1. At the start of each day, copy your 10 most important emails into a single AI productivity tools prompt\n2. Prompt: "For each email, suggest: (1) a one-sentence summary, (2) the required action, (3) a draft reply if needed. Prioritise by urgency."\n3. Review the suggestions, edit as needed, and send\n4. Use the saved time for deep work\n\nCombined with inbox zero principles, this system eliminates email anxiety entirely.`,
       },
       {
         type: "tip",
         title: "Practical AI Tip: Batch Your AI Tasks",
-        content: `One of the biggest productivity mistakes professionals make with AI is context-switching — opening a new AI chat for every small task throughout the day.\n\nInstead, batch your AI tasks. Set aside two 30-minute "AI sessions" per day — one in the morning and one in the afternoon. During each session, work through your list of AI-assisted tasks in one focused block.\n\nThis reduces the cognitive overhead of switching between AI and your normal workflow, and you'll find your prompts get better when you're in "AI mode" rather than jumping in and out.`,
+        content: `One of the biggest productivity mistakes professionals make with AI is context-switching — opening a new AI chat for every small task throughout the day.\n\nInstead, batch your AI tasks. Set aside two 30-minute "AI sessions" per day — one in the morning and one in the afternoon. During each session, work through your list of AI-assisted tasks in one focused block.\n\nThis reduces the cognitive overhead of switching between AI and your normal workflow, and you will find your prompts get better when you are in "AI mode" rather than jumping in and out.`,
       },
       {
         type: "resource",
         title: "Recommended Resource: AI Workflow Library",
-        content: `All five workflows mentioned in this edition — plus 20 more — are available in full detail in the UpskillinTech AI Workflow Library. Each workflow includes the exact prompts to use, the tools required, and a time-saving estimate.\n\nVisit upskillintech.com/resources/workflows to access the full library. It's free and updated monthly with new workflows from our professional community.`,
+        content: `All five workflows mentioned in this edition — plus 20 more — are available in full detail in the UpskillinTech AI Workflow Library. Each workflow includes the exact prompts to use, the tools required, and a time-saving estimate.\n\nVisit upskillintech.com/resources/workflows to access the full library. It is free and updated monthly with new workflows from our professional community.`,
       },
     ],
     relatedSlugs: [
@@ -109,12 +109,12 @@ const ARTICLES: Record<string, {
   "the-ai-leadership-gap-why-managers-need-ai-skills-now": {
     title: "The AI Leadership Gap: Why Managers Need AI Skills Now",
     date: "January 2026", readTime: "6 min read", author: "UpskillinTech Team",
-    tag: "Leadership", tagColor: "#D97706",
+    tag: "Leadership", tagColor: "#2ecc71",
     sections: [
       {
         type: "insight",
         title: "Featured Insight: The Invisible Leadership Crisis",
-        content: `There's a quiet crisis unfolding in organisations right now. Junior team members are using AI to produce work in 2 hours that used to take 2 days. They're automating their own workflows, writing better reports, and solving problems faster than ever before.\n\nMeanwhile, their managers — the people responsible for reviewing, guiding, and evaluating this work — often have no idea how it was produced. They can't tell the difference between AI-assisted excellence and AI-generated mediocrity. They're managing workflows they don't understand.\n\nThis is the AI Leadership Gap, and it's growing every month.`,
+        content: `There is a quiet crisis unfolding in organisations right now. Junior team members are using AI to produce work in 2 hours that used to take 2 days. They are automating their own workflows, writing better reports, and solving problems faster than ever before.\n\nMeanwhile, their managers — the people responsible for reviewing, guiding, and evaluating this work — often have no idea how it was produced. They cannot tell the difference between AI-assisted excellence and AI-generated mediocrity. They are managing workflows they do not understand.\n\nThis is the AI Leadership Gap, and it is growing every month.`,
       },
       {
         type: "tip",
@@ -123,18 +123,18 @@ const ARTICLES: Record<string, {
       },
       {
         type: "tool",
-        title: "Tool Spotlight: Notion AI for Team Knowledge Management",
-        content: `For leaders managing teams and projects, Notion AI is one of the most underrated tools available. It turns your team's Notion workspace into an intelligent knowledge base.\n\n**Key features for leaders:**\n- Auto-summarise long meeting notes into action items\n- Answer questions about past projects using your team's documentation\n- Draft project briefs, status updates, and performance reviews\n- Translate complex technical content into plain language for stakeholders\n\nIf your team already uses Notion, enabling Notion AI costs $8/month per user and typically pays for itself in the first week.`,
+        title: "Tool Spotlight: AI productivity tools for Team Knowledge Management",
+        content: `For leaders managing teams and projects, AI knowledge tools are among the most underrated options available. They turn your team's shared workspace into an intelligent knowledge base.\n\n**Key features for leaders:**\n- Auto-summarise long meeting notes into action items\n- Answer questions about past projects using your team's documentation\n- Draft project briefs, status updates, and performance reviews\n- Translate complex technical content into plain language for stakeholders\n\nIf your team already uses a shared workspace tool, enabling its AI features is inexpensive and typically pays for itself in the first week.`,
       },
       {
         type: "workflow",
         title: "Workflow of the Month: The AI-Assisted Performance Review",
-        content: `Performance reviews are one of the most time-consuming leadership tasks. This workflow cuts the time in half:\n\n1. Collect your notes on the team member's work over the review period\n2. Prompt ChatGPT: "I'm writing a performance review for a [role] who has [achievements]. Help me structure a balanced review covering: strengths, areas for growth, specific examples, and development goals."\n3. Edit the draft to add your personal observations and specific examples\n4. Use the final draft as the basis for your review conversation\n\nThis workflow doesn't replace your judgment — it gives you a structured starting point so you spend your time on the parts that require your expertise.`,
+        content: `Performance reviews are one of the most time-consuming leadership tasks. This workflow cuts the time in half:\n\n1. Collect your notes on the team member's work over the review period\n2. Prompt AI productivity tools: "I am writing a performance review for a [role] who has [achievements]. Help me structure a balanced review covering: strengths, areas for growth, specific examples, and development goals."\n3. Edit the draft to add your personal observations and specific examples\n4. Use the final draft as the basis for your review conversation\n\nThis workflow does not replace your judgment — it gives you a structured starting point so you spend your time on the parts that require your expertise.`,
       },
       {
         type: "community",
         title: "Community Update: AI Leadership Cohort",
-        content: `We're launching a dedicated AI Leadership cohort in April 2026 for managers, directors, and executives who want to lead AI adoption in their organisations.\n\nThe 6-week programme covers: understanding AI capabilities and limitations, building an AI strategy for your team, managing AI-assisted workflows, ethical AI use in the workplace, and measuring AI ROI.\n\nEarly bird places are limited. Register your interest at upskillintech.com/programs.`,
+        content: `We are launching a dedicated AI Leadership cohort in April 2026 for managers, directors, and executives who want to lead AI adoption in their organisations.\n\nThe 6-week programme covers: understanding AI capabilities and limitations, building an AI strategy for your team, managing AI-assisted workflows, ethical AI use in the workplace, and measuring AI ROI.\n\nEarly bird places are limited. Register your interest at upskillintech.com/programs.`,
       },
       {
         type: "resource",
@@ -152,27 +152,27 @@ const ARTICLES: Record<string, {
   "how-to-build-your-first-ai-powered-productivity-system": {
     title: "How to Build Your First AI-Powered Productivity System",
     date: "December 2025", readTime: "8 min read", author: "UpskillinTech Team",
-    tag: "Beginner Guide", tagColor: "#7C3AED",
+    tag: "Beginner Guide", tagColor: "#2ecc71",
     sections: [
       {
         type: "insight",
         title: "Featured Insight: Systems Beat Willpower Every Time",
-        content: `The biggest mistake people make when starting with AI is treating it like a magic button — something you reach for when you're stuck or when you remember it exists. That approach produces inconsistent results and eventually leads to abandonment.\n\nThe professionals who get the most from AI don't have better tools. They have better systems. They've built AI into their daily workflow so that using it is automatic, not optional.\n\nThis edition walks you through building your first AI productivity system from scratch — one that fits your role, your tools, and your work style.`,
+        content: `The biggest mistake people make when starting with AI is treating it like a magic button — something you reach for when you are stuck or when you remember it exists. That approach produces inconsistent results and eventually leads to abandonment.\n\nThe professionals who get the most from AI do not have better tools. They have better systems. They have built AI into their daily workflow so that using it is automatic, not optional.\n\nThis edition walks you through building your first AI productivity system from scratch — one that fits your role, your tools, and your work style.`,
       },
       {
         type: "tip",
         title: "Practical AI Tip: Start With Your Biggest Time Drain",
-        content: `Don't try to AI-ify everything at once. Start with the single task that takes the most time and produces the least joy.\n\nFor most professionals, this is one of: writing (reports, emails, proposals), research (gathering and synthesising information), or meeting follow-up (notes, action items, summaries).\n\nPick one. Build a reliable AI workflow for that one task. Use it every day for two weeks. Once it's a habit, add the next task. This approach builds sustainable AI habits rather than short-lived experiments.`,
+        content: `Do not try to AI-ify everything at once. Start with the single task that takes the most time and produces the least joy.\n\nFor most professionals, this is one of: writing (reports, emails, proposals), research (gathering and synthesising information), or meeting follow-up (notes, action items, summaries).\n\nPick one. Build a reliable AI workflow for that one task. Use it every day for two weeks. Once it is a habit, add the next task. This approach builds sustainable AI habits rather than short-lived experiments.`,
       },
       {
         type: "workflow",
         title: "Workflow of the Month: Building Your AI Stack",
-        content: `A basic AI productivity stack for professionals:\n\n**Thinking & Writing:** ChatGPT or Claude — for drafting, editing, brainstorming, and analysis\n\n**Research:** Perplexity AI — for real-time research with cited sources\n\n**Meetings:** Otter.ai or Fireflies — for transcription and meeting summaries\n\n**Knowledge Management:** Notion AI — for organising and retrieving information\n\n**Image & Presentation:** Canva AI or Gamma — for visual content creation\n\nTotal cost: £30–50/month. Time saved: 10–15 hours/week. ROI: immediate.\n\nStart with just ChatGPT and Perplexity. Master those two before adding anything else.`,
+        content: `A basic AI productivity stack for professionals:\n\n**Thinking & Writing:** an AI assistant — for drafting, editing, brainstorming, and analysis\n\n**Research:** an AI research tool — for real-time research with cited sources\n\n**Meetings:** AI transcription tools — for transcription and meeting summaries\n\n**Knowledge Management:** AI productivity tools — for organising and retrieving information\n\n**Image & Presentation:** AI design tools for visual content creation\n\nTotal cost: £30–50/month. Time saved: 10–15 hours/week. ROI: immediate.\n\nStart with one AI assistant and one AI research tool. Master those two before adding anything else.`,
       },
       {
         type: "tool",
-        title: "Tool Spotlight: Perplexity AI for Research",
-        content: `Perplexity AI is the tool most professionals wish they'd discovered sooner. Unlike ChatGPT, Perplexity searches the web in real time and cites its sources — making it perfect for research tasks where accuracy matters.\n\n**Best use cases:** Market research, competitor analysis, fact-checking, staying current on industry news, and answering questions that require up-to-date information.\n\n**Pro tip:** Use the "Focus" feature to restrict searches to academic papers, news, or specific websites. For professional research, "Academic" mode surfaces peer-reviewed sources that ChatGPT would never find.`,
+        title: "Tool Spotlight: an AI research tool for Research",
+        content: `AI research tools are what most professionals wish they had discovered sooner. Unlike general chat assistants, they search the web in real time and cite their sources — making it perfect for research tasks where accuracy matters.\n\n**Best use cases:** Market research, competitor analysis, fact-checking, staying current on industry news, and answering questions that require up-to-date information.\n\n**Pro tip:** Use the "Focus" feature to restrict searches to academic papers, news, or specific websites. For professional research, "Academic" mode surfaces peer-reviewed sources that AI productivity tools would never find.`,
       },
       {
         type: "community",
@@ -182,7 +182,7 @@ const ARTICLES: Record<string, {
       {
         type: "resource",
         title: "Recommended Resource: 30-Day AI Integration Roadmap",
-        content: `Our free "30-Day AI Integration Roadmap" is the most popular resource we've ever published. It gives you a day-by-day plan for building AI into your professional life — starting from zero and ending with a fully integrated AI workflow system.\n\nWeek 1: Foundation tools and basic prompting\nWeek 2: Your first AI workflows\nWeek 3: Advanced prompting and automation\nWeek 4: Measuring results and optimising your system\n\nDownload it free at upskillintech.com/resources/ai-guides.`,
+        content: `Our free "30-Day AI Integration Roadmap" is the most popular resource we have ever published. It gives you a day-by-day plan for building AI into your professional life — starting from zero and ending with a fully integrated AI workflow system.\n\nWeek 1: Foundation tools and basic prompting\nWeek 2: Your first AI workflows\nWeek 3: Advanced prompting and automation\nWeek 4: Measuring results and optimising your system\n\nDownload it free at upskillintech.com/resources/ai-guides.`,
       },
     ],
     relatedSlugs: [
@@ -200,32 +200,32 @@ const ARTICLES: Record<string, {
       {
         type: "insight",
         title: "Featured Insight: AI Is Transforming Community Impact",
-        content: `Educators and community leaders are some of the most time-poor professionals in the world. They're doing the most important work — shaping minds, building communities, serving people — with the fewest resources.\n\nAI is changing that. The tools available today can multiply the impact of a single educator or community leader by 3–5×, freeing them from administrative burden and giving them more time for the human work that only they can do.\n\nThis edition is dedicated to the educators, pastors, community organisers, and social leaders in our community. Your work matters — and AI can help you do more of it.`,
+        content: `Educators and community leaders are some of the most time-poor professionals in the world. They are doing the most important work — shaping minds, building communities, serving people — with the fewest resources.\n\nAI is changing that. The tools available today can multiply the impact of a single educator or community leader by 3–5×, freeing them from administrative burden and giving them more time for the human work that only they can do.\n\nThis edition is dedicated to the educators, pastors, community organisers, and social leaders in our community. Your work matters — and AI can help you do more of it.`,
       },
       {
         type: "tip",
         title: "Practical AI Tip: The Lesson Plan Generator",
-        content: `For educators, AI can transform lesson planning from a 3-hour task to a 20-minute one.\n\nPrompt template: "I'm a [subject] teacher for [age group/level]. Create a 60-minute lesson plan on [topic] that includes: a 5-minute hook activity, 20 minutes of direct instruction, 25 minutes of student practice, and 10 minutes of reflection. Include differentiation strategies for advanced and struggling learners."\n\nThis single prompt produces a complete lesson plan that you can adapt and personalise. Most teachers who use this report saving 5–8 hours per week on planning alone.`,
+        content: `For educators, AI can transform lesson planning from a 3-hour task to a 20-minute one.\n\nPrompt template: "I am a [subject] teacher for [age group/level]. Create a 60-minute lesson plan on [topic] that includes: a 5-minute hook activity, 20 minutes of direct instruction, 25 minutes of student practice, and 10 minutes of reflection. Include differentiation strategies for advanced and struggling learners."\n\nThis single prompt produces a complete lesson plan that you can adapt and personalise. Most teachers who use this report saving 5–8 hours per week on planning alone.`,
       },
       {
         type: "tool",
-        title: "Tool Spotlight: Canva AI for Community Communications",
-        content: `For community leaders who need to produce professional-looking communications without a design budget, Canva AI is a game-changer.\n\n**Key features:** AI-generated social media graphics, presentation templates, flyer designs, and newsletter layouts — all created from a text description in under 2 minutes.\n\n**For churches and community organisations:** Use Canva AI to create weekly bulletins, event posters, social media content, and annual reports at a fraction of the time and cost of hiring a designer.\n\nThe free tier is surprisingly powerful. The Pro plan (£10/month) unlocks AI features that are worth every penny for active community communicators.`,
+        title: "Tool Spotlight: AI Design Tools for Community Communications",
+        content: `For community leaders who need to produce professional-looking communications without a design budget, AI design tools are a practical answer.\n\n**Key features:** AI-generated social media graphics, presentation templates, flyer designs, and newsletter layouts — all created from a text description in under 2 minutes.\n\n**For churches and community organisations:** Use AI design tools to create weekly bulletins, event posters, social media content, and annual reports at a fraction of the time and cost of hiring a designer.\n\nThe free tier is surprisingly powerful. The Pro plan (£10/month) unlocks AI features that are worth every penny for active community communicators.`,
       },
       {
         type: "workflow",
         title: "Workflow of the Month: The Community Outreach System",
-        content: `This workflow helps community leaders reach more people with less effort:\n\n1. **Content planning** — Prompt ChatGPT: "Create a 4-week social media content calendar for a [type of community organisation] focused on [mission/theme]. Include post ideas for Facebook, Instagram, and WhatsApp."\n\n2. **Content creation** — For each post idea, prompt: "Write a [platform] post about [topic] in a warm, community-focused tone. Include a call to action to [desired action]."\n\n3. **Scheduling** — Use Buffer or Later (free tiers available) to schedule posts in advance\n\n4. **Engagement** — Use AI to draft responses to common questions and comments\n\nThis system takes 2 hours to set up and saves 5–6 hours per week on community communications.`,
+        content: `This workflow helps community leaders reach more people with less effort:\n\n1. **Content planning** — Prompt AI productivity tools: "Create a 4-week social media content calendar for a [type of community organisation] focused on [mission/theme]. Include post ideas for Facebook, Instagram, and WhatsApp."\n\n2. **Content creation** — For each post idea, prompt: "Write a [platform] post about [topic] in a warm, community-focused tone. Include a call to action to [desired action]."\n\n3. **Scheduling** — Use Buffer or Later (free tiers available) to schedule posts in advance\n\n4. **Engagement** — Use AI to draft responses to common questions and comments\n\nThis system takes 2 hours to set up and saves 5–6 hours per week on community communications.`,
       },
       {
         type: "community",
         title: "Community Update: AI for Faith Communities",
-        content: `We're excited to announce a new programme specifically designed for pastors, church leaders, and faith community organisers: "AI for Faith Communities."\n\nThe programme covers: using AI for sermon preparation and research, AI-powered pastoral care communications, building community engagement systems, and using AI for outreach and evangelism.\n\nThe first cohort starts in February 2026. Register your interest at upskillintech.com/programs.`,
+        content: `We are excited to announce a new programme specifically designed for pastors, church leaders, and faith community organisers: "AI for Faith Communities."\n\nThe programme covers: using AI for sermon preparation and research, AI-powered pastoral care communications, building community engagement systems, and using AI for outreach and evangelism.\n\nThe first cohort starts in February 2026. Register your interest at upskillintech.com/programs.`,
       },
       {
         type: "resource",
         title: "Recommended Resource: AI for Educators Guide",
-        content: `Our free "AI for Educators" guide is specifically designed for teachers, trainers, and community educators. It includes 20 ready-to-use prompt templates for lesson planning, assessment creation, parent communication, and student feedback.\n\nDownload it free at upskillintech.com/resources/ai-guides. We've also created a dedicated section in the AI Workflow Library with workflows specifically for educational contexts.`,
+        content: `Our free "AI for Educators" guide is specifically designed for teachers, trainers, and community educators. It includes 20 ready-to-use prompt templates for lesson planning, assessment creation, parent communication, and student feedback.\n\nDownload it free at upskillintech.com/resources/ai-guides. We have also created a dedicated section in the AI Workflow Library with workflows specifically for educational contexts.`,
       },
     ],
     relatedSlugs: [
@@ -237,10 +237,10 @@ const ARTICLES: Record<string, {
 };
 
 const ALL_EDITIONS = [
-  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#0D9488" },
-  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#8B9E1A" },
-  { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#D97706" },
-  { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#7C3AED" },
+  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#2ecc71" },
+  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#2ecc71" },
+  { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#2ecc71" },
+  { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#2ecc71" },
   { slug: "ai-tools-for-educators-and-community-leaders", title: "AI Tools for Educators and Community Leaders", date: "November 2025", readTime: "5 min read", tag: "Education & Leadership", tagColor: "#0891B2" },
 ];
 
@@ -248,7 +248,7 @@ const SECTION_ICONS: Record<string, React.ElementType> = {
   insight: Lightbulb, tip: Zap, tool: BarChart2, workflow: BookOpen, community: Users, resource: Mail,
 };
 const SECTION_COLORS: Record<string, string> = {
-  insight: "#0D9488", tip: "#E6B800", tool: "#8B9E1A", workflow: "#7C3AED", community: "#0891B2", resource: "#D97706",
+  insight: "#2ecc71", tip: "#2ecc71", tool: "#2ecc71", workflow: "#2ecc71", community: "#0891B2", resource: "#2ecc71",
 };
 
 export default function NewsletterArticle() {
@@ -270,8 +270,8 @@ export default function NewsletterArticle() {
         <main className="flex-1 pt-[72px] flex items-center justify-center">
           <div className="text-center py-20">
             <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Edition Not Found</h1>
-            <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition doesn't exist or has been moved.</p>
-            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#0D9488" }}>
+            <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition does not exist or has been moved.</p>
+            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#2ecc71" }}>
               ← Back to Newsletter
             </Link>
           </div>
@@ -292,9 +292,9 @@ export default function NewsletterArticle() {
         <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
             <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
-              <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
+              <Link href="/resources" style={{ color: "#2ecc71", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
-              <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
+              <Link href="/newsletter" style={{ color: "#2ecc71", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
               <span style={{ color: "#D1D5DB" }}>{article.title}</span>
             </div>
@@ -327,7 +327,7 @@ export default function NewsletterArticle() {
             <div className="max-w-3xl mx-auto">
               {article.sections.map((section, i) => {
                 const Icon = SECTION_ICONS[section.type] || Lightbulb;
-                const color = SECTION_COLORS[section.type] || "#0D9488";
+                const color = SECTION_COLORS[section.type] || "#2ecc71";
                 return (
                   <div key={i} className="mb-10 rounded-2xl p-8"
                     style={{ border: `1.5px solid ${color}30`, background: `${color}08` }}>
@@ -358,7 +358,7 @@ export default function NewsletterArticle() {
         <section style={{ background: "#151B23", padding: "60px 0" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
-              <div className="rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #111827, #1a2e1a)" }}>
+              <div className="rounded-2xl p-10 text-center" style={{ background: "linear-gradient(135deg, #0d1117, #1a2e1a)" }}>
                 <h3 className="font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem" }}>
                   Explore UpskillinTech
                 </h3>
@@ -368,7 +368,7 @@ export default function NewsletterArticle() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/programs"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white transition-all hover:opacity-90"
-                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)" }}>
                     Explore Programs <ArrowRight size={16} />
                   </Link>
                   <Link href="/community"
@@ -393,7 +393,7 @@ export default function NewsletterArticle() {
                 {subDone ? (
                   <div className="flex items-center gap-3 text-green-600">
                     <CheckCircle size={20} />
-                    <span className="font-semibold">You're subscribed! Check your inbox.</span>
+                    <span className="font-semibold">You are subscribed! Check your inbox.</span>
                   </div>
                 ) : (
                   <form onSubmit={(e) => { e.preventDefault(); if (email) subscribe.mutate({ email }); }}
@@ -406,7 +406,7 @@ export default function NewsletterArticle() {
                     />
                     <button type="submit" disabled={subscribe.isPending}
                       className="px-6 py-3 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
-                      style={{ background: "#0D9488", whiteSpace: "nowrap" }}>
+                      style={{ background: "#2ecc71", whiteSpace: "nowrap" }}>
                       {subscribe.isPending ? "..." : "Subscribe"}
                     </button>
                   </form>

@@ -54,7 +54,7 @@ export default function Learn() {
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8">
                   Master AI skills with structured courses, hands-on projects, and expert guidance.
-                  From AI literacy to business automation, we've got you covered.
+                  From AI literacy to business automation, we have got you covered.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-4 py-2 rounded-full">

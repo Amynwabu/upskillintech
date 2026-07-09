@@ -181,7 +181,7 @@ export default function NewsletterPreferences() {
           </div>
           <h1 className="text-3xl font-bold text-[#F3F4F6] mb-3">Newsletter Preferences</h1>
           <p className="text-gray-600 max-w-md mx-auto">
-            Customize your email experience. Choose the content categories you'd like to receive from UpskillinTech.
+            Customize your email experience. Choose the content categories you would like to receive from UpskillinTech.
           </p>
         </div>
 

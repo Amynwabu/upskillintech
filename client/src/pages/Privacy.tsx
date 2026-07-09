@@ -100,7 +100,7 @@ export default function Privacy() {
               <li><strong>Right to Data Portability:</strong> Receive your data in a portable format</li>
               <li><strong>Right to Object:</strong> Object to certain processing activities</li>
             </ul>
-            <p className="mt-3">To exercise these rights, please contact us at <a href="mailto:privacy@upskillintech.com" style={{ color: "#0D9488" }}>privacy@upskillintech.com</a>.</p>
+            <p className="mt-3">To exercise these rights, please contact us at <a href="mailto:privacy@upskillintech.com" style={{ color: "#2ecc71" }}>privacy@upskillintech.com</a>.</p>
           </section>
 
           <section>
@@ -110,7 +110,7 @@ export default function Privacy() {
 
           <section>
             <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>9. Data Protection Officer</h2>
-            <p>As a UK-based organisation, we have appointed a Data Protection Officer. Contact our DPO at <a href="mailto:dpo@upskillintech.com" style={{ color: "#0D9488" }}>dpo@upskillintech.com</a>.</p>
+            <p>As a UK-based organisation, we have appointed a Data Protection Officer. Contact our DPO at <a href="mailto:dpo@upskillintech.com" style={{ color: "#2ecc71" }}>dpo@upskillintech.com</a>.</p>
           </section>
 
           <section>
@@ -118,10 +118,10 @@ export default function Privacy() {
             <p>If you have questions about this Privacy Policy, please contact us:</p>
             <div className="mt-4 p-5 rounded-xl" style={{ background: "#151B23" }}>
               <p><strong>UpskillinTech</strong></p>
-              <p>Email: <a href="mailto:privacy@upskillintech.com" style={{ color: "#0D9488" }}>privacy@upskillintech.com</a></p>
+              <p>Email: <a href="mailto:privacy@upskillintech.com" style={{ color: "#2ecc71" }}>privacy@upskillintech.com</a></p>
               <p>Website: upskillintech.com</p>
               <p className="mt-4"><strong>UK Information Commissioner's Office</strong></p>
-              <p>Website: <a href="https://www.ico.org.uk" target="_blank" rel="noreferrer" style={{ color: "#0D9488" }}>www.ico.org.uk</a></p>
+              <p>Website: <a href="https://www.ico.org.uk" target="_blank" rel="noreferrer" style={{ color: "#2ecc71" }}>www.ico.org.uk</a></p>
               <p>Phone: +44 303 123 1113</p>
             </div>
           </section>

@@ -4,66 +4,50 @@ const audiences = [
   {
     icon: User,
     label: "Individuals",
-    tagline: "Everyday AI for everyday life",
-    desc: "Use AI for emails, planning, learning, research, budgeting, writing, and daily productivity.",
+    desc: "Use AI for writing, planning, research, and daily productivity.",
     useCases: [
-      "Write clearer emails and messages",
+      "Write clearer emails and documents",
       "Plan your week and manage tasks",
-      "Research topics and summarise content",
-      "Budget and organise personal finances",
-      "Learn anything faster with AI support",
+      "Research and summarise faster",
     ],
     cta: "Start with Everyday AI",
     href: "#programs",
-    color: "#0D9488",
   },
   {
     icon: Briefcase,
     label: "Solopreneurs",
-    tagline: "Grow your business without burning out",
-    desc: "Use AI to create content, manage clients, package offers, automate admin, and grow with less overwhelm.",
+    desc: "Create content, manage clients, and automate admin with AI.",
     useCases: [
       "Create a month of content in one session",
       "Draft proposals and client messages",
-      "Build and automate your onboarding",
-      "Manage your inbox and follow-ups",
-      "Package and price your services",
+      "Automate onboarding and follow-ups",
     ],
     cta: "Explore AI for Solopreneurs",
     href: "#programs",
-    color: "#16A34A",
   },
   {
     icon: Store,
     label: "Business Owners",
-    tagline: "Smarter operations, faster growth",
-    desc: "Use AI for marketing, customer service, reports, operations, sales follow-up, and smarter business decisions.",
+    desc: "Apply AI to marketing, customer service, and business reporting.",
     useCases: [
-      "Automate customer enquiries and responses",
+      "Automate customer enquiries",
       "Create marketing content and ad copy",
-      "Analyse sales data and business reports",
-      "Build AI-powered sales follow-up sequences",
-      "Train staff to use AI safely and effectively",
+      "Analyse sales data and reports",
     ],
     cta: "Explore AI for Business Owners",
     href: "#programs",
-    color: "#D97706",
   },
   {
     icon: Users,
-    label: "Teams & Organisations",
-    tagline: "Build an AI-ready team",
-    desc: "Train your people, redesign workflows, adopt AI safely, and build internal AI confidence across your organisation.",
+    label: "Teams",
+    desc: "Train your people and adopt AI safely across your organisation.",
     useCases: [
-      "Run structured AI training for your team",
-      "Redesign workflows with AI automation",
-      "Develop an AI adoption strategy",
-      "Build AI governance and safe use policies",
-      "Support churches, charities, and community groups",
+      "Run structured AI training",
+      "Redesign workflows with automation",
+      "Build safe use policies",
     ],
     cta: "Explore Team AI Adoption",
     href: "/enterprise",
-    color: "#7C3AED",
   },
 ];
 
@@ -73,16 +57,16 @@ export default function AudienceSection() {
       id="who-its-for"
       aria-label="Who UpskillinTech is for"
       className="section-py"
-      style={{ background: "#F3F1EE" }}
+      style={{ background: "#f4f4f4" }}
     >
       <div className="container">
-        <div className="text-center mb-12" style={{ maxWidth: 600, margin: "0 auto 3rem" }}>
-          <span className="section-label">Built for Real Professionals</span>
-          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, color: "#F3F4F6", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
-            AI skills that fit your life, your work, your goals.
+        <div className="text-center mb-12" style={{ maxWidth: 640, margin: "0 auto 3rem" }}>
+          <span className="section-label">Who It Is For</span>
+          <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "2.25rem", color: "#111111", marginTop: "0.75rem", marginBottom: "0.75rem" }}>
+            AI skills that fit your life, your work, and your goals.
           </h2>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
-            Whether you're a professional in Lagos, a solopreneur in London, or leading a team across the diaspora — UpskillinTech meets you where you are.
+          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.125rem", color: "#111111", lineHeight: 1.7 }}>
+            Practical AI adoption for individuals, solopreneurs, business owners, and teams.
           </p>
         </div>
 
@@ -92,29 +76,31 @@ export default function AudienceSection() {
             return (
               <div
                 key={a.label}
-                className="card-modern rounded-2xl p-7 flex flex-col"
-                style={{ borderTop: `3px solid ${a.color}` }}
+                className="rounded-2xl p-7 flex flex-col"
+                style={{
+                  background: "#ffffff",
+                  border: "1px solid #e2e2e2",
+                  borderTop: "3px solid #2ecc71",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+                }}
               >
                 <div
                   className="flex items-center justify-center rounded-xl mb-4"
-                  style={{ width: 44, height: 44, background: `${a.color}14` }}
+                  style={{ width: 44, height: 44, background: "rgba(46,204,113,0.12)" }}
                 >
-                  <Icon size={22} style={{ color: a.color }} />
+                  <Icon size={22} style={{ color: "#2ecc71" }} />
                 </div>
-                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", color: a.color, marginBottom: "0.25rem" }}>
+                <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1.2rem", color: "#111111", marginBottom: "0.5rem" }}>
                   {a.label}
                 </div>
-                <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.75rem" }}>
-                  {a.tagline}
-                </div>
-                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#D1D5DB", lineHeight: 1.65, marginBottom: "1rem" }}>
+                <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#111111", lineHeight: 1.65, marginBottom: "1rem" }}>
                   {a.desc}
                 </p>
                 <ul style={{ display: "flex", flexDirection: "column", gap: "0.45rem", marginBottom: "1.25rem", flex: 1 }}>
                   {a.useCases.map((uc) => (
                     <li key={uc} style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem" }}>
-                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: a.color, display: "inline-block", flexShrink: 0, marginTop: "0.4rem" }} />
-                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8125rem", color: "#D1D5DB", lineHeight: 1.5 }}>{uc}</span>
+                      <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#2ecc71", display: "inline-block", flexShrink: 0, marginTop: "0.5rem" }} />
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#111111", lineHeight: 1.5 }}>{uc}</span>
                     </li>
                   ))}
                 </ul>
@@ -122,12 +108,12 @@ export default function AudienceSection() {
                   href={a.href}
                   style={{
                     display: "inline-flex", alignItems: "center", gap: "0.375rem",
-                    fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8125rem",
-                    color: a.color, textDecoration: "none", marginTop: "auto",
-                    paddingTop: "0.75rem", borderTop: "1px solid #F3F4F6",
+                    fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "1rem",
+                    color: "#111111", textDecoration: "none", marginTop: "auto",
+                    paddingTop: "0.75rem", borderTop: "1px solid #e2e2e2",
                   }}
                 >
-                  {a.cta} <ArrowRight size={13} />
+                  {a.cta} <ArrowRight size={13} style={{ color: "#2ecc71" }} />
                 </a>
               </div>
             );

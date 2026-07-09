@@ -1,7 +1,7 @@
 /**
  * Case Studies Page — UpskillinTech
  * URL: /resources/case-studies
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -21,7 +21,7 @@ const CASE_STUDIES = [
     id: 1,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
+    icon: <Briefcase size={20} style={{ color: "#2ecc71" }} />,
     name: "Sarah O.",
     role: "Senior Project Manager",
     industry: "Financial Services",
@@ -35,21 +35,21 @@ const CASE_STUDIES = [
       "Stakeholder reports drafted in 20 minutes instead of 2 hours",
       "Promoted to Programme Director within 8 months",
     ],
-    quote: "I used to feel like I was always behind. Now I'm always ahead. AI didn't replace my thinking — it gave me time to actually think.",
+    quote: "I used to feel like I was always behind. Now I am always ahead. AI did not replace my thinking — it gave me time to actually think.",
     timeToResult: "6 weeks",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     id: 2,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
+    icon: <Briefcase size={20} style={{ color: "#2ecc71" }} />,
     name: "James A.",
     role: "Independent Consultant",
     industry: "Management Consulting",
-    location: "Lagos, Nigeria",
+    location: "International",
     headline: "How a Consultant Doubled His Client Capacity Without Hiring",
-    challenge: "James was capped at 3 clients at a time due to the research, report writing, and proposal work required. He wanted to scale but couldn't afford to hire without first increasing revenue.",
+    challenge: "James was capped at 3 clients at a time due to the research, report writing, and proposal work required. He wanted to scale but could not afford to hire without first increasing revenue.",
     solution: "James integrated AI into his research workflow, using AI to analyse industry reports, synthesise data, and generate first drafts of client deliverables. He also built an AI-powered proposal template system that reduced proposal creation from 8 hours to 2.",
     results: [
       "Scaled from 3 to 6 active clients simultaneously",
@@ -57,15 +57,15 @@ const CASE_STUDIES = [
       "Research-to-insight time cut from 2 days to 4 hours",
       "Revenue increased by 85% in 12 months",
     ],
-    quote: "I thought AI was for tech companies. Now I can't imagine running my consulting practice without it. It's like having a brilliant junior analyst available 24/7.",
+    quote: "I thought AI was for tech companies. Now I cannot imagine running my consulting practice without it. It is like having a brilliant junior analyst available 24/7.",
     timeToResult: "8 weeks",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     id: 3,
     category: "professional",
     categoryLabel: "Professional",
-    icon: <Briefcase size={20} style={{ color: "#0D9488" }} />,
+    icon: <Briefcase size={20} style={{ color: "#2ecc71" }} />,
     name: "Dr. Priya M.",
     role: "University Lecturer",
     industry: "Higher Education",
@@ -81,13 +81,13 @@ const CASE_STUDIES = [
     ],
     quote: "My students get better feedback faster, and I have time to actually research again. AI gave me back my academic identity.",
     timeToResult: "4 weeks",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     id: 4,
     category: "organisation",
     categoryLabel: "Organisation",
-    icon: <Users size={20} style={{ color: "#8B9E1A" }} />,
+    icon: <Users size={20} style={{ color: "#2ecc71" }} />,
     name: "TechBridge Solutions",
     role: "50-person IT Services Company",
     industry: "Technology",
@@ -101,15 +101,15 @@ const CASE_STUDIES = [
       "Internal reporting time reduced by 40% across departments",
       "Launched 2 new AI-enhanced service offerings within 6 months",
     ],
-    quote: "We went from scattered AI experiments to a coherent AI strategy. UpskillinTech didn't just train our team — they helped us think differently about how we work.",
+    quote: "We went from scattered AI experiments to a coherent AI strategy. UpskillinTech did not just train our team — they helped us think differently about how we work.",
     timeToResult: "90 days",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     id: 5,
     category: "organisation",
     categoryLabel: "Organisation",
-    icon: <Users size={20} style={{ color: "#8B9E1A" }} />,
+    icon: <Users size={20} style={{ color: "#2ecc71" }} />,
     name: "Meridian HR Group",
     role: "HR Consultancy",
     industry: "Human Resources",
@@ -125,13 +125,13 @@ const CASE_STUDIES = [
     ],
     quote: "Our consultants now spend their time on what actually matters — understanding clients and candidates. The AI handles the paperwork.",
     timeToResult: "6 weeks",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     id: 6,
     category: "ministry",
     categoryLabel: "Ministry & Education",
-    icon: <Star size={20} style={{ color: "#E6B800" }} />,
+    icon: <Star size={20} style={{ color: "#2ecc71" }} />,
     name: "Pastor David K.",
     role: "Senior Pastor",
     industry: "Faith Community",
@@ -147,19 +147,19 @@ const CASE_STUDIES = [
     ],
     quote: "I was sceptical at first — I thought AI would make my sermons feel less personal. The opposite happened. I have more time to pray, study, and listen to my congregation.",
     timeToResult: "3 weeks",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
   {
     id: 7,
     category: "ministry",
     categoryLabel: "Ministry & Education",
-    icon: <Star size={20} style={{ color: "#E6B800" }} />,
+    icon: <Star size={20} style={{ color: "#2ecc71" }} />,
     name: "Bright Futures Academy",
     role: "Independent School",
     industry: "K-12 Education",
     location: "Accra, Ghana",
     headline: "How a School Used AI to Improve Student Outcomes and Teacher Wellbeing",
-    challenge: "Teachers at Bright Futures were overwhelmed with lesson planning, marking, and parent communications. Teacher burnout was rising, and the school needed a sustainable solution that didn't require hiring more staff.",
+    challenge: "Teachers at Bright Futures were overwhelmed with lesson planning, marking, and parent communications. Teacher burnout was rising, and the school needed a sustainable solution that did not require hiring more staff.",
     solution: "UpskillinTech delivered an AI integration workshop for all teaching staff. Teachers learned to use AI for lesson plan generation, differentiated learning materials, parent communication templates, and formative assessment design.",
     results: [
       "Lesson planning time reduced by 50% across all departments",
@@ -167,9 +167,9 @@ const CASE_STUDIES = [
       "Parent communication response time improved by 70%",
       "Student test scores improved by an average of 12% in one term",
     ],
-    quote: "Our teachers are energised again. They're spending time teaching and connecting with students — not drowning in paperwork. AI changed the culture of our school.",
+    quote: "Our teachers are energised again. They are spending time teaching and connecting with students — not drowning in paperwork. AI changed the culture of our school.",
     timeToResult: "4 weeks",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
@@ -194,7 +194,7 @@ export default function CaseStudies() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Case Studies</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Real People. Real Results. Real AI Integration.
             </h1>
@@ -204,7 +204,7 @@ export default function CaseStudies() {
           </div>
         </div>
         {/* Metrics bar */}
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #2ecc71 0%, #2ecc71 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {METRICS.map(m => (
@@ -229,7 +229,7 @@ export default function CaseStudies() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
+                  background: activeCategory === cat.id ? "#2ecc71" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -336,7 +336,7 @@ export default function CaseStudies() {
             Join the professionals and organisations already transforming how they work with AI. The AI-Enabled Professional Program gives you the skills, frameworks, and support to get real results.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Join the Program
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-7 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>

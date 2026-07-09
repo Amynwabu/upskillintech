@@ -1,6 +1,6 @@
 /**
  * Contact Page — /contact
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Accent Yellow (#2ecc71)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Inquiry Categories (4 cards), Contact Form, Alternative Contact
  */
@@ -31,7 +31,7 @@ const inquiryCategories = [
       "General questions about UpskillinTech",
     ],
     cta: "Contact Us",
-    color: "#0D9488",
+    color: "#2ecc71",
     value: "General Inquiry",
   },
   {
@@ -39,7 +39,7 @@ const inquiryCategories = [
     title: "Enterprise Consultation",
     tagline: "AI training and consulting for organisations.",
     description:
-      "For organisations and institutions interested in integrating AI into their teams, workflows, or operations.",
+      "For organisations interested in integrating AI into their teams, workflows, or operations.",
     examples: [
       "AI productivity training for teams",
       "AI adoption workshops for leadership",
@@ -47,7 +47,7 @@ const inquiryCategories = [
       "Organisational AI strategy development",
     ],
     cta: "Request Consultation",
-    color: "#8B9E1A",
+    color: "#2ecc71",
     value: "Enterprise Consultation",
   },
   {
@@ -55,7 +55,7 @@ const inquiryCategories = [
     title: "Partnership Inquiry",
     tagline: "Collaboration with UpskillinTech.",
     description:
-      "For educational institutions, organisations, and innovation communities interested in promoting AI literacy and responsible technology adoption.",
+      "For educational organisations, organisations, and innovation communities interested in promoting AI literacy and responsible technology adoption.",
     examples: [
       "Educational collaborations",
       "Research initiatives",
@@ -63,7 +63,7 @@ const inquiryCategories = [
       "Community AI learning initiatives",
     ],
     cta: "Discuss Partnership",
-    color: "#E6B800",
+    color: "#2ecc71",
     value: "Partnership Inquiry",
   },
   {
@@ -79,7 +79,7 @@ const inquiryCategories = [
       "Professional development sessions",
     ],
     cta: "Invite Speaker",
-    color: "#0D9488",
+    color: "#2ecc71",
     value: "Speaking & Events",
   },
 ];
@@ -102,7 +102,7 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
   const contactMutation = trpc.forms.contact.useMutation({
-    onSuccess: () => { setSubmitted(true); toast.success("Message sent! We'll be in touch soon."); },
+    onSuccess: () => { setSubmitted(true); toast.success("Message sent! We will be in touch soon."); },
     onError: (err: { message?: string }) => toast.error(err.message || "Failed to send message. Please try again."),
   });
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -146,7 +146,7 @@ export default function Contact() {
         <div className="absolute top-8 right-16 w-56 h-56 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }} />
         <div className="absolute bottom-4 left-12 w-40 h-40 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #2ecc71 0%, transparent 70%)" }} />
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
@@ -167,9 +167,9 @@ export default function Contact() {
           <a
             href="#contact-form"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-            style={{ background: "#E6B800", color: "#F3F4F6" }}
+            style={{ background: "#2ecc71", color: "#F3F4F6" }}
             onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}
           >
             Send an Inquiry <ArrowRight size={16} />
           </a>
@@ -181,11 +181,11 @@ export default function Contact() {
             {[
               { label: "Professionals", desc: "Exploring AI programmes" },
               { label: "Organisations", desc: "Seeking AI training" },
-              { label: "Institutions", desc: "Interested in collaboration" },
+              { label: "Organisations", desc: "Interested in collaboration" },
               { label: "Event Organisers", desc: "Inviting speakers" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
-                style={{ background: "rgba(13,148,136,0.10)" }}>
+                style={{ background: "rgba(46,204,113,0.10)" }}>
                 <p className="font-poppins font-semibold text-sm">{item.label}</p>
                 <p className="text-xs opacity-80 mt-0.5">{item.desc}</p>
               </div>
@@ -199,7 +199,7 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>How Can We Help?</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>How Can We Help?</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Select Your Inquiry Type
             </h2>
@@ -276,9 +276,9 @@ export default function Contact() {
             {/* Left — info */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-                style={{ background: "#10231C", color: "#0D9488" }}>Send a Message</span>
+                style={{ background: "#10231C", color: "#2ecc71" }}>Send a Message</span>
               <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-5" style={{ color: "#F3F4F6" }}>
-                We'd Love to Hear From You
+                We would Love to Hear From You
               </h2>
               <p className="text-lg leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
                 Use the form to share your inquiry and a member of the UpskillinTech
@@ -293,13 +293,13 @@ export default function Contact() {
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { step: "01", title: "Confirmation", desc: "You'll receive an on-screen confirmation that your message has been received." },
+                    { step: "01", title: "Confirmation", desc: "You will receive an on-screen confirmation that your message has been received." },
                     { step: "02", title: "Review", desc: "Our team reviews your inquiry and routes it to the appropriate person." },
                     { step: "03", title: "Response", desc: "A team member will respond within 2 business days with next steps." },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-poppins font-bold text-xs text-white"
-                        style={{ background: "#0D9488" }}>
+                        style={{ background: "#2ecc71" }}>
                         {item.step}
                       </div>
                       <div>
@@ -318,13 +318,13 @@ export default function Contact() {
                   style={{ borderColor: "#1F2937" }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
                     style={{ background: "#10231C" }}>
-                    <Mail size={18} style={{ color: "#0D9488" }} />
+                    <Mail size={18} style={{ color: "#2ecc71" }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>Email</p>
                     <p className="text-sm font-medium" style={{ color: "#F3F4F6" }}>info@upskillintech.com</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#0D9488" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#2ecc71" }} />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-xl border transition-all hover:shadow-md group"
@@ -337,7 +337,7 @@ export default function Contact() {
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>LinkedIn</p>
                     <p className="text-sm font-medium" style={{ color: "#F3F4F6" }}>UpskillinTech Official Page</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#0D9488" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#2ecc71" }} />
                 </a>
               </div>
             </div>
@@ -348,7 +348,7 @@ export default function Contact() {
                 <div className="rounded-2xl border p-10 text-center" style={{ borderColor: "#1F2937" }}>
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
                     style={{ background: "#10231C" }}>
-                    <CheckCircle size={32} style={{ color: "#0D9488" }} />
+                    <CheckCircle size={32} style={{ color: "#2ecc71" }} />
                   </div>
                   <h3 className="font-poppins font-bold text-xl mb-3" style={{ color: "#F3F4F6" }}>
                     Message Received!
@@ -360,9 +360,9 @@ export default function Contact() {
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", inquiryType: "", message: "" }); setSelectedCategory(null); }}
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all"
-                    style={{ background: "#0D9488", color: "#fff" }}
+                    style={{ background: "#2ecc71", color: "#fff" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "#2ea040")}
-                    onMouseLeave={e => (e.currentTarget.style.background = "#0D9488")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}
                   >
                     Send Another Message
                   </button>
@@ -375,7 +375,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Name <span style={{ color: "#0D9488" }}>*</span>
+                        Name <span style={{ color: "#2ecc71" }}>*</span>
                       </label>
                       <input
                         type="text"
@@ -384,14 +384,14 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, name: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                        onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Email <span style={{ color: "#0D9488" }}>*</span>
+                        Email <span style={{ color: "#2ecc71" }}>*</span>
                       </label>
                       <input
                         type="email"
@@ -400,7 +400,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, email: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                        onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -416,7 +416,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, organisation: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                        onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -430,7 +430,7 @@ export default function Contact() {
                         onChange={e => { setForm({ ...form, inquiryType: e.target.value }); setSelectedCategory(e.target.value); }}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: form.inquiryType ? "#1C1C1C" : "#999" }}
-                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                        onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       >
                         <option value="">Select inquiry type</option>
@@ -440,7 +440,7 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Message <span style={{ color: "#0D9488" }}>*</span>
+                        Message <span style={{ color: "#2ecc71" }}>*</span>
                       </label>
                       <textarea
                         rows={5}
@@ -449,7 +449,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, message: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all resize-none"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                        onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -458,15 +458,15 @@ export default function Contact() {
                       type="submit"
                       disabled={submitting}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60"
-                      style={{ background: "#0D9488", color: "#fff" }}
+                      style={{ background: "#2ecc71", color: "#fff" }}
                       onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#2ea040"; }}
-                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#0D9488"; }}
+                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#2ecc71"; }}
                     >
                       {submitting ? "Sending…" : <><Send size={15} /> Send Message</>}
                     </button>
 
                     <p className="text-xs text-center" style={{ color: "#999" }}>
-                      We'll respond within 2 business days.
+                      We will respond within 2 business days.
                     </p>
                   </form>
                 </div>
@@ -480,7 +480,7 @@ export default function Contact() {
       <section className="section-py" style={{ background: "#11161A" }}>
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-            style={{ background: "#10231C", color: "#0D9488" }}>Other Ways to Connect</span>
+            style={{ background: "#10231C", color: "#2ecc71" }}>Other Ways to Connect</span>
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3" style={{ color: "#F3F4F6" }}>
             Find Us Online
           </h2>
@@ -495,7 +495,7 @@ export default function Contact() {
                 label: "Email",
                 value: "info@upskillintech.com",
                 href: "mailto:info@upskillintech.com",
-                color: "#0D9488",
+                color: "#2ecc71",
               },
               {
                 icon: Linkedin,
@@ -544,7 +544,7 @@ export default function Contact() {
 
           {/* Response time note */}
           <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm"
-            style={{ background: "#10231C", color: "#0D9488" }}>
+            style={{ background: "#10231C", color: "#2ecc71" }}>
             <CheckCircle size={15} />
             We aim to respond to all inquiries within 2 business days.
           </div>
@@ -553,7 +553,7 @@ export default function Contact() {
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="py-14"
-        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 60%, #2ecc71 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Start Your AI Journey?
@@ -565,14 +565,14 @@ export default function Contact() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Explore Programs <ArrowRight size={15} />
             </a>
             <a href="/enterprise"
               className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#2ecc71"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Enterprise Solutions
             </a>

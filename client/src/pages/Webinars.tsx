@@ -1,7 +1,7 @@
 /**
  * Webinars Page — UpskillinTech
  * URL: /resources/webinars
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -23,7 +23,7 @@ const UPCOMING = [
     topics: ["AI readiness assessment framework", "Change management for AI adoption", "Building AI-fluent teams", "Common pitfalls and how to avoid them"],
     audience: "Leaders & Managers",
     seats: "Limited to 100 seats",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const UPCOMING = [
     topics: ["AI tools for lesson planning", "Automated feedback frameworks", "Ethical AI use in education", "Practical live demonstrations"],
     audience: "Educators & Trainers",
     seats: "Open registration",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const UPCOMING = [
     topics: ["AI automation for customer service", "Marketing and content creation with AI", "Financial and admin AI tools", "Building your first AI workflow"],
     audience: "Entrepreneurs & SME Owners",
     seats: "Limited to 80 seats",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
@@ -65,8 +65,8 @@ const PAST = [
     speakerRole: "Founder, UpskillinTech",
     views: "1,200+",
     description: "The most-watched UpskillinTech webinar. Dr. Amaka walks through the exact AI productivity system used by programme graduates to save 10+ hours every week — with live demonstrations and Q&A.",
-    highlights: ["Live ChatGPT demonstration", "5-step productivity framework", "Real examples from graduates", "Q&A"],
-    color: "#0D9488",
+    highlights: ["Live AI productivity tools demonstration", "5-step productivity framework", "Real examples from graduates", "Q&A"],
+    color: "#2ecc71",
   },
   {
     id: 5,
@@ -78,7 +78,7 @@ const PAST = [
     views: "850+",
     description: "A hands-on session covering how to design, test, and roll out AI workflows across a team. Includes templates, a live workflow build, and a framework for measuring impact.",
     highlights: ["Live workflow build", "Team rollout framework", "Downloadable templates", "Real case study walkthrough"],
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     id: 6,
@@ -90,7 +90,7 @@ const PAST = [
     views: "620+",
     description: "Specifically designed for pastors, church administrators, and faith community leaders. Covers how AI can support sermon preparation, communication, administration, and community engagement.",
     highlights: ["Sermon preparation with AI", "Church communication templates", "Admin automation tools", "Ethical considerations for ministry AI use"],
-    color: "#E6B800",
+    color: "#2ecc71",
   },
   {
     id: 7,
@@ -102,7 +102,7 @@ const PAST = [
     views: "940+",
     description: "A practical session on writing effective AI prompts for real professional tasks. Includes live examples, common mistakes, and a walkthrough of the 50 AI Prompts Library.",
     highlights: ["Live prompt demonstrations", "Common prompt mistakes", "Prompt templates by use case", "Q&A session"],
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     id: 8,
@@ -114,7 +114,7 @@ const PAST = [
     views: "780+",
     description: "A foundational session for professionals and leaders who are new to AI strategy. Covers the AI landscape, common adoption mistakes, and a simple framework for getting started.",
     highlights: ["AI landscape overview", "Strategy framework", "Common adoption mistakes", "Getting started checklist"],
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
 ];
 
@@ -126,7 +126,7 @@ export default function Webinars() {
   const handleRegister = (e: React.FormEvent, title: string) => {
     e.preventDefault();
     if (!email.trim() || !name.trim()) { toast.error("Please enter your name and email."); return; }
-    toast.success(`You're registered for "${title}"!`, { description: "Check your inbox for the joining link." });
+    toast.success(`You are registered for "${title}"!`, { description: "Check your inbox for the joining link." });
     setEmail(""); setName(""); setSelectedWebinar(null);
   };
 
@@ -142,7 +142,7 @@ export default function Webinars() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Webinars</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Webinars</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Learn Live. Watch On Demand. Grow Every Month.
             </h1>
@@ -158,7 +158,7 @@ export default function Webinars() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #2ecc71 0%, #2ecc71 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "8+", l: "Past Recordings" }, { v: "3", l: "Upcoming Sessions" }, { v: "4,000+", l: "Total Attendees" }, { v: "Free", l: "To Register" }].map(s => (
@@ -195,7 +195,7 @@ export default function Webinars() {
                   </div>
                   <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "#D1D5DB" }}>{w.description}</p>
                   <div className="mb-5">
-                    <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>What You'll Learn</p>
+                    <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: "#9CA3AF" }}>What You will Learn</p>
                     <ul className="space-y-1">
                       {w.topics.map(t => (
                         <li key={t} className="flex items-start gap-2 text-xs" style={{ color: "#D1D5DB" }}>
@@ -273,9 +273,9 @@ export default function Webinars() {
         <div className="container max-w-3xl mx-auto text-center">
           <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Never Miss a Webinar</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get notified about upcoming sessions and receive recordings directly in your inbox.</p>
-          <form onSubmit={(e) => { e.preventDefault(); toast.success("You're on the list!", { description: "We'll notify you about upcoming webinars." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
+          <form onSubmit={(e) => { e.preventDefault(); toast.success("You are on the list!", { description: "We will notify you about upcoming webinars." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               Notify Me
             </button>
           </form>

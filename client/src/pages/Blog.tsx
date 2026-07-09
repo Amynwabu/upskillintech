@@ -1,7 +1,7 @@
 /**
  * Blog Page — UpskillinTech
  * URL: /resources/blog
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -36,7 +36,7 @@ const ARTICLES = [
     category: "workflows",
     categoryLabel: "AI Workflows",
     title: "The Meeting-to-Action AI Workflow: From Transcript to Task List in 5 Minutes",
-    excerpt: "Meetings are productivity killers — unless you use AI to extract value instantly. Here's the exact workflow used by UpskillinTech graduates to turn any meeting into a structured action plan.",
+    excerpt: "Meetings are productivity killers — unless you use AI to extract value instantly. Here is the exact workflow used by UpskillinTech graduates to turn any meeting into a structured action plan.",
     readTime: "6 min read",
     date: "Feb 2025",
     author: "UpskillinTech Team",
@@ -47,20 +47,20 @@ const ARTICLES = [
     id: 3,
     category: "tools",
     categoryLabel: "AI Tools",
-    title: "ChatGPT vs Claude vs Gemini: Which AI Tool Should Professionals Use in 2025?",
-    excerpt: "You don't need all the AI tools — you need the right ones. We tested the top three AI assistants across real professional tasks and here's what we found.",
+    title: "Which AI Assistant Should Professionals Use? A Practical Comparison",
+    excerpt: "You do not need all the AI tools — you need the right ones. We tested the top three AI assistants across real professional tasks and here is what we found.",
     readTime: "10 min read",
     date: "Feb 2025",
     author: "Dr. Amaka Adiuku",
     featured: false,
-    tags: ["AI Tools", "ChatGPT", "Claude"],
+    tags: ["AI Tools", "AI Assistants"],
   },
   {
     id: 4,
     category: "leadership",
     categoryLabel: "AI Leadership",
     title: "How Leaders Can Use AI to Communicate More Clearly and Decide More Confidently",
-    excerpt: "AI doesn't replace leadership — it amplifies it. Discover how executives and managers are using AI to sharpen their communication, speed up decision-making, and lead more effectively.",
+    excerpt: "AI does not replace leadership — it amplifies it. Discover how executives and managers are using AI to sharpen their communication, speed up decision-making, and lead more effectively.",
     readTime: "7 min read",
     date: "Jan 2025",
     author: "Dr. Amaka Adiuku",
@@ -72,7 +72,7 @@ const ARTICLES = [
     category: "strategy",
     categoryLabel: "AI Strategy",
     title: "Building an AI Strategy for Your Organisation: A Step-by-Step Framework",
-    excerpt: "Most organisations want to adopt AI but don't know where to start. This framework breaks down the process into four clear stages — from audit to full integration.",
+    excerpt: "Most organisations want to adopt AI but do not know where to start. This framework breaks down the process into four clear stages — from audit to full integration.",
     readTime: "12 min read",
     date: "Jan 2025",
     author: "UpskillinTech Team",
@@ -89,14 +89,14 @@ const ARTICLES = [
     date: "Dec 2024",
     author: "UpskillinTech Team",
     featured: false,
-    tags: ["AI Prompts", "Productivity", "ChatGPT"],
+    tags: ["AI Prompts", "Productivity", "AI productivity tools"],
   },
   {
     id: 7,
     category: "workflows",
     categoryLabel: "AI Workflows",
     title: "The Research-to-Report Workflow: How to Use AI to Produce Professional Reports Faster",
-    excerpt: "Research doesn't have to take days. With the right AI workflow, you can go from a research question to a polished, structured report in a fraction of the time.",
+    excerpt: "Research does not have to take days. With the right AI workflow, you can go from a research question to a polished, structured report in a fraction of the time.",
     readTime: "9 min read",
     date: "Dec 2024",
     author: "Dr. Amaka Adiuku",
@@ -120,7 +120,7 @@ const ARTICLES = [
     category: "leadership",
     categoryLabel: "AI Leadership",
     title: "AI for Pastors and Church Leaders: Practical Applications for Ministry",
-    excerpt: "Ministry is deeply human — but AI can handle the administrative, creative, and communication tasks that take time away from people. Here's how faith leaders are using AI effectively.",
+    excerpt: "Ministry is deeply human — but AI can handle the administrative, creative, and communication tasks that take time away from people. Here is how faith leaders are using AI effectively.",
     readTime: "7 min read",
     date: "Nov 2024",
     author: "Dr. Amaka Adiuku",
@@ -131,8 +131,8 @@ const ARTICLES = [
     id: 10,
     category: "strategy",
     categoryLabel: "AI Strategy",
-    title: "Why Most AI Adoption Fails — and How to Make Sure Yours Doesn't",
-    excerpt: "The majority of organisations that try to adopt AI give up within six months. The problem isn't the technology — it's the approach. Here's what separates successful AI adoption from failed experiments.",
+    title: "Why Most AI Adoption Fails — and How to Make Sure Yours Does not",
+    excerpt: "The majority of organisations that try to adopt AI give up within six months. The problem is not the technology — it is the approach. Here is what separates successful AI adoption from failed experiments.",
     readTime: "11 min read",
     date: "Oct 2024",
     author: "Dr. Amaka Adiuku",
@@ -144,7 +144,7 @@ const ARTICLES = [
     category: "productivity",
     categoryLabel: "AI Productivity",
     title: "AI for Small Business Owners: How to Compete with Larger Companies Using AI",
-    excerpt: "Small businesses that use AI effectively can outpace competitors ten times their size. Here's how entrepreneurs are using AI to punch above their weight.",
+    excerpt: "Small businesses that use AI effectively can outpace competitors ten times their size. Here is how entrepreneurs are using AI to punch above their weight.",
     readTime: "8 min read",
     date: "Oct 2024",
     author: "UpskillinTech Team",
@@ -156,7 +156,7 @@ const ARTICLES = [
     category: "workflows",
     categoryLabel: "AI Workflows",
     title: "Content Creation at Scale: How to Use AI to Produce More Without Burning Out",
-    excerpt: "Content creators, marketers, and communicators are using AI to multiply their output without multiplying their hours. Here's the exact workflow that makes it possible.",
+    excerpt: "Content creators, marketers, and communicators are using AI to multiply their output without multiplying their hours. Here is the exact workflow that makes it possible.",
     readTime: "7 min read",
     date: "Sep 2024",
     author: "UpskillinTech Team",
@@ -174,11 +174,11 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  productivity: "#0D9488",
-  workflows: "#8B9E1A",
-  tools: "#E6B800",
-  leadership: "#0D9488",
-  strategy: "#8B9E1A",
+  productivity: "#2ecc71",
+  workflows: "#2ecc71",
+  tools: "#2ecc71",
+  leadership: "#2ecc71",
+  strategy: "#2ecc71",
 };
 
 export default function Blog() {
@@ -196,7 +196,7 @@ export default function Blog() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Practical Insights on AI for the Modern Professional
             </h1>
@@ -212,7 +212,7 @@ export default function Blog() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #2ecc71 0%, #2ecc71 100%)" }}>
           <div className="container py-3">
             <div className="flex flex-wrap gap-6 justify-center">
               {CATEGORIES.slice(1).map(c => (
@@ -232,14 +232,14 @@ export default function Blog() {
             <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Featured Articles</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featured.map(article => (
-                <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #0D948820", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
-                  <div className="h-2" style={{ background: "linear-gradient(90deg, #0D9488, #E6B800)" }} />
+                <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #2ecc7120", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
+                  <div className="h-2" style={{ background: "linear-gradient(90deg, #2ecc71, #2ecc71)" }} />
                   <div className="p-7">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#10231C", color: "#0D9488" }}>
+                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#10231C", color: "#2ecc71" }}>
                         {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                       </span>
-                      <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "#FEFCE8", color: "#8B6914" }}>Featured</span>
+                      <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "rgba(46,204,113,0.14)", color: "#111111" }}>Featured</span>
                     </div>
                     <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "#9CA3AF" }}>{article.excerpt}</p>
@@ -249,7 +249,7 @@ export default function Blog() {
                         <span>{article.date}</span>
                         <span>{article.author}</span>
                       </div>
-                      <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#0D9488" }}>
+                      <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#2ecc71" }}>
                         Read <ChevronRight size={14} />
                       </button>
                     </div>
@@ -272,7 +272,7 @@ export default function Blog() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-4 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#0D9488" : "#fff",
+                  background: activeCategory === cat.id ? "#2ecc71" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -286,9 +286,9 @@ export default function Blog() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(activeCategory === "all" ? rest : filtered).map(article => (
               <div key={article.id} className="rounded-xl bg-[#151B23] flex flex-col" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                <div className="h-1.5 rounded-t-xl" style={{ background: CATEGORY_COLORS[article.category] || "#0D9488" }} />
+                <div className="h-1.5 rounded-t-xl" style={{ background: CATEGORY_COLORS[article.category] || "#2ecc71" }} />
                 <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#0D9488" }}>
+                  <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#2ecc71" }}>
                     {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                   </span>
                   <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
@@ -304,7 +304,7 @@ export default function Blog() {
                     <span className="text-xs flex items-center gap-1" style={{ color: "#9CA3AF" }}>
                       <Clock size={12} /> {article.readTime} · {article.date}
                     </span>
-                    <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#0D9488" }}>
+                    <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#2ecc71" }}>
                       Read <ChevronRight size={14} />
                     </button>
                   </div>
@@ -328,7 +328,7 @@ export default function Blog() {
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get the latest AI insights, guides, and workflows delivered to your inbox every week.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               Subscribe
             </button>
           </div>
@@ -338,7 +338,7 @@ export default function Blog() {
       {/* Back to Resources */}
       <section className="py-8" style={{ background: "#151B23" }}>
         <div className="container text-center">
-          <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#0D9488" }}>
+          <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#2ecc71" }}>
             ← Back to Resources Hub
           </Link>
         </div>

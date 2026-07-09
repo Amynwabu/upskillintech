@@ -13,7 +13,7 @@ const testimonials = [
     role: "Operations professional",
     company: "AI Skills Workshop",
     initials: "WA",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     quote: "The webinar made AI feel accessible. The examples were clear, grounded, and relevant to the work my team actually does.",
@@ -21,7 +21,7 @@ const testimonials = [
     role: "Team lead",
     company: "Live AI Webinar",
     initials: "WP",
-    color: "#16A34A",
+    color: "#2ecc71",
   },
   {
     quote: "I appreciated the responsible approach. It was not hype; it was a clear framework for deciding when AI helps and when a human should lead.",
@@ -29,7 +29,7 @@ const testimonials = [
     role: "Programme coordinator",
     company: "Responsible AI Session",
     initials: "CL",
-    color: "#7C3AED",
+    color: "#2ecc71",
   },
   {
     quote: "The templates helped me move from experimenting with tools to building repeatable workflows for writing, planning, and reporting.",
@@ -37,7 +37,7 @@ const testimonials = [
     role: "Independent consultant",
     company: "AI Workflow Session",
     initials: "CP",
-    color: "#D97706",
+    color: "#2ecc71",
   },
 ];
 
@@ -64,13 +64,13 @@ export default function TestimonialsSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-20 lg:py-28" style={{ background: "#0F172A" }}>
+    <section className="py-20 lg:py-28" style={{ background: "#0d1117" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         <div className={`text-center max-w-2xl mx-auto mb-14 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <div className="section-label mb-3" style={{ color: "#0D9488" }}>Social Proof</div>
+          <div className="section-label mb-3" style={{ color: "#2ecc71" }}>Social Proof</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2 }}>
             What Participants{" "}
-            <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Are Saying
             </span>
           </h2>
@@ -95,7 +95,7 @@ export default function TestimonialsSection() {
             >
               <div className="flex items-center gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((s) => (
-                  <Star key={s} size={13} fill="#D97706" style={{ color: "#D97706" }} />
+                  <Star key={s} size={13} fill="#2ecc71" style={{ color: "#2ecc71" }} />
                 ))}
               </div>
 
@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-sm" style={{ fontFamily: "'Sora', sans-serif" }}>{t.name}</div>
-                  <div className="text-xs" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>{t.role} - {t.company}</div>
+                  <div style={{ color: "#D1D5DB", fontFamily: "'DM Sans', sans-serif", fontSize: "1rem" }}>{t.role} · {t.company}</div>
                 </div>
               </div>
             </div>

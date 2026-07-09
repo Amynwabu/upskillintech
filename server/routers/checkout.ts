@@ -29,7 +29,7 @@ export const checkoutRouter = router({
       success_url: `${origin}/masterclass/success`,
       cancel_url: `${origin}/masterclass`,
       allow_promotion_codes: true,
-      metadata: { product: "masterclass_july_2026" },
+      metadata: { product: "masterclass_august_2026" },
     });
 
     if (!session.url) {

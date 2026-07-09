@@ -31,12 +31,12 @@ export interface LearningPath {
 export const quizQuestions: QuizQuestion[] = [
   {
     id: "experience",
-    question: "What's your current experience with AI?",
-    description: "Help us understand where you're starting from",
+    question: "What is your current experience with AI?",
+    description: "Help us understand where you are starting from",
     options: [
       {
         id: "exp-none",
-        text: "Complete beginner - I'm just getting started",
+        text: "Complete beginner - I am just getting started",
         value: "none",
         scores: { beginner: 3, technical: 0 }
       },
@@ -48,7 +48,7 @@ export const quizQuestions: QuizQuestion[] = [
       },
       {
         id: "exp-intermediate",
-        text: "Intermediate - I've used AI tools before",
+        text: "Intermediate - I have used AI tools before",
         value: "intermediate",
         scores: { intermediate: 3, technical: 2 }
       },
@@ -62,7 +62,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: "goal",
-    question: "What's your primary goal?",
+    question: "What is your primary goal?",
     description: "What do you want to achieve with AI?",
     options: [
       {
@@ -161,7 +161,7 @@ export const quizQuestions: QuizQuestion[] = [
   },
   {
     id: "learning-style",
-    question: "What's your preferred learning style?",
+    question: "What is your preferred learning style?",
     description: "How do you learn best?",
     options: [
       {

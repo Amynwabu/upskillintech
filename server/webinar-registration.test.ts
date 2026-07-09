@@ -10,7 +10,7 @@ describe('Webinar Registration System', () => {
       company: 'Test Company',
       role: 'Software Developer',
       webinarTitle: 'Build the Right AI Skillset',
-      webinarDate: 'Saturday, 17 January 2026 - 7PM UK / 8PM Nigeria',
+      webinarDate: 'Saturday, 17 January 2026 - 7PM UK',
     };
 
     const result = await registerWebinar(testRegistration);
@@ -41,7 +41,7 @@ describe('Webinar Registration System', () => {
       name: 'Minimal User',
       email: 'minimal@example.com',
       webinarTitle: 'Build the Right AI Skillset',
-      webinarDate: 'Saturday, 17 January 2026 - 7PM UK / 8PM Nigeria',
+      webinarDate: 'Saturday, 17 January 2026 - 7PM UK',
     };
 
     const result = await registerWebinar(minimalRegistration);
