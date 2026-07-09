@@ -1,7 +1,7 @@
 /**
  * About Page — UpskillinTech
  * URL: /about
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800) + Dark (#1C1C1C)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Yellow (#2ecc71) + Dark (#1C1C1C)
  * Font: Sora (headings) + Inter (body)
  * 8 Sections: Hero, Mission, Founder, Vision, Ecosystem, Partnerships, Impact, Final CTA
  */
@@ -46,17 +46,17 @@ function CountUp({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const MISSION_PILLARS = [
-  { icon: <BookOpen size={24} />, label: "Understand AI", desc: "Build foundational AI literacy for professionals at every level — from awareness to confident application.", color: "#0D9488" },
-  { icon: <Zap size={24} />, label: "Integrate AI", desc: "Embed AI into real workflows and daily work processes — not just as a tool, but as a productivity system.", color: "#8B9E1A" },
-  { icon: <TrendingUp size={24} />, label: "Build Productivity", desc: "Develop AI-powered productivity systems that save hours every week and improve decision quality.", color: "#E6B800" },
-  { icon: <Target size={24} />, label: "Lead Responsibly", desc: "Equip leaders to guide their teams and organisations through AI adoption with clarity and confidence.", color: "#0D9488" },
+  { icon: <BookOpen size={24} />, label: "Understand AI", desc: "Build foundational AI literacy for professionals at every level — from awareness to confident application.", color: "#2ecc71" },
+  { icon: <Zap size={24} />, label: "Integrate AI", desc: "Embed AI into real workflows and daily work processes — not just as a tool, but as a productivity system.", color: "#2ecc71" },
+  { icon: <TrendingUp size={24} />, label: "Build Productivity", desc: "Develop AI-powered productivity systems that save hours every week and improve decision quality.", color: "#2ecc71" },
+  { icon: <Target size={24} />, label: "Lead Responsibly", desc: "Equip leaders to guide their teams and organisations through AI adoption with clarity and confidence.", color: "#2ecc71" },
 ];
 
 const FOUNDER_EXPERTISE = [
-  { icon: <Brain size={22} />, label: "AI Expertise", desc: "Research and development in artificial intelligence and machine learning systems, with a focus on practical applications in professional environments.", color: "#0D9488" },
-  { icon: <Microscope size={22} />, label: "Robotics & Automation", desc: "Work in robotics and autonomous systems, exploring how intelligent systems perceive and interact with complex environments.", color: "#8B9E1A" },
-  { icon: <Award size={22} />, label: "Research Leadership", desc: "Experience leading research initiatives and developing AI-driven solutions that bridge academic rigour with industry relevance.", color: "#E6B800" },
-  { icon: <Handshake size={22} />, label: "Industry Collaboration", desc: "Collaboration with organisations and research partners to develop practical AI applications that create measurable impact.", color: "#0D9488" },
+  { icon: <Brain size={22} />, label: "AI Expertise", desc: "Research and development in artificial intelligence and machine learning systems, with a focus on practical applications in professional environments.", color: "#2ecc71" },
+  { icon: <Microscope size={22} />, label: "Robotics & Automation", desc: "Work in robotics and autonomous systems, exploring how intelligent systems perceive and interact with complex environments.", color: "#2ecc71" },
+  { icon: <Award size={22} />, label: "Research Leadership", desc: "Experience leading research initiatives and developing AI-driven solutions that bridge academic rigour with industry relevance.", color: "#2ecc71" },
+  { icon: <Handshake size={22} />, label: "Industry Collaboration", desc: "Collaboration with organisations and research partners to develop practical AI applications that create measurable impact.", color: "#2ecc71" },
 ];
 
 const VISION_POINTS = [
@@ -66,24 +66,17 @@ const VISION_POINTS = [
 ];
 
 const ECOSYSTEM_STAGES = [
-  { step: "01", label: "Awareness", desc: "Articles, videos, and insights on AI — building foundational understanding of what AI is and how it applies to real work.", icon: <BookOpen size={28} />, color: "#0D9488" },
-  { step: "02", label: "Learning", desc: "Structured programmes that build AI capability — from foundations to advanced workflows and leadership applications.", icon: <GraduationCap size={28} />, color: "#8B9E1A" },
-  { step: "03", label: "Application", desc: "Real-world workflows and productivity systems — turning knowledge into daily practice that saves time and improves decisions.", icon: <Zap size={28} />, color: "#E6B800" },
-  { step: "04", label: "Community", desc: "A network of professionals and leaders exploring AI together — sharing wins, workflows, and accountability.", icon: <Users size={28} />, color: "#0D9488" },
+  { step: "01", label: "Awareness", desc: "Articles, videos, and insights on AI — building foundational understanding of what AI is and how it applies to real work.", icon: <BookOpen size={28} />, color: "#2ecc71" },
+  { step: "02", label: "Learning", desc: "Structured programmes that build AI capability — from foundations to advanced workflows and leadership applications.", icon: <GraduationCap size={28} />, color: "#2ecc71" },
+  { step: "03", label: "Application", desc: "Real-world workflows and productivity systems — turning knowledge into daily practice that saves time and improves decisions.", icon: <Zap size={28} />, color: "#2ecc71" },
+  { step: "04", label: "Community", desc: "A network of professionals and leaders exploring AI together — sharing wins, workflows, and accountability.", icon: <Users size={28} />, color: "#2ecc71" },
 ];
 
 const PARTNERSHIP_TYPES = [
-  { icon: <GraduationCap size={20} />, label: "AI Training Programmes", desc: "Co-develop and deliver AI literacy and productivity programmes for your institution or organisation." },
+  { icon: <GraduationCap size={20} />, label: "AI Training Programmes", desc: "Co-develop and deliver AI literacy and productivity programmes for your organisation or organisation." },
   { icon: <Microscope size={20} />, label: "Research Collaboration", desc: "Partner on AI research initiatives that bridge academic insight with practical, real-world application." },
-  { icon: <Globe size={20} />, label: "AI Literacy Initiatives", desc: "Institutional programmes designed to build AI literacy at scale — for students, staff, or community members." },
+  { icon: <Globe size={20} />, label: "AI Literacy Initiatives", desc: "Organisation-wide programmes designed to build AI literacy at scale — for students, staff, or community members." },
   { icon: <Network size={20} />, label: "Community Technology", desc: "Technology and AI programmes for community organisations, faith communities, and social enterprises." },
-];
-
-const IMPACT_STATS = [
-  { value: 1000, suffix: "+", label: "Professionals Trained", desc: "Individuals who have completed UpskillinTech programmes or attended live sessions." },
-  { value: 50, suffix: "+", label: "Organisations Engaged", desc: "Businesses, institutions, and community organisations supported with AI training and strategy." },
-  { value: 2500, suffix: "+", label: "Community Members", desc: "Professionals and leaders in the UpskillinTech network, sharing AI insights and workflows." },
-  { value: 95, suffix: "%", label: "Satisfaction Rate", desc: "Of programme graduates report improved AI confidence and measurable productivity gains." },
 ];
 
 // ─── Component ────────────────────────────────────────────────────────────────
@@ -99,7 +92,7 @@ export default function About() {
         <div className="container relative z-10 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Enabling People and Organizations to Thrive in the Age of AI
               </h1>
@@ -110,7 +103,7 @@ export default function About() {
                 <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#F3F4F6", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <ArrowRight size={16} /> Explore Programs
                 </Link>
-                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(46,204,113,0.10)", color: "#F3F4F6", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <Users size={16} /> Join Community
                 </Link>
               </div>
@@ -120,7 +113,7 @@ export default function About() {
               <div className="relative w-80 h-80">
                 {/* Central circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(13,148,136,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
+                  <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(46,204,113,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
                     <Brain size={32} style={{ color: "#F3F4F6" }} />
                     <span className="text-xs font-bold mt-1" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>AI-Enabled</span>
                   </div>
@@ -147,19 +140,6 @@ export default function About() {
                 {/* Orbit ring */}
                 <div className="absolute inset-4 rounded-full" style={{ border: "1.5px dashed rgba(255,255,255,0.30)" }} />
               </div>
-            </div>
-          </div>
-        </div>
-        {/* Stats bar */}
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
-          <div className="container py-4">
-            <div className="flex flex-wrap gap-8 justify-center text-center">
-              {[{ v: "1,000+", l: "Professionals Trained" }, { v: "50+", l: "Organisations Engaged" }, { v: "2,500+", l: "Community Members" }, { v: "95%", l: "Satisfaction Rate" }].map(s => (
-                <div key={s.l}>
-                  <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
-                  <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -207,7 +187,7 @@ export default function About() {
             {/* Left: Photo + credentials */}
             <div className="flex flex-col items-center lg:items-start">
               <div className="relative mb-6">
-                <div className="w-52 h-52 rounded-2xl overflow-hidden" style={{ border: "4px solid #0D9488" }}>
+                <div className="w-52 h-52 rounded-2xl overflow-hidden" style={{ border: "4px solid #2ecc71" }}>
                   <img
                     src="/founder-amaka-adiuku.png"
                     alt="Dr. Amaka Adiuku"
@@ -216,7 +196,7 @@ export default function About() {
                       const el = e.currentTarget as HTMLImageElement;
                       el.style.display = "none";
                       const parent = el.parentElement!;
-                      parent.style.background = "linear-gradient(135deg, #0D9488, #E6B800)";
+                      parent.style.background = "linear-gradient(135deg, #2ecc71, #2ecc71)";
                       parent.style.display = "flex";
                       parent.style.alignItems = "center";
                       parent.style.justifyContent = "center";
@@ -224,22 +204,22 @@ export default function About() {
                     }}
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#2ecc71", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
                   Founder & CEO
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Dr. Amaka Adiuku</h3>
-              <p className="text-sm mb-4" style={{ color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
+              <p className="text-sm mb-4" style={{ color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>AI Researcher · Educator · MIET · FHEA</p>
               <div className="flex flex-wrap gap-2">
-                {["AI Research", "Robotics", "Education", "Industry Collaboration"].map(tag => (
-                  <span key={tag} className="text-xs px-3 py-1 rounded-full" style={{ background: "#0D948812", color: "#0D9488", border: "1px solid #0D948825" }}>{tag}</span>
+                {["Robotics", "Technology Literacy", "Workflow Automation", "AI Adoption", "Public Engagement"].map(tag => (
+                  <span key={tag} className="text-xs px-3 py-1 rounded-full" style={{ background: "#2ecc7112", color: "#2ecc71", border: "1px solid #2ecc7125" }}>{tag}</span>
                 ))}
               </div>
             </div>
             {/* Right: Bio + expertise blocks */}
             <div>
               <p className="text-lg leading-relaxed mb-4" style={{ color: "#D1D5DB" }}>
-                UpskillinTech is founded by Dr. Amaka Adiuku, whose work combines artificial intelligence, robotics, and real-world industry applications. Her experience spans research, education, and industry collaboration — enabling the UpskillinTech platform to deliver practical AI learning grounded in real-world impact.
+                UpskillinTech is an independent platform built to help individuals and professionals move from AI curiosity to practical AI adoption in everyday activities — practically, confidently, and without the overwhelm.
               </p>
               <p className="leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
                 Dr. Adiuku's approach to AI education is shaped by a conviction that practical application matters more than theoretical awareness. Every UpskillinTech programme reflects this philosophy: structured, actionable, and designed to produce measurable change in how professionals work.
@@ -265,7 +245,7 @@ export default function About() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.15)", color: "#0D9488", border: "1px solid rgba(13,148,136,0.25)" }}>Our Vision</span>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(46,204,113,0.15)", color: "#2ecc71", border: "1px solid rgba(46,204,113,0.25)" }}>Our Vision</span>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
                 A World Where AI Empowers Every Professional
               </h2>
@@ -279,7 +259,7 @@ export default function About() {
             <div className="space-y-5">
               {VISION_POINTS.map((v, i) => (
                 <div key={v.label} className="flex gap-5 p-5 rounded-2xl" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: i === 0 ? "#0D948820" : i === 1 ? "#8B9E1A20" : "#E6B80020", color: i === 0 ? "#0D9488" : i === 1 ? "#8B9E1A" : "#E6B800" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: i === 0 ? "#2ecc7120" : i === 1 ? "#2ecc7120" : "#2ecc7120", color: i === 0 ? "#2ecc71" : i === 1 ? "#2ecc71" : "#2ecc71" }}>
                     {v.icon}
                   </div>
                   <div>
@@ -309,7 +289,7 @@ export default function About() {
               <div key={stage.label} className="relative flex flex-col items-center text-center px-4">
                 {/* Connector line */}
                 {i < ECOSYSTEM_STAGES.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 z-0" style={{ background: "linear-gradient(90deg, #0D9488, #E6B800)" }} />
+                  <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 z-0" style={{ background: "linear-gradient(90deg, #2ecc71, #2ecc71)" }} />
                 )}
                 <div className="relative z-10 w-20 h-20 rounded-2xl flex items-center justify-center mb-5" style={{ background: `${stage.color}12`, border: `2px solid ${stage.color}30`, color: stage.color }}>
                   {stage.icon}
@@ -321,7 +301,7 @@ export default function About() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               Explore Programs <ChevronRight size={16} />
             </Link>
           </div>
@@ -338,7 +318,7 @@ export default function About() {
                 Collaborating to Advance AI Literacy
               </h2>
               <p className="text-lg leading-relaxed mb-6" style={{ color: "#D1D5DB" }}>
-                UpskillinTech collaborates with educational institutions, organisations, and industry partners committed to advancing AI literacy and responsible technology adoption.
+                UpskillinTech collaborates with educational organisations, organisations, and industry partners committed to advancing AI literacy and responsible technology adoption.
               </p>
               <p className="leading-relaxed mb-8" style={{ color: "#9CA3AF" }}>
                 We believe that AI transformation is most effective when it is community-driven. Our partnerships extend the reach of AI education to professionals and organisations who need it most.
@@ -346,7 +326,7 @@ export default function About() {
               <button
                 onClick={() => toast.info("Partnership enquiries", { description: "Email us at partnerships@upskillintech.com to discuss collaboration opportunities." })}
                 className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm"
-                style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}
+                style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif" }}
               >
                 <Handshake size={16} /> Partner With Us
               </button>
@@ -354,7 +334,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-4">
               {PARTNERSHIP_TYPES.map((p) => (
                 <div key={p.label} className="p-5 rounded-2xl bg-[#151B23]" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#0D948812", color: "#0D9488" }}>{p.icon}</div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#2ecc7112", color: "#2ecc71" }}>{p.icon}</div>
                   <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{p.label}</h4>
                   <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>{p.desc}</p>
                 </div>
@@ -363,9 +343,9 @@ export default function About() {
           </div>
           {/* Partner logos placeholder */}
           <div className="mt-14 pt-10 border-t" style={{ borderColor: "#E5E7EB" }}>
-            <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>TRUSTED BY ORGANISATIONS AND INSTITUTIONS</p>
+            <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>TRUSTED BY ORGANISATIONS</p>
             <div className="flex flex-wrap gap-6 justify-center items-center">
-              {["Educational Institution", "Research Partner", "Corporate Partner", "Community Organisation", "Faith Community"].map((org) => (
+              {["Educational Organisation", "Research Partner", "Corporate Partner", "Community Organisation", "Faith Community"].map((org) => (
                 <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#151B23", border: "1.5px solid #1F2937", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
                   {org}
                 </div>
@@ -387,18 +367,7 @@ export default function About() {
               UpskillinTech programmes and initiatives support professionals, leaders, and organisations across industries and communities.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {IMPACT_STATS.map((s) => (
-              <div key={s.label} className="p-6 rounded-2xl text-center" style={{ background: "rgba(255,255,255,0.15)", border: "1px solid rgba(255,255,255,0.25)", backdropFilter: "blur(8px)" }}>
-                <div className="text-4xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
-                  <CountUp end={s.value} suffix={s.suffix} />
-                </div>
-                <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "rgba(255,255,255,0.90)" }}>{s.label}</h4>
-                <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>{s.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-14 grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {[
               { icon: <Users size={22} />, title: "Professionals", desc: "Building AI productivity skills that save hours every week and improve the quality of their work and decisions." },
               { icon: <GraduationCap size={22} />, title: "Educators & Leaders", desc: "Integrating AI into teaching, community development, and leadership — with tools and frameworks designed for their context." },
@@ -419,7 +388,7 @@ export default function About() {
       {/* ── 8. FINAL CTA ────────────────────────────────────────────────────── */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(13,148,136,0.15)", color: "#0D9488", border: "1px solid rgba(13,148,136,0.25)" }}>Join the Journey</span>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(46,204,113,0.15)", color: "#2ecc71", border: "1px solid rgba(46,204,113,0.25)" }}>Join the Journey</span>
           <h2 className="text-4xl lg:text-5xl font-bold mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
             Join the UpskillinTech Journey
           </h2>
@@ -430,7 +399,7 @@ export default function About() {
             Whether you are a professional looking to save time, a leader building an AI-ready team, or an organisation developing an AI strategy — UpskillinTech has a path for you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#2ecc71", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
             <Link href="/#community" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.20)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>

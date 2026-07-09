@@ -173,7 +173,7 @@ export default function LearningPath() {
                         Lesson Overview
                       </h3>
                       <p className="text-muted-foreground mb-4">
-                        In this module, you'll learn how to automate repetitive tasks using AI-powered tools and integrate them into your daily workflow. We'll cover practical examples from marketing automation to customer service bots.
+                        In this module, you will learn how to automate repetitive tasks using AI-powered tools and integrate them into your daily workflow. We will cover practical examples from marketing automation to customer service bots.
                       </p>
                     </div>
 
@@ -285,7 +285,7 @@ export default function LearningPath() {
                 <CheckCircle2 className="text-primary mx-auto mb-3" size={48} />
                 <h3 className="font-semibold text-lg mb-2">Correct! Well done! 🎉</h3>
                 <p className="text-muted-foreground">
-                  You've successfully completed this module. Repetitive tasks like data entry and email categorization are perfect for AI automation.
+                  You have successfully completed this module. Repetitive tasks like data entry and email categorization are perfect for AI automation.
                 </p>
               </div>
 

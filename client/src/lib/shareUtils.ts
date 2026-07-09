@@ -43,7 +43,7 @@ export function getLinkedInShareUrl(content: ShareContent): string {
     url: content.url
   });
   
-  // LinkedIn doesn't support pre-filled text via URL, but we can share the URL
+  // LinkedIn does not support pre-filled text via URL, but we can share the URL
   return `https://www.linkedin.com/sharing/share-offsite/?${params.toString()}`;
 }
 

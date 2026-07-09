@@ -104,14 +104,14 @@ export default function Research() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(13,148,136,0.10)] border border-[rgba(13,148,136,0.20)] mb-6">
-              <FileText className="w-4 h-4 text-[#0D9488]" />
-              <span className="text-sm font-medium text-[#0D9488]">Research & Whitepapers</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(46,204,113,0.10)] border border-[rgba(46,204,113,0.20)] mb-6">
+              <FileText className="w-4 h-4 text-[#2ecc71]" />
+              <span className="text-sm font-medium text-[#2ecc71]">Research & Whitepapers</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               AI Research{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Library
               </span>
             </h1>
@@ -148,8 +148,8 @@ export default function Research() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === category
-                    ? "bg-[#0D9488] text-white"
-                    : "bg-card border border-border hover:border-[rgba(13,148,136,0.5)]"
+                    ? "bg-[#2ecc71] text-white"
+                    : "bg-card border border-border hover:border-[rgba(46,204,113,0.5)]"
                 }`}
               >
                 {category}
@@ -172,15 +172,15 @@ export default function Research() {
             {filteredPapers.map((paper) => (
               <div
                 key={paper.id}
-                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(13,148,136,0.5)] hover:shadow-lg hover:shadow-[rgba(13,148,136,0.10)] transition-all"
+                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(46,204,113,0.5)] hover:shadow-lg hover:shadow-[rgba(46,204,113,0.10)] transition-all"
               >
                 {/* Category Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(13,148,136,0.10)] border border-[rgba(13,148,136,0.20)] mb-4">
-                  <span className="text-xs font-medium text-[#0D9488]">{paper.category}</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(46,204,113,0.10)] border border-[rgba(46,204,113,0.20)] mb-4">
+                  <span className="text-xs font-medium text-[#2ecc71]">{paper.category}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 hover:text-[#0D9488] transition-colors">
+                <h3 className="text-2xl font-bold mb-3 hover:text-[#2ecc71] transition-colors">
                   {paper.title}
                 </h3>
 
@@ -241,7 +241,7 @@ export default function Research() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Contribute Your Research</h2>
             <p className="text-muted-foreground mb-8">
-              Are you conducting AI research? We'd love to feature your work in our library
+              Are you conducting AI research? We would love to feature your work in our library
             </p>
             <Button size="lg" className="btn-primary">
               Submit Your Paper

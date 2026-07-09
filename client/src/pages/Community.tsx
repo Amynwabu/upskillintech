@@ -1,6 +1,6 @@
 /**
  * Community Page — /community
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Accent Yellow (#2ecc71)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, What You Get, Masterclasses, Peer Network, Events, Join CTA
  */
@@ -19,48 +19,48 @@ const benefits = [
     icon: BookOpen,
     title: "Monthly Masterclasses",
     desc: "Live sessions on specific AI tools, workflows, and productivity strategies — hosted by Dr. Amaka Adiuku and guest practitioners.",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     icon: Zap,
     title: "Workflow Sharing",
     desc: "Access and contribute to a growing library of real AI workflows shared by community members across different industries and roles.",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     icon: Users,
     title: "Peer Network",
-    desc: "Connect with AI-curious professionals from across Africa and the diaspora. Share challenges, wins, and insights with people on the same journey.",
-    color: "#E6B800",
+    desc: "Connect with AI-curious professionals from around the world. Share challenges, wins, and insights with people on the same journey.",
+    color: "#2ecc71",
   },
   {
     icon: MessageSquare,
     title: "Community Discussions",
     desc: "Ongoing conversations about AI tools, news, and practical applications in a focused, professional community space.",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     icon: Calendar,
     title: "Events & Webinars",
     desc: "Priority access to UpskillinTech events, webinars, and workshops — including early registration and member-only sessions.",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     icon: Award,
     title: "Learning Resources",
     desc: "Exclusive guides, templates, prompt libraries, and AI workflow resources available only to community members.",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
 const masterclasses = [
   {
-    title: "Using ChatGPT for Professional Research",
+    title: "Using AI productivity tools for Professional Research",
     date: "Monthly — 1st Thursday",
     time: "6:00 PM WAT / 7:00 PM CAT",
     host: "Dr. Amaka Adiuku",
-    desc: "A practical walkthrough of using ChatGPT to conduct research, synthesise information, and produce structured reports faster.",
-    tags: ["ChatGPT", "Research", "Productivity"],
+    desc: "A practical walkthrough of using AI productivity tools to conduct research, synthesise information, and produce structured reports faster.",
+    tags: ["AI productivity tools", "Research", "Productivity"],
     status: "Upcoming",
   },
   {
@@ -97,9 +97,9 @@ const upcomingEvents = [
     title: "UpskillinTech AI Summit 2025",
     type: "Conference",
     date: "October 2025",
-    location: "Lagos, Nigeria + Online",
-    desc: "A full-day event bringing together AI practitioners, professionals, and leaders to explore the future of AI in African workplaces.",
-    color: "#0D9488",
+    location: "Online",
+    desc: "A full-day event bringing together AI practitioners, professionals, and leaders to explore the future of AI in the workplace.",
+    color: "#2ecc71",
   },
   {
     title: "AI for Organisations Workshop",
@@ -107,7 +107,7 @@ const upcomingEvents = [
     date: "Monthly",
     location: "Online (Zoom)",
     desc: "A half-day workshop for HR managers, operations leaders, and executives exploring how to integrate AI into their organisational workflows.",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     title: "AI Literacy for Faith Communities",
@@ -115,7 +115,7 @@ const upcomingEvents = [
     date: "Quarterly",
     location: "Online (Zoom)",
     desc: "A focused webinar for pastors, church administrators, and ministry leaders on responsible and practical AI use in faith communities.",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
@@ -123,15 +123,15 @@ const testimonials = [
   {
     name: "Chioma Eze",
     role: "HR Professional",
-    company: "Port Harcourt, Nigeria",
-    quote: "The UpskillinTech community is unlike any other. The masterclasses are practical, the peer discussions are insightful, and I've made real connections with professionals on the same AI journey.",
+    company: "International",
+    quote: "The UpskillinTech community is unlike any other. The masterclasses are practical, the peer discussions are insightful, and I have made real connections with professionals on the same AI journey.",
     rating: 5,
   },
   {
     name: "Samuel Oduya",
     role: "Secondary School Principal",
     company: "Accra, Ghana",
-    quote: "The monthly masterclasses have been transformative. I've implemented AI workflows in my school's administration that have saved us hours every week.",
+    quote: "The monthly masterclasses have been transformative. I have implemented AI workflows in my school's administration that have saved us hours every week.",
     rating: 5,
   },
   {
@@ -162,7 +162,7 @@ export default function Community() {
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)", transform: "translate(30%, -30%)" }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
+          style={{ background: "radial-gradient(circle, #2ecc71 0%, transparent 70%)", transform: "translate(-30%, 30%)" }} />
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
@@ -183,15 +183,15 @@ export default function Community() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Join the Community <ArrowRight size={16} />
             </a>
             <a href="#masterclasses"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#0D9488"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#0D9488"; }}>
+              onMouseEnter={e => { e.currentTarget.style.background = "#f0fdf4"; e.currentTarget.style.color = "#2ecc71"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#2ecc71"; }}>
               See Masterclasses
             </a>
           </div>
@@ -207,8 +207,8 @@ export default function Community() {
               { value: "Free", label: "To Join" },
             ].map((stat, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
-                style={{ background: "rgba(13,148,136,0.10)" }}>
-                <p className="font-poppins font-bold text-xl" style={{ color: "#E6B800" }}>{stat.value}</p>
+                style={{ background: "rgba(46,204,113,0.10)" }}>
+                <p className="font-poppins font-bold text-xl" style={{ color: "#2ecc71" }}>{stat.value}</p>
                 <p className="text-xs opacity-80 mt-0.5">{stat.label}</p>
               </div>
             ))}
@@ -221,7 +221,7 @@ export default function Community() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Community Benefits</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Community Benefits</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               What You Get as a Member
             </h2>
@@ -255,7 +255,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Monthly Masterclasses</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Monthly Masterclasses</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Learn. Apply. Grow.
             </h2>
@@ -269,7 +269,7 @@ export default function Community() {
                 <button key={tab} onClick={() => setActiveTab(tab)}
                   className="px-6 py-2.5 text-sm font-semibold capitalize transition-all"
                   style={{
-                    background: activeTab === tab ? "#0D9488" : "#fff",
+                    background: activeTab === tab ? "#2ecc71" : "#fff",
                     color: activeTab === tab ? "#fff" : "#555",
                   }}>
                   {tab === "upcoming" ? "Upcoming Sessions" : "Past Recordings"}
@@ -282,14 +282,14 @@ export default function Community() {
             {filteredMasterclasses.map((mc, i) => (
               <div key={i} className="bg-[#151B23] rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
                 style={{ borderColor: "#1F2937" }}>
-                <div className="h-1.5" style={{ background: "linear-gradient(90deg, #0D9488, #8B9E1A)" }} />
+                <div className="h-1.5" style={{ background: "linear-gradient(90deg, #2ecc71, #2ecc71)" }} />
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <h3 className="font-poppins font-bold text-base" style={{ color: "#F3F4F6" }}>{mc.title}</h3>
                     <span className="shrink-0 text-xs font-semibold px-2 py-0.5 rounded-full"
                       style={{
                         background: mc.status === "Upcoming" ? "#f0faf0" : "#f5f5f5",
-                        color: mc.status === "Upcoming" ? "#0D9488" : "#888",
+                        color: mc.status === "Upcoming" ? "#2ecc71" : "#888",
                       }}>
                       {mc.status}
                     </span>
@@ -297,26 +297,26 @@ export default function Community() {
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#9CA3AF" }}>{mc.desc}</p>
                   <div className="space-y-1.5 mb-4">
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
-                      <Calendar size={12} style={{ color: "#0D9488" }} /> {mc.date}
+                      <Calendar size={12} style={{ color: "#2ecc71" }} /> {mc.date}
                     </div>
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
-                      <Clock size={12} style={{ color: "#0D9488" }} /> {mc.time}
+                      <Clock size={12} style={{ color: "#2ecc71" }} /> {mc.time}
                     </div>
                     <div className="flex items-center gap-2 text-xs" style={{ color: "#9CA3AF" }}>
-                      <Users size={12} style={{ color: "#0D9488" }} /> Hosted by {mc.host}
+                      <Users size={12} style={{ color: "#2ecc71" }} /> Hosted by {mc.host}
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {mc.tags.map((tag, j) => (
                       <span key={j} className="text-xs px-2 py-0.5 rounded-full"
-                        style={{ background: "#10231C", color: "#0D9488" }}>{tag}</span>
+                        style={{ background: "#10231C", color: "#2ecc71" }}>{tag}</span>
                     ))}
                   </div>
                   <a href="/contact"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all"
-                    style={{ color: "#0D9488" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#8B9E1A")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#0D9488")}>
+                    style={{ color: "#2ecc71" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#2ecc71")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#2ecc71")}>
                     {mc.status === "Upcoming" ? "Register for Session" : "Watch Recording"}
                     <ArrowRight size={12} />
                   </a>
@@ -332,7 +332,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Events & Webinars</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Events & Webinars</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Upcoming Events
             </h2>
@@ -377,7 +377,7 @@ export default function Community() {
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(13,148,136,0.2)", color: "#0D9488" }}>Community Voices</span>
+              style={{ background: "rgba(46,204,113,0.2)", color: "#2ecc71" }}>Community Voices</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               What Members Are Saying
             </h2>
@@ -388,7 +388,7 @@ export default function Community() {
                 style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={14} fill="#E6B800" style={{ color: "#E6B800" }} />
+                    <Star key={j} size={14} fill="#2ecc71" style={{ color: "#2ecc71" }} />
                   ))}
                 </div>
                 <p className="text-sm leading-relaxed mb-5 italic" style={{ color: "rgba(255,255,255,0.8)" }}>
@@ -396,7 +396,7 @@ export default function Community() {
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)" }}>
                     {t.name.split(" ").map(n => n[0]).join("")}
                   </div>
                   <div>
@@ -412,13 +412,13 @@ export default function Community() {
 
       {/* ── Join CTA ─────────────────────────────────────────────────────── */}
       <section className="section-py"
-        style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 60%, #2ecc71 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Join the Community?
           </h2>
           <p className="text-base opacity-90 mb-4 max-w-xl mx-auto">
-            Connect with professionals across Africa and the diaspora who are
+            Connect with professionals around the world who are
             using AI to transform how they work. Monthly masterclasses, workflow
             sharing, and a supportive peer network — all in one place.
           </p>
@@ -433,14 +433,14 @@ export default function Community() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Join the Community <ArrowRight size={15} />
             </a>
             <a href="/programs"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#2ecc71"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Explore Programmes
             </a>

@@ -1,6 +1,6 @@
 /**
  * Enterprise Page — /enterprise
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#2ecc71) + Golden Green (#2ecc71) + Accent Yellow (#2ecc71)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Services, Industries, Engagement Model, Case Studies, Consultation CTA
  */
@@ -62,7 +62,7 @@ const services = [
       "Productivity systems using AI tools",
     ],
     formats: ["Workshops", "Training sessions", "Customised team programmes"],
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     icon: Lightbulb,
@@ -77,7 +77,7 @@ const services = [
       "Integrating AI into organisational strategy",
     ],
     formats: ["Half-day workshops", "Executive briefings", "Board presentations"],
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     icon: Workflow,
@@ -92,7 +92,7 @@ const services = [
       "Operational process automation and optimisation",
     ],
     formats: ["Process audits", "Workflow design sprints", "Implementation support"],
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
@@ -106,10 +106,10 @@ const industries = [
   },
   {
     icon: GraduationCap,
-    title: "Educational Institutions",
+    title: "Educational Organisations",
     description:
       "Universities, colleges, and schools exploring AI literacy, teaching innovation, and administrative efficiency.",
-    examples: ["Higher education institutions", "Secondary schools", "Training providers", "Professional development bodies"],
+    examples: ["Universities and colleges", "Secondary schools", "Training providers", "Professional development bodies"],
   },
   {
     icon: Heart,
@@ -127,7 +127,7 @@ const industries = [
   },
   {
     icon: FlaskConical,
-    title: "Research Institutions",
+    title: "Research Organisations",
     description:
       "Teams exploring AI-assisted knowledge discovery, literature review, and data analysis to accelerate research.",
     examples: ["Academic research teams", "Think tanks", "Policy institutes", "Innovation labs"],
@@ -193,28 +193,28 @@ const caseStudies = [
     quote:
       "The training completely changed how we work. What used to take a full day now takes a couple of hours.",
     author: "Operations Manager",
-    color: "#0D9488",
+    color: "#2ecc71",
   },
   {
     category: "Organisational Transformation",
     icon: BarChart3,
     title: "Building an AI-Ready Organisation",
-    organisation: "Mid-Size Educational Institution",
+    organisation: "Mid-Size Educational Organisation",
     industry: "Education",
     challenge:
-      "An educational institution wanted to integrate AI into their administrative and teaching processes but lacked a clear strategy and the internal capability to lead the change.",
+      "An educational organisation wanted to integrate AI into their administrative and teaching processes but lacked a clear strategy and the internal capability to lead the change.",
     approach:
       "UpskillinTech delivered an AI Strategy Workshop for the leadership team, followed by a structured AI Productivity Training programme for administrative staff and educators.",
     results: [
       "Leadership team developed a 12-month AI adoption roadmap",
       "Administrative staff reduced reporting time by 45%",
       "Educators began integrating AI into lesson planning and feedback",
-      "Institution established an internal AI champion network",
+      "Organisation established an internal AI champion network",
     ],
     quote:
       "UpskillinTech helped us move from AI curiosity to a clear, confident strategy. Our team now leads AI adoption rather than reacting to it.",
     author: "Head of Operations",
-    color: "#8B9E1A",
+    color: "#2ecc71",
   },
   {
     category: "Leadership and Education",
@@ -235,7 +235,7 @@ const caseStudies = [
     quote:
       "UpskillinTech understood our context and values. The training was practical, relevant, and helped us use AI in a way that felt right for our community.",
     author: "Network Director",
-    color: "#E6B800",
+    color: "#2ecc71",
   },
 ];
 
@@ -260,7 +260,7 @@ export default function Enterprise() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const consultMutation = trpc.forms.consultation.useMutation({
     onSuccess: () => {
-      toast.success("Thank you! We'll be in touch within 2 business days.");
+      toast.success("Thank you! We will be in touch within 2 business days.");
       setForm({ name: "", email: "", organisation: "", role: "", inquiryType: "", message: "" });
     },
     onError: (err: { message?: string }) => toast.error(err.message || "Submission failed. Please try again."),
@@ -295,7 +295,7 @@ export default function Enterprise() {
         <div className="absolute top-10 right-10 w-64 h-64 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }} />
         <div className="absolute bottom-0 left-20 w-48 h-48 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #2ecc71 0%, transparent 70%)" }} />
 
         <div className="max-w-6xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center pb-0">
           {/* Left */}
@@ -321,9 +321,9 @@ export default function Enterprise() {
               <a
                 href="#consultation"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm transition-all"
-                style={{ background: "#E6B800", color: "#F3F4F6" }}
+                style={{ background: "#2ecc71", color: "#F3F4F6" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-                onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}
               >
                 Request Consultation <ArrowRight size={16} />
               </a>
@@ -331,8 +331,8 @@ export default function Enterprise() {
                 href="#services"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all hover:bg-[#151B23]"
                 style={{}}
-                onMouseEnter={e => { e.currentTarget.style.color = "#0D9488"; e.currentTarget.style.background = "#f0fdf4"; }}
-                onMouseLeave={e => { e.currentTarget.style.color = "#0D9488"; e.currentTarget.style.background = "transparent"; }}
+                onMouseEnter={e => { e.currentTarget.style.color = "#2ecc71"; e.currentTarget.style.background = "#f0fdf4"; }}
+                onMouseLeave={e => { e.currentTarget.style.color = "#2ecc71"; e.currentTarget.style.background = "transparent"; }}
               >
                 Explore Services
               </a>
@@ -347,14 +347,14 @@ export default function Enterprise() {
                 alt="Enterprise AI training workshop"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(13,148,136,0.4) 0%, transparent 60%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(46,204,113,0.4) 0%, transparent 60%)" }} />
               {/* Floating badge */}
               <div className="absolute bottom-6 left-6 bg-[#151B23] rounded-xl px-4 py-3 shadow-lg flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "#0D9488" }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "#2ecc71" }}>
                   <Building2 size={18} color="#fff" />
                 </div>
                 <div>
-                  <p className="font-poppins font-bold text-sm" style={{ color: "#F3F4F6" }}>50+ Organisations</p>
+                  <p className="font-poppins font-bold text-sm" style={{ color: "#F3F4F6" }}>Trusted by Organisations</p>
                   <p className="text-xs" style={{ color: "#9CA3AF" }}>Engaged with UpskillinTech</p>
                 </div>
               </div>
@@ -365,7 +365,7 @@ export default function Enterprise() {
         {/* Stats bar */}
         <div ref={statsRef} className="max-w-6xl mx-auto px-4 lg:px-8 mt-0">
           <div className="rounded-t-2xl grid grid-cols-2 lg:grid-cols-4 gap-0 overflow-hidden"
-            style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #A8C038 50%, #E6B800 100%)" }}>
+            style={{ background: "linear-gradient(90deg, #2ecc71 0%, #A8C038 50%, #2ecc71 100%)" }}>
             {[
               { value: `${orgsCount}+`, label: "Organisations Engaged" },
               { value: `${profCount}+`, label: "Professionals Trained" },
@@ -386,7 +386,7 @@ export default function Enterprise() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Enterprise Services</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Enterprise Services</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               What We Offer Organisations
             </h2>
@@ -461,20 +461,20 @@ export default function Enterprise() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>Industries We Serve</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>Industries We Serve</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Working Across Sectors
             </h2>
             <p className="text-base max-w-2xl mx-auto" style={{ color: "#9CA3AF" }}>
               UpskillinTech works with a wide range of organisations exploring AI integration —
-              from corporate teams to faith communities and research institutions.
+              from corporate teams to faith communities and research organisations.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, i) => {
               const Icon = industry.icon;
-              const colors = ["#0D9488", "#8B9E1A", "#E6B800", "#0D9488", "#8B9E1A"];
+              const colors = ["#2ecc71", "#2ecc71", "#2ecc71", "#2ecc71", "#2ecc71"];
               const color = colors[i % colors.length];
               return (
                 <div key={i} className="bg-[#151B23] rounded-2xl p-7 border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
@@ -505,7 +505,7 @@ export default function Enterprise() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#0D9488" }}>How We Work</span>
+              style={{ background: "#10231C", color: "#2ecc71" }}>How We Work</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               How We Work With Organisations
             </h2>
@@ -518,7 +518,7 @@ export default function Enterprise() {
           <div className="grid md:grid-cols-2 gap-8">
             {engagementModels.map((model, i) => {
               const Icon = model.icon;
-              const colors = ["#0D9488", "#8B9E1A", "#E6B800", "#0D9488"];
+              const colors = ["#2ecc71", "#2ecc71", "#2ecc71", "#2ecc71"];
               const color = colors[i % colors.length];
               return (
                 <div key={i} className="flex gap-6 p-7 rounded-2xl border transition-all duration-300 hover:shadow-lg"
@@ -559,7 +559,7 @@ export default function Enterprise() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(13,148,136,0.15)", color: "#0D9488" }}>Real Applications</span>
+              style={{ background: "rgba(46,204,113,0.15)", color: "#2ecc71" }}>Real Applications</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               Organisations Transforming with AI
             </h2>
@@ -630,7 +630,7 @@ export default function Enterprise() {
             {/* Left — copy */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-                style={{ background: "#10231C", color: "#0D9488" }}>Request a Consultation</span>
+                style={{ background: "#10231C", color: "#2ecc71" }}>Request a Consultation</span>
               <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-5" style={{ color: "#F3F4F6" }}>
                 Explore AI Opportunities for Your Organisation
               </h2>
@@ -643,12 +643,12 @@ export default function Enterprise() {
               <div className="space-y-4 mb-8">
                 {[
                   { step: "01", title: "Share Your Goals", desc: "Tell us about your organisation, team, and what you want to achieve with AI." },
-                  { step: "02", title: "Identify Opportunities", desc: "We'll explore where AI can add the most value in your workflows and operations." },
-                  { step: "03", title: "Recommend a Path", desc: "We'll recommend the most appropriate programme, workshop, or engagement model." },
+                  { step: "02", title: "Identify Opportunities", desc: "We will explore where AI can add the most value in your workflows and operations." },
+                  { step: "03", title: "Recommend a Path", desc: "We will recommend the most appropriate programme, workshop, or engagement model." },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-poppins font-bold text-sm text-white"
-                      style={{ background: "#0D9488" }}>
+                      style={{ background: "#2ecc71" }}>
                       {item.step}
                     </div>
                     <div>
@@ -669,7 +669,7 @@ export default function Enterprise() {
                   "Flexible engagement models to suit your budget",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm mb-2" style={{ color: "#9CA3AF" }}>
-                    <CheckCircle size={14} style={{ color: "#0D9488" }} />
+                    <CheckCircle size={14} style={{ color: "#2ecc71" }} />
                     {item}
                   </div>
                 ))}
@@ -685,7 +685,7 @@ export default function Enterprise() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                      Name <span style={{ color: "#0D9488" }}>*</span>
+                      Name <span style={{ color: "#2ecc71" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -694,13 +694,13 @@ export default function Enterprise() {
                       onChange={e => setForm({ ...form, name: e.target.value })}
                       className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all focus:ring-2"
                       style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                      onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                      onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                       onBlur={e => (e.target.style.borderColor = "#374151")}
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                      Email <span style={{ color: "#0D9488" }}>*</span>
+                      Email <span style={{ color: "#2ecc71" }}>*</span>
                     </label>
                     <input
                       type="email"
@@ -709,7 +709,7 @@ export default function Enterprise() {
                       onChange={e => setForm({ ...form, email: e.target.value })}
                       className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                       style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                      onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                      onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                       onBlur={e => (e.target.style.borderColor = "#374151")}
                     />
                   </div>
@@ -717,7 +717,7 @@ export default function Enterprise() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                    Organisation <span style={{ color: "#0D9488" }}>*</span>
+                    Organisation <span style={{ color: "#2ecc71" }}>*</span>
                   </label>
                   <input
                     type="text"
@@ -726,7 +726,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, organisation: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                    onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -740,7 +740,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, role: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                    onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -752,7 +752,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, inquiryType: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: form.inquiryType ? "#1C1C1C" : "#999" }}
-                    onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                    onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   >
                     <option value="">Select enquiry type</option>
@@ -762,16 +762,16 @@ export default function Enterprise() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                    Message <span style={{ color: "#0D9488" }}>*</span>
+                    Message <span style={{ color: "#2ecc71" }}>*</span>
                   </label>
                   <textarea
                     rows={4}
-                    placeholder="Tell us about your organisation and what you'd like to explore..."
+                    placeholder="Tell us about your organisation and what you would like to explore..."
                     value={form.message}
                     onChange={e => setForm({ ...form, message: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all resize-none"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#0D9488")}
+                    onFocus={e => (e.target.style.borderColor = "#2ecc71")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -780,15 +780,15 @@ export default function Enterprise() {
                   type="submit"
                   disabled={submitting}
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60"
-                  style={{ background: "#0D9488", color: "#fff" }}
+                  style={{ background: "#2ecc71", color: "#fff" }}
                   onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#2ea040"; }}
-                  onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#0D9488"; }}
+                  onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#2ecc71"; }}
                 >
                   {submitting ? "Sending…" : <><Send size={15} /> Request Consultation</>}
                 </button>
 
                 <p className="text-xs text-center" style={{ color: "#999" }}>
-                  We'll respond within 2 business days. No obligation.
+                  We will respond within 2 business days. No obligation.
                 </p>
               </form>
             </div>
@@ -797,7 +797,7 @@ export default function Enterprise() {
       </section>
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "linear-gradient(135deg, #0D9488 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+      <section className="section-py" style={{ background: "linear-gradient(135deg, #2ecc71 0%, #2ecc71 60%, #2ecc71 100%)" }}>
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4">
             Ready to Build an AI-Enabled Organisation?
@@ -809,14 +809,14 @@ export default function Enterprise() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="#consultation"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
+              style={{ background: "#2ecc71", color: "#F3F4F6" }}
               onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              onMouseLeave={e => (e.currentTarget.style.background = "#2ecc71")}>
               Request Consultation <ArrowRight size={16} />
             </a>
             <a href="/resources/case-studies"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#0D9488"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#2ecc71"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               View Case Studies
             </a>

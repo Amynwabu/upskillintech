@@ -10,7 +10,7 @@ describe('Admin Email Panel - Template Generation', () => {
     expect(html.length).toBeGreaterThan(0);
     expect(html).toContain('Welcome to UpskillinTech');
     expect(html).toContain('Start Learning Now');
-    expect(html).toContain('1,000+ learners');
+    expect(html).toContain('growing community of learners');
   });
 
   it('should generate preference confirmation email HTML with all preferences enabled', () => {
@@ -130,7 +130,7 @@ describe("generateEventRegistrationEmailHtml", () => {
     const { generateEventRegistrationEmailHtml } = await import("./emailService");
     const html = generateEventRegistrationEmailHtml();
     
-    expect(html).toContain("You're Registered!");
+    expect(html).toContain("You are Registered!");
     expect(html).toContain("AI Fundamentals Workshop");
     expect(html).toContain("Dr. Sarah Chen");
     expect(html).toContain("Online via Zoom");

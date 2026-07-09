@@ -80,12 +80,12 @@ export default function LearningPlayer() {
       question: "Which AI tool is best for content creation?",
       options: [
         "Spreadsheet software",
-        "ChatGPT or similar language models",
+        "AI productivity tools or similar language models",
         "Basic calculators",
         "Email clients",
       ],
       correctAnswer: 1,
-      explanation: "Language models like ChatGPT excel at generating various types of content including articles, emails, and creative writing.",
+      explanation: "Language models like AI productivity tools excel at generating various types of content including articles, emails, and creative writing.",
     },
     {
       id: 3,
@@ -317,7 +317,7 @@ export default function LearningPlayer() {
                   <Card>
                     <CardHeader>
                       <CardTitle>Module Overview</CardTitle>
-                      <CardDescription>What you'll learn in this module</CardDescription>
+                      <CardDescription>What you will learn in this module</CardDescription>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">

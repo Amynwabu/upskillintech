@@ -91,7 +91,7 @@ export default function AdminWebinarRegistrations() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">Jan 17</div>
-              <p className="text-xs text-muted-foreground">7PM UK / 8PM Nigeria</p>
+              <p className="text-xs text-muted-foreground">7PM UK</p>
             </CardContent>
           </Card>
 

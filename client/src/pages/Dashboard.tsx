@@ -34,7 +34,7 @@ export default function Dashboard() {
           {/* Welcome Header */}
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Welcome back, <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{userName}</span>! 👋
+              Welcome back, <span style={{ background: "linear-gradient(135deg, #2ecc71, #2ecc71)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{userName}</span>! 👋
             </h1>
             <p className="text-muted-foreground">Continue your AI journey and reach new milestones</p>
           </div>
@@ -45,7 +45,7 @@ export default function Dashboard() {
               <div className="flex items-center justify-between">
                 <div>
                   <CardTitle>Your Learning Progress</CardTitle>
-                  <CardDescription>You're {Math.round(progress)}% through your current path</CardDescription>
+                  <CardDescription>You are {Math.round(progress)}% through your current path</CardDescription>
                 </div>
                 <div className="flex items-center gap-4">
                   <div className="text-center">
@@ -216,7 +216,7 @@ export default function Dashboard() {
                   <div className="p-4 bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg">
                     <h4 className="font-semibold mb-2">5-Minute AI Task</h4>
                     <p className="text-sm text-muted-foreground mb-3">
-                      Use ChatGPT to summarize a long article and extract key points
+                      Use AI productivity tools to summarize a long article and extract key points
                     </p>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span>+50 XP</span>

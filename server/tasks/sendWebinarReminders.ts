@@ -13,10 +13,10 @@ export async function sendWebinarReminders() {
     const now = new Date();
     const targetDate = new Date(now.getTime() + 24 * 60 * 60 * 1000); // 24 hours from now
     
-    // Master Class sessions — last two Saturdays of July 2026
+    // Masterclass sessions — Saturday 1 August and Saturday 8 August 2026
     const sessions = [
-      { date: new Date('2026-07-18T13:00:00Z'), label: 'Saturday, 18 July 2026', shortDate: '18 July 2026' },
-      { date: new Date('2026-07-25T13:00:00Z'), label: 'Saturday, 25 July 2026', shortDate: '25 July 2026' },
+      { date: new Date('2026-08-01T13:00:00Z'), label: 'Saturday, 1 August 2026', shortDate: '1 August 2026' },
+      { date: new Date('2026-08-08T13:00:00Z'), label: 'Saturday, 8 August 2026', shortDate: '8 August 2026' },
     ];
 
     const upcomingSession = sessions.find((s) => {
@@ -56,7 +56,7 @@ export async function sendWebinarReminders() {
           {
             title: 'Build, Brand & Grow with AI — AI Transformation Master Class',
             date: upcomingSession.label,
-            time: '2PM – 4PM UK / Nigeria Time',
+            time: '2PM – 4PM UK Time',
             zoomLink: 'https://shorturl.at/2yAwE'
           }
         );

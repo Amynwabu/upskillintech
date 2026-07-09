@@ -10,20 +10,20 @@ import { useNotifications } from "@/hooks/useNotifications";
 
 const MASTERCLASS_TITLE = "Build, Brand & Grow with AI";
 const MASTERCLASS_SUBTITLE = "Transform Your Knowledge into a Business, Brand & Revenue Stream";
-const MASTERCLASS_TIME = "2PM – 4PM UK / Nigeria Time";
+const MASTERCLASS_TIME = "2PM – 4PM UK Time";
 const MASTERCLASS_DURATION = "2-hour live hands-on session";
-const MASTERCLASS_PRICE = "£50 / ₦50,000";
+const MASTERCLASS_PRICE = "£50 / $50";
 
 const SESSIONS = [
   {
-    label: "Session 1 — Saturday, 18 July 2026",
-    webinarDate: "Saturday, 18 July 2026 - 2PM UK / Nigeria Time",
-    shortDate: "18 July 2026",
+    label: "Session 1 — Saturday, 1 August 2026",
+    webinarDate: "Saturday, 1 August 2026 - 2PM UK Time",
+    shortDate: "1 August 2026",
   },
   {
-    label: "Session 2 — Saturday, 25 July 2026",
-    webinarDate: "Saturday, 25 July 2026 - 2PM UK / Nigeria Time",
-    shortDate: "25 July 2026",
+    label: "Session 2 — Saturday, 8 August 2026",
+    webinarDate: "Saturday, 8 August 2026 - 2PM UK Time",
+    shortDate: "8 August 2026",
   },
 ];
 
@@ -72,44 +72,44 @@ export default function WebinarRegistration() {
   if (isSubmitted) {
     const session = SESSIONS[selectedSession];
     return (
-      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #0D9488 0%, #111827 60%)" }}>
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: "linear-gradient(135deg, #2ecc71 0%, #0d1117 60%)" }}>
         <Card className="max-w-2xl w-full bg-[#151B23]/97 shadow-2xl">
           <CardHeader className="text-center space-y-4 pb-4">
-            <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
-              <CheckCircle2 className="w-12 h-12" style={{ color: "#0D9488" }} />
+            <div className="mx-auto w-20 h-20 rounded-full flex items-center justify-center" style={{ background: "rgba(46,204,113,0.12)" }}>
+              <CheckCircle2 className="w-12 h-12" style={{ color: "#2ecc71" }} />
             </div>
             <CardTitle className="text-3xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
-              You're Registered!
+              You are Registered!
             </CardTitle>
             <CardDescription className="text-base" style={{ color: "#9CA3AF" }}>
-              You've secured your seat for <strong>{MASTERCLASS_TITLE}</strong>.
+              You have secured your seat for <strong>{MASTERCLASS_TITLE}</strong>.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="rounded-xl p-5 space-y-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
               <div className="flex items-center gap-2 font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
-                <Calendar className="w-4 h-4" style={{ color: "#0D9488" }} /> {session.shortDate} · 2PM – 4PM UK / Nigeria Time
+                <Calendar className="w-4 h-4" style={{ color: "#2ecc71" }} /> {session.shortDate} · 2PM – 4PM UK Time
               </div>
               <p className="text-sm" style={{ color: "#9CA3AF" }}>What happens next:</p>
               <ul className="space-y-2">
                 {[
                   "Check your email for the Zoom link and calendar invite",
                   `Mark your calendar: ${session.label}`,
-                  "You'll receive a reminder 24 hours before the session",
+                  "You will receive a reminder 24 hours before the session",
                   "Your free 1-on-1 AI Transformation Session will be booked after the class",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "#D1D5DB" }}>
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#0D9488" }} />
+                    <CheckCircle2 className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: "#2ecc71" }} />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
             <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
-              Can't find the email? Check your spam folder or contact{" "}
-              <a href="mailto:amaka.adiuku@gmail.com" style={{ color: "#0D9488" }}>amaka.adiuku@gmail.com</a>
+              Cannot find the email? Check your spam folder or contact{" "}
+              <a href="mailto:amaka.adiuku@gmail.com" style={{ color: "#2ecc71" }}>amaka.adiuku@gmail.com</a>
             </p>
-            <Link href="/masterclass" className="block text-center text-sm font-semibold" style={{ color: "#0D9488" }}>
+            <Link href="/masterclass" className="block text-center text-sm font-semibold" style={{ color: "#2ecc71" }}>
               ← Back to Masterclass page
             </Link>
           </CardContent>
@@ -119,7 +119,7 @@ export default function WebinarRegistration() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "linear-gradient(160deg, #0a1628 0%, #111827 50%, #0D3330 100%)" }}>
+    <div className="min-h-screen" style={{ background: "linear-gradient(160deg, #0a1628 0%, #0d1117 50%, #0D3330 100%)" }}>
       {/* Back link */}
       <div className="container pt-6">
         <Link href="/masterclass" className="inline-flex items-center gap-2 text-sm" style={{ color: "rgba(255,255,255,0.55)", textDecoration: "none" }}>
@@ -133,10 +133,10 @@ export default function WebinarRegistration() {
           {/* ── Left: Masterclass info ── */}
           <div className="text-white space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(13,148,136,0.20)", border: "1px solid rgba(13,148,136,0.35)" }}>
-              <Sparkles size={14} style={{ color: "#0D9488" }} />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full" style={{ background: "rgba(46,204,113,0.20)", border: "1px solid rgba(46,204,113,0.35)" }}>
+              <Sparkles size={14} style={{ color: "#2ecc71" }} />
               <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#5EEAD4" }}>
-                AI Transformation Master Class — July 2026
+                AI Transformation Masterclass — August 2026
               </span>
             </div>
 
@@ -154,7 +154,7 @@ export default function WebinarRegistration() {
             <div className="flex flex-col sm:flex-row gap-3">
               {SESSIONS.map((s) => (
                 <div key={s.shortDate} className="flex items-center gap-3 rounded-xl px-4 py-3" style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                  <Calendar size={16} style={{ color: "#0D9488", flexShrink: 0 }} />
+                  <Calendar size={16} style={{ color: "#2ecc71", flexShrink: 0 }} />
                   <div>
                     <div className="text-sm font-semibold" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif" }}>{s.shortDate}</div>
                     <div className="text-xs" style={{ color: "rgba(255,255,255,0.50)" }}>{MASTERCLASS_TIME}</div>
@@ -179,12 +179,12 @@ export default function WebinarRegistration() {
             </div>
 
             {/* 1-on-1 bonus */}
-            <div className="flex items-start gap-4 rounded-2xl p-5" style={{ background: "rgba(230,184,0,0.10)", border: "1px solid rgba(230,184,0,0.25)" }}>
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(230,184,0,0.20)" }}>
-                <Gift size={20} style={{ color: "#E6B800" }} />
+            <div className="flex items-start gap-4 rounded-2xl p-5" style={{ background: "rgba(46,204,113,0.10)", border: "1px solid rgba(46,204,113,0.25)" }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: "rgba(46,204,113,0.20)" }}>
+                <Gift size={20} style={{ color: "#2ecc71" }} />
               </div>
               <div>
-                <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#E6B800" }}>Exclusive Bonus — Included Free</div>
+                <div className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#2ecc71" }}>Exclusive Bonus — Included Free</div>
                 <div className="text-sm" style={{ color: "rgba(255,255,255,0.70)", lineHeight: 1.6 }}>
                   Every participant gets a free 1-on-1 AI Transformation Session — a personalised session tailored to your business, career, and goals.
                 </div>
@@ -196,19 +196,19 @@ export default function WebinarRegistration() {
           <div>
             <Card className="shadow-2xl" style={{ background: "rgba(255,255,255,0.97)" }}>
               <CardHeader className="space-y-3">
-                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}>
+                <div className="inline-block px-3 py-1 rounded-full text-xs font-bold w-fit" style={{ background: "rgba(46,204,113,0.12)", color: "#2ecc71", fontFamily: "'Sora', sans-serif" }}>
                   Limited Seats Available
                 </div>
-                <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#F3F4F6" }}>
+                <CardTitle style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.6rem", color: "#111111" }}>
                   Reserve Your Seat
                 </CardTitle>
-                <CardDescription style={{ color: "#9CA3AF" }}>
+                <CardDescription style={{ color: "#111111" }}>
                   Secure your place for a live, hands-on session
                 </CardDescription>
 
                 {/* Session picker */}
                 <div className="pt-1 space-y-2">
-                  <Label className="text-sm font-semibold" style={{ color: "#D1D5DB" }}>Choose your session *</Label>
+                  <Label className="text-sm font-semibold" style={{ color: "#111111" }}>Choose your session *</Label>
                   <div className="space-y-2">
                     {SESSIONS.map((s, i) => (
                       <button
@@ -217,16 +217,16 @@ export default function WebinarRegistration() {
                         onClick={() => setSelectedSession(i)}
                         className="w-full flex items-center gap-3 rounded-xl border p-3 text-left transition-all text-sm"
                         style={{
-                          borderColor: selectedSession === i ? "#0D9488" : "#E5E7EB",
-                          background: selectedSession === i ? "rgba(13,148,136,0.06)" : "#fff",
+                          borderColor: selectedSession === i ? "#2ecc71" : "#E5E7EB",
+                          background: selectedSession === i ? "rgba(46,204,113,0.06)" : "#fff",
                         }}
                       >
-                        <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center" style={{ borderColor: selectedSession === i ? "#0D9488" : "#D1D5DB" }}>
-                          {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#0D9488" }} />}
+                        <div className="w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center" style={{ borderColor: selectedSession === i ? "#2ecc71" : "#D1D5DB" }}>
+                          {selectedSession === i && <div className="w-2 h-2 rounded-full" style={{ background: "#2ecc71" }} />}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
-                          <div className="text-xs" style={{ color: "#9CA3AF" }}>{MASTERCLASS_TIME} · {MASTERCLASS_DURATION}</div>
+                          <div className="font-semibold" style={{ color: "#111111", fontFamily: "'Sora', sans-serif" }}>{s.label}</div>
+                          <div className="text-xs" style={{ color: "#111111" }}>{MASTERCLASS_TIME} · {MASTERCLASS_DURATION}</div>
                         </div>
                       </button>
                     ))}
@@ -235,8 +235,8 @@ export default function WebinarRegistration() {
 
                 {/* Meta */}
                 <div className="flex items-center gap-3 pt-1 rounded-xl p-3" style={{ background: "#151B23", border: "1px solid #1F2937" }}>
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(13,148,136,0.12)" }}>
-                    <Users size={16} style={{ color: "#0D9488" }} />
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ background: "rgba(46,204,113,0.12)" }}>
+                    <Users size={16} style={{ color: "#2ecc71" }} />
                   </div>
                   <div className="text-sm">
                     <div className="font-semibold" style={{ color: "#F3F4F6" }}>{MASTERCLASS_PRICE}</div>
@@ -256,29 +256,29 @@ export default function WebinarRegistration() {
                     <Input id="email" name="email" type="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} required />
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor="phone">Phone Number <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Label htmlFor="phone">Phone Number <span style={{ color: "#111111" }}>(optional)</span></Label>
                     <Input id="phone" name="phone" type="tel" placeholder="+44 or +234" value={formData.phone} onChange={handleChange} />
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor="company">Company / Organisation <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Label htmlFor="company">Company / Organisation <span style={{ color: "#111111" }}>(optional)</span></Label>
                     <Input id="company" name="company" placeholder="Your company" value={formData.company} onChange={handleChange} />
                   </div>
                   <div className="space-y-1.5">
-                    <Label htmlFor="role">Current Role <span style={{ color: "#9CA3AF" }}>(optional)</span></Label>
+                    <Label htmlFor="role">Current Role <span style={{ color: "#111111" }}>(optional)</span></Label>
                     <Input id="role" name="role" placeholder="e.g. Marketing Manager, Founder" value={formData.role} onChange={handleChange} />
                   </div>
 
                   <Button
                     type="submit"
                     className="w-full text-white font-bold py-6 text-base"
-                    style={{ background: "linear-gradient(135deg, #0D9488 0%, #16A34A 100%)", border: "none", fontFamily: "'Sora', sans-serif" }}
+                    style={{ background: "#2ecc71", color: "#0d1117", border: "none", fontFamily: "'Sora', sans-serif" }}
                     disabled={registerMutation.isPending}
                   >
                     {registerMutation.isPending ? "Registering…" : `Reserve My Seat — ${MASTERCLASS_PRICE}`}
                   </Button>
 
-                  <p className="text-xs text-center" style={{ color: "#9CA3AF" }}>
-                    By registering you'll receive the Zoom link and session updates by email.
+                  <p className="text-xs text-center" style={{ color: "#111111" }}>
+                    By registering you will receive the Zoom link and session updates by email.
                   </p>
                 </form>
               </CardContent>

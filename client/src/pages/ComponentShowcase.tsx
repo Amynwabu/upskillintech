@@ -976,7 +976,7 @@ export default function ComponentsShowcase() {
               <AccordionItem value="item-3">
                 <AccordionTrigger>Is it animated?</AccordionTrigger>
                 <AccordionContent>
-                  Yes. It's animated by default, but you can disable it if you
+                  Yes. It is animated by default, but you can disable it if you
                   prefer.
                 </AccordionContent>
               </AccordionItem>
@@ -1065,7 +1065,7 @@ export default function ComponentsShowcase() {
                         <SheetTitle>Edit profile</SheetTitle>
                         <SheetDescription>
                           Make changes to your profile here. Click save when
-                          you're done.
+                          you are done.
                         </SheetDescription>
                       </SheetHeader>
                     </SheetContent>
@@ -1403,7 +1403,7 @@ export default function ComponentsShowcase() {
                       Features markdown rendering, auto-scrolling, and loading states.
                     </p>
                     <p className="mt-2">
-                      This is a demo with simulated responses. In a real app, you'd connect it to a tRPC mutation.
+                      This is a demo with simulated responses. In a real app, you would connect it to a tRPC mutation.
                     </p>
                   </div>
                   <AIChatBox

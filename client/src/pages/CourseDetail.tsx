@@ -95,7 +95,7 @@ export default function CourseDetail() {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-2">Course Not Found</h2>
-            <p className="text-muted-foreground mb-4">The course you're looking for doesn't exist.</p>
+            <p className="text-muted-foreground mb-4">The course you are looking for does not exist.</p>
             <Link href="/learn">
               <Button>Browse Courses</Button>
             </Link>
@@ -246,7 +246,7 @@ export default function CourseDetail() {
             <TabsContent value="overview" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>What You'll Learn</CardTitle>
+                  <CardTitle>What You will Learn</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

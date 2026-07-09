@@ -3,20 +3,20 @@ import { Link } from "wouter";
 
 export default function WebinarPromoBanner() {
   return (
-    <section style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 100%)" }}>
+    <section style={{ background: "#2ecc71" }}>
       <div className="container">
-        <div className="flex flex-col gap-2 py-3 text-white sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2 text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif" }}>
-            <Zap size={16} color="#E6B800" />
-            <span>July AI Masterclass — Live practical sessions</span>
-            <span className="hidden md:inline" style={{ color: "rgba(255,255,255,0.82)", fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}>
-              ₦50,000 · £50 · Limited spots
+        <div className="flex flex-col gap-2 py-3 sm:flex-row sm:items-center sm:justify-between" style={{ color: "#0d1117" }}>
+          <div className="flex items-center gap-2 font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1rem" }}>
+            <Zap size={16} color="#0d1117" />
+            <span>AI Masterclass — 1 and 8 August 2026</span>
+            <span className="hidden md:inline" style={{ color: "rgba(13,17,23,0.75)", fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}>
+              £50 United Kingdom · $50 All Other Regions · Limited spots
             </span>
           </div>
           <Link
-            href="/masterclass"
-            className="inline-flex items-center gap-1 text-sm font-bold text-white underline-offset-4 hover:underline"
-            style={{ fontFamily: "'Sora', sans-serif", textDecoration: "none", whiteSpace: "nowrap" }}
+            href="/masterclass#register"
+            className="inline-flex items-center gap-1 font-bold underline-offset-4 hover:underline"
+            style={{ fontFamily: "'Sora', sans-serif", fontSize: "1rem", color: "#0d1117", textDecoration: "none", whiteSpace: "nowrap" }}
           >
             Reserve your spot <ArrowRight size={15} />
           </Link>
