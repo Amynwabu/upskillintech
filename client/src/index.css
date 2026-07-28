@@ -8,7 +8,7 @@
  * Font Scale: Significantly increased for impact and readability
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -54,39 +54,39 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Brand tokens */
-  --color-brand-green:        #439288;
-  --color-brand-teal:         #439288;
-  --color-brand-teal-deep:    #16A34A;
-  --color-brand-golden-green: #8B9E1A;
-  --color-brand-amber:        #D97706;
-  --color-brand-yellow:       #E6B800;
-  --color-brand-dark:         #111827;
-  --color-brand-navy:         #0F172A;
-  --color-brand-body:         #374151;
-  --color-brand-light-bg:     #F7F8FA;
-  --color-brand-yellow-bg:    #FFF7D6;
+  --color-brand-green: #439288;
+  --color-brand-teal: #439288;
+  --color-brand-teal-deep: #16a34a;
+  --color-brand-golden-green: #8b9e1a;
+  --color-brand-amber: #d97706;
+  --color-brand-yellow: #e6b800;
+  --color-brand-dark: #111827;
+  --color-brand-navy: #0f172a;
+  --color-brand-body: #374151;
+  --color-brand-light-bg: #f7f8fa;
+  --color-brand-yellow-bg: #fff7d6;
 }
 
 :root {
   --brand-primary: #439288;
   --brand-primary-hover: #34766e;
-  --brand-secondary: #4CA154;
-  --background-dark: #161B22;
-  --background-deep: #0B0F13;
-  --background-light: #FFFFFF;
-  --background-muted: #F4F7F7;
+  --brand-secondary: #4ca154;
+  --background-dark: #161b22;
+  --background-deep: #0b0f13;
+  --background-light: #ffffff;
+  --background-muted: #f4f7f7;
   --text-on-light: #000000;
   --text-on-light-body: #111111;
   --text-on-light-secondary: #374151;
-  --text-on-light-muted: #4B5563;
-  --text-on-dark: #FFFFFF;
-  --text-on-dark-secondary: #D7DEE5;
-  --text-on-dark-muted: #B5C0C9;
-  --border-dark: #29323D;
-  --border-light: #DCE4E6;
+  --text-on-light-muted: #4b5563;
+  --text-on-dark: #ffffff;
+  --text-on-dark-secondary: #d7dee5;
+  --text-on-dark-muted: #b5c0c9;
+  --border-dark: #29323d;
+  --border-light: #dce4e6;
   --input-text: #111111;
-  --input-placeholder: #6B7280;
-  --input-border: #CBD5E1;
+  --input-placeholder: #6b7280;
+  --input-border: #cbd5e1;
 
   /* Shared compact controls use the darker accessible teal. Branded large
      CTAs use --brand-primary with bold large text. */
@@ -103,7 +103,7 @@
   --secondary-foreground: var(--text-on-dark);
   --muted: #202833;
   --muted-foreground: var(--text-on-dark-muted);
-  --accent: #E6B800;
+  --accent: #e6b800;
   --accent-foreground: #111827;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
@@ -111,10 +111,10 @@
   --input: var(--border-dark);
   --ring: var(--brand-primary);
   --chart-1: var(--brand-primary);
-  --chart-2: #8B9E1A;
-  --chart-3: #E6B800;
-  --chart-4: #F3F4F6;
-  --chart-5: #9CA3AF;
+  --chart-2: #8b9e1a;
+  --chart-3: #e6b800;
+  --chart-4: #f3f4f6;
+  --chart-5: #9ca3af;
   --sidebar: var(--background-dark);
   --sidebar-foreground: var(--text-on-dark);
   --sidebar-primary: var(--brand-primary);
@@ -134,7 +134,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.7;
     color: var(--text-on-dark-secondary);
@@ -143,7 +143,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1 {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: clamp(2.4rem, 5vw, 3.75rem);
     font-weight: 800;
     line-height: 1.15;
@@ -151,7 +151,7 @@
     letter-spacing: -0.02em;
   }
   h2 {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.75rem);
     font-weight: 700;
     line-height: 1.2;
@@ -159,14 +159,14 @@
     letter-spacing: -0.015em;
   }
   h3 {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: clamp(1.25rem, 2.5vw, 1.625rem);
     font-weight: 700;
     line-height: 1.3;
     color: var(--text-on-dark);
   }
   h4 {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.4;
@@ -229,24 +229,17 @@
     display: inline-flex;
     align-items: center;
     gap: 0.65rem;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-weight: 800;
     letter-spacing: -0.035em;
     line-height: 1;
   }
-  .brand-logo__symbol {
-    display: grid;
-    place-items: center;
-    width: 2.15rem;
-    height: 2.15rem;
-    border-radius: 0.7rem 0.7rem 0.7rem 0.18rem;
-    background: var(--brand-primary);
-    color: #ffffff;
-    font-size: 1.25rem;
-    box-shadow: inset -6px -6px 16px rgba(0, 0, 0, 0.12);
+  .brand-logo__image {
+    display: block;
+    aspect-ratio: 1;
+    object-fit: contain;
   }
   .brand-logo__wordmark {
-    color: var(--text-on-light);
     opacity: 1;
   }
   .brand-logo--dark-background .brand-logo__wordmark {
@@ -255,11 +248,27 @@
   .brand-logo--light-background .brand-logo__wordmark {
     color: #000000;
   }
-  .brand-logo--sm { font-size: 1rem; }
-  .brand-logo--sm .brand-logo__symbol { width: 1.8rem; height: 1.8rem; font-size: 1rem; }
-  .brand-logo--md { font-size: 1.3rem; }
-  .brand-logo--lg { font-size: 1.55rem; }
-  .brand-logo--lg .brand-logo__symbol { width: 2.55rem; height: 2.55rem; font-size: 1.45rem; }
+  .brand-logo--sm {
+    font-size: 1rem;
+  }
+  .brand-logo--sm .brand-logo__image {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .brand-logo--md {
+    font-size: 1.3rem;
+  }
+  .brand-logo--md .brand-logo__image {
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+  .brand-logo--lg {
+    font-size: 1.55rem;
+  }
+  .brand-logo--lg .brand-logo__image {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
 
   /* Common Tailwind light surfaces receive an explicit readable foreground.
      Component-level explicit colours continue to win where intentionally set. */
@@ -282,16 +291,32 @@
     color: var(--text-on-dark);
   }
 
-  :where(.surface-light, .bg-white, .bg-slate-50, .bg-slate-100, .bg-gray-50, .bg-gray-100)
+  :where(
+      .surface-light,
+      .bg-white,
+      .bg-slate-50,
+      .bg-slate-100,
+      .bg-gray-50,
+      .bg-gray-100
+    )
     :where(input, textarea, select) {
     color: var(--input-text);
   }
-  :where(.surface-light, .bg-white, .bg-slate-50, .bg-slate-100, .bg-gray-50, .bg-gray-100)
+  :where(
+      .surface-light,
+      .bg-white,
+      .bg-slate-50,
+      .bg-slate-100,
+      .bg-gray-50,
+      .bg-gray-100
+    )
     :where(input::placeholder, textarea::placeholder) {
     color: var(--input-placeholder);
     opacity: 1;
   }
-  input:focus-visible, textarea:focus-visible, select:focus-visible {
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
     outline-color: var(--brand-primary);
   }
 
@@ -308,17 +333,24 @@
     min-width: 0;
   }
   @media (min-width: 640px) {
-    .container { padding-left: 2rem; padding-right: 2rem; }
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
   @media (min-width: 1024px) {
-    .container { padding-left: 2.5rem; padding-right: 2.5rem; max-width: 1320px; }
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1320px;
+    }
   }
 
   /* ── Buttons — larger, bolder ── */
   .btn-primary {
     background: var(--brand-primary);
     color: #ffffff;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     padding: 0.875rem 2rem;
@@ -330,18 +362,18 @@
     gap: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.01em;
-    box-shadow: 0 4px 14px rgba(67,146,136,0.25);
+    box-shadow: 0 4px 14px rgba(67, 146, 136, 0.25);
   }
   .btn-primary:hover {
     background: var(--brand-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(67,146,136,0.40);
+    box-shadow: 0 8px 24px rgba(67, 146, 136, 0.4);
   }
 
   .btn-primary-white {
     background: #ffffff;
     color: var(--brand-primary-hover);
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     padding: 0.875rem 2rem;
@@ -352,31 +384,31 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   }
   .btn-primary-white:hover {
     background: #f0fdf4;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255,255,255,0.35);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35);
   }
 
   .btn-outline-white {
     background: transparent;
     color: #ffffff;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 0.875rem 2rem;
     border-radius: 0.5rem;
     transition: all 0.2s ease;
-    border: 2px solid rgba(255,255,255,0.75);
+    border: 2px solid rgba(255, 255, 255, 0.75);
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
   }
   .btn-outline-white:hover {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-color: #ffffff;
     transform: translateY(-2px);
   }
@@ -384,7 +416,7 @@
   .btn-outline {
     background: transparent;
     color: var(--brand-primary);
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
     font-weight: 600;
     padding: 0.875rem 2rem;
@@ -400,13 +432,13 @@
     background: var(--brand-primary);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(67,146,136,0.30);
+    box-shadow: 0 6px 20px rgba(67, 146, 136, 0.3);
   }
 
   .btn-yellow {
-    background: #E6B800;
+    background: #e6b800;
     color: #111827;
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     padding: 0.875rem 2rem;
@@ -417,24 +449,24 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(230,184,0,0.30);
+    box-shadow: 0 4px 14px rgba(230, 184, 0, 0.3);
   }
   .btn-yellow:hover {
     background: #c9a000;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(230,184,0,0.45);
+    box-shadow: 0 8px 24px rgba(230, 184, 0, 0.45);
   }
 
   /* ── Section label pill ── */
   .section-label {
-    font-family: 'Sora', sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #439288;
-    background: rgba(67,146,136,0.10);
-    border: 1px solid rgba(67,146,136,0.20);
+    background: rgba(67, 146, 136, 0.1);
+    border: 1px solid rgba(67, 146, 136, 0.2);
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
     display: inline-block;
@@ -446,13 +478,13 @@
     position: relative;
   }
   .heading-accent::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     bottom: -6px;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #439288, #E6B800);
+    background: linear-gradient(90deg, #439288, #e6b800);
     border-radius: 2px;
   }
 
@@ -463,41 +495,68 @@
 
   /* ── Modern card ── */
   .card-modern {
-    background: #151B23;
-    border: 1px solid #1F2937;
+    background: #151b23;
+    border: 1px solid #1f2937;
     border-radius: 1rem;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.30);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
   .card-modern:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
   }
 
   /* ── Animations ── */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  .animate-fade-up { animation: fadeUp 0.65s ease forwards; }
-  .animate-fade-up-delay-1 { opacity: 0; animation: fadeUp 0.65s 0.1s ease forwards; }
-  .animate-fade-up-delay-2 { opacity: 0; animation: fadeUp 0.65s 0.2s ease forwards; }
-  .animate-fade-up-delay-3 { opacity: 0; animation: fadeUp 0.65s 0.3s ease forwards; }
-  .animate-fade-up-delay-4 { opacity: 0; animation: fadeUp 0.65s 0.4s ease forwards; }
+  .animate-fade-up {
+    animation: fadeUp 0.65s ease forwards;
+  }
+  .animate-fade-up-delay-1 {
+    opacity: 0;
+    animation: fadeUp 0.65s 0.1s ease forwards;
+  }
+  .animate-fade-up-delay-2 {
+    opacity: 0;
+    animation: fadeUp 0.65s 0.2s ease forwards;
+  }
+  .animate-fade-up-delay-3 {
+    opacity: 0;
+    animation: fadeUp 0.65s 0.3s ease forwards;
+  }
+  .animate-fade-up-delay-4 {
+    opacity: 0;
+    animation: fadeUp 0.65s 0.4s ease forwards;
+  }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%       { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   /* ── Hero gradient ── */
   .hero-gradient {
-    background: linear-gradient(135deg, #439288 0%, #8B9E1A 60%, #E6B800 100%);
+    background: linear-gradient(135deg, #439288 0%, #8b9e1a 60%, #e6b800 100%);
   }
 
   /* ── Yellow soft bg ── */
   .bg-yellow-soft {
-    background: #2A2410;
+    background: #2a2410;
   }
 
   /* ── Section spacing ── */

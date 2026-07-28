@@ -24,7 +24,9 @@ export const webinarRegistrationSchema = z.object({
   website: z.string().max(0, "Unable to submit this registration").optional(),
 });
 
-export type WebinarRegistrationInput = z.infer<typeof webinarRegistrationSchema>;
+export type WebinarRegistrationInput = z.infer<
+  typeof webinarRegistrationSchema
+>;
 
 export const webinarStatusSchema = z.enum([
   "draft",
@@ -72,13 +74,13 @@ export const AI_EMPLOYEE_WEBINAR_PLACEHOLDER: PublicWebinar = {
   speakerBiography:
     "The final speaker profile and photograph will be published when the event schedule is confirmed.",
   speakerImageUrl: null,
-  eventStartAt: null,
+  eventStartAt: new Date("2026-08-08T13:00:00.000Z"),
   eventEndAt: null,
   registrationOpensAt: null,
   registrationClosesAt: null,
   timezone: "Europe/London",
   maximumAttendees: null,
-  status: "draft",
+  status: "published",
   recordingAvailable: false,
   masterclassUrl: "/masterclass",
 };
@@ -92,12 +94,14 @@ export function getWebinarPhase(webinar: PublicWebinar, now = new Date()) {
   if (webinar.status === "completed") return "completed" as const;
   if (webinar.status === "live") return "live" as const;
   if (!webinar.eventStartAt) return "date_pending" as const;
-  if (webinar.eventEndAt && now >= webinar.eventEndAt) return "completed" as const;
+  if (webinar.eventEndAt && now >= webinar.eventEndAt)
+    return "completed" as const;
   if (now >= webinar.eventStartAt) return "live" as const;
   if (
     webinar.status === "registration_closed" ||
     (webinar.registrationClosesAt && now > webinar.registrationClosesAt)
-  ) return "registration_closed" as const;
+  )
+    return "registration_closed" as const;
   if (webinar.registrationOpensAt && now < webinar.registrationOpensAt) {
     return "registration_not_open" as const;
   }
@@ -107,7 +111,7 @@ export function getWebinarPhase(webinar: PublicWebinar, now = new Date()) {
 
 export function formatWebinarDate(
   date: Date | string | null,
-  timezone = "Europe/London",
+  timezone = "Europe/London"
 ) {
   if (!date) return "Date and time to be announced";
   return new Intl.DateTimeFormat("en-GB", {

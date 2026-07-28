@@ -181,7 +181,7 @@ export default function WebinarAiEmployee({
               <div className="webinar-event-card">
                 <Clock3 size={22} />
                 <div>
-                  <small>Live online · {webinar.timezone}</small>
+                  <small>Live online</small>
                   <strong>{date}</strong>
                 </div>
               </div>
