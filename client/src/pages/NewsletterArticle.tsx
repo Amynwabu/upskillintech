@@ -23,7 +23,7 @@ const ARTICLES: Record<string, {
   "most-professionals-are-using-ai-wrong": {
     title: "Most Professionals Are Using AI Wrong",
     date: "March 2026", readTime: "5 min read", author: "UpskillinTech Team",
-    tag: "Featured Insight", tagColor: "#0D9488",
+    tag: "Featured Insight", tagColor: "#439288",
     sections: [
       {
         type: "insight",
@@ -48,7 +48,7 @@ const ARTICLES: Record<string, {
       {
         type: "community",
         title: "Community Update: March Masterclass Recap",
-        content: `Last week's masterclass on "AI for Client Communication" drew over 200 professionals from across Africa, the UK, and North America. The session covered how to use AI to draft client proposals, handle objections, and write follow-up emails that actually get responses.\n\nThe most popular takeaway? A simple prompt template for turning rough meeting notes into polished client summaries in under 3 minutes. We've added it to the AI Workflow Library — check it out at upskillintech.com/resources/workflows.\n\nNext masterclass: **"AI for Data Analysis Without Coding"** — April 10th, 6pm GMT. Register free at upskillintech.com/community.`,
+        content: `Last week's masterclass on "AI for Client Communication" drew over 200 professionals from around the world. The session covered how to use AI to draft client proposals, handle objections, and write follow-up emails that actually get responses.\n\nThe most popular takeaway? A simple prompt template for turning rough meeting notes into polished client summaries in under 3 minutes. We've added it to the AI Workflow Library — check it out at upskillintech.com/resources/workflows.\n\nNext masterclass: **"AI for Data Analysis Without Coding"** — April 10th, 6pm GMT. Register free at upskillintech.com/community.`,
       },
       {
         type: "resource",
@@ -237,7 +237,7 @@ const ARTICLES: Record<string, {
 };
 
 const ALL_EDITIONS = [
-  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#0D9488" },
+  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#439288" },
   { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#8B9E1A" },
   { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#D97706" },
   { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#7C3AED" },
@@ -248,7 +248,7 @@ const SECTION_ICONS: Record<string, React.ElementType> = {
   insight: Lightbulb, tip: Zap, tool: BarChart2, workflow: BookOpen, community: Users, resource: Mail,
 };
 const SECTION_COLORS: Record<string, string> = {
-  insight: "#0D9488", tip: "#E6B800", tool: "#8B9E1A", workflow: "#7C3AED", community: "#0891B2", resource: "#D97706",
+  insight: "#439288", tip: "#E6B800", tool: "#8B9E1A", workflow: "#7C3AED", community: "#0891B2", resource: "#D97706",
 };
 
 export default function NewsletterArticle() {
@@ -271,7 +271,7 @@ export default function NewsletterArticle() {
           <div className="text-center py-20">
             <h1 className="text-4xl font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Edition Not Found</h1>
             <p className="text-lg mb-8" style={{ color: "#9CA3AF" }}>This newsletter edition doesn't exist or has been moved.</p>
-            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#0D9488" }}>
+            <Link href="/newsletter" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white" style={{ background: "#439288" }}>
               ← Back to Newsletter
             </Link>
           </div>
@@ -292,9 +292,9 @@ export default function NewsletterArticle() {
         <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
             <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
-              <Link href="/resources" style={{ color: "#0D9488", textDecoration: "none" }}>Resources</Link>
+              <Link href="/resources" style={{ color: "#439288", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
-              <Link href="/newsletter" style={{ color: "#0D9488", textDecoration: "none" }}>Newsletter</Link>
+              <Link href="/newsletter" style={{ color: "#439288", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
               <span style={{ color: "#D1D5DB" }}>{article.title}</span>
             </div>
@@ -327,7 +327,7 @@ export default function NewsletterArticle() {
             <div className="max-w-3xl mx-auto">
               {article.sections.map((section, i) => {
                 const Icon = SECTION_ICONS[section.type] || Lightbulb;
-                const color = SECTION_COLORS[section.type] || "#0D9488";
+                const color = SECTION_COLORS[section.type] || "#439288";
                 return (
                   <div key={i} className="mb-10 rounded-2xl p-8"
                     style={{ border: `1.5px solid ${color}30`, background: `${color}08` }}>
@@ -368,7 +368,7 @@ export default function NewsletterArticle() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link href="/programs"
                     className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white transition-all hover:opacity-90"
-                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
+                    style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)" }}>
                     Explore Programs <ArrowRight size={16} />
                   </Link>
                   <Link href="/community"
@@ -406,7 +406,7 @@ export default function NewsletterArticle() {
                     />
                     <button type="submit" disabled={subscribe.isPending}
                       className="px-6 py-3 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
-                      style={{ background: "#0D9488", whiteSpace: "nowrap" }}>
+                      style={{ background: "#439288", whiteSpace: "nowrap" }}>
                       {subscribe.isPending ? "..." : "Subscribe"}
                     </button>
                   </form>
@@ -427,8 +427,8 @@ export default function NewsletterArticle() {
                 <div className="grid sm:grid-cols-3 gap-5">
                   {relatedArticles.map((rel) => rel && (
                     <Link key={rel.slug} href={`/newsletter/${rel.slug}`}
-                      className="block rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
-                      style={{ border: "1.5px solid #1F2937", background: "#FAFAFA" }}>
+                      className="surface-light block rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:shadow-md"
+                      style={{ border: "1.5px solid #DCE4E6", background: "#FAFAFA" }}>
                       <div className="inline-block px-2.5 py-1 rounded-full text-xs font-bold mb-3"
                         style={{ background: `${rel.tagColor}18`, color: rel.tagColor }}>
                         {rel.tag}
@@ -436,7 +436,7 @@ export default function NewsletterArticle() {
                       <h4 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", color: "#F3F4F6", lineHeight: 1.4 }}>
                         {rel.title}
                       </h4>
-                      <div className="flex items-center gap-3" style={{ color: "#9CA3AF", fontSize: "0.8rem" }}>
+                      <div className="flex items-center gap-3" style={{ color: "#4B5563", fontSize: "0.8rem" }}>
                         <span>{rel.date}</span>
                         <span>{rel.readTime}</span>
                       </div>

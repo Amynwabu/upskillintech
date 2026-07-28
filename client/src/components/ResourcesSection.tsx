@@ -7,8 +7,8 @@ import { BookOpen, FileText, BarChart2, Video, ArrowRight } from "lucide-react";
 const resources = [
   {
     icon: BookOpen,
-    color: "#0D9488",
-    bg: "rgba(13,148,136,0.10)",
+    color: "#439288",
+    bg: "rgba(67,146,136,0.10)",
     title: "Blog",
     desc: "Practical AI insights, how-to guides, and strategies for professionals ready to work smarter.",
     count: "20+ Articles",
@@ -25,8 +25,8 @@ const resources = [
   },
   {
     icon: BarChart2,
-    color: "#0D9488",
-    bg: "rgba(13,148,136,0.10)",
+    color: "#439288",
+    bg: "rgba(67,146,136,0.10)",
     title: "Case Studies",
     desc: "Real-world stories of professionals and organisations who transformed their work with AI.",
     count: "6 Case Studies",
@@ -51,7 +51,7 @@ export default function ResourcesSection() {
         <div className="text-center mb-14">
           <span className="section-label mb-5">Free Resources</span>
           <h2 className="mt-4 mb-5">
-            UpskillinTech <span style={{ color: "#0D9488" }}>Resources</span>
+            UpskillinTech <span style={{ color: "#439288" }}>Resources</span>
           </h2>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             Everything you need to start, grow, and lead with AI — available free to the community.
@@ -76,7 +76,7 @@ export default function ResourcesSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-5px)";
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(13,148,136,0.14)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(67,146,136,0.14)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";

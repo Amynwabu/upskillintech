@@ -9,7 +9,7 @@ const days = [
     title: "AI for Email",
     tagline: "Write better emails in half the time",
     icon: Mail,
-    color: "#0D9488",
+    color: "#439288",
     task: "Use ChatGPT or Claude to write 3 real emails you need to send today — a professional follow-up, a customer response, and one you've been procrastinating on.",
     prompt: "\"Write a professional follow-up email to [name] after [meeting/event]. Keep it warm, concise, and include a clear next step.\"",
     outcome: "You'll never stare at a blank email again.",
@@ -64,7 +64,7 @@ const days = [
     title: "AI for Document Analysis",
     tagline: "Understand any document in minutes",
     icon: BookOpen,
-    color: "#0D9488",
+    color: "#439288",
     task: "Upload or paste a long document — a report, contract, policy, article, or proposal — and ask AI to summarise it, extract key points, and identify what you need to act on.",
     prompt: "\"Here is a document: [paste or describe it]. Please: 1) Summarise in 5 bullet points, 2) List any action items or deadlines, 3) Flag anything I should question or investigate further.\"",
     outcome: "Never read a 40-page report from scratch again.",
@@ -92,7 +92,7 @@ export default function Challenge() {
       <main className="flex-1 pt-[72px]">
 
         {/* Hero */}
-        <section style={{ background: "linear-gradient(135deg, #0D9488 0%, #0F766E 60%, #16A34A 100%)", padding: "5rem 1.5rem 4rem" }}>
+        <section style={{ background: "linear-gradient(135deg, #439288 0%, #0F766E 60%, #16A34A 100%)", padding: "5rem 1.5rem 4rem" }}>
           <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(255,255,255,0.15)", borderRadius: "2rem", padding: "0.4rem 1rem", marginBottom: "1.5rem" }}>
               <Zap size={14} color="#E6B800" />
@@ -143,7 +143,7 @@ export default function Challenge() {
         <section id="day-1" style={{ background: "#0B0F14", padding: "4rem 1.5rem" }}>
           <div style={{ maxWidth: 860, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#0D9488", textTransform: "uppercase", letterSpacing: "0.08em" }}>The Challenge</span>
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#439288", textTransform: "uppercase", letterSpacing: "0.08em" }}>The Challenge</span>
               <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F3F4F6", marginTop: "0.5rem" }}>
                 One task. One day. Real results.
               </h2>
@@ -236,10 +236,10 @@ export default function Challenge() {
               The 7-Day Challenge is just the beginning. Join the AI Starter Bootcamp to build structured AI skills with community support and expert guidance.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <a href="/programs" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#0D9488", color: "#fff", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
+              <a href="/programs" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "#439288", color: "#fff", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.95rem", textDecoration: "none" }}>
                 Explore Programmes <ArrowRight size={15} />
               </a>
-              <a href="#lead-magnet" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#0D9488", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", border: "1.5px solid #0D9488" }}>
+              <a href="#lead-magnet" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "transparent", color: "#439288", borderRadius: "0.75rem", padding: "0.9rem 1.75rem", fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: "0.95rem", textDecoration: "none", border: "1.5px solid #439288" }}>
                 Get the Free Starter Kit
               </a>
             </div>

@@ -30,7 +30,7 @@ export default function FinalCTASection() {
       id="final-cta"
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #0D9488 0%, #2d9e3e 40%, #1a7a2e 100%)",
+        background: "linear-gradient(135deg, #439288 0%, #2d9e3e 40%, #1a7a2e 100%)",
         padding: "7rem 0",
       }}
     >
@@ -56,7 +56,8 @@ export default function FinalCTASection() {
           </h2>
 
           <p className="mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
-            Join 1,000+ professionals across Nigeria, the UK, and the diaspora who are already using AI to work smarter, grow faster, and lead with confidence.
+            Join professionals worldwide who are using AI to work smarter, grow
+            responsibly and lead with confidence.
           </p>
 
           {/* CTAs */}

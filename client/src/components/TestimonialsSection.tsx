@@ -13,7 +13,7 @@ const testimonials = [
     role: "Operations professional",
     company: "AI Skills Workshop",
     initials: "WA",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     quote: "The webinar made AI feel accessible. The examples were clear, grounded, and relevant to the work my team actually does.",
@@ -67,10 +67,10 @@ export default function TestimonialsSection() {
     <section className="py-20 lg:py-28" style={{ background: "#0F172A" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         <div className={`text-center max-w-2xl mx-auto mb-14 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-          <div className="section-label mb-3" style={{ color: "#0D9488" }}>Social Proof</div>
+          <div className="section-label mb-3" style={{ color: "#439288" }}>Social Proof</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2 }}>
             What Participants{" "}
-            <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Are Saying
             </span>
           </h2>

@@ -6,7 +6,7 @@ export default function MasterclassPromo() {
       <div className="container">
         <div
           style={{
-            background: "linear-gradient(135deg, #0D9488 0%, #16A34A 100%)",
+            background: "linear-gradient(135deg, #439288 0%, #16A34A 100%)",
             borderRadius: "1.5rem",
             padding: "3rem 2.5rem",
             display: "grid",
@@ -49,7 +49,7 @@ export default function MasterclassPromo() {
                 href="/masterclass"
                 style={{
                   display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                  background: "#151B23", color: "#0D9488", borderRadius: "0.75rem",
+                  background: "#151B23", color: "#439288", borderRadius: "0.75rem",
                   padding: "0.9rem 1.75rem", fontFamily: "'Sora', sans-serif",
                   fontWeight: 700, fontSize: "0.95rem", textDecoration: "none",
                   boxShadow: "0 4px 16px rgba(0,0,0,0.15)",

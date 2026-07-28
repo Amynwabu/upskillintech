@@ -22,8 +22,8 @@ export default function FounderSection() {
                 style={{
                   maxWidth: 360,
                   width: "100%",
-                  boxShadow: "0 24px 64px rgba(13,148,136,0.18)",
-                  border: "3px solid rgba(13,148,136,0.20)",
+                  boxShadow: "0 24px 64px rgba(67,146,136,0.18)",
+                  border: "3px solid rgba(67,146,136,0.20)",
                 }}
               >
                 <img
@@ -36,7 +36,7 @@ export default function FounderSection() {
               {/* Floating credential badge */}
               <div
                 className="absolute -bottom-5 -right-5 rounded-2xl px-5 py-4 text-center"
-                style={{ background: "#0D9488", boxShadow: "0 8px 24px rgba(13,148,136,0.35)" }}
+                style={{ background: "#439288", boxShadow: "0 8px 24px rgba(67,146,136,0.35)" }}
               >
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>PhD</div>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>AI &amp; Robotics</div>
@@ -49,18 +49,20 @@ export default function FounderSection() {
             <span className="section-label mb-5">The Voice Behind the Platform</span>
             <h2 className="mt-4 mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
               Insights Grounded in{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #0D9488)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #439288, #439288)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Real Research
               </span>
             </h2>
-            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#0D9488", fontSize: "1.2rem" }}>
+            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#439288", fontSize: "1.2rem" }}>
               Dr. Amaka Adiuku
             </p>
             <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF" }}>
               AI Researcher · Lecturer at Cranfield University · Educator · Investigative AI Journalist
             </p>
             <p className="mb-4" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
-              UpskillinTech is an independent platform I built to help professionals across Nigeria, the UK, and the diaspora move from AI curiosity to practical AI adoption — calmly, confidently, and without the overwhelm.
+              UpskillinTech is an independent platform I built to help professionals
+              everywhere move from AI curiosity to practical adoption—calmly,
+              confidently and without the overwhelm.
             </p>
             <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", lineHeight: 1.8, color: "#D1D5DB" }}>
               As a university lecturer in AI and Robotics at Cranfield University and a published researcher, I bring academic rigour and real-world application together. I also run an investigative YouTube channel and podcast covering AI manipulation, misinformation, and responsible AI adoption.
@@ -75,9 +77,9 @@ export default function FounderSection() {
                   style={{
                     fontFamily: "'Sora', sans-serif",
                     fontSize: "0.875rem",
-                    background: "rgba(13,148,136,0.08)",
-                    color: "#0D9488",
-                    border: "1px solid rgba(13,148,136,0.18)",
+                    background: "rgba(67,146,136,0.08)",
+                    color: "#439288",
+                    border: "1px solid rgba(67,146,136,0.18)",
                   }}
                 >
                   {tag}
@@ -86,7 +88,7 @@ export default function FounderSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488" }}>
+              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#439288" }}>
                 About UpskillinTech
               </a>
               <a
@@ -95,8 +97,8 @@ export default function FounderSection() {
                 style={{
                   fontSize: "1.05rem",
                   padding: "1rem 2.25rem",
-                  borderColor: "#0D9488",
-                  color: "#0D9488",
+                  borderColor: "#439288",
+                  color: "#439288",
                 }}
               >
                 Book a Discovery Call

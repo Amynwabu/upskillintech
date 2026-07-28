@@ -3,7 +3,7 @@ import { Link } from "wouter";
 
 export default function WebinarPromoBanner() {
   return (
-    <section style={{ background: "linear-gradient(90deg, #0D9488 0%, #16A34A 100%)" }}>
+    <section style={{ background: "linear-gradient(90deg, #439288 0%, #16A34A 100%)" }}>
       <div className="container">
         <div className="flex flex-col gap-2 py-3 text-white sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-2 text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif" }}>

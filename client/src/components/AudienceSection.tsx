@@ -15,7 +15,7 @@ const audiences = [
     ],
     cta: "Start with Everyday AI",
     href: "#programs",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     icon: Briefcase,
@@ -82,7 +82,8 @@ export default function AudienceSection() {
             AI skills that fit your life, your work, your goals.
           </h2>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.05rem", color: "#9CA3AF", lineHeight: 1.7 }}>
-            Whether you're a professional in Lagos, a solopreneur in London, or leading a team across the diaspora — UpskillinTech meets you where you are.
+            Whether you are a professional, a solopreneur or leading a distributed team,
+            UpskillinTech helps you apply AI to real work.
           </p>
         </div>
 

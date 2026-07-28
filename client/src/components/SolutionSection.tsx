@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     title: "Discover",
     desc: "Understand what AI can do for your life, work, business, or organisation — and why it matters right now.",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     icon: BookOpen,
@@ -59,10 +59,10 @@ export default function SolutionSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div className={`transition-all duration-700 ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
-            <div className="section-label mb-3" style={{ color: "#0D9488" }}>The AI Adoption Pathway</div>
+            <div className="section-label mb-3" style={{ color: "#439288" }}>The AI Adoption Pathway</div>
             <h2 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2 }}>
               Five stages from curiosity{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 to confident adoption
               </span>
             </h2>
@@ -87,7 +87,7 @@ export default function SolutionSection() {
                 return (
                   <div key={step.title} className="relative flex gap-5 mb-6 last:mb-0">
                     {i < steps.length - 1 && (
-                      <div className="absolute left-6 top-14 bottom-0 w-0.5" style={{ background: "linear-gradient(to bottom, rgba(13,148,136,0.4), rgba(13,148,136,0.1))" }} />
+                      <div className="absolute left-6 top-14 bottom-0 w-0.5" style={{ background: "linear-gradient(to bottom, rgba(67,146,136,0.4), rgba(67,146,136,0.1))" }} />
                     )}
                     <div className="relative flex-shrink-0">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${step.color}20`, border: `2px solid ${step.color}40` }}>

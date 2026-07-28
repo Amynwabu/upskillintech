@@ -3,13 +3,13 @@ import Footer from "@/components/Footer";
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-[#151B23]">
+    <div className="surface-dark min-h-screen bg-[#161B22]">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Terms of Service</h1>
-        <p className="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+        <p className="mb-8" style={{ color: "#B5C0C9" }}>Last updated: {new Date().toLocaleDateString()}</p>
 
-        <div className="space-y-8 text-gray-700 leading-7">
+        <div className="space-y-8 leading-7" style={{ color: "#D7DEE5" }}>
           <section>
             <h2 className="text-2xl font-bold text-[#F3F4F6] mb-4">1. Acceptance of Terms</h2>
             <p>

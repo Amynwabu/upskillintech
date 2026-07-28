@@ -14,18 +14,18 @@ const workflows = [
     title: "Meeting Intelligence",
     desc: "Transform every meeting into structured, actionable outcomes automatically.",
     steps: [
-      { icon: MessageSquare, label: "Meeting", color: "#0D9488" },
+      { icon: MessageSquare, label: "Meeting", color: "#439288" },
       { icon: Brain, label: "AI Summary", color: "#7C3AED" },
       { icon: CheckSquare, label: "Action Items", color: "#16A34A" },
     ],
     timeSaved: "2 hrs/week",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     title: "Research to Presentation",
     desc: "Go from raw research to polished presentations in a fraction of the time.",
     steps: [
-      { icon: Search, label: "Research", color: "#0D9488" },
+      { icon: Search, label: "Research", color: "#439288" },
       { icon: Brain, label: "AI Insights", color: "#7C3AED" },
       { icon: Presentation, label: "Presentation", color: "#D97706" },
     ],
@@ -36,7 +36,7 @@ const workflows = [
     title: "Data-Driven Reports",
     desc: "Turn client data into professional reports with AI-powered analysis.",
     steps: [
-      { icon: Database, label: "Client Data", color: "#0D9488" },
+      { icon: Database, label: "Client Data", color: "#439288" },
       { icon: BarChart2, label: "AI Analysis", color: "#7C3AED" },
       { icon: FileBarChart, label: "Report", color: "#DC2626" },
     ],
@@ -60,7 +60,7 @@ export default function WorkflowSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="py-20 lg:py-28" style={{ background: "#F8FAFC" }}>
+    <section className="surface-light py-20 lg:py-28" style={{ background: "#F8FAFC" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -68,11 +68,11 @@ export default function WorkflowSection() {
             <div className="section-label mb-3">Real AI Workflows</div>
             <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
               How AI Improves{" "}
-              <span style={{ background: "linear-gradient(135deg, #0D9488, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Daily Work
               </span>
             </h2>
-            <p className="text-lg" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
+            <p className="text-lg" style={{ color: "#374151", fontFamily: "'DM Sans', sans-serif", lineHeight: 1.7 }}>
               These are real workflows our participants use every day to save time and deliver better results. You'll build workflows like these in the program.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function WorkflowSection() {
           {workflows.map((wf, i) => (
             <div
               key={wf.title}
-              className={`bg-[#151B23] rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 ${inView ? "animate-fade-up" : "opacity-0"}`}
+              className={`surface-light bg-white rounded-xl p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all duration-300 ${inView ? "animate-fade-up" : "opacity-0"}`}
               style={{ animationDelay: `${i * 0.15}s`, animationFillMode: "forwards" }}
             >
               {/* Header */}
@@ -101,7 +101,7 @@ export default function WorkflowSection() {
                 </span>
               </div>
 
-              <p className="text-sm mb-6 leading-relaxed" style={{ color: "#9CA3AF", fontFamily: "'DM Sans', sans-serif" }}>
+              <p className="text-sm mb-6 leading-relaxed" style={{ color: "#374151", fontFamily: "'DM Sans', sans-serif" }}>
                 {wf.desc}
               </p>
 
@@ -115,7 +115,7 @@ export default function WorkflowSection() {
                         <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: `${step.color}15` }}>
                           <Icon size={16} style={{ color: step.color }} />
                         </div>
-                        <span className="text-xs font-medium text-center" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif", fontSize: "0.65rem" }}>
+                        <span className="text-xs font-medium text-center" style={{ color: "#4B5563", fontFamily: "'Sora', sans-serif", fontSize: "0.65rem" }}>
                           {step.label}
                         </span>
                       </div>

@@ -1,7 +1,7 @@
 /**
  * AI Guides Page — UpskillinTech
  * URL: /resources/ai-guides
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -13,9 +13,9 @@ import { toast } from "sonner";
 const GUIDES = [
   {
     id: 1,
-    icon: <Zap size={28} style={{ color: "#0D9488" }} />,
+    icon: <Zap size={28} style={{ color: "#439288" }} />,
     badge: "Most Downloaded",
-    badgeColor: "#0D9488",
+    badgeColor: "#439288",
     title: "AI Productivity Guide",
     subtitle: "Save 10+ Hours Every Week Using AI",
     desc: "A step-by-step framework for integrating AI into your daily work. Covers email management, meeting summaries, research acceleration, and decision support. Designed for professionals who want results — not just theory.",
@@ -30,7 +30,7 @@ const GUIDES = [
     ],
     format: "PDF + Notion Template",
     bg: "#F0FDF4",
-    border: "#0D9488",
+    border: "#439288",
   },
   {
     id: 2,
@@ -100,7 +100,7 @@ const GUIDES = [
 const PROMPT_CATEGORIES = [
   {
     category: "Research & Analysis",
-    color: "#0D9488",
+    color: "#439288",
     prompts: [
       { title: "Deep Research Summary", prompt: "You are a research assistant. Summarise the key findings, main arguments, and practical implications of the following topic for a professional audience: [TOPIC]. Structure your response with: 1) Overview, 2) Key Findings, 3) Practical Implications, 4) Open Questions." },
       { title: "Competitive Analysis", prompt: "Analyse the competitive landscape for [COMPANY/PRODUCT] in [INDUSTRY]. Identify: 1) Top 5 competitors, 2) Their key strengths and weaknesses, 3) Market positioning, 4) Gaps and opportunities. Present as a structured analysis." },
@@ -127,7 +127,7 @@ const PROMPT_CATEGORIES = [
   },
   {
     category: "Leadership & Communication",
-    color: "#0D9488",
+    color: "#439288",
     prompts: [
       { title: "Team Communication", prompt: "Draft a clear, motivating message to my team about [TOPIC/CHANGE]. The message should: 1) Explain the context, 2) Address likely concerns, 3) Clarify what's expected, 4) End on an encouraging note. Tone: [professional/warm/direct]." },
       { title: "Feedback Framework", prompt: "Help me give constructive feedback to [ROLE] about [SITUATION]. Structure the feedback using the SBI model (Situation, Behaviour, Impact) and include: 1) What went well, 2) What needs to improve, 3) Specific suggestions, 4) Support offered." },
@@ -296,8 +296,8 @@ export default function AIGuides() {
           <div className="text-center mt-12">
             <p className="text-sm mb-4" style={{ color: "#9CA3AF" }}>Want all 50 prompts in one place?</p>
             <form onSubmit={(e) => handleDownload(e, "50 AI Prompts Library")} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "2px solid #0D9488" }} />
-              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "2px solid #439288" }} />
+              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                 <Download size={16} /> Download All 50
               </button>
             </form>

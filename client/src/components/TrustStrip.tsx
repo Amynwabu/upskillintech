@@ -34,7 +34,7 @@ export default function TrustStrip() {
                   fontFamily: "'Sora', sans-serif",
                   fontWeight: 800,
                   fontSize: "clamp(1.6rem, 3vw, 2rem)",
-                  color: "#0D9488",
+                  color: "#439288",
                   lineHeight: 1.1,
                 }}
               >

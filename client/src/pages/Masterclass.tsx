@@ -110,15 +110,15 @@ function MasterclassChat() {
 }
 
 const modules = [
-  { num: 1, icon: Target, color: "#0D9488", title: "Find Your Profitable Idea", desc: "Use AI to discover business ideas based on real pain points, market demand & opportunities." },
+  { num: 1, icon: Target, color: "#439288", title: "Find Your Profitable Idea", desc: "Use AI to discover business ideas based on real pain points, market demand & opportunities." },
   { num: 2, icon: UserSearch, color: "#16A34A", title: "Understand Your Audience", desc: "Identify your ideal customers, their problems, needs and what they really want." },
   { num: 3, icon: ClipboardList, color: "#7C3AED", title: "Create Your Business Plan", desc: "Build a clear business proposal with services, pricing, marketing and growth strategy." },
   { num: 4, icon: Paintbrush, color: "#DB2777", title: "Build Your Brand", desc: "Create your business name, logo, tagline, story, mission and brand identity." },
   { num: 5, icon: MonitorSmartphone, color: "#7C3AED", title: "Launch Your Website", desc: "Design a professional website that builds credibility and attracts clients." },
-  { num: 6, icon: CalendarCheck, color: "#0D9488", title: "Create 30 Days of Content", desc: "Get a full month of content ideas, captions, posts, emails & more in minutes." },
+  { num: 6, icon: CalendarCheck, color: "#439288", title: "Create 30 Days of Content", desc: "Get a full month of content ideas, captions, posts, emails & more in minutes." },
   { num: 7, icon: Youtube, color: "#DB2777", title: "Make AI Videos & Podcasts", desc: "Create videos, clone your voice, add subtitles and produce podcasts with AI." },
   { num: 8, icon: Megaphone, color: "#D97706", title: "Design Marketing Materials", desc: "Generate flyers, posters, ad creatives, carousels and promotional graphics." },
-  { num: 9, icon: Bot, color: "#0D9488", title: "Automate & Schedule Content", desc: "Automate content creation, posting, follow-ups and lead management." },
+  { num: 9, icon: Bot, color: "#439288", title: "Automate & Schedule Content", desc: "Automate content creation, posting, follow-ups and lead management." },
   { num: 10, icon: TrendingUp, color: "#7C3AED", title: "Grow & Scale Your Business", desc: "Use AI insights, analytics and systems to grow your business consistently." },
 ];
 
@@ -151,7 +151,7 @@ const painCategories = [
   },
   {
     label: "Business growth & strategy",
-    color: "#0D9488",
+    color: "#439288",
     bg: "#E1F5EE",
     textColor: "#085041",
     items: [
@@ -198,14 +198,14 @@ export default function Masterclass() {
           className="relative overflow-hidden"
           style={{ background: "linear-gradient(135deg, #F0FDFA 0%, #F7FEF7 45%, #FFF7D6 100%)" }}
         >
-          <div className="absolute top-[-160px] right-[-120px] rounded-full pointer-events-none" style={{ width: 420, height: 420, background: "rgba(13,148,136,0.08)" }} />
+          <div className="absolute top-[-160px] right-[-120px] rounded-full pointer-events-none" style={{ width: 420, height: 420, background: "rgba(67,146,136,0.08)" }} />
           <div className="absolute bottom-[-140px] left-[-120px] rounded-full pointer-events-none" style={{ width: 360, height: 360, background: "rgba(230,184,0,0.14)" }} />
 
           <div className="container relative z-10 py-16 lg:py-24">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(13,148,136,0.10)", border: "1px solid rgba(13,148,136,0.20)" }}>
-                <Sparkles size={16} style={{ color: "#0D9488" }} />
-                <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#0D9488" }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(67,146,136,0.10)", border: "1px solid rgba(67,146,136,0.20)" }}>
+                <Sparkles size={16} style={{ color: "#439288" }} />
+                <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.85rem", fontWeight: 700, color: "#439288" }}>
                   AI Transformation Master Class · July 2025
                 </span>
               </div>
@@ -231,9 +231,9 @@ export default function Masterclass() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <ReserveSeatButton
                   className="btn-primary justify-center inline-flex items-center gap-2"
-                  style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}
+                  style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#439288", boxShadow: "0 4px 14px rgba(67,146,136,0.25)" }}
                 />
-                <a href="mailto:hello@upskillintech.com" className="btn-outline justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", borderColor: "#0D9488", color: "#0D9488" }}>
+                <a href="mailto:hello@upskillintech.com" className="btn-outline justify-center" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", borderColor: "#439288", color: "#439288" }}>
                   Ask a Question
                 </a>
               </div>
@@ -241,11 +241,11 @@ export default function Masterclass() {
               {/* Pricing strip */}
               <div className="flex flex-wrap justify-center gap-4 mt-10">
                 <div className="rounded-2xl px-6 py-4 text-center" style={{ background: "rgba(255,255,255,0.9)", boxShadow: "0 10px 28px rgba(0,0,0,0.08)" }}>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#0D9488" }}>₦50,000</div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#439288" }}>₦50,000</div>
                   <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>Nigeria</div>
                 </div>
                 <div className="rounded-2xl px-6 py-4 text-center" style={{ background: "rgba(255,255,255,0.9)", boxShadow: "0 10px 28px rgba(0,0,0,0.08)" }}>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#0D9488" }}>£50</div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "1.5rem", color: "#439288" }}>£50</div>
                   <div style={{ fontSize: "0.85rem", color: "#9CA3AF" }}>UK / International</div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export default function Masterclass() {
                 { num: "Free", label: "Webinar to try before you invest" },
               ].map((s) => (
                 <div key={s.label} style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2rem)", color: "#0D9488", lineHeight: 1.1 }}>{s.num}</div>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2rem)", color: "#439288", lineHeight: 1.1 }}>{s.num}</div>
                   <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.875rem", color: "#9CA3AF", marginTop: "0.2rem", fontWeight: 500 }}>{s.label}</div>
                 </div>
               ))}
@@ -276,8 +276,8 @@ export default function Masterclass() {
         <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <div className="rounded-2xl overflow-hidden" style={{ border: "2px solid #0D9488", boxShadow: "0 12px 40px rgba(13,148,136,0.12)" }}>
-                <div style={{ background: "#0D9488", padding: "1rem 1.5rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: "2px solid #439288", boxShadow: "0 12px 40px rgba(67,146,136,0.12)" }}>
+                <div style={{ background: "#439288", padding: "1rem 1.5rem", display: "flex", alignItems: "center", gap: "0.75rem" }}>
                   <div style={{ background: "rgba(255,255,255,0.2)", borderRadius: "8px", padding: "0.4rem 1rem" }}>
                     <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.8rem", color: "#ffffff", letterSpacing: "0.05em" }}>FREE — Week 3 of July</span>
                   </div>
@@ -296,7 +296,7 @@ export default function Masterclass() {
                         href="mailto:hello@upskillintech.com?subject=Webinar Registration"
                         style={{
                           display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                          background: "#0D9488", color: "#ffffff", borderRadius: "0.75rem",
+                          background: "#439288", color: "#ffffff", borderRadius: "0.75rem",
                           padding: "0.875rem 1.75rem", fontFamily: "'Sora', sans-serif",
                           fontWeight: 700, fontSize: "0.95rem", textDecoration: "none",
                         }}
@@ -313,7 +313,7 @@ export default function Masterclass() {
                         "Live Q&A",
                       ].map((item) => (
                         <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
-                          <CheckCircle2 size={17} style={{ color: "#0D9488", flexShrink: 0, marginTop: "2px" }} />
+                          <CheckCircle2 size={17} style={{ color: "#439288", flexShrink: 0, marginTop: "2px" }} />
                           <span style={{ fontSize: "0.95rem", color: "#D1D5DB", lineHeight: 1.55 }}>{item}</span>
                         </li>
                       ))}
@@ -329,12 +329,13 @@ export default function Masterclass() {
         <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container max-w-4xl mx-auto text-center">
             <span className="section-label mb-3">Who This Is For</span>
-            <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>Built for African & diaspora professionals ready to grow</h2>
+            <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>Built for professionals ready to grow</h2>
             <p style={{ color: "#9CA3AF", fontSize: "1.05rem", lineHeight: 1.7, marginBottom: "2rem" }}>
-              Whether you're in Nigeria or the UK, employed or self-employed — if you're ready to move from AI curiosity to real results, this is for you.
+              Wherever you are, employed or self-employed—if you are ready to move
+              from AI curiosity to practical results, this is for you.
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.625rem", marginBottom: "2rem" }}>
-              {["Educators & coaches", "Entrepreneurs", "Freelancers", "Small business owners", "Corporate professionals", "Nigerian & UK diaspora", "Anyone ready to grow"].map((chip) => (
+              {["Educators & coaches", "Entrepreneurs", "Freelancers", "Small business owners", "Corporate professionals", "Global teams", "Anyone ready to grow"].map((chip) => (
                 <span key={chip} style={{ fontSize: "0.875rem", padding: "0.4rem 1rem", borderRadius: "20px", border: "1px solid #D1D5DB", color: "#D1D5DB", background: "#151B23" }}>{chip}</span>
               ))}
             </div>
@@ -342,9 +343,9 @@ export default function Masterclass() {
               {audience.map((a) => {
                 const Icon = a.icon;
                 return (
-                  <div key={a.label} style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(13,148,136,0.07)", borderRadius: "0.75rem", padding: "0.625rem 1.25rem" }}>
-                    <Icon size={16} style={{ color: "#0D9488" }} />
-                    <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: "#0D9488" }}>{a.label}</span>
+                  <div key={a.label} style={{ display: "flex", alignItems: "center", gap: "0.5rem", background: "rgba(67,146,136,0.07)", borderRadius: "0.75rem", padding: "0.625rem 1.25rem" }}>
+                    <Icon size={16} style={{ color: "#439288" }} />
+                    <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 600, fontSize: "0.875rem", color: "#439288" }}>{a.label}</span>
                   </div>
                 );
               })}
@@ -409,7 +410,7 @@ export default function Masterclass() {
         <section className="section-py" style={{ background: "#151B23" }}>
           <div className="container">
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <span className="section-label" style={{ color: "#0D9488", background: "rgba(13,148,136,0.10)", borderColor: "rgba(13,148,136,0.20)" }}>The Curriculum</span>
+              <span className="section-label" style={{ color: "#439288", background: "rgba(67,146,136,0.10)", borderColor: "rgba(67,146,136,0.20)" }}>The Curriculum</span>
               <h2 className="mt-4 mb-4" style={{ color: "#F3F4F6" }}>What You Will Learn &amp; Do</h2>
               <p style={{ color: "#9CA3AF", lineHeight: 1.75, fontSize: "1.05rem" }}>
                 Ten practical steps that take you from a raw idea to a real, AI-powered business — built live, in the room,.
@@ -510,7 +511,7 @@ export default function Masterclass() {
         </section>
 
         {/* ── Final CTA ────────────────────────────────────────────────── */}
-        <section className="section-py" style={{ background: "linear-gradient(135deg, #0D9488 0%, #16A34A 100%)" }}>
+        <section className="section-py" style={{ background: "linear-gradient(135deg, #439288 0%, #16A34A 100%)" }}>
           <div className="container max-w-3xl mx-auto text-center">
             <h2 className="mb-4" style={{ color: "#ffffff" }}>Ready to build your AI-powered business?</h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.85)", fontSize: "1.1rem", lineHeight: 1.7 }}>
@@ -519,7 +520,7 @@ export default function Masterclass() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
               <ReserveSeatButton
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold cursor-pointer border-0"
-                style={{ background: "#151B23", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
+                style={{ background: "#151B23", color: "#439288", fontFamily: "'Sora', sans-serif" }}
               />
               <a
                 href="mailto:hello@upskillintech.com"

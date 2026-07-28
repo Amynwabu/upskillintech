@@ -21,7 +21,7 @@ const EDITIONS = [
     date: "March 2026",
     readTime: "5 min read",
     tag: "Featured Insight",
-    tagColor: "#0D9488",
+    tagColor: "#439288",
   },
   {
     slug: "5-ai-workflows-that-save-professionals-10-hours-a-week",
@@ -104,7 +104,7 @@ export default function Newsletter() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-sm font-semibold"
-                style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488" }}>
+                style={{ background: "rgba(67,146,136,0.12)", color: "#439288" }}>
                 <Mail size={16} />
                 Free Weekly Newsletter
               </div>
@@ -120,12 +120,12 @@ export default function Newsletter() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#subscribe"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white transition-all duration-200 hover:opacity-90"
-                  style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)", fontSize: "1.05rem" }}>
+                  style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)", fontSize: "1.05rem" }}>
                   <Mail size={18} /> Subscribe Free
                 </a>
                 <a href="#latest"
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-200"
-                  style={{ border: "2px solid #0D9488", color: "#0D9488", background: "#151B23", fontSize: "1.05rem" }}>
+                  style={{ border: "2px solid #439288", color: "#439288", background: "#151B23", fontSize: "1.05rem" }}>
                   <BookOpen size={18} /> Read Latest Edition
                 </a>
               </div>
@@ -138,7 +138,7 @@ export default function Newsletter() {
           <div className="container">
             <div className="text-center mb-14">
               <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
-                style={{ background: "rgba(13,148,136,0.1)", color: "#0D9488" }}>What's Inside</span>
+                style={{ background: "rgba(67,146,136,0.1)", color: "#439288" }}>What's Inside</span>
               <h2 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#F3F4F6" }}>
                 What You'll Receive Every Week
               </h2>
@@ -150,11 +150,11 @@ export default function Newsletter() {
               {BENEFITS.map((b) => {
                 const Icon = b.icon;
                 return (
-                  <div key={b.title} className="rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1"
-                    style={{ border: "1.5px solid #1F2937", background: "#FAFAFA" }}>
+                  <div key={b.title} className="surface-light rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1"
+                    style={{ border: "1.5px solid #DCE4E6", background: "#FAFAFA" }}>
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ background: "rgba(13,148,136,0.12)" }}>
-                      <Icon size={22} style={{ color: "#0D9488" }} />
+                      style={{ background: "rgba(67,146,136,0.12)" }}>
+                      <Icon size={22} style={{ color: "#439288" }} />
                     </div>
                     <h3 className="font-bold mb-2" style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.1rem", color: "#F3F4F6" }}>
                       {b.title}
@@ -172,14 +172,14 @@ export default function Newsletter() {
           <div className="container">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4"
-                style={{ background: "rgba(13,148,136,0.1)", color: "#0D9488" }}>Latest Edition</span>
+                style={{ background: "rgba(67,146,136,0.1)", color: "#439288" }}>Latest Edition</span>
               <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)", color: "#F3F4F6" }}>
                 This Week's Edition
               </h2>
             </div>
             <div className="max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-lg"
               style={{ border: "1.5px solid #1F2937", background: "#151B23" }}>
-              <div className="p-2" style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}>
+              <div className="p-2" style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)" }}>
                 <div className="flex items-center gap-2 px-4 py-1">
                   <Bell size={14} className="text-white opacity-80" />
                   <span className="text-white text-sm font-medium opacity-90">Latest Edition — March 2026</span>
@@ -187,7 +187,7 @@ export default function Newsletter() {
               </div>
               <div className="p-10">
                 <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
-                  style={{ background: "rgba(13,148,136,0.12)", color: "#0D9488" }}>
+                  style={{ background: "rgba(67,146,136,0.12)", color: "#439288" }}>
                   {EDITIONS[0].tag}
                 </div>
                 <h3 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.4rem, 3vw, 2rem)", color: "#F3F4F6", lineHeight: 1.3 }}>
@@ -202,7 +202,7 @@ export default function Newsletter() {
                 </div>
                 <Link href={`/newsletter/${EDITIONS[0].slug}`}
                   className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white transition-all duration-200 hover:opacity-90"
-                  style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)", fontSize: "1.05rem" }}>
+                  style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)", fontSize: "1.05rem" }}>
                   Read This Edition <ArrowRight size={18} />
                 </Link>
               </div>
@@ -216,22 +216,22 @@ export default function Newsletter() {
             <div className="flex items-center justify-between mb-12">
               <div>
                 <span className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-3"
-                  style={{ background: "rgba(13,148,136,0.1)", color: "#0D9488" }}>Past Editions</span>
+                  style={{ background: "rgba(67,146,136,0.1)", color: "#439288" }}>Past Editions</span>
                 <h2 className="font-bold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.5rem)", color: "#F3F4F6" }}>
                   Explore Previous Issues
                 </h2>
               </div>
               <Link href="/newsletter/archive"
                 className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold transition-all duration-200"
-                style={{ border: "1.5px solid #0D9488", color: "#0D9488", background: "#151B23", fontSize: "0.95rem" }}>
+                style={{ border: "1.5px solid #439288", color: "#439288", background: "#151B23", fontSize: "0.95rem" }}>
                 View All <ArrowRight size={16} />
               </Link>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {EDITIONS.slice(1).map((ed) => (
                 <Link key={ed.slug} href={`/newsletter/${ed.slug}`}
-                  className="block rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer"
-                  style={{ border: "1.5px solid #1F2937", background: "#FAFAFA" }}>
+                  className="surface-light block rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-md cursor-pointer"
+                  style={{ border: "1.5px solid #DCE4E6", background: "#FAFAFA" }}>
                   <div className="inline-block px-3 py-1 rounded-full text-xs font-bold mb-4"
                     style={{ background: `${ed.tagColor}18`, color: ed.tagColor }}>
                     {ed.tag}
@@ -243,11 +243,11 @@ export default function Newsletter() {
                     {ed.excerpt}
                   </p>
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4" style={{ color: "#9CA3AF", fontSize: "0.85rem" }}>
+                    <div className="flex items-center gap-4" style={{ color: "#4B5563", fontSize: "0.85rem" }}>
                       <span className="flex items-center gap-1"><Calendar size={12} /> {ed.date}</span>
                       <span className="flex items-center gap-1"><Clock size={12} /> {ed.readTime}</span>
                     </div>
-                    <span className="flex items-center gap-1 font-semibold text-sm" style={{ color: "#0D9488" }}>
+                    <span className="flex items-center gap-1 font-semibold text-sm" style={{ color: "#439288" }}>
                       Read <ArrowRight size={14} />
                     </span>
                   </div>
@@ -257,7 +257,7 @@ export default function Newsletter() {
             <div className="text-center mt-10">
               <Link href="/newsletter/archive"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-200"
-                style={{ border: "1.5px solid #0D9488", color: "#0D9488", background: "#151B23" }}>
+                style={{ border: "1.5px solid #439288", color: "#439288", background: "#151B23" }}>
                 View Full Archive <ArrowRight size={16} />
               </Link>
             </div>
@@ -269,8 +269,8 @@ export default function Newsletter() {
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6"
-                style={{ background: "rgba(13,148,136,0.2)" }}>
-                <Mail size={28} style={{ color: "#0D9488" }} />
+                style={{ background: "rgba(67,146,136,0.2)" }}>
+                <Mail size={28} style={{ color: "#439288" }} />
               </div>
               <h2 className="font-bold mb-4 text-white" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.8rem, 4vw, 2.8rem)" }}>
                 Stay Updated with UpskillinTech
@@ -280,8 +280,8 @@ export default function Newsletter() {
               </p>
 
               {submitted ? (
-                <div className="rounded-2xl p-10 text-center" style={{ background: "rgba(13,148,136,0.15)", border: "1.5px solid rgba(13,148,136,0.3)" }}>
-                  <CheckCircle size={48} className="mx-auto mb-4" style={{ color: "#0D9488" }} />
+                <div className="rounded-2xl p-10 text-center" style={{ background: "rgba(67,146,136,0.15)", border: "1.5px solid rgba(67,146,136,0.3)" }}>
+                  <CheckCircle size={48} className="mx-auto mb-4" style={{ color: "#439288" }} />
                   <h3 className="font-bold text-white text-2xl mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
                     Thank you for subscribing!
                   </h3>
@@ -329,7 +329,7 @@ export default function Newsletter() {
                     type="submit"
                     disabled={subscribe.isPending}
                     className="w-full py-4 rounded-xl font-bold text-white text-lg transition-all duration-200 hover:opacity-90 disabled:opacity-60"
-                    style={{ background: "linear-gradient(135deg, #0D9488, #8B9E1A)" }}
+                    style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)" }}
                   >
                     {subscribe.isPending ? "Subscribing..." : "Subscribe Free — It's Weekly & Free"}
                   </button>

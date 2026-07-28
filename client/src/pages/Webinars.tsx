@@ -1,7 +1,7 @@
 /**
  * Webinars Page — UpskillinTech
  * URL: /resources/webinars
- * Design: Green (#0D9488) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -23,7 +23,7 @@ const UPCOMING = [
     topics: ["AI readiness assessment framework", "Change management for AI adoption", "Building AI-fluent teams", "Common pitfalls and how to avoid them"],
     audience: "Leaders & Managers",
     seats: "Limited to 100 seats",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ const PAST = [
     views: "1,200+",
     description: "The most-watched UpskillinTech webinar. Dr. Amaka walks through the exact AI productivity system used by programme graduates to save 10+ hours every week — with live demonstrations and Q&A.",
     highlights: ["Live ChatGPT demonstration", "5-step productivity framework", "Real examples from graduates", "Q&A"],
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     id: 5,
@@ -102,7 +102,7 @@ const PAST = [
     views: "940+",
     description: "A practical session on writing effective AI prompts for real professional tasks. Includes live examples, common mistakes, and a walkthrough of the 50 AI Prompts Library.",
     highlights: ["Live prompt demonstrations", "Common prompt mistakes", "Prompt templates by use case", "Q&A session"],
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     id: 8,
@@ -142,7 +142,7 @@ export default function Webinars() {
       <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Webinars</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(67,146,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Webinars</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Learn Live. Watch On Demand. Grow Every Month.
             </h1>

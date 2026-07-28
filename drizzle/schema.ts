@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal, index, json, uniqueIndex } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -543,21 +543,135 @@ export type CampaignRecipient = typeof campaignRecipients.$inferSelect;
 export type InsertCampaignRecipient = typeof campaignRecipients.$inferInsert;
 
 
-// Webinar Registrations
+// Reusable webinar catalogue
+export const webinars = mysqlTable("webinars", {
+  id: int("id").primaryKey().autoincrement(),
+  title: varchar("title", { length: 500 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull(),
+  subtitle: varchar("subtitle", { length: 500 }),
+  description: text("description"),
+  format: varchar("format", { length: 100 }).notNull().default("Free live online webinar"),
+  speakerName: varchar("speakerName", { length: 255 }),
+  speakerTitle: varchar("speakerTitle", { length: 255 }),
+  speakerBiography: text("speakerBiography"),
+  speakerImageUrl: text("speakerImageUrl"),
+  eventStartAt: timestamp("eventStartAt"),
+  eventEndAt: timestamp("eventEndAt"),
+  registrationOpensAt: timestamp("registrationOpensAt"),
+  registrationClosesAt: timestamp("registrationClosesAt"),
+  timezone: varchar("timezone", { length: 100 }).notNull().default("Europe/London"),
+  meetingProvider: varchar("meetingProvider", { length: 100 }),
+  meetingUrl: text("meetingUrl"),
+  meetingId: varchar("meetingId", { length: 255 }),
+  meetingPassword: varchar("meetingPassword", { length: 255 }),
+  maximumAttendees: int("maximumAttendees"),
+  status: mysqlEnum("status", ["draft", "published", "registration_closed", "live", "completed", "cancelled"]).default("draft").notNull(),
+  recordingAvailable: boolean("recordingAvailable").default(false).notNull(),
+  recordingUrl: text("recordingUrl"),
+  masterclassUrl: text("masterclassUrl"),
+  confirmationEmailEnabled: boolean("confirmationEmailEnabled").default(true).notNull(),
+  twoDayReminderEnabled: boolean("twoDayReminderEnabled").default(true).notNull(),
+  oneHourReminderEnabled: boolean("oneHourReminderEnabled").default(true).notNull(),
+  followUpEnabled: boolean("followUpEnabled").default(true).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, table => ({
+  slugUnique: uniqueIndex("webinars_slug_unique").on(table.slug),
+  statusStartIdx: index("webinars_status_start_idx").on(table.status, table.eventStartAt),
+}));
+
+// Webinar registrations. Legacy display fields remain nullable for safe migration
+// of registrations created by the previous single-event implementation.
 export const webinarRegistrations = mysqlTable("webinar_registrations", {
   id: int("id").primaryKey().autoincrement(),
-  name: varchar("name", { length: 255 }).notNull(),
+  webinarId: int("webinarId").references(() => webinars.id, { onDelete: "cascade" }),
+  firstName: varchar("firstName", { length: 100 }),
+  lastName: varchar("lastName", { length: 100 }),
   email: varchar("email", { length: 320 }).notNull(),
+  emailNormalised: varchar("emailNormalised", { length: 320 }),
   phone: varchar("phone", { length: 50 }),
-  company: varchar("company", { length: 255 }),
+  organisation: varchar("organisation", { length: 255 }),
   role: varchar("role", { length: 255 }),
-  webinarTitle: varchar("webinarTitle", { length: 500 }).notNull(),
-  webinarDate: varchar("webinarDate", { length: 100 }).notNull(),
+  automationGoal: text("automationGoal"),
+  eventConsent: boolean("eventConsent").default(false).notNull(),
+  eventConsentAt: timestamp("eventConsentAt"),
+  marketingConsent: boolean("marketingConsent").default(false).notNull(),
+  marketingConsentAt: timestamp("marketingConsentAt"),
+  registrationStatus: mysqlEnum("registrationStatus", ["registered", "waitlisted", "cancelled", "attended", "no_show"]).default("registered").notNull(),
+  utmSource: varchar("utmSource", { length: 255 }),
+  utmMedium: varchar("utmMedium", { length: 255 }),
+  utmCampaign: varchar("utmCampaign", { length: 255 }),
+  utmContent: varchar("utmContent", { length: 255 }),
+  utmTerm: varchar("utmTerm", { length: 255 }),
+  referrerUrl: text("referrerUrl"),
+  landingPage: text("landingPage"),
+  userAgent: varchar("userAgent", { length: 500 }),
+  ipHash: varchar("ipHash", { length: 64 }),
+  unsubscribeToken: varchar("unsubscribeToken", { length: 128 }),
+  confirmationToken: varchar("confirmationToken", { length: 128 }),
+  // Legacy columns retained during the backwards-compatible migration.
+  name: varchar("name", { length: 255 }),
+  company: varchar("company", { length: 255 }),
+  webinarTitle: varchar("webinarTitle", { length: 500 }),
+  webinarDate: varchar("webinarDate", { length: 100 }),
   confirmationSent: boolean("confirmationSent").default(false).notNull(),
   attended: boolean("attended").default(false).notNull(),
   reminderSent: boolean("reminderSent").default(false).notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
-});
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, table => ({
+  webinarEmailUnique: uniqueIndex("webinar_registration_email_unique").on(table.webinarId, table.emailNormalised),
+  webinarStatusIdx: index("webinar_registration_status_idx").on(table.webinarId, table.registrationStatus),
+  createdAtIdx: index("webinar_registration_created_idx").on(table.createdAt),
+  unsubscribeTokenUnique: uniqueIndex("webinar_registration_unsubscribe_unique").on(table.unsubscribeToken),
+  confirmationTokenUnique: uniqueIndex("webinar_registration_confirmation_unique").on(table.confirmationToken),
+}));
 
 export type WebinarRegistration = typeof webinarRegistrations.$inferSelect;
 export type InsertWebinarRegistration = typeof webinarRegistrations.$inferInsert;
+
+export const webinarEmailQueue = mysqlTable("webinar_email_queue", {
+  id: int("id").primaryKey().autoincrement(),
+  webinarId: int("webinarId").notNull().references(() => webinars.id, { onDelete: "cascade" }),
+  registrationId: int("registrationId").notNull().references(() => webinarRegistrations.id, { onDelete: "cascade" }),
+  emailType: mysqlEnum("emailType", ["confirmation", "reminder_2_days", "reminder_1_hour", "webinar_live", "follow_up_attended", "follow_up_no_show"]).notNull(),
+  scheduledFor: timestamp("scheduledFor").notNull(),
+  status: mysqlEnum("status", ["pending", "processing", "sent", "delivered", "failed", "cancelled"]).default("pending").notNull(),
+  attemptCount: int("attemptCount").default(0).notNull(),
+  provider: varchar("provider", { length: 50 }).default("sendgrid"),
+  providerMessageId: varchar("providerMessageId", { length: 255 }),
+  lastError: text("lastError"),
+  processingStartedAt: timestamp("processingStartedAt"),
+  sentAt: timestamp("sentAt"),
+  deliveredAt: timestamp("deliveredAt"),
+  failedAt: timestamp("failedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, table => ({
+  registrationTypeUnique: uniqueIndex("webinar_email_registration_type_unique").on(table.registrationId, table.emailType),
+  dueQueueIdx: index("webinar_email_due_idx").on(table.status, table.scheduledFor),
+  webinarIdx: index("webinar_email_webinar_idx").on(table.webinarId),
+  registrationIdx: index("webinar_email_registration_idx").on(table.registrationId),
+  typeIdx: index("webinar_email_type_idx").on(table.emailType),
+}));
+
+export const webinarEmailEvents = mysqlTable("webinar_email_events", {
+  id: int("id").primaryKey().autoincrement(),
+  emailQueueId: int("emailQueueId").references(() => webinarEmailQueue.id, { onDelete: "set null" }),
+  registrationId: int("registrationId").notNull().references(() => webinarRegistrations.id, { onDelete: "cascade" }),
+  webinarId: int("webinarId").notNull().references(() => webinars.id, { onDelete: "cascade" }),
+  eventType: mysqlEnum("eventType", ["queued", "processing", "sent", "delivered", "opened", "clicked", "bounced", "complained", "failed", "unsubscribed"]).notNull(),
+  providerEventId: varchar("providerEventId", { length: 255 }),
+  eventData: json("eventData"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+}, table => ({
+  queueIdx: index("webinar_event_queue_idx").on(table.emailQueueId),
+  registrationIdx: index("webinar_event_registration_idx").on(table.registrationId),
+  webinarIdx: index("webinar_event_webinar_idx").on(table.webinarId),
+  providerEventUnique: uniqueIndex("webinar_event_provider_unique").on(table.providerEventId),
+}));
+
+export type Webinar = typeof webinars.$inferSelect;
+export type InsertWebinar = typeof webinars.$inferInsert;
+export type WebinarEmailQueueItem = typeof webinarEmailQueue.$inferSelect;
+export type WebinarEmailEvent = typeof webinarEmailEvents.$inferSelect;

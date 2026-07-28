@@ -34,7 +34,7 @@ To democratize AI education and adoption by providing:
 - Networking opportunities with AI practitioners
 - Knowledge sharing and collaborative learning
 - Regular webinars and tech talks
-- African diaspora tech community support
+- Global AI learning community support
 
 ### Business Tools
 - AI-powered automation workflows
@@ -101,7 +101,15 @@ pnpm db:push
 pnpm dev
 ```
 
-The application will be available at `http://localhost:5000`
+The application will be available at `http://localhost:3000` by default (or the
+next available port).
+
+### Webinar registration system
+
+The reusable AI Employee webinar landing page, consent-aware registration,
+calendar integration and scheduled SendGrid reminders are documented in
+[`docs/WEBINARS.md`](./docs/WEBINARS.md). The initial webinar is seeded as a
+draft so an unconfirmed date is never presented as a real event.
 
 ## 📚 Documentation
 

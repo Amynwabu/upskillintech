@@ -52,11 +52,11 @@ export async function sendWebinarReminders() {
       try {
         const result = await sendWebinarReminderEmail(
           registration.email,
-          registration.name,
+          registration.name ?? registration.firstName ?? "there",
           {
             title: 'Build, Brand & Grow with AI — AI Transformation Master Class',
             date: upcomingSession.label,
-            time: '2PM – 4PM UK / Nigeria Time',
+            time: '2PM – 4PM Europe/London',
             zoomLink: 'https://shorturl.at/2yAwE'
           }
         );

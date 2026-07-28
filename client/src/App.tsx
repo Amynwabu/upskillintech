@@ -42,6 +42,10 @@ import NewsletterPreferences from "./pages/NewsletterPreferences";
 import AdminEmails from "./pages/AdminEmails";
 import AdminEmailAnalytics from "./pages/AdminEmailAnalytics";
 import AdminWebinarRegistrations from "./pages/AdminWebinarRegistrations";
+import WebinarAiEmployee from "./pages/WebinarAiEmployee";
+import WebinarRegistered from "./pages/WebinarRegistered";
+import WebinarPrivacy from "./pages/WebinarPrivacy";
+import WebinarUnsubscribe from "./pages/WebinarUnsubscribe";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { WebSocketProvider } from "./contexts/WebSocketContext";
 
@@ -90,6 +94,14 @@ function Router() {
       <Route path={"/newsletter/:slug"} component={NewsletterArticle} />
 
       {/* Webinars */}
+      <Route path={"/webinar/ai-employee"} component={WebinarAiEmployee} />
+      <Route path={"/webinar/ai-employee/registered"} component={WebinarRegistered} />
+      <Route path={"/webinar/ai-employee/privacy"} component={WebinarPrivacy} />
+      <Route path={"/webinar/ai-employee/unsubscribe"} component={WebinarUnsubscribe} />
+      <Route path={"/webinars/:slug/registered"} component={WebinarRegistered} />
+      <Route path={"/webinars/:slug/privacy"} component={WebinarPrivacy} />
+      <Route path={"/webinars/:slug/unsubscribe"} component={WebinarUnsubscribe} />
+      <Route path={"/webinars/:slug"} component={WebinarAiEmployee} />
       <Route path={"/resources/webinars/:id/register"} component={WebinarRegistration} />
 
       {/* User */}
@@ -112,7 +124,11 @@ function Router() {
       {/* Admin */}
       <Route path={"/admin/emails"} component={AdminEmails} />
       <Route path={"/admin/email-analytics"} component={AdminEmailAnalytics} />
-      <Route path={"/admin/webinar-registrations"} component={AdminWebinarRegistrations} />
+      <Route path={"/admin/webinar-registrations"}>
+        <ProtectedRoute>
+          <AdminWebinarRegistrations />
+        </ProtectedRoute>
+      </Route>
 
       {/* Legal */}
       <Route path={"/privacy"} component={Privacy} />

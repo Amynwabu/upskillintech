@@ -43,7 +43,7 @@ export default function Home() {
         <section id="quiz" style={{ background: "#0B0F14", padding: "5rem 1.5rem" }}>
           <div style={{ maxWidth: 860, margin: "0 auto" }}>
             <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#0D9488", textTransform: "uppercase", letterSpacing: "0.08em" }}>Free Tool</span>
+              <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.75rem", fontWeight: 700, color: "#439288", textTransform: "uppercase", letterSpacing: "0.08em" }}>Free Tool</span>
               <h2 style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", color: "#F3F4F6", marginTop: "0.5rem", marginBottom: "0.75rem" }}>
                 Discover your AI level
               </h2>

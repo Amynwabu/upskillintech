@@ -23,7 +23,7 @@ const workflows = [
     icon: Users,
     title: "Meeting Intelligence",
     subtitle: "Turn every meeting into actionable outcomes",
-    color: "#0D9488",
+    color: "#439288",
     steps: [
       {
         label: "Capture",
@@ -101,7 +101,7 @@ const workflows = [
     icon: BarChart3,
     title: "Strategic Decision-Making",
     subtitle: "AI-enhanced analysis for better decisions",
-    color: "#0D9488",
+    color: "#439288",
     steps: [
       {
         label: "Define",
@@ -136,7 +136,7 @@ export default function WorkflowsSection() {
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(13,148,136,0.10)", color: "#0D9488", fontFamily: "'Sora', sans-serif" }}
+            style={{ background: "rgba(67,146,136,0.10)", color: "#439288", fontFamily: "'Sora', sans-serif" }}
           >
             AI Workflows in Action
           </span>
@@ -305,9 +305,9 @@ export default function WorkflowsSection() {
                     key={tool}
                     className="text-xs px-2.5 py-1 rounded-full font-medium"
                     style={{
-                      background: "rgba(13,148,136,0.08)",
-                      color: "#0D9488",
-                      border: "1px solid rgba(13,148,136,0.20)",
+                      background: "rgba(67,146,136,0.08)",
+                      color: "#439288",
+                      border: "1px solid rgba(67,146,136,0.20)",
                       fontFamily: "'DM Sans', sans-serif",
                     }}
                   >
@@ -334,9 +334,9 @@ export default function WorkflowsSection() {
           <a
             href="/programs"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-sm transition-all"
-            style={{ background: "#0D9488", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(13,148,136,0.30)" }}
+            style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(67,146,136,0.30)" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#2ea043")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#0D9488")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#439288")}
           >
             Learn to Build Your Own AI Workflows
             <ChevronRight size={16} />

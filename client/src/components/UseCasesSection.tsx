@@ -8,7 +8,7 @@ const cases = [
     icon: Mail,
     title: "AI for Emails",
     outcome: "Write clearer replies, follow-ups, proposals, and customer messages in minutes.",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     icon: PenLine,
@@ -38,7 +38,7 @@ const cases = [
     icon: MonitorSmartphone,
     title: "AI for Presentations",
     outcome: "Turn a brief into a structured slide deck with key messages and speaker notes in minutes.",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     icon: Search,
@@ -68,7 +68,7 @@ const cases = [
     icon: BookOpen,
     title: "AI for Small Business Marketing",
     outcome: "Create campaigns, write ad copy, design visuals, and reach more customers with less effort.",
-    color: "#0D9488",
+    color: "#439288",
   },
   {
     icon: Church,
@@ -126,7 +126,7 @@ export default function UseCasesSection() {
         <div className="text-center mt-10">
           <a
             href="#programs"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#0D9488", textDecoration: "none" }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#439288", textDecoration: "none" }}
           >
             Learn how in our programmes →
           </a>

@@ -8,23 +8,23 @@ import { Link, useRoute } from "wouter";
 import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import GoogleSignInButton from "@/components/GoogleSignInButton";
+import Logo from "@/components/Logo";
 
-const LOGO_URL = "/logo-transparent.png";
-const ACTIVE_NAV_COLOR = "#0D9488";
+const ACTIVE_NAV_COLOR = "#439288";
 
 const RESOURCE_LINKS = [
-  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
+  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#439288" }} /> },
   { label: "AI Guides", desc: "Free downloadable guides", href: "/resources/ai-guides", icon: <FileText size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
+  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#439288" }} /> },
   { label: "Webinars", desc: "Live & recorded sessions", href: "/resources/webinars", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
   { label: "AI Workflows", desc: "Step-by-step templates", href: "/resources/workflows", icon: <Zap size={18} style={{ color: "#8B9E1A" }} /> },
   { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#E6B800" }} /> },
 ];
 
 const PROGRAM_LINKS = [
-  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#0D9488" }} /> },
+  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#439288" }} /> },
   { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
-  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#0D9488" }} /> },
+  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#439288" }} /> },
 ];
 
 const navLinks = [
@@ -38,7 +38,7 @@ const secondaryNavLinks = [
 
 function DesktopNavLink({ label, href }: { label: string; href: string }) {
   const [active] = useRoute(href);
-  const color = active ? ACTIVE_NAV_COLOR : "#F3F4F6";
+  const color = active ? ACTIVE_NAV_COLOR : "#FFFFFF";
 
   return (
     <Link
@@ -70,10 +70,10 @@ function MobileNavLink({ label, href, onClick }: { label: string; href: string; 
       style={{
         fontFamily: "'Sora', sans-serif",
         fontSize: "1rem",
-        color: active ? ACTIVE_NAV_COLOR : "#F3F4F6",
+        color: active ? ACTIVE_NAV_COLOR : "#FFFFFF",
         fontWeight: active ? 800 : 600,
         textDecoration: "none",
-        background: active ? "rgba(13,148,136,0.08)" : "transparent",
+        background: active ? "rgba(67,146,136,0.08)" : "transparent",
       }}
       onClick={onClick}
     >
@@ -119,20 +119,14 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: "#0B0F14",
-        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.35)" : "0 1px 0 #1F2937",
+        background: "#0B0F13",
+        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.35)" : "0 1px 0 #29323D",
       }}
     >
       <div className="container">
         <div className="flex items-center justify-between" style={{ height: "72px" }}>
           {/* Logo — larger and more prominent */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <img
-              src={LOGO_URL}
-              alt="UpskillinTech"
-              style={{ height: "60px", width: "auto", objectFit: "contain" }}
-            />
-          </Link>
+          <Logo variant="dark-background" size="lg" />
 
           {/* Desktop nav */}
           <div className="hidden xl:flex items-center gap-8">
@@ -147,7 +141,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#F3F4F6",
+                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#FFFFFF",
                   fontWeight: isProgramsActive ? 800 : 600,
                   background: "none",
                   border: "none",
@@ -171,9 +165,9 @@ export default function Navbar() {
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
                   style={{
-                    background: "#151B23",
+                    background: "#161B22",
                     boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #1F2937",
+                    border: "1px solid #29323D",
                   }}
                 >
                   <div className="p-2.5">
@@ -183,7 +177,7 @@ export default function Navbar() {
                         href={item.href}
                         className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
                         style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#1A2230")}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#202833")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
                         onClick={() => setProgramsOpen(false)}
                       >
@@ -191,10 +185,10 @@ export default function Navbar() {
                           {item.icon}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#F3F4F6" }}>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#FFFFFF" }}>
                             {item.label}
                           </div>
-                          <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{item.desc}</div>
+                          <div style={{ fontSize: "0.8rem", color: "#B5C0C9" }}>{item.desc}</div>
                         </div>
                       </Link>
                     ))}
@@ -214,7 +208,7 @@ export default function Navbar() {
                 style={{
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.975rem",
-                  color: resourcesOpen ? "#0D9488" : "#F3F4F6",
+                  color: resourcesOpen ? ACTIVE_NAV_COLOR : "#FFFFFF",
                   background: "none",
                   border: "none",
                   letterSpacing: "0.01em",
@@ -237,9 +231,9 @@ export default function Navbar() {
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
                   style={{
-                    background: "#151B23",
+                    background: "#161B22",
                     boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #1F2937",
+                    border: "1px solid #29323D",
                   }}
                 >
                   <div className="p-2.5">
@@ -247,8 +241,8 @@ export default function Navbar() {
                       href="/resources"
                       className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 font-bold"
                       style={{
-                        background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(230,184,0,0.08))",
-                        color: "#0D9488",
+                        background: "linear-gradient(135deg, rgba(67,146,136,0.08), rgba(230,184,0,0.08))",
+                        color: "#FFFFFF",
                         fontFamily: "'Sora', sans-serif",
                         fontSize: "0.95rem",
                         textDecoration: "none",
@@ -263,7 +257,7 @@ export default function Navbar() {
                         href={r.href}
                         className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
                         style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#1A2230")}
+                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#202833")}
                         onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
                         onClick={() => setResourcesOpen(false)}
                       >
@@ -271,10 +265,10 @@ export default function Navbar() {
                           {r.icon}
                         </div>
                         <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#F3F4F6" }}>
+                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#FFFFFF" }}>
                             {r.label}
                           </div>
-                          <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{r.desc}</div>
+                          <div style={{ fontSize: "0.8rem", color: "#B5C0C9" }}>{r.desc}</div>
                         </div>
                       </Link>
                     ))}
@@ -287,9 +281,9 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden xl:flex items-center gap-3">
             {!loading && user ? (
-              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#D1D5DB", textDecoration: "none" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#0D9488")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D1D5DB")}
+              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#D7DEE5", textDecoration: "none" }}
+                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#439288")}
+                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D7DEE5")}
               >
                 Dashboard
               </Link>
@@ -297,7 +291,7 @@ export default function Navbar() {
               <GoogleSignInButton size="sm" label="Get Started" variant="default" />
             )}
             {!loading && user && (
-              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem", background: "#0D9488", boxShadow: "0 4px 14px rgba(13,148,136,0.25)" }}>
+              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem" }}>
                 Get Started
               </Link>
             )}
@@ -306,7 +300,7 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             className="xl:hidden p-2 rounded-md"
-            style={{ color: "#F3F4F6" }}
+            style={{ color: "#FFFFFF" }}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -317,13 +311,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="xl:hidden border-t" style={{ background: "#0B0F14", borderColor: "#1F2937" }}>
+        <div className="xl:hidden border-t" style={{ background: "#0B0F13", borderColor: "#29323D" }}>
           <div className="container py-5 flex flex-col gap-1">
             {navLinks.map((link) => (
               <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
             ))}
             <div className="mt-2 mb-1">
-              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#9CA3AF" }}>
+              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#B5C0C9" }}>
                 Programs
               </p>
               {PROGRAM_LINKS.map((item) => (
@@ -331,7 +325,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#F3F4F6", textDecoration: "none", fontSize: "0.95rem" }}
+                  style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "0.95rem" }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.icon} {item.label}
@@ -342,13 +336,13 @@ export default function Navbar() {
               <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
             ))}
             <div className="mt-2 mb-1">
-              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#9CA3AF" }}>
+              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#B5C0C9" }}>
                 Resources
               </p>
               <Link
                 href="/resources"
                 className="font-bold py-2.5 px-3 block rounded-xl"
-                style={{ color: "#0D9488", textDecoration: "none", fontSize: "1rem" }}
+                style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "1rem" }}
                 onClick={() => setMenuOpen(false)}
               >
                 All Resources
@@ -358,7 +352,7 @@ export default function Navbar() {
                   key={r.label}
                   href={r.href}
                   className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#F3F4F6", textDecoration: "none", fontSize: "0.95rem" }}
+                  style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "0.95rem" }}
                   onClick={() => setMenuOpen(false)}
                 >
                   {r.icon} {r.label}
@@ -367,7 +361,7 @@ export default function Navbar() {
             </div>
             {!loading && user ? (
               <>
-                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" style={{ background: "#0D9488" }} onClick={() => setMenuOpen(false)}>
+                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" onClick={() => setMenuOpen(false)}>
                   Get Started
                 </Link>
                 <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>

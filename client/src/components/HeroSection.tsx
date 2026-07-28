@@ -26,8 +26,8 @@ export default function HeroSection() {
                 gap: "0.5rem",
                 padding: "0.4rem 1rem",
                 borderRadius: "99px",
-                background: "rgba(13,148,136,0.08)",
-                border: "1px solid rgba(13,148,136,0.20)",
+                background: "rgba(67,146,136,0.08)",
+                border: "1px solid rgba(67,146,136,0.20)",
                 marginBottom: "1.5rem",
               }}
             >
@@ -36,7 +36,7 @@ export default function HeroSection() {
                   width: 7,
                   height: 7,
                   borderRadius: "50%",
-                  background: "#0D9488",
+                  background: "#439288",
                   display: "inline-block",
                   flexShrink: 0,
                 }}
@@ -46,7 +46,7 @@ export default function HeroSection() {
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.8rem",
                   fontWeight: 600,
-                  color: "#0D9488",
+                  color: "#439288",
                   letterSpacing: "0.02em",
                 }}
               >
@@ -65,8 +65,8 @@ export default function HeroSection() {
               }}
             >
               The Practical AI Platform for{" "}
-              <span style={{ color: "#0D9488" }}>
-                African &amp; Diaspora Professionals.
+              <span style={{ color: "#439288" }}>
+                Professionals Everywhere.
               </span>
             </h1>
 
@@ -81,8 +81,8 @@ export default function HeroSection() {
               }}
             >
               Move from AI curiosity to practical AI adoption — with structured programmes,
-              free resources, and a community built for professionals in Nigeria, the UK,
-              and across the diaspora. Start where you are. No technical background needed.
+              free resources, and a global community for people who want to work
+              confidently with AI. Start where you are. No technical background needed.
             </p>
 
             <div
@@ -151,12 +151,12 @@ export default function HeroSection() {
                   borderRadius: "1.5rem",
                   overflow: "hidden",
                   boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
-                  border: "4px solid rgba(13,148,136,0.12)",
+                  border: "4px solid rgba(67,146,136,0.12)",
                 }}
               >
                 <img
                   src={HERO_IMG}
-                  alt="Diverse African and multicultural professionals learning practical AI tools together"
+                  alt="A diverse group of professionals learning practical AI tools together"
                   width={600}
                   height={460}
                   loading="eager"
@@ -184,7 +184,7 @@ export default function HeroSection() {
                       fontFamily: "'Sora', sans-serif",
                       fontWeight: 700,
                       fontSize: "0.9rem",
-                      color: "#0D9488",
+                      color: "#439288",
                     }}
                   >
                     1,000+ Professionals

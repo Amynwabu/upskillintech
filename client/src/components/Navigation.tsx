@@ -8,6 +8,7 @@ import { Menu, X, LogOut, User, Bell, ChevronDown } from "lucide-react";
 import { useNotifications } from "@/hooks/useNotifications";
 import { Badge } from "@/components/ui/badge";
 import { APP_TITLE } from '@/const';
+import Logo from "@/components/Logo";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,13 +33,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 w-full bg-[#151B23] z-50 py-6">
       <div className="flex justify-between px-8">
-        <Link href="/">
-          <img
-            src="/logo-transparent.png"
-            alt="UpskillinTech"
-            className="h-30 w-auto"
-          />
-        </Link>
+        <Logo variant="dark-background" size="lg" />
 
           {/* Desktop Navigation - Center/Left after logo */}
           <div className="hidden md:flex items-center gap-6 flex-1 ml-12">
@@ -64,7 +59,7 @@ export default function Navigation() {
               
               {isResourcesOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg py-2"
+                  className="surface-dark absolute top-full left-0 mt-2 w-48 border border-border rounded-lg shadow-lg py-2"
                   onMouseEnter={() => setIsResourcesOpen(true)}
                   onMouseLeave={() => setIsResourcesOpen(false)}
                 >
@@ -120,7 +115,7 @@ export default function Navigation() {
                   </Button>
                 </a>
                 <Link href="/onboarding">
-                  <Button className="bg-black hover:bg-black/90 text-white border-2 border-black">
+                  <Button className="bg-[#439288] hover:bg-[#34766e] text-white border-2 border-[#439288]">
                     Book a demo
                   </Button>
                 </Link>
@@ -130,7 +125,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -139,7 +134,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border mt-4">
+          <div className="surface-dark md:hidden py-4 border-t border-border mt-4">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
@@ -188,7 +183,7 @@ export default function Navigation() {
                     </Button>
                   </a>
                   <Link href="/onboarding">
-                    <Button className="bg-black hover:bg-black/90 text-white w-full">
+                    <Button className="bg-[#439288] hover:bg-[#34766e] text-white w-full">
                       Book a demo
                     </Button>
                   </Link>

@@ -3,8 +3,7 @@
  * Dark #111827 background, larger text, bigger logo, green hover accents
  */
 import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
-
-const LOGO_URL = "/logo-transparent.png";
+import Logo from "@/components/Logo";
 
 const footerLinks = {
   Insights: [
@@ -45,22 +44,18 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" style={{ background: "#111827" }}>
+    <footer id="footer" className="surface-dark" style={{ background: "#0B0F13" }}>
       <div className="container py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
           {/* Brand column */}
           <div className="lg:col-span-2 sm:col-span-2">
             <div className="mb-5">
-              <img
-                src={LOGO_URL}
-                alt="UpskillinTech"
-                style={{ height: "76px", width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)" }}
-              />
+              <Logo variant="dark-background" size="lg" />
             </div>
-            <p className="mb-3 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.75 }}>
+            <p className="mb-3 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "#D7DEE5", lineHeight: 1.75 }}>
               An independent AI awareness platform sharing insights on AI productivity, AI tools, and the future of work.
             </p>
-            <p className="mb-7 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>
+            <p className="mb-7 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#B5C0C9", lineHeight: 1.7 }}>
               Helping professionals understand and adopt AI responsibly — to think, lead, and create impact in an AI-powered world.
             </p>
             {/* Social Links */}
@@ -80,15 +75,15 @@ export default function Footer() {
                       height: 42,
                       borderRadius: "0.625rem",
                       background: "rgba(255,255,255,0.08)",
-                      color: "rgba(255,255,255,0.55)",
+                      color: "#D7DEE5",
                     }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                      (e.currentTarget as HTMLElement).style.background = "#0D9488";
+                      (e.currentTarget as HTMLElement).style.background = "#439288";
                       (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.55)";
+                      (e.currentTarget as HTMLElement).style.color = "#D7DEE5";
                       (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
                       (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                     }}
@@ -115,9 +110,9 @@ export default function Footer() {
                     <a
                       href={link.href}
                       className="transition-colors duration-200"
-                      style={{ fontSize: "0.925rem", color: "rgba(255,255,255,0.45)", textDecoration: "none", lineHeight: 1.5 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.45)"; }}
+                      style={{ fontSize: "0.925rem", color: "#D7DEE5", textDecoration: "none", lineHeight: 1.5 }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#439288"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#D7DEE5"; }}
                     >
                       {link.label}
                     </a>
@@ -133,7 +128,7 @@ export default function Footer() {
           className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
           style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
         >
-          <p style={{ fontSize: "0.9rem", color: "rgba(255,255,255,0.35)" }}>
+          <p style={{ fontSize: "0.9rem", color: "#B5C0C9" }}>
             © {new Date().getFullYear()} UpskillinTech. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
@@ -145,9 +140,9 @@ export default function Footer() {
                 key={item.label}
                 href={item.href}
                 className="transition-colors duration-200"
-                style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.30)", textDecoration: "none" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#0D9488"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "rgba(255,255,255,0.30)"; }}
+                style={{ fontSize: "0.85rem", color: "#D7DEE5", textDecoration: "none" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#439288"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#D7DEE5"; }}
               >
                 {item.label}
               </a>

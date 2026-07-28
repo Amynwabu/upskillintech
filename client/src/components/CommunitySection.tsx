@@ -15,29 +15,29 @@ const benefits = [
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="section-py" style={{ background: "#FFF7D6" }}>
+    <section id="community" className="surface-light section-py" style={{ background: "#FFF7D6" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>
             <span className="section-label mb-5">Community</span>
             <h2 className="mt-4 mb-5">
-              Join the UpskillinTech <span style={{ color: "#0D9488" }}>Community</span>
+              Join the UpskillinTech <span style={{ color: "#439288" }}>Community</span>
             </h2>
-            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#D1D5DB", lineHeight: 1.75 }}>
+            <p className="mb-8" style={{ fontSize: "1.15rem", color: "#111111", lineHeight: 1.75 }}>
               Learn, share workflows, and collaborate with thousands of professionals who are integrating AI into their work and lives.
             </p>
             <ul className="flex flex-col gap-5 mb-10">
               {benefits.map((b) => (
                 <li key={b.title} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(13,148,136,0.15)" }}>
-                    <CheckCircle size={18} style={{ color: "#0D9488" }} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(67,146,136,0.15)" }}>
+                    <CheckCircle size={18} style={{ color: "#439288" }} />
                   </div>
                   <div>
-                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6", fontSize: "1rem" }}>
+                    <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#000000", fontSize: "1rem" }}>
                       {b.title}
                     </div>
-                    <div style={{ fontSize: "0.925rem", color: "#9CA3AF", lineHeight: 1.6 }}>{b.desc}</div>
+                    <div style={{ fontSize: "0.925rem", color: "#374151", lineHeight: 1.6 }}>{b.desc}</div>
                   </div>
                 </li>
               ))}
@@ -72,10 +72,10 @@ export default function CommunitySection() {
               >
                 <span style={{ fontSize: "1.5rem" }}>🌍</span>
                 <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#0D9488" }}>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#439288" }}>
                     Growing Community
                   </div>
-                  <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>Professionals across Africa & beyond</div>
+                  <div style={{ fontSize: "0.8rem", color: "#4B5563" }}>Professionals learning worldwide</div>
                 </div>
               </div>
             </div>

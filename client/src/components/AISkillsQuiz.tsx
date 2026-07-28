@@ -64,8 +64,8 @@ const levels = [
     id: "curious",
     title: "AI Curious",
     icon: Compass,
-    color: "#0D9488",
-    gradient: "linear-gradient(135deg, #0D9488, #0F766E)",
+    color: "#439288",
+    gradient: "linear-gradient(135deg, #439288, #0F766E)",
     desc: "You're at the start of your AI journey — curious but not sure where to begin. That's exactly the right place to be.",
     next: "Start with the AI Everyday Starter Kit (free), then join the 7-Day AI Challenge to build your first practical habits.",
     programmes: ["AI Starter Bootcamp", "7-Day AI Everyday Challenge", "Free AI Starter Kit"],
@@ -242,12 +242,12 @@ export default function AISkillsQuiz() {
             <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#9CA3AF" }}>
               Question {step + 1} of {questions.length}
             </span>
-            <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#0D9488" }}>
+            <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#439288" }}>
               {Math.round(progress)}%
             </span>
           </div>
           <div style={{ height: 4, background: "#F3F4F6", borderRadius: 2 }}>
-            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #0D9488, #16A34A)", borderRadius: 2, transition: "width 0.3s" }} />
+            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #439288, #16A34A)", borderRadius: 2, transition: "width 0.3s" }} />
           </div>
         </div>
 
@@ -263,9 +263,9 @@ export default function AISkillsQuiz() {
                 onClick={() => handleSelect(opt.value)}
                 style={{
                   textAlign: "left", padding: "0.875rem 1rem", borderRadius: "0.75rem", cursor: "pointer",
-                  border: selected === opt.value ? "2px solid #0D9488" : "1.5px solid #1F2937",
-                  background: selected === opt.value ? "rgba(13,148,136,0.06)" : "#ffffff",
-                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#0D9488" : "#374151",
+                  border: selected === opt.value ? "2px solid #439288" : "1.5px solid #1F2937",
+                  background: selected === opt.value ? "rgba(67,146,136,0.06)" : "#ffffff",
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#439288" : "#374151",
                   fontWeight: selected === opt.value ? 600 : 400,
                   display: "flex", alignItems: "center", gap: "0.75rem",
                   transition: "all 0.15s",
@@ -273,8 +273,8 @@ export default function AISkillsQuiz() {
               >
                 <span style={{
                   width: 20, height: 20, borderRadius: "50%", flexShrink: 0,
-                  border: selected === opt.value ? "2px solid #0D9488" : "2px solid #D1D5DB",
-                  background: selected === opt.value ? "#0D9488" : "transparent",
+                  border: selected === opt.value ? "2px solid #439288" : "2px solid #D1D5DB",
+                  background: selected === opt.value ? "#439288" : "transparent",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
                   {selected === opt.value && <CheckCircle2 size={12} color="#fff" />}
@@ -305,7 +305,7 @@ export default function AISkillsQuiz() {
             disabled={!selected}
             style={{
               flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
-              background: selected ? "#0D9488" : "#E5E7EB", color: selected ? "#fff" : "#9CA3AF",
+              background: selected ? "#439288" : "#E5E7EB", color: selected ? "#fff" : "#4B5563",
               borderRadius: "0.75rem", padding: "0.875rem 1.25rem", border: "none",
               fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
               cursor: selected ? "pointer" : "not-allowed", transition: "background 0.15s",
