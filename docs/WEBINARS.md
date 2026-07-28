@@ -1,7 +1,7 @@
 # Webinar system
 
-The webinar feature extends the existing React, Wouter, tRPC, Drizzle/MySQL,
-SendGrid and Netlify architecture. It does not introduce a second application,
+The webinar feature extends the existing React, Wouter, tRPC, Supabase
+PostgreSQL, Brevo and Netlify architecture. It does not introduce a second application,
 router, ORM or email provider.
 
 ## Public routes
@@ -49,7 +49,7 @@ transaction. Confirmation is queued immediately. The 48-hour and one-hour
 reminders are queued only when their scheduled time is still in the future.
 
 The Netlify function `webinar-reminders` runs every ten minutes, claims due
-records, sends through SendGrid and retries failures up to three times. Pending
+records, sends through Brevo and retries failures up to three times. Pending
 messages are cancelled when a registration is cancelled.
 
 ## Environment variables
@@ -58,8 +58,8 @@ Set these in Netlify, never in `netlify.toml` or source control:
 
 - `DATABASE_URL`
 - `SITE_URL`
-- `SENDGRID_API_KEY`
-- `SENDGRID_SENDER_EMAIL` (legacy-compatible sender setting)
+- `BREVO_API_KEY`
+- `BREVO_SENDER_EMAIL`
 - `EMAIL_FROM_NAME`
 - `EMAIL_FROM_ADDRESS`
 - `EMAIL_REPLY_TO`
@@ -69,7 +69,7 @@ Set these in Netlify, never in `netlify.toml` or source control:
 - `WEBINAR_ADMIN_EMAIL` (operational contact only)
 - `EMAIL_WEBHOOK_SECRET` (when delivery webhooks are configured)
 
-The SendGrid sender address must be verified before production email will work.
+The Brevo sender address must be verified before production email will work.
 
 ## Local development and verification
 
@@ -83,7 +83,7 @@ pnpm check
 pnpm build
 ```
 
-Without `DATABASE_URL`, the public landing page uses safe draft content so it
+Without `DATABASE_URL`, the public landing page uses safe fallback content so it
 can be designed locally; registration remains closed and no data is accepted.
 
 To invoke the reminder processor locally with Netlify CLI:
@@ -115,10 +115,9 @@ admin control is a future enhancement.
 
 ## Troubleshooting failed email
 
-1. Check that the SendGrid key and verified sender are configured in Netlify.
+1. Check that the Brevo key and verified sender are configured in Netlify.
 2. Filter queue items with `status = failed` and inspect `lastError`.
 3. Confirm that the registration has not been cancelled.
 4. Reset an approved item to `pending` with `attemptCount = 0`, or use the admin
    resend-confirmation action.
 5. Never log email bodies, API keys, meeting passwords or full recipient lists.
-

@@ -1,4 +1,3 @@
-import sgMail from "@sendgrid/mail";
 import { and, asc, eq, lte } from "drizzle-orm";
 import {
   webinarEmailEvents,
@@ -8,25 +7,43 @@ import {
 } from "../../drizzle/schema";
 import { formatWebinarDate } from "../../shared/webinar";
 import { getDb } from "../db";
+import {
+  getPostgresClient,
+  usesPostgresWebinarStore,
+} from "./postgresWebinarStore";
 
-const apiKey = process.env.SENDGRID_API_KEY;
-if (apiKey) sgMail.setApiKey(apiKey);
+const brevoApiKey = process.env.BREVO_API_KEY;
+let brevoSenderEmailPromise: Promise<string> | undefined;
 
 type EmailType = typeof webinarEmailQueue.$inferSelect.emailType;
+type WebinarEmailRecord = Pick<
+  typeof webinars.$inferSelect,
+  | "eventStartAt"
+  | "timezone"
+  | "meetingUrl"
+  | "recordingAvailable"
+  | "recordingUrl"
+  | "masterclassUrl"
+>;
 
 function emailCopy(
   type: EmailType,
   firstName: string,
-  webinar: typeof webinars.$inferSelect,
+  webinar: WebinarEmailRecord
 ) {
   const date = formatWebinarDate(webinar.eventStartAt, webinar.timezone);
   const supportEmail =
-    process.env.WEBINAR_SUPPORT_EMAIL ?? process.env.EMAIL_REPLY_TO ?? "hello@upskillintech.com";
+    process.env.WEBINAR_SUPPORT_EMAIL ??
+    process.env.EMAIL_REPLY_TO ??
+    "hello@upskillintech.com";
   const joinUrl = webinar.meetingUrl;
   const joinButton = joinUrl
     ? `<p style="margin:28px 0"><a href="${joinUrl}" style="background:#0d9488;color:#fff;padding:14px 24px;border-radius:8px;text-decoration:none;font-weight:700">Join the webinar</a></p>`
     : "<p>Your secure joining link will be sent before the session.</p>";
-  const copies: Record<EmailType, { subject: string; heading: string; body: string }> = {
+  const copies: Record<
+    EmailType,
+    { subject: string; heading: string; body: string }
+  > = {
     confirmation: {
       subject: "You’re registered: Build Your First AI Employee",
       heading: "Your free seat is reserved",
@@ -59,9 +76,88 @@ function emailCopy(
     },
   };
   const copy = copies[type];
-  const text = `${copy.heading}\n\nHi ${firstName},\n\n${copy.body.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()}\n\nQuestions? ${supportEmail}`;
+  const text = `${copy.heading}\n\nHi ${firstName},\n\n${copy.body
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()}\n\nQuestions? ${supportEmail}`;
   const html = `<!doctype html><html><body style="margin:0;background:#f1f5f9;font-family:Arial,sans-serif;color:#172033"><table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td align="center" style="padding:32px 16px"><table role="presentation" width="600" style="max-width:100%;background:#fff;border-radius:14px;overflow:hidden"><tr><td style="background:#082f49;padding:28px;color:#fff"><strong style="color:#5eead4;font-size:24px">UpskillinTech</strong></td></tr><tr><td style="padding:32px"><h1 style="font-size:26px;margin-top:0">${copy.heading}</h1><p>Hi ${firstName},</p>${copy.body}<p style="margin-top:32px;color:#64748b">Questions? Email <a href="mailto:${supportEmail}">${supportEmail}</a>.</p></td></tr></table></td></tr></table></body></html>`;
   return { ...copy, text, html };
+}
+
+async function sendBrevoEmail(input: {
+  to: string;
+  subject: string;
+  text: string;
+  html: string;
+}) {
+  if (!brevoApiKey) throw new Error("Brevo is not configured");
+  const senderEmail = await getBrevoSenderEmail();
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "api-key": brevoApiKey,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: {
+        email: senderEmail,
+        name: process.env.EMAIL_FROM_NAME ?? "UpskillinTech",
+      },
+      replyTo: process.env.EMAIL_REPLY_TO
+        ? { email: process.env.EMAIL_REPLY_TO }
+        : undefined,
+      to: [{ email: input.to }],
+      subject: input.subject,
+      textContent: input.text,
+      htmlContent: input.html,
+    }),
+  });
+  const body = (await response.json().catch(() => ({}))) as {
+    messageId?: string;
+    message?: string;
+  };
+  if (!response.ok) {
+    throw new Error(
+      body.message || `Brevo delivery failed (${response.status})`
+    );
+  }
+  return body.messageId ?? null;
+}
+
+async function getBrevoSenderEmail() {
+  const configured =
+    process.env.EMAIL_FROM_ADDRESS ?? process.env.BREVO_SENDER_EMAIL;
+  if (configured) return configured;
+  if (!brevoApiKey) throw new Error("Brevo is not configured");
+
+  brevoSenderEmailPromise ??= fetch("https://api.brevo.com/v3/senders", {
+    headers: {
+      accept: "application/json",
+      "api-key": brevoApiKey,
+    },
+  }).then(async response => {
+    const body = (await response.json().catch(() => ({}))) as {
+      senders?: Array<{ email?: string; active?: boolean }>;
+      message?: string;
+    };
+    if (!response.ok) {
+      throw new Error(
+        body.message || `Brevo sender lookup failed (${response.status})`
+      );
+    }
+    const sender = body.senders?.find(
+      candidate => candidate.active && candidate.email
+    );
+    if (!sender?.email) {
+      throw new Error(
+        "Brevo has no active sender. Configure BREVO_SENDER_EMAIL or verify a sender in Brevo."
+      );
+    }
+    return sender.email;
+  });
+
+  return brevoSenderEmailPromise;
 }
 
 async function sendQueueItem(item: typeof webinarEmailQueue.$inferSelect) {
@@ -74,30 +170,29 @@ async function sendQueueItem(item: typeof webinarEmailQueue.$inferSelect) {
     .where(eq(webinarRegistrations.id, item.registrationId))
     .limit(1);
   if (!record || record.registration.registrationStatus === "cancelled") {
-    await db.update(webinarEmailQueue).set({ status: "cancelled" }).where(eq(webinarEmailQueue.id, item.id));
+    await db
+      .update(webinarEmailQueue)
+      .set({ status: "cancelled" })
+      .where(eq(webinarEmailQueue.id, item.id));
     return "cancelled" as const;
   }
-  if (!apiKey) throw new Error("SendGrid is not configured");
   const content = emailCopy(
     item.emailType,
     record.registration.firstName ?? record.registration.name ?? "there",
-    record.webinar,
+    record.webinar
   );
-  const [response] = await sgMail.send({
+  return sendBrevoEmail({
     to: record.registration.email,
-    from: {
-      email: process.env.EMAIL_FROM_ADDRESS ?? process.env.SENDGRID_SENDER_EMAIL ?? "noreply@upskillintech.com",
-      name: process.env.EMAIL_FROM_NAME ?? "UpskillinTech",
-    },
-    replyTo: process.env.EMAIL_REPLY_TO,
     subject: content.subject,
     text: content.text,
     html: content.html,
   });
-  return response.headers["x-message-id"]?.toString() ?? null;
 }
 
 export async function processWebinarEmailQueue(batchSize = 25) {
+  if (usesPostgresWebinarStore()) {
+    return processPostgresWebinarEmailQueue(batchSize);
+  }
   const db = await getDb();
   if (!db) return { processed: 0, sent: 0, failed: 0, skipped: 0 };
   const due = await db
@@ -106,8 +201,8 @@ export async function processWebinarEmailQueue(batchSize = 25) {
     .where(
       and(
         eq(webinarEmailQueue.status, "pending"),
-        lte(webinarEmailQueue.scheduledFor, new Date()),
-      ),
+        lte(webinarEmailQueue.scheduledFor, new Date())
+      )
     )
     .orderBy(asc(webinarEmailQueue.scheduledFor))
     .limit(Math.min(Math.max(batchSize, 1), 50));
@@ -127,11 +222,11 @@ export async function processWebinarEmailQueue(batchSize = 25) {
       .where(
         and(
           eq(webinarEmailQueue.id, item.id),
-          eq(webinarEmailQueue.status, "pending"),
-        ),
+          eq(webinarEmailQueue.status, "pending")
+        )
       );
     const affectedRows = Number(
-      (claim as unknown as [{ affectedRows: number }])[0]?.affectedRows ?? 0,
+      (claim as unknown as [{ affectedRows: number }])[0]?.affectedRows ?? 0
     );
     if (!affectedRows) {
       skipped += 1;
@@ -149,12 +244,15 @@ export async function processWebinarEmailQueue(batchSize = 25) {
         skipped += 1;
         continue;
       }
-      await db.update(webinarEmailQueue).set({
-        status: "sent",
-        sentAt: new Date(),
-        providerMessageId: messageId,
-        lastError: null,
-      }).where(eq(webinarEmailQueue.id, item.id));
+      await db
+        .update(webinarEmailQueue)
+        .set({
+          status: "sent",
+          sentAt: new Date(),
+          providerMessageId: messageId,
+          lastError: null,
+        })
+        .where(eq(webinarEmailQueue.id, item.id));
       await db.insert(webinarEmailEvents).values({
         emailQueueId: item.id,
         registrationId: item.registrationId,
@@ -163,20 +261,30 @@ export async function processWebinarEmailQueue(batchSize = 25) {
         providerEventId: messageId,
       });
       if (item.emailType === "confirmation") {
-        await db.update(webinarRegistrations).set({ confirmationSent: true }).where(eq(webinarRegistrations.id, item.registrationId));
+        await db
+          .update(webinarRegistrations)
+          .set({ confirmationSent: true })
+          .where(eq(webinarRegistrations.id, item.registrationId));
       }
       sent += 1;
     } catch (error) {
       const attempts = item.attemptCount + 1;
-      const lastError = error instanceof Error ? error.message.slice(0, 1000) : "Email delivery failed";
-      await db.update(webinarEmailQueue).set({
-        status: attempts >= 3 ? "failed" : "pending",
-        scheduledFor: attempts >= 3
-          ? item.scheduledFor
-          : new Date(Date.now() + attempts * 10 * 60 * 1000),
-        failedAt: attempts >= 3 ? new Date() : null,
-        lastError,
-      }).where(eq(webinarEmailQueue.id, item.id));
+      const lastError =
+        error instanceof Error
+          ? error.message.slice(0, 1000)
+          : "Email delivery failed";
+      await db
+        .update(webinarEmailQueue)
+        .set({
+          status: attempts >= 3 ? "failed" : "pending",
+          scheduledFor:
+            attempts >= 3
+              ? item.scheduledFor
+              : new Date(Date.now() + attempts * 10 * 60 * 1000),
+          failedAt: attempts >= 3 ? new Date() : null,
+          lastError,
+        })
+        .where(eq(webinarEmailQueue.id, item.id));
       await db.insert(webinarEmailEvents).values({
         emailQueueId: item.id,
         registrationId: item.registrationId,
@@ -190,3 +298,133 @@ export async function processWebinarEmailQueue(batchSize = 25) {
   return { processed: due.length, sent, failed, skipped };
 }
 
+async function processPostgresWebinarEmailQueue(batchSize: number) {
+  const sql = getPostgresClient();
+  if (!sql) return { processed: 0, sent: 0, failed: 0, skipped: 0 };
+  const limit = Math.min(Math.max(batchSize, 1), 50);
+  const claimed = await sql`
+    with due as (
+      select id
+      from webinar_email_queue
+      where status = 'pending'
+        and scheduled_for <= now()
+        and attempt_count < 3
+      order by scheduled_for
+      for update skip locked
+      limit ${limit}
+    )
+    update webinar_email_queue q
+    set status = 'processing',
+        processing_started_at = now(),
+        attempt_count = q.attempt_count + 1,
+        updated_at = now()
+    from due
+    where q.id = due.id
+    returning q.*
+  `;
+  let sent = 0;
+  let failed = 0;
+  let skipped = 0;
+
+  for (const item of claimed) {
+    try {
+      const records = await sql`
+        select r.email, r.first_name, r.full_name, r.registration_status,
+               w.event_start_at, w.timezone, w.meeting_url,
+               w.recording_available, w.recording_url, w.masterclass_url
+        from webinar_registrations r
+        join webinars w on w.id = r.webinar_id
+        where r.id = ${item.registration_id}
+        limit 1
+      `;
+      const record = records[0];
+      if (!record || record.registration_status === "cancelled") {
+        await sql`
+          update webinar_email_queue
+          set status = 'cancelled', updated_at = now()
+          where id = ${item.id}
+        `;
+        skipped += 1;
+        continue;
+      }
+      const webinar: WebinarEmailRecord = {
+        eventStartAt: record.event_start_at
+          ? new Date(record.event_start_at)
+          : null,
+        timezone: record.timezone,
+        meetingUrl: record.meeting_url,
+        recordingAvailable: Boolean(record.recording_available),
+        recordingUrl: record.recording_url,
+        masterclassUrl: record.masterclass_url,
+      };
+      const content = emailCopy(
+        item.email_type as EmailType,
+        record.first_name ?? record.full_name ?? "there",
+        webinar
+      );
+      const messageId = await sendBrevoEmail({
+        to: record.email,
+        subject: content.subject,
+        text: content.text,
+        html: content.html,
+      });
+      await sql.begin(async tx => {
+        await tx`
+          update webinar_email_queue
+          set status = 'sent', sent_at = now(),
+              provider_message_id = ${messageId}, last_error = null,
+              updated_at = now()
+          where id = ${item.id}
+        `;
+        await tx`
+          insert into webinar_email_events (
+            email_queue_id, registration_id, webinar_id, event_type,
+            provider_event_id
+          ) values (
+            ${item.id}, ${item.registration_id}, ${item.webinar_id}, 'sent',
+            ${messageId}
+          )
+        `;
+        if (item.email_type === "confirmation") {
+          await tx`
+            update webinar_registrations set confirmation_sent = true,
+              updated_at = now()
+            where id = ${item.registration_id}
+          `;
+        }
+      });
+      sent += 1;
+    } catch (error) {
+      const attempts = Number(item.attempt_count);
+      const lastError =
+        error instanceof Error
+          ? error.message.slice(0, 1000)
+          : "Email delivery failed";
+      await sql.begin(async tx => {
+        await tx`
+          update webinar_email_queue
+          set status = ${attempts >= 3 ? "failed" : "pending"},
+              scheduled_for = ${
+                attempts >= 3
+                  ? item.scheduled_for
+                  : new Date(Date.now() + attempts * 10 * 60 * 1000)
+              },
+              failed_at = ${attempts >= 3 ? new Date() : null},
+              last_error = ${lastError},
+              updated_at = now()
+          where id = ${item.id}
+        `;
+        await tx`
+          insert into webinar_email_events (
+            email_queue_id, registration_id, webinar_id, event_type, event_data
+          ) values (
+            ${item.id}, ${item.registration_id}, ${item.webinar_id}, 'failed',
+            ${tx.json({ attempt: attempts, willRetry: attempts < 3 })}
+          )
+        `;
+      });
+      failed += 1;
+    }
+  }
+  return { processed: claimed.length, sent, failed, skipped };
+}

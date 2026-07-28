@@ -14,14 +14,20 @@ import {
   type WebinarRegistrationInput,
 } from "../../shared/webinar";
 import { getDb } from "../db";
+import {
+  pgGetConfirmation,
+  pgGetPublicRegistrationCount,
+  pgGetWebinarBySlug,
+  pgRegisterForWebinar,
+  pgUpdateSubscription,
+  usesPostgresWebinarStore,
+} from "./postgresWebinarStore";
 
 const MAX_REGISTRATIONS_PER_WINDOW = 8;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const registrationAttempts = new Map<string, number[]>();
 
-function publicWebinar(
-  webinar: typeof webinars.$inferSelect,
-): PublicWebinar {
+function publicWebinar(webinar: typeof webinars.$inferSelect): PublicWebinar {
   return {
     id: webinar.id,
     title: webinar.title,
@@ -46,6 +52,7 @@ function publicWebinar(
 }
 
 export async function getWebinarBySlug(slug: string) {
+  if (usesPostgresWebinarStore()) return pgGetWebinarBySlug(slug);
   const db = await getDb();
   if (!db) {
     return slug === AI_EMPLOYEE_WEBINAR_PLACEHOLDER.slug
@@ -63,7 +70,7 @@ export async function getWebinarBySlug(slug: string) {
 export function enforceRegistrationRateLimit(key: string) {
   const now = Date.now();
   const recent = (registrationAttempts.get(key) ?? []).filter(
-    timestamp => now - timestamp < RATE_LIMIT_WINDOW_MS,
+    timestamp => now - timestamp < RATE_LIMIT_WINDOW_MS
   );
   if (recent.length >= MAX_REGISTRATIONS_PER_WINDOW) return false;
   recent.push(now);
@@ -83,7 +90,7 @@ function hashIp(value?: string) {
 
 export function buildWebinarEmailSchedule(
   webinar: typeof webinars.$inferSelect,
-  now: Date,
+  now: Date
 ) {
   const jobs: Array<{
     emailType:
@@ -97,12 +104,18 @@ export function buildWebinarEmailSchedule(
     jobs.push({ emailType: "confirmation", scheduledFor: now });
   }
   if (webinar.eventStartAt && webinar.twoDayReminderEnabled) {
-    const scheduledFor = new Date(webinar.eventStartAt.getTime() - 48 * 60 * 60 * 1000);
-    if (scheduledFor > now) jobs.push({ emailType: "reminder_2_days", scheduledFor });
+    const scheduledFor = new Date(
+      webinar.eventStartAt.getTime() - 48 * 60 * 60 * 1000
+    );
+    if (scheduledFor > now)
+      jobs.push({ emailType: "reminder_2_days", scheduledFor });
   }
   if (webinar.eventStartAt && webinar.oneHourReminderEnabled) {
-    const scheduledFor = new Date(webinar.eventStartAt.getTime() - 60 * 60 * 1000);
-    if (scheduledFor > now) jobs.push({ emailType: "reminder_1_hour", scheduledFor });
+    const scheduledFor = new Date(
+      webinar.eventStartAt.getTime() - 60 * 60 * 1000
+    );
+    if (scheduledFor > now)
+      jobs.push({ emailType: "reminder_1_hour", scheduledFor });
   }
   if (webinar.eventEndAt && webinar.followUpEnabled) {
     jobs.push({
@@ -121,8 +134,11 @@ type RegistrationContext = {
 export async function registerForWebinar(
   slug: string,
   input: WebinarRegistrationInput,
-  context: RegistrationContext,
+  context: RegistrationContext
 ) {
+  if (usesPostgresWebinarStore()) {
+    return pgRegisterForWebinar(slug, input, context);
+  }
   const db = await getDb();
   if (!db) {
     throw new Error("REGISTRATION_UNAVAILABLE");
@@ -138,7 +154,9 @@ export async function registerForWebinar(
   const phase = getWebinarPhase(publicWebinar(webinar));
   if (phase !== "registration_open") {
     throw new Error(
-      phase === "registration_closed" ? "REGISTRATION_CLOSED" : "REGISTRATION_NOT_OPEN",
+      phase === "registration_closed"
+        ? "REGISTRATION_CLOSED"
+        : "REGISTRATION_NOT_OPEN"
     );
   }
 
@@ -153,8 +171,8 @@ export async function registerForWebinar(
     .where(
       and(
         eq(webinarRegistrations.webinarId, webinar.id),
-        eq(webinarRegistrations.emailNormalised, emailNormalised),
-      ),
+        eq(webinarRegistrations.emailNormalised, emailNormalised)
+      )
     )
     .limit(1);
   if (existing && existing.registrationStatus !== "cancelled") {
@@ -173,8 +191,8 @@ export async function registerForWebinar(
     .where(
       and(
         eq(webinarRegistrations.webinarId, webinar.id),
-        ne(webinarRegistrations.registrationStatus, "cancelled"),
-      ),
+        ne(webinarRegistrations.registrationStatus, "cancelled")
+      )
     );
   const registrationStatus =
     webinar.maximumAttendees !== null && activeCount >= webinar.maximumAttendees
@@ -217,7 +235,7 @@ export async function registerForWebinar(
       webinarDate: webinar.eventStartAt?.toISOString() ?? "To be announced",
     });
     const registrationId = Number(
-      (insertResult as unknown as [{ insertId: number }])[0]?.insertId ?? 0,
+      (insertResult as unknown as [{ insertId: number }])[0]?.insertId ?? 0
     );
     if (!registrationId) throw new Error("REGISTRATION_INSERT_FAILED");
 
@@ -229,14 +247,17 @@ export async function registerForWebinar(
         scheduledFor: job.scheduledFor,
       });
       const emailQueueId = Number(
-        (queueResult as unknown as [{ insertId: number }])[0]?.insertId ?? 0,
+        (queueResult as unknown as [{ insertId: number }])[0]?.insertId ?? 0
       );
       await tx.insert(webinarEmailEvents).values({
         emailQueueId: emailQueueId || null,
         registrationId,
         webinarId: webinar.id,
         eventType: "queued",
-        eventData: { scheduledFor: job.scheduledFor.toISOString(), type: job.emailType },
+        eventData: {
+          scheduledFor: job.scheduledFor.toISOString(),
+          type: job.emailType,
+        },
       });
     }
 
@@ -251,6 +272,7 @@ export async function registerForWebinar(
 }
 
 export async function getPublicRegistrationCount(slug: string) {
+  if (usesPostgresWebinarStore()) return pgGetPublicRegistrationCount(slug);
   const db = await getDb();
   if (!db) return 0;
   const [{ value }] = await db
@@ -260,13 +282,14 @@ export async function getPublicRegistrationCount(slug: string) {
     .where(
       and(
         eq(webinars.slug, slug),
-        ne(webinarRegistrations.registrationStatus, "cancelled"),
-      ),
+        ne(webinarRegistrations.registrationStatus, "cancelled")
+      )
     );
   return value;
 }
 
 export async function getConfirmation(tokenValue: string) {
+  if (usesPostgresWebinarStore()) return pgGetConfirmation(tokenValue);
   const db = await getDb();
   if (!db) return null;
   const [result] = await db
@@ -291,8 +314,11 @@ export async function getConfirmation(tokenValue: string) {
 
 export async function updateSubscription(
   tokenValue: string,
-  action: "marketing_opt_out" | "cancel_registration",
+  action: "marketing_opt_out" | "cancel_registration"
 ) {
+  if (usesPostgresWebinarStore()) {
+    return pgUpdateSubscription(tokenValue, action);
+  }
   const db = await getDb();
   if (!db) throw new Error("REGISTRATION_UNAVAILABLE");
   const [registration] = await db
@@ -319,8 +345,8 @@ export async function updateSubscription(
         .where(
           and(
             eq(webinarEmailQueue.registrationId, registration.id),
-            eq(webinarEmailQueue.status, "pending"),
-          ),
+            eq(webinarEmailQueue.status, "pending")
+          )
         );
     });
   }
