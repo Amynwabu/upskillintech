@@ -1,14 +1,9 @@
 /**
- * UpskillinTech — Design System v3.1
- * Philosophy: Modern Professional — Bold green brand, teal accents, large readable type
- * Mission: Independent AI Awareness Platform — insights on AI productivity, tools & future of work
- * Colors: Primary Green #439288 | Teal #439288 | Accent Amber #D97706 | Navy #0F172A
- *         Dark Text #111827 | Body Text #374151 | Light BG #F7F8FA
- * Typography: Sora (display headings) + DM Sans (body text, readable)
- * Font Scale: Significantly increased for impact and readability
+ * UpskillinTech — unified brand system
+ * A restrained green palette, neutral surfaces, and one accessible type family.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -54,74 +49,81 @@
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* Brand tokens */
-  --color-brand-green: #439288;
-  --color-brand-teal: #439288;
-  --color-brand-teal-deep: #16a34a;
-  --color-brand-golden-green: #8b9e1a;
-  --color-brand-amber: #d97706;
-  --color-brand-yellow: #e6b800;
-  --color-brand-dark: #111827;
-  --color-brand-navy: #0f172a;
-  --color-brand-body: #374151;
-  --color-brand-light-bg: #f7f8fa;
-  --color-brand-yellow-bg: #fff7d6;
+  --color-brand-green: #859d30;
+  --color-brand-teal: #859d30;
+  --color-brand-teal-deep: #6f8528;
+  --color-brand-golden-green: #859d30;
+  --color-brand-amber: #859d30;
+  --color-brand-yellow: #859d30;
+  --color-brand-dark: #111111;
+  --color-brand-navy: #07100b;
+  --color-brand-body: #5f6368;
+  --color-brand-light-bg: #f7f8f5;
+  --color-brand-yellow-bg: #f4f7ea;
 }
 
 :root {
-  --brand-primary: #439288;
-  --brand-primary-hover: #34766e;
-  --brand-secondary: #4ca154;
-  --background-dark: #161b22;
-  --background-deep: #0b0f13;
+  --brand-green: #859d30;
+  --brand-green-dark: #6f8528;
+  --brand-green-light: #f4f7ea;
+  --brand-primary: var(--brand-green);
+  --brand-primary-hover: var(--brand-green-dark);
+  --brand-secondary: var(--brand-green);
+  --background: #ffffff;
+  --background-secondary: #f7f8f5;
+  --background-dark: #07100b;
+  --background-deep: #07100b;
   --background-light: #ffffff;
-  --background-muted: #f4f7f7;
-  --text-on-light: #000000;
+  --background-muted: #f7f8f5;
+  --text-primary: #111111;
+  --text-secondary: #5f6368;
+  --text-on-light: #111111;
   --text-on-light-body: #111111;
-  --text-on-light-secondary: #374151;
-  --text-on-light-muted: #4b5563;
+  --text-on-light-secondary: #5f6368;
+  --text-on-light-muted: #5f6368;
   --text-on-dark: #ffffff;
-  --text-on-dark-secondary: #d7dee5;
-  --text-on-dark-muted: #b5c0c9;
-  --border-dark: #29323d;
-  --border-light: #dce4e6;
+  --text-on-dark-secondary: #e5e7eb;
+  --text-on-dark-muted: #d1d5db;
+  --border-dark: #26332a;
+  --border-light: #e5e7eb;
+  --card-background: #ffffff;
   --input-text: #111111;
   --input-placeholder: #6b7280;
   --input-border: #cbd5e1;
 
   /* Shared compact controls use the darker accessible teal. Branded large
      CTAs use --brand-primary with bold large text. */
-  --primary: var(--brand-primary-hover);
+  --primary: var(--brand-primary);
   --primary-foreground: #ffffff;
   --radius: 0.625rem;
-  --background: var(--background-deep);
-  --foreground: var(--text-on-dark);
-  --card: var(--background-dark);
-  --card-foreground: var(--text-on-dark);
-  --popover: var(--background-dark);
-  --popover-foreground: var(--text-on-dark);
-  --secondary: #202833;
-  --secondary-foreground: var(--text-on-dark);
-  --muted: #202833;
-  --muted-foreground: var(--text-on-dark-muted);
-  --accent: #e6b800;
-  --accent-foreground: #111827;
+  --foreground: var(--text-primary);
+  --card: var(--card-background);
+  --card-foreground: var(--text-primary);
+  --popover: #ffffff;
+  --popover-foreground: var(--text-primary);
+  --secondary: #f4f7ea;
+  --secondary-foreground: var(--text-primary);
+  --muted: #f7f8f5;
+  --muted-foreground: var(--text-secondary);
+  --accent: #f4f7ea;
+  --accent-foreground: var(--text-primary);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
   --border: var(--border-dark);
   --input: var(--border-dark);
   --ring: var(--brand-primary);
   --chart-1: var(--brand-primary);
-  --chart-2: #8b9e1a;
-  --chart-3: #e6b800;
-  --chart-4: #f3f4f6;
-  --chart-5: #9ca3af;
-  --sidebar: var(--background-dark);
-  --sidebar-foreground: var(--text-on-dark);
+  --chart-2: #6f8528;
+  --chart-3: #a8b866;
+  --chart-4: #cbd5a5;
+  --chart-5: #5f6368;
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--text-primary);
   --sidebar-primary: var(--brand-primary);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #202833;
-  --sidebar-accent-foreground: var(--text-on-dark);
-  --sidebar-border: var(--border-dark);
+  --sidebar-accent: #f4f7ea;
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-light);
   --sidebar-ring: var(--brand-primary);
 }
 
@@ -134,48 +136,56 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 1rem;
     line-height: 1.7;
-    color: var(--text-on-dark-secondary);
+    color: var(--text-secondary);
+    background: var(--background);
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  body,
+  button,
+  input,
+  textarea,
+  select {
+    font-family: "Manrope", sans-serif !important;
+  }
   h1 {
-    font-family: "Sora", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: clamp(2.4rem, 5vw, 3.75rem);
     font-weight: 800;
     line-height: 1.15;
-    color: var(--text-on-dark);
+    color: var(--text-primary);
     letter-spacing: -0.02em;
   }
   h2 {
-    font-family: "Sora", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.75rem);
     font-weight: 700;
     line-height: 1.2;
-    color: var(--text-on-dark);
+    color: var(--text-primary);
     letter-spacing: -0.015em;
   }
   h3 {
-    font-family: "Sora", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: clamp(1.25rem, 2.5vw, 1.625rem);
     font-weight: 700;
     line-height: 1.3;
-    color: var(--text-on-dark);
+    color: var(--text-primary);
   }
   h4 {
-    font-family: "Sora", sans-serif;
+    font-family: "Manrope", sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.4;
-    color: var(--text-on-dark);
+    color: var(--text-primary);
   }
   p {
     font-size: 1rem;
     line-height: 1.75;
-    color: var(--text-on-dark-secondary);
+    color: var(--text-secondary);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -362,12 +372,12 @@
     gap: 0.5rem;
     text-decoration: none;
     letter-spacing: 0.01em;
-    box-shadow: 0 4px 14px rgba(67, 146, 136, 0.25);
+    box-shadow: 0 4px 14px rgba(133, 157, 48, 0.25);
   }
   .btn-primary:hover {
     background: var(--brand-primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(67, 146, 136, 0.4);
+    box-shadow: 0 8px 24px rgba(133, 157, 48, 0.4);
   }
 
   .btn-primary-white {
@@ -432,11 +442,11 @@
     background: var(--brand-primary);
     color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(67, 146, 136, 0.3);
+    box-shadow: 0 6px 20px rgba(133, 157, 48, 0.3);
   }
 
   .btn-yellow {
-    background: #e6b800;
+    background: #859d30;
     color: #111827;
     font-family: "Sora", sans-serif;
     font-size: 1rem;
@@ -449,12 +459,12 @@
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
-    box-shadow: 0 4px 14px rgba(230, 184, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(133, 157, 48, 0.3);
   }
   .btn-yellow:hover {
     background: #c9a000;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(230, 184, 0, 0.45);
+    box-shadow: 0 8px 24px rgba(133, 157, 48, 0.45);
   }
 
   /* ── Section label pill ── */
@@ -464,9 +474,9 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #439288;
-    background: rgba(67, 146, 136, 0.1);
-    border: 1px solid rgba(67, 146, 136, 0.2);
+    color: #859d30;
+    background: rgba(133, 157, 48, 0.1);
+    border: 1px solid rgba(133, 157, 48, 0.2);
     padding: 0.35rem 0.9rem;
     border-radius: 999px;
     display: inline-block;
@@ -484,18 +494,18 @@
     bottom: -6px;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #439288, #e6b800);
+    background: linear-gradient(90deg, #859d30, #859d30);
     border-radius: 2px;
   }
 
   /* ── Program card top border ── */
   .card-green-top {
-    border-top: 4px solid #439288;
+    border-top: 4px solid #859d30;
   }
 
   /* ── Modern card ── */
   .card-modern {
-    background: #151b23;
+    background: #07100b;
     border: 1px solid #1f2937;
     border-radius: 1rem;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
@@ -551,7 +561,7 @@
 
   /* ── Hero gradient ── */
   .hero-gradient {
-    background: linear-gradient(135deg, #439288 0%, #8b9e1a 60%, #e6b800 100%);
+    background: linear-gradient(135deg, #859d30 0%, #859d30 60%, #859d30 100%);
   }
 
   /* ── Yellow soft bg ── */
@@ -610,4 +620,235 @@
 }
 .surface-dark :where(.text-muted-foreground, small) {
   color: var(--text-on-dark-muted) !important;
+}
+
+/* Unified public-site visual language. These compatibility rules retire legacy
+   campaign colours without changing routing or page behaviour. */
+@layer utilities {
+  :where(
+    [class*="text-pink"],
+    [class*="text-purple"],
+    [class*="text-violet"],
+    [class*="text-fuchsia"],
+    [class*="text-orange"],
+    [class*="text-amber"],
+    [class*="text-yellow"],
+    [class*="text-blue"],
+    [class*="text-cyan"],
+    [class*="text-teal"],
+    [class*="text-indigo"]
+  ) {
+    color: var(--brand-green) !important;
+  }
+
+  :where(
+    [class*="bg-pink"],
+    [class*="bg-purple"],
+    [class*="bg-violet"],
+    [class*="bg-fuchsia"],
+    [class*="bg-orange"],
+    [class*="bg-amber"],
+    [class*="bg-yellow"],
+    [class*="bg-blue"],
+    [class*="bg-cyan"],
+    [class*="bg-teal"],
+    [class*="bg-indigo"]
+  ) {
+    background-color: var(--brand-green-light) !important;
+  }
+
+  :where(
+    [class*="border-pink"],
+    [class*="border-purple"],
+    [class*="border-violet"],
+    [class*="border-fuchsia"],
+    [class*="border-orange"],
+    [class*="border-amber"],
+    [class*="border-yellow"],
+    [class*="border-blue"],
+    [class*="border-cyan"],
+    [class*="border-teal"],
+    [class*="border-indigo"]
+  ) {
+    border-color: var(--brand-green) !important;
+  }
+
+  :where(
+    [class*="bg-gradient"],
+    [class*="from-"],
+    [class*="via-"],
+    [class*="to-"]
+  ) {
+    background-image: none !important;
+  }
+
+  :where(
+    [class*="shadow-pink"],
+    [class*="shadow-purple"],
+    [class*="shadow-orange"]
+  ) {
+    --tw-shadow-color: rgb(17 17 17 / 0.08) !important;
+  }
+}
+
+.btn-primary,
+[data-slot="button"].bg-primary {
+  background: var(--brand-green);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.btn-primary:hover,
+[data-slot="button"].bg-primary:hover {
+  background: var(--brand-green-dark);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  color: var(--brand-green-dark);
+  border-color: var(--brand-green);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--brand-green-light);
+  color: var(--brand-green-dark);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-yellow,
+.hero-gradient {
+  background: var(--brand-green);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.heading-accent::after {
+  background: var(--brand-green);
+}
+
+.section-label {
+  font-family: "Manrope", sans-serif;
+  color: var(--brand-green-dark);
+  background: var(--brand-green-light);
+  border-color: #dce5bd;
+}
+
+.card-modern,
+.brand-card {
+  background: var(--card-background);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 1rem;
+  box-shadow: 0 3px 14px rgb(17 17 17 / 0.05);
+}
+
+.card-modern:hover,
+.brand-card:hover {
+  transform: none;
+  box-shadow: 0 6px 20px rgb(17 17 17 / 0.08);
+}
+
+.brand-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.75rem;
+}
+
+.brand-card h3 {
+  color: var(--text-primary);
+}
+
+.brand-card p {
+  color: var(--text-secondary);
+}
+
+.brand-icon {
+  display: flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: var(--brand-green-light);
+  color: var(--brand-green-dark);
+}
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--brand-green-dark);
+  text-decoration: none;
+}
+
+.brand-link:hover {
+  text-decoration: underline;
+}
+
+:where(input, textarea, select):focus-visible {
+  border-color: var(--brand-green) !important;
+  outline: 3px solid rgb(133 157 48 / 0.22) !important;
+  outline-offset: 1px;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 3px solid rgb(133 157 48 / 0.35);
+  outline-offset: 3px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--brand-green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Retire remaining legacy inline gradients used by older route components. */
+[style*="gradient"] {
+  background-image: none !important;
+}
+
+[style*="gradient"][style*="#07100B" i] {
+  background: var(--background-dark) !important;
+}
+
+[style*="gradient"][style*="#859D30" i]:not([style*="#07100B" i]) {
+  background: var(--brand-green) !important;
+}
+
+[style*="gradient"][style*="#F4F7EA" i] {
+  background: var(--brand-green-light) !important;
+}
+
+[style*="WebkitBackgroundClip"] {
+  background: none !important;
+  color: var(--brand-green-dark) !important;
+  -webkit-text-fill-color: var(--brand-green-dark) !important;
+}
+
+@media (max-width: 639px) {
+  .section-py {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+  }
 }

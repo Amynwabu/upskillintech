@@ -7,35 +7,35 @@ const steps = [
     number: "01",
     title: "Discover",
     desc: "Understand what AI can do for your life, work, business, or organisation — and why it matters right now.",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: BookOpen,
     number: "02",
     title: "Practise",
     desc: "Learn simple tools, prompts, and everyday use cases through hands-on guided sessions.",
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     icon: Wrench,
     number: "03",
     title: "Apply",
     desc: "Use AI for real tasks — emails, content, planning, admin, research, customer support, and data analysis.",
-    color: "#D97706",
+    color: "#859D30",
   },
   {
     icon: Zap,
     number: "04",
     title: "Automate",
     desc: "Build simple workflows using ChatGPT, Claude, Notion, Zapier, Make, and the tools you already use.",
-    color: "#7C3AED",
+    color: "#859D30",
   },
   {
     icon: Rocket,
     number: "05",
     title: "Adopt",
     desc: "Build repeatable AI habits, safe practices, and long-term confidence that grows with you.",
-    color: "#DB2777",
+    color: "#859D30",
   },
 ];
 
@@ -59,10 +59,10 @@ export default function SolutionSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div className={`transition-all duration-700 ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
-            <div className="section-label mb-3" style={{ color: "#439288" }}>The AI Adoption Pathway</div>
+            <div className="section-label mb-3" style={{ color: "#859D30" }}>The AI Adoption Pathway</div>
             <h2 className="mb-6" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "white", lineHeight: 1.2 }}>
               Five stages from curiosity{" "}
-              <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 to confident adoption
               </span>
             </h2>
@@ -87,7 +87,7 @@ export default function SolutionSection() {
                 return (
                   <div key={step.title} className="relative flex gap-5 mb-6 last:mb-0">
                     {i < steps.length - 1 && (
-                      <div className="absolute left-6 top-14 bottom-0 w-0.5" style={{ background: "linear-gradient(to bottom, rgba(67,146,136,0.4), rgba(67,146,136,0.1))" }} />
+                      <div className="absolute left-6 top-14 bottom-0 w-0.5" style={{ background: "linear-gradient(to bottom, rgba(133, 157, 48,0.4), rgba(133, 157, 48,0.1))" }} />
                     )}
                     <div className="relative flex-shrink-0">
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `${step.color}20`, border: `2px solid ${step.color}40` }}>

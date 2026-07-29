@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export default function Terms() {
   return (
-    <div className="surface-dark min-h-screen bg-[#161B22]">
+    <div className="surface-dark min-h-screen bg-[#07100B]">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Terms of Service</h1>
@@ -205,7 +205,7 @@ export default function Terms() {
             <p>
               If you have any questions about these Terms of Service, please contact us at:
             </p>
-            <div className="mt-4 bg-[#151B23] p-4 rounded">
+            <div className="mt-4 bg-[#07100B] p-4 rounded">
               <p><strong>UpskillinTech</strong></p>
               <p>Email: support@upskillintech.com</p>
               <p>Website: upskillintech.com</p>

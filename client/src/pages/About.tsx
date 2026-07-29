@@ -1,7 +1,7 @@
 /**
  * About Page — UpskillinTech
  * URL: /about
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800) + Dark (#1C1C1C)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Yellow (#859D30) + Dark (#1C1C1C)
  * Font: Sora (headings) + Inter (body)
  * 8 Sections: Hero, Mission, Founder, Vision, Ecosystem, Partnerships, Impact, Final CTA
  */
@@ -46,17 +46,17 @@ function CountUp({ end, suffix = "", duration = 2000 }: { end: number; suffix?: 
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const MISSION_PILLARS = [
-  { icon: <BookOpen size={24} />, label: "Understand AI", desc: "Build foundational AI literacy for professionals at every level — from awareness to confident application.", color: "#439288" },
-  { icon: <Zap size={24} />, label: "Integrate AI", desc: "Embed AI into real workflows and daily work processes — not just as a tool, but as a productivity system.", color: "#8B9E1A" },
-  { icon: <TrendingUp size={24} />, label: "Build Productivity", desc: "Develop AI-powered productivity systems that save hours every week and improve decision quality.", color: "#E6B800" },
-  { icon: <Target size={24} />, label: "Lead Responsibly", desc: "Equip leaders to guide their teams and organisations through AI adoption with clarity and confidence.", color: "#439288" },
+  { icon: <BookOpen size={24} />, label: "Understand AI", desc: "Build foundational AI literacy for professionals at every level — from awareness to confident application.", color: "#859D30" },
+  { icon: <Zap size={24} />, label: "Integrate AI", desc: "Embed AI into real workflows and daily work processes — not just as a tool, but as a productivity system.", color: "#859D30" },
+  { icon: <TrendingUp size={24} />, label: "Build Productivity", desc: "Develop AI-powered productivity systems that save hours every week and improve decision quality.", color: "#859D30" },
+  { icon: <Target size={24} />, label: "Lead Responsibly", desc: "Equip leaders to guide their teams and organisations through AI adoption with clarity and confidence.", color: "#859D30" },
 ];
 
 const FOUNDER_EXPERTISE = [
-  { icon: <Brain size={22} />, label: "AI Expertise", desc: "Research and development in artificial intelligence and machine learning systems, with a focus on practical applications in professional environments.", color: "#439288" },
-  { icon: <Microscope size={22} />, label: "Robotics & Automation", desc: "Work in robotics and autonomous systems, exploring how intelligent systems perceive and interact with complex environments.", color: "#8B9E1A" },
-  { icon: <Award size={22} />, label: "Research Leadership", desc: "Experience leading research initiatives and developing AI-driven solutions that bridge academic rigour with industry relevance.", color: "#E6B800" },
-  { icon: <Handshake size={22} />, label: "Industry Collaboration", desc: "Collaboration with organisations and research partners to develop practical AI applications that create measurable impact.", color: "#439288" },
+  { icon: <Brain size={22} />, label: "AI Expertise", desc: "Research and development in artificial intelligence and machine learning systems, with a focus on practical applications in professional environments.", color: "#859D30" },
+  { icon: <Microscope size={22} />, label: "Robotics & Automation", desc: "Work in robotics and autonomous systems, exploring how intelligent systems perceive and interact with complex environments.", color: "#859D30" },
+  { icon: <Award size={22} />, label: "Research Leadership", desc: "Experience leading research initiatives and developing AI-driven solutions that bridge academic rigour with industry relevance.", color: "#859D30" },
+  { icon: <Handshake size={22} />, label: "Industry Collaboration", desc: "Collaboration with organisations and research partners to develop practical AI applications that create measurable impact.", color: "#859D30" },
 ];
 
 const VISION_POINTS = [
@@ -66,10 +66,10 @@ const VISION_POINTS = [
 ];
 
 const ECOSYSTEM_STAGES = [
-  { step: "01", label: "Awareness", desc: "Articles, videos, and insights on AI — building foundational understanding of what AI is and how it applies to real work.", icon: <BookOpen size={28} />, color: "#439288" },
-  { step: "02", label: "Learning", desc: "Structured programmes that build AI capability — from foundations to advanced workflows and leadership applications.", icon: <GraduationCap size={28} />, color: "#8B9E1A" },
-  { step: "03", label: "Application", desc: "Real-world workflows and productivity systems — turning knowledge into daily practice that saves time and improves decisions.", icon: <Zap size={28} />, color: "#E6B800" },
-  { step: "04", label: "Community", desc: "A network of professionals and leaders exploring AI together — sharing wins, workflows, and accountability.", icon: <Users size={28} />, color: "#439288" },
+  { step: "01", label: "Awareness", desc: "Articles, videos, and insights on AI — building foundational understanding of what AI is and how it applies to real work.", icon: <BookOpen size={28} />, color: "#859D30" },
+  { step: "02", label: "Learning", desc: "Structured programmes that build AI capability — from foundations to advanced workflows and leadership applications.", icon: <GraduationCap size={28} />, color: "#859D30" },
+  { step: "03", label: "Application", desc: "Real-world workflows and productivity systems — turning knowledge into daily practice that saves time and improves decisions.", icon: <Zap size={28} />, color: "#859D30" },
+  { step: "04", label: "Community", desc: "A network of professionals and leaders exploring AI together — sharing wins, workflows, and accountability.", icon: <Users size={28} />, color: "#859D30" },
 ];
 
 const PARTNERSHIP_TYPES = [
@@ -93,13 +93,13 @@ export default function About() {
       <Navbar />
 
       {/* ── 1. HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}>
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, #fff 1px, transparent 1px), radial-gradient(circle at 80% 20%, #fff 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="container relative z-10 py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(67,146,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(133, 157, 48,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>About UpskillinTech</span>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                 Enabling People and Organizations to Thrive in the Age of AI
               </h1>
@@ -110,7 +110,7 @@ export default function About() {
                 <Link href="/#programs" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "#1C1C1C", color: "#F3F4F6", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <ArrowRight size={16} /> Explore Programs
                 </Link>
-                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(67,146,136,0.10)", color: "#F3F4F6", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+                <Link href="/#community" className="font-bold px-6 py-3 rounded-lg flex items-center gap-2 text-sm" style={{ background: "rgba(133, 157, 48,0.10)", color: "#F3F4F6", border: "1.5px solid rgba(255,255,255,0.40)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
                   <Users size={16} /> Join Community
                 </Link>
               </div>
@@ -120,7 +120,7 @@ export default function About() {
               <div className="relative w-80 h-80">
                 {/* Central circle */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(67,146,136,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
+                  <div className="w-28 h-28 rounded-full flex flex-col items-center justify-center text-center" style={{ background: "rgba(133, 157, 48,0.10)", border: "2px solid rgba(255,255,255,0.40)" }}>
                     <Brain size={32} style={{ color: "#F3F4F6" }} />
                     <span className="text-xs font-bold mt-1" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>AI-Enabled</span>
                   </div>
@@ -151,7 +151,7 @@ export default function About() {
           </div>
         </div>
         {/* Stats bar */}
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "1,000+", l: "Professionals Trained" }, { v: "50+", l: "Organisations Engaged" }, { v: "2,500+", l: "Community Members" }, { v: "95%", l: "Satisfaction Rate" }].map(s => (
@@ -166,7 +166,7 @@ export default function About() {
       </section>
 
       {/* ── 2. MISSION ──────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -197,7 +197,7 @@ export default function About() {
       </section>
 
       {/* ── 3. FOUNDER ──────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Founder</span>
@@ -207,7 +207,7 @@ export default function About() {
             {/* Left: Photo + credentials */}
             <div className="flex flex-col items-center lg:items-start">
               <div className="relative mb-6">
-                <div className="w-52 h-52 rounded-2xl overflow-hidden" style={{ border: "4px solid #439288" }}>
+                <div className="w-52 h-52 rounded-2xl overflow-hidden" style={{ border: "4px solid #859D30" }}>
                   <img
                     src="/founder-amaka-adiuku.png"
                     alt="Dr. Amaka Adiuku"
@@ -216,7 +216,7 @@ export default function About() {
                       const el = e.currentTarget as HTMLImageElement;
                       el.style.display = "none";
                       const parent = el.parentElement!;
-                      parent.style.background = "linear-gradient(135deg, #439288, #E6B800)";
+                      parent.style.background = "linear-gradient(135deg, #859D30, #859D30)";
                       parent.style.display = "flex";
                       parent.style.alignItems = "center";
                       parent.style.justifyContent = "center";
@@ -224,15 +224,15 @@ export default function About() {
                     }}
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+                <div className="absolute -bottom-3 -right-3 px-3 py-1.5 rounded-full text-xs font-bold" style={{ background: "#859D30", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
                   Founder & CEO
                 </div>
               </div>
               <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Dr. Amaka Adiuku</h3>
-              <p className="text-sm mb-4" style={{ color: "#439288", fontFamily: "'Sora', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
+              <p className="text-sm mb-4" style={{ color: "#859D30", fontFamily: "'Sora', sans-serif" }}>Lecturer in AI | Robotics Researcher | Educator</p>
               <div className="flex flex-wrap gap-2">
                 {["AI Research", "Robotics", "Education", "Industry Collaboration"].map(tag => (
-                  <span key={tag} className="text-xs px-3 py-1 rounded-full" style={{ background: "#43928812", color: "#439288", border: "1px solid #43928825" }}>{tag}</span>
+                  <span key={tag} className="text-xs px-3 py-1 rounded-full" style={{ background: "#859D3012", color: "#859D30", border: "1px solid #859D3025" }}>{tag}</span>
                 ))}
               </div>
             </div>
@@ -246,7 +246,7 @@ export default function About() {
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 {FOUNDER_EXPERTISE.map((e) => (
-                  <div key={e.label} className="p-4 rounded-xl" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+                  <div key={e.label} className="p-4 rounded-xl" style={{ background: "#07100B", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: `${e.color}12`, color: e.color }}>{e.icon}</div>
                       <h4 className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{e.label}</h4>
@@ -265,7 +265,7 @@ export default function About() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(67,146,136,0.15)", color: "#439288", border: "1px solid rgba(67,146,136,0.25)" }}>Our Vision</span>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(133, 157, 48,0.15)", color: "#859D30", border: "1px solid rgba(133, 157, 48,0.25)" }}>Our Vision</span>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
                 A World Where AI Empowers Every Professional
               </h2>
@@ -279,7 +279,7 @@ export default function About() {
             <div className="space-y-5">
               {VISION_POINTS.map((v, i) => (
                 <div key={v.label} className="flex gap-5 p-5 rounded-2xl" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: i === 0 ? "#43928820" : i === 1 ? "#8B9E1A20" : "#E6B80020", color: i === 0 ? "#439288" : i === 1 ? "#8B9E1A" : "#E6B800" }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: i === 0 ? "#859D3020" : i === 1 ? "#859D3020" : "#859D3020", color: i === 0 ? "#859D30" : i === 1 ? "#859D30" : "#859D30" }}>
                     {v.icon}
                   </div>
                   <div>
@@ -294,7 +294,7 @@ export default function About() {
       </section>
 
       {/* ── 5. ECOSYSTEM ────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="section-label">Platform Structure</span>
@@ -309,7 +309,7 @@ export default function About() {
               <div key={stage.label} className="relative flex flex-col items-center text-center px-4">
                 {/* Connector line */}
                 {i < ECOSYSTEM_STAGES.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 z-0" style={{ background: "linear-gradient(90deg, #439288, #E6B800)" }} />
+                  <div className="hidden md:block absolute top-10 left-1/2 w-full h-0.5 z-0" style={{ background: "linear-gradient(90deg, #859D30, #859D30)" }} />
                 )}
                 <div className="relative z-10 w-20 h-20 rounded-2xl flex items-center justify-center mb-5" style={{ background: `${stage.color}12`, border: `2px solid ${stage.color}30`, color: stage.color }}>
                   {stage.icon}
@@ -321,7 +321,7 @@ export default function About() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm" style={{ background: "#859D30", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               Explore Programs <ChevronRight size={16} />
             </Link>
           </div>
@@ -329,7 +329,7 @@ export default function About() {
       </section>
 
       {/* ── 6. PARTNERSHIPS ─────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -346,15 +346,15 @@ export default function About() {
               <button
                 onClick={() => toast.info("Partnership enquiries", { description: "Email us at partnerships@upskillintech.com to discuss collaboration opportunities." })}
                 className="inline-flex items-center gap-2 font-bold px-6 py-3 rounded-lg text-sm"
-                style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif" }}
+                style={{ background: "#859D30", color: "#fff", fontFamily: "'Sora', sans-serif" }}
               >
                 <Handshake size={16} /> Partner With Us
               </button>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {PARTNERSHIP_TYPES.map((p) => (
-                <div key={p.label} className="p-5 rounded-2xl bg-[#151B23]" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#43928812", color: "#439288" }}>{p.icon}</div>
+                <div key={p.label} className="p-5 rounded-2xl bg-[#07100B]" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-3" style={{ background: "#859D3012", color: "#859D30" }}>{p.icon}</div>
                   <h4 className="font-bold text-sm mb-2" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{p.label}</h4>
                   <p className="text-xs leading-relaxed" style={{ color: "#9CA3AF" }}>{p.desc}</p>
                 </div>
@@ -366,7 +366,7 @@ export default function About() {
             <p className="text-center text-sm font-semibold mb-6" style={{ color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>TRUSTED BY ORGANISATIONS AND INSTITUTIONS</p>
             <div className="flex flex-wrap gap-6 justify-center items-center">
               {["Educational Institution", "Research Partner", "Corporate Partner", "Community Organisation", "Faith Community"].map((org) => (
-                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#151B23", border: "1.5px solid #1F2937", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
+                <div key={org} className="px-6 py-3 rounded-xl text-sm font-semibold" style={{ background: "#07100B", border: "1.5px solid #1F2937", color: "#9CA3AF", fontFamily: "'Sora', sans-serif" }}>
                   {org}
                 </div>
               ))}
@@ -376,7 +376,7 @@ export default function About() {
       </section>
 
       {/* ── 7. IMPACT ───────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
+      <section className="section-py" style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}>
         <div className="container">
           <div className="text-center mb-14">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(255,255,255,0.20)", color: "#fff", border: "1px solid rgba(255,255,255,0.35)" }}>Our Impact</span>
@@ -419,7 +419,7 @@ export default function About() {
       {/* ── 8. FINAL CTA ────────────────────────────────────────────────────── */}
       <section className="section-py" style={{ background: "#1C1C1C" }}>
         <div className="container max-w-3xl mx-auto text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(67,146,136,0.15)", color: "#439288", border: "1px solid rgba(67,146,136,0.25)" }}>Join the Journey</span>
+          <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-5" style={{ background: "rgba(133, 157, 48,0.15)", color: "#859D30", border: "1px solid rgba(133, 157, 48,0.25)" }}>Join the Journey</span>
           <h2 className="text-4xl lg:text-5xl font-bold mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>
             Join the UpskillinTech Journey
           </h2>
@@ -430,7 +430,7 @@ export default function About() {
             Whether you are a professional looking to save time, a leader building an AI-ready team, or an organisation developing an AI strategy — UpskillinTech has a path for you.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
+            <Link href="/#programs" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "#859D30", color: "#fff", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
             <Link href="/#community" className="font-bold px-8 py-4 rounded-lg flex items-center gap-2" style={{ background: "rgba(255,255,255,0.08)", color: "#fff", border: "1.5px solid rgba(255,255,255,0.20)", fontFamily: "'Sora', sans-serif", textDecoration: "none" }}>

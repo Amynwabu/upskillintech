@@ -8,73 +8,73 @@ const cases = [
     icon: Mail,
     title: "AI for Emails",
     outcome: "Write clearer replies, follow-ups, proposals, and customer messages in minutes.",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: PenLine,
     title: "AI for Social Media Content",
     outcome: "Build a full content calendar and write posts in your voice — weeks of content in one session.",
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     icon: FileText,
     title: "AI for Business Admin",
     outcome: "Draft proposals, invoices, SOPs, and reports without starting from a blank page.",
-    color: "#D97706",
+    color: "#859D30",
   },
   {
     icon: Users,
     title: "AI for Customer Service",
     outcome: "Respond faster, personalise messages, and handle common enquiries automatically.",
-    color: "#7C3AED",
+    color: "#859D30",
   },
   {
     icon: BarChart2,
     title: "AI for Excel & Data",
     outcome: "Analyse spreadsheets, spot trends, and turn numbers into clear summaries without formulas.",
-    color: "#DB2777",
+    color: "#859D30",
   },
   {
     icon: MonitorSmartphone,
     title: "AI for Presentations",
     outcome: "Turn a brief into a structured slide deck with key messages and speaker notes in minutes.",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: Search,
     title: "AI for Research",
     outcome: "Gather information, summarise long documents, and compare sources at speed.",
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     icon: Calendar,
     title: "AI for Meetings & Notes",
     outcome: "Transcribe, summarise, and turn meeting notes into action plans automatically.",
-    color: "#D97706",
+    color: "#859D30",
   },
   {
     icon: Inbox,
     title: "AI for Personal Planning",
     outcome: "Plan your week, track goals, organise tasks, and stay on top of life without the overwhelm.",
-    color: "#7C3AED",
+    color: "#859D30",
   },
   {
     icon: Repeat,
     title: "AI for Solopreneur Workflows",
     outcome: "Automate client onboarding, content creation, and follow-ups so you can focus on delivery.",
-    color: "#DB2777",
+    color: "#859D30",
   },
   {
     icon: BookOpen,
     title: "AI for Small Business Marketing",
     outcome: "Create campaigns, write ad copy, design visuals, and reach more customers with less effort.",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: Church,
     title: "AI for Churches & Community Groups",
     outcome: "Write sermons, newsletters, event plans, and community communications faster and more consistently.",
-    color: "#16A34A",
+    color: "#859D30",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function UseCasesSection() {
       id="use-cases"
       aria-label="What you can do with AI"
       className="section-py"
-      style={{ background: "#151B23" }}
+      style={{ background: "#07100B" }}
     >
       <div className="container">
         <div className="text-center mb-14" style={{ maxWidth: 620, margin: "0 auto 3.5rem" }}>
@@ -104,7 +104,7 @@ export default function UseCasesSection() {
               <div
                 key={c.title}
                 className="rounded-2xl p-5"
-                style={{ background: "#0B0F14", border: "1px solid #1F2937" }}
+                style={{ background: "#07100B", border: "1px solid #1F2937" }}
               >
                 <div
                   className="flex items-center justify-center rounded-xl mb-3"
@@ -126,7 +126,7 @@ export default function UseCasesSection() {
         <div className="text-center mt-10">
           <a
             href="#programs"
-            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#439288", textDecoration: "none" }}
+            style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#859D30", textDecoration: "none" }}
           >
             Learn how in our programmes →
           </a>

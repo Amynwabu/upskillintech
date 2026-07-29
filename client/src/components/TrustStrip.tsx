@@ -11,7 +11,7 @@ export default function TrustStrip() {
     <section
       aria-label="Platform statistics"
       style={{
-        background: "#151B23",
+        background: "#07100B",
         borderTop: "1px solid #1F2937",
         borderBottom: "1px solid #1F2937",
         padding: "2rem 0",
@@ -34,7 +34,7 @@ export default function TrustStrip() {
                   fontFamily: "'Sora', sans-serif",
                   fontWeight: 800,
                   fontSize: "clamp(1.6rem, 3vw, 2rem)",
-                  color: "#439288",
+                  color: "#859D30",
                   lineHeight: 1.1,
                 }}
               >

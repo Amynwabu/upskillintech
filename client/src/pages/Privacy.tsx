@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export default function Privacy() {
   return (
-    <div className="surface-dark min-h-screen bg-[#161B22]">
+    <div className="surface-dark min-h-screen bg-[#07100B]">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
         <h1 className="mb-2" style={{ fontFamily: "'Sora', sans-serif" }}>Privacy Policy</h1>
@@ -100,7 +100,7 @@ export default function Privacy() {
               <li><strong>Right to Data Portability:</strong> Receive your data in a portable format</li>
               <li><strong>Right to Object:</strong> Object to certain processing activities</li>
             </ul>
-            <p className="mt-3">To exercise these rights, please contact us at <a href="mailto:privacy@upskillintech.com" style={{ color: "#439288" }}>privacy@upskillintech.com</a>.</p>
+            <p className="mt-3">To exercise these rights, please contact us at <a href="mailto:privacy@upskillintech.com" style={{ color: "#859D30" }}>privacy@upskillintech.com</a>.</p>
           </section>
 
           <section>
@@ -110,18 +110,18 @@ export default function Privacy() {
 
           <section>
             <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>9. Data Protection Officer</h2>
-            <p>As a UK-based organisation, we have appointed a Data Protection Officer. Contact our DPO at <a href="mailto:dpo@upskillintech.com" style={{ color: "#439288" }}>dpo@upskillintech.com</a>.</p>
+            <p>As a UK-based organisation, we have appointed a Data Protection Officer. Contact our DPO at <a href="mailto:dpo@upskillintech.com" style={{ color: "#859D30" }}>dpo@upskillintech.com</a>.</p>
           </section>
 
           <section>
             <h2 style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>10. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, please contact us:</p>
-            <div className="mt-4 p-5 rounded-xl" style={{ background: "#151B23" }}>
+            <div className="mt-4 p-5 rounded-xl" style={{ background: "#07100B" }}>
               <p><strong>UpskillinTech</strong></p>
-              <p>Email: <a href="mailto:privacy@upskillintech.com" style={{ color: "#439288" }}>privacy@upskillintech.com</a></p>
+              <p>Email: <a href="mailto:privacy@upskillintech.com" style={{ color: "#859D30" }}>privacy@upskillintech.com</a></p>
               <p>Website: upskillintech.com</p>
               <p className="mt-4"><strong>UK Information Commissioner's Office</strong></p>
-              <p>Website: <a href="https://www.ico.org.uk" target="_blank" rel="noreferrer" style={{ color: "#439288" }}>www.ico.org.uk</a></p>
+              <p>Website: <a href="https://www.ico.org.uk" target="_blank" rel="noreferrer" style={{ color: "#859D30" }}>www.ico.org.uk</a></p>
               <p>Phone: +44 303 123 1113</p>
             </div>
           </section>

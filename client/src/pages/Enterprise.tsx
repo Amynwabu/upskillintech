@@ -1,6 +1,6 @@
 /**
  * Enterprise Page — /enterprise
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Accent Yellow (#859D30)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Services, Industries, Engagement Model, Case Studies, Consultation CTA
  */
@@ -62,7 +62,7 @@ const services = [
       "Productivity systems using AI tools",
     ],
     formats: ["Workshops", "Training sessions", "Customised team programmes"],
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: Lightbulb,
@@ -77,7 +77,7 @@ const services = [
       "Integrating AI into organisational strategy",
     ],
     formats: ["Half-day workshops", "Executive briefings", "Board presentations"],
-    color: "#8B9E1A",
+    color: "#859D30",
   },
   {
     icon: Workflow,
@@ -92,7 +92,7 @@ const services = [
       "Operational process automation and optimisation",
     ],
     formats: ["Process audits", "Workflow design sprints", "Implementation support"],
-    color: "#E6B800",
+    color: "#859D30",
   },
 ];
 
@@ -193,7 +193,7 @@ const caseStudies = [
     quote:
       "The training completely changed how we work. What used to take a full day now takes a couple of hours.",
     author: "Operations Manager",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     category: "Organisational Transformation",
@@ -214,7 +214,7 @@ const caseStudies = [
     quote:
       "UpskillinTech helped us move from AI curiosity to a clear, confident strategy. Our team now leads AI adoption rather than reacting to it.",
     author: "Head of Operations",
-    color: "#8B9E1A",
+    color: "#859D30",
   },
   {
     category: "Leadership and Education",
@@ -235,7 +235,7 @@ const caseStudies = [
     quote:
       "UpskillinTech understood our context and values. The training was practical, relevant, and helped us use AI in a way that felt right for our community.",
     author: "Network Director",
-    color: "#E6B800",
+    color: "#859D30",
   },
 ];
 
@@ -283,19 +283,19 @@ export default function Enterprise() {
   };
 
   return (
-    <div className="min-h-screen bg-[#151B23] font-inter">
+    <div className="min-h-screen bg-[#07100B] font-inter">
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section
         className="relative pt-24 pb-0 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}
+        style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}
       >
         {/* Decorative circles */}
         <div className="absolute top-10 right-10 w-64 h-64 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }} />
         <div className="absolute bottom-0 left-20 w-48 h-48 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #859D30 0%, transparent 70%)" }} />
 
         <div className="max-w-6xl mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-12 items-center pb-0">
           {/* Left */}
@@ -321,18 +321,18 @@ export default function Enterprise() {
               <a
                 href="#consultation"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm transition-all"
-                style={{ background: "#E6B800", color: "#F3F4F6" }}
-                onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-                onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}
+                style={{ background: "#859D30", color: "#F3F4F6" }}
+                onMouseEnter={e => (e.currentTarget.style.background = "#859D30")}
+                onMouseLeave={e => (e.currentTarget.style.background = "#859D30")}
               >
                 Request Consultation <ArrowRight size={16} />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all hover:bg-[#151B23]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-green-600 text-[#F3F4F6] transition-all hover:bg-[#07100B]"
                 style={{}}
-                onMouseEnter={e => { e.currentTarget.style.color = "#439288"; e.currentTarget.style.background = "#f0fdf4"; }}
-                onMouseLeave={e => { e.currentTarget.style.color = "#439288"; e.currentTarget.style.background = "transparent"; }}
+                onMouseEnter={e => { e.currentTarget.style.color = "#859D30"; e.currentTarget.style.background = "#F4F7EA"; }}
+                onMouseLeave={e => { e.currentTarget.style.color = "#859D30"; e.currentTarget.style.background = "transparent"; }}
               >
                 Explore Services
               </a>
@@ -347,10 +347,10 @@ export default function Enterprise() {
                 alt="Enterprise AI training workshop"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(67,146,136,0.4) 0%, transparent 60%)" }} />
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(133, 157, 48,0.4) 0%, transparent 60%)" }} />
               {/* Floating badge */}
-              <div className="absolute bottom-6 left-6 bg-[#151B23] rounded-xl px-4 py-3 shadow-lg flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "#439288" }}>
+              <div className="absolute bottom-6 left-6 bg-[#07100B] rounded-xl px-4 py-3 shadow-lg flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "#859D30" }}>
                   <Building2 size={18} color="#fff" />
                 </div>
                 <div>
@@ -365,7 +365,7 @@ export default function Enterprise() {
         {/* Stats bar */}
         <div ref={statsRef} className="max-w-6xl mx-auto px-4 lg:px-8 mt-0">
           <div className="rounded-t-2xl grid grid-cols-2 lg:grid-cols-4 gap-0 overflow-hidden"
-            style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #A8C038 50%, #E6B800 100%)" }}>
+            style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 50%, #859D30 100%)" }}>
             {[
               { value: `${orgsCount}+`, label: "Organisations Engaged" },
               { value: `${profCount}+`, label: "Professionals Trained" },
@@ -382,11 +382,11 @@ export default function Enterprise() {
       </section>
 
       {/* ── Services ─────────────────────────────────────────────────────── */}
-      <section id="services" className="py-20 bg-[#151B23]">
+      <section id="services" className="py-20 bg-[#07100B]">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#439288" }}>Enterprise Services</span>
+              style={{ background: "#07100B", color: "#859D30" }}>Enterprise Services</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               What We Offer Organisations
             </h2>
@@ -457,11 +457,11 @@ export default function Enterprise() {
       </section>
 
       {/* ── Industries ───────────────────────────────────────────────────── */}
-      <section id="industries" className="section-py" style={{ background: "#11161A" }}>
+      <section id="industries" className="section-py" style={{ background: "#07100B" }}>
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#439288" }}>Industries We Serve</span>
+              style={{ background: "#07100B", color: "#859D30" }}>Industries We Serve</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Working Across Sectors
             </h2>
@@ -474,10 +474,10 @@ export default function Enterprise() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((industry, i) => {
               const Icon = industry.icon;
-              const colors = ["#439288", "#8B9E1A", "#E6B800", "#439288", "#8B9E1A"];
+              const colors = ["#859D30", "#859D30", "#859D30", "#859D30", "#859D30"];
               const color = colors[i % colors.length];
               return (
-                <div key={i} className="bg-[#151B23] rounded-2xl p-7 border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                <div key={i} className="bg-[#07100B] rounded-2xl p-7 border transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                   style={{ borderColor: "#1F2937" }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                     style={{ background: `${color}15` }}>
@@ -501,11 +501,11 @@ export default function Enterprise() {
       </section>
 
       {/* ── Engagement Models ────────────────────────────────────────────── */}
-      <section id="engagement" className="py-20 bg-[#151B23]">
+      <section id="engagement" className="py-20 bg-[#07100B]">
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#439288" }}>How We Work</span>
+              style={{ background: "#07100B", color: "#859D30" }}>How We Work</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               How We Work With Organisations
             </h2>
@@ -518,7 +518,7 @@ export default function Enterprise() {
           <div className="grid md:grid-cols-2 gap-8">
             {engagementModels.map((model, i) => {
               const Icon = model.icon;
-              const colors = ["#439288", "#8B9E1A", "#E6B800", "#439288"];
+              const colors = ["#859D30", "#859D30", "#859D30", "#859D30"];
               const color = colors[i % colors.length];
               return (
                 <div key={i} className="flex gap-6 p-7 rounded-2xl border transition-all duration-300 hover:shadow-lg"
@@ -559,7 +559,7 @@ export default function Enterprise() {
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "rgba(67,146,136,0.15)", color: "#439288" }}>Real Applications</span>
+              style={{ background: "rgba(133, 157, 48,0.15)", color: "#859D30" }}>Real Applications</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4 text-white">
               Organisations Transforming with AI
             </h2>
@@ -624,13 +624,13 @@ export default function Enterprise() {
       </section>
 
       {/* ── Consultation CTA + Form ───────────────────────────────────────── */}
-      <section id="consultation" className="py-20 bg-[#151B23]">
+      <section id="consultation" className="py-20 bg-[#07100B]">
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left — copy */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-                style={{ background: "#10231C", color: "#439288" }}>Request a Consultation</span>
+                style={{ background: "#07100B", color: "#859D30" }}>Request a Consultation</span>
               <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-5" style={{ color: "#F3F4F6" }}>
                 Explore AI Opportunities for Your Organisation
               </h2>
@@ -648,7 +648,7 @@ export default function Enterprise() {
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
                     <div className="shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-poppins font-bold text-sm text-white"
-                      style={{ background: "#439288" }}>
+                      style={{ background: "#859D30" }}>
                       {item.step}
                     </div>
                     <div>
@@ -660,7 +660,7 @@ export default function Enterprise() {
               </div>
 
               {/* Trust indicators */}
-              <div className="rounded-xl p-5 border" style={{ borderColor: "#1F2937", background: "#11161A" }}>
+              <div className="rounded-xl p-5 border" style={{ borderColor: "#1F2937", background: "#07100B" }}>
                 <p className="font-semibold text-sm mb-3" style={{ color: "#F3F4F6" }}>What to expect:</p>
                 {[
                   "Response within 2 business days",
@@ -669,7 +669,7 @@ export default function Enterprise() {
                   "Flexible engagement models to suit your budget",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 text-sm mb-2" style={{ color: "#9CA3AF" }}>
-                    <CheckCircle size={14} style={{ color: "#439288" }} />
+                    <CheckCircle size={14} style={{ color: "#859D30" }} />
                     {item}
                   </div>
                 ))}
@@ -685,7 +685,7 @@ export default function Enterprise() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                      Name <span style={{ color: "#439288" }}>*</span>
+                      Name <span style={{ color: "#859D30" }}>*</span>
                     </label>
                     <input
                       type="text"
@@ -694,13 +694,13 @@ export default function Enterprise() {
                       onChange={e => setForm({ ...form, name: e.target.value })}
                       className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all focus:ring-2"
                       style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                      onFocus={e => (e.target.style.borderColor = "#439288")}
+                      onFocus={e => (e.target.style.borderColor = "#859D30")}
                       onBlur={e => (e.target.style.borderColor = "#374151")}
                     />
                   </div>
                   <div>
                     <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                      Email <span style={{ color: "#439288" }}>*</span>
+                      Email <span style={{ color: "#859D30" }}>*</span>
                     </label>
                     <input
                       type="email"
@@ -709,7 +709,7 @@ export default function Enterprise() {
                       onChange={e => setForm({ ...form, email: e.target.value })}
                       className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                       style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                      onFocus={e => (e.target.style.borderColor = "#439288")}
+                      onFocus={e => (e.target.style.borderColor = "#859D30")}
                       onBlur={e => (e.target.style.borderColor = "#374151")}
                     />
                   </div>
@@ -717,7 +717,7 @@ export default function Enterprise() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                    Organisation <span style={{ color: "#439288" }}>*</span>
+                    Organisation <span style={{ color: "#859D30" }}>*</span>
                   </label>
                   <input
                     type="text"
@@ -726,7 +726,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, organisation: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#439288")}
+                    onFocus={e => (e.target.style.borderColor = "#859D30")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -740,7 +740,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, role: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#439288")}
+                    onFocus={e => (e.target.style.borderColor = "#859D30")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -752,7 +752,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, inquiryType: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                     style={{ borderColor: "#374151", color: form.inquiryType ? "#1C1C1C" : "#999" }}
-                    onFocus={e => (e.target.style.borderColor = "#439288")}
+                    onFocus={e => (e.target.style.borderColor = "#859D30")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   >
                     <option value="">Select enquiry type</option>
@@ -762,7 +762,7 @@ export default function Enterprise() {
 
                 <div>
                   <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                    Message <span style={{ color: "#439288" }}>*</span>
+                    Message <span style={{ color: "#859D30" }}>*</span>
                   </label>
                   <textarea
                     rows={4}
@@ -771,7 +771,7 @@ export default function Enterprise() {
                     onChange={e => setForm({ ...form, message: e.target.value })}
                     className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all resize-none"
                     style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                    onFocus={e => (e.target.style.borderColor = "#439288")}
+                    onFocus={e => (e.target.style.borderColor = "#859D30")}
                     onBlur={e => (e.target.style.borderColor = "#374151")}
                   />
                 </div>
@@ -780,9 +780,9 @@ export default function Enterprise() {
                   type="submit"
                   disabled={submitting}
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60"
-                  style={{ background: "#439288", color: "#fff" }}
-                  onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#2ea040"; }}
-                  onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#439288"; }}
+                  style={{ background: "#859D30", color: "#fff" }}
+                  onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#859D30"; }}
+                  onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#859D30"; }}
                 >
                   {submitting ? "Sending…" : <><Send size={15} /> Request Consultation</>}
                 </button>
@@ -797,7 +797,7 @@ export default function Enterprise() {
       </section>
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "linear-gradient(135deg, #439288 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+      <section className="section-py" style={{ background: "linear-gradient(135deg, #859D30 0%, #859D30 60%, #859D30 100%)" }}>
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4">
             Ready to Build an AI-Enabled Organisation?
@@ -809,14 +809,14 @@ export default function Enterprise() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="#consultation"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
-              onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              style={{ background: "#859D30", color: "#F3F4F6" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#859D30")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#859D30")}>
               Request Consultation <ArrowRight size={16} />
             </a>
             <a href="/resources/case-studies"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#439288"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#859D30"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               View Case Studies
             </a>

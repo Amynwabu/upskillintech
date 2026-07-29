@@ -40,14 +40,14 @@ export default function ProgramSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="programs" className="py-20 lg:py-28" style={{ background: "linear-gradient(160deg, #F0FDFA 0%, #F8FAFC 60%, #ECFDF5 100%)" }}>
+    <section id="programs" className="py-20 lg:py-28" style={{ background: "linear-gradient(160deg, #F4F7EA 0%, #F4F7EA 60%, #F4F7EA 100%)" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="section-label mb-3">Flagship Program</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
             The AI-Enabled{" "}
-            <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Professional Program
             </span>
           </h2>
@@ -80,17 +80,17 @@ export default function ProgramSection() {
               </div>
 
               {/* After */}
-              <div className="rounded-xl p-6 flex flex-col" style={{ background: "rgba(67,146,136,0.05)", border: "1px solid rgba(67,146,136,0.2)" }}>
+              <div className="rounded-xl p-6 flex flex-col" style={{ background: "rgba(133, 157, 48,0.05)", border: "1px solid rgba(133, 157, 48,0.2)" }}>
                 <div className="flex items-center gap-2 mb-5">
-                  <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(67,146,136,0.1)" }}>
-                    <Check size={14} style={{ color: "#439288" }} />
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: "rgba(133, 157, 48,0.1)" }}>
+                    <Check size={14} style={{ color: "#859D30" }} />
                   </div>
-                  <span className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#439288" }}>After</span>
+                  <span className="font-bold text-sm" style={{ fontFamily: "'Sora', sans-serif", color: "#859D30" }}>After</span>
                 </div>
                 <ul className="space-y-3 flex-1">
                   {afterItems.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <Check size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#16A34A" }} />
+                      <Check size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#859D30" }} />
                       <span className="text-sm font-medium" style={{ color: "#0F172A", fontFamily: "'DM Sans', sans-serif" }}>{item}</span>
                     </li>
                   ))}
@@ -108,14 +108,14 @@ export default function ProgramSection() {
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 50%)" }} />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center gap-1 mb-1">
-                    {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="#D97706" style={{ color: "#D97706" }} />)}
+                    {[1,2,3,4,5].map(i => <Star key={i} size={12} fill="#859D30" style={{ color: "#859D30" }} />)}
                     <span className="text-white text-xs ml-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>4.9/5 from 200+ participants</span>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-6 flex-1 flex flex-col bg-[#151B23]">
+              <div className="p-6 flex-1 flex flex-col bg-[#07100B]">
                 <h3 className="font-bold text-xl mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#0F172A" }}>
                   AI-Enabled Professional Program
                 </h3>
@@ -134,8 +134,8 @@ export default function ProgramSection() {
                     "Certificate of completion",
                   ].map((feat) => (
                     <div key={feat} className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(67,146,136,0.15)" }}>
-                        <Check size={9} style={{ color: "#439288" }} />
+                      <div className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "rgba(133, 157, 48,0.15)" }}>
+                        <Check size={9} style={{ color: "#859D30" }} />
                       </div>
                       <span className="text-xs" style={{ color: "#475569", fontFamily: "'DM Sans', sans-serif" }}>{feat}</span>
                     </div>

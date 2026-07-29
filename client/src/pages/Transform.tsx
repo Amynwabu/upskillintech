@@ -231,7 +231,7 @@ export default function Transform() {
                           {/* Stats */}
                           <div className="flex items-center gap-4 text-sm">
                             <div className="flex items-center gap-1">
-                              <Star className="text-yellow-500 fill-yellow-500" size={16} />
+                              <Star className="text-[#859D30] fill-[#859D30]" size={16} />
                               <span className="font-medium">{template.rating}.0</span>
                             </div>
                             <div className="flex items-center gap-1 text-muted-foreground">

@@ -11,7 +11,7 @@ const expertise = ["AI Research", "Robotics", "Technology Literacy", "Workflow A
 
 export default function FounderSection() {
   return (
-    <section className="section-py" style={{ background: "#151B23" }}>
+    <section className="section-py" style={{ background: "#07100B" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
           {/* Left: Founder photo */}
@@ -22,8 +22,8 @@ export default function FounderSection() {
                 style={{
                   maxWidth: 360,
                   width: "100%",
-                  boxShadow: "0 24px 64px rgba(67,146,136,0.18)",
-                  border: "3px solid rgba(67,146,136,0.20)",
+                  boxShadow: "0 24px 64px rgba(133, 157, 48,0.18)",
+                  border: "3px solid rgba(133, 157, 48,0.20)",
                 }}
               >
                 <img
@@ -36,7 +36,7 @@ export default function FounderSection() {
               {/* Floating credential badge */}
               <div
                 className="absolute -bottom-5 -right-5 rounded-2xl px-5 py-4 text-center"
-                style={{ background: "#439288", boxShadow: "0 8px 24px rgba(67,146,136,0.35)" }}
+                style={{ background: "#859D30", boxShadow: "0 8px 24px rgba(133, 157, 48,0.35)" }}
               >
                 <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#ffffff" }}>PhD</div>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>AI &amp; Robotics</div>
@@ -49,11 +49,11 @@ export default function FounderSection() {
             <span className="section-label mb-5">The Voice Behind the Platform</span>
             <h2 className="mt-4 mb-3" style={{ fontFamily: "'Sora', sans-serif" }}>
               Insights Grounded in{" "}
-              <span style={{ background: "linear-gradient(135deg, #439288, #439288)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Real Research
               </span>
             </h2>
-            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#439288", fontSize: "1.2rem" }}>
+            <p className="font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#859D30", fontSize: "1.2rem" }}>
               Dr. Amaka Adiuku
             </p>
             <p className="mb-6" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1rem", color: "#9CA3AF" }}>
@@ -77,9 +77,9 @@ export default function FounderSection() {
                   style={{
                     fontFamily: "'Sora', sans-serif",
                     fontSize: "0.875rem",
-                    background: "rgba(67,146,136,0.08)",
-                    color: "#439288",
-                    border: "1px solid rgba(67,146,136,0.18)",
+                    background: "rgba(133, 157, 48,0.08)",
+                    color: "#859D30",
+                    border: "1px solid rgba(133, 157, 48,0.18)",
                   }}
                 >
                   {tag}
@@ -88,7 +88,7 @@ export default function FounderSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#439288" }}>
+              <a href="/about" className="btn-primary" style={{ fontSize: "1.05rem", padding: "1rem 2.25rem", background: "#859D30" }}>
                 About UpskillinTech
               </a>
               <a
@@ -97,8 +97,8 @@ export default function FounderSection() {
                 style={{
                   fontSize: "1.05rem",
                   padding: "1rem 2.25rem",
-                  borderColor: "#439288",
-                  color: "#439288",
+                  borderColor: "#859D30",
+                  color: "#859D30",
                 }}
               >
                 Book a Discovery Call

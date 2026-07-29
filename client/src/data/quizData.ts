@@ -204,7 +204,7 @@ export const learningPaths: Record<string, LearningPath> = {
       "Introduction to Machine Learning"
     ],
     icon: "BookOpen",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-[#859D30] to-[#859D30]"
   },
   intermediate: {
     id: "intermediate",
@@ -217,7 +217,7 @@ export const learningPaths: Record<string, LearningPath> = {
       "Building AI-Powered Workflows"
     ],
     icon: "Zap",
-    color: "from-purple-500 to-pink-500"
+    color: "from-[#859D30] to-[#859D30]"
   },
   advanced: {
     id: "advanced",
@@ -230,7 +230,7 @@ export const learningPaths: Record<string, LearningPath> = {
       "AI System Architecture & Deployment"
     ],
     icon: "Rocket",
-    color: "from-orange-500 to-red-500"
+    color: "from-[#859D30] to-red-500"
   },
   business: {
     id: "business",
@@ -243,7 +243,7 @@ export const learningPaths: Record<string, LearningPath> = {
       "AI ROI & Implementation Planning"
     ],
     icon: "Briefcase",
-    color: "from-green-500 to-teal-500"
+    color: "from-green-500 to-[#859D30]"
   }
 };
 

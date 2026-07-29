@@ -1,81 +1,45 @@
-/**
- * Navbar — UpskillinTech v3
- * Design: White bg, taller (72px), larger logo, bigger nav text, green CTA
- * Font: Sora
- */
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link, useRoute } from "wouter";
-import { Menu, X, ChevronDown, BookOpen, FileText, Briefcase, Video, Zap, Mail } from "lucide-react";
-import { useAuth } from "@/_core/hooks/useAuth";
-import GoogleSignInButton from "@/components/GoogleSignInButton";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Logo from "@/components/Logo";
 
-const ACTIVE_NAV_COLOR = "#439288";
-
-const RESOURCE_LINKS = [
-  { label: "Blog", desc: "Articles & insights", href: "/resources/blog", icon: <BookOpen size={18} style={{ color: "#439288" }} /> },
-  { label: "AI Guides", desc: "Free downloadable guides", href: "/resources/ai-guides", icon: <FileText size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Case Studies", desc: "Real results & stories", href: "/resources/case-studies", icon: <Briefcase size={18} style={{ color: "#439288" }} /> },
-  { label: "Webinars", desc: "Live & recorded sessions", href: "/resources/webinars", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
-  { label: "AI Workflows", desc: "Step-by-step templates", href: "/resources/workflows", icon: <Zap size={18} style={{ color: "#8B9E1A" }} /> },
-  { label: "Newsletter", desc: "Weekly AI insights", href: "/newsletter", icon: <Mail size={18} style={{ color: "#E6B800" }} /> },
-];
-
-const PROGRAM_LINKS = [
-  { label: "Programs", desc: "Structured AI learning paths", href: "/programs", icon: <BookOpen size={18} style={{ color: "#439288" }} /> },
-  { label: "Masterclass", desc: "Live practical AI sessions", href: "/masterclass", icon: <Video size={18} style={{ color: "#E6B800" }} /> },
-  { label: "Enterprise", desc: "Team training and strategy", href: "/enterprise", icon: <Briefcase size={18} style={{ color: "#439288" }} /> },
-];
-
-const navLinks = [
+const mainLinks = [
   { label: "Home", href: "/" },
+  { label: "Learn AI", href: "/programs" },
+  { label: "AI for Business", href: "/enterprise" },
+  { label: "Consultancy", href: "/consult" },
   { label: "About", href: "/about" },
 ];
 
-const secondaryNavLinks = [
-  { label: "Community", href: "/community" },
+const resources = [
+  { label: "Resources Hub", href: "/resources" },
+  { label: "AI Guides", href: "/resources/ai-guides" },
+  { label: "Webinars", href: "/resources/webinars" },
+  { label: "Blog", href: "/resources/blog" },
 ];
 
-function DesktopNavLink({ label, href }: { label: string; href: string }) {
+function NavLink({
+  label,
+  href,
+  mobile = false,
+  onClick,
+}: {
+  label: string;
+  href: string;
+  mobile?: boolean;
+  onClick?: () => void;
+}) {
   const [active] = useRoute(href);
-  const color = active ? ACTIVE_NAV_COLOR : "#FFFFFF";
-
   return (
     <Link
       href={href}
-      className="font-semibold transition-colors duration-150"
-      style={{
-        fontFamily: "'Sora', sans-serif",
-        fontSize: "0.975rem",
-        color,
-        fontWeight: active ? 800 : 600,
-        textDecoration: "none",
-        letterSpacing: "0.01em",
-      }}
-      onMouseEnter={(e) => ((e.target as HTMLElement).style.color = ACTIVE_NAV_COLOR)}
-      onMouseLeave={(e) => ((e.target as HTMLElement).style.color = color)}
-    >
-      {label}
-    </Link>
-  );
-}
-
-function MobileNavLink({ label, href, onClick }: { label: string; href: string; onClick: () => void }) {
-  const [active] = useRoute(href);
-
-  return (
-    <Link
-      href={href}
-      className="font-semibold py-3 px-3 rounded-xl"
-      style={{
-        fontFamily: "'Sora', sans-serif",
-        fontSize: "1rem",
-        color: active ? ACTIVE_NAV_COLOR : "#FFFFFF",
-        fontWeight: active ? 800 : 600,
-        textDecoration: "none",
-        background: active ? "rgba(67,146,136,0.08)" : "transparent",
-      }}
       onClick={onClick}
+      className={`${mobile ? "block rounded-lg px-3 py-3" : ""} font-semibold transition-colors`}
+      style={{
+        color: active ? "#859d30" : "#111111",
+        background: mobile && active ? "#f4f7ea" : "transparent",
+        textDecoration: "none",
+      }}
     >
       {label}
     </Link>
@@ -84,296 +48,91 @@ function MobileNavLink({ label, href, onClick }: { label: string; href: string; 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [programsOpen, setProgramsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
-  const programsDropdownRef = useRef<HTMLDivElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const { loading, user } = useAuth();
-  const [programsActive] = useRoute("/programs");
-  const [masterclassActive] = useRoute("/masterclass");
-  const [masterclassesActive] = useRoute("/masterclasses");
-  const [enterpriseActive] = useRoute("/enterprise");
-  const isProgramsActive = programsActive || masterclassActive || masterclassesActive || enterpriseActive;
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setResourcesOpen(false);
-      }
-      if (programsDropdownRef.current && !programsDropdownRef.current.contains(e.target as Node)) {
-        setProgramsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: "#0B0F13",
-        boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.35)" : "0 1px 0 #29323D",
-      }}
-    >
-      <div className="container">
-        <div className="flex items-center justify-between" style={{ height: "72px" }}>
-          {/* Logo — larger and more prominent */}
-          <Logo variant="dark-background" size="lg" />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5e7eb] bg-white">
+      <nav
+        className="container flex h-[72px] items-center justify-between"
+        aria-label="Main navigation"
+      >
+        <Logo variant="light-background" size="lg" />
 
-          {/* Desktop nav */}
-          <div className="hidden xl:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <DesktopNavLink key={link.label} label={link.label} href={link.href} />
-            ))}
-
-            {/* Programs dropdown */}
-            <div className="relative" ref={programsDropdownRef}>
-              <button
-                className="flex items-center gap-1.5 font-semibold transition-colors duration-150"
-                style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: "0.975rem",
-                  color: isProgramsActive || programsOpen ? ACTIVE_NAV_COLOR : "#FFFFFF",
-                  fontWeight: isProgramsActive ? 800 : 600,
-                  background: "none",
-                  border: "none",
-                  letterSpacing: "0.01em",
-                }}
-                onClick={() => {
-                  setProgramsOpen(!programsOpen);
-                  setResourcesOpen(false);
-                }}
-              >
-                Programs{" "}
-                <ChevronDown
-                  size={16}
-                  style={{
-                    transition: "transform 0.2s",
-                    transform: programsOpen ? "rotate(180deg)" : "rotate(0deg)",
-                  }}
-                />
-              </button>
-              {programsOpen && (
-                <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
-                  style={{
-                    background: "#161B22",
-                    boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #29323D",
-                  }}
-                >
-                  <div className="p-2.5">
-                    {PROGRAM_LINKS.map((item) => (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
-                        style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#202833")}
-                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
-                        onClick={() => setProgramsOpen(false)}
-                      >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#10231C" }}>
-                          {item.icon}
-                        </div>
-                        <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#FFFFFF" }}>
-                            {item.label}
-                          </div>
-                          <div style={{ fontSize: "0.8rem", color: "#B5C0C9" }}>{item.desc}</div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {secondaryNavLinks.map((link) => (
-              <DesktopNavLink key={link.label} label={link.label} href={link.href} />
-            ))}
-
-            {/* Resources dropdown */}
-            <div className="relative" ref={dropdownRef}>
-              <button
-                className="flex items-center gap-1.5 font-semibold transition-colors duration-150"
-                style={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontSize: "0.975rem",
-                  color: resourcesOpen ? ACTIVE_NAV_COLOR : "#FFFFFF",
-                  background: "none",
-                  border: "none",
-                  letterSpacing: "0.01em",
-                }}
-                onClick={() => {
-                  setResourcesOpen(!resourcesOpen);
-                  setProgramsOpen(false);
-                }}
-              >
-                Resources{" "}
-                <ChevronDown
-                  size={16}
-                  style={{
-                    transition: "transform 0.2s",
-                    transform: resourcesOpen ? "rotate(180deg)" : "rotate(0deg)",
-                  }}
-                />
-              </button>
-              {resourcesOpen && (
-                <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-80 rounded-2xl overflow-hidden"
-                  style={{
-                    background: "#161B22",
-                    boxShadow: "0 12px 48px rgba(0,0,0,0.14)",
-                    border: "1px solid #29323D",
-                  }}
-                >
-                  <div className="p-2.5">
-                    <Link
-                      href="/resources"
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl mb-1 font-bold"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(67,146,136,0.08), rgba(230,184,0,0.08))",
-                        color: "#FFFFFF",
-                        fontFamily: "'Sora', sans-serif",
-                        fontSize: "0.95rem",
-                        textDecoration: "none",
-                      }}
-                      onClick={() => setResourcesOpen(false)}
-                    >
-                      All Resources →
-                    </Link>
-                    {RESOURCE_LINKS.map((r) => (
-                      <Link
-                        key={r.label}
-                        href={r.href}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl transition-colors"
-                        style={{ textDecoration: "none" }}
-                        onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#202833")}
-                        onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "transparent")}
-                        onClick={() => setResourcesOpen(false)}
-                      >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "#10231C" }}>
-                          {r.icon}
-                        </div>
-                        <div>
-                          <div className="font-semibold" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", color: "#FFFFFF" }}>
-                            {r.label}
-                          </div>
-                          <div style={{ fontSize: "0.8rem", color: "#B5C0C9" }}>{r.desc}</div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div className="hidden xl:flex items-center gap-3">
-            {!loading && user ? (
-              <Link href="/dashboard" style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "#D7DEE5", textDecoration: "none" }}
-                onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#439288")}
-                onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#D7DEE5")}
-              >
-                Dashboard
-              </Link>
-            ) : (
-              <GoogleSignInButton size="sm" label="Get Started" variant="default" />
-            )}
-            {!loading && user && (
-              <Link href="/onboarding" className="btn-primary" style={{ fontSize: "0.9rem", padding: "0.7rem 1.5rem" }}>
-                Get Started
-              </Link>
+        <div className="hidden items-center gap-7 xl:flex">
+          {mainLinks.slice(0, 4).map(link => (
+            <NavLink key={link.href} {...link} />
+          ))}
+          <div className="relative">
+            <button
+              type="button"
+              className="flex items-center gap-1 font-semibold text-[#111111] hover:text-[#859d30]"
+              aria-expanded={resourcesOpen}
+              onClick={() => setResourcesOpen(value => !value)}
+            >
+              Resources <ChevronDown size={16} />
+            </button>
+            {resourcesOpen && (
+              <div className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-xl border border-[#e5e7eb] bg-white p-2 shadow-lg">
+                {resources.map(link => (
+                  <NavLink
+                    key={link.href}
+                    {...link}
+                    mobile
+                    onClick={() => setResourcesOpen(false)}
+                  />
+                ))}
+              </div>
             )}
           </div>
-
-          {/* Mobile hamburger */}
-          <button
-            className="xl:hidden p-2 rounded-md"
-            style={{ color: "#FFFFFF" }}
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
+          <NavLink {...mainLinks[4]} />
         </div>
-      </div>
 
-      {/* Mobile menu */}
+        <a
+          className="btn-primary hidden px-5 py-2.5 text-sm xl:inline-flex"
+          href="/programs"
+        >
+          Get Started
+        </a>
+
+        <button
+          type="button"
+          className="rounded-lg p-2 text-[#111111] xl:hidden"
+          onClick={() => setMenuOpen(value => !value)}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+        >
+          {menuOpen ? <X /> : <Menu />}
+        </button>
+      </nav>
+
       {menuOpen && (
-        <div className="xl:hidden border-t" style={{ background: "#0B0F13", borderColor: "#29323D" }}>
-          <div className="container py-5 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
-            ))}
-            <div className="mt-2 mb-1">
-              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#B5C0C9" }}>
-                Programs
-              </p>
-              {PROGRAM_LINKS.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "0.95rem" }}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.icon} {item.label}
-                </Link>
-              ))}
-            </div>
-            {secondaryNavLinks.map((link) => (
-              <MobileNavLink key={link.label} label={link.label} href={link.href} onClick={() => setMenuOpen(false)} />
-            ))}
-            <div className="mt-2 mb-1">
-              <p className="text-xs font-bold uppercase tracking-wider px-3 py-1.5" style={{ color: "#B5C0C9" }}>
-                Resources
-              </p>
-              <Link
-                href="/resources"
-                className="font-bold py-2.5 px-3 block rounded-xl"
-                style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "1rem" }}
+        <div className="border-t border-[#e5e7eb] bg-white px-5 py-4 xl:hidden">
+          <div className="mx-auto flex max-w-3xl flex-col gap-1">
+            {mainLinks.map(link => (
+              <NavLink
+                key={link.href}
+                {...link}
+                mobile
                 onClick={() => setMenuOpen(false)}
-              >
-                All Resources
-              </Link>
-              {RESOURCE_LINKS.map((r) => (
-                <Link
-                  key={r.label}
-                  href={r.href}
-                  className="flex items-center gap-3 py-2.5 px-3 rounded-xl"
-                  style={{ color: "#FFFFFF", textDecoration: "none", fontSize: "0.95rem" }}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {r.icon} {r.label}
-                </Link>
-              ))}
-            </div>
-            {!loading && user ? (
-              <>
-                <Link href="/onboarding" className="btn-primary mt-3 text-center justify-center" onClick={() => setMenuOpen(false)}>
-                  Get Started
-                </Link>
-                <Link href="/dashboard" className="btn-outline mt-2 text-center justify-center" onClick={() => setMenuOpen(false)}>
-                  Dashboard
-                </Link>
-              </>
-            ) : (
-              <GoogleSignInButton className="mt-3 w-full" label="Get Started" variant="default" onClick={() => setMenuOpen(false)} />
-            )}
+              />
+            ))}
+            <p className="mb-1 mt-3 px-3 text-sm font-bold text-[#5f6368]">
+              Resources
+            </p>
+            {resources.map(link => (
+              <NavLink
+                key={link.href}
+                {...link}
+                mobile
+                onClick={() => setMenuOpen(false)}
+              />
+            ))}
+            <a className="btn-primary mt-3 justify-center" href="/programs">
+              Get Started
+            </a>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

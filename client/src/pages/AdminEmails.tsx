@@ -59,7 +59,7 @@ export default function AdminEmails() {
   // Check if user is admin
   if (!user || user.role !== "admin") {
     return (
-      <div className="min-h-screen bg-[#151B23] flex items-center justify-center">
+      <div className="min-h-screen bg-[#07100B] flex items-center justify-center">
         <Card className="max-w-md">
           <CardHeader className="text-center">
             <Shield className="w-12 h-12 mx-auto text-red-500 mb-4" />
@@ -110,9 +110,9 @@ export default function AdminEmails() {
   };
 
   return (
-    <div className="min-h-screen bg-[#151B23]">
+    <div className="min-h-screen bg-[#07100B]">
       {/* Header */}
-      <header className="bg-[#151B23] border-b border-[#1F2937]">
+      <header className="bg-[#07100B] border-b border-[#1F2937]">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -316,7 +316,7 @@ export default function AdminEmails() {
               </CardHeader>
               <CardContent>
                 {previewHtml ? (
-                  <div className="border rounded-lg overflow-hidden bg-[#151B23]">
+                  <div className="border rounded-lg overflow-hidden bg-[#07100B]">
                     <iframe
                       srcDoc={previewHtml}
                       className="w-full h-[600px] border-0"

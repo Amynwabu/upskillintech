@@ -1,120 +1,77 @@
-/**
- * Footer — UpskillinTech v3
- * Dark #111827 background, larger text, bigger logo, green hover accents
- */
-import { Linkedin, Music2, Youtube, Instagram } from "lucide-react";
+import { Instagram, Linkedin, Music2, Youtube } from "lucide-react";
 import Logo from "@/components/Logo";
 
-const footerLinks = {
-  Insights: [
-    { label: "Blog & Articles", href: "/resources/blog" },
-    { label: "Free AI Guides", href: "/resources/ai-guides" },
-    { label: "Case Studies", href: "/resources/case-studies" },
-    { label: "AI Workflows", href: "/resources/workflows" },
-    { label: "Newsletter", href: "/newsletter" },
-  ],
-  Programs: [
-    { label: "AI Foundations", href: "/programs" },
-    { label: "AI-Enabled Professional", href: "/programs" },
-    { label: "AI Leadership", href: "/programs" },
-    { label: "AI Masterclass", href: "/masterclass" },
-    { label: "Enterprise Training", href: "/enterprise" },
-    { label: "Webinars", href: "/resources/webinars" },
-  ],
-  Community: [
-    { label: "Join the Community", href: "/community" },
-    { label: "Events & Meetups", href: "/events" },
-    { label: "AI Masterclasses", href: "/masterclass" },
-    { label: "Peer Network", href: "/community" },
-  ],
-  Company: [
-    { label: "About UpskillinTech", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
-  ],
-};
-
-const socialLinks = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/upskillintech" },
-  { icon: Music2, label: "TikTok", href: "https://www.tiktok.com/@upskillintech" },
-  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@upskillintech" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/upskillintech" },
+const groups = [
+  {
+    title: "Learn",
+    links: [
+      ["AI Training", "/programs"],
+      ["AI for Business", "/enterprise"],
+      ["Webinars", "/resources/webinars"],
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      ["Resources Hub", "/resources"],
+      ["AI Guides", "/resources/ai-guides"],
+      ["Blog", "/resources/blog"],
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      ["About", "/about"],
+      ["Consultancy", "/consult"],
+      ["Contact", "/contact"],
+    ],
+  },
 ];
+
+const socials = [
+  [Linkedin, "LinkedIn", "https://www.linkedin.com/company/upskillintech"],
+  [Music2, "TikTok", "https://www.tiktok.com/@upskillintech"],
+  [Youtube, "YouTube", "https://www.youtube.com/@upskillintech"],
+  [Instagram, "Instagram", "https://www.instagram.com/upskillintech"],
+] as const;
 
 export default function Footer() {
   return (
-    <footer id="footer" className="surface-dark" style={{ background: "#0B0F13" }}>
-      <div className="container py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-10 mb-14">
-          {/* Brand column */}
-          <div className="lg:col-span-2 sm:col-span-2">
-            <div className="mb-5">
-              <Logo variant="dark-background" size="lg" />
-            </div>
-            <p className="mb-3 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", color: "#D7DEE5", lineHeight: 1.75 }}>
-              An independent AI awareness platform sharing insights on AI productivity, AI tools, and the future of work.
+    <footer className="bg-[#07100b] text-white">
+      <div className="container py-14">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
+            <Logo variant="dark-background" size="lg" />
+            <p className="mt-5 max-w-md text-[#d7ddd9]">
+              Practical AI learning and consultancy for individuals,
+              professionals, solopreneurs, and business owners.
             </p>
-            <p className="mb-7 leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "#B5C0C9", lineHeight: 1.7 }}>
-              Helping professionals understand and adopt AI responsibly — to think, lead, and create impact in an AI-powered world.
-            </p>
-            {/* Social Links */}
-            <div className="flex items-center gap-3">
-              {socialLinks.map((s) => {
-                const Icon = s.icon;
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    aria-label={s.label}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-center transition-all duration-200"
-                    style={{
-                      width: 42,
-                      height: 42,
-                      borderRadius: "0.625rem",
-                      background: "rgba(255,255,255,0.08)",
-                      color: "#D7DEE5",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#ffffff";
-                      (e.currentTarget as HTMLElement).style.background = "#439288";
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.color = "#D7DEE5";
-                      (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.08)";
-                      (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                    }}
-                  >
-                    <Icon size={18} />
-                  </a>
-                );
-              })}
+            <div className="mt-6 flex gap-3">
+              {socials.map(([Icon, label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 text-white transition-colors hover:border-[#859d30] hover:bg-[#859d30]"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
-
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4
-                className="font-bold mb-5"
-                style={{ fontFamily: "'Sora', sans-serif", fontSize: "1rem", color: "#ffffff" }}
-              >
-                {category}
-              </h4>
-              <ul className="flex flex-col gap-3">
-                {links.map((link) => (
-                  <li key={link.label}>
+          {groups.map(group => (
+            <div key={group.title}>
+              <h2 className="text-base text-white">{group.title}</h2>
+              <ul className="mt-4 space-y-3">
+                {group.links.map(([label, href]) => (
+                  <li key={label}>
                     <a
-                      href={link.href}
-                      className="transition-colors duration-200"
-                      style={{ fontSize: "0.925rem", color: "#D7DEE5", textDecoration: "none", lineHeight: 1.5 }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#439288"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#D7DEE5"; }}
+                      className="text-[#d7ddd9] hover:text-[#859d30]"
+                      href={href}
                     >
-                      {link.label}
+                      {label}
                     </a>
                   </li>
                 ))}
@@ -122,31 +79,14 @@ export default function Footer() {
             </div>
           ))}
         </div>
-
-        {/* Bottom Bar */}
-        <div
-          className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
-        >
-          <p style={{ fontSize: "0.9rem", color: "#B5C0C9" }}>
+        <div className="mt-12 flex flex-col gap-4 border-t border-white/15 pt-6 text-sm text-[#d7ddd9] sm:flex-row sm:items-center sm:justify-between">
+          <p>
             © {new Date().getFullYear()} UpskillinTech. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms of Service", href: "/terms" },
-            ].map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="transition-colors duration-200"
-                style={{ fontSize: "0.85rem", color: "#D7DEE5", textDecoration: "none" }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "#439288"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "#D7DEE5"; }}
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="flex gap-5">
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/cookies">Cookies</a>
           </div>
         </div>
       </div>

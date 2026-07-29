@@ -45,7 +45,7 @@ export default function Learn() {
 
       <main className="flex-1 pt-[72px]">
         {/* Hero Section */}
-        <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
+        <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #F4F7EA 0%, #F4F7EA 45%, #F4F7EA 100%)" }}>
           <div className="container">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
@@ -242,7 +242,7 @@ export default function Learn() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16" style={{ background: "#151B23" }}>
+        <section className="py-16" style={{ background: "#07100B" }}>
           <div className="container text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

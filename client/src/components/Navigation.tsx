@@ -31,7 +31,7 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-[#151B23] z-50 py-6">
+    <nav className="fixed top-0 w-full bg-[#07100B] z-50 py-6">
       <div className="flex justify-between px-8">
         <Logo variant="dark-background" size="lg" />
 
@@ -115,7 +115,7 @@ export default function Navigation() {
                   </Button>
                 </a>
                 <Link href="/onboarding">
-                  <Button className="bg-[#439288] hover:bg-[#34766e] text-white border-2 border-[#439288]">
+                  <Button className="bg-[#859D30] hover:bg-[#6F8528] text-white border-2 border-[#859D30]">
                     Book a demo
                   </Button>
                 </Link>
@@ -183,7 +183,7 @@ export default function Navigation() {
                     </Button>
                   </a>
                   <Link href="/onboarding">
-                    <Button className="bg-[#439288] hover:bg-[#34766e] text-white w-full">
+                    <Button className="bg-[#859D30] hover:bg-[#6F8528] text-white w-full">
                       Book a demo
                     </Button>
                   </Link>

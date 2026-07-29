@@ -64,8 +64,8 @@ const levels = [
     id: "curious",
     title: "AI Curious",
     icon: Compass,
-    color: "#439288",
-    gradient: "linear-gradient(135deg, #439288, #0F766E)",
+    color: "#859D30",
+    gradient: "linear-gradient(135deg, #859D30, #859D30)",
     desc: "You're at the start of your AI journey — curious but not sure where to begin. That's exactly the right place to be.",
     next: "Start with the AI Everyday Starter Kit (free), then join the 7-Day AI Challenge to build your first practical habits.",
     programmes: ["AI Starter Bootcamp", "7-Day AI Everyday Challenge", "Free AI Starter Kit"],
@@ -76,8 +76,8 @@ const levels = [
     id: "beginner",
     title: "AI Beginner",
     icon: BookOpen,
-    color: "#16A34A",
-    gradient: "linear-gradient(135deg, #16A34A, #15803D)",
+    color: "#859D30",
+    gradient: "linear-gradient(135deg, #859D30, #859D30)",
     desc: "You've dipped your toes in but haven't found a consistent practice yet. You're ready to move from dabbling to doing.",
     next: "The AI Starter Bootcamp will build your confidence fast with structured, beginner-friendly sessions.",
     programmes: ["AI Starter Bootcamp", "7-Day AI Everyday Challenge", "AI Productivity for Everyday Work"],
@@ -88,8 +88,8 @@ const levels = [
     id: "active",
     title: "AI Active User",
     icon: Zap,
-    color: "#D97706",
-    gradient: "linear-gradient(135deg, #D97706, #B45309)",
+    color: "#859D30",
+    gradient: "linear-gradient(135deg, #859D30, #859D30)",
     desc: "You're using AI regularly but in an ad-hoc way. You're ready to go deeper — with structure, strategy, and real productivity gains.",
     next: "AI Productivity for Everyday Work will help you turn occasional use into consistent time savings.",
     programmes: ["AI Productivity for Everyday Work", "AI Automation Sprint", "Workflow Templates"],
@@ -100,8 +100,8 @@ const levels = [
     id: "builder",
     title: "AI Workflow Builder",
     icon: Wrench,
-    color: "#7C3AED",
-    gradient: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+    color: "#859D30",
+    gradient: "linear-gradient(135deg, #859D30, #859D30)",
     desc: "You're building workflows and getting real results. Now it's time to automate, scale, and get more out of every tool.",
     next: "The AI Automation Sprint will help you systematise what's working and build the workflows that save the most time.",
     programmes: ["AI Automation Sprint", "AI Adoption for Leaders & Teams", "1-on-1 Consultation"],
@@ -112,8 +112,8 @@ const levels = [
     id: "leader",
     title: "AI Adoption Leader",
     icon: Rocket,
-    color: "#DB2777",
-    gradient: "linear-gradient(135deg, #DB2777, #BE185D)",
+    color: "#859D30",
+    gradient: "linear-gradient(135deg, #859D30, #859D30)",
     desc: "You're ahead of most people — and you're thinking about how to bring others along. Your focus is adoption, governance, and impact.",
     next: "AI Adoption for Leaders & Teams is designed exactly for you. Let's build a roadmap for your organisation.",
     programmes: ["AI Adoption for Leaders & Teams", "Enterprise Solutions", "Discovery Call"],
@@ -178,7 +178,7 @@ export default function AISkillsQuiz() {
           </div>
 
           {/* Recommended path */}
-          <div style={{ background: "#151B23", padding: "2rem" }}>
+          <div style={{ background: "#07100B", padding: "2rem" }}>
             <div style={{ marginBottom: "1.5rem" }}>
               <div style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.875rem", color: "#F3F4F6", marginBottom: "0.5rem" }}>
                 Your recommended next step
@@ -194,7 +194,7 @@ export default function AISkillsQuiz() {
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 {result.programmes.map((p, i) => (
-                  <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#0B0F14", borderRadius: "0.625rem", padding: "0.625rem 0.875rem" }}>
+                  <div key={p} style={{ display: "flex", alignItems: "center", gap: "0.75rem", background: "#07100B", borderRadius: "0.625rem", padding: "0.625rem 0.875rem" }}>
                     <div style={{ width: 24, height: 24, borderRadius: "50%", background: result.color, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                       <span style={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.65rem", color: "#fff" }}>{i + 1}</span>
                     </div>
@@ -235,19 +235,19 @@ export default function AISkillsQuiz() {
 
   return (
     <div style={{ maxWidth: 640, margin: "0 auto" }}>
-      <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #1F2937", background: "#151B23" }}>
+      <div style={{ borderRadius: "1.5rem", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.08)", border: "1px solid #1F2937", background: "#07100B" }}>
         {/* Progress */}
         <div style={{ padding: "1.5rem 2rem 0" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
             <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.8rem", color: "#9CA3AF" }}>
               Question {step + 1} of {questions.length}
             </span>
-            <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#439288" }}>
+            <span style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.8rem", fontWeight: 700, color: "#859D30" }}>
               {Math.round(progress)}%
             </span>
           </div>
           <div style={{ height: 4, background: "#F3F4F6", borderRadius: 2 }}>
-            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #439288, #16A34A)", borderRadius: 2, transition: "width 0.3s" }} />
+            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #859D30, #859D30)", borderRadius: 2, transition: "width 0.3s" }} />
           </div>
         </div>
 
@@ -263,9 +263,9 @@ export default function AISkillsQuiz() {
                 onClick={() => handleSelect(opt.value)}
                 style={{
                   textAlign: "left", padding: "0.875rem 1rem", borderRadius: "0.75rem", cursor: "pointer",
-                  border: selected === opt.value ? "2px solid #439288" : "1.5px solid #1F2937",
-                  background: selected === opt.value ? "rgba(67,146,136,0.06)" : "#ffffff",
-                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#439288" : "#374151",
+                  border: selected === opt.value ? "2px solid #859D30" : "1.5px solid #1F2937",
+                  background: selected === opt.value ? "rgba(133, 157, 48,0.06)" : "#ffffff",
+                  fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: selected === opt.value ? "#859D30" : "#374151",
                   fontWeight: selected === opt.value ? 600 : 400,
                   display: "flex", alignItems: "center", gap: "0.75rem",
                   transition: "all 0.15s",
@@ -273,8 +273,8 @@ export default function AISkillsQuiz() {
               >
                 <span style={{
                   width: 20, height: 20, borderRadius: "50%", flexShrink: 0,
-                  border: selected === opt.value ? "2px solid #439288" : "2px solid #D1D5DB",
-                  background: selected === opt.value ? "#439288" : "transparent",
+                  border: selected === opt.value ? "2px solid #859D30" : "2px solid #D1D5DB",
+                  background: selected === opt.value ? "#859D30" : "transparent",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
                   {selected === opt.value && <CheckCircle2 size={12} color="#fff" />}
@@ -305,7 +305,7 @@ export default function AISkillsQuiz() {
             disabled={!selected}
             style={{
               flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem",
-              background: selected ? "#439288" : "#E5E7EB", color: selected ? "#fff" : "#4B5563",
+              background: selected ? "#859D30" : "#E5E7EB", color: selected ? "#fff" : "#4B5563",
               borderRadius: "0.75rem", padding: "0.875rem 1.25rem", border: "none",
               fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
               cursor: selected ? "pointer" : "not-allowed", transition: "background 0.15s",

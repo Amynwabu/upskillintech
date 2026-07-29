@@ -23,7 +23,7 @@ const workflows = [
     icon: Users,
     title: "Meeting Intelligence",
     subtitle: "Turn every meeting into actionable outcomes",
-    color: "#439288",
+    color: "#859D30",
     steps: [
       {
         label: "Capture",
@@ -49,7 +49,7 @@ const workflows = [
     icon: Search,
     title: "Research & Reporting",
     subtitle: "From raw data to polished insights in minutes",
-    color: "#8B9E1A",
+    color: "#859D30",
     steps: [
       {
         label: "Gather",
@@ -75,7 +75,7 @@ const workflows = [
     icon: PenLine,
     title: "Content Creation",
     subtitle: "From rough idea to polished final draft",
-    color: "#E6B800",
+    color: "#859D30",
     steps: [
       {
         label: "Ideate",
@@ -101,7 +101,7 @@ const workflows = [
     icon: BarChart3,
     title: "Strategic Decision-Making",
     subtitle: "AI-enhanced analysis for better decisions",
-    color: "#439288",
+    color: "#859D30",
     steps: [
       {
         label: "Define",
@@ -130,13 +130,13 @@ export default function WorkflowsSection() {
   const ActiveIcon = active.icon;
 
   return (
-    <section className="py-24" style={{ background: "#151B23" }}>
+    <section className="py-24" style={{ background: "#07100B" }}>
       <div className="max-w-6xl mx-auto px-4 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14">
           <span
             className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4"
-            style={{ background: "rgba(67,146,136,0.10)", color: "#439288", fontFamily: "'Sora', sans-serif" }}
+            style={{ background: "rgba(133, 157, 48,0.10)", color: "#859D30", fontFamily: "'Sora', sans-serif" }}
           >
             AI Workflows in Action
           </span>
@@ -202,7 +202,7 @@ export default function WorkflowsSection() {
           <div
             className="flex-1 rounded-2xl p-8 lg:p-10"
             style={{
-              background: "#151B23",
+              background: "#07100B",
               border: "1px solid #1F2937",
               boxShadow: "0 8px 40px rgba(0,0,0,0.07)",
             }}
@@ -231,9 +231,9 @@ export default function WorkflowsSection() {
               {/* Outcome badge */}
               <div
                 className="flex items-center gap-2 px-4 py-2 rounded-full flex-shrink-0"
-                style={{ background: "rgba(230,184,0,0.12)", border: "1px solid rgba(230,184,0,0.30)" }}
+                style={{ background: "rgba(133, 157, 48,0.12)", border: "1px solid rgba(133, 157, 48,0.30)" }}
               >
-                <Zap size={14} style={{ color: "#E6B800" }} />
+                <Zap size={14} style={{ color: "#859D30" }} />
                 <span
                   className="text-xs font-bold"
                   style={{ color: "#B8920A", fontFamily: "'Sora', sans-serif" }}
@@ -251,13 +251,13 @@ export default function WorkflowsSection() {
                   {idx < active.steps.length - 1 && (
                     <div
                       className="hidden md:block absolute top-5 left-full w-5 h-0.5 z-10"
-                      style={{ background: `linear-gradient(to right, ${active.color}, #E6B800)` }}
+                      style={{ background: `linear-gradient(to right, ${active.color}, #859D30)` }}
                     />
                   )}
                   <div
                     className="rounded-xl p-5 h-full"
                     style={{
-                      background: "#151B23",
+                      background: "#07100B",
                       border: `1px solid #1F2937`,
                     }}
                   >
@@ -305,9 +305,9 @@ export default function WorkflowsSection() {
                     key={tool}
                     className="text-xs px-2.5 py-1 rounded-full font-medium"
                     style={{
-                      background: "rgba(67,146,136,0.08)",
-                      color: "#439288",
-                      border: "1px solid rgba(67,146,136,0.20)",
+                      background: "rgba(133, 157, 48,0.08)",
+                      color: "#859D30",
+                      border: "1px solid rgba(133, 157, 48,0.20)",
                       fontFamily: "'DM Sans', sans-serif",
                     }}
                   >
@@ -334,9 +334,9 @@ export default function WorkflowsSection() {
           <a
             href="/programs"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-sm transition-all"
-            style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(67,146,136,0.30)" }}
+            style={{ background: "#859D30", color: "#fff", fontFamily: "'Sora', sans-serif", boxShadow: "0 4px 16px rgba(133, 157, 48,0.30)" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#2ea043")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#439288")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "#859D30")}
           >
             Learn to Build Your Own AI Workflows
             <ChevronRight size={16} />

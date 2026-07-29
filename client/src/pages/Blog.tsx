@@ -1,7 +1,7 @@
 /**
  * Blog Page — UpskillinTech
  * URL: /resources/blog
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Yellow (#859D30)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -174,11 +174,11 @@ const CATEGORY_ICONS: Record<string, React.ReactNode> = {
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
-  productivity: "#439288",
-  workflows: "#8B9E1A",
-  tools: "#E6B800",
-  leadership: "#439288",
-  strategy: "#8B9E1A",
+  productivity: "#859D30",
+  workflows: "#859D30",
+  tools: "#859D30",
+  leadership: "#859D30",
+  strategy: "#859D30",
 };
 
 export default function Blog() {
@@ -193,10 +193,10 @@ export default function Blog() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(67,146,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(133, 157, 48,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Blog</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               Practical Insights on AI for the Modern Professional
             </h1>
@@ -212,7 +212,7 @@ export default function Blog() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 100%)" }}>
           <div className="container py-3">
             <div className="flex flex-wrap gap-6 justify-center">
               {CATEGORIES.slice(1).map(c => (
@@ -227,19 +227,19 @@ export default function Blog() {
 
       {/* Featured Articles */}
       {activeCategory === "all" && (
-        <section className="section-py" style={{ background: "#151B23" }}>
+        <section className="section-py" style={{ background: "#07100B" }}>
           <div className="container">
             <h2 className="text-3xl font-bold mb-8" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>Featured Articles</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {featured.map(article => (
-                <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #43928820", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
-                  <div className="h-2" style={{ background: "linear-gradient(90deg, #439288, #E6B800)" }} />
+                <div key={article.id} className="rounded-2xl overflow-hidden" style={{ border: "2px solid #859D3020", boxShadow: "0 4px 24px rgba(0,0,0,0.07)" }}>
+                  <div className="h-2" style={{ background: "linear-gradient(90deg, #859D30, #859D30)" }} />
                   <div className="p-7">
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#10231C", color: "#439288" }}>
+                      <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1" style={{ background: "#07100B", color: "#859D30" }}>
                         {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                       </span>
-                      <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "#FEFCE8", color: "#8B6914" }}>Featured</span>
+                      <span className="text-xs px-2 py-1 rounded-full font-semibold" style={{ background: "#F4F7EA", color: "#8B6914" }}>Featured</span>
                     </div>
                     <h3 className="text-2xl font-bold mb-3 leading-snug" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
                     <p className="text-sm leading-relaxed mb-5" style={{ color: "#9CA3AF" }}>{article.excerpt}</p>
@@ -249,7 +249,7 @@ export default function Blog() {
                         <span>{article.date}</span>
                         <span>{article.author}</span>
                       </div>
-                      <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#439288" }}>
+                      <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#859D30" }}>
                         Read <ChevronRight size={14} />
                       </button>
                     </div>
@@ -262,7 +262,7 @@ export default function Blog() {
       )}
 
       {/* Category Filter + All Articles */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           {/* Filter tabs */}
           <div className="flex flex-wrap gap-2 mb-10">
@@ -272,7 +272,7 @@ export default function Blog() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-4 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#439288" : "#fff",
+                  background: activeCategory === cat.id ? "#859D30" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -285,17 +285,17 @@ export default function Blog() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {(activeCategory === "all" ? rest : filtered).map(article => (
-              <div key={article.id} className="rounded-xl bg-[#151B23] flex flex-col" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
-                <div className="h-1.5 rounded-t-xl" style={{ background: CATEGORY_COLORS[article.category] || "#439288" }} />
+              <div key={article.id} className="rounded-xl bg-[#07100B] flex flex-col" style={{ border: "1px solid #1F2937", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" }}>
+                <div className="h-1.5 rounded-t-xl" style={{ background: CATEGORY_COLORS[article.category] || "#859D30" }} />
                 <div className="p-6 flex flex-col flex-1">
-                  <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#439288" }}>
+                  <span className="text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-1" style={{ color: CATEGORY_COLORS[article.category] || "#859D30" }}>
                     {CATEGORY_ICONS[article.category]} {article.categoryLabel}
                   </span>
                   <h3 className="font-bold mb-3 leading-snug flex-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{article.title}</h3>
                   <p className="text-sm leading-relaxed mb-4" style={{ color: "#9CA3AF" }}>{article.excerpt}</p>
                   <div className="flex flex-wrap gap-1 mb-4">
                     {article.tags.slice(0, 2).map(tag => (
-                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style={{ background: "#151B23", color: "#9CA3AF", border: "1px solid #1F2937" }}>
+                      <span key={tag} className="text-xs px-2 py-0.5 rounded-full flex items-center gap-1" style={{ background: "#07100B", color: "#9CA3AF", border: "1px solid #1F2937" }}>
                         <Tag size={10} /> {tag}
                       </span>
                     ))}
@@ -304,7 +304,7 @@ export default function Blog() {
                     <span className="text-xs flex items-center gap-1" style={{ color: "#9CA3AF" }}>
                       <Clock size={12} /> {article.readTime} · {article.date}
                     </span>
-                    <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#439288" }}>
+                    <button onClick={() => {}} className="text-sm font-semibold flex items-center gap-1" style={{ color: "#859D30" }}>
                       Read <ChevronRight size={14} />
                     </button>
                   </div>
@@ -328,7 +328,7 @@ export default function Blog() {
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Get the latest AI insights, guides, and workflows delivered to your inbox every week.</p>
           <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button className="font-bold px-6 py-3 rounded-lg whitespace-nowrap" style={{ background: "#859D30", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               Subscribe
             </button>
           </div>
@@ -336,9 +336,9 @@ export default function Blog() {
       </section>
 
       {/* Back to Resources */}
-      <section className="py-8" style={{ background: "#151B23" }}>
+      <section className="py-8" style={{ background: "#07100B" }}>
         <div className="container text-center">
-          <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#439288" }}>
+          <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#859D30" }}>
             ← Back to Resources Hub
           </Link>
         </div>

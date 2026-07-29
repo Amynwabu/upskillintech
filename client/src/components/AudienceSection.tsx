@@ -15,7 +15,7 @@ const audiences = [
     ],
     cta: "Start with Everyday AI",
     href: "#programs",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: Briefcase,
@@ -31,7 +31,7 @@ const audiences = [
     ],
     cta: "Explore AI for Solopreneurs",
     href: "#programs",
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     icon: Store,
@@ -47,7 +47,7 @@ const audiences = [
     ],
     cta: "Explore AI for Business Owners",
     href: "#programs",
-    color: "#D97706",
+    color: "#859D30",
   },
   {
     icon: Users,
@@ -63,7 +63,7 @@ const audiences = [
     ],
     cta: "Explore Team AI Adoption",
     href: "/enterprise",
-    color: "#7C3AED",
+    color: "#859D30",
   },
 ];
 

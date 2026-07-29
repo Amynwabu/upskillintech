@@ -32,10 +32,10 @@ export default function AdminEmailAnalytics() {
   // Check admin access
   if (!user || user.role !== "admin") {
     return (
-      <div className="min-h-screen bg-[#151B23] flex items-center justify-center">
+      <div className="min-h-screen bg-[#07100B] flex items-center justify-center">
         <Card className="max-w-md">
           <CardContent className="pt-6 text-center">
-            <AlertTriangle className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
+            <AlertTriangle className="w-12 h-12 text-[#859D30] mx-auto mb-4" />
             <h2 className="text-xl font-semibold mb-2">Admin Access Required</h2>
             <p className="text-gray-600 mb-4">You need admin privileges to view email analytics.</p>
             <Link href="/">
@@ -56,9 +56,9 @@ export default function AdminEmailAnalytics() {
   const maxDelivered = Math.max(...eventsByDate.map(d => d.delivered), 1);
 
   return (
-    <div className="min-h-screen bg-[#151B23]">
+    <div className="min-h-screen bg-[#07100B]">
       {/* Header */}
-      <div className="bg-[#151B23] border-b">
+      <div className="bg-[#07100B] border-b">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -125,22 +125,22 @@ export default function AdminEmailAnalytics() {
 
               <Card>
                 <CardContent className="pt-6">
-                  <div className="flex items-center gap-2 text-blue-600 mb-2">
+                  <div className="flex items-center gap-2 text-[#859D30] mb-2">
                     <Eye className="w-4 h-4" />
                     <span className="text-sm">Opened</span>
                   </div>
-                  <p className="text-2xl font-bold text-blue-600">{summary?.opened || 0}</p>
+                  <p className="text-2xl font-bold text-[#859D30]">{summary?.opened || 0}</p>
                   <p className="text-xs text-gray-500">{summary?.openRate || 0}% rate</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6">
-                  <div className="flex items-center gap-2 text-purple-600 mb-2">
+                  <div className="flex items-center gap-2 text-[#859D30] mb-2">
                     <MousePointer className="w-4 h-4" />
                     <span className="text-sm">Clicked</span>
                   </div>
-                  <p className="text-2xl font-bold text-purple-600">{summary?.clicked || 0}</p>
+                  <p className="text-2xl font-bold text-[#859D30]">{summary?.clicked || 0}</p>
                   <p className="text-xs text-gray-500">{summary?.clickRate || 0}% rate</p>
                 </CardContent>
               </Card>
@@ -158,21 +158,21 @@ export default function AdminEmailAnalytics() {
 
               <Card>
                 <CardContent className="pt-6">
-                  <div className="flex items-center gap-2 text-orange-600 mb-2">
+                  <div className="flex items-center gap-2 text-[#859D30] mb-2">
                     <UserMinus className="w-4 h-4" />
                     <span className="text-sm">Unsubscribed</span>
                   </div>
-                  <p className="text-2xl font-bold text-orange-600">{summary?.unsubscribed || 0}</p>
+                  <p className="text-2xl font-bold text-[#859D30]">{summary?.unsubscribed || 0}</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6">
-                  <div className="flex items-center gap-2 text-yellow-600 mb-2">
+                  <div className="flex items-center gap-2 text-[#859D30] mb-2">
                     <AlertTriangle className="w-4 h-4" />
                     <span className="text-sm">Spam Reports</span>
                   </div>
-                  <p className="text-2xl font-bold text-yellow-600">{summary?.spamReports || 0}</p>
+                  <p className="text-2xl font-bold text-[#859D30]">{summary?.spamReports || 0}</p>
                 </CardContent>
               </Card>
             </div>
@@ -205,7 +205,7 @@ export default function AdminEmailAnalytics() {
                               title={`Delivered: ${day.delivered}`}
                             />
                             <div 
-                              className="w-full bg-blue-500 rounded-t transition-all"
+                              className="w-full bg-[#F4F7EA]0 rounded-t transition-all"
                               style={{ height: `${(day.opened / maxDelivered) * 100}%`, minHeight: day.opened > 0 ? "4px" : "0" }}
                               title={`Opened: ${day.opened}`}
                             />
@@ -225,7 +225,7 @@ export default function AdminEmailAnalytics() {
                           <span>Delivered</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 bg-blue-500 rounded" />
+                          <div className="w-3 h-3 bg-[#F4F7EA]0 rounded" />
                           <span>Opened</span>
                         </div>
                       </div>
@@ -253,7 +253,7 @@ export default function AdminEmailAnalytics() {
                       {eventsByTemplate.map((template, i) => {
                         const maxCount = Math.max(...eventsByTemplate.map(t => t.count));
                         const percentage = (template.count / maxCount) * 100;
-                        const colors = ["bg-blue-500", "bg-green-500", "bg-purple-500", "bg-orange-500"];
+                        const colors = ["bg-[#F4F7EA]0", "bg-green-500", "bg-[#F4F7EA]0", "bg-[#F4F7EA]0"];
                         return (
                           <div key={i}>
                             <div className="flex justify-between text-sm mb-1">
@@ -311,8 +311,8 @@ export default function AdminEmailAnalytics() {
                             <td className="py-3 px-2">
                               <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                                 event.eventType === "delivered" ? "bg-green-100 text-green-700" :
-                                event.eventType === "open" ? "bg-blue-100 text-blue-700" :
-                                event.eventType === "click" ? "bg-purple-100 text-purple-700" :
+                                event.eventType === "open" ? "bg-[#F4F7EA] text-[#859D30]" :
+                                event.eventType === "click" ? "bg-[#F4F7EA] text-[#859D30]" :
                                 event.eventType === "bounce" ? "bg-red-100 text-red-700" :
                                 "bg-[#1A2230] text-gray-700"
                               }`}>
@@ -332,15 +332,15 @@ export default function AdminEmailAnalytics() {
             </Card>
 
             {/* Setup Instructions */}
-            <Card className="bg-blue-50 border-blue-200">
+            <Card className="bg-[#F4F7EA] border-[#859D30]">
               <CardHeader>
-                <CardTitle className="text-blue-800">SendGrid Webhook Setup</CardTitle>
+                <CardTitle className="text-[#859D30]">SendGrid Webhook Setup</CardTitle>
               </CardHeader>
-              <CardContent className="text-blue-700">
+              <CardContent className="text-[#859D30]">
                 <p className="mb-4">To receive email events, configure the SendGrid Event Webhook:</p>
                 <ol className="list-decimal list-inside space-y-2 text-sm">
                   <li>Go to SendGrid Dashboard → Settings → Mail Settings → Event Webhook</li>
-                  <li>Set HTTP Post URL to: <code className="bg-blue-100 px-2 py-1 rounded">{window.location.origin}/api/webhooks/sendgrid</code></li>
+                  <li>Set HTTP Post URL to: <code className="bg-[#F4F7EA] px-2 py-1 rounded">{window.location.origin}/api/webhooks/sendgrid</code></li>
                   <li>Select events: Processed, Dropped, Delivered, Deferred, Bounce, Open, Click, Spam Report, Unsubscribe</li>
                   <li>Enable the webhook and save</li>
                 </ol>

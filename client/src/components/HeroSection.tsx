@@ -4,7 +4,7 @@ const HERO_IMG = "/training-diverse-team.jpg";
 
 export default function HeroSection() {
   return (
-    <section aria-label="Hero" style={{ background: "#0B0F14", paddingTop: "72px" }}>
+    <section aria-label="Hero" style={{ background: "#07100B", paddingTop: "72px" }}>
       <div className="container">
         <div
           style={{
@@ -26,8 +26,8 @@ export default function HeroSection() {
                 gap: "0.5rem",
                 padding: "0.4rem 1rem",
                 borderRadius: "99px",
-                background: "rgba(67,146,136,0.08)",
-                border: "1px solid rgba(67,146,136,0.20)",
+                background: "rgba(133, 157, 48,0.08)",
+                border: "1px solid rgba(133, 157, 48,0.20)",
                 marginBottom: "1.5rem",
               }}
             >
@@ -36,7 +36,7 @@ export default function HeroSection() {
                   width: 7,
                   height: 7,
                   borderRadius: "50%",
-                  background: "#439288",
+                  background: "#859D30",
                   display: "inline-block",
                   flexShrink: 0,
                 }}
@@ -46,7 +46,7 @@ export default function HeroSection() {
                   fontFamily: "'Sora', sans-serif",
                   fontSize: "0.8rem",
                   fontWeight: 600,
-                  color: "#439288",
+                  color: "#859D30",
                   letterSpacing: "0.02em",
                 }}
               >
@@ -65,7 +65,7 @@ export default function HeroSection() {
               }}
             >
               The Practical AI Platform for{" "}
-              <span style={{ color: "#439288" }}>
+              <span style={{ color: "#859D30" }}>
                 Professionals Everywhere.
               </span>
             </h1>
@@ -121,7 +121,7 @@ export default function HeroSection() {
                   padding: "0.9rem 1.75rem",
                   borderRadius: "0.75rem",
                   border: "1.5px solid #374151",
-                  background: "#151B23",
+                  background: "#07100B",
                   transition: "border-color 0.15s, color 0.15s",
                 }}
               >
@@ -151,7 +151,7 @@ export default function HeroSection() {
                   borderRadius: "1.5rem",
                   overflow: "hidden",
                   boxShadow: "0 32px 80px rgba(0,0,0,0.18)",
-                  border: "4px solid rgba(67,146,136,0.12)",
+                  border: "4px solid rgba(133, 157, 48,0.12)",
                 }}
               >
                 <img
@@ -184,7 +184,7 @@ export default function HeroSection() {
                       fontFamily: "'Sora', sans-serif",
                       fontWeight: 700,
                       fontSize: "0.9rem",
-                      color: "#439288",
+                      color: "#859D30",
                     }}
                   >
                     1,000+ Professionals

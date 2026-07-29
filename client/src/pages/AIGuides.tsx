@@ -1,7 +1,7 @@
 /**
  * AI Guides Page — UpskillinTech
  * URL: /resources/ai-guides
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Yellow (#859D30)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -13,9 +13,9 @@ import { toast } from "sonner";
 const GUIDES = [
   {
     id: 1,
-    icon: <Zap size={28} style={{ color: "#439288" }} />,
+    icon: <Zap size={28} style={{ color: "#859D30" }} />,
     badge: "Most Downloaded",
-    badgeColor: "#439288",
+    badgeColor: "#859D30",
     title: "AI Productivity Guide",
     subtitle: "Save 10+ Hours Every Week Using AI",
     desc: "A step-by-step framework for integrating AI into your daily work. Covers email management, meeting summaries, research acceleration, and decision support. Designed for professionals who want results — not just theory.",
@@ -29,14 +29,14 @@ const GUIDES = [
       "Common mistakes and how to avoid them",
     ],
     format: "PDF + Notion Template",
-    bg: "#F0FDF4",
-    border: "#439288",
+    bg: "#F4F7EA",
+    border: "#859D30",
   },
   {
     id: 2,
-    icon: <FileText size={28} style={{ color: "#8B9E1A" }} />,
+    icon: <FileText size={28} style={{ color: "#859D30" }} />,
     badge: "Free Download",
-    badgeColor: "#8B9E1A",
+    badgeColor: "#859D30",
     title: "50 AI Prompts Library",
     subtitle: "Curated Prompts for Real Professional Use",
     desc: "50 battle-tested prompts organised by use case — research, writing, strategy, decision-making, communication, and leadership. Each prompt includes context, instructions, and a real example output.",
@@ -50,14 +50,14 @@ const GUIDES = [
       "10 prompts for leadership and communication",
     ],
     format: "PDF + Google Doc",
-    bg: "#FEFCE8",
-    border: "#E6B800",
+    bg: "#F4F7EA",
+    border: "#859D30",
   },
   {
     id: 3,
-    icon: <Target size={28} style={{ color: "#8B9E1A" }} />,
+    icon: <Target size={28} style={{ color: "#859D30" }} />,
     badge: "New",
-    badgeColor: "#8B9E1A",
+    badgeColor: "#859D30",
     title: "AI Tools Guide 2025",
     subtitle: "The Right Tools for the Right Tasks",
     desc: "A curated overview of the most useful AI tools for professionals in 2025 — covering writing assistants, research tools, meeting tools, image generation, and automation platforms. Includes honest reviews and use-case recommendations.",
@@ -72,13 +72,13 @@ const GUIDES = [
     ],
     format: "PDF",
     bg: "#F7F8FA",
-    border: "#8B9E1A",
+    border: "#859D30",
   },
   {
     id: 4,
-    icon: <Lightbulb size={28} style={{ color: "#E6B800" }} />,
+    icon: <Lightbulb size={28} style={{ color: "#859D30" }} />,
     badge: "Advanced",
-    badgeColor: "#E6B800",
+    badgeColor: "#859D30",
     title: "AI Workflow Playbook",
     subtitle: "Build Systems That Work While You Focus",
     desc: "Advanced workflows for professionals who want to go beyond individual tasks and build AI-powered systems. Covers project management, content creation pipelines, research workflows, and leadership communication frameworks.",
@@ -92,15 +92,15 @@ const GUIDES = [
       "Team rollout guide for managers",
     ],
     format: "PDF + Notion Templates",
-    bg: "#FFFBEB",
-    border: "#E6B800",
+    bg: "#F4F7EA",
+    border: "#859D30",
   },
 ];
 
 const PROMPT_CATEGORIES = [
   {
     category: "Research & Analysis",
-    color: "#439288",
+    color: "#859D30",
     prompts: [
       { title: "Deep Research Summary", prompt: "You are a research assistant. Summarise the key findings, main arguments, and practical implications of the following topic for a professional audience: [TOPIC]. Structure your response with: 1) Overview, 2) Key Findings, 3) Practical Implications, 4) Open Questions." },
       { title: "Competitive Analysis", prompt: "Analyse the competitive landscape for [COMPANY/PRODUCT] in [INDUSTRY]. Identify: 1) Top 5 competitors, 2) Their key strengths and weaknesses, 3) Market positioning, 4) Gaps and opportunities. Present as a structured analysis." },
@@ -109,7 +109,7 @@ const PROMPT_CATEGORIES = [
   },
   {
     category: "Professional Writing",
-    color: "#8B9E1A",
+    color: "#859D30",
     prompts: [
       { title: "Executive Summary", prompt: "Write a concise executive summary for the following report/document: [PASTE CONTENT]. The summary should be 200–300 words, highlight the key findings and recommendations, and be written for a senior leadership audience." },
       { title: "Email Drafting", prompt: "Write a professional email to [RECIPIENT ROLE] about [TOPIC]. The tone should be [formal/friendly/assertive]. Key points to include: [LIST POINTS]. End with a clear call to action: [CTA]. Keep it under 200 words." },
@@ -118,7 +118,7 @@ const PROMPT_CATEGORIES = [
   },
   {
     category: "Strategy & Planning",
-    color: "#E6B800",
+    color: "#859D30",
     prompts: [
       { title: "Strategic Planning", prompt: "Help me develop a strategic plan for [GOAL/OBJECTIVE] over the next [TIMEFRAME]. Consider: 1) Current situation analysis, 2) Key opportunities and threats, 3) Strategic priorities, 4) Action steps with owners and timelines, 5) Success metrics." },
       { title: "Problem-Solving Framework", prompt: "I'm facing the following challenge: [DESCRIBE PROBLEM]. Help me think through this systematically using: 1) Root cause analysis, 2) Possible solutions (at least 3), 3) Pros and cons of each solution, 4) Recommended approach with rationale." },
@@ -127,7 +127,7 @@ const PROMPT_CATEGORIES = [
   },
   {
     category: "Leadership & Communication",
-    color: "#439288",
+    color: "#859D30",
     prompts: [
       { title: "Team Communication", prompt: "Draft a clear, motivating message to my team about [TOPIC/CHANGE]. The message should: 1) Explain the context, 2) Address likely concerns, 3) Clarify what's expected, 4) End on an encouraging note. Tone: [professional/warm/direct]." },
       { title: "Feedback Framework", prompt: "Help me give constructive feedback to [ROLE] about [SITUATION]. Structure the feedback using the SBI model (Situation, Behaviour, Impact) and include: 1) What went well, 2) What needs to improve, 3) Specific suggestions, 4) Support offered." },
@@ -158,7 +158,7 @@ export default function AIGuides() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #5EC96A 0%, #7BBF2A 50%, #A8C038 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #859D30 0%, #859D30 50%, #859D30 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
             <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(255,255,255,0.20)", color: "#fff", border: "1px solid rgba(255,255,255,0.35)" }}>AI Guides</span>
@@ -177,7 +177,7 @@ export default function AIGuides() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "4", l: "Free Guides" }, { v: "50+", l: "AI Prompts" }, { v: "100+", l: "Pages of Content" }, { v: "1,000+", l: "Downloads" }].map(s => (
@@ -192,7 +192,7 @@ export default function AIGuides() {
       </section>
 
       {/* Guides Grid */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">Free Downloads</span>
@@ -203,7 +203,7 @@ export default function AIGuides() {
             {GUIDES.map((guide) => (
               <div key={guide.id} className="rounded-2xl p-8 flex flex-col" style={{ background: guide.bg, border: `2px solid ${guide.border}25`, boxShadow: "0 4px 24px rgba(0,0,0,0.06)" }}>
                 <div className="flex items-start justify-between mb-4">
-                  <div className="rounded-xl p-3" style={{ background: "#151B23", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>{guide.icon}</div>
+                  <div className="rounded-xl p-3" style={{ background: "#07100B", boxShadow: "0 2px 8px rgba(0,0,0,0.08)" }}>{guide.icon}</div>
                   <span className="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full" style={{ background: `${guide.badgeColor}18`, color: guide.badgeColor }}>{guide.badge}</span>
                 </div>
                 <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{guide.title}</h3>
@@ -232,7 +232,7 @@ export default function AIGuides() {
                     onChange={e => setEmail(e.target.value)}
                     placeholder="your@email.com"
                     className="flex-1 rounded-lg px-3 py-2.5 text-sm outline-none"
-                    style={{ border: `1.5px solid ${guide.border}40`, background: "#151B23" }}
+                    style={{ border: `1.5px solid ${guide.border}40`, background: "#07100B" }}
                   />
                   <button type="submit" className="flex items-center gap-2 font-semibold px-4 py-2.5 rounded-lg text-sm whitespace-nowrap" style={{ background: guide.border, color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                     <Download size={15} /> Download
@@ -245,7 +245,7 @@ export default function AIGuides() {
       </section>
 
       {/* Prompt Library */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           <div className="text-center mb-12">
             <span className="section-label">Prompt Library</span>
@@ -261,7 +261,7 @@ export default function AIGuides() {
                 </div>
                 <div className="grid md:grid-cols-3 gap-4">
                   {cat.prompts.map((p) => (
-                    <div key={p.title} className="rounded-xl overflow-hidden" style={{ background: "#151B23", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+                    <div key={p.title} className="rounded-xl overflow-hidden" style={{ background: "#07100B", border: "1px solid #1F2937", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
                       <div className="h-1" style={{ background: cat.color }} />
                       <div className="p-5">
                         <div className="flex items-start justify-between mb-3">
@@ -276,7 +276,7 @@ export default function AIGuides() {
                         </div>
                         {expandedPrompt === p.title && (
                           <div className="mb-3">
-                            <p className="text-xs leading-relaxed p-3 rounded-lg" style={{ background: "#151B23", color: "#D1D5DB", fontFamily: "monospace" }}>{p.prompt}</p>
+                            <p className="text-xs leading-relaxed p-3 rounded-lg" style={{ background: "#07100B", color: "#D1D5DB", fontFamily: "monospace" }}>{p.prompt}</p>
                           </div>
                         )}
                         <button
@@ -296,8 +296,8 @@ export default function AIGuides() {
           <div className="text-center mt-12">
             <p className="text-sm mb-4" style={{ color: "#9CA3AF" }}>Want all 50 prompts in one place?</p>
             <form onSubmit={(e) => handleDownload(e, "50 AI Prompts Library")} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "2px solid #439288" }} />
-              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#439288", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "2px solid #859D30" }} />
+              <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#859D30", color: "#fff", fontFamily: "'Sora', sans-serif" }}>
                 <Download size={16} /> Download All 50
               </button>
             </form>
@@ -311,7 +311,7 @@ export default function AIGuides() {
           <h2 className="text-2xl lg:text-4xl font-bold mb-3" style={{ fontFamily: "'Sora', sans-serif", color: "#fff" }}>Ready to Go Deeper?</h2>
           <p className="mb-6" style={{ color: "rgba(255,255,255,0.70)" }}>Guides are a great start — but the AI-Enabled Professional Program takes you from reading about AI to actually using it in your work every day.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg" style={{ background: "#859D30", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <ArrowRight size={18} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 font-semibold px-6 py-3 rounded-lg border-2" style={{ borderColor: "rgba(255,255,255,0.30)", color: "#fff", fontFamily: "'Sora', sans-serif" }}>

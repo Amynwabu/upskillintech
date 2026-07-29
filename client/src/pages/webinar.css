@@ -6,8 +6,8 @@
   --navy: #06263c;
   --teal: var(--brand-primary);
   --mint: #8de6d8;
-  --gold: #f4c44e;
-  --cream: #fff8e9;
+  --gold: #859d30;
+  --cream: #f4f7ea;
   --line: var(--border-light);
   color: var(--ink);
   background: var(--background-light);
@@ -166,7 +166,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(67, 146, 136, 0.2);
+  background: rgba(133, 157, 48, 0.2);
   color: #8de6d8;
   font-size: 0.75rem;
 }
@@ -381,7 +381,7 @@
   align-items: center;
   justify-content: center;
   padding: 8px 18px;
-  background: #e6b800;
+  background: #859d30;
   color: #102234;
   font-size: 12px;
   font-weight: 700;
@@ -405,26 +405,12 @@
 }
 .webinar-hero {
   position: relative;
-  background:
-    radial-gradient(
-      circle at 85% 30%,
-      rgba(67, 146, 136, 0.22),
-      transparent 30%
-    ),
-    linear-gradient(135deg, #041c2d 0%, #082f49 60%, #063b46 100%);
+  background: #07100b;
   color: #fff;
   padding: 86px 0 100px;
 }
 .webinar-hero:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.16;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: linear-gradient(to right, transparent, #000);
+  content: none;
 }
 .webinar-hero__grid {
   position: relative;
@@ -526,7 +512,7 @@
 }
 .webinar-countdown-message {
   margin: 22px 0;
-  color: #dbeafe;
+  color: #e5e7eb;
   font-weight: 700;
 }
 .webinar-button {
@@ -552,14 +538,14 @@
 .webinar-page input:focus-visible,
 .webinar-page textarea:focus-visible,
 .webinar-page summary:focus-visible {
-  outline: 3px solid #f4c44e;
+  outline: 3px solid #859d30;
   outline-offset: 3px;
 }
 .webinar-button--primary {
   background: var(--brand-primary);
   color: #ffffff;
   font-size: 1.1rem;
-  box-shadow: 0 12px 30px rgba(67, 146, 136, 0.28);
+  box-shadow: 0 12px 30px rgba(133, 157, 48, 0.28);
 }
 .webinar-button--primary:hover {
   background: var(--brand-primary-hover);
@@ -649,7 +635,7 @@
   width: 66px;
   height: 66px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #439288, #155e75);
+  background: #859d30;
   color: #fff;
 }
 .webinar-ai-card__core strong {
@@ -876,7 +862,7 @@
   margin-top: 22px;
   padding: 20px 24px;
   border-radius: 13px;
-  background: #082f49;
+  background: #07100b;
   color: #fff;
 }
 .webinar-demo-callout svg {
@@ -936,7 +922,7 @@
   justify-content: center;
   margin-bottom: 22px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #dff5f1, #eaf3f5);
+  background: #f4f7ea;
   color: #4b7a7d;
 }
 .webinar-speaker-card > small {
@@ -976,7 +962,7 @@
   background:
     radial-gradient(
       circle at 15% 15%,
-      rgba(67, 146, 136, 0.22),
+      rgba(133, 157, 48, 0.22),
       transparent 32%
     ),
     #061f31;
@@ -1013,7 +999,7 @@
   gap: 10px;
   align-items: center;
   margin: 13px 0;
-  color: #e4f0f3;
+  color: #e5e7eb;
 }
 .webinar-register-copy li svg {
   color: var(--mint);
@@ -1119,11 +1105,11 @@
   font-size: 13px;
 }
 .webinar-form__error {
-  background: #fee4e2;
+  background: #f4f7ea;
   color: #912018;
 }
 .webinar-form__notice {
-  background: #fff4d2;
+  background: #f4f7ea;
   color: #704d00;
 }
 .webinar-form__secure {
@@ -1149,7 +1135,7 @@
   }
 }
 .webinar-section--masterclass {
-  background: linear-gradient(135deg, #439288, #075985);
+  background: #07100b;
   color: #fff;
 }
 .webinar-masterclass {
@@ -1412,7 +1398,7 @@
 .webinar-preferences {
   min-height: 75vh;
   padding: 90px 20px;
-  background: linear-gradient(145deg, #eaf8f6, #f7fafb);
+  background: #f4f7ea;
   display: grid;
   place-items: center;
 }
@@ -1449,7 +1435,7 @@
   font-weight: 800;
 }
 .webinar-registered__card .webinar-countdown__unit {
-  background: #edf7f6;
+  background: #f4f7ea;
   border-color: #d2e7e5;
 }
 .webinar-registered__card .webinar-countdown__unit span {
@@ -1461,7 +1447,7 @@
   margin: 28px 0;
   padding: 20px;
   border-radius: 12px;
-  background: #fff8e9;
+  background: #f4f7ea;
 }
 .webinar-prep svg {
   color: #c9890c;

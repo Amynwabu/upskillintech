@@ -9,7 +9,7 @@ export default function Community() {
       <Navbar />
       <main>
         <section className="px-6 py-28 text-center">
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-teal-300">
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#859D30]">
             UpskillinTech Community
           </p>
           <h1 className="mx-auto max-w-4xl font-bold text-5xl md:text-7xl">
@@ -21,7 +21,7 @@ export default function Community() {
           </p>
           <Link
             href="/contact"
-            className="mt-9 inline-flex items-center gap-2 rounded-lg bg-teal-500 px-6 py-3 font-bold text-slate-950"
+            className="mt-9 inline-flex items-center gap-2 rounded-lg bg-[#F4F7EA]0 px-6 py-3 font-bold text-slate-950"
           >
             Join the community <ArrowRight size={18} />
           </Link>
@@ -33,7 +33,7 @@ export default function Community() {
             [Network, "Shared opportunities", "Discover events, collaborations and ways to keep learning together."],
           ].map(([Icon, title, copy]) => (
             <article className="rounded-2xl border border-white/10 bg-white/5 p-7" key={String(title)}>
-              <Icon className="text-teal-300" size={26} />
+              <Icon className="text-[#859D30]" size={26} />
               <h2 className="mt-5 text-xl font-bold">{String(title)}</h2>
               <p className="mt-3 leading-7 text-slate-400">{String(copy)}</p>
             </article>

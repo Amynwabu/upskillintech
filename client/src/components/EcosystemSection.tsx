@@ -15,7 +15,7 @@ const stages = [
     subtitle: "AI Content & Insights",
     desc: "AI content, webinars, and insights to help you understand what's happening in the AI world and why it matters for your work.",
     items: ["Weekly AI insights", "Free webinars", "AI trend reports"],
-    color: "#439288",
+    color: "#859D30",
   },
   {
     icon: BookOpen,
@@ -24,7 +24,7 @@ const stages = [
     subtitle: "Structured AI Programs",
     desc: "Structured programs that take you from AI basics to advanced workflow integration with practical, hands-on learning.",
     items: ["Cohort programs", "Self-paced courses", "Live workshops"],
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     icon: Wrench,
@@ -33,7 +33,7 @@ const stages = [
     subtitle: "Workflow Integration",
     desc: "Apply what you've learned with real workflow templates, tools, and guided implementation support.",
     items: ["AI workflow templates", "Tool integrations", "Implementation support"],
-    color: "#D97706",
+    color: "#859D30",
   },
   {
     icon: Users2,
@@ -42,7 +42,7 @@ const stages = [
     subtitle: "Ongoing Learning & Collaboration",
     desc: "Join a community of AI-enabled professionals for ongoing learning, collaboration, and peer support.",
     items: ["Peer community", "Expert mentors", "Monthly masterclasses"],
-    color: "#7C3AED",
+    color: "#859D30",
   },
 ];
 
@@ -61,14 +61,14 @@ export default function EcosystemSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="ecosystem" className="py-20 lg:py-28" style={{ background: "#151B23" }}>
+    <section id="ecosystem" className="py-20 lg:py-28" style={{ background: "#07100B" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         {/* Header */}
         <div className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
           <div className="section-label mb-3">The Platform</div>
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
             The UpskillinTech{" "}
-            <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
               Ecosystem
             </span>
           </h2>
@@ -80,7 +80,7 @@ export default function EcosystemSection() {
         {/* Ecosystem Stages */}
         <div className="relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 mx-16" style={{ background: "linear-gradient(to right, #439288, #16A34A, #D97706, #7C3AED)", opacity: 0.3 }} />
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 mx-16" style={{ background: "linear-gradient(to right, #859D30, #859D30, #859D30, #859D30)", opacity: 0.3 }} />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {stages.map((stage, i) => {

@@ -7,9 +7,9 @@ const steps = [
     num: "01",
     label: "AI Curiosity",
     desc: "Understand what AI is, how it works, and how it applies directly to your professional context.",
-    color: "#439288",
+    color: "#859D30",
     textColor: "#ffffff",
-    shadow: "rgba(67,146,136,0.35)",
+    shadow: "rgba(133, 157, 48,0.35)",
   },
   {
     num: "02",
@@ -23,7 +23,7 @@ const steps = [
     num: "03",
     label: "AI Productivity",
     desc: "Integrate AI into your daily workflows to save hours every week and deliver better results.",
-    color: "#8B9E1A",
+    color: "#859D30",
     textColor: "#ffffff",
     shadow: "rgba(139,158,26,0.35)",
   },
@@ -31,15 +31,15 @@ const steps = [
     num: "04",
     label: "AI Transformation",
     desc: "Lead AI adoption across your team, organisation, or community — and become the go-to AI expert.",
-    color: "#E6B800",
+    color: "#859D30",
     textColor: "#111827",
-    shadow: "rgba(230,184,0,0.40)",
+    shadow: "rgba(133, 157, 48,0.40)",
   },
 ];
 
 export default function MethodSection() {
   return (
-    <section className="section-py" style={{ background: "#151B23" }}>
+    <section className="section-py" style={{ background: "#07100B" }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
@@ -47,7 +47,7 @@ export default function MethodSection() {
           <h2 className="mt-4 mb-5">The UpskillinTech Method</h2>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             We don't just teach AI tools.{" "}
-            <span style={{ color: "#439288", fontWeight: 700 }}>We help you integrate AI into real work.</span>
+            <span style={{ color: "#859D30", fontWeight: 700 }}>We help you integrate AI into real work.</span>
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function MethodSection() {
               {i < steps.length - 1 && (
                 <div
                   className="flex items-center mt-8 mx-2"
-                  style={{ color: "#E6B800", fontSize: "2rem", fontWeight: 800 }}
+                  style={{ color: "#859D30", fontSize: "2rem", fontWeight: 800 }}
                 >
                   →
                 </div>
@@ -120,7 +120,7 @@ export default function MethodSection() {
                   {step.num}
                 </div>
                 {i < steps.length - 1 && (
-                  <div style={{ width: 3, flex: 1, background: "linear-gradient(to bottom, #439288, #E6B800)", minHeight: 40, margin: "6px 0", borderRadius: 2 }} />
+                  <div style={{ width: 3, flex: 1, background: "linear-gradient(to bottom, #859D30, #859D30)", minHeight: 40, margin: "6px 0", borderRadius: 2 }} />
                 )}
               </div>
               <div className="pb-10">

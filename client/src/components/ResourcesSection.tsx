@@ -7,8 +7,8 @@ import { BookOpen, FileText, BarChart2, Video, ArrowRight } from "lucide-react";
 const resources = [
   {
     icon: BookOpen,
-    color: "#439288",
-    bg: "rgba(67,146,136,0.10)",
+    color: "#859D30",
+    bg: "rgba(133, 157, 48,0.10)",
     title: "Blog",
     desc: "Practical AI insights, how-to guides, and strategies for professionals ready to work smarter.",
     count: "20+ Articles",
@@ -16,7 +16,7 @@ const resources = [
   },
   {
     icon: FileText,
-    color: "#8B9E1A",
+    color: "#859D30",
     bg: "rgba(139,158,26,0.10)",
     title: "AI Guides",
     desc: "Free downloadable guides covering AI tools, prompt engineering, and workflow automation.",
@@ -25,8 +25,8 @@ const resources = [
   },
   {
     icon: BarChart2,
-    color: "#439288",
-    bg: "rgba(67,146,136,0.10)",
+    color: "#859D30",
+    bg: "rgba(133, 157, 48,0.10)",
     title: "Case Studies",
     desc: "Real-world stories of professionals and organisations who transformed their work with AI.",
     count: "6 Case Studies",
@@ -34,8 +34,8 @@ const resources = [
   },
   {
     icon: Video,
-    color: "#E6B800",
-    bg: "rgba(230,184,0,0.12)",
+    color: "#859D30",
+    bg: "rgba(133, 157, 48,0.12)",
     title: "Webinars",
     desc: "Live training sessions and recorded masterclasses on AI productivity and strategy.",
     count: "8 Sessions",
@@ -45,13 +45,13 @@ const resources = [
 
 export default function ResourcesSection() {
   return (
-    <section className="section-py" style={{ background: "#151B23" }}>
+    <section className="section-py" style={{ background: "#07100B" }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
           <span className="section-label mb-5">Free Resources</span>
           <h2 className="mt-4 mb-5">
-            UpskillinTech <span style={{ color: "#439288" }}>Resources</span>
+            UpskillinTech <span style={{ color: "#859D30" }}>Resources</span>
           </h2>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             Everything you need to start, grow, and lead with AI — available free to the community.
@@ -68,7 +68,7 @@ export default function ResourcesSection() {
                 href={r.href}
                 className="rounded-2xl p-7 flex flex-col transition-all duration-200"
                 style={{
-                  background: "#151B23",
+                  background: "#07100B",
                   border: "1px solid #1F2937",
                   borderLeft: `4px solid ${r.color}`,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
@@ -76,7 +76,7 @@ export default function ResourcesSection() {
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-5px)";
-                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(67,146,136,0.14)";
+                  (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 16px 48px rgba(133, 157, 48,0.14)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";

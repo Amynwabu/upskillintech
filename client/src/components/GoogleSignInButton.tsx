@@ -31,7 +31,7 @@ export default function GoogleSignInButton({
     >
       <span
         aria-hidden="true"
-        className="flex h-5 w-5 items-center justify-center rounded-full bg-[#151B23] text-sm font-bold text-[#4285F4]"
+        className="flex h-5 w-5 items-center justify-center rounded-full bg-[#07100B] text-sm font-bold text-[#4285F4]"
       >
         G
       </span>

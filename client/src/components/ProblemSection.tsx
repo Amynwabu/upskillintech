@@ -3,25 +3,25 @@ import { Layers, Compass, Shuffle, TrendingDown } from "lucide-react";
 const problems = [
   {
     icon: Layers,
-    color: "#439288",
+    color: "#859D30",
     title: "There are hundreds of AI tools. Which ones matter?",
     desc: "Most people try 3–5 tools, get confused, and give up — before they've seen what AI can actually do for them.",
   },
   {
     icon: Compass,
-    color: "#D97706",
+    color: "#859D30",
     title: "Nobody explains where to actually begin.",
     desc: "Generic advice doesn't account for your work, your business, or your goals. You need a starting point that's specific to you.",
   },
   {
     icon: Shuffle,
-    color: "#439288",
+    color: "#859D30",
     title: "You've tried AI, but nothing has really stuck.",
     desc: "Without structure, most people end up using AI for the same two things. It never becomes a real part of how they work.",
   },
   {
     icon: TrendingDown,
-    color: "#D97706",
+    color: "#859D30",
     title: "You know AI is useful — you just haven't felt it yet.",
     desc: "Confidence comes from practice and guidance, not from watching more YouTube videos. You need a clear path, not more content.",
   },
@@ -75,7 +75,7 @@ export default function ProblemSection() {
         </div>
 
         <div className="text-center">
-          <a href="#adoption-journey" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#439288", textDecoration: "none" }}>
+          <a href="#adoption-journey" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.95rem", fontWeight: 600, color: "#859D30", textDecoration: "none" }}>
             Here's how we help →
           </a>
         </div>

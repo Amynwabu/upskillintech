@@ -1,6 +1,6 @@
 /**
  * Contact Page — /contact
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Accent Yellow (#E6B800)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Accent Yellow (#859D30)
  * Typography: Sora (headings) + Inter (body)
  * Sections: Hero, Inquiry Categories (4 cards), Contact Form, Alternative Contact
  */
@@ -31,7 +31,7 @@ const inquiryCategories = [
       "General questions about UpskillinTech",
     ],
     cta: "Contact Us",
-    color: "#439288",
+    color: "#859D30",
     value: "General Inquiry",
   },
   {
@@ -47,7 +47,7 @@ const inquiryCategories = [
       "Organisational AI strategy development",
     ],
     cta: "Request Consultation",
-    color: "#8B9E1A",
+    color: "#859D30",
     value: "Enterprise Consultation",
   },
   {
@@ -63,7 +63,7 @@ const inquiryCategories = [
       "Community AI learning initiatives",
     ],
     cta: "Discuss Partnership",
-    color: "#E6B800",
+    color: "#859D30",
     value: "Partnership Inquiry",
   },
   {
@@ -79,7 +79,7 @@ const inquiryCategories = [
       "Professional development sessions",
     ],
     cta: "Invite Speaker",
-    color: "#439288",
+    color: "#859D30",
     value: "Speaking & Events",
   },
 ];
@@ -134,19 +134,19 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-[#151B23] font-inter">
+    <div className="min-h-screen bg-[#07100B] font-inter">
       <Navbar />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section
         className="relative pt-24 pb-16 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}
+        style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}
       >
         {/* Decorative blobs */}
         <div className="absolute top-8 right-16 w-56 h-56 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #fff 0%, transparent 70%)" }} />
         <div className="absolute bottom-4 left-12 w-40 h-40 rounded-full opacity-10"
-          style={{ background: "radial-gradient(circle, #E6B800 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, #859D30 0%, transparent 70%)" }} />
 
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center text-[#F3F4F6] relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-6 uppercase tracking-widest"
@@ -167,9 +167,9 @@ export default function Contact() {
           <a
             href="#contact-form"
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded font-semibold text-sm transition-all"
-            style={{ background: "#E6B800", color: "#F3F4F6" }}
-            onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}
+            style={{ background: "#859D30", color: "#F3F4F6" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#859D30")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#859D30")}
           >
             Send an Inquiry <ArrowRight size={16} />
           </a>
@@ -185,7 +185,7 @@ export default function Contact() {
               { label: "Event Organisers", desc: "Inviting speakers" },
             ].map((item, i) => (
               <div key={i} className="rounded-xl px-4 py-3 text-center text-[#F3F4F6]"
-                style={{ background: "rgba(67,146,136,0.10)" }}>
+                style={{ background: "rgba(133, 157, 48,0.10)" }}>
                 <p className="font-poppins font-semibold text-sm">{item.label}</p>
                 <p className="text-xs opacity-80 mt-0.5">{item.desc}</p>
               </div>
@@ -195,11 +195,11 @@ export default function Contact() {
       </section>
 
       {/* ── Inquiry Categories ───────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#11161A" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="max-w-6xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-              style={{ background: "#10231C", color: "#439288" }}>How Can We Help?</span>
+              style={{ background: "#07100B", color: "#859D30" }}>How Can We Help?</span>
             <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-4" style={{ color: "#F3F4F6" }}>
               Select Your Inquiry Type
             </h2>
@@ -216,7 +216,7 @@ export default function Contact() {
               return (
                 <div
                   key={i}
-                  className="bg-[#151B23] rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
+                  className="bg-[#07100B] rounded-2xl border overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
                   style={{
                     borderColor: isSelected ? cat.color : "#1F2937",
                     boxShadow: isSelected ? `0 0 0 2px ${cat.color}40` : undefined,
@@ -270,13 +270,13 @@ export default function Contact() {
       </section>
 
       {/* ── Contact Form ─────────────────────────────────────────────────── */}
-      <section id="contact-form" className="py-20 bg-[#151B23]">
+      <section id="contact-form" className="py-20 bg-[#07100B]">
         <div className="max-w-5xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left — info */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-                style={{ background: "#10231C", color: "#439288" }}>Send a Message</span>
+                style={{ background: "#07100B", color: "#859D30" }}>Send a Message</span>
               <h2 className="font-poppins font-bold text-4xl lg:text-5xl mb-5" style={{ color: "#F3F4F6" }}>
                 We'd Love to Hear From You
               </h2>
@@ -287,7 +287,7 @@ export default function Contact() {
               </p>
 
               {/* Response expectations */}
-              <div className="rounded-2xl p-6 mb-8 border" style={{ borderColor: "#1F2937", background: "#11161A" }}>
+              <div className="rounded-2xl p-6 mb-8 border" style={{ borderColor: "#1F2937", background: "#07100B" }}>
                 <h3 className="font-poppins font-semibold text-base mb-4" style={{ color: "#F3F4F6" }}>
                   What happens after you submit?
                 </h3>
@@ -299,7 +299,7 @@ export default function Contact() {
                   ].map((item, i) => (
                     <div key={i} className="flex gap-3">
                       <div className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-poppins font-bold text-xs text-white"
-                        style={{ background: "#439288" }}>
+                        style={{ background: "#859D30" }}>
                         {item.step}
                       </div>
                       <div>
@@ -317,27 +317,27 @@ export default function Contact() {
                   className="flex items-center gap-3 p-4 rounded-xl border transition-all hover:shadow-md group"
                   style={{ borderColor: "#1F2937" }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                    style={{ background: "#10231C" }}>
-                    <Mail size={18} style={{ color: "#439288" }} />
+                    style={{ background: "#07100B" }}>
+                    <Mail size={18} style={{ color: "#859D30" }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>Email</p>
                     <p className="text-sm font-medium" style={{ color: "#F3F4F6" }}>info@upskillintech.com</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#439288" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#859D30" }} />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-xl border transition-all hover:shadow-md group"
                   style={{ borderColor: "#1F2937" }}>
                   <div className="w-10 h-10 rounded-lg flex items-center justify-center"
-                    style={{ background: "#10231C" }}>
-                    <Linkedin size={18} style={{ color: "#0077B5" }} />
+                    style={{ background: "#07100B" }}>
+                    <Linkedin size={18} style={{ color: "#859D30" }} />
                   </div>
                   <div>
                     <p className="text-xs font-semibold" style={{ color: "#888" }}>LinkedIn</p>
                     <p className="text-sm font-medium" style={{ color: "#F3F4F6" }}>UpskillinTech Official Page</p>
                   </div>
-                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#439288" }} />
+                  <ArrowRight size={14} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "#859D30" }} />
                 </a>
               </div>
             </div>
@@ -347,8 +347,8 @@ export default function Contact() {
               {submitted ? (
                 <div className="rounded-2xl border p-10 text-center" style={{ borderColor: "#1F2937" }}>
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
-                    style={{ background: "#10231C" }}>
-                    <CheckCircle size={32} style={{ color: "#439288" }} />
+                    style={{ background: "#07100B" }}>
+                    <CheckCircle size={32} style={{ color: "#859D30" }} />
                   </div>
                   <h3 className="font-poppins font-bold text-xl mb-3" style={{ color: "#F3F4F6" }}>
                     Message Received!
@@ -360,9 +360,9 @@ export default function Contact() {
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: "", email: "", organisation: "", inquiryType: "", message: "" }); setSelectedCategory(null); }}
                     className="inline-flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-semibold transition-all"
-                    style={{ background: "#439288", color: "#fff" }}
-                    onMouseEnter={e => (e.currentTarget.style.background = "#2ea040")}
-                    onMouseLeave={e => (e.currentTarget.style.background = "#439288")}
+                    style={{ background: "#859D30", color: "#fff" }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#859D30")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "#859D30")}
                   >
                     Send Another Message
                   </button>
@@ -375,7 +375,7 @@ export default function Contact() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Name <span style={{ color: "#439288" }}>*</span>
+                        Name <span style={{ color: "#859D30" }}>*</span>
                       </label>
                       <input
                         type="text"
@@ -384,14 +384,14 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, name: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#439288")}
+                        onFocus={e => (e.target.style.borderColor = "#859D30")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Email <span style={{ color: "#439288" }}>*</span>
+                        Email <span style={{ color: "#859D30" }}>*</span>
                       </label>
                       <input
                         type="email"
@@ -400,7 +400,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, email: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#439288")}
+                        onFocus={e => (e.target.style.borderColor = "#859D30")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -416,7 +416,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, organisation: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#439288")}
+                        onFocus={e => (e.target.style.borderColor = "#859D30")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -430,7 +430,7 @@ export default function Contact() {
                         onChange={e => { setForm({ ...form, inquiryType: e.target.value }); setSelectedCategory(e.target.value); }}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all"
                         style={{ borderColor: "#374151", color: form.inquiryType ? "#1C1C1C" : "#999" }}
-                        onFocus={e => (e.target.style.borderColor = "#439288")}
+                        onFocus={e => (e.target.style.borderColor = "#859D30")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       >
                         <option value="">Select inquiry type</option>
@@ -440,7 +440,7 @@ export default function Contact() {
 
                     <div>
                       <label className="block text-xs font-semibold mb-1.5" style={{ color: "#D1D5DB" }}>
-                        Message <span style={{ color: "#439288" }}>*</span>
+                        Message <span style={{ color: "#859D30" }}>*</span>
                       </label>
                       <textarea
                         rows={5}
@@ -449,7 +449,7 @@ export default function Contact() {
                         onChange={e => setForm({ ...form, message: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-lg border text-sm outline-none transition-all resize-none"
                         style={{ borderColor: "#374151", color: "#F3F4F6" }}
-                        onFocus={e => (e.target.style.borderColor = "#439288")}
+                        onFocus={e => (e.target.style.borderColor = "#859D30")}
                         onBlur={e => (e.target.style.borderColor = "#374151")}
                       />
                     </div>
@@ -458,9 +458,9 @@ export default function Contact() {
                       type="submit"
                       disabled={submitting}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm transition-all disabled:opacity-60"
-                      style={{ background: "#439288", color: "#fff" }}
-                      onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#2ea040"; }}
-                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#439288"; }}
+                      style={{ background: "#859D30", color: "#fff" }}
+                      onMouseEnter={e => { if (!submitting) e.currentTarget.style.background = "#859D30"; }}
+                      onMouseLeave={e => { if (!submitting) e.currentTarget.style.background = "#859D30"; }}
                     >
                       {submitting ? "Sending…" : <><Send size={15} /> Send Message</>}
                     </button>
@@ -477,10 +477,10 @@ export default function Contact() {
       </section>
 
       {/* ── Alternative Contact ───────────────────────────────────────────── */}
-      <section className="section-py" style={{ background: "#11161A" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 inline-block"
-            style={{ background: "#10231C", color: "#439288" }}>Other Ways to Connect</span>
+            style={{ background: "#07100B", color: "#859D30" }}>Other Ways to Connect</span>
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3" style={{ color: "#F3F4F6" }}>
             Find Us Online
           </h2>
@@ -495,28 +495,28 @@ export default function Contact() {
                 label: "Email",
                 value: "info@upskillintech.com",
                 href: "mailto:info@upskillintech.com",
-                color: "#439288",
+                color: "#859D30",
               },
               {
                 icon: Linkedin,
                 label: "LinkedIn",
                 value: "UpskillinTech Page",
                 href: "https://linkedin.com",
-                color: "#0077B5",
+                color: "#859D30",
               },
               {
                 icon: Youtube,
                 label: "YouTube",
                 value: "UpskillinTech Channel",
                 href: "https://youtube.com",
-                color: "#FF0000",
+                color: "#859D30",
               },
               {
                 icon: Instagram,
                 label: "Instagram",
                 value: "@upskillintech",
                 href: "https://instagram.com",
-                color: "#E1306C",
+                color: "#859D30",
               },
             ].map((channel, i) => {
               const Icon = channel.icon;
@@ -526,7 +526,7 @@ export default function Contact() {
                   href={channel.href}
                   target={channel.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-3 p-6 bg-[#151B23] rounded-2xl border transition-all hover:shadow-lg hover:-translate-y-1"
+                  className="flex flex-col items-center gap-3 p-6 bg-[#07100B] rounded-2xl border transition-all hover:shadow-lg hover:-translate-y-1"
                   style={{ borderColor: "#1F2937" }}
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center"
@@ -544,7 +544,7 @@ export default function Contact() {
 
           {/* Response time note */}
           <div className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm"
-            style={{ background: "#10231C", color: "#439288" }}>
+            style={{ background: "#07100B", color: "#859D30" }}>
             <CheckCircle size={15} />
             We aim to respond to all inquiries within 2 business days.
           </div>
@@ -553,7 +553,7 @@ export default function Contact() {
 
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="py-14"
-        style={{ background: "linear-gradient(135deg, #439288 0%, #8B9E1A 60%, #E6B800 100%)" }}>
+        style={{ background: "linear-gradient(135deg, #859D30 0%, #859D30 60%, #859D30 100%)" }}>
         <div className="max-w-3xl mx-auto px-4 text-center text-white">
           <h2 className="font-poppins font-bold text-2xl lg:text-3xl mb-3">
             Ready to Start Your AI Journey?
@@ -565,14 +565,14 @@ export default function Contact() {
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm transition-all"
-              style={{ background: "#E6B800", color: "#F3F4F6" }}
-              onMouseEnter={e => (e.currentTarget.style.background = "#d4a800")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#E6B800")}>
+              style={{ background: "#859D30", color: "#F3F4F6" }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#859D30")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#859D30")}>
               Explore Programs <ArrowRight size={15} />
             </a>
             <a href="/enterprise"
               className="inline-flex items-center gap-2 px-6 py-3 rounded font-semibold text-sm border-2 border-white text-white transition-all"
-              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#439288"; }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#859D30"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#fff"; }}>
               Enterprise Solutions
             </a>

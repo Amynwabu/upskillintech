@@ -164,7 +164,7 @@ export default function NewsletterPreferences() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
-      <div className="bg-[#151B23] border-b">
+      <div className="bg-[#07100B] border-b">
         <div className="container py-4">
           <Link href="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-[#F3F4F6] transition-colors">
             <ArrowLeft className="h-4 w-4" />

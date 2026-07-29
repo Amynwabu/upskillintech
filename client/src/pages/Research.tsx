@@ -94,7 +94,7 @@ export default function Research() {
       <Navbar />
       <main className="flex-1 pt-[72px]">
       {/* Header */}
-      <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 45%, #f0f9ff 100%)" }}>
+      <section className="py-16 min-h-[400px]" style={{ background: "linear-gradient(135deg, #F4F7EA 0%, #F4F7EA 45%, #F4F7EA 100%)" }}>
         <div className="container">
           <Link href="/resources">
             <Button variant="ghost" className="mb-6">
@@ -104,14 +104,14 @@ export default function Research() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(67,146,136,0.10)] border border-[rgba(67,146,136,0.20)] mb-6">
-              <FileText className="w-4 h-4 text-[#439288]" />
-              <span className="text-sm font-medium text-[#439288]">Research & Whitepapers</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(133, 157, 48,0.10)] border border-[rgba(133, 157, 48,0.20)] mb-6">
+              <FileText className="w-4 h-4 text-[#859D30]" />
+              <span className="text-sm font-medium text-[#859D30]">Research & Whitepapers</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               AI Research{" "}
-              <span style={{ background: "linear-gradient(135deg, #439288, #439288)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Library
               </span>
             </h1>
@@ -148,8 +148,8 @@ export default function Research() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === category
-                    ? "bg-[#439288] text-white"
-                    : "bg-card border border-border hover:border-[rgba(67,146,136,0.5)]"
+                    ? "bg-[#859D30] text-white"
+                    : "bg-card border border-border hover:border-[rgba(133, 157, 48,0.5)]"
                 }`}
               >
                 {category}
@@ -172,15 +172,15 @@ export default function Research() {
             {filteredPapers.map((paper) => (
               <div
                 key={paper.id}
-                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(67,146,136,0.5)] hover:shadow-lg hover:shadow-[rgba(67,146,136,0.10)] transition-all"
+                className="p-6 rounded-xl bg-card border border-border hover:border-[rgba(133, 157, 48,0.5)] hover:shadow-lg hover:shadow-[rgba(133, 157, 48,0.10)] transition-all"
               >
                 {/* Category Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(67,146,136,0.10)] border border-[rgba(67,146,136,0.20)] mb-4">
-                  <span className="text-xs font-medium text-[#439288]">{paper.category}</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[rgba(133, 157, 48,0.10)] border border-[rgba(133, 157, 48,0.20)] mb-4">
+                  <span className="text-xs font-medium text-[#859D30]">{paper.category}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-3 hover:text-[#439288] transition-colors">
+                <h3 className="text-2xl font-bold mb-3 hover:text-[#859D30] transition-colors">
                   {paper.title}
                 </h3>
 

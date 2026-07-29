@@ -15,14 +15,14 @@ const benefits = [
 
 export default function CommunitySection() {
   return (
-    <section id="community" className="surface-light section-py" style={{ background: "#FFF7D6" }}>
+    <section id="community" className="surface-light section-py" style={{ background: "#F4F7EA" }}>
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Text */}
           <div>
             <span className="section-label mb-5">Community</span>
             <h2 className="mt-4 mb-5">
-              Join the UpskillinTech <span style={{ color: "#439288" }}>Community</span>
+              Join the UpskillinTech <span style={{ color: "#859D30" }}>Community</span>
             </h2>
             <p className="mb-8" style={{ fontSize: "1.15rem", color: "#111111", lineHeight: 1.75 }}>
               Learn, share workflows, and collaborate with thousands of professionals who are integrating AI into their work and lives.
@@ -30,8 +30,8 @@ export default function CommunitySection() {
             <ul className="flex flex-col gap-5 mb-10">
               {benefits.map((b) => (
                 <li key={b.title} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(67,146,136,0.15)" }}>
-                    <CheckCircle size={18} style={{ color: "#439288" }} />
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "rgba(133, 157, 48,0.15)" }}>
+                    <CheckCircle size={18} style={{ color: "#859D30" }} />
                   </div>
                   <div>
                     <div className="font-bold mb-0.5" style={{ fontFamily: "'Sora', sans-serif", color: "#000000", fontSize: "1rem" }}>
@@ -72,7 +72,7 @@ export default function CommunitySection() {
               >
                 <span style={{ fontSize: "1.5rem" }}>🌍</span>
                 <div>
-                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#439288" }}>
+                  <div style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", fontWeight: 700, color: "#859D30" }}>
                     Growing Community
                   </div>
                   <div style={{ fontSize: "0.8rem", color: "#4B5563" }}>Professionals learning worldwide</div>

@@ -1,7 +1,7 @@
 /**
  * AI Workflow Library Page — UpskillinTech
  * URL: /resources/workflows
- * Design: Green (#439288) + Golden Green (#8B9E1A) + Yellow (#E6B800)
+ * Design: Green (#859D30) + Golden Green (#859D30) + Yellow (#859D30)
  */
 import { useState } from "react";
 import { Link } from "wouter";
@@ -29,7 +29,7 @@ const WORKFLOWS = [
     timeToComplete: "5 minutes",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Otter.ai or Fireflies (optional)"],
-    color: "#439288",
+    color: "#859D30",
     steps: [
       { label: "Record or Note", desc: "Record the meeting audio or take rough notes during the session. Use Otter.ai for automatic transcription." },
       { label: "Paste Transcript", desc: "Paste the transcript or notes into ChatGPT or Claude with the prompt: 'Summarise this meeting. Extract: 1) Key decisions, 2) Action items with owners, 3) Open questions.'" },
@@ -49,7 +49,7 @@ const WORKFLOWS = [
     timeToComplete: "2–4 hours",
     difficulty: "Intermediate",
     toolsNeeded: ["ChatGPT or Claude", "Perplexity AI", "Google Docs"],
-    color: "#8B9E1A",
+    color: "#859D30",
     steps: [
       { label: "Define Question", desc: "Write a clear research question. Be specific: 'What are the top 5 AI productivity tools for HR professionals in 2025?' is better than 'AI tools.'" },
       { label: "AI Research", desc: "Use Perplexity AI or ChatGPT to gather initial research. Prompt: 'Research [TOPIC] and provide: key findings, main sources, statistics, and expert opinions.'" },
@@ -70,7 +70,7 @@ const WORKFLOWS = [
     timeToComplete: "1–2 hours per piece",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Grammarly (optional)", "Canva (optional)"],
-    color: "#E6B800",
+    color: "#859D30",
     steps: [
       { label: "Idea & Brief", desc: "Define your content goal: Who is it for? What should they feel, know, or do after reading? Write a 3-sentence brief." },
       { label: "AI Outline", desc: "Prompt AI: 'Create a detailed outline for a [blog post/newsletter/LinkedIn article] about [TOPIC] for [AUDIENCE]. Include: headline, 5 key sections with subpoints, and a CTA.'" },
@@ -91,7 +91,7 @@ const WORKFLOWS = [
     timeToComplete: "30 minutes/day",
     difficulty: "Beginner",
     toolsNeeded: ["ChatGPT or Claude", "Gmail or Outlook"],
-    color: "#439288",
+    color: "#859D30",
     steps: [
       { label: "Batch Emails", desc: "Set two dedicated email times per day (e.g., 9am and 4pm). Don't check email outside these windows. This alone saves 1–2 hours daily." },
       { label: "Categorise", desc: "Sort emails into: Respond Now, Delegate, File, Delete. Only 'Respond Now' emails need your attention in this session." },
@@ -111,7 +111,7 @@ const WORKFLOWS = [
     timeToComplete: "30–60 minutes",
     difficulty: "Intermediate",
     toolsNeeded: ["ChatGPT or Claude"],
-    color: "#8B9E1A",
+    color: "#859D30",
     steps: [
       { label: "Define Decision", desc: "Write a clear decision statement: 'Should we [ACTION] given [CONTEXT]?' Include the key constraints, stakeholders, and timeline." },
       { label: "AI Analysis", desc: "Prompt: 'I need to make the following decision: [DECISION]. Provide: 1) Key factors to consider, 2) Potential risks and benefits of each option, 3) Questions I should be asking, 4) Frameworks that apply.'" },
@@ -132,7 +132,7 @@ const WORKFLOWS = [
     timeToComplete: "1–2 hours/month",
     difficulty: "Intermediate",
     toolsNeeded: ["Perplexity AI", "ChatGPT or Claude"],
-    color: "#E6B800",
+    color: "#859D30",
     steps: [
       { label: "Define Scope", desc: "List your top 5 competitors and the specific areas to monitor: pricing, product updates, marketing, hiring, partnerships." },
       { label: "Gather Intelligence", desc: "Use Perplexity AI: 'What are the latest developments from [COMPETITOR] in the past 3 months? Focus on: product updates, pricing changes, marketing campaigns, and strategic moves.'" },
@@ -163,10 +163,10 @@ export default function WorkflowsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #10231C 0%, #11161A 40%, #1A1606 100%)" }}>
+      <section className="relative overflow-hidden pt-16" style={{ background: "linear-gradient(135deg, #07100B 0%, #07100B 40%, #07100B 100%)" }}>
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(67,146,136,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
+            <span className="inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4" style={{ background: "rgba(133, 157, 48,0.10)", color: "#F3F4F6", border: "1px solid rgba(255,255,255,0.35)" }}>Workflow Library</span>
             <h1 className="text-4xl lg:text-5xl font-bold leading-tight mb-5" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
               AI Workflows That Work in the Real World
             </h1>
@@ -182,7 +182,7 @@ export default function WorkflowsPage() {
             </div>
           </div>
         </div>
-        <div style={{ background: "linear-gradient(90deg, #8B9E1A 0%, #E6B800 100%)" }}>
+        <div style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
               {[{ v: "6", l: "Workflow Templates" }, { v: "24+", l: "Copy-Paste Prompts" }, { v: "5 min", l: "Fastest Workflow" }, { v: "Free", l: "All Workflows" }].map(s => (
@@ -197,7 +197,7 @@ export default function WorkflowsPage() {
       </section>
 
       {/* Workflow Library */}
-      <section className="section-py" style={{ background: "#151B23" }}>
+      <section className="section-py" style={{ background: "#07100B" }}>
         <div className="container">
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12 justify-center">
@@ -207,7 +207,7 @@ export default function WorkflowsPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className="text-sm font-semibold px-5 py-2 rounded-full transition-all"
                 style={{
-                  background: activeCategory === cat.id ? "#439288" : "#fff",
+                  background: activeCategory === cat.id ? "#859D30" : "#fff",
                   color: activeCategory === cat.id ? "#fff" : "#4B5563",
                   border: activeCategory === cat.id ? "none" : "1px solid #1F2937",
                   fontFamily: "'Sora', sans-serif",
@@ -220,7 +220,7 @@ export default function WorkflowsPage() {
 
           <div className="space-y-8">
             {filtered.map((wf) => (
-              <div key={wf.id} className="rounded-2xl bg-[#151B23] overflow-hidden" style={{ border: "1px solid #1F2937", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
+              <div key={wf.id} className="rounded-2xl bg-[#07100B] overflow-hidden" style={{ border: "1px solid #1F2937", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}>
                 <div className="h-1.5" style={{ background: wf.color }} />
                 <div className="p-8">
                   {/* Header */}
@@ -228,7 +228,7 @@ export default function WorkflowsPage() {
                     <div>
                       <div className="flex items-center gap-2 mb-2">
                         <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded-full" style={{ background: `${wf.color}12`, color: wf.color }}>{wf.categoryLabel}</span>
-                        <span className="text-xs px-2 py-1 rounded-full" style={{ background: "#151B23", color: "#9CA3AF", border: "1px solid #1F2937" }}>{wf.difficulty}</span>
+                        <span className="text-xs px-2 py-1 rounded-full" style={{ background: "#07100B", color: "#9CA3AF", border: "1px solid #1F2937" }}>{wf.difficulty}</span>
                       </div>
                       <h3 className="text-2xl font-bold mb-1" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{wf.title}</h3>
                       <p className="text-sm" style={{ color: "#9CA3AF" }}>{wf.subtitle}</p>
@@ -251,7 +251,7 @@ export default function WorkflowsPage() {
                             <span className="text-xs font-semibold mt-1 text-center max-w-[80px]" style={{ color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>{step.label}</span>
                           </div>
                           {si < wf.steps.length - 1 && (
-                            <span className="text-lg font-bold mb-4" style={{ color: "#E6B800" }}>→</span>
+                            <span className="text-lg font-bold mb-4" style={{ color: "#859D30" }}>→</span>
                           )}
                         </div>
                       ))}
@@ -266,7 +266,7 @@ export default function WorkflowsPage() {
                         <p className="text-xs font-bold uppercase tracking-wider mb-4" style={{ color: "#9CA3AF" }}>Step-by-Step Instructions</p>
                         <div className="space-y-3">
                           {wf.steps.map((step, si) => (
-                            <div key={step.label} className="flex gap-4 p-4 rounded-xl" style={{ background: "#151B23" }}>
+                            <div key={step.label} className="flex gap-4 p-4 rounded-xl" style={{ background: "#07100B" }}>
                               <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ background: wf.color }}>
                                 {si + 1}
                               </div>
@@ -350,12 +350,12 @@ export default function WorkflowsPage() {
           </p>
           <form onSubmit={(e) => { e.preventDefault(); toast.success("Playbook on its way!", { description: "Check your inbox for the AI Workflow Playbook." }); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-6">
             <input type="email" placeholder="your@email.com" className="flex-1 rounded-lg px-4 py-3 text-sm outline-none" style={{ border: "none", color: "#F3F4F6" }} />
-            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#E6B800", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
+            <button type="submit" className="font-bold px-6 py-3 rounded-lg whitespace-nowrap flex items-center gap-2" style={{ background: "#859D30", color: "#F3F4F6", fontFamily: "'Sora', sans-serif" }}>
               <Download size={16} /> Download Playbook
             </button>
           </form>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#439288" }}>
+            <Link href="/#programs" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "#859D30" }}>
               <ArrowRight size={15} /> Explore Programs
             </Link>
             <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: "rgba(255,255,255,0.60)" }}>

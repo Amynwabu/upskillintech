@@ -30,13 +30,13 @@ export default function FinalCTASection() {
       id="final-cta"
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #439288 0%, #2d9e3e 40%, #1a7a2e 100%)",
+        background: "linear-gradient(135deg, #859D30 0%, #859D30 40%, #859D30 100%)",
         padding: "7rem 0",
       }}
     >
       {/* Decorative blobs */}
       <div className="absolute top-[-80px] right-[-80px] rounded-full pointer-events-none" style={{ width: 400, height: 400, background: "rgba(255,255,255,0.06)" }} />
-      <div className="absolute bottom-[-60px] left-[-60px] rounded-full pointer-events-none" style={{ width: 300, height: 300, background: "rgba(230,184,0,0.10)" }} />
+      <div className="absolute bottom-[-60px] left-[-60px] rounded-full pointer-events-none" style={{ width: 300, height: 300, background: "rgba(133, 157, 48,0.10)" }} />
 
       <div className="container relative z-10" ref={ref}>
         <div
@@ -44,7 +44,7 @@ export default function FinalCTASection() {
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full mb-8" style={{ background: "rgba(255,255,255,0.18)" }}>
-            <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: "#E6B800" }} />
+            <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: "#859D30" }} />
             <span className="font-semibold" style={{ color: "#ffffff", fontFamily: "'Sora', sans-serif", fontSize: "0.9rem" }}>
               Independent AI Awareness Platform
             </span>
@@ -52,7 +52,7 @@ export default function FinalCTASection() {
 
           <h2 className="mb-6" style={{ color: "#ffffff", fontWeight: 800, lineHeight: 1.15, fontFamily: "'Sora', sans-serif" }}>
             Think. Create. Build. Grow.{" "}
-            <span style={{ color: "#E6B800" }}>Start Today.</span>
+            <span style={{ color: "#859D30" }}>Start Today.</span>
           </h2>
 
           <p className="mb-12 max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "1.2rem", color: "rgba(255,255,255,0.85)", lineHeight: 1.75 }}>
@@ -68,13 +68,13 @@ export default function FinalCTASection() {
               style={{
                 fontFamily: "'Sora', sans-serif",
                 fontSize: "1.1rem",
-                background: "#E6B800",
+                background: "#859D30",
                 color: "#F3F4F6",
                 textDecoration: "none",
-                boxShadow: "0 8px 24px rgba(230,184,0,0.40)",
+                boxShadow: "0 8px 24px rgba(133, 157, 48,0.40)",
               }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(230,184,0,0.55)"; }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(230,184,0,0.40)"; }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 32px rgba(133, 157, 48,0.55)"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 24px rgba(133, 157, 48,0.40)"; }}
             >
               Explore Free Insights <ArrowRight size={20} />
             </a>
@@ -101,7 +101,7 @@ export default function FinalCTASection() {
             {trustItems.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: "rgba(255,255,255,0.18)" }}>
-                  <Icon size={18} style={{ color: "#E6B800" }} />
+                  <Icon size={18} style={{ color: "#859D30" }} />
                 </div>
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.975rem", fontWeight: 500, color: "rgba(255,255,255,0.90)" }}>
                   {label}

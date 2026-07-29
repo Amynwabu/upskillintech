@@ -14,34 +14,34 @@ const workflows = [
     title: "Meeting Intelligence",
     desc: "Transform every meeting into structured, actionable outcomes automatically.",
     steps: [
-      { icon: MessageSquare, label: "Meeting", color: "#439288" },
-      { icon: Brain, label: "AI Summary", color: "#7C3AED" },
-      { icon: CheckSquare, label: "Action Items", color: "#16A34A" },
+      { icon: MessageSquare, label: "Meeting", color: "#859D30" },
+      { icon: Brain, label: "AI Summary", color: "#859D30" },
+      { icon: CheckSquare, label: "Action Items", color: "#859D30" },
     ],
     timeSaved: "2 hrs/week",
-    color: "#439288",
+    color: "#859D30",
   },
   {
     title: "Research to Presentation",
     desc: "Go from raw research to polished presentations in a fraction of the time.",
     steps: [
-      { icon: Search, label: "Research", color: "#439288" },
-      { icon: Brain, label: "AI Insights", color: "#7C3AED" },
-      { icon: Presentation, label: "Presentation", color: "#D97706" },
+      { icon: Search, label: "Research", color: "#859D30" },
+      { icon: Brain, label: "AI Insights", color: "#859D30" },
+      { icon: Presentation, label: "Presentation", color: "#859D30" },
     ],
     timeSaved: "3 hrs/week",
-    color: "#16A34A",
+    color: "#859D30",
   },
   {
     title: "Data-Driven Reports",
     desc: "Turn client data into professional reports with AI-powered analysis.",
     steps: [
-      { icon: Database, label: "Client Data", color: "#439288" },
-      { icon: BarChart2, label: "AI Analysis", color: "#7C3AED" },
+      { icon: Database, label: "Client Data", color: "#859D30" },
+      { icon: BarChart2, label: "AI Analysis", color: "#859D30" },
       { icon: FileBarChart, label: "Report", color: "#DC2626" },
     ],
     timeSaved: "4 hrs/week",
-    color: "#D97706",
+    color: "#859D30",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function WorkflowSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="surface-light py-20 lg:py-28" style={{ background: "#F8FAFC" }}>
+    <section className="surface-light py-20 lg:py-28" style={{ background: "#F4F7EA" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -68,7 +68,7 @@ export default function WorkflowSection() {
             <div className="section-label mb-3">Real AI Workflows</div>
             <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#0F172A", lineHeight: 1.2 }}>
               How AI Improves{" "}
-              <span style={{ background: "linear-gradient(135deg, #439288, #16A34A)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Daily Work
               </span>
             </h2>

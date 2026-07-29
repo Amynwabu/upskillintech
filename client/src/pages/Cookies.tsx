@@ -1,6 +1,6 @@
 export default function Cookies() {
   return (
-    <div className="surface-dark min-h-screen bg-[#161B22]">
+    <div className="surface-dark min-h-screen bg-[#07100B]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <h1 className="text-4xl font-bold text-[#F3F4F6] mb-8">Cookie Policy</h1>
         <p className="text-gray-600 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
@@ -240,7 +240,7 @@ export default function Cookies() {
             <p>
               If you have questions about our cookie practices or this Cookie Policy, please contact us at:
             </p>
-            <div className="mt-4 bg-[#151B23] p-4 rounded">
+            <div className="mt-4 bg-[#07100B] p-4 rounded">
               <p><strong>UpskillinTech</strong></p>
               <p>Email: privacy@upskillintech.com</p>
               <p>Website: upskillintech.com</p>

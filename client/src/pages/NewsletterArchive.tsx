@@ -13,11 +13,11 @@ import {
 } from "lucide-react";
 
 const ALL_EDITIONS = [
-  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", excerpt: "Most people treat AI like a search engine. The real power is using AI for thinking, strategy, and workflow automation — and it changes everything.", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#439288" },
-  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", excerpt: "Practical, copy-paste AI workflows for meetings, research, content creation, email management, and client reporting — tested by real professionals.", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#8B9E1A" },
-  { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", excerpt: "Teams are adopting AI faster than their managers. Here's why leaders who don't upskill now will find themselves managing workflows they don't understand.", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#D97706" },
-  { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", excerpt: "A step-by-step guide to building a personal AI productivity stack — from choosing the right tools to creating workflows that actually stick.", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#7C3AED" },
-  { slug: "ai-tools-for-educators-and-community-leaders", title: "AI Tools for Educators and Community Leaders", excerpt: "From lesson planning to community outreach, these AI tools are transforming how educators and leaders serve their communities more effectively.", date: "November 2025", readTime: "5 min read", tag: "Education & Leadership", tagColor: "#0891B2" },
+  { slug: "most-professionals-are-using-ai-wrong", title: "Most Professionals Are Using AI Wrong", excerpt: "Most people treat AI like a search engine. The real power is using AI for thinking, strategy, and workflow automation — and it changes everything.", date: "March 2026", readTime: "5 min read", tag: "Featured Insight", tagColor: "#859D30" },
+  { slug: "5-ai-workflows-that-save-professionals-10-hours-a-week", title: "5 AI Workflows That Save Professionals 10 Hours a Week", excerpt: "Practical, copy-paste AI workflows for meetings, research, content creation, email management, and client reporting — tested by real professionals.", date: "February 2026", readTime: "7 min read", tag: "Workflow Guide", tagColor: "#859D30" },
+  { slug: "the-ai-leadership-gap-why-managers-need-ai-skills-now", title: "The AI Leadership Gap: Why Managers Need AI Skills Now", excerpt: "Teams are adopting AI faster than their managers. Here's why leaders who don't upskill now will find themselves managing workflows they don't understand.", date: "January 2026", readTime: "6 min read", tag: "Leadership", tagColor: "#859D30" },
+  { slug: "how-to-build-your-first-ai-powered-productivity-system", title: "How to Build Your First AI-Powered Productivity System", excerpt: "A step-by-step guide to building a personal AI productivity stack — from choosing the right tools to creating workflows that actually stick.", date: "December 2025", readTime: "8 min read", tag: "Beginner Guide", tagColor: "#859D30" },
+  { slug: "ai-tools-for-educators-and-community-leaders", title: "AI Tools for Educators and Community Leaders", excerpt: "From lesson planning to community outreach, these AI tools are transforming how educators and leaders serve their communities more effectively.", date: "November 2025", readTime: "5 min read", tag: "Education & Leadership", tagColor: "#859D30" },
 ];
 
 const TAGS = ["All", "Featured Insight", "Workflow Guide", "Leadership", "Beginner Guide", "Education & Leadership"];
@@ -45,12 +45,12 @@ export default function NewsletterArchive() {
       <main className="flex-1 pt-[72px]">
 
         {/* ── Breadcrumb ── */}
-        <div style={{ background: "#151B23", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
+        <div style={{ background: "#07100B", borderBottom: "1px solid #1F2937", padding: "14px 0" }}>
           <div className="container">
             <div className="flex items-center gap-2 text-sm" style={{ color: "#9CA3AF" }}>
-              <Link href="/resources" style={{ color: "#439288", textDecoration: "none" }}>Resources</Link>
+              <Link href="/resources" style={{ color: "#859D30", textDecoration: "none" }}>Resources</Link>
               <ChevronRight size={14} />
-              <Link href="/newsletter" style={{ color: "#439288", textDecoration: "none" }}>Newsletter</Link>
+              <Link href="/newsletter" style={{ color: "#859D30", textDecoration: "none" }}>Newsletter</Link>
               <ChevronRight size={14} />
               <span style={{ color: "#D1D5DB" }}>Archive</span>
             </div>
@@ -58,11 +58,11 @@ export default function NewsletterArchive() {
         </div>
 
         {/* ── Hero ── */}
-        <section style={{ background: "linear-gradient(135deg, #f0fdf4 0%, #f7fef7 60%, #fffef0 100%)", padding: "60px 0 50px" }}>
+        <section style={{ background: "linear-gradient(135deg, #F4F7EA 0%, #F4F7EA 60%, #F4F7EA 100%)", padding: "60px 0 50px" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-sm font-semibold"
-                style={{ background: "rgba(67,146,136,0.12)", color: "#439288" }}>
+                style={{ background: "rgba(133, 157, 48,0.12)", color: "#859D30" }}>
                 <Mail size={16} /> Newsletter Archive
               </div>
               <h1 className="font-bold mb-4" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(2rem, 5vw, 3rem)", color: "#F3F4F6", lineHeight: 1.2 }}>
@@ -76,7 +76,7 @@ export default function NewsletterArchive() {
         </section>
 
         {/* ── Search & Filter ── */}
-        <section style={{ background: "#151B23", padding: "40px 0 20px" }}>
+        <section style={{ background: "#07100B", padding: "40px 0 20px" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               {/* Search */}
@@ -88,7 +88,7 @@ export default function NewsletterArchive() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="w-full pl-12 pr-4 py-4 rounded-xl outline-none"
-                  style={{ border: "1.5px solid #1F2937", fontSize: "1rem", background: "#151B23" }}
+                  style={{ border: "1.5px solid #1F2937", fontSize: "1rem", background: "#07100B" }}
                 />
               </div>
               {/* Tag filters */}
@@ -99,9 +99,9 @@ export default function NewsletterArchive() {
                     onClick={() => setActiveTag(tag)}
                     className="px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200"
                     style={{
-                      background: activeTag === tag ? "#439288" : "#F3F4F6",
+                      background: activeTag === tag ? "#859D30" : "#F3F4F6",
                       color: activeTag === tag ? "#fff" : "#374151",
-                      border: activeTag === tag ? "1.5px solid #439288" : "1.5px solid #1F2937",
+                      border: activeTag === tag ? "1.5px solid #859D30" : "1.5px solid #1F2937",
                     }}
                   >
                     {tag}
@@ -113,7 +113,7 @@ export default function NewsletterArchive() {
         </section>
 
         {/* ── Editions List ── */}
-        <section style={{ background: "#151B23", padding: "20px 0 80px" }}>
+        <section style={{ background: "#07100B", padding: "20px 0 80px" }}>
           <div className="container">
             <div className="max-w-3xl mx-auto">
               {filtered.length === 0 ? (
@@ -121,7 +121,7 @@ export default function NewsletterArchive() {
                   <p className="text-lg" style={{ color: "#9CA3AF" }}>No editions found matching your search.</p>
                   <button onClick={() => { setSearch(""); setActiveTag("All"); }}
                     className="mt-4 px-5 py-2.5 rounded-xl font-semibold text-white"
-                    style={{ background: "#439288" }}>
+                    style={{ background: "#859D30" }}>
                     Clear Filters
                   </button>
                 </div>
@@ -150,7 +150,7 @@ export default function NewsletterArchive() {
                         </div>
                         <div className="flex-shrink-0 flex items-center">
                           <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl font-semibold text-sm"
-                            style={{ background: "rgba(67,146,136,0.1)", color: "#439288" }}>
+                            style={{ background: "rgba(133, 157, 48,0.1)", color: "#859D30" }}>
                             Read <ArrowRight size={14} />
                           </span>
                         </div>
@@ -164,10 +164,10 @@ export default function NewsletterArchive() {
         </section>
 
         {/* ── Subscribe CTA ── */}
-        <section style={{ background: "linear-gradient(135deg, #111827 0%, #1a2e1a 100%)", padding: "70px 0" }}>
+        <section style={{ background: "linear-gradient(135deg, #111827 0%, #07100B 100%)", padding: "70px 0" }}>
           <div className="container">
             <div className="max-w-xl mx-auto text-center">
-              <Mail size={40} className="mx-auto mb-5" style={{ color: "#439288" }} />
+              <Mail size={40} className="mx-auto mb-5" style={{ color: "#859D30" }} />
               <h2 className="font-bold text-white mb-3" style={{ fontFamily: "'Sora', sans-serif", fontSize: "clamp(1.6rem, 3vw, 2.2rem)" }}>
                 Don't Miss the Next Edition
               </h2>
@@ -175,7 +175,7 @@ export default function NewsletterArchive() {
                 Subscribe free and get practical AI insights delivered to your inbox every week.
               </p>
               {subDone ? (
-                <div className="flex items-center justify-center gap-3" style={{ color: "#439288" }}>
+                <div className="flex items-center justify-center gap-3" style={{ color: "#859D30" }}>
                   <CheckCircle size={24} />
                   <span className="font-semibold text-lg text-white">You're subscribed!</span>
                 </div>
@@ -190,7 +190,7 @@ export default function NewsletterArchive() {
                   />
                   <button type="submit" disabled={subscribe.isPending}
                     className="px-7 py-4 rounded-xl font-bold text-white transition-all hover:opacity-90 disabled:opacity-60"
-                    style={{ background: "linear-gradient(135deg, #439288, #8B9E1A)", whiteSpace: "nowrap" }}>
+                    style={{ background: "linear-gradient(135deg, #859D30, #859D30)", whiteSpace: "nowrap" }}>
                     {subscribe.isPending ? "..." : "Subscribe"}
                   </button>
                 </form>

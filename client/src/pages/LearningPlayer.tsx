@@ -44,7 +44,7 @@ export default function LearningPlayer() {
   const completeModuleMutation = trpc.courses.completeModule.useMutation({
     onSuccess: (data) => {
       toast.success(`Module completed! +${data.xpEarned} XP`, {
-        icon: <Sparkles className="text-yellow-500" />,
+        icon: <Sparkles className="text-[#859D30]" />,
       });
       setVideoWatched(false);
       setQuizSubmitted(false);

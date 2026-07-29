@@ -131,7 +131,7 @@ export default function Profile() {
                     <p className="text-3xl font-bold">{stats?.currentStreak || 0}</p>
                     <p className="text-xs text-muted-foreground">days</p>
                   </div>
-                  <Flame className="text-orange-500" size={40} />
+                  <Flame className="text-[#859D30]" size={40} />
                 </div>
               </CardContent>
             </Card>
@@ -346,7 +346,7 @@ export default function Profile() {
                             </p>
                             <div className="flex items-center gap-2 mt-2">
                               <Badge variant="secondary">{enrollment.course?.category}</Badge>
-                              <Star className="text-yellow-500 fill-yellow-500" size={14} />
+                              <Star className="text-[#859D30] fill-[#859D30]" size={14} />
                             </div>
                           </div>
                         </div>

@@ -37,7 +37,7 @@ export default function LeadMagnetSection() {
   };
 
   return (
-    <section id="lead-magnet" className="overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #439288 0%, #0F766E 50%, #16A34A 100%)" }}>
+    <section id="lead-magnet" className="overflow-hidden py-20 lg:py-28" style={{ background: "linear-gradient(135deg, #859D30 0%, #859D30 50%, #859D30 100%)" }}>
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -110,7 +110,7 @@ export default function LeadMagnetSection() {
                       type="submit"
                       style={{
                         display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                        background: "#E6B800", color: "#F3F4F6", borderRadius: "0.75rem",
+                        background: "#859D30", color: "#F3F4F6", borderRadius: "0.75rem",
                         padding: "0.875rem 1.5rem", border: "none", cursor: "pointer",
                         fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: "0.9rem",
                         whiteSpace: "nowrap",

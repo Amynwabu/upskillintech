@@ -119,28 +119,28 @@ export default function Events() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "Few Spots Left": return "text-orange-500 bg-orange-500/10 border-orange-500/20";
+      case "Few Spots Left": return "text-[#859D30] bg-[#F4F7EA]0/10 border-[#859D30]";
       case "Early Bird": return "text-green-600 bg-green-500/10 border-green-500/20";
-      default: return "text-teal-600 bg-teal-500/10 border-teal-500/20";
+      default: return "text-[#859D30] bg-[#F4F7EA]0/10 border-[#859D30]";
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#151B23]">
+    <div className="min-h-screen bg-[#07100B]">
       <Navbar />
 
       {/* Header */}
-      <section className="pt-32 pb-12 border-b border-[#1F2937]" style={{ background: "linear-gradient(135deg, #f0fdfc 0%, #f7fef7 100%)" }}>
+      <section className="pt-32 pb-12 border-b border-[#1F2937]" style={{ background: "linear-gradient(135deg, #f0fdfc 0%, #F4F7EA 100%)" }}>
         <div className="container">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(67,146,136,0.10)", border: "1px solid rgba(67,146,136,0.25)" }}>
-              <Calendar className="w-4 h-4" style={{ color: "#439288" }} />
-              <span className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#439288" }}>Events &amp; Workshops</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style={{ background: "rgba(133, 157, 48,0.10)", border: "1px solid rgba(133, 157, 48,0.25)" }}>
+              <Calendar className="w-4 h-4" style={{ color: "#859D30" }} />
+              <span className="text-sm font-semibold" style={{ fontFamily: "'Sora', sans-serif", color: "#859D30" }}>Events &amp; Workshops</span>
             </div>
 
             <h1 className="mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>
               Upcoming{" "}
-              <span style={{ background: "linear-gradient(135deg, #439288, #439288)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+              <span style={{ background: "linear-gradient(135deg, #859D30, #859D30)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 AI Events
               </span>
             </h1>
@@ -150,10 +150,10 @@ export default function Events() {
             </p>
 
             {/* Featured Webinar CTA */}
-            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(67,146,136,0.08), rgba(67,146,136,0.08))", border: "1px solid rgba(67,146,136,0.20)" }}>
+            <div className="rounded-2xl p-6 md:p-8" style={{ background: "linear-gradient(135deg, rgba(133, 157, 48,0.08), rgba(133, 157, 48,0.08))", border: "1px solid rgba(133, 157, 48,0.20)" }}>
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                 <div className="flex-1">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-semibold mb-3" style={{ background: "#439288" }}>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-white text-xs font-semibold mb-3" style={{ background: "#859D30" }}>
                     <Video className="w-3 h-3" />
                     FEATURED EVENT
                   </div>
@@ -168,7 +168,7 @@ export default function Events() {
                   </p>
                 </div>
                 <Link href="/resources/webinars">
-                  <Button size="lg" className="font-semibold px-8" style={{ background: "#439288", color: "white" }}>
+                  <Button size="lg" className="font-semibold px-8" style={{ background: "#859D30", color: "white" }}>
                     Register Free
                   </Button>
                 </Link>
@@ -179,7 +179,7 @@ export default function Events() {
       </section>
 
       {/* Event Type Filter */}
-      <section className="py-5 border-b border-[#1F2937] bg-[#151B23]">
+      <section className="py-5 border-b border-[#1F2937] bg-[#07100B]">
         <div className="container">
           <div className="flex items-center gap-2 overflow-x-auto pb-1">
             <Calendar className="w-4 h-4 text-gray-400 flex-shrink-0" />
@@ -188,9 +188,9 @@ export default function Events() {
                 key={type}
                 onClick={() => setSelectedType(type)}
                 className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${
-                  selectedType === type ? "text-white" : "bg-[#151B23] border border-[#1F2937] text-gray-600 hover:border-teal-400"
+                  selectedType === type ? "text-white" : "bg-[#07100B] border border-[#1F2937] text-gray-600 hover:border-[#859D30]"
                 }`}
-                style={selectedType === type ? { background: "#439288", fontFamily: "'Sora', sans-serif" } : { fontFamily: "'Sora', sans-serif" }}
+                style={selectedType === type ? { background: "#859D30", fontFamily: "'Sora', sans-serif" } : { fontFamily: "'Sora', sans-serif" }}
               >
                 {type}
               </button>
@@ -213,8 +213,8 @@ export default function Events() {
                 <div
                   key={event.id}
                   className="group rounded-2xl border overflow-hidden transition-all duration-200 hover:shadow-xl"
-                  style={{ background: "#151B23", borderColor: "#E5E7EB" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(67,146,136,0.4)"; }}
+                  style={{ background: "#07100B", borderColor: "#E5E7EB" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(133, 157, 48,0.4)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#E5E7EB"; }}
                 >
                   <div className="relative h-48 overflow-hidden">
@@ -237,7 +237,7 @@ export default function Events() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 transition-colors group-hover:text-teal-600" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
+                    <h3 className="text-xl font-bold mb-3 transition-colors group-hover:text-[#859D30]" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>
                       {event.title}
                     </h3>
                     <p className="text-sm mb-4 line-clamp-2" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>
@@ -266,9 +266,9 @@ export default function Events() {
                     <a
                       href={event.registrationUrl}
                       className="block w-full text-center font-bold rounded-xl px-6 py-3 transition-all"
-                      style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", background: "#439288", color: "white", textDecoration: "none" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#0f766e"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#439288"; }}
+                      style={{ fontFamily: "'Sora', sans-serif", fontSize: "0.95rem", background: "#859D30", color: "white", textDecoration: "none" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#859D30"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#859D30"; }}
                     >
                       Register Now
                     </a>
@@ -289,7 +289,7 @@ export default function Events() {
       </section>
 
       {/* CTA */}
-      <section className="py-16" style={{ background: "#151B23" }}>
+      <section className="py-16" style={{ background: "#07100B" }}>
         <div className="container max-w-3xl text-center">
           <h2 className="mb-4" style={{ fontFamily: "'Sora', sans-serif" }}>Host an Event with Us</h2>
           <p className="mb-8" style={{ fontFamily: "'DM Sans', sans-serif", color: "#9CA3AF" }}>

@@ -7,8 +7,8 @@ import { Briefcase, BookOpen, Users, Zap, ArrowRight } from "lucide-react";
 const programs = [
   {
     icon: BookOpen,
-    color: "#439288",
-    bg: "rgba(67,146,136,0.10)",
+    color: "#859D30",
+    bg: "rgba(133, 157, 48,0.10)",
     title: "AI Foundations",
     subtitle: "For Beginners",
     desc: "Understand AI and start using it confidently — with no technical background required. Build practical skills from day one using the C.L.E.A.R. prompting framework.",
@@ -16,7 +16,7 @@ const programs = [
   },
   {
     icon: Briefcase,
-    color: "#16A34A",
+    color: "#859D30",
     bg: "rgba(22,163,74,0.10)",
     title: "AI-Enabled Professional",
     subtitle: "For Professionals & Individuals",
@@ -25,7 +25,7 @@ const programs = [
   },
   {
     icon: Zap,
-    color: "#D97706",
+    color: "#859D30",
     bg: "rgba(217,119,6,0.10)",
     title: "Webinars & Masterclasses",
     subtitle: "For Solopreneurs & Business Owners",
@@ -34,8 +34,8 @@ const programs = [
   },
   {
     icon: Users,
-    color: "#439288",
-    bg: "rgba(67,146,136,0.10)",
+    color: "#859D30",
+    bg: "rgba(133, 157, 48,0.10)",
     title: "AI Leadership",
     subtitle: "For Business Owners & Organisations",
     desc: "Structured AI adoption for teams — covering training, workflow redesign, governance, and safe, responsible implementation across your organisation.",
@@ -45,17 +45,17 @@ const programs = [
 
 export default function ProgramsSection() {
   return (
-    <section id="programs" className="section-py" style={{ background: "#151B23" }}>
+    <section id="programs" className="section-py" style={{ background: "#07100B" }}>
       <div className="container">
         {/* Header */}
         <div className="text-center mb-14">
           <span className="section-label mb-5">Structured Programmes</span>
           <h2 className="mt-4 mb-4">
-            The right programme for <span style={{ color: "#439288" }}>where you are now</span>
+            The right programme for <span style={{ color: "#859D30" }}>where you are now</span>
           </h2>
           <div className="flex justify-center gap-1.5 mb-5">
-            <div style={{ width: 64, height: 4, background: "#439288", borderRadius: 2 }} />
-            <div style={{ width: 32, height: 4, background: "#E6B800", borderRadius: 2 }} />
+            <div style={{ width: 64, height: 4, background: "#859D30", borderRadius: 2 }} />
+            <div style={{ width: 32, height: 4, background: "#859D30", borderRadius: 2 }} />
           </div>
           <p className="max-w-2xl mx-auto" style={{ fontSize: "1.15rem", color: "#9CA3AF" }}>
             From AI Foundations to AI Leadership—structured learning paths for
@@ -72,14 +72,14 @@ export default function ProgramsSection() {
                 key={p.title}
                 className="rounded-2xl p-7 flex flex-col transition-all duration-200"
                 style={{
-                  background: "#151B23",
+                  background: "#07100B",
                   border: "1px solid #1F2937",
                   borderTop: `4px solid ${p.color}`,
                   boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(67,146,136,0.16)";
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = "0 16px 48px rgba(133, 157, 48,0.16)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";

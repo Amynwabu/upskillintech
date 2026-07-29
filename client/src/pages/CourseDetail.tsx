@@ -133,7 +133,7 @@ export default function CourseDetail() {
                       <Star
                         key={i}
                         size={20}
-                        className={filled ? "fill-yellow-500 text-yellow-500" : "text-muted-foreground"}
+                        className={filled ? "fill-[#859D30] text-[#859D30]" : "text-muted-foreground"}
                       />
                     ))}
                     <span className="ml-2 font-semibold">{avgRating}/5</span>
@@ -285,7 +285,7 @@ export default function CourseDetail() {
                             <span>{courseDetails.instructor.totalCourses} courses</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Star size={16} className="fill-yellow-500 text-yellow-500" />
+                            <Star size={16} className="fill-[#859D30] text-[#859D30]" />
                             <span>{courseDetails.instructor.rating}/5 rating</span>
                           </div>
                         </div>
@@ -396,7 +396,7 @@ export default function CourseDetail() {
                                       size={14}
                                       className={
                                         i < review.rating
-                                          ? "fill-yellow-500 text-yellow-500"
+                                          ? "fill-[#859D30] text-[#859D30]"
                                           : "text-muted-foreground"
                                       }
                                     />
