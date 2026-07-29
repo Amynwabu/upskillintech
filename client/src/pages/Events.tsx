@@ -22,7 +22,7 @@ export default function Events() {
       speaker: "Dr. Sarah Mitchell",
       speakerTitle: "Chief AI Officer, MedTech Solutions",
       description: "Join us for an insightful webinar exploring how AI is revolutionizing healthcare delivery, from diagnostic tools to personalized treatment plans.",
-      image: "/community-engagement.jpg",
+      image: "/images/african-professional-practical-ai.webp",
       status: "Upcoming",
       registrationUrl: "#",
     },
@@ -37,7 +37,7 @@ export default function Events() {
       speaker: "James Chen",
       speakerTitle: "Senior AI Engineer, TechCorp",
       description: "A full-day intensive workshop where you'll learn to build and deploy your own large language model application from scratch.",
-      image: "/training-diverse-team.jpg",
+      image: "/images/professional-ai-workshop.webp",
       status: "Few Spots Left",
       registrationUrl: "#",
     },
@@ -52,7 +52,7 @@ export default function Events() {
       speaker: "Multiple Speakers",
       speakerTitle: "Industry Leaders & Researchers",
       description: "The premier AI conference bringing together researchers, practitioners, and business leaders to explore the latest advances in artificial intelligence.",
-      image: "/networking-event.jpg",
+      image: "/images/black-led-ai-consultation.webp",
       status: "Early Bird",
       registrationUrl: "#",
     },
@@ -67,7 +67,7 @@ export default function Events() {
       speaker: "Panel Discussion",
       speakerTitle: "Ethics Experts & Policy Makers",
       description: "A thought-provoking panel discussion on the ethical implications of AI deployment and frameworks for responsible innovation.",
-      image: "/community-engagement.jpg",
+      image: "/images/small-business-workflow-review.webp",
       status: "Upcoming",
       registrationUrl: "#",
     },
@@ -82,7 +82,7 @@ export default function Events() {
       speaker: "Community Members",
       speakerTitle: "AI Practitioners & Enthusiasts",
       description: "Join fellow AI enthusiasts for networking, knowledge sharing, and lightning talks on the latest AI projects and innovations.",
-      image: "/networking-event.jpg",
+      image: "/images/professional-ai-community.webp",
       status: "Open",
       registrationUrl: "#",
     },
@@ -97,7 +97,7 @@ export default function Events() {
       speaker: "Dr. Amaka Adiuku",
       speakerTitle: "Founder, UpskillinTech | AI Researcher & Lecturer",
       description: "Learn the AI skills that help you work smarter, save hours every week, and stay ahead in your career — without needing a technical background.",
-      image: "/networking-event.jpg",
+      image: "/images/solopreneur-ai-productivity.webp",
       status: "Upcoming",
       registrationUrl: "/resources/webinars",
     },
@@ -222,6 +222,9 @@ export default function Events() {
                       src={event.image}
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      width={1600}
+                      height={1067}
                     />
                     <div className="absolute top-4 right-4">
                       <div className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(event.status)}`}>

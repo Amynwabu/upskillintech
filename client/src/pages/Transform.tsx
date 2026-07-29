@@ -170,9 +170,12 @@ export default function Transform() {
               </div>
               <div className="relative">
                 <img
-                  src="/networking-event.jpg"
-                  alt="Professionals collaborating with AI technology"
+                  src="/images/solopreneur-ai-productivity.webp"
+                  alt="Black female solopreneur using AI to organise customers and daily work"
                   className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
                 />
               </div>
             </div>

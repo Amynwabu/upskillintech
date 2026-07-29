@@ -7,7 +7,7 @@
 import { useRef, useEffect, useState } from "react";
 import { X, Check, ArrowRight, Star } from "lucide-react";
 
-const MENTORING_IMAGE = "/community-engagement.jpg";
+const MENTORING_IMAGE = "/images/professional-ai-workshop.webp";
 
 const beforeItems = [
   "Overwhelmed by AI tools",
@@ -104,7 +104,14 @@ export default function ProgramSection() {
             <div className="rounded-2xl overflow-hidden shadow-xl h-full flex flex-col">
               {/* Image */}
               <div className="relative" style={{ height: "220px" }}>
-                <img src={MENTORING_IMAGE} alt="Mentoring session" className="w-full h-full object-cover" />
+                <img
+                  src={MENTORING_IMAGE}
+                  alt="Black female trainer guiding professionals during a practical AI workshop"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
+                />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(15,23,42,0.8) 0%, transparent 50%)" }} />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="flex items-center gap-1 mb-1">

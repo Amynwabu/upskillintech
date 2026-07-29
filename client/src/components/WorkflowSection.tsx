@@ -7,7 +7,7 @@
 import { useRef, useEffect, useState } from "react";
 import { MessageSquare, Search, Database, Brain, FileText, BarChart2, CheckSquare, Presentation, FileBarChart, ArrowRight } from "lucide-react";
 
-const WORKFLOW_IMAGE = "/networking-event.jpg";
+const WORKFLOW_IMAGE = "/images/small-business-workflow-review.webp";
 
 const workflows = [
   {
@@ -78,7 +78,14 @@ export default function WorkflowSection() {
           </div>
           <div className={`hidden lg:block transition-all duration-700 delay-200 ${inView ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-100" style={{ aspectRatio: "16/10" }}>
-              <img src={WORKFLOW_IMAGE} alt="AI workflow diagram" className="w-full h-full object-cover" />
+              <img
+                src={WORKFLOW_IMAGE}
+                alt="Black business owner and consultant reviewing an automated workflow"
+                className="w-full h-full object-cover"
+                loading="lazy"
+                width={1600}
+                height={1067}
+              />
             </div>
           </div>
         </div>

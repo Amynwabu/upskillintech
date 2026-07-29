@@ -343,9 +343,12 @@ export default function Enterprise() {
           <div className="relative hidden lg:flex justify-end items-end">
             <div className="relative rounded-t-2xl overflow-hidden shadow-2xl" style={{ width: "100%", maxWidth: 520, height: 420 }}>
               <img
-                src="/networking-event.jpg"
-                alt="Enterprise AI training workshop"
+                src="/images/small-business-workflow-review.webp"
+                alt="Black business leaders reviewing an AI-enabled operations workflow"
                 className="w-full h-full object-cover"
+                loading="eager"
+                width={1600}
+                height={1067}
               />
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(133, 157, 48,0.4) 0%, transparent 60%)" }} />
               {/* Floating badge */}

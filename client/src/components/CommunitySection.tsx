@@ -4,7 +4,7 @@
  */
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-const COMMUNITY_IMG = "/community-engagement.jpg";
+const COMMUNITY_IMG = "/images/professional-ai-community.webp";
 
 const benefits = [
   { title: "Monthly Masterclasses", desc: "Live sessions with AI experts covering the latest tools and strategies." },
@@ -61,8 +61,11 @@ export default function CommunitySection() {
             >
               <img
                 src={COMMUNITY_IMG}
-                alt="Diverse professionals at a community networking event"
+                alt="Black-led professional community discussing practical AI after a workshop"
                 className="w-full h-auto"
+                loading="lazy"
+                width={1600}
+                height={1067}
                 style={{ display: "block" }}
               />
               {/* Floating badge */}

@@ -69,14 +69,20 @@ export default function Learn() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/training-diverse-team.jpg"
-                  alt="Diverse team learning AI together"
+                  src="/images/professional-ai-workshop.webp"
+                  alt="Black female trainer guiding professionals through a practical AI workflow"
                   className="rounded-lg shadow-lg w-full h-48 object-cover"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
                 />
                 <img
-                  src="/community-engagement.jpg"
-                  alt="Group discussion and collaborative learning"
+                  src="/images/professional-ai-community.webp"
+                  alt="Black-led professional community discussing lessons after an AI workshop"
                   className="rounded-lg shadow-lg w-full h-48 object-cover mt-8"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
                 />
               </div>
             </div>

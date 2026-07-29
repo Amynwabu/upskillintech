@@ -191,9 +191,12 @@ export default function Consult() {
               </div>
               <div className="relative">
                 <img
-                  src="/community-engagement.jpg"
-                  alt="Professional AI consultation and mentoring session"
+                  src="/images/black-led-ai-consultation.webp"
+                  alt="Black female consultant leading a business process-mapping session"
                   className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
                 />
               </div>
             </div>
@@ -309,9 +312,12 @@ export default function Consult() {
               </div>
               <div className="relative">
                 <img
-                  src="/networking-event.jpg"
-                  alt="Successful business team meeting"
+                  src="/images/small-business-workflow-review.webp"
+                  alt="Black business owner and consultant reviewing an automated workflow"
                   className="rounded-lg shadow-lg w-full h-auto object-cover"
+                  loading="lazy"
+                  width={1600}
+                  height={1067}
                 />
               </div>
             </div>

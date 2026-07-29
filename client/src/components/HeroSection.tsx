@@ -1,6 +1,6 @@
 import { ArrowRight, Download } from "lucide-react";
 
-const HERO_IMG = "/training-diverse-team.jpg";
+const HERO_IMG = "/images/african-professional-practical-ai.webp";
 
 export default function HeroSection() {
   return (
@@ -156,7 +156,7 @@ export default function HeroSection() {
               >
                 <img
                   src={HERO_IMG}
-                  alt="A diverse group of professionals learning practical AI tools together"
+                  alt="Black African professional using AI for practical business planning"
                   width={600}
                   height={460}
                   loading="eager"

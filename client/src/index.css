@@ -1025,6 +1025,26 @@ a:not(.btn-primary, .btn-outline):hover {
   opacity: 1;
 }
 
+/* Shared editorial photography system */
+img[src^="/images/"] {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  background: var(--brand-charcoal, #171a18);
+  filter: saturate(0.9) contrast(1.03);
+}
+
+.premium-media,
+:where(section, article) > div:has(> img[src^="/images/"]) {
+  background: var(--brand-charcoal, #171a18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img[src^="/images/"] {
+    transition: none !important;
+  }
+}
+
 section[style*="#F3F1EE" i],
 section[style*="#F4F7EA" i],
 section[style*="#F7F8F5" i] {

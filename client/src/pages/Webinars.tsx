@@ -161,12 +161,66 @@ export default function Webinars() {
         <div style={{ background: "linear-gradient(90deg, #859D30 0%, #859D30 100%)" }}>
           <div className="container py-4">
             <div className="flex flex-wrap gap-8 justify-center text-center">
-              {[{ v: "8+", l: "Past Recordings" }, { v: "3", l: "Upcoming Sessions" }, { v: "4,000+", l: "Total Attendees" }, { v: "Free", l: "To Register" }].map(s => (
+              {[{ v: "8+", l: "Past Recordings" }, { v: "4", l: "Upcoming Sessions" }, { v: "4,000+", l: "Total Attendees" }, { v: "Free", l: "To Register" }].map(s => (
                 <div key={s.l}>
                   <div className="text-2xl font-bold" style={{ fontFamily: "'Sora', sans-serif", color: "#F3F4F6" }}>{s.v}</div>
                   <div className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.65)" }}>{s.l}</div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Webinar */}
+      <section className="py-16 lg:py-20 bg-[#111118] border-b border-[#2A2A33]" aria-labelledby="featured-webinar-title">
+        <div className="container">
+          <div className="overflow-hidden rounded-3xl border border-[#859D30]/40 bg-[#0B0B0F] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+            <div className="grid lg:grid-cols-[1.25fr_0.75fr]">
+              <div className="p-8 sm:p-10 lg:p-14">
+                <div className="mb-5 flex flex-wrap items-center gap-3">
+                  <span className="rounded-full bg-[#859D30] px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#0B0B0F]">
+                    New Webinar
+                  </span>
+                  <span className="flex items-center gap-1.5 text-sm font-medium text-[#D1D5DB]">
+                    <Video size={15} aria-hidden="true" /> Free Live Workshop
+                  </span>
+                </div>
+                <h2 id="featured-webinar-title" className="max-w-3xl text-3xl font-bold leading-tight text-[#F5F5F7] sm:text-4xl lg:text-5xl" style={{ fontFamily: "'Sora', sans-serif" }}>
+                  Build Your First AI Employee That Works 24/7—Without Coding
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#D1D5DB] sm:text-lg">
+                  Discover how AI Employees can support your business, automate repetitive work, and help turn your ideas into new income opportunities.
+                </p>
+                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#F5F5F7]">
+                  <Calendar size={17} className="text-[#859D30]" aria-hidden="true" />
+                  Date and UK time announced soon
+                </div>
+              </div>
+
+              <div className="flex flex-col justify-between border-t border-[#2A2A33] bg-[#181822] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#859D30]">What you will learn</p>
+                  <ul className="mt-5 space-y-4">
+                    {[
+                      "Why businesses are building AI teams that work 24/7",
+                      "How to build your first AI Employee live",
+                      "Practical ways to turn AI skills into income",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-[#E5E7EB]">
+                        <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#859D30]" aria-hidden="true" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link
+                  href="/webinars/build-your-first-ai-employee"
+                  className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#859D30] px-6 py-3 font-bold text-[#0B0B0F] transition hover:bg-[#9AB63A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#859D30]"
+                >
+                  View Webinar &amp; Register <ArrowRight size={18} aria-hidden="true" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

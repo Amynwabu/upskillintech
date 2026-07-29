@@ -102,8 +102,8 @@ export default function Home() {
             </div>
             <div className="premium-media overflow-hidden rounded-2xl border">
               <img
-                src="/training-diverse-team.jpg"
-                alt="A diverse group of professionals learning practical technology skills together"
+                src="/images/african-professional-practical-ai.webp"
+                alt="Black African professional using AI for practical business planning"
                 width={720}
                 height={520}
                 loading="eager"
@@ -211,8 +211,8 @@ export default function Home() {
           <div className="container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="overflow-hidden rounded-2xl border border-[#e5e7eb]">
               <img
-                src="/group-discussion.jpg"
-                alt="Professionals discussing practical ideas during an AI learning workshop"
+                src="/images/solopreneur-ai-productivity.webp"
+                alt="Black female solopreneur using AI to organise business tasks from her home office"
                 width={680}
                 height={480}
                 loading="lazy"

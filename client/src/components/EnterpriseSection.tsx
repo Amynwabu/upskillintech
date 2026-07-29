@@ -5,7 +5,7 @@
  */
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-const ENTERPRISE_IMG = "/networking-event.jpg";
+const ENTERPRISE_IMG = "/images/black-led-ai-consultation.webp";
 
 const benefits = [
   { title: "Train Teams in AI Productivity", desc: "Upskill your entire workforce with structured, role-specific AI training programmes." },
@@ -62,8 +62,11 @@ export default function EnterpriseSection() {
             >
               <img
                 src={ENTERPRISE_IMG}
-                alt="AI training workshop with diverse professional team"
+                alt="Black female consultant leading a business process-mapping session"
                 className="w-full h-auto"
+                loading="lazy"
+                width={1600}
+                height={1067}
                 style={{ display: "block" }}
               />
               {/* Floating stat */}
