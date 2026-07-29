@@ -76,10 +76,10 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-[#111111]">
+    <div className="premium-dark-page min-h-screen">
       <Navbar />
       <main className="pt-[72px]">
-        <section className="surface-light border-b border-[#e5e7eb]">
+        <section className="surface-dark premium-section border-b">
           <div className="container grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
             <div className="max-w-2xl">
               <span className="section-label">Practical AI for everyone</span>
@@ -100,7 +100,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="overflow-hidden rounded-2xl border border-[#e5e7eb] bg-[#f7f8f5] shadow-sm">
+            <div className="premium-media overflow-hidden rounded-2xl border">
               <img
                 src="/training-diverse-team.jpg"
                 alt="A diverse group of professionals learning practical technology skills together"
@@ -113,7 +113,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="surface-light section-py" id="who-its-for">
+        <section className="surface-dark section-py" id="who-its-for">
           <div className="container">
             <div className="mx-auto mb-12 max-w-3xl text-center">
               <span className="section-label">Designed around your goals</span>
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-py bg-[#f7f8f5]">
+        <section className="premium-surface-section section-py">
           <div className="container">
             <div className="mb-10 max-w-2xl">
               <span className="section-label">What you can achieve</span>
@@ -160,7 +160,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="surface-light section-py">
+        <section className="surface-dark section-py">
           <div className="container">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <span className="section-label">How it works</span>
@@ -185,7 +185,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-py bg-[#f7f8f5]">
+        <section className="premium-surface-section section-py">
           <div className="container">
             <div className="mb-10 max-w-2xl">
               <span className="section-label">Our services</span>
@@ -207,7 +207,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="surface-light section-py">
+        <section className="surface-light premium-light-section section-py">
           <div className="container grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="overflow-hidden rounded-2xl border border-[#e5e7eb]">
               <img

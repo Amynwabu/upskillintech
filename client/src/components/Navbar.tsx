@@ -36,8 +36,8 @@ function NavLink({
       onClick={onClick}
       className={`${mobile ? "block rounded-lg px-3 py-3" : ""} font-semibold transition-colors`}
       style={{
-        color: active ? "#859d30" : "#111111",
-        background: mobile && active ? "#f4f7ea" : "transparent",
+        color: active ? "#9bb63b" : "#f5f5f7",
+        background: mobile && active ? "#22222b" : "transparent",
         textDecoration: "none",
       }}
     >
@@ -51,12 +51,12 @@ export default function Navbar() {
   const [resourcesOpen, setResourcesOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5e7eb] bg-white">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#2a2a33] bg-[#0b0b0f]">
       <nav
         className="container flex h-[72px] items-center justify-between"
         aria-label="Main navigation"
       >
-        <Logo variant="light-background" size="lg" />
+        <Logo variant="dark-background" size="lg" />
 
         <div className="hidden items-center gap-7 xl:flex">
           {mainLinks.slice(0, 4).map(link => (
@@ -65,14 +65,14 @@ export default function Navbar() {
           <div className="relative">
             <button
               type="button"
-              className="flex items-center gap-1 font-semibold text-[#111111] hover:text-[#859d30]"
+              className="flex items-center gap-1 font-semibold text-[#f5f5f7] hover:text-[#9bb63b]"
               aria-expanded={resourcesOpen}
               onClick={() => setResourcesOpen(value => !value)}
             >
               Resources <ChevronDown size={16} />
             </button>
             {resourcesOpen && (
-              <div className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-xl border border-[#e5e7eb] bg-white p-2 shadow-lg">
+              <div className="absolute left-1/2 top-full mt-4 w-56 -translate-x-1/2 rounded-xl border border-[#2a2a33] bg-[#181822] p-2 shadow-lg">
                 {resources.map(link => (
                   <NavLink
                     key={link.href}
@@ -96,7 +96,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="rounded-lg p-2 text-[#111111] xl:hidden"
+          className="rounded-lg p-2 text-[#f5f5f7] xl:hidden"
           onClick={() => setMenuOpen(value => !value)}
           aria-expanded={menuOpen}
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
@@ -106,7 +106,7 @@ export default function Navbar() {
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-[#e5e7eb] bg-white px-5 py-4 xl:hidden">
+        <div className="border-t border-[#2a2a33] bg-[#111118] px-5 py-4 xl:hidden">
           <div className="mx-auto flex max-w-3xl flex-col gap-1">
             {mainLinks.map(link => (
               <NavLink
@@ -116,7 +116,7 @@ export default function Navbar() {
                 onClick={() => setMenuOpen(false)}
               />
             ))}
-            <p className="mb-1 mt-3 px-3 text-sm font-bold text-[#5f6368]">
+            <p className="mb-1 mt-3 px-3 text-sm font-bold text-[#b6b6c2]">
               Resources
             </p>
             {resources.map(link => (

@@ -63,50 +63,61 @@
 }
 
 :root {
+  --color-bg: #0b0b0f;
+  --color-surface: #111118;
+  --color-surface-elevated: #181822;
+  --color-text: #f5f5f7;
+  --color-text-muted: #b6b6c2;
+  --color-primary: #859d30;
+  --color-primary-hover: #9bb63b;
+  --color-neutral-accent: #b8aa7a;
+  --color-border: #2a2a33;
+  --color-light-bg: #f7f7f5;
+  --color-light-text: #0b0b0f;
   --brand-green: #859d30;
-  --brand-green-dark: #6f8528;
+  --brand-green-dark: #9bb63b;
   --brand-green-light: #f4f7ea;
   --brand-primary: var(--brand-green);
-  --brand-primary-hover: var(--brand-green-dark);
+  --brand-primary-hover: var(--color-primary-hover);
   --brand-secondary: var(--brand-green);
-  --background: #ffffff;
-  --background-secondary: #f7f8f5;
-  --background-dark: #07100b;
-  --background-deep: #07100b;
+  --background: var(--color-bg);
+  --background-secondary: var(--color-surface);
+  --background-dark: var(--color-bg);
+  --background-deep: var(--color-bg);
   --background-light: #ffffff;
-  --background-muted: #f7f8f5;
-  --text-primary: #111111;
-  --text-secondary: #5f6368;
-  --text-on-light: #111111;
-  --text-on-light-body: #111111;
+  --background-muted: var(--color-surface);
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+  --text-on-light: var(--color-light-text);
+  --text-on-light-body: var(--color-light-text);
   --text-on-light-secondary: #5f6368;
   --text-on-light-muted: #5f6368;
-  --text-on-dark: #ffffff;
-  --text-on-dark-secondary: #e5e7eb;
-  --text-on-dark-muted: #d1d5db;
-  --border-dark: #26332a;
+  --text-on-dark: var(--color-text);
+  --text-on-dark-secondary: var(--color-text-muted);
+  --text-on-dark-muted: #a3a3ad;
+  --border-dark: var(--color-border);
   --border-light: #e5e7eb;
-  --card-background: #ffffff;
-  --input-text: #111111;
-  --input-placeholder: #6b7280;
-  --input-border: #cbd5e1;
+  --card-background: var(--color-surface);
+  --input-text: var(--color-text);
+  --input-placeholder: #8f8f9a;
+  --input-border: #3a3a45;
 
   /* Shared compact controls use the darker accessible teal. Branded large
      CTAs use --brand-primary with bold large text. */
   --primary: var(--brand-primary);
-  --primary-foreground: #ffffff;
+  --primary-foreground: #0b0b0f;
   --radius: 0.625rem;
   --foreground: var(--text-primary);
   --card: var(--card-background);
   --card-foreground: var(--text-primary);
-  --popover: #ffffff;
-  --popover-foreground: var(--text-primary);
-  --secondary: #f4f7ea;
-  --secondary-foreground: var(--text-primary);
-  --muted: #f7f8f5;
+  --popover: var(--color-surface-elevated);
+  --popover-foreground: var(--color-text);
+  --secondary: var(--color-surface-elevated);
+  --secondary-foreground: var(--color-text);
+  --muted: var(--color-surface);
   --muted-foreground: var(--text-secondary);
-  --accent: #f4f7ea;
-  --accent-foreground: var(--text-primary);
+  --accent: #22222b;
+  --accent-foreground: var(--color-text);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: #ffffff;
   --border: var(--border-dark);
@@ -117,13 +128,13 @@
   --chart-3: #a8b866;
   --chart-4: #cbd5a5;
   --chart-5: #5f6368;
-  --sidebar: #ffffff;
+  --sidebar: var(--color-surface);
   --sidebar-foreground: var(--text-primary);
   --sidebar-primary: var(--brand-primary);
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f4f7ea;
+  --sidebar-accent: var(--color-surface-elevated);
   --sidebar-accent-foreground: var(--text-primary);
-  --sidebar-border: var(--border-light);
+  --sidebar-border: var(--color-border);
   --sidebar-ring: var(--brand-primary);
 }
 
@@ -850,5 +861,191 @@ input[type="radio"] {
   .btn-primary,
   .btn-outline {
     width: 100%;
+  }
+}
+
+/* Professional dark theme -------------------------------------------------- */
+body {
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+body :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+body :where(p, li, td) {
+  color: var(--color-text-muted);
+}
+
+.premium-dark-page,
+.premium-section,
+.premium-surface-section,
+.surface-light:not(.premium-light-section),
+:where(.bg-white, .bg-slate-50, .bg-slate-100, .bg-gray-50, .bg-gray-100) {
+  background: var(--color-bg) !important;
+  color: var(--color-text-muted) !important;
+}
+
+.premium-surface-section,
+.surface-light:not(.premium-light-section) {
+  background: var(--color-surface) !important;
+}
+
+:where(
+    .premium-dark-page,
+    .premium-section,
+    .premium-surface-section,
+    .surface-light:not(.premium-light-section),
+    .bg-white,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-gray-50,
+    .bg-gray-100
+  )
+  :where(h1, h2, h3, h4, h5, h6, label, legend, th) {
+  color: var(--color-text) !important;
+}
+
+:where(
+    .premium-dark-page,
+    .premium-section,
+    .premium-surface-section,
+    .surface-light:not(.premium-light-section),
+    .bg-white,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-gray-50,
+    .bg-gray-100
+  )
+  :where(p, li, td, small, [data-slot="card-description"]) {
+  color: var(--color-text-muted) !important;
+}
+
+.premium-light-section {
+  background: var(--color-light-bg) !important;
+  color: var(--color-light-text) !important;
+}
+
+.premium-light-section :where(h1, h2, h3, h4, h5, h6, label, legend, th) {
+  color: #0b0b0f !important;
+}
+
+.premium-light-section :where(p, li, td, small) {
+  color: #3f3f46 !important;
+}
+
+.premium-media {
+  background: var(--color-surface);
+  border-color: var(--color-border) !important;
+  box-shadow: 0 18px 50px rgb(0 0 0 / 0.28);
+}
+
+.card-modern,
+.brand-card,
+[data-slot="card"] {
+  background: var(--color-surface-elevated) !important;
+  color: var(--color-text);
+  border-color: var(--color-border) !important;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 0.2);
+}
+
+.card-modern :where(h1, h2, h3, h4, h5, h6, label),
+.brand-card :where(h1, h2, h3, h4, h5, h6, label),
+[data-slot="card"] :where(h1, h2, h3, h4, h5, h6, label) {
+  color: var(--color-text) !important;
+}
+
+.card-modern :where(p, li, small),
+.brand-card :where(p, li, small),
+[data-slot="card"] :where(p, li, small, [data-slot="card-description"]) {
+  color: var(--color-text-muted) !important;
+}
+
+.card-modern:hover,
+.brand-card:hover,
+[data-slot="card"]:hover {
+  border-color: #3d3d48 !important;
+  box-shadow: 0 14px 36px rgb(0 0 0 / 0.28);
+}
+
+.brand-icon {
+  background: #252a18;
+  color: var(--color-primary-hover);
+  border: 1px solid #39421e;
+}
+
+.section-label {
+  color: #c2d56f;
+  background: #202516;
+  border-color: #3d4721;
+}
+
+.brand-link,
+a:not(.btn-primary, .btn-outline):hover {
+  color: var(--color-primary-hover);
+}
+
+.btn-primary,
+[data-slot="button"].bg-primary {
+  background: var(--color-primary);
+  color: #0b0b0f;
+  border: 1px solid var(--color-primary);
+  font-weight: 800;
+}
+
+.btn-primary:hover,
+[data-slot="button"].bg-primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  color: #0b0b0f;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border-color: #4b4b57;
+}
+
+.btn-outline:hover {
+  background: var(--color-surface-elevated);
+  color: var(--color-text);
+  border-color: #70707d;
+}
+
+:where(input, textarea, select) {
+  background: var(--color-surface-elevated) !important;
+  color: var(--color-text) !important;
+  border-color: #3a3a45 !important;
+}
+
+:where(input::placeholder, textarea::placeholder) {
+  color: #8f8f9a !important;
+  opacity: 1;
+}
+
+section[style*="#F3F1EE" i],
+section[style*="#F4F7EA" i],
+section[style*="#F7F8F5" i] {
+  background: var(--color-surface) !important;
+}
+
+:where(
+    [style*="background: rgb(244, 247, 234)" i],
+    [style*="background: #F4F7EA" i],
+    [style*="background: rgb(247, 248, 245)" i],
+    [style*="background: #F7F8F5" i],
+    [style*="background: rgb(243, 241, 238)" i],
+    [style*="background: #F3F1EE" i]
+  ):not(.brand-icon):not(.section-label) {
+  background: var(--color-surface-elevated) !important;
+  border-color: var(--color-border) !important;
+}
+
+@media (min-width: 640px) {
+  .section-py {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
