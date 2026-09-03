@@ -14,7 +14,11 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit generate && drizzle-kit migrate",
-    "db:seed:webinar": "tsx scripts/seed-webinar.ts"
+    "db:seed:webinar": "tsx scripts/seed-webinar.ts",
+    "db:preflight:payments": "tsx scripts/payment-db-preflight.ts",
+    "db:seed:payments": "tsx scripts/seed-payments-dev.ts",
+    "db:verify:payments": "tsx scripts/payment-db-verify.ts",
+    "stripe:verify:test-env": "tsx scripts/verify-stripe-test-env.ts"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.693.0",

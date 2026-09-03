@@ -14,6 +14,7 @@ import { blogRouter } from "./routers/blog";
 import { adminRouter } from "./routers/admin";
 import { checkoutRouter } from "./routers/checkout";
 import { aiRouter } from "./routers/ai";
+import { paymentsRouter } from "./routers/payments";
 
 export const appRouter = router({
   system: systemRouter,
@@ -62,6 +63,7 @@ export const appRouter = router({
 
   // AI chat (backed by invokeLLM / Forge API)
   ai: aiRouter,
+  payments: paymentsRouter,
 });
 
 export type AppRouter = typeof appRouter;

@@ -10,4 +10,5 @@ export const ENV = {
   stripeEnabled: process.env.STRIPE_ENABLED === "true",
   stripeSecretKey: process.env.STRIPE_SECRET_KEY ?? "",
   stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET ?? "",
+  appUrl: (process.env.APP_URL ?? "http://localhost:3000").replace(/\/$/, ""),
 };

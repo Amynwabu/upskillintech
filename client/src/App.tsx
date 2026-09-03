@@ -46,6 +46,9 @@ import WebinarAiEmployee from "./pages/WebinarAiEmployee";
 import WebinarRegistered from "./pages/WebinarRegistered";
 import WebinarPrivacy from "./pages/WebinarPrivacy";
 import WebinarUnsubscribe from "./pages/WebinarUnsubscribe";
+import Checkout from "./pages/Checkout";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import PaymentCancelled from "./pages/PaymentCancelled";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { WebSocketProvider } from "./contexts/WebSocketContext";
 
@@ -78,6 +81,9 @@ function Router() {
       <Route path={"/learn/:pathId"} component={LearningPath} />
       <Route path={"/learn/:courseId/player"} component={LearningPlayer} />
       <Route path={"/courses/:id"} component={CourseDetail} />
+      <Route path={"/checkout"}><ProtectedRoute><Checkout /></ProtectedRoute></Route>
+      <Route path={"/payment/success"}><ProtectedRoute><PaymentSuccess /></ProtectedRoute></Route>
+      <Route path={"/payment/cancelled"} component={PaymentCancelled} />
 
       {/* Community & Events */}
       <Route path={"/community"} component={Community} />

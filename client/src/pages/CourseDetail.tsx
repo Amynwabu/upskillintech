@@ -66,8 +66,7 @@ export default function CourseDetail() {
     }
 
     if (courseDetails?.isPremium) {
-      // TODO: Implement Stripe checkout
-      toast.info("Stripe checkout coming soon!");
+      setLocation(`/checkout?courseId=${courseId}`);
     } else {
       enrollMutation.mutate({ courseId });
     }

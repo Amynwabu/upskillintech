@@ -67,6 +67,8 @@ export const courses = mysqlTable("courses", {
   thumbnail: text("thumbnail"),
   instructorId: int("instructorId").notNull(),
   price: int("price").default(0).notNull(),
+  stripePriceId: varchar("stripePriceId", { length: 255 }),
+  currency: varchar("currency", { length: 3 }).default("gbp").notNull(),
   isPremium: boolean("isPremium").default(false).notNull(),
   totalModules: int("totalModules").default(0).notNull(),
   estimatedHours: int("estimatedHours").default(0).notNull(),
@@ -123,17 +125,69 @@ export type InsertCourseModule = typeof courseModules.$inferInsert;
  */
 export const enrollments = mysqlTable("enrollments", {
   id: int("id").autoincrement().primaryKey(),
-  userId: int("userId").notNull(),
-  courseId: int("courseId").notNull(),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "restrict", onUpdate: "cascade" }),
+  courseId: int("courseId").notNull().references(() => courses.id, { onDelete: "restrict", onUpdate: "cascade" }),
   progress: int("progress").default(0).notNull(),
   completedModules: int("completedModules").default(0).notNull(),
   lastAccessedAt: timestamp("lastAccessedAt"),
   completedAt: timestamp("completedAt"),
   enrolledAt: timestamp("enrolledAt").defaultNow().notNull(),
-});
+}, table => [
+  uniqueIndex("enrollments_user_course_unique").on(table.userId, table.courseId),
+]);
 
 export type Enrollment = typeof enrollments.$inferSelect;
 export type InsertEnrollment = typeof enrollments.$inferInsert;
+
+/**
+ * Authoritative payment records. Amounts are stored in the currency's smallest
+ * unit (pence for GBP). Access is granted only after a verified Stripe webhook.
+ */
+export const orders = mysqlTable("orders", {
+  id: varchar("id", { length: 32 }).primaryKey(),
+  checkoutRequestId: varchar("checkoutRequestId", { length: 64 }).notNull().unique(),
+  userId: int("userId").notNull().references(() => users.id, { onDelete: "restrict", onUpdate: "cascade" }),
+  courseId: int("courseId").notNull().references(() => courses.id, { onDelete: "restrict", onUpdate: "cascade" }),
+  stripeCustomerId: varchar("stripeCustomerId", { length: 255 }),
+  stripeCheckoutSessionId: varchar("stripeCheckoutSessionId", { length: 255 }).unique(),
+  stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 255 }),
+  paymentMethod: varchar("paymentMethod", { length: 64 }),
+  subtotal: int("subtotal").notNull(),
+  discount: int("discount").default(0).notNull(),
+  total: int("total").notNull(),
+  currency: varchar("currency", { length: 3 }).default("gbp").notNull(),
+  paymentStatus: mysqlEnum("paymentStatus", [
+    "pending",
+    "processing",
+    "paid",
+    "failed",
+    "cancelled",
+    "refunded",
+    "partially_refunded",
+  ]).default("pending").notNull(),
+  customerName: varchar("customerName", { length: 255 }),
+  customerEmail: varchar("customerEmail", { length: 320 }).notNull(),
+  paidAmount: int("paidAmount"),
+  refundedAmount: int("refundedAmount").default(0).notNull(),
+  paidAt: timestamp("paidAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, table => [
+  index("orders_user_idx").on(table.userId),
+  index("orders_course_idx").on(table.courseId),
+  index("orders_payment_intent_idx").on(table.stripePaymentIntentId),
+  index("orders_status_idx").on(table.paymentStatus),
+]);
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
+
+/** Stripe event IDs make webhook processing idempotent across retries. */
+export const stripeWebhookEvents = mysqlTable("stripe_webhook_events", {
+  id: varchar("id", { length: 255 }).primaryKey(),
+  type: varchar("type", { length: 100 }).notNull(),
+  processedAt: timestamp("processedAt").defaultNow().notNull(),
+});
 
 /**
  * User progress tracking
